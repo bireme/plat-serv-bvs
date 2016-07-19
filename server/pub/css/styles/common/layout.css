@@ -1,0 +1,110 @@
+.container {
+	width: 1004px;
+	margin: 0 auto;
+}
+
+DIV#header {
+	height: 113px;
+}
+
+DIV#header H1#logo {
+	margin: 0px;
+}
+
+DIV#header H1#logo A {
+	float: left;
+	xdisplay: block;
+	width: 90px;
+	height: 100px;
+	margin-top: 10px;
+	margin-left: 28px;
+}
+
+DIV#header H1#logo A SPAN {
+	display: none;
+}
+
+DIV#header H2 {
+	float: left;
+	margin: 93px 0px 0px 165px
+}
+
+#profile {
+	float: left;
+}
+
+DIV#idioma {
+	top: 0px;
+	width: 150px;
+	padding-right: 70px;
+	float: right;
+}
+
+DIV#institutions {
+	float: left;
+	margin-left: 340px;
+	margin-top: 10px;
+}
+
+DIV#institutions UL {
+	margin: 0px;
+	padding: 0px;
+}
+DIV#institutions UL LI a{
+	margin-top:60px;
+
+}
+DIV#column1 {
+	float: left;
+	width: 180px;
+	clear: both;
+}
+
+DIV#area {
+	float: left;
+	margin: 0px 4px;
+	width: 816px;
+}
+DIV#area.level2 {
+	padding: 0px 12px;
+	width: 976px;
+}
+
+DIV#empty, DIV.empty {
+	clear: both;
+}
+
+.newmodule {
+	position: absolute;
+}
+
+/*
+*******************************
+ 		CONTENT 
+*******************************
+*/
+.content {
+	margin: 12px;
+	padding: 0px;
+	width: 100%;
+}
+.content .rss {
+	padding:6px;
+}
+.content .btn {
+	height: 18px;
+}
+.content .expression {
+	width: 250px;
+}
+.content ul {
+	padding: 0 0 0 12px;
+	margin: 2px;
+}
+.content li {
+	margin: 0 0 3px 0
+}
+.content .link .contentpic, .content .linkread .contentpic, .content .linkunread .contentpic {
+	width: 12px;
+	padding-top: 5px;
+}

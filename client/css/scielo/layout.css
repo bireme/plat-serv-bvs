@@ -1,0 +1,357 @@
+
+body {
+    font-family : Verdana, Arial, Helvetica, sans-serif;
+    font-size : 75%;
+    font-weight : normal;
+    font-style : normal;
+    margin: 0px 0px 0px 8px;
+    padding: 0px;
+}
+
+body.framed {
+    margin: 0px;
+}
+
+a {
+    font-family : Arial, Verdana, Helvetica, sans-serif;
+    text-decoration: none;
+    font-size : 9pt;
+    font-weight : normal;
+    font-style : normal;
+    color: #555555;
+}
+
+H3 {
+    font-size: 95%;
+    color: #990000;
+}
+
+H4 {
+    font-size: 100%;
+    color: #000000;
+}
+
+li {
+    list-style: none;
+    padding: 0px;
+    margin: 5px 0px 0px 10px;
+}
+
+ul {
+    margin-left: 0px;
+    padding: 0px;
+}
+
+td.section {
+    font-family : Verdana, Arial, Helvetica, sans-serif;
+    font-weight : bold;
+    font-size : 11pt;
+}
+
+td {
+    font-family : Verdana, Arial, Helvetica, sans-serif;
+}
+
+.spacer {
+    clear: both;
+    height: 1px;
+}
+
+.page {
+}
+
+.breadCrumb {
+    padding-bottom: 10px;
+}
+
+.content H3{
+    font-size: 95%;
+}
+
+.middle {
+    float: left;
+    width: 60%;
+    clear: both;
+}
+
+
+/* LOGIN BOX */
+.login {
+    margin-left: 100px;
+    width: 380px;
+    padding: 6px 0px;
+}
+
+.expression {
+	width: 150px;
+	background: #FFF;
+	border: 1px solid #999;
+}
+
+.submit {
+	background: url(../../images/default/submitBg.gif) repeat-x;
+	border: 1px solid #999999;
+	color: #000000;
+	font-size: 90%;
+	cursor: pointer;
+}
+
+.login LABEL {
+    display: inline-block;
+    width: 100px;
+    color: #555;
+    font-size: 90%;
+}
+
+.login_btn {
+    margin: 0 0 0 15px;
+}
+.login_btn A {
+    display: block;
+    width: 135px;
+    height: 35px;
+    background: url(../../images/scielo/scielo_login_button.gif) no-repeat;
+    text-decoration: none !important;
+}
+.login_btn A:hover {
+    background: url(../../images/scielo/scielo_login_buttonHover.gif) no-repeat;
+}
+.login_btn A SPAN.btn_l, .login_btn A SPAN.btn_r {
+    float: left;
+}
+.login_btn A SPAN.btn_l {
+    width: 40px;
+    padding: 12px 5px 0px 8px;
+    color: #FFF;
+    font-weight: bold;
+    font-size: 85%;
+}
+.login_btn A:hover SPAN.btn_l {
+    color: #990000;
+}
+.login_btn A SPAN.btn_r {
+    width: 70px;
+    padding-top: 5px;
+    text-align: center;
+    font-size: 80%;
+}
+/* END OF LOGIN BOX */
+
+/* TOP */
+.top {
+    text-align: center;
+}
+
+.top H1 {
+    display: block;
+    float: left;
+    margin-right: 20px;
+}
+
+.top .left {
+    float: left;
+    margin-right: 20px;
+    text-align: center;
+    width: 70%;
+}
+
+.top .right {
+    float: right;
+    margin-right: 20px;
+    width: 20%;
+    vertical-align: top;
+    height: 100%;
+}
+.top H2 {
+    display: block;
+    float: left;
+    margin-top: 22px;
+}
+
+/* END OF TOP */
+
+.serviceColumn {
+    float: right;
+    margin-top: 50px;
+    margin-right: 10%;
+}
+
+.articlelist li {
+    margin-bottom: 20px;
+}
+
+.topicFolder {
+    border-bottom: solid 1px #9C9C9C;
+    padding: 0px;
+    margin: 0px 0px 10px 0px;
+}
+
+.topicFolder H4 {
+    padding: 0px;
+    margin: 0px;
+    float: left;
+}
+
+.folderTools {
+    text-align: right;
+    float: right;
+}
+
+.folderTools li{
+    display: inline;
+    margin: 0px;
+}
+
+.folderTools ul{
+    margin: 0px;
+}
+.articleBlock {
+    font-size: 90%;
+}
+.titles A {
+    font-weight: bold;
+    border-bottom: 1px dotted #555;
+}
+.titles A:hover {
+    border-bottom: none;
+}
+.authors {
+    font-style: italic;
+    color: #555;
+}
+
+.alert {
+    margin: 4px auto;
+    width: 160px;
+    padding: 12px 0px 12px 40px;
+    color: #666;
+    font-size: 90%;
+    background: #fcf1f1 url(../../images/scielo/alert.gif) no-repeat 8px 4px;
+    border: 1px solid #900;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+}
+.alert OL, .alert LI {
+    padding: 0px !important;
+    margin: 0px !important;
+    list-style: decimal;
+}
+.alert DIV {
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+.articleBlock .services {
+    margin: 4px 0px;
+}
+
+.trackAccess, .trackCitation {
+    font-size: 80%;
+}
+
+.articleBlock .actions A {
+    font-size: 100%;
+}
+
+.articleBlock IMG {
+    vertical-align: top;
+}
+
+.box {
+    border: solid 1px #CCCCCC;
+    padding: 10px;
+    width: 200px;
+    margin-bottom: 10px;
+}
+
+.box li {
+    margin-bottom: 5px;
+}
+.box li IMG {
+    vertical-align: top;
+    margin-right: 5px;
+}
+
+.invitation {
+    margin-left: 10px;
+    padding: 6px 0px 0px 22px;
+    background: url(../../images/scielo/loggedin.png) no-repeat;
+    font-size: 90%;
+}
+
+.invitation .item {
+    display: inline;
+}
+
+.invitation .item A{
+    color: #2B3073;
+}
+.menu LI A {
+    border-bottom: 1px dotted #AAA;
+    text-decoration: none;
+}
+.menu LI A:hover {
+    border-bottom: none;
+}
+.toolsright {
+    margin-top: 10px;
+    text-align: left;
+}
+
+.toolsright .item {
+    display: inline;
+}
+
+.toolsright .item A{
+    font-size: 12px;
+    color: #2B3073;
+}
+
+.helplogin {
+    position: absolute;
+    width: 200px;
+    right:78%;
+    margin-top: 4px;
+    border: 1px solid #900;
+    padding: 5px;
+    background: #fcf1f1;
+    color: #666;
+    font-size: 85%;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+}
+.formBlock {
+    padding: 2px 0px;
+}
+.login LABEL {
+    display: block;
+    width: 100px;
+}
+.formElements LABEL {
+    width: 130px;
+    display: inline-block;
+    vertical-align: top;
+}
+.formElements .textEntry {
+    width: 200px;
+    border: 1px solid #666;
+}
+.formElements .help {
+    margin-left: 135px;
+    font-size: 90%;
+}
+.formElements .submitFalse, .formElements .submitTrue {
+    background: transparent url(../../images/scielo/submitBg.gif) repeat-x scroll 0 0;
+    border: 1px solid #999;
+    color: #000;
+}
+span.paginator {
+    font-weight: normal;
+    border: 1px;
+    padding: 5px;
+}
+span.paginatorSelected {
+    font-weight: bold;
+    border: 1px solid #999;
+    padding: 2px;
+    margin: 2px;
+}

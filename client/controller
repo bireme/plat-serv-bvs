@@ -1,0 +1,11 @@
+<?php
+ob_start();
+require_once(dirname(__FILE__)."/includes/includes.php");
+
+/* when the action is authentication the user data is reloaded */
+if ($control == "business" || $_REQUEST["action"] == 'authentication'){
+    require_once(dirname(__FILE__)."/business.php");
+}
+require_once(dirname(__FILE__)."/view.php");
+ob_end_flush();
+?>

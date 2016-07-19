@@ -1,0 +1,56 @@
+<?php
+/**
+ ***********************************************************************************
+ * ATENÇÂO! Este arquivo deve ser editado utilizando o conjunto de caracteres UTF-8.
+ * Certifique-se de que o caractere a seguir esteja correto: "á"
+ ***********************************************************************************
+ */
+
+/* Web Services configuration*/
+define("SERVICES_PLATFORM_DOMAIN","http://vm.platserver");
+define("SERVICES_PLATFORM_SERVER",SERVICES_PLATFORM_DOMAIN."/webservices");
+
+/* Site configuration */
+define("COOKIE_DOMAIN_SCOPE",".bvssite.br"); /* begin with a 'dot' to include subdomains */
+define("DEFAULT_SKIN","default");
+define("CHARSET","utf-8");
+define("DOCTYPE",'<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">');
+define("VERSION","4.0-rc7");
+define("DEFAULT_LANG","pt");
+define("ERROR_REPORTING",0);
+define("USE_SERVER_PATH",false);
+
+define('ENABLE_SCIELO_SSO',false); /* true if is a scielo instance */
+
+define("RELATIVE_PATH",""); /*if the app isnt installed at the root directory */
+
+define("SITENAME","Plataforma de Serviços da BVS");
+define("SITE_IDENTITY","ASK_YOURS_FOR_BIREME"); /*Bireme will give a SITE_IDENTITY 
+    * to be configured in this attribute*/
+
+define("HOME","/users/loginLDAP.php");
+define("MAIN_PAGE","requestauth");
+define("LOGOUT","");
+$EscapeRedirectToHome = array(substr(HOME,(strrpos(HOME,'/'))+1),
+                                'userData.php',
+                                'userProfile.php',
+                                'forgot.php'); /* escape from authentication */
+
+define("DOCUMENTS_PER_PAGE","200"); /* pagination */
+
+/* Regular Expressions */
+define("REGEXP_LANGUAGE","/^(pt)|(es)|(en)|(fr)|(ja)|(ar)$/");
+define("REGEXP_SKIN","/^(default)|(scielo)|(regional)$/");
+define("REGEXP_EMAIL","/^[a-z_][a-z0-9_\.]+@[a-z0-9]+(\.[a-z0-9_]+)+$/i");
+
+/* MCRYPT */
+define('CRYPT_PUBKEY','biremepubkey'); /* public */
+
+/* TRIGRAMAS */
+define('DEFAULT_TRIGRAMAS_MODE','LILACS.orgiahx'); /* LILACS.orgiahx|SciELO.orgiahx */
+
+/* log configuration */
+$_conf = array('mode' => 0600, 'timeFormat' => '%X %x');
+define('LOG_FILE',dirname(__FILE__).'/out.log');
+?>

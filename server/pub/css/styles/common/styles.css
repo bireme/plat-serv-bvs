@@ -1,0 +1,145 @@
+.container {
+	background: #f5f9f9;
+}
+
+DIV#header {
+	background: url(../../../images/banner.jpg) no-repeat;
+	margin-bottom: 5px;
+}
+
+DIV#header H1#logo A {
+	background: url(../../../images/logobvs.gif) no-repeat;
+}
+
+DIV#header H2 {
+	font-size: 110%;
+	color: #009;
+}
+#institutions ul {
+	height: 80px;
+	width:124px;	
+}
+#institutions{
+	float:right;
+	text-align:center;
+}
+DIV#institutions UL li{
+	display:inline;
+	list-style: none;
+}
+DIV#institutions li a{
+	text-decoration:none;
+	color: #1F5284;
+	font-size: 60%;
+}
+
+DIV#idioma {
+	font-size: 75%;
+	text-align: right;
+}
+
+DIV#idioma A {
+	color: #003063;
+	text-decoration: none;
+}
+
+DIV#idioma A:hover {
+	text-decoration: underline;
+}
+
+DIV#area.level2 {
+	background: #F5F9F9 !important;
+}
+
+/*
+****************************************
+ 				FOOTER 
+****************************************
+*/
+#footer {
+	font-size: 70%;
+	color: #666;
+	background: #E4EDED;
+	border-top: 1px solid #90979A;
+	clear: both;
+	padding: 12px;
+}
+
+/*
+*******************************
+ 		SECOND LEVEL 
+*******************************
+*/
+
+.secondLevel {
+	background: none !important;
+	clear: both;
+	display: block;
+	margin-left: 20px;
+}
+
+.level2 .searchItens {
+	font-size: 90%;
+	color: #666;
+}
+
+.level2 #collection {
+	width: 760px;
+}
+
+.level2 .content LI {
+	list-style: none;
+	margin: 20px 0px;
+}
+
+.level2 .content H5 {
+	font-size: 95%;
+	margin: 0px;
+}
+
+.level2 .content H5 A {
+	color: #333;
+}
+
+.level2 .content H5 A:hover {
+	color: #9C0000;
+	text-decoration: underline;
+}
+
+.level2 .content LI .description {
+	font-size: 90%;
+	line-height: 150%;
+}
+
+.alert {
+
+}
+
+.ok {
+    border: 1px solid #900;
+    padding: 5px;
+    background: #dff7df;
+    margin: 20px;
+    border: solid 1px #003300;
+    width: 300px;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+}
+
+.error {
+    background-color: #FFF4F4;
+    padding: 10px;
+    margin: 20px;
+    border: solid 2px #990000;
+    font-size: 12px;
+    width: 300px;
+}
+
+.fieldmandatory {
+    margin-bottom: 10px;
+    background: url(../../../images/exclaim.gif) no-repeat right;
+}
+
+.field {
+    margin-bottom: 10px;
+}

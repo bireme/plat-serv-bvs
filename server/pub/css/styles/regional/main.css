@@ -1,0 +1,11 @@
+/* HTML redefinitions  */
+@import url(../common/general.css);
+
+/* Website layout (changes are not recomended) */
+@import url(../common/layout.css);
+
+/* General styles descriptions (banner, footer and general look-and-feel) */
+@import url(../common/styles.css);
+
+/* Boxes definitions */
+@import url(../common/components.css);

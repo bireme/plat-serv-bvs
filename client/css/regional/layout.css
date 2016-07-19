@@ -1,0 +1,414 @@
+body {
+    font-family : Arial, Helvetica, sans-serif;
+    font-size : 75%;
+    font-weight : normal;
+    font-style : normal;
+    margin: 0px;
+    padding: 0px;
+    background: #EDF3F3 url(../../images/regional/topBackground.jpg) repeat-x;
+}
+body.framed {
+    margin: 0px;
+    background: #E6EDED;
+}
+
+a {
+    font-family : Arial, Verdana, Helvetica, sans-serif;
+    text-decoration: none;
+    font-size : 9pt;
+    font-weight : normal;
+    font-style : normal;
+    color: #555555;
+}
+
+H3 {
+    font-size: 95%;
+    color: #990000;
+}
+
+H4 {
+    font-size: 100%;
+    color: #000000;
+}
+
+li {
+    list-style: none;
+    padding: 0px;
+    margin: 5px 0px 0px 10px;
+}
+
+ul {
+    margin-left: 0px;
+    padding: 0px;
+}
+
+td.section {
+    font-family : Verdana, Arial, Helvetica, sans-serif;
+    font-weight : bold;
+    font-size : 11pt;
+}
+
+td {
+    font-family : Verdana, Arial, Helvetica, sans-serif;
+}
+
+.spacer {
+    clear: both;
+    height: 1px;
+}
+
+.page {
+
+}
+
+.breadCrumb {
+    padding: 10px 0px;
+    margin-left: 15px;
+}
+
+.content H3{
+    font-size: 95%;
+}
+
+.middle {
+    float: left;
+    width: 60%;
+    clear: both;
+    margin-left: 15px;
+}
+
+
+
+/* LOGIN BOX */
+.login {
+    margin-left: 100px;
+    width: 380px;
+    padding: 6px 0px;
+}
+.login .form {
+    padding: 12px;
+    margin: 8px 0px;
+    border: 1px solid #CECECE;
+}
+.expression {
+    width: 200px;
+    margin-bottom: 8px;
+    padding: 5px;
+    background: #FFF;
+    border: 1px solid #CECECE;
+}
+
+.submit {
+    background: #6188A0 none repeat scroll 0 0;
+    border-color: #B0C3CF #314450 #314450 #B0C3CF;
+    border-style: solid;
+    border-width: 1px;
+    color: white;
+    font-size: 90%;
+    cursor: pointer;
+}
+.login LABEL {
+    display: inline-block;
+    width: 100px;
+    color: #555;
+    font-size: 90%;
+}
+
+
+.login_btn {
+    margin: 0px;
+}
+.login_btn A {
+    display: block;
+    width: 135px;
+    height: 35px;
+    background: url(../../images/regional/login_button.gif) no-repeat;
+    text-decoration: none !important;
+}
+.login_btn A:hover {
+    background: url(../../images/regional/login_buttonHover.gif) no-repeat;
+}
+.login_btn A SPAN.btn_l, .login_btn A SPAN.btn_r {
+    /*display: inline-block;*/
+    float: left;
+}
+.login_btn A SPAN.btn_l {
+    width: 40px;
+    padding: 12px 5px 0px 8px;
+    color: #FFF;
+    font-weight: bold;
+    font-size: 85%;
+}
+.login_btn A:hover SPAN.btn_l {
+    color: #24338C;
+}
+.login_btn A SPAN.btn_r {
+    width: 70px;
+    padding-top: 5px;
+    text-align: center;
+    font-size: 80%;
+}
+.helplogin {
+    position: absolute;
+    width: 220px;
+    top: 210px;
+    left: 320px;
+    border: 1px solid #039;
+    padding: 5px;
+    background: #e5f1ff;
+    color: #666;
+    font-size: 85%;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+}
+.page H3 {
+    margin: 0px;
+    color: #555;
+}
+.alertlogin {
+    margin: 10px 0px 10px 140px;
+    width: 300px;
+    padding: 8px;
+    color: #666;
+    font-size: 90%;
+    background: #e5f1ff url(../../images/scielo/alert.gif) no-repeat 8px 4px;
+    border: 1px solid #039;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+}
+.alertlogin OL {
+    margin-top: 10px;
+}
+.alertlogin LI {
+    list-style: decimal;
+}
+.alertlogin LI A {
+    text-decoration: underline;
+    font-weight: bold;
+}
+.alertlogin DIV {
+    font-weight: bold;
+    margin: 6px 0px;
+    padding-left: 36px;
+}
+
+/* END OF LOGIN BOX */
+
+/* TOP */
+.bar {
+    margin-right: 6%;
+    padding-top: 2px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 50%;
+    font-size: 75%;
+    font-weight: bold;
+    text-align: right;
+}
+.bar A {
+    color: #FFF;
+}
+.bar #otherVersions UL {
+    margin: 0px;
+}
+.bar #otherVersions LI {
+    display: inline;
+    margin: 0px;
+    padding: 0px 7px 0px 5px;
+    border-right: 2px solid White;
+}
+.bar #otherVersions LI:last-child {
+    border-right: none;
+}
+.top {
+    height: 110px;
+    background: url(../../images/regional/bg_banner.jpg) no-repeat;
+}
+
+.top #parent {
+    text-align: center;
+    float: left;
+    padding: 18px 0 0 10px;
+    width: 180px;
+}
+
+.top A IMG {
+    border: 0px;
+}
+.top H1 {
+    display: block;
+    float: left;
+    margin-right: 20px;
+}
+
+
+.top #identification {
+    float: left;
+    height: 110px;
+    width: 60%;
+}
+.top #identification h1 {
+    color: #22268E;
+    font-size: 130%;
+}
+.top #identification h1 {
+    margin: 93px 0 0 200px;
+}
+
+/* END OF TOP */
+
+.serviceColumn {
+    float: right;
+    margin-top: 50px;
+    margin-right: 10%;
+}
+
+.articlelist li {
+    margin-bottom: 20px;
+}
+
+.topicFolder {
+    border-bottom: solid 1px #9C9C9C;
+    padding: 0px;
+    margin: 0px 0px 10px 0px;
+}
+
+.topicFolder H4 {
+    padding: 0px;
+    margin: 0px;
+    float: left;
+}
+
+.folderTools {
+    text-align: right;
+    float: right;
+}
+
+.folderTools li{
+    display: inline;
+    margin: 0px;
+}
+
+.folderTools ul{
+    margin: 0px;
+}
+.articleBlock {
+    font-size: 90%;
+}
+.titles A {
+    font-weight: bold;
+    border-bottom: 1px dotted #555;
+}
+.titles A:hover {
+    border-bottom: none;
+}
+.authors {
+    font-style: italic;
+    color: #555;
+}
+
+.alert {
+    margin: 4px auto;
+    width: 90px;
+    padding: 12px 0px 12px 40px;
+    color: #666;
+    font-size: 90%;
+    background: #e5f1ff url(../../images/scielo/alert.gif) no-repeat 8px 4px;
+    border: 1px solid #039;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+}
+.articleBlock .services {
+    margin: 4px 0px;
+}
+
+.trackAccess, .trackCitation {
+    font-size: 80%;
+}
+
+.articleBlock .actions A {
+    font-size: 100%;
+}
+
+.articleBlock IMG {
+    vertical-align: top;
+}
+
+.box {
+    border: solid 1px #CCCCCC;
+    padding: 10px;
+    width: 200px;
+    margin-bottom: 10px;
+}
+
+.box li {
+    margin-bottom: 5px;
+}
+.box li IMG {
+    vertical-align: top;
+    margin-right: 5px;
+}
+
+.invitation {
+    margin: 0px 0px 4px 0px;
+    padding: 8px 0px 0px 22px;
+    background: url(../../images/scielo/loggedin.png) no-repeat;
+    font-size: 90%;
+}
+
+.actions .item {
+    display: inline;
+}
+
+.actions .item A{
+    color: #2B3073;
+}
+.menu UL {
+    margin: 10px 0px 0px 0px;
+}
+.menu LI {
+    margin: 0px 0px 5px 0px;
+}
+.menu LI A {
+    border-bottom: 1px dotted #AAA;
+    text-decoration: none;
+}
+.menu LI A:hover {
+    border-bottom: none;
+}
+.toolsright {
+    margin-top: 10px;
+    text-align: left;
+}
+
+.toolsright .item {
+    display: inline;
+}
+
+.toolsright .item A{
+    font-size: 12px;
+    color: #2B3073;
+}
+.formBlock {
+    padding: 2px 0px;
+}
+
+.formElements LABEL {
+    width: 130px;
+    display: inline-block;
+    vertical-align: top;
+}
+.formElements .textEntry {
+    width: 200px;
+    border: 1px solid #666;
+}
+.formElements .help {
+    margin-left: 135px;
+    font-size: 90%;
+}
+.formElements .submitFalse, .formElements .submitTrue {
+    background: transparent url(../../images/scielo/submitBg.gif) repeat-x scroll 0 0;
+    border: 1px solid #999;
+    color: #000;
+}

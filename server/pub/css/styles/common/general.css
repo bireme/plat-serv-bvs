@@ -1,0 +1,29 @@
+/* REDEFINITION OF HTML ELEMENTS */
+
+
+body {
+	margin: 0px;
+	padding: 0px;
+	background-color: #FFF;
+	color: #333;
+	font-family: Arial,sans-serif, verdana;
+	font-size: 11pt;
+}
+
+IMG {
+	border: none;
+}
+
+FORM {
+	margin: 0px;
+	padding: 0px;
+}
+
+A {
+	color: #666;
+}
+
+iframe {
+	background: none;
+	border: none;
+}

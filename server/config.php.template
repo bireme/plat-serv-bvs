@@ -1,0 +1,87 @@
+<?php
+/**
+ * Server Side configuration file
+ *
+ * @package     Plataforma de Serviços da BVS
+ * @author      Fabio Batalha C. Santos (fabio.santos@bireme.org)
+ * @author      Gustavo Fonseca (gustavo.fonseca@bireme.org)
+ * @copyright   BIREME
+ *
+ */
+
+/*
+ * Edit this file in UTF-8 - Test String "áéíóú"
+ */
+
+/* MYSQL Database configuration */
+define("DB_HOST","localhost");
+define("DB_USERNAME","");
+define("DB_PASSWORD","");
+define("DB_DBNAME","servicesplatform");
+
+/* Site configuration */
+define("SITENAME","Plataforma de Serviços da BVS");
+
+define("APP_BASEDIR",dirname(__FILE__)); /* app base dir ex. /home/servplat/htdocs */
+define("CHARSET","utf-8"); /* output charset */
+define("ACCEPTED_CHARSETS","UTF-8,ISO-8859-1"); /* input charsets */
+define("SYS_CHARSET","UTF-8"); /* internal sys charset */
+
+define("DOCTYPE",'<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">');
+define("VERSION","4.0-rc7");
+define("DEFAULT_LANG","pt");
+define("USE_SERVER_PATH",false);
+define("RELATIVE_PATH",""); /*if the app isnt installed at the root directory */
+
+define("HOME","/users/loginLDAP.php");
+define("LOGOUT","");
+
+define("DOCUMENTS_PER_PAGE","10"); /* pagination */
+
+/* Regular Expressions */
+define("REGEXP_LANGUAGE","^(pt)|(es)|(en)$");
+define("REGEXP_EMAIL","/^[a-z_][a-z0-9_\.]+@[a-z0-9]+(\.[a-z0-9_]+)+$/i");
+define("REGEXP_INTEGER","/^[0-9]+$/");
+define("REGEXP_DIRNAME",'/[À-ÖØ-öø-ÿ\w\-]+/');
+define("REGEXP_DOCID","/^[A-Za-z0-9_-]+$/");
+define("REGEXP_HTTP","/^(https?).+/");
+
+define("REGEXP_USER_NAME",'/[À-ÖØ-öø-ÿ\w\-]+/');
+define("REGEXP_USER_GENDER",'/[MF]/');
+define("REGEXP_USER_DEGREE",'/[À-ÖØ-öø-ÿ\w\-]+/');
+define("REGEXP_USER_AFFILIATION",'/[À-ÖØ-öø-ÿ\w\-]+/');
+
+/* XML Schemas */
+define("XSD_XMLDOC",APP_BASEDIR."/xsd/xmlDoc.xsd");
+define("XSD_XMLLINKS",APP_BASEDIR."/xsd/xmlLinks.xsd");
+define("XSD_XMLNEWS",APP_BASEDIR."/xsd/xmlNews.xsd");
+define("XSD_XMLTRIGRAMAS",APP_BASEDIR."/xsd/xmlTrigramas.xsd");
+
+/* MCRYPT configuration */
+define("CRYPT_KEY","bireme"); /* private */
+define('CRYPT_PUBKEY','biremepubkey'); /* shared */
+
+/* TRIGRAMAS */
+define("TRIGRAMAS_CITED_ID","http://trigramas.bireme.br/cgi-bin/mx/cgi=@scielo/cited?pid=");
+define("TRIGRAMAS_SIMILARS_ID","http://trigramas.bireme.br/cgi-bin/mx/cgi=@scielo/related?pid=");
+define("TRIGRAMAS_SIMILARS_STRING","http://trigramas.bireme.br/cgi-bin/mx/cgi=@1?xml&collection=#COLLECTION_MODE#.TiKwAb&minsim=0.30&maxrel=30&text=");
+define('DEFAULT_TRIGRAMAS_MODE','LILACS.orgiahx'); /* LILACS.orgiahx|SciELO.orgiahx */
+
+/* log configuration */
+$_conf = array('mode' => 0600, 'timeFormat' => '%X %x');
+define('LOG_FILE',APP_BASEDIR.'/out.log');
+define('LOG_FILE_MAIL',APP_BASEDIR.'/mail.log');
+
+/* EMAIL configuration */
+define("EMAIL_HOST",'pombo.bireme.br');
+define("EMAIL_FROM",'appservplat@bireme.org');
+define("EMAIL_FROMNAME",'BVS Network');
+define("EMAIL_USERNAME",'');
+define("EMAIL_PASSWORD",'');
+define("EMAIL_NEWPASSWORD_TEMPLATE",APP_BASEDIR.'/templates/mail/sendNewEMail.tpl');
+
+/* WWW Public files */
+define("ERROR_REPORTING",0); // 0 || E_ALL
+
+?>

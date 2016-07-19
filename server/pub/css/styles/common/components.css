@@ -1,0 +1,129 @@
+/*
+*******************************
+ 	REGISTRATION FORM 
+*******************************
+*/
+
+.formLine {
+	margin: 4px 0px;
+}
+
+form {
+	font-size: 90%;
+}
+
+form .legend {
+    float: left;
+	width: 150px;
+	margin-top: 15px;
+	margin-right: 10px;
+	text-align: right;
+}
+
+form input.thinbox, form select {
+	margin-top: 8px;
+	width: 300px;
+	color: #454545;
+	padding: 5px;
+}
+form .gender {
+	width: 300px;
+}
+
+form .spacer {
+	width: 100%;
+	float: left;
+	height: 1px;	
+}
+form legend {
+	font-size: 140%;
+	font-weight: bold;
+	padding: 10px;
+	color: #000;
+}
+
+form fieldset {
+	border: 1px solid #cecece;
+	width: 500px;
+	margin-left: 50px;
+	float: left;
+}
+
+form textarea {
+	width: 300px;
+	height: 150px;
+	margin-top: 8px;
+}
+
+form .submit, form .cancel {
+	border: 1px solid;
+	border-color: #B0C3CF #314450 #314450 #B0C3CF;
+	background: #6188A0;
+	color: #fff;
+}
+form .submit {
+    float: right;
+}
+form .cancel {
+    float: left;
+}
+.actionBtn {
+    clear: both;
+    width: 520px;
+    margin-left: 50px;
+    padding: 20px 0px;
+    margin-bottom: 12px;
+}
+
+.btn {
+	color: #FFF;
+	background: #6287a1;
+	border-top: 1px solid #b1c3cd;
+	border-right: 1px solid #304351;
+	border-bottom: 1px solid #304351;
+	border-left: 1px solid #b1c3cd;
+	font-family: arial;
+	font-size: 80%;
+	margin-left: 165px;
+}
+
+.loginBox .btn {
+	margin-left: 418px;
+}
+
+form input.thinbox, form select, form textarea.expression { 
+	border: 1px solid #cecece;
+}
+
+.tfvNormal {
+    margin: 4px 0px 0px 160px;
+    font-size: 90%;
+    color: #ba5151;
+}
+
+.help {
+	border: 1px solid #cecece;
+	float: left;
+	width: 300px;
+	margin: 20px;
+}
+.help h5 {
+	margin: 0px;
+	background: #ccdddd;
+	height: 25px;
+	float: left;
+	width: 100%;
+	margin-bottom: 5px;	
+}
+.help h5 span {
+	margin: 7px;
+	display: block;
+	}
+.help p {
+	margin: 5px;	
+}
+
+form fieldset h3 {
+	margin: 5px 0px 0px 20px;
+	font-size: 120%;
+}
