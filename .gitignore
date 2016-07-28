@@ -1,0 +1,4 @@
+client/config.php
+server/config.php
+server/instances_code.php
+server/config.ldap.php
