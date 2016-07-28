@@ -1,4 +1,7 @@
+client/.htaccess
 client/config.php
+client/out.log
+server/out.log
 server/config.php
-server/instances_code.php
 server/config.ldap.php
+server/instances_code.php
