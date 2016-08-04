@@ -23,12 +23,12 @@
 class Authentication {
     public static function loginUser($userID,$userPass){
         $result = false;
-        
-        /* encrypt login params using a public key */
-        $cUserID = Crypt::encrypt(trim($userID));
-        $cUserPass = Crypt::encrypt(trim($userPass));
 
-        if(!empty($cUserID) && !empty($cUserPass)){
+        if(!empty($userID) && !empty($userPass)){
+            /* encrypt login params using a public key */
+            $cUserID = Crypt::encrypt(trim($userID));
+            $cUserPass = Crypt::encrypt(trim($userPass));
+
             try{
                 $objSoapClient = new SoapClient(null,
                     array('location'=>SERVICES_PLATFORM_SERVER.'/Authentication.php',
@@ -41,7 +41,6 @@ class Authentication {
             }
             
         }
-
         return $result;
     }
 

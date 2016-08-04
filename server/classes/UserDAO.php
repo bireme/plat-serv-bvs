@@ -24,12 +24,57 @@ require_once(dirname(__FILE__)."/Tools.php");
 class UserDAO {
 
     /**
+     * Load a specific BIREME Accounts user
+     *
+     * @param string $userID
+     * @return object User object
+     */
+    public static function getAccountsUser($userID, $userPass){
+        global $_conf;
+        $retValue = false;
+        $strsql = "SELECT *
+                    FROM auth_user
+                    WHERE username = '".$userID."'
+                      OR email = '".$userID."'";
+
+        try{
+            $_db = new AccountsDBClass();
+            $res = $_db->databaseQuery($strsql);
+        }catch(AccountsDBClassException $e){
+            $logger = &Log::singleton('file', LOG_FILE, __CLASS__, $_conf);
+            $logger->log($e->getMessage(),PEAR_LOG_EMERG);
+        }
+
+        if($res[0]['password']){
+            $passChunks = explode('$', $res[0]['password']);
+            $iterations = $passChunks[1];
+            $salt = $passChunks[2];
+            $hash = $passChunks[3];
+            $pbkdf2 = base64_encode(hash_pbkdf2("sha256", $userPass, $salt, $iterations, 32, true));
+
+            if($hash == $pbkdf2){
+                $objUser = new User();
+                $objUser->setID($res[0]['username']);
+                $objUser->setFirstName($res[0]['first_name']);
+                $objUser->setLastName($res[0]['last_name']);
+                $objUser->setEmail($res[0]['email']);
+                $objUser->setPassword($userPass);
+                $objUser->setProfile(ProfileDAO::getProfileList($objUser->getID()));
+
+                $retValue = $objUser;
+            }
+        }
+        return $retValue;
+    }
+
+    /**
      * Load a specific user
      *
      * @param string $userID
      * @return object User object
      */
     public static function getUser($userID){
+        global $_conf;
         $retValue = false;
         $strsql = "SELECT *
                     FROM users
@@ -68,32 +113,38 @@ class UserDAO {
      * @return boolean
      */
     public static function addUser($objUser){
+        global $_conf;
         $retValue = true;
         $canInsert = true;
-       
-        /* add user to LDAP */
-        $attrs = array('cn' => $objUser->getID(),
-                       'userPassword' => (string)$objUser->getPassword(),
-                       'mail' => $objUser->getEmail(),
-                       'givenName' => $objUser->getFirstName()
-                       .' '.$objUser->getLastName());
 
-        $connConfig = ToolsAuthentication::configLDAPConnection($objUser->getID());
-        /* try to add the entry to LDAP */
-        try{
-            LDAP::add($connConfig, $attrs);
-        }catch(Exception $e){
-            if($e->getCode() != 500){ /* duplicated entry */
-                $canInsert = false;
-                $retValue = false;
+        /* check users from BIREME Acccounts only */
+        if (USE_BIR_ACCOUNTS_AUTH !== true){
 
-                /* system log */
-                $logger = &Log::singleton('file', LOG_FILE, __CLASS__, $_conf);
-                $logger->log($e->getMessage(),PEAR_LOG_EMERG);
+            /* add user to LDAP */
+            $attrs = array('cn' => $objUser->getID(),
+                           'userPassword' => (string)$objUser->getPassword(),
+                           'mail' => $objUser->getEmail(),
+                           'givenName' => $objUser->getFirstName()
+                           .' '.$objUser->getLastName());
+
+            $connConfig = ToolsAuthentication::configLDAPConnection($objUser->getID());
+            /* try to add the entry to LDAP */
+            try{
+                LDAP::add($connConfig, $attrs);
+            }catch(Exception $e){
+                if($e->getCode() != 500){ /* duplicated entry */
+                    $canInsert = false;
+                    $retValue = false;
+
+                    /* system log */
+                    $logger = &Log::singleton('file', LOG_FILE, __CLASS__, $_conf);
+                    $logger->log($e->getMessage(),PEAR_LOG_EMERG);
+                }
+                
             }
-            
+
         }
-     
+
         /* if the user does not exist in SP database */
         if(!self::isUser($objUser->getID())){
             if($canInsert === true){
@@ -116,13 +167,13 @@ class UserDAO {
                                                 $objUser->getCountry()."','".
                                                 $objUser->getSource()."','".
                                                 $objUser->getDegree()."','".
-                                                // empty password
                                                 $objUser->getEmail(). "',''";
+                                                // empty password
                 $strsql .= ")";
 
                 try{
                     $_db = new DBClass();
-                    $insertID = $_db->databaseExecInsert($strsql);
+                    $res = $_db->databaseExecInsert($strsql);
                 }catch(DBClassException $e){
                     $logger = &Log::singleton('file', LOG_FILE, __CLASS__, $_conf);
                     $logger->log($e->getMessage(),PEAR_LOG_EMERG);
@@ -145,7 +196,7 @@ class UserDAO {
      * @return boolean
      */
     public static function updateUser($objUser, $updUserID=false){
-
+        global $_conf;
         $retValue = false;
 
         if(self::isUser($objUser->getID()) === true){
@@ -205,6 +256,7 @@ class UserDAO {
      * @return boolean
      */
     public static function isUser($userID){
+        global $_conf;
         $retValue = false;
         $strsql = "SELECT count(userID) FROM users
                     WHERE userID = '".trim($userID)."'" ;
@@ -232,6 +284,7 @@ class UserDAO {
      * @return boolean
      */
     public static function createNewPassword($userID){
+        global $_conf;
         $retValue = false;
 
         /* Get the custom LDAP data, based on user's mail domain */
@@ -270,6 +323,7 @@ class UserDAO {
     }
 
     public static function getSysUID($userID){
+        global $_conf;
 
         $strsql = "SELECT sysUID FROM users WHERE userID = '".$userID."'" ;
 
@@ -290,6 +344,7 @@ class UserDAO {
      * @return
      */
     public static function isMigrated($sguID){
+        global $_conf;
         $retValue = false;
 
         $strsql = "SELECT count(sysUID) FROM users WHERE sguID = '" . $sguID ."'";
@@ -316,6 +371,7 @@ class UserDAO {
      * @return boolean|integer
      */
     public static function getUsersCount($migrated=false, $domain=null){
+        global $_conf;
         $retValue = false;
 
         $strsql= 'SELECT count(*) as total FROM users';
@@ -337,8 +393,8 @@ class UserDAO {
             $logger->log($e->getMessage(),PEAR_LOG_EMERG);
         }
 
-        if($res[0]['total'] >= 0){
-            $retValue =$res[0]['total'];
+        if(isset($res) && $res[0]['total'] >= 0){
+            $retValue = $res[0]['total'];
         }
         return $retValue;
     }

@@ -19,4 +19,6 @@ require_once(dirname(__FILE__)."/../config.php");
 require_once(dirname(__FILE__)."/../lib/libLog/Log.php");
 /* DB class */
 require_once(dirname(__FILE__)."/../classes/DBClass.php");
+/* DB BIREME Accounts class */
+require_once(dirname(__FILE__)."/../classes/AccountsDBClass.php");
 ?>

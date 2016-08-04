@@ -7,4 +7,4 @@
 <meta name="generator" content="BVSServices <?= VERSION ?>" />
 
 <link rel="shortcut icon" href="favicon.ico"/>
-<link rel="stylesheet" type="text/css" href="/pub/css/layout.css" />
+<link rel="stylesheet" type="text/css" href="css/styles/common/layout.css" />

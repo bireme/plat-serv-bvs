@@ -80,7 +80,6 @@ switch($acao){
         $usr->setSource($source);
 
         if(Verifier::chkObjUser($usr)){
-
             $result = UserDAO::updateUser($usr);
         }
 
@@ -142,7 +141,7 @@ $DocTitle = $isUser?UPDATE_USER_TITLE:REGISTER_NEW_USER_TITLE;
                 <div id="cache" style="position:absolute;left:0;top:0;z-index:8;display:none;"></div>
                     <div class="secondLevel">
                         <? if($callerURL){ ?>
-                            <a href="http://<?=$callerURL?>">home</a>&gt;
+                            <a href="http://<?=$callerURL?>">home</a> &gt;
                         <?}?>
                         <?
                             if($isUser){
@@ -230,10 +229,10 @@ $DocTitle = $isUser?UPDATE_USER_TITLE:REGISTER_NEW_USER_TITLE;
                                     <select name="degree" class="expression">
                                         <option value=""><?=CHOOSE_DEGREE?></option>
                                         <?
-                                            $arr = split(",",FIELD_DEGREE);
+                                            $arr = explode(",",FIELD_DEGREE);
 
                                             foreach($arr as $item){
-                                                $arr2 = split("\|",$item);
+                                                $arr2 = explode("|",$item);
 
                                                 if($arr2[0] == $usr->getDegree()){
                                                     echo '<option SELECTED value="'.$arr2[0].'">'.$arr2[1].'</option>'."\n";

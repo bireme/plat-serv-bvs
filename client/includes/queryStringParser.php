@@ -15,7 +15,7 @@
 $queryString = strpos($_SERVER['REQUEST_URI'],'controller');
 $queryString = substr($_SERVER['REQUEST_URI'],$queryString
     ,strlen($_SERVER['REQUEST_URI']));
-$queryString = split("/",$queryString);
+$queryString = explode("/",$queryString);
 
 for ($i=0 ; $i<count($queryString) ; $i++){
     if ($i === 0){

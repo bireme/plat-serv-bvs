@@ -42,7 +42,7 @@ class Verifier {
      * @param string $arrParams['linkID'] Links ID
      * @param string $arrParams['trigramasXML'] Trigramas XML
      */
-    public function __construct($arrParams){        
+    public function __construct($arrParams){
         $this->_data = CharTools::eqStrCharsetFromArray($arrParams);
     }
 
@@ -63,8 +63,17 @@ class Verifier {
     public function chkUserTK(){
         $retValue = false;
         $arrUserParm = Token::unmakeUserTK($this->_data['userTK']);
-        
-        if (LDAPAuthenticator::authenticateUser($arrUserParm['userID'],$arrUserParm['userPass'])){
+
+        /* check if user is from BIREME Acccounts */
+        if (USE_BIR_ACCOUNTS_AUTH === true) {
+            $arrUserParm = Token::unmakeUserTK($this->_data['userTK'], true);
+            $user = UserDAO::getAccountsUser($arrUserParm['userID'], $arrUserParm['userPass']);
+
+            if($user){
+                $this->_data['userTK'] = $arrUserParm;
+                $retValue = true;
+            }
+        } elseif (LDAPAuthenticator::authenticateUser($arrUserParm['userID'],$arrUserParm['userPass'])){
             $this->_data['userTK'] = $arrUserParm;
             $retValue = true;
         }
@@ -265,7 +274,7 @@ class Verifier {
         }
 
         if($objUser->getAffiliation()){
-            if(!preg_match(REGEXP_USER_AFFILIATION,$objUser->getAffiliation())){
+            if(!preg_match(REGEXP_USER_AFFILIATION, $objUser->getAffiliation())){
                 return false;
             }
         }

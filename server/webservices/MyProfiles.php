@@ -46,7 +46,6 @@ function addProfile($userTK,$profileXML){
             /* add each document */
             $retObjProfile = ProfileDAO::addProfile($retParams['userTK']['userID'],$objProfile);
         }
-
     }
     return $retObjProfile;
 }

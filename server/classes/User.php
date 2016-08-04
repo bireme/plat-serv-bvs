@@ -23,7 +23,9 @@ class User {
 	private $_profiles = array();
 	private $_degree;
 	private $_affiliation;        
-        private $_sguID;
+    private $_sguID;
+    private $_country;
+    private $_source;
 
     public function __construct(){}
 

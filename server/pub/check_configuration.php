@@ -78,7 +78,7 @@ check(version_compare(phpversion(), '5.2.4', '>='), 'PHP version is at least 5.2
 
 check(class_exists('Net_LDAP2'),'PEAR Net_LDAP2 API is installed', 'Check if the PEAR and Net_LDAP2 API are correctly installed and configured', false);
 
-check(function_exists('mysql_connect'), 'MySQL module is installed', 'Install the MySQL module (need to recompile php)', false);
+check(function_exists('mysqli_connect'), 'MySQL module is installed', 'Install the MySQL module (need to recompile php)', false);
 
 check(function_exists('ldap_connect'), 'LDAP module is installed', 'Install the LDAP module (need to recompile php)', false);
 

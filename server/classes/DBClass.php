@@ -36,12 +36,12 @@ class DBClass{
      * Create the connection with the database.
      */
     public function DBClass(){
-        $this->_conn = mysql_connect($this->_host, $this->_user
+        $this->_conn = mysqli_connect($this->_host, $this->_user
             , $this->_password);
         if(!$this->_conn){
             throw new DBClassException('Err:connect:'.mysql_error());
         }
-        if(!mysql_select_db($this->_db)){
+        if(!mysqli_select_db($this->_conn, $this->_db)){
             throw new DBClassException('Err:selectDB:'.mysql_error());
         }
     }
@@ -58,11 +58,11 @@ class DBClass{
          * reporter: Fabio Batalha (fabio.santos@bireme.org)
          * date: 20090729
          */
-        $result = mysql_query($query);
+        $result = mysqli_query($this->_conn, $query);
         if(!$result){
-            throw new DBClassException('Err:ExecInsert:'.mysql_error());
+            throw new DBClassException('Err:ExecInsert:'.mysqli_error($this->_conn));
         }
-        return(mysql_insert_id());
+        return(mysqli_insert_id($this->_conn));
     }
 
     /**
@@ -77,11 +77,11 @@ class DBClass{
          * reporter: Fabio Batalha (fabio.santos@bireme.org)
          * date: 20090729
          */
-        $result = mysql_query($query);
+        $result = mysqli_query($this->_conn, $query);
         if(!$result){
-            throw new DBClassException('Err:ExecUpdate:'.mysql_error());
+            throw new DBClassException('Err:ExecUpdate:'.mysqli_error($this->_conn));
         }
-        return(mysql_affected_rows());
+        return(mysqli_affected_rows($this->_conn));
     }
 
     /**
@@ -95,12 +95,12 @@ class DBClass{
          * reporter: Fabio Batalha (fabio.santos@bireme.org)
          * date: 20090729
          */
-        $result = mysql_query($query);
+        $result = mysqli_query($this->_conn, $query);
         if(!$result){
-            throw new DBClassException('Err:databaseQuery:'.mysql_error());
+            throw new DBClassException('Err:databaseQuery:'.mysqli_error($this->_conn));
         }
         $recordSet = array();
-        while ($row = mysql_fetch_assoc($result)) {
+        while ($row = mysqli_fetch_assoc($result)) {
             array_push($recordSet, $row);
         }
         return($recordSet);

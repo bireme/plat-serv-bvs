@@ -118,7 +118,7 @@ class Token {
      * @return string
      */
     public static function makeUserTK($userID,$userPass){
-        return Crypt::encrypt($userID .'%+%'.$userPass);
+        return Crypt::encrypt($userID.'%+%'.$userPass, CRYPT_PUBKEY);
     }
 
     /**
@@ -130,7 +130,7 @@ class Token {
     public static function unmakeUserTK($userTK, $force=null){
         $retValue = false;
 
-        $tmp1 = explode('%+%',Crypt::decrypt($userTK));
+        $tmp1 = explode('%+%',Crypt::decrypt($userTK, CRYPT_PUBKEY));
 
         if($force === true){
             $tmp2['userID'] = $tmp1[0];

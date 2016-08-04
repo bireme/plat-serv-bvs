@@ -45,7 +45,30 @@ class ToolsAuthentication {
      */
     public static function authenticateUser($userID, $userPass, $userDataConfirmation=null, $newUserID=null){
 
-        if (LDAPAuthenticator::authenticateUser($userID, $userPass) === true){
+        /* check users from BIREME Acccounts only */
+        if (USE_BIR_ACCOUNTS_AUTH === true){
+
+            $user = UserDAO::getAccountsUser($userID, $userPass);
+            
+            if($user){
+
+                $result["source"] = "bireme_accounts";
+                $result["status"] = true;
+                $result["userID"] = $user->getID();
+
+                /* if the user exists in BIREME Accounts, but does not exist in SP database */
+                if(!UserDAO::isUser($user->getID())){
+
+                    $addResult = UserDAO::addUser($user);
+                    $result["userDataStatus"] = false; /* need to complete user data */
+
+                }
+            }else{
+                //user not exists
+                $result["status"] = false;
+            }
+
+        } elseif (LDAPAuthenticator::authenticateUser($userID, $userPass) === true){
 
             $result["source"] = "ldap";
             $result["status"] = true;

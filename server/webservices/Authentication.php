@@ -54,7 +54,7 @@ function loginUser($userID,$userPass){
 
         if ($response["status"] === true){
             $objUser = UserDAO::getUser($response["userID"]);
-            $retValue['userTK']=Token::makeUserTK($dUserID,$dUserPass);
+            $retValue['userTK']=Token::makeUserTK($objUser->getID(),$dUserPass);
             $retValue['userFirstName']=$objUser->getFirstName();
             $retValue['userLastName']=$objUser->getLastName();              
             $retValue['userMail']=$objUser->getEmail();
