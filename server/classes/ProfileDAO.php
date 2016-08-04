@@ -43,7 +43,7 @@ class ProfileDAO {
                 }
             }
 
-
+/*
             $strsql = "INSERT INTO profiles(profileID,
                                             sysUID,
                                             profileText,
@@ -56,6 +56,18 @@ class ProfileDAO {
                                            $objProfile->getProfileName()."','".
                                            date("Y-m-d H:i:s")."','".
                                            $objProfile->getProfileDefault()."')";
+*/
+            
+            $strsql = "INSERT INTO profiles(sysUID,
+                                            profileText,
+                                            profileName,
+                                            creationDate,
+                                            profileDefault)
+                                VALUES ('".$sysUID."','".
+                                           $objProfile->getProfileText()."','".
+                                           $objProfile->getProfileName()."','".
+                                           date("Y-m-d H:i:s")."','".
+                                           $objProfile->getProfileDefault()."')";
 
             try{
                 $_db = new DBClass();
@@ -64,11 +76,11 @@ class ProfileDAO {
                 $logger = &Log::singleton('file', LOG_FILE, __CLASS__, $_conf);
                 $logger->log($e->getMessage(),PEAR_LOG_EMERG);
             }
-       }
+        }
 
-       if ($result !== null){
-           $retValue = true;
-       }
+        if ($result !== null){
+            $retValue = true;
+        }
 
         return $retValue;
     }
@@ -125,11 +137,9 @@ class ProfileDAO {
      * @return array object Profile
      */
     public static function getProfileList($userID, $from=0, $count=0){
-
+        global $_conf;
         $retValue = false;
-
         $sysUID = UserDAO::getSysUID($userID);
-
         $strsql = "SELECT * FROM  profiles
             WHERE sysUID = '".$sysUID."'";
 
@@ -311,7 +321,7 @@ class ProfileDAO {
                             $objProfile->setProfileStatus((string)$fieldOcc);
                             break;
                         case 'profile_default':
-                            $objProfile->setProfileDefault((string)$fieldOcc);
+                            $objProfile->setProfileDefault((int)$fieldOcc);
                             break;
                     }
                 }
