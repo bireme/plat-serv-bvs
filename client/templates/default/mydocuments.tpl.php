@@ -1,5 +1,11 @@
+<?
+    if ( in_array( $_REQUEST["task"], array( 'rate', 'removedoc' ) ) )
+            header("Location: " . $_SERVER['HTTP_REFERER']);
+?>
+
 <?require_once(dirname(__FILE__)."/header.tpl.php");?>
 <?require_once(dirname(__FILE__)."/top.tpl.php");?>
+
     <div class="breadCrumb">
         <a href="/"><?=$trans->getTrans($_REQUEST["action"],'HOME')?></a>&gt; <?=$trans->getTrans($_REQUEST["action"],'MY_COLLECTION')?>
     </div>
