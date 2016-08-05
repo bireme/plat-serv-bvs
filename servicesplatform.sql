@@ -62,15 +62,15 @@ CREATE TABLE IF NOT EXISTS `documents` (
   `authors` longtext NOT NULL,
   `serial` varchar(200) NOT NULL,
   `keywords` longtext,
-  `year` varchar(4) DEFAULT NULL,
-  `number` varchar(10) DEFAULT NULL,
-  `volume` varchar(10) DEFAULT NULL,
-  `suppl` varchar(50) DEFAULT NULL,
-  `publication_date` varchar(22) DEFAULT NULL,
-  `process_date` varchar(22) DEFAULT NULL,
+  `year` varchar(4) DEFAULT '',
+  `number` varchar(10) DEFAULT '',
+  `volume` varchar(10) DEFAULT '',
+  `suppl` varchar(50) DEFAULT '',
+  `publication_date` varchar(22) DEFAULT '',
+  `process_date` varchar(22) DEFAULT '',
   `docURL` varchar(1000) NOT NULL,
-  `title` varchar(500) DEFAULT NULL,
-  PRIMARY KEY (`docID`,`srcID`)
+  `title` varchar(500) DEFAULT '',
+  PRIMARY KEY (`docID`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
