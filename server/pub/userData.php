@@ -11,7 +11,10 @@ require_once(dirname(__FILE__)."/../classes/ToolsAuthentication.php");
 require_once(dirname(__FILE__)."/../classes/Verifier.php");
 
 if(!empty($_GET['userTK'])){
-    $arrUserData = Token::unmakeUserTK($_GET['userTK']);
+    if ( USE_BIR_ACCOUNTS_AUTH )
+        $arrUserData = Token::unmakeUserTK($_GET['userTK'], true);
+    else
+        $arrUserData = Token::unmakeUserTK($_GET['userTK']);
 }
 
 $callerURL = !empty($_REQUEST['c'])?base64_decode($_REQUEST['c']):false;
@@ -73,7 +76,7 @@ switch($acao){
         $usr->setFirstName($firstName);
         $usr->setLastName($lastName);
         $usr->setGender($gender);
-        $usr->setEmail($email);
+        //$usr->setEmail($email);
         $usr->setDegree($grauDeFormacao);
         $usr->setAffiliation($afiliacao);
         $usr->setCountry($country);

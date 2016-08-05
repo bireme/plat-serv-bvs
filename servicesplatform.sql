@@ -160,10 +160,10 @@ CREATE TABLE IF NOT EXISTS `users` (
   `userAffiliation` varchar(45) DEFAULT '',
   `userDegree` varchar(45) DEFAULT '',
   `sysUID` bigint(10) NOT NULL AUTO_INCREMENT,
-  `userID` varchar(150) DEFAULT NULL,
-  `sguID` varchar(150) DEFAULT NULL,
-  `userCountry` varchar(150) DEFAULT NULL,
-  `userSource` varchar(150) DEFAULT NULL,
+  `userID` varchar(150) NOT NULL DEFAULT '',
+  `sguID` varchar(150) DEFAULT '',
+  `userCountry` varchar(150) DEFAULT '',
+  `userSource` varchar(150) DEFAULT '',
   PRIMARY KEY (`sysUID`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
 

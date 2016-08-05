@@ -200,12 +200,21 @@ class UserDAO {
         $retValue = false;
 
         if(self::isUser($objUser->getID()) === true){
-
+/*
             $strsql = "UPDATE users SET
                             userFirstName ='".$objUser->getFirstName()."',
                             userLastName ='".$objUser->getLastName()."',
                             userGender ='".$objUser->getGender()."',
                             userEmail ='".$objUser->getEMail()."',
+                            userAffiliation ='".$objUser->getAffiliation()."',
+                            userCountry ='".$objUser->getCountry()."',
+                            userSource ='".$objUser->getSource()."',
+                            userDegree ='".$objUser->getDegree()."'";
+*/
+            $strsql = "UPDATE users SET
+                            userFirstName ='".$objUser->getFirstName()."',
+                            userLastName ='".$objUser->getLastName()."',
+                            userGender ='".$objUser->getGender()."',
                             userAffiliation ='".$objUser->getAffiliation()."',
                             userCountry ='".$objUser->getCountry()."',
                             userSource ='".$objUser->getSource()."',
@@ -227,7 +236,7 @@ class UserDAO {
                 $sysUID = self::getSysUID($objUser->getID());
 
                 if($sysUID){
-                    $strsql .= " , userID = '" . $updUserID .
+                    $strsql .= ", userID = '" . $updUserID .
                         "' WHERE sysUID = " . $sysUID;
                 }
 

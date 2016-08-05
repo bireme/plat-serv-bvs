@@ -253,9 +253,12 @@ class Verifier {
             }
         }
 
-        if($objUser->getID()){
-            if(!preg_match(REGEXP_EMAIL, $objUser->getID())){
-                return false;
+        /* check users from BIREME Acccounts */
+        if (USE_BIR_ACCOUNTS_AUTH !== true){
+            if($objUser->getID()){
+                if(!preg_match(REGEXP_EMAIL, $objUser->getID())){
+                    return false;
+                }
             }
         }
 
