@@ -19,6 +19,12 @@ define("DB_USERNAME","");
 define("DB_PASSWORD","");
 define("DB_DBNAME","servicesplatform");
 
+/* MYSQL BIREME Accounts database configuration */
+define("BIR_ACCOUNTS_DB_HOST","");
+define("BIR_ACCOUNTS_DB_USERNAME","");
+define("BIR_ACCOUNTS_DB_PASSWORD","");
+define("BIR_ACCOUNTS_DB_DBNAME","");
+
 /* Site configuration */
 define("SITENAME","Plataforma de Serviços da BVS");
 
@@ -38,6 +44,8 @@ define("HOME","/users/loginLDAP.php");
 define("LOGOUT","");
 
 define("DOCUMENTS_PER_PAGE","10"); /* pagination */
+
+define("USE_BIR_ACCOUNTS_AUTH",false); /* BIREME Accounts for users's authentication */
 
 /* Regular Expressions */
 define("REGEXP_LANGUAGE","^(pt)|(es)|(en)$");
@@ -60,7 +68,7 @@ define("XSD_XMLTRIGRAMAS",APP_BASEDIR."/xsd/xmlTrigramas.xsd");
 
 /* MCRYPT configuration */
 define("CRYPT_KEY","bireme"); /* private */
-define('CRYPT_PUBKEY','biremepubkey'); /* shared */
+define('CRYPT_PUBKEY','biremepublicckey'); /* shared */
 
 /* TRIGRAMAS */
 define("TRIGRAMAS_CITED_ID","http://trigramas.bireme.br/cgi-bin/mx/cgi=@scielo/cited?pid=");

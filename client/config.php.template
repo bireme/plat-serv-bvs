@@ -11,6 +11,7 @@ define("SERVICES_PLATFORM_DOMAIN","http://vm.platserver");
 define("SERVICES_PLATFORM_SERVER",SERVICES_PLATFORM_DOMAIN."/webservices");
 
 /* Site configuration */
+define("APP_BASEDIR",dirname(__FILE__)); /* app base dir ex. /home/servplat/htdocs */
 define("COOKIE_DOMAIN_SCOPE",".bvssite.br"); /* begin with a 'dot' to include subdomains */
 define("DEFAULT_SKIN","default");
 define("CHARSET","utf-8");
@@ -39,13 +40,16 @@ $EscapeRedirectToHome = array(substr(HOME,(strrpos(HOME,'/'))+1),
 
 define("DOCUMENTS_PER_PAGE","200"); /* pagination */
 
+define("USE_BIR_ACCOUNTS_AUTH",false); /* BIREME Accounts for users's authentication */
+define("BIR_ACCOUNTS_DOMAIN","http://accounts.bireme.org");
+
 /* Regular Expressions */
 define("REGEXP_LANGUAGE","/^(pt)|(es)|(en)|(fr)|(ja)|(ar)$/");
 define("REGEXP_SKIN","/^(default)|(scielo)|(regional)$/");
 define("REGEXP_EMAIL","/^[a-z_][a-z0-9_\.]+@[a-z0-9]+(\.[a-z0-9_]+)+$/i");
 
 /* MCRYPT */
-define('CRYPT_PUBKEY','biremepubkey'); /* public */
+define('CRYPT_PUBKEY','biremepublicckey'); /* public */
 
 /* TRIGRAMAS */
 define('DEFAULT_TRIGRAMAS_MODE','LILACS.orgiahx'); /* LILACS.orgiahx|SciELO.orgiahx */
