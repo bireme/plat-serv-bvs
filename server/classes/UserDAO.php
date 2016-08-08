@@ -118,7 +118,7 @@ class UserDAO {
         $canInsert = true;
 
         /* check users from BIREME Acccounts only */
-        if (USE_BIR_ACCOUNTS_AUTH !== true){
+        if ( !USE_BIR_ACCOUNTS_AUTH ){
 
             /* add user to LDAP */
             $attrs = array('cn' => $objUser->getID(),

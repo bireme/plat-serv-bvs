@@ -65,7 +65,7 @@ class Verifier {
         $arrUserParm = Token::unmakeUserTK($this->_data['userTK']);
 
         /* check if user is from BIREME Acccounts */
-        if (USE_BIR_ACCOUNTS_AUTH === true) {
+        if ( USE_BIR_ACCOUNTS_AUTH ) {
             $arrUserParm = Token::unmakeUserTK($this->_data['userTK'], true);
             $user = UserDAO::getAccountsUser($arrUserParm['userID'], $arrUserParm['userPass']);
 
@@ -254,7 +254,7 @@ class Verifier {
         }
 
         /* check users from BIREME Acccounts */
-        if (USE_BIR_ACCOUNTS_AUTH !== true){
+        if ( !USE_BIR_ACCOUNTS_AUTH ){
             if($objUser->getID()){
                 if(!preg_match(REGEXP_EMAIL, $objUser->getID())){
                     return false;

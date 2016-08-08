@@ -15,8 +15,10 @@
             <li><a href="<?=RELATIVE_PATH?>/controller/myprofiledocuments/control/business" target="_parent"><?=$trans->getTrans($_REQUEST["action"],'MY_PROFILE_DOCUMENTS')?></a></li>
             <li><a href="<?=RELATIVE_PATH?>/controller/mydocuments/control/business" target="_parent"><?=$trans->getTrans($_REQUEST["action"],'MY_SHELF')?></a></li>
             <li><a href="<?=RELATIVE_PATH?>/controller/mylinks/control/business" target="_parent"><?=$trans->getTrans($_REQUEST["action"],'MY_LINKS')?></a></li>
-            <li><a href="<?=RELATIVE_PATH?>/controller/mynews/control/business" target="_parent"><?=$trans->getTrans($_REQUEST["action"],'MY_NEWS')?></a></li>
-            <li><a href="<?=RELATIVE_PATH?>/controller/myalerts/control/business" target="_parent"><?=$trans->getTrans($_REQUEST["action"],'MY_ALERTS')?></a></li>
+            <? if ( !USE_BIR_ACCOUNTS_AUTH ) { ?>
+                <li><a href="<?=RELATIVE_PATH?>/controller/mynews/control/business" target="_parent"><?=$trans->getTrans($_REQUEST["action"],'MY_NEWS')?></a></li>
+                <li><a href="<?=RELATIVE_PATH?>/controller/myalerts/control/business" target="_parent"><?=$trans->getTrans($_REQUEST["action"],'MY_ALERTS')?></a></li>
+            <? } ?>
         </ul>
         <div class="alert"><?$trans->getTrans($_REQUEST["action"],'FORGOT_MY_PASSWORD')?></div>
     </div>

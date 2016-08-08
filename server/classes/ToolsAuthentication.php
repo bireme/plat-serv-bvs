@@ -46,7 +46,7 @@ class ToolsAuthentication {
     public static function authenticateUser($userID, $userPass, $userDataConfirmation=null, $newUserID=null){
 
         /* check users from BIREME Acccounts only */
-        if (USE_BIR_ACCOUNTS_AUTH === true){
+        if ( USE_BIR_ACCOUNTS_AUTH ){
 
             $user = UserDAO::getAccountsUser($userID, $userPass);
             
