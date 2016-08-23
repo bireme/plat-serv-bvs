@@ -184,5 +184,24 @@ class CharTools {
         }
         return $retValue;
     }
+
+    /**
+     * Escaping MySQL strings without connection 
+     *
+     * @param string $unescaped Query unescaped
+     * @return string
+     */
+    public static function mysql_escape_mimic($unescaped) {
+        $replacements = array(
+            "\x00" => '\x00',
+            "\n"   => '\n',
+            "\r"   => '\r',
+            "\\"   => '\\\\',
+            "'"    => "\'",
+            '"'    => '\"',
+            "\x1a" => '\x1a'
+        );
+        return strtr($unescaped,$replacements);
+    }
 }
 ?>

@@ -38,6 +38,9 @@ switch($_REQUEST["action"]){
     case "mig_id_confirmation";
         require_once(dirname(__FILE__)."/business/mig_id_confirmation.php");
     break;
+    case "add_serverplat":
+        require_once(dirname(__FILE__)."/business/add_serverplat.php");
+    break;
     default:
         die("default");
     break;

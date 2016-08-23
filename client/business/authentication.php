@@ -30,7 +30,8 @@ switch($_REQUEST["task"]){
                 $_SESSION["userMail"] = $result["userMail"];
                 $response["status"] = true;
                 $response["values"] = $result;
-                setcookie("userTK", $result["userTK"], 0, '/', COOKIE_DOMAIN_SCOPE);
+                setcookie("userTK", $result["userTK"], 0, '/');
+                //setcookie("userTK", $result["userTK"], 0, '/', COOKIE_DOMAIN_SCOPE);
                 // SSO LOGIN
                 if(ENABLE_SCIELO_SSO === true){
                   if($_REQUEST["origin"] != ""){

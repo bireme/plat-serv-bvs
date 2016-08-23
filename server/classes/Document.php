@@ -113,7 +113,8 @@ class Document {
      * @param string $value
      */
     public function setDocTitle($value){
-        $this->_data['docTitle'] = $value;
+        //$this->_data['docTitle'] = $value;
+        $this->_data['docTitle'] = CharTools::mysql_escape_mimic($value);
     }
 
     /**
@@ -209,7 +210,8 @@ class Document {
      * @param string|array $value
      */
     public function setAuthors($value){
-        $this->_data['authors'] = mysql_escape_string($value);
+        //$this->_data['authors'] = mysqli_escape_string($value);
+        $this->_data['authors'] = CharTools::mysql_escape_mimic($value);
     }
 
     /**
@@ -225,7 +227,8 @@ class Document {
      * @param string $value
      */
     public function setKeywords($value){
-        $this->_data['keywords'] = mysql_escape_string($value);
+        //$this->_data['keywords'] = mysqli_escape_string($value);
+        $this->_data['keywords'] = CharTools::mysql_escape_mimic($value);
     }
 
     /**

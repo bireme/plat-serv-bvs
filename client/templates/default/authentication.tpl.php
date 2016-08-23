@@ -2,7 +2,6 @@
 
 <? $b64HttpHost = base64_encode($_SERVER["HTTP_HOST"]); ?>
 
-<body>    
     <h3><span><?=$trans->getTrans($_REQUEST["action"],'TITLE')?></span></h3>
     <form method="post" action="<?=RELATIVE_PATH?>/controller/authentication">
         <input type="hidden" name="control" value="business" />
@@ -43,5 +42,5 @@
     <? if ($response['values']['birLDAP'] === false){ ?>
         <div class="alert"><?=$trans->getTrans($_REQUEST["action"],'BIREME_LOGIN_LDAP')?></div>
     <? } ?>    
-</body>
+
 <?require_once(dirname(__FILE__)."/footer.tpl.php");?>

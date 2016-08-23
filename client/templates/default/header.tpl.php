@@ -10,4 +10,4 @@
     </head>
     <body>
     <div class="page">
-
+        <?php require_once(dirname(__FILE__)."/../cookies.tpl.php"); ?>

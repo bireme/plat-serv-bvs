@@ -31,7 +31,7 @@ class DocumentDAO {
         
         $result = false;
         
-        if(! self::documentExists($document)){
+        if(!self::documentExists($document)){
 
             $strsql = "INSERT INTO documents (
             docID,
@@ -57,8 +57,10 @@ class DocumentDAO {
             .$document->getNumber()."','"
             .$document->getSuppl()."','"
             .$document->getYear()."','"
-            .mysql_escape_string($document->getAuthors())."','"
-            .mysql_escape_string(str_replace("'","&apos;",$document->getKeywords()))."','"
+            //.mysqli_escape_string($document->getAuthors())."','"
+            .$document->getAuthors()."','"
+            //.mysqli_escape_string(str_replace("'","&apos;",$document->getKeywords()))."','"
+            .str_replace("'","&apos;",$document->getKeywords())."','"
             .date('Y-m-d H:i:s')."','"
             .$document->getPublicationDate()."'"
             .")";
@@ -70,7 +72,9 @@ class DocumentDAO {
                 $logger = &Log::singleton('file', LOG_FILE, __CLASS__, $_conf);
                 $logger->log($e->getMessage(),PEAR_LOG_EMERG);
             }
+
         }
+
         $result = self::getDoc($document->getDocID(),$document->getSrcID());
 
 		return $result;
