@@ -1,0 +1,26 @@
+<?php
+
+session_start();
+include_once("src/Google_Client.php");
+include_once("src/contrib/Google_Oauth2Service.php");
+
+/**
+ * Google Project API Credentials
+**/
+$clientId = ''; //Google CLIENT ID
+$clientSecret = ''; //Google CLIENT SECRET
+$redirectUrl = '';  //return url (url to script)
+$homeUrl = '';  //return to home
+
+/**
+ * Google Client Configuration
+**/
+$gClient = new Google_Client();
+$gClient->setApplicationName('BIREME - Services Platform');
+$gClient->setClientId($clientId);
+$gClient->setClientSecret($clientSecret);
+$gClient->setRedirectUri($redirectUrl);
+
+$google_oauthV2 = new Google_Oauth2Service($gClient);
+
+?>

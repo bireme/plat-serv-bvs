@@ -117,8 +117,11 @@ class Token {
      * @param string $userPass User password
      * @return string
      */
-    public static function makeUserTK($userID,$userPass){
-        return Crypt::encrypt($userID.'%+%'.$userPass, CRYPT_PUBKEY);
+    public static function makeUserTK($userID,$userPass,$socialMedia){
+        if ( $socialMedia )
+            return Crypt::encrypt($userID.'%+%'.$userPass.'%+%'.$socialMedia, CRYPT_PUBKEY);
+        else
+            return Crypt::encrypt($userID.'%+%'.$userPass, CRYPT_PUBKEY);
     }
 
     /**
@@ -135,6 +138,11 @@ class Token {
         if($force === true){
             $tmp2['userID'] = $tmp1[0];
             $tmp2['userPass'] = $tmp1[1];
+            $retValue = $tmp2;
+        }elseif($tmp1[2]){
+            $tmp2['userID'] = $tmp1[0];
+            $tmp2['userPass'] = $tmp1[1];
+            $tmp2['socialMedia'] = $tmp1[2];
             $retValue = $tmp2;
         }else{
             if( preg_match(REGEXP_EMAIL,$tmp1[0]) ){

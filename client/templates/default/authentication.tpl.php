@@ -1,46 +1,94 @@
 <? require_once(dirname(__FILE__)."/header.tpl.php"); ?>
 
 <? $b64HttpHost = base64_encode($_SERVER["HTTP_HOST"]); ?>
+    
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 
-    <h3><span><?=$trans->getTrans($_REQUEST["action"],'TITLE')?></span></h3>
-    <form method="post" action="<?=RELATIVE_PATH?>/controller/authentication">
-        <input type="hidden" name="control" value="business" />
-        <input type="hidden" name="action" value="authentication" />
-        <input type="hidden" name="lang" value="{$_REQUEST.lang}" />
-        <table class="login">
-            <tr>
-                <td><label><?=$trans->getTrans($_REQUEST["action"],'LOGIN')?></label>:</td>
-                <td>
-                    <input type="text" name="userID" maxlenght="50" class="expression"/>
-                    <img src="<?=RELATIVE_PATH?>/images/<?=$_SESSION["skin"]?>/helpicon.png" border="0" onmouseover="javascript: document.getElementById('helplogin').style.display='block';" onmouseout="javascript: document.getElementById('helplogin').style.display='none';"/>
-                    <div class="helplogin" id="helplogin" style="display: none;"><?=$trans->getTrans($_REQUEST["action"],'HELPLOGINMESSAGE')?></div>
-                </td>
-            </tr>
-            <tr>
-                <td><label><?=$trans->getTrans($_REQUEST["action"],'PASSWORD')?></label>:</td>
-                <td><input type="password" name="userPass" maxlenght="15" class="expression"/></td>
-            </tr>
-            <tr>
-                <td>&#160;</td>
-                <td><input class="submit" type="submit" value="<?=$trans->getTrans($_REQUEST["action"],'LOGIN')?>"/></td>
-            </tr>
-        </table>
-        <? if (USE_BIR_ACCOUNTS_AUTH) { ?>
-            <div class="toolsright">
-                <div class="item"><a target="_parent" href="<?=BIR_ACCOUNTS_DOMAIN.'/accounts/password/reset/'?>"><?=$trans->getTrans($_REQUEST["action"],'FORGOT_MY_PASSWORD')?></a></div>
+    <div class="container">
+        <div class="omb_login">
+            <h3 class="omb_authTitle"><?=$trans->getTrans($_REQUEST["action"],'TITLE')?></h3>
+            <div class="row omb_row-sm-offset-3 omb_socialButtons">
+                <div class="col-xs-4 col-sm-3">
+                    <a href="<?=RELATIVE_PATH?>/connector/facebook" class="btn btn-lg btn-block omb_btn-facebook">
+                        <i class="fa fa-facebook visible-xs"></i>
+                        <span class="hidden-xs">Facebook</span>
+                    </a>
+                </div>
+                <!--div class="col-xs-4 col-sm-2">
+                    <a href="<?=RELATIVE_PATH?>/connector/linkedin" class="btn btn-lg btn-block omb_btn-linkedin">
+                        <i class="fa fa-linkedin visible-xs"></i>
+                        <span class="hidden-xs">LinkedIn</span>
+                    </a>
+                </div-->
+                <div class="col-xs-4 col-sm-3">
+                    <a href="<?=RELATIVE_PATH?>/connector/google" class="btn btn-lg btn-block omb_btn-google">
+                        <i class="fa fa-google visible-xs"></i>
+                        <span class="hidden-xs">Google</span>
+                    </a>
+                </div>
             </div>
-        <? } else { ?>
-            <div class="toolsright">
-                <div class="item"><a target="_parent" href="<?=SERVICES_PLATFORM_DOMAIN.'/pub/userData.php?c='.$b64HttpHost ?>"><?=$trans->getTrans($_REQUEST["action"],'REGISTRY')?></a></div> |
-                <div class="item"><a target="_parent" href="<?=SERVICES_PLATFORM_DOMAIN.'/pub/forgotPassword.php?c='.$b64HttpHost ?>"><?=$trans->getTrans($_REQUEST["action"],'FORGOT_MY_PASSWORD')?></a></div>
+            <div class="row omb_row-sm-offset-3 omb_loginOr">
+                <div class="col-xs-12 col-sm-6">
+                    <hr class="omb_hrOr">
+                    <span class="omb_spanOr"><?=$trans->getTrans($_REQUEST["action"],'OR')?></span>
+                </div>
             </div>
-        <? } ?>
-    </form>
-    <? if ($response['values']['status'] === false){ ?>
-        <div class="alert"><?=$trans->getTrans($_REQUEST["action"],'INVALID_LOGIN')?></div>
-    <? } ?>
-    <? if ($response['values']['birLDAP'] === false){ ?>
-        <div class="alert"><?=$trans->getTrans($_REQUEST["action"],'BIREME_LOGIN_LDAP')?></div>
-    <? } ?>    
+            <div class="row omb_row-sm-offset-3">
+                <div class="col-xs-12 col-sm-6">    
+                    <form class="omb_loginForm" action="<?=RELATIVE_PATH?>/controller/authentication" autocomplete="off" method="POST">
+                        <input type="hidden" name="control" value="business" />
+                        <input type="hidden" name="action" value="authentication" />
+                        <input type="hidden" name="lang" value="{$_REQUEST.lang}" />
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                            <input type="text" class="form-control" name="userID" maxlenght="50" placeholder="<?=$trans->getTrans($_REQUEST['action'],'LOGIN')?>">
+                        </div>
+                        <span class="help-block"></span>
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                            <input type="password" name="userPass" maxlenght="15" class="form-control" placeholder="<?=$trans->getTrans($_REQUEST['action'],'PASSWORD')?>"/>
+                        </div>
+                        <span class="help-block"></span>
+                        <? if ($_GET['error'] && $_GET['error'] == 'access_denied' ){ ?>
+                            <span class="help-block"><?=$trans->getTrans($_REQUEST["action"],'ACCESS_DENIED')?></span>
+                        <? } ?>
+                        <? if ($response['values']['status'] === false){ ?>
+                            <span class="help-block"><?=$trans->getTrans($_REQUEST["action"],'INVALID_LOGIN')?></span>
+                        <? } ?>
+                        <? if ($response['values']['birLDAP'] === false){ ?>
+                            <span class="help-block"><?=$trans->getTrans($_REQUEST["action"],'BIREME_LOGIN_LDAP')?></span>
+                        <? } ?>
+                        <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+                    </form>
+                </div>
+            </div>
+            <div class="row omb_row-sm-offset-3">
+                <!--div class="col-xs-12 col-sm-3">
+                    <label class="checkbox">
+                        <input type="checkbox" value="remember-me">Remember Me
+                    </label>
+                </div-->
+                <? if ( USE_BIR_ACCOUNTS_AUTH ) { ?>
+                    <div class="col-xs-12 col-sm-3"></div>
+                    <div class="col-xs-12 col-sm-3">
+                        <p class="omb_forgotPwd">
+                            <a target="_parent" href="<?=BIR_ACCOUNTS_DOMAIN.'/accounts/password/reset/'?>"><?=$trans->getTrans($_REQUEST["action"],'FORGOT_MY_PASSWORD')?></a>
+                        </p>
+                    </div>
+                <? } else { ?>
+                    <div class="col-xs-12 col-sm-3">
+                        <p class="omb_registry">
+                            <a target="_parent" href="<?=SERVICES_PLATFORM_DOMAIN.'/pub/userData.php?c='.$b64HttpHost ?>"><?=$trans->getTrans($_REQUEST["action"],'REGISTRY')?></a>
+                        </p>
+                    </div>
+                    <div class="col-xs-12 col-sm-3">
+                        <p class="omb_forgotPwd">
+                            <a target="_parent" href="<?=SERVICES_PLATFORM_DOMAIN.'/pub/forgotPassword.php?c='.$b64HttpHost ?>"><?=$trans->getTrans($_REQUEST["action"],'FORGOT_MY_PASSWORD')?></a>
+                        </p>
+                    </div>
+                <? } ?>
+            </div>          
+        </div>
+    </div>
 
 <?require_once(dirname(__FILE__)."/footer.tpl.php");?>

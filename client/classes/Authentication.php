@@ -21,7 +21,7 @@
  * @return boolean
  */
 class Authentication {
-    public static function loginUser($userID,$userPass){
+    public static function loginUser($userID,$userPass,$socialMedia){
         $result = false;
 
         if(!empty($userID) && !empty($userPass)){
@@ -34,7 +34,7 @@ class Authentication {
                     array('location'=>SERVICES_PLATFORM_SERVER.'/Authentication.php',
                         'uri'=>'http://test-uri/'));
 
-                $result = $objSoapClient->loginUser($cUserID,$cUserPass);
+                $result = $objSoapClient->loginUser($cUserID,$cUserPass,$socialMedia);
             }catch(Exception $e){
                 $logger = &Log::singleton('file', LOG_FILE, __CLASS__, $_conf);
                 $logger->log($e->getMessage(),PEAR_LOG_EMERG);

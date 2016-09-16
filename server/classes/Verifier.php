@@ -64,8 +64,10 @@ class Verifier {
         $retValue = false;
         $arrUserParm = Token::unmakeUserTK($this->_data['userTK']);
 
-        /* check if user is from BIREME Acccounts */
-        if ( USE_BIR_ACCOUNTS_AUTH ) {
+        if ( $arrUserParm['socialMedia'] ) { /* check if user is from Social Medias */
+            $this->_data['userTK'] = $arrUserParm;
+            $retValue = true;
+        } elseif ( USE_BIR_ACCOUNTS_AUTH ) { /* check if user is from BIREME Acccounts */
             $arrUserParm = Token::unmakeUserTK($this->_data['userTK'], true);
             $user = UserDAO::getAccountsUser($arrUserParm['userID'], $arrUserParm['userPass']);
 
@@ -73,7 +75,7 @@ class Verifier {
                 $this->_data['userTK'] = $arrUserParm;
                 $retValue = true;
             }
-        } elseif (LDAPAuthenticator::authenticateUser($arrUserParm['userID'],$arrUserParm['userPass'])){
+        } elseif ( LDAPAuthenticator::authenticateUser($arrUserParm['userID'],$arrUserParm['userPass']) ){
             $this->_data['userTK'] = $arrUserParm;
             $retValue = true;
         }

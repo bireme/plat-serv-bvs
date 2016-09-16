@@ -41,6 +41,8 @@ class Translations {
         self::$trans["authentication"]["REGISTRY"] = 'registrarse';
         self::$trans["authentication"]["HELPLOGINMESSAGE"] = 'A partir de agora, os serviços personalizados estão integrados por meio do passaporte de acesso das redes BVS e SciELO. O login SciELO é válido para essa autenticação. Saiba mais.';
         self::$trans["authentication"]["KNOWMORE"] = ' saiba mais';
+        self::$trans["authentication"]["ACCESS_DENIED"] = 'acceso denegado';
+        self::$trans["authentication"]["OR"] = 'o';
 
     // Terms of the Request Authentication Page
         self::$trans["requestauth"]["LOGIN"] = 'login';

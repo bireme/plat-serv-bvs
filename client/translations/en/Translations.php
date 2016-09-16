@@ -41,6 +41,8 @@ class Translations {
         self::$trans["authentication"]["REGISTRY"] = 'registry';
         self::$trans["authentication"]["HELPLOGINMESSAGE"] = 'From now, personalized services are integrated through the passport to access the VHL and SciELO network. The SciELO login is valid for this authentication.';
         self::$trans["authentication"]["KNOWMORE"] = 'Learn more';
+        self::$trans["authentication"]["ACCESS_DENIED"] = 'access denied';
+        self::$trans["authentication"]["OR"] = 'or';
 
     // Terms of the Request Authentication Page
         self::$trans["requestauth"]["LOGIN"] = 'login';
