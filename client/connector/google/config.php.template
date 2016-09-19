@@ -21,6 +21,15 @@ $gClient->setClientId($clientId);
 $gClient->setClientSecret($clientSecret);
 $gClient->setRedirectUri($redirectUrl);
 
+$scopes = array(
+    //"https://www.googleapis.com/auth/plus.me",
+    "https://www.googleapis.com/auth/plus.login",
+    "https://www.googleapis.com/auth/userinfo.email",
+    "https://www.googleapis.com/auth/userinfo.profile",
+);
+
+$gClient->setScopes($scopes);
+
 $google_oauthV2 = new Google_Oauth2Service($gClient);
 
 ?>
