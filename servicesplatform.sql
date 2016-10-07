@@ -47,7 +47,7 @@ CREATE TABLE IF NOT EXISTS `docTitle` (
   `lang` char(2) NOT NULL,
   `docTitle` varchar(1000) NOT NULL,
   `docID` varchar(100) NOT NULL,
-  PRIMARY KEY (`docID`)
+  PRIMARY KEY (`lang`,`docID`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -70,7 +70,7 @@ CREATE TABLE IF NOT EXISTS `documents` (
   `process_date` varchar(22) DEFAULT '',
   `docURL` varchar(1000) NOT NULL,
   `title` varchar(500) DEFAULT '',
-  PRIMARY KEY (`docID`)
+  PRIMARY KEY (`docID`,`srcID`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -164,6 +164,11 @@ CREATE TABLE IF NOT EXISTS `users` (
   `sguID` varchar(150) DEFAULT '',
   `userCountry` varchar(150) DEFAULT '',
   `userSource` varchar(150) DEFAULT '',
+  `linkedin` varchar(300) DEFAULT '',
+  `researchGate` varchar(300) DEFAULT '',
+  `orcid` varchar(150) DEFAULT '',
+  `researchID` varchar(150) DEFAULT '',
+  `lattes` varchar(300) DEFAULT '',
   PRIMARY KEY (`sysUID`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
 
