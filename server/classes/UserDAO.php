@@ -182,7 +182,7 @@ class UserDAO {
                                                 $objUser->getResearchGate()."','".
                                                 $objUser->getOrcid()."','".
                                                 $objUser->getResearchID()."','".
-                                                $objUser->getLattes()."','";
+                                                $objUser->getLattes()."',''";
                                                 // empty password
                 $strsql .= ")";
 
