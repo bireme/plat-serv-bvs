@@ -80,6 +80,11 @@ Se você possui usuário cadastrado no site ScIELO, na próxima vez que acessar 
 <p>O registro e todos os produtos e serviços de informação continuarão gratuitos. As redes BVS e SciELO mantêm os princípios da modalidade de Acesso Aberto, portanto, da disponibilização da literatura científica e técnica na Internet sem custo para o usuário, licenças de uso ou barreiras restritivas de acesso.</p>
 <p>Futuramente, as novidades serão aplicadas nas demais instâncias da BVS, em todas as regiões geográficas e áreas temáticas da BVS, por meio do conceito de passaporte BVS.</p>
 ');
+    define('FIELD_LINKEDIN','LinkedIn (URL)');
+    define('FIELD_RESEARCHGATE','ResearchGate (URL)');
+    define('FIELD_ORCID','ORCID');
+    define('FIELD_RESEARCHID','ResearchID');
+    define('FIELD_LATTES','Lattes (URL)');
 }
 
 if($lang == 'es'){
@@ -154,6 +159,11 @@ Si usted tiene usuário cadastrado en el sitio ScIELO, la próxima vez que acced
 <p>El registro y todos los productis y servicios de información continuaran gratuitos. Las redes BVS e SciELO mantienem los princípios del Acceso Abierto, portanto, da disponibilización de la literatura cientifica e tecnica em la Iternet sin costo para el usuario, licensas de uso o barreras restritivas de acceso.</p>
 <p>En el futuro, las novidades seran aplicadas en otras instancias de productos de la BVS, en todas las regiones geograficas y areas tematicas de la BVS, por medio del concepto de pasaporte BVS y SciELO</p>
 ');
+    define('FIELD_LINKEDIN','LinkedIn (URL)');
+    define('FIELD_RESEARCHGATE','ResearchGate (URL)');
+    define('FIELD_ORCID','ORCID');
+    define('FIELD_RESEARCHID','ResearchID');
+    define('FIELD_LATTES','Lattes (URL)');
 }
 
 if($lang == 'en'){
@@ -228,6 +238,11 @@ If you have a registered user in ScIELO website, the next time you access SciELO
 <p>The registration, all products and information services will remain free. The VHL and SciELO maintain the principles of open access, thus providing the scientific and technical literature on the Internet without cost to the user, usage license or barriers restricting access.</p>
 <p>In the future, these new features will be applied in other instances of VHL in all geographical regions and thematic areas of the VHL, through the concept of passport VHL and SciELO.</p>
 ');
+    define('FIELD_LINKEDIN','LinkedIn (URL)');
+    define('FIELD_RESEARCHGATE','ResearchGate (URL)');
+    define('FIELD_ORCID','ORCID');
+    define('FIELD_RESEARCHID','ResearchID');
+    define('FIELD_LATTES','Lattes (URL)');
 }
 ?>
 

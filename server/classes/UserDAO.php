@@ -59,6 +59,7 @@ class UserDAO {
                 $objUser->setLastName($res[0]['last_name']);
                 $objUser->setEmail($res[0]['email']);
                 $objUser->setPassword($userPass);
+                $objUser->setSource('bireme_accounts');
 
                 $retValue = $objUser;
             }
@@ -98,6 +99,11 @@ class UserDAO {
             $objUser->setCountry($res[0]['userCountry']);
             $objUser->setSource($res[0]['userSource']);
             $objUser->setDegree($res[0]['userDegree']);
+            $objUser->setLinkedin($res[0]['linkedin']);
+            $objUser->setResearchGate($res[0]['researchGate']);
+            $objUser->setOrcid($res[0]['orcid']);
+            $objUser->setResearchID($res[0]['researchID']);
+            $objUser->setLattes($res[0]['lattes']);
             $objUser->setProfile(ProfileDAO::getProfileList($objUser->getID()));
 
             $retValue = $objUser;
@@ -115,9 +121,9 @@ class UserDAO {
         global $_conf;
         $retValue = true;
         $canInsert = true;
+        $source = $objUser->getSource() ? $objUser->getSource() : '';
 
-        /* check users from BIREME Acccounts only */
-        if ( !USE_BIR_ACCOUNTS_AUTH ){
+        if ( empty($source) || 'ldap' == $source ){
 
             /* add user to LDAP */
             $attrs = array('cn' => $objUser->getID(),
@@ -157,16 +163,26 @@ class UserDAO {
                                                  userSource,
                                                  userDegree,
                                                  userEmail,
+                                                 linkedin,
+                                                 researchGate,
+                                                 orcid,
+                                                 researchID,
+                                                 lattes,
                                                  userPassword )
-                                     VALUES ('".$objUser->getID(). "','".
-                                                $objUser->getFirstName(). "','".
-                                                $objUser->getLastName(). "','".
+                                     VALUES ('".$objUser->getID()."','".
+                                                $objUser->getFirstName()."','".
+                                                $objUser->getLastName()."','".
                                                 $objUser->getGender()."','".
                                                 $objUser->getAffiliation()."','".
                                                 $objUser->getCountry()."','".
                                                 $objUser->getSource()."','".
                                                 $objUser->getDegree()."','".
-                                                $objUser->getEmail(). "',''";
+                                                $objUser->getEmail()."','".
+                                                $objUser->getLinkedin()."','".
+                                                $objUser->getResearchGate()."','".
+                                                $objUser->getOrcid()."','".
+                                                $objUser->getResearchID()."','".
+                                                $objUser->getLattes()."','";
                                                 // empty password
                 $strsql .= ")";
 
@@ -217,7 +233,12 @@ class UserDAO {
                             userAffiliation ='".$objUser->getAffiliation()."',
                             userCountry ='".$objUser->getCountry()."',
                             userSource ='".$objUser->getSource()."',
-                            userDegree ='".$objUser->getDegree()."'";
+                            userDegree ='".$objUser->getDegree()."',
+                            linkedin ='".$objUser->getLinkedin()."',
+                            researchGate ='".$objUser->getResearchGate()."',
+                            orcid ='".$objUser->getOrcid()."',
+                            researchID ='".$objUser->getResearchID()."',
+                            lattes ='".$objUser->getLattes()."'";
 
             /*  check if the password will be updated */
 

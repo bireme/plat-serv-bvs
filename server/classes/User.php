@@ -26,6 +26,11 @@ class User {
     private $_sguID;
     private $_country;
     private $_source;
+    private $_linkedin;
+    private $_researchGate;
+    private $_orcid;
+    private $_researchID;
+    private $_lattes;
 
     public function __construct(){}
 
@@ -226,7 +231,6 @@ class User {
         return ($this->_profiles);
     }
 
-
     /**
      * Set SGU ID
      *
@@ -243,6 +247,96 @@ class User {
      */
     public function getSguID(){
         return $this->_sguID;
+    }
+
+    /**
+     * Set user LinkedIn URL profile
+     *
+     * @param string $linkedin
+     */
+    public function setLinkedin($linkedin){
+        $this->_linkedin = $linkedin;
+    }
+
+    /**
+     * Get user LinkedIn URL profile
+     *
+     * @return string
+     */
+    public function getLinkedin(){
+        return (trim($this->_linkedin));
+    }
+
+    /**
+     * Set user ResearchGate URL profile
+     *
+     * @param string $researchGate
+     */
+    public function setResearchGate($researchGate){
+        $this->_researchGate = $researchGate;
+    }
+
+    /**
+     * Get user ResearchGate URL profile
+     *
+     * @return string
+     */
+    public function getResearchGate(){
+        return (trim($this->_researchGate));
+    }
+
+    /**
+     * Set user ORCID
+     *
+     * @param string $orcid
+     */
+    public function setOrcid($orcid){
+        $this->_orcid = $orcid;
+    }
+
+    /**
+     * Get user ORCID
+     *
+     * @return string
+     */
+    public function getOrcid(){
+        return (trim($this->_orcid));
+    }
+
+    /**
+     * Set user ResearchID
+     *
+     * @param string $researchID
+     */
+    public function setResearchID($researchID){
+        $this->_researchID = $researchID;
+    }
+
+    /**
+     * Get user ResearchID
+     *
+     * @return string
+     */
+    public function getResearchID(){
+        return (trim($this->_researchID));
+    }
+
+    /**
+     * Set user Lattes URL
+     *
+     * @param string $lattes
+     */
+    public function setLattes($lattes){
+        $this->_lattes = $lattes;
+    }
+
+    /**
+     * Get user Lattes URL
+     *
+     * @return string
+     */
+    public function getLattes(){
+        return (trim($this->_lattes));
     }
 }
 ?>

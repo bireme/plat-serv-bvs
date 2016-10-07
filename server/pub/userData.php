@@ -10,8 +10,10 @@ require_once(dirname(__FILE__)."/../classes/Tools.php");
 require_once(dirname(__FILE__)."/../classes/ToolsAuthentication.php");
 require_once(dirname(__FILE__)."/../classes/Verifier.php");
 
+$src = $_SESSION['source'] ? $_SESSION['source'] : '';
+
 if(!empty($_GET['userTK'])){
-    if ( USE_BIR_ACCOUNTS_AUTH )
+    if ( !empty( $src ) && 'bireme_accounts' == $src )
         $arrUserData = Token::unmakeUserTK($_GET['userTK'], true);
     else
         $arrUserData = Token::unmakeUserTK($_GET['userTK']);
@@ -35,6 +37,11 @@ $grauDeFormacao = !empty($_REQUEST['degree']) ? $_REQUEST['degree'] : false;
 $afiliacao = !empty($_REQUEST['afiliacao']) ? $_REQUEST['afiliacao'] : false;
 $country = !empty($_REQUEST['country']) ? $_REQUEST['country'] : false;
 $source = !empty($_REQUEST['source']) ? $_REQUEST['source'] : false;
+$linkedin = !empty($_REQUEST['linkedin']) ? $_REQUEST['linkedin'] : false;
+$researchGate = !empty($_REQUEST['researchGate']) ? $_REQUEST['researchGate'] : false;
+$orcid = !empty($_REQUEST['orcid']) ? $_REQUEST['orcid'] : false;
+$researchID = !empty($_REQUEST['researchID']) ? $_REQUEST['researchID'] : false;
+$lattes = !empty($_REQUEST['lattes']) ? $_REQUEST['lattes'] : false;
 $acao = !empty($_REQUEST['acao']) ? $_REQUEST['acao'] : 'default';
 $msg = null; /* system messages */
 
@@ -51,6 +58,11 @@ switch($acao){
         $usr->setCountry($country);
         $usr->setSource($source);
         $usr->setDegree($grauDeFormacao);
+        $usr->setLinkedin($linkedin);
+        $usr->setResearchGate($researchGate);
+        $usr->setOrcid($orcid);
+        $usr->setResearchID($researchID);
+        $usr->setLattes($lattes);
 
         if(Verifier::chkObjUser($usr)){
             $migrationResult = ToolsRegister::authenticateRegisteringUser($usr);
@@ -81,6 +93,11 @@ switch($acao){
         $usr->setAffiliation($afiliacao);
         $usr->setCountry($country);
         $usr->setSource($source);
+        $usr->setLinkedin($linkedin);
+        $usr->setResearchGate($researchGate);
+        $usr->setOrcid($orcid);
+        $usr->setResearchID($researchID);
+        $usr->setLattes($lattes);
 
         if(Verifier::chkObjUser($usr)){
             $result = UserDAO::updateUser($usr);
@@ -210,6 +227,31 @@ $DocTitle = $isUser?UPDATE_USER_TITLE:REGISTER_NEW_USER_TITLE;
                                 <div class="field">
                                     <span class="legend"><?=FIELD_AFILIATION?>:</span>
                                     <input class="thinbox" name="afiliacao" maxlength="45" type="text"  value="<?=$usr->getAffiliation()?>"/>
+                                </div>
+                                <div class="spacer"></div>
+                                <div class="field">
+                                    <span class="legend"><?=FIELD_LATTES?>:</span>
+                                    <input class="thinbox" name="lattes" type="text" value="<?=$usr->getLattes()?>"/>
+                                </div>
+                                <div class="spacer"></div>
+                                <div class="field">
+                                    <span class="legend"><?=FIELD_LINKEDIN?>:</span>
+                                    <input class="thinbox" name="linkedin" type="text" value="<?=$usr->getLinkedin()?>"/>
+                                </div>
+                                <div class="spacer"></div>
+                                <div class="field">
+                                    <span class="legend"><?=FIELD_RESEARCHGATE?>:</span>
+                                    <input class="thinbox" name="researchGate" type="text" value="<?=$usr->getResearchGate()?>"/>
+                                </div>
+                                <div class="spacer"></div>
+                                <div class="field">
+                                    <span class="legend"><?=FIELD_ORCID?>:</span>
+                                    <input class="thinbox" name="orcid" type="text" value="<?=$usr->getOrcid()?>"/>
+                                </div>
+                                <div class="spacer"></div>
+                                <div class="field">
+                                    <span class="legend"><?=FIELD_RESEARCHID?>:</span>
+                                    <input class="thinbox" name="researchID" type="text" value="<?=$usr->getResearchID()?>"/>
                                 </div>
                                 <div class="spacer"></div>
                                 <div class="field">
