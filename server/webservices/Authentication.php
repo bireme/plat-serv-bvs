@@ -69,6 +69,7 @@ function loginUser($userID,$userPass,$socialMedia){
                 $objUser->setLastName($socialMedia[$surname]);
                 $objUser->setEmail($socialMedia['email']);
                 $objUser->setPassword($dUserPass);
+                $objUser->setSource($socialMedia['social_media']);
 
                 $addResult = UserDAO::addUser($objUser);
                 $result["userDataStatus"] = false; /* need to complete user data */
@@ -86,6 +87,7 @@ function loginUser($userID,$userPass,$socialMedia){
             $retValue['userFirstName']=$objUser->getFirstName();
             $retValue['userLastName']=$objUser->getLastName();              
             $retValue['userMail']=$objUser->getEmail();
+            $retValue['source'] = $response["source"];
 
             if ( $socialMedia['social_media'] )
                 $retValue['userTK']=Token::makeUserTK($objUser->getID(),$dUserPass,$socialMedia['social_media']);
@@ -142,6 +144,7 @@ function getUserData($userTK){
             $retValue['userFirstName']=$objUser->getFirstName();
             $retValue['userLastName']=$objUser->getLastName();
             $retValue['userMail']=$objUser->getEmail();
+            $retValue['source']=$objUser->getSource();
         }
     }
     return $retValue;

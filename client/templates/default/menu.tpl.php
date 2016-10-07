@@ -15,7 +15,7 @@
             <li><a href="<?=RELATIVE_PATH?>/controller/myprofiledocuments/control/business" target="_parent"><?=$trans->getTrans($_REQUEST["action"],'MY_PROFILE_DOCUMENTS')?></a></li>
             <li><a href="<?=RELATIVE_PATH?>/controller/mydocuments/control/business" target="_parent"><?=$trans->getTrans($_REQUEST["action"],'MY_SHELF')?></a></li>
             <li><a href="<?=RELATIVE_PATH?>/controller/mylinks/control/business" target="_parent"><?=$trans->getTrans($_REQUEST["action"],'MY_LINKS')?></a></li>
-            <? if ( !USE_BIR_ACCOUNTS_AUTH ) { ?>
+            <? if ( $_SESSION["source"] && $_SESSION["source"] == 'ldap' ) { ?>
                 <li><a href="<?=RELATIVE_PATH?>/controller/mynews/control/business" target="_parent"><?=$trans->getTrans($_REQUEST["action"],'MY_NEWS')?></a></li>
                 <li><a href="<?=RELATIVE_PATH?>/controller/myalerts/control/business" target="_parent"><?=$trans->getTrans($_REQUEST["action"],'MY_ALERTS')?></a></li>
             <? } ?>

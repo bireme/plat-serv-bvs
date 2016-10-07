@@ -1,7 +1,7 @@
 <? require_once(dirname(__FILE__)."/header.tpl.php"); ?>
 
 <? $b64HttpHost = base64_encode($_SERVER["HTTP_HOST"]); ?>
-    
+
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 
     <div class="container">
@@ -68,25 +68,19 @@
                         <input type="checkbox" value="remember-me">Remember Me
                     </label>
                 </div-->
-                <? if ( USE_BIR_ACCOUNTS_AUTH ) { ?>
-                    <div class="col-xs-12 col-sm-3"></div>
-                    <div class="col-xs-12 col-sm-3">
-                        <p class="omb_forgotPwd">
-                            <a target="_parent" href="<?=BIR_ACCOUNTS_DOMAIN.'/accounts/password/reset/'?>"><?=$trans->getTrans($_REQUEST["action"],'FORGOT_MY_PASSWORD')?></a>
-                        </p>
-                    </div>
-                <? } else { ?>
-                    <div class="col-xs-12 col-sm-3">
-                        <p class="omb_registry">
-                            <a target="_parent" href="<?=SERVICES_PLATFORM_DOMAIN.'/pub/userData.php?c='.$b64HttpHost ?>"><?=$trans->getTrans($_REQUEST["action"],'REGISTRY')?></a>
-                        </p>
-                    </div>
-                    <div class="col-xs-12 col-sm-3">
-                        <p class="omb_forgotPwd">
-                            <a target="_parent" href="<?=SERVICES_PLATFORM_DOMAIN.'/pub/forgotPassword.php?c='.$b64HttpHost ?>"><?=$trans->getTrans($_REQUEST["action"],'FORGOT_MY_PASSWORD')?></a>
-                        </p>
-                    </div>
-                <? } ?>
+                <div class="col-xs-12 col-sm-3">
+                    <p class="omb_registry">
+                        <a target="_parent" href="<?=SERVICES_PLATFORM_DOMAIN.'/pub/userData.php?c='.$b64HttpHost ?>"><?=$trans->getTrans($_REQUEST["action"],'REGISTRY')?></a>
+                    </p>
+                </div>
+                <div class="col-xs-12 col-sm-3">
+                    <p class="omb_forgotPwd">
+                        <a target="_parent" href="<?=SERVICES_PLATFORM_DOMAIN.'/pub/forgotPassword.php?c='.$b64HttpHost ?>"><?=$trans->getTrans($_REQUEST["action"],'FORGOT_MY_PASSWORD')?></a>
+                    </p>
+                    <p class="omb_forgotPwd">
+                        <a target="_parent" href="<?=BIR_ACCOUNTS_DOMAIN.'/accounts/password/reset/'?>"><?=$trans->getTrans($_REQUEST["action"],'FORGOT_MY_PASSWORD')?> (FI-ADMIN)</a>
+                    </p>
+                </div>
             </div>          
         </div>
     </div>

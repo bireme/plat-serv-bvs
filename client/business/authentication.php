@@ -28,6 +28,7 @@ switch($_REQUEST["task"]){
                 $_SESSION["userFirstName"] = $result["userFirstName"];
                 $_SESSION["userLastName"] = $result["userLastName"];
                 $_SESSION["userMail"] = $result["userMail"];
+                $_SESSION["source"] = $result["source"];
                 $response["status"] = true;
                 $response["values"] = $result;
                 setcookie("userTK", $result["userTK"], 0, '/');
@@ -77,6 +78,7 @@ if(!empty($_SESSION["userTK"])){
         $_SESSION["userFirstName"] = $result["userFirstName"];
         $_SESSION["userLastName"] = $result["userLastName"];
         $_SESSION["userMail"] = $result["userMail"];
+        $_SESSION["source"] = $result["source"];
     }
 }
 ?>

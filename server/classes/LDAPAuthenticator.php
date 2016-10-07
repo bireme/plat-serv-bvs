@@ -34,6 +34,7 @@ class LDAPAuthenticator {
      * @return Boolean
      */
     public static function authenticateUser($userID, $userPass){
+        global $_conf;
         $retValue = false;
 
         $userDomain = substr(stristr($userID,'@'),1);

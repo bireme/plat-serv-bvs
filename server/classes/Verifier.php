@@ -63,11 +63,10 @@ class Verifier {
     public function chkUserTK(){
         $retValue = false;
         $arrUserParm = Token::unmakeUserTK($this->_data['userTK']);
+        $user = UserDAO::getUser($arrUserParm['userID']);
+        $source = $user->getSource() ? $user->getSource() : '';
 
-        if ( $arrUserParm['socialMedia'] ) { /* check if user is from Social Medias */
-            $this->_data['userTK'] = $arrUserParm;
-            $retValue = true;
-        } elseif ( USE_BIR_ACCOUNTS_AUTH ) { /* check if user is from BIREME Acccounts */
+        if ( !empty($source) && 'bireme_accounts' == $source ) { /* check if user is from BIREME Acccounts */
             $arrUserParm = Token::unmakeUserTK($this->_data['userTK'], true);
             $user = UserDAO::getAccountsUser($arrUserParm['userID'], $arrUserParm['userPass']);
 
@@ -75,7 +74,7 @@ class Verifier {
                 $this->_data['userTK'] = $arrUserParm;
                 $retValue = true;
             }
-        } elseif ( LDAPAuthenticator::authenticateUser($arrUserParm['userID'],$arrUserParm['userPass']) ){
+        } elseif ( LDAPAuthenticator::authenticateUser($arrUserParm['userID'],$arrUserParm['userPass']) || $arrUserParm['socialMedia'] ){
             $this->_data['userTK'] = $arrUserParm;
             $retValue = true;
         }
@@ -236,6 +235,7 @@ class Verifier {
 
 
     public static function chkObjUser($objUser){
+        $source = $objUser->getSource() ? $objUser->getSource() : '';
 
         if($objUser->getFirstName()){            
             if(!preg_match(REGEXP_USER_NAME, $objUser->getFirstName())){
@@ -256,7 +256,7 @@ class Verifier {
         }
 
         /* check users from BIREME Acccounts */
-        if ( !USE_BIR_ACCOUNTS_AUTH ){
+        if ( empty( $source ) || 'bireme_accounts' != $source ){
             if($objUser->getID()){
                 if(!preg_match(REGEXP_EMAIL, $objUser->getID())){
                     return false;
