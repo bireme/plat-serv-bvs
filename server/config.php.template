@@ -45,8 +45,6 @@ define("LOGOUT","");
 
 define("DOCUMENTS_PER_PAGE","10"); /* pagination */
 
-define("USE_BIR_ACCOUNTS_AUTH",false); /* BIREME Accounts for users's authentication */
-
 /* Regular Expressions */
 define("REGEXP_LANGUAGE","^(pt)|(es)|(en)$");
 define("REGEXP_EMAIL","/^[a-z_][a-z0-9_\.]+@[a-z0-9]+(\.[a-z0-9_]+)+$/i");
