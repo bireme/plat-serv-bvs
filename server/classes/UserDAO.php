@@ -102,7 +102,7 @@ class UserDAO {
             $objUser->setLinkedin($res[0]['linkedin']);
             $objUser->setResearchGate($res[0]['researchGate']);
             $objUser->setOrcid($res[0]['orcid']);
-            $objUser->setResearchID($res[0]['researchID']);
+            $objUser->setResearcherID($res[0]['researcherID']);
             $objUser->setLattes($res[0]['lattes']);
             $objUser->setProfile(ProfileDAO::getProfileList($objUser->getID()));
 
@@ -166,7 +166,7 @@ class UserDAO {
                                                  linkedin,
                                                  researchGate,
                                                  orcid,
-                                                 researchID,
+                                                 researcherID,
                                                  lattes,
                                                  userPassword )
                                      VALUES ('".$objUser->getID()."','".
@@ -181,7 +181,7 @@ class UserDAO {
                                                 $objUser->getLinkedin()."','".
                                                 $objUser->getResearchGate()."','".
                                                 $objUser->getOrcid()."','".
-                                                $objUser->getResearchID()."','".
+                                                $objUser->getResearcherID()."','".
                                                 $objUser->getLattes()."',''";
                                                 // empty password
                 $strsql .= ")";
@@ -237,7 +237,7 @@ class UserDAO {
                             linkedin ='".$objUser->getLinkedin()."',
                             researchGate ='".$objUser->getResearchGate()."',
                             orcid ='".$objUser->getOrcid()."',
-                            researchID ='".$objUser->getResearchID()."',
+                            researcherID ='".$objUser->getResearcherID()."',
                             lattes ='".$objUser->getLattes()."'";
 
             /*  check if the password will be updated */

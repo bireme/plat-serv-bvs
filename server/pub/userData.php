@@ -10,10 +10,10 @@ require_once(dirname(__FILE__)."/../classes/Tools.php");
 require_once(dirname(__FILE__)."/../classes/ToolsAuthentication.php");
 require_once(dirname(__FILE__)."/../classes/Verifier.php");
 
-$src = $_SESSION['source'] ? $_SESSION['source'] : '';
+$src = $_SESSION['source'] ? $_SESSION['source'] : false;
 
 if(!empty($_GET['userTK'])){
-    if ( !empty( $src ) && 'bireme_accounts' == $src )
+    if ( $src && 'bireme_accounts' == $src )
         $arrUserData = Token::unmakeUserTK($_GET['userTK'], true);
     else
         $arrUserData = Token::unmakeUserTK($_GET['userTK']);
@@ -36,11 +36,11 @@ $profilesIDs = !empty($_REQUEST['profileid']) ? $_REQUEST['profileid'] : false;
 $grauDeFormacao = !empty($_REQUEST['degree']) ? $_REQUEST['degree'] : false;
 $afiliacao = !empty($_REQUEST['afiliacao']) ? $_REQUEST['afiliacao'] : false;
 $country = !empty($_REQUEST['country']) ? $_REQUEST['country'] : false;
-$source = !empty($_REQUEST['source']) ? $_REQUEST['source'] : false;
+$source = !empty($_REQUEST['source']) ? $_REQUEST['source'] : $src;
 $linkedin = !empty($_REQUEST['linkedin']) ? $_REQUEST['linkedin'] : false;
 $researchGate = !empty($_REQUEST['researchGate']) ? $_REQUEST['researchGate'] : false;
 $orcid = !empty($_REQUEST['orcid']) ? $_REQUEST['orcid'] : false;
-$researchID = !empty($_REQUEST['researchID']) ? $_REQUEST['researchID'] : false;
+$researcherID = !empty($_REQUEST['researcherID']) ? $_REQUEST['researcherID'] : false;
 $lattes = !empty($_REQUEST['lattes']) ? $_REQUEST['lattes'] : false;
 $acao = !empty($_REQUEST['acao']) ? $_REQUEST['acao'] : 'default';
 $msg = null; /* system messages */
@@ -61,7 +61,7 @@ switch($acao){
         $usr->setLinkedin($linkedin);
         $usr->setResearchGate($researchGate);
         $usr->setOrcid($orcid);
-        $usr->setResearchID($researchID);
+        $usr->setResearcherID($researcherID);
         $usr->setLattes($lattes);
 
         if(Verifier::chkObjUser($usr)){
@@ -96,7 +96,7 @@ switch($acao){
         $usr->setLinkedin($linkedin);
         $usr->setResearchGate($researchGate);
         $usr->setOrcid($orcid);
-        $usr->setResearchID($researchID);
+        $usr->setResearcherID($researcherID);
         $usr->setLattes($lattes);
 
         if(Verifier::chkObjUser($usr)){
@@ -186,7 +186,7 @@ $DocTitle = $isUser?UPDATE_USER_TITLE:REGISTER_NEW_USER_TITLE;
                         <form method="post" name="cadastro" action="">
                             <input type="hidden" name="postback" value="1" />                            
                             <input type="hidden" name="userid" value="<?=trim($usr->getID())?> " />
-                            <input type="hidden" name="source" value="<?=$_REQUEST["source"]?>" />
+                            <input type="hidden" name="source" value="<?=trim($usr->getSource())?>" />
                             <fieldset>
                                 <legend><?=PERSONAL_DATA?></legend>
                                 <img src="images/exclaim.gif" border="0" /> <?=REQUIRED_FIELD_TEXT?><br />
@@ -250,8 +250,8 @@ $DocTitle = $isUser?UPDATE_USER_TITLE:REGISTER_NEW_USER_TITLE;
                                 </div>
                                 <div class="spacer"></div>
                                 <div class="field">
-                                    <span class="legend"><?=FIELD_RESEARCHID?>:</span>
-                                    <input class="thinbox" name="researchID" type="text" value="<?=$usr->getResearchID()?>"/>
+                                    <span class="legend"><?=FIELD_RESEARCHERID?>:</span>
+                                    <input class="thinbox" name="researcherID" type="text" value="<?=$usr->getResearcherID()?>"/>
                                 </div>
                                 <div class="spacer"></div>
                                 <div class="field">

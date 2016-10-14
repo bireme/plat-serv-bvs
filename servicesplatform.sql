@@ -167,7 +167,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `linkedin` varchar(300) DEFAULT '',
   `researchGate` varchar(300) DEFAULT '',
   `orcid` varchar(150) DEFAULT '',
-  `researchID` varchar(150) DEFAULT '',
+  `researcherID` varchar(150) DEFAULT '',
   `lattes` varchar(300) DEFAULT '',
   PRIMARY KEY (`sysUID`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8;

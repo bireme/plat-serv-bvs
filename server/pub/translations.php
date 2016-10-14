@@ -83,7 +83,7 @@ Se você possui usuário cadastrado no site ScIELO, na próxima vez que acessar 
     define('FIELD_LINKEDIN','LinkedIn (URL)');
     define('FIELD_RESEARCHGATE','ResearchGate (URL)');
     define('FIELD_ORCID','ORCID');
-    define('FIELD_RESEARCHID','ResearchID');
+    define('FIELD_RESEARCHERID','ResearcherID');
     define('FIELD_LATTES','Lattes (URL)');
 }
 
@@ -162,7 +162,7 @@ Si usted tiene usuário cadastrado en el sitio ScIELO, la próxima vez que acced
     define('FIELD_LINKEDIN','LinkedIn (URL)');
     define('FIELD_RESEARCHGATE','ResearchGate (URL)');
     define('FIELD_ORCID','ORCID');
-    define('FIELD_RESEARCHID','ResearchID');
+    define('FIELD_RESEARCHERID','ResearcherID');
     define('FIELD_LATTES','Lattes (URL)');
 }
 
@@ -241,7 +241,7 @@ If you have a registered user in ScIELO website, the next time you access SciELO
     define('FIELD_LINKEDIN','LinkedIn (URL)');
     define('FIELD_RESEARCHGATE','ResearchGate (URL)');
     define('FIELD_ORCID','ORCID');
-    define('FIELD_RESEARCHID','ResearchID');
+    define('FIELD_RESEARCHERID','ResearcherID');
     define('FIELD_LATTES','Lattes (URL)');
 }
 ?>

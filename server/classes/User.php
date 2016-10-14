@@ -29,7 +29,7 @@ class User {
     private $_linkedin;
     private $_researchGate;
     private $_orcid;
-    private $_researchID;
+    private $_researcherID;
     private $_lattes;
 
     public function __construct(){}
@@ -304,21 +304,21 @@ class User {
     }
 
     /**
-     * Set user ResearchID
+     * Set user ResearcherID
      *
-     * @param string $researchID
+     * @param string $researcherID
      */
-    public function setResearchID($researchID){
-        $this->_researchID = $researchID;
+    public function setResearcherID($researcherID){
+        $this->_researcherID = $researcherID;
     }
 
     /**
-     * Get user ResearchID
+     * Get user ResearcherID
      *
      * @return string
      */
-    public function getResearchID(){
-        return (trim($this->_researchID));
+    public function getResearcherID(){
+        return (trim($this->_researcherID));
     }
 
     /**

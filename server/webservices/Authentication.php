@@ -50,7 +50,7 @@ function loginUser($userID,$userPass,$socialMedia){
 
     if(!empty($dUserID) && !empty($dUserPass)){
         /* check users from Social Medias */
-        if ( isset($socialMedia) && !empty($socialMedia) && is_array($socialMedia) ) {
+        if ( isset($socialMedia) && !empty($socialMedia) && is_array($socialMedia) && array_key_exists( "social_media", $socialMedia ) && in_array( $socialMedia['social_media'], array( 'facebook', 'google' ) ) ) {
 
             $result["source"] = $socialMedia['social_media'];
             $result["status"] = true;
