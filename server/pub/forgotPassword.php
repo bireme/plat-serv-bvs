@@ -69,7 +69,7 @@ switch($acao){
                 <div id="cache" style="position:absolute;left:0;top:0;z-index:8;display:none;"></div>
                 <span>
                     <? if($callerURL){ ?>
-                        <a href="http://<?=$callerURL?>">home</a>&gt;
+                        <a href="http://<?=$callerURL?>">home</a> &gt;
                     <?}?>
                     Esqueceu sua senha?
                 </span>

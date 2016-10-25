@@ -1,6 +1,6 @@
 <?require_once(dirname(__FILE__)."/header.tpl.php");?>
 
-<? $b64HttpHost = base64_encode($_SERVER["HTTP_HOST"]); ?>
+<? $b64HttpHost = base64_encode($_SERVER["HTTP_HOST"].$_SERVER["SCRIPT_NAME"].'/authentication'); ?>
 
 <div class="content">
     <div class="menu">

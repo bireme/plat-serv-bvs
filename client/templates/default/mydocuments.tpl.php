@@ -7,7 +7,7 @@
 <?require_once(dirname(__FILE__)."/top.tpl.php");?>
 
     <div class="breadCrumb">
-        <a href="/"><?=$trans->getTrans($_REQUEST["action"],'HOME')?></a>&gt; <?=$trans->getTrans($_REQUEST["action"],'MY_COLLECTION')?>
+        <a href="<?php echo $_SERVER['SCRIPT_NAME']; ?>/authentication"><?=$trans->getTrans($_REQUEST["action"],'HOME')?></a>&gt; <?=$trans->getTrans($_REQUEST["action"],'MY_COLLECTION')?>
     </div>
     <div class="middle">
         <div class="content">

@@ -135,7 +135,7 @@ class Token {
 
         $tmp1 = explode('%+%',Crypt::decrypt($userTK, CRYPT_PUBKEY));
 
-        if($force === true){
+        if($force === true || preg_match(REGEXP_EMAIL,$tmp1[0])){
             $tmp2['userID'] = $tmp1[0];
             $tmp2['userPass'] = $tmp1[1];
             $retValue = $tmp2;
@@ -144,13 +144,8 @@ class Token {
             $tmp2['userPass'] = $tmp1[1];
             $tmp2['socialMedia'] = $tmp1[2];
             $retValue = $tmp2;
-        }else{
-            if( preg_match(REGEXP_EMAIL,$tmp1[0]) ){
-                $tmp2['userID'] = $tmp1[0];
-                $tmp2['userPass'] = $tmp1[1];
-                $retValue = $tmp2;
-            }
         }
+
         return $retValue;
     }
 }
@@ -210,6 +205,33 @@ class CharTools {
             "\x1a" => '\x1a'
         );
         return strtr($unescaped,$replacements);
+    }
+}
+
+/**
+ * manage social network data
+ */
+class SocialNetwork {
+
+    /**
+     * Validate social network user
+     *
+     * @param array $userObject
+     * @return boolean
+     */
+    public static function validateObjUser($userObject) {
+        if ( !isset($userObject) )
+            return false;
+        elseif ( empty($userObject) )
+            return false;
+        elseif ( !is_array($userObject) )
+            return false;
+        elseif ( !array_key_exists( "social_media", $userObject ) )
+            return false;
+        elseif ( !in_array( $userObject['social_media'], array( 'facebook', 'google' ) ) )
+            return false;
+        
+        return true;
     }
 }
 ?>
