@@ -29,6 +29,7 @@ class User {
     private $_linkedin;
     private $_researchGate;
     private $_orcid;
+    private $_orcidData;
     private $_researcherID;
     private $_lattes;
 
@@ -301,6 +302,24 @@ class User {
      */
     public function getOrcid(){
         return (trim($this->_orcid));
+    }
+
+    /**
+     * Set user ORCID API data
+     *
+     * @param string $orcidData
+     */
+    public function setOrcidData($orcidData){
+        $this->_orcidData = $orcidData;
+    }
+
+    /**
+     * Get user ORCID API data
+     *
+     * @return string
+     */
+    public function getOrcidData(){
+        return (trim($this->_orcidData));
     }
 
     /**

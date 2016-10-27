@@ -70,6 +70,7 @@ switch($acao){
         if ($migrationResult["status"] === true){          
             $response["msg"] = ADD_SUCSSESS;
             $response["status"] = true;
+            $orcidData = UserDAO::fillOrcidData($usr->getID(), $usr->getOrcid());
 
         }elseif (($migrationResult["status"] === false) &&
                 ($migrationResult["error"] === "userexists")){
@@ -106,6 +107,7 @@ switch($acao){
         if($result === true){
             $response["msg"] = USER_UPDATED;
             $response["status"] = true;
+            $orcidData = UserDAO::fillOrcidData($usr->getID(), $usr->getOrcid());
         }else{
             $response["msg"] = USER_UPDATE_ERROR;
             $response["status"] = false;

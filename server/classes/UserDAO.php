@@ -102,6 +102,7 @@ class UserDAO {
             $objUser->setLinkedin($res[0]['linkedin']);
             $objUser->setResearchGate($res[0]['researchGate']);
             $objUser->setOrcid($res[0]['orcid']);
+            $objUser->setOrcidData($res[0]['orcidData']);
             $objUser->setResearcherID($res[0]['researcherID']);
             $objUser->setLattes($res[0]['lattes']);
             $objUser->setProfile(ProfileDAO::getProfileList($objUser->getID()));
@@ -166,6 +167,7 @@ class UserDAO {
                                                  linkedin,
                                                  researchGate,
                                                  orcid,
+                                                 orcidData,
                                                  researcherID,
                                                  lattes,
                                                  userPassword )
@@ -181,6 +183,7 @@ class UserDAO {
                                                 $objUser->getLinkedin()."','".
                                                 $objUser->getResearchGate()."','".
                                                 $objUser->getOrcid()."','".
+                                                $objUser->getOrcidData()."','".
                                                 $objUser->getResearcherID()."','".
                                                 $objUser->getLattes()."',''";
                                                 // empty password
@@ -215,17 +218,7 @@ class UserDAO {
         $retValue = false;
 
         if(self::isUser($objUser->getID()) === true){
-/*
-            $strsql = "UPDATE users SET
-                            userFirstName ='".$objUser->getFirstName()."',
-                            userLastName ='".$objUser->getLastName()."',
-                            userGender ='".$objUser->getGender()."',
-                            userEmail ='".$objUser->getEMail()."',
-                            userAffiliation ='".$objUser->getAffiliation()."',
-                            userCountry ='".$objUser->getCountry()."',
-                            userSource ='".$objUser->getSource()."',
-                            userDegree ='".$objUser->getDegree()."'";
-*/
+
             $strsql = "UPDATE users SET
                             userFirstName ='".$objUser->getFirstName()."',
                             userLastName ='".$objUser->getLastName()."',
@@ -237,6 +230,7 @@ class UserDAO {
                             linkedin ='".$objUser->getLinkedin()."',
                             researchGate ='".$objUser->getResearchGate()."',
                             orcid ='".$objUser->getOrcid()."',
+                            orcidData ='".$objUser->getOrcidData()."',
                             researcherID ='".$objUser->getResearcherID()."',
                             lattes ='".$objUser->getLattes()."'";
 
@@ -425,6 +419,50 @@ class UserDAO {
         if(isset($res) && $res[0]['total'] >= 0){
             $retValue = $res[0]['total'];
         }
+        return $retValue;
+    }
+
+    /**
+     * Fill ORCID API data
+     *
+     * @param string $userID User ID
+     * @param string $orcid ORCID ID
+     * @param boolean $assoc Return associative array with ORCID API data
+     * @return object boolean|array
+     */
+    public static function fillOrcidData($userID, $orcid, $assoc=false){
+        global $_conf;
+        $retValue = false;
+
+        if ( $userID && $orcid ) {
+            $requestURI = ORCID_API . $orcid . '/orcid-profile';
+            $opts = array(
+                'http'=>array(
+                    'method'=>"GET",
+                    'header'=>"Accept: application/orcid+json\r\n"
+                )
+            );
+            $context = stream_context_create($opts);
+            $content = file_get_contents($requestURI,false,$context);
+
+            if ( $content ) {
+                $strsql = "UPDATE users
+                            SET orcidData ='".$content."'
+                            WHERE userID ='".$userID."'";
+
+                try{
+                    $_db = new DBClass();
+                    $res = $_db->databaseQuery($strsql);
+                }catch(DBClassException $e){
+                    $logger = &Log::singleton('file', LOG_FILE, __CLASS__, $_conf);
+                    $logger->log($e->getMessage(),PEAR_LOG_EMERG);
+                }
+
+                if ($res !== false )
+                    $retValue = $assoc ? json_decode($content, true) : true;
+            }
+        }
+
         return $retValue;
     }
 }
