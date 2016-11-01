@@ -56,16 +56,19 @@ class Translations {
         self::$trans["new_pass"]["CANCEL"] = 'cancelar';
 
     // Terms of the menu pages
+        self::$trans["menu"]["HOME"] = 'Home';
+        self::$trans["menu"]["WELCOME"] = 'Bem vindo';
         self::$trans["menu"]["USERS_SERVICES"] = 'Serviços Personalizados';
         self::$trans["menu"]["OLA"] = 'Olá';
-        self::$trans["menu"]["LOGOUT"] = 'sair';
-        self::$trans["menu"]["MY_PROFILE_DOCUMENTS"] = 'Documentos do perfil';
-        self::$trans["menu"]["MY_SHELF"] = 'Meus documentos';
-        self::$trans["menu"]["MY_LINKS"] = 'Meus links';
-        self::$trans["menu"]["MY_NEWS"] = 'Minhas notícias';
+        self::$trans["menu"]["LOGOUT"] = 'Sair';
+        self::$trans["menu"]["MY_PROFILE_DOCUMENTS"] = 'Documentos do Perfil';
+        self::$trans["menu"]["MY_SHELF"] = 'Minhas Coleções';
+        self::$trans["menu"]["MY_LINKS"] = 'Meus Links';
+        self::$trans["menu"]["MY_NEWS"] = 'Minhas Notícias';
         self::$trans["menu"]["FORGOT_MY_PASSWORD"] = 'esqueci minha senha';
-        self::$trans["menu"]["MY_DATA"] = 'meus dados';
-        self::$trans["menu"]["MY_ALERTS"] = 'Meus alertas';
+        self::$trans["menu"]["CHANGE_PASSWORD"] = 'Alterar Senha';
+        self::$trans["menu"]["MY_DATA"] = 'Editar Perfil';
+        self::$trans["menu"]["MY_ALERTS"] = 'Meus Alertas';
 
     // General Terms
         self::$trans["general"]["IDENTIFICATION"] = 'Biblioteca Virtual em Saúde';
@@ -85,7 +88,7 @@ class Translations {
         self::$trans["mydocuments"]["MOVE_DOCUMENT_TO"] = 'mover para';
         self::$trans["mydocuments"]["FULL_TEXT"] = 'texto completo';
         self::$trans["mydocuments"]["REMOVE_FROM_COLLECTION"] = 'remover da coleção';
-        self::$trans["mydocuments"]["HOME"] = 'home';
+        self::$trans["mydocuments"]["HOME"] = 'Home';
         self::$trans["mydocuments"]["MONITOR_CITATION"] = 'citações monitoradas';
         self::$trans["mydocuments"]["MONITOR_ACCESS"] = 'acesso monitorado';
         self::$trans["mydocuments"]["ACCESS_LIST_NO_REGISTERS_FOUND"] = 'Nenhum registro encontrado';
@@ -113,7 +116,7 @@ class Translations {
         self::$trans["directories"]["MOVE_DOC_SUCESS"] = 'Operação realizada com sucesso.';        
 
     // Tems of mylinks pages
-        self::$trans["mylinks"]["HOME"] = 'home';
+        self::$trans["mylinks"]["HOME"] = 'Home';
         self::$trans["mylinks"]["SHOW_BY"] = 'Visualizar Lista por';
         self::$trans["mylinks"]["DATE"] = 'Data';
         self::$trans["mylinks"]["MY_RANK"] = 'Meu ranking';
@@ -135,7 +138,7 @@ class Translations {
         self::$trans["mylinks"]["PAGE"] = 'Página';
 
     // Tems of mylinks pages
-        self::$trans["mynews"]["HOME"] = 'home';
+        self::$trans["mynews"]["HOME"] = 'Home';
         self::$trans["mynews"]["SHOW_BY"] = 'Visualizar Lista por';
         self::$trans["mynews"]["DATE"] = 'Data';
         self::$trans["mynews"]["MY_RANK"] = 'Meu ranking';
@@ -157,7 +160,7 @@ class Translations {
         self::$trans["mynews"]["PAGE"] = 'Página';
 
     // Tems of myalerts pages
-        self::$trans["myalerts"]["HOME"] = 'home';
+        self::$trans["myalerts"]["HOME"] = 'Home';
         self::$trans["myalerts"]["TOOLS"] = 'Ferramentas';
         self::$trans["myalerts"]["MY_ALERTS"] = 'Meus Alertas';
         self::$trans["myalerts"]["ACCESS_LIST"] = 'Estatísticas de Acesso';
@@ -183,7 +186,7 @@ class Translations {
         self::$trans["myprofiledocuments"]["PROFILE_KEYWORDS"] = 'Palavras-chave do Perfil';
         self::$trans["myprofiledocuments"]["PROFILES"] = 'Perfis';
         self::$trans["myprofiledocuments"]["REMOVE_PROFILE"] = 'remover perfil';
-        self::$trans["myprofiledocuments"]["HOME"] = 'home';
+        self::$trans["myprofiledocuments"]["HOME"] = 'Home';
         self::$trans["myprofiledocuments"]["PROFILE_NAME"] = 'Nome do perfil';
         self::$trans["myprofiledocuments"]["PROFILE_TEXT"] = 'Palavras-chave';
         self::$trans["myprofiledocuments"]["PROFILE_TEXT_HELP"] = 'As palavras devem ser inseridas separadas por espaços.';

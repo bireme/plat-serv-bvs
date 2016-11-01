@@ -4,17 +4,16 @@
 ?>
 
 <?require_once(dirname(__FILE__)."/header.tpl.php");?>
-<?require_once(dirname(__FILE__)."/top.tpl.php");?>
+<?require_once(dirname(__FILE__)."/sidebar.tpl.php");?>
 
-    <div class="breadCrumb">
-        <a href="<?php echo $_SERVER['SCRIPT_NAME']; ?>/authentication"><?=$trans->getTrans($_REQUEST["action"],'HOME')?></a>&gt; <?=$trans->getTrans($_REQUEST["action"],'MY_COLLECTION')?>
-    </div>
+<!-- page content -->
+<div class="right_col" role="main">
     <div class="middle">
         <div class="content">
-            <h3><span><?=$trans->getTrans($_REQUEST["action"],'MY_COLLECTION')?> <?=$trans->getTrans($_REQUEST["action"],'BY_DATE')?></span></h3>
+            <h2><span><?=$trans->getTrans($_REQUEST["action"],'MY_COLLECTION')?> <?=$trans->getTrans($_REQUEST["action"],'BY_DATE')?></span></h2>
             <div class="articlelist">
                 <div class="topicFolder">
-                    <H4><img src="<?=RELATIVE_PATH?>/images/<?=$_SESSION["skin"]?>/articleFolder.gif"/> <span> <?if ($resultDirName === null){ echo $trans->getTrans($_REQUEST["action"],'INCOMING_FOLDER'); }?> <?=$resultDirName?></span></H4>
+                    <h3><img src="<?=RELATIVE_PATH?>/images/<?=$_SESSION["skin"]?>/articleFolder.gif"/> <span> <?if ($resultDirName === null){ echo $trans->getTrans($_REQUEST["action"],'INCOMING_FOLDER'); }?> <?=$resultDirName?></span></h3>
                 </div>
                 <?if ($_REQUEST["directory"] != 0){?>
                     <div class="folderTools">
@@ -92,4 +91,5 @@
             </div>
         </div> <!-- end webServices -->
     </div> <!-- end serviceColumn -->
+</div>
 <?require_once(dirname(__FILE__)."/footer.tpl.php");?>

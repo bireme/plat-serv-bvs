@@ -1,0 +1,19 @@
+.media-body .fa-external-link,
+.media-body .fa-folder-open-o {
+  padding-right: 5px;
+}
+.media-body .fa-file-o {
+  padding-right: 10px;
+  font-size: 3em;
+  float: left;
+}
+.panel_toolbox {
+  min-width: 0;
+}
+.profile_info {
+  float: none;
+  width: 100%;
+}
+p.excerpt span {
+  color: #23527c;
+}
