@@ -52,6 +52,20 @@
                 <a id="menu_toggle"><i class="fa fa-bars"></i></a>
               </div>
 
+              <form action="http://pesquisa.bvsalud.org/portal/" method="get">
+                <div class="search_bar">
+                  <div class="col-xs-11 form-group pull-right top_search">
+                    <div class="input-group">
+                        <input type="text" name="q" class="form-control" placeholder="<?=$trans->getTrans('menu','SEARCH_FOR')?>">
+                        <span class="input-group-btn">
+                          <button class="btn btn-default" type="submit"><?=$trans->getTrans('menu','SEARCH')?></button>
+                        </span>
+                        <input type="hidden" name="lang" value="<?=$_SESSION['lang']?>">
+                    </div>
+                  </div>
+                </div>
+              </form>
+
               <ul class="nav navbar-nav navbar-right">
                 <li class="">
                   <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">

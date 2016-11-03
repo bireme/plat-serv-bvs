@@ -133,3 +133,14 @@
 .paginatorSelected {
     margin-left: 2px;
 }
+
+.search_bar {
+    position: absolute;
+    padding-top: 12px;
+    padding-right: 10em;
+}
+
+.toggle {
+    position: absolute;
+    z-index: 1;
+}
