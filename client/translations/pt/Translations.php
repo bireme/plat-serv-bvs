@@ -69,6 +69,15 @@ class Translations {
         self::$trans["menu"]["CHANGE_PASSWORD"] = 'Alterar Senha';
         self::$trans["menu"]["MY_DATA"] = 'Editar Perfil';
         self::$trans["menu"]["MY_ALERTS"] = 'Meus Alertas';
+        self::$trans["menu"]["SEARCH"] = 'Pesquisar';
+        self::$trans["menu"]["SEARCH_FOR"] = 'Pesquisar por...';
+        self::$trans["menu"]["MY_SEARCHES"] = 'Minhas Pesquisas';
+
+    // Terms of mysearches pages
+        self::$trans["mysearches"]["PAGE"] = 'Página';
+        self::$trans["mysearches"]["MY_SEARCHES_NO_REGISTERS_FOUND"] = 'Nenhum registro encontrado';
+        self::$trans["mysearches"]["NEXT"] = 'Próximo';
+        self::$trans["mysearches"]["PREVIOUS"] = 'Anterior';
 
     // General Terms
         self::$trans["general"]["IDENTIFICATION"] = 'Biblioteca Virtual em Saúde';

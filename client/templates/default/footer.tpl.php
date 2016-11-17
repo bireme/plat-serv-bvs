@@ -19,6 +19,8 @@
     <script src="<?=RELATIVE_PATH?>/vendors/fastclick/lib/fastclick.js"></script>
     <!-- Form Validator -->
     <script src="<?=RELATIVE_PATH?>/js/gen_validatorv31.js"></script>
+    <!-- Theme Scripts -->
+    <script src="<?=RELATIVE_PATH?>/js/scripts.js"></script>
     <!-- Custom Theme Scripts -->
     <script src="<?=RELATIVE_PATH?>/build/js/custom.min.js"></script>
   </body>

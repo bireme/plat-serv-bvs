@@ -271,51 +271,68 @@
               <div class="col-md-4">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>My Links<small></small></h2>
-                    <ul class="nav navbar-right panel_toolbox">
-                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                      </li>
-                      <li><a class="close-link"><i class="fa fa-close"></i></a>
-                      </li>
-                    </ul>
+                    <h2>My Searches</h2>
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content">
-                    <article class="media event">
-                      <div class="media-body">
-                        <a class="title" href="#"><i class="fa fa-external-link" aria-hidden="true"></i>Item One Title</a>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                      </div>
-                    </article>
-                    <article class="media event">
-                      <div class="media-body">
-                        <a class="title" href="#"><i class="fa fa-external-link" aria-hidden="true"></i>Item Two Title</a>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                      </div>
-                    </article>
-                    <article class="media event">
-                      <div class="media-body">
-                        <a class="title" href="#"><i class="fa fa-external-link" aria-hidden="true"></i>Item Three Title</a>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                      </div>
-                    </article>
-                    <article class="media event">
-                      <div class="media-body">
-                        <a class="title" href="#"><i class="fa fa-external-link" aria-hidden="true"></i>Item Four Title</a>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                      </div>
-                    </article>
-                    <article class="media event">
-                      <div class="media-body">
-                        <a class="title" href="#"><i class="fa fa-external-link" aria-hidden="true"></i>Item Five Title</a>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                      </div>
-                    </article>
+                    <table class="table table-striped projects">
+                      <thead>
+                        <tr>
+                          <th>#</th>
+                          <th>Query</th>
+                          <th style="width: 10%"></th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td id="s1">1</td>
+                          <td class="query">malaria</td>
+                          <td>
+                            <button id="v1" class="btn btn-primary btn-xs search" value="portal" data-original-title="" title=""><i class="fa fa-search search"></i> View</button>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td id="s2">2</td>
+                          <td class="query">covarde</td>
+                          <td>
+                            <button id="v2" class="btn btn-primary btn-xs search" value="portal" data-original-title="" title=""><i class="fa fa-search search"></i> View</button>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td id="s3">3</td>
+                          <td class="query">dengue tw:malaria</td>
+                          <td>
+                            <button id="v3" class="btn btn-primary btn-xs search" value="portal" data-original-title="" title=""><i class="fa fa-search search"></i> View</button>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td id="s4">4</td>
+                          <td class="query">dengue malaria</td>
+                          <td>
+                            <button id="v4" class="btn btn-primary btn-xs search" value="portal" data-original-title="" title=""><i class="fa fa-search search"></i> View</button>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td id="s5">5</td>
+                          <td class="query">dengue</td>
+                          <td>
+                            <button id="v5" class="btn btn-primary btn-xs search" value="portal" data-original-title="" title=""><i class="fa fa-search search"></i> View</button>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td id="s6">6</td>
+                          <td class="query">zika</td>
+                          <td>
+                            <button id="v6" class="btn btn-primary btn-xs search" value="portal" data-original-title="" title=""><i class="fa fa-search search"></i> View</button>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
                   </div>
                 </div>
               </div>
 
-              <div class="col-md-4">
+              <!--div class="col-md-4">
                 <div class="x_panel">
                   <div class="x_title">
                     <h2>Suggested Events<small></small></h2>
@@ -380,8 +397,54 @@
                     </article>
                   </div>
                 </div>
+              </div-->
+
+              <div class="col-md-4">
+                <div class="x_panel">
+                  <div class="x_title">
+                    <h2>My Links<small></small></h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                      </li>
+                      <li><a class="close-link"><i class="fa fa-close"></i></a>
+                      </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content">
+                    <article class="media event">
+                      <div class="media-body">
+                        <a class="title" href="#"><i class="fa fa-external-link" aria-hidden="true"></i>Item One Title</a>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                      </div>
+                    </article>
+                    <article class="media event">
+                      <div class="media-body">
+                        <a class="title" href="#"><i class="fa fa-external-link" aria-hidden="true"></i>Item Two Title</a>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                      </div>
+                    </article>
+                    <article class="media event">
+                      <div class="media-body">
+                        <a class="title" href="#"><i class="fa fa-external-link" aria-hidden="true"></i>Item Three Title</a>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                      </div>
+                    </article>
+                    <article class="media event">
+                      <div class="media-body">
+                        <a class="title" href="#"><i class="fa fa-external-link" aria-hidden="true"></i>Item Four Title</a>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                      </div>
+                    </article>
+                    <article class="media event">
+                      <div class="media-body">
+                        <a class="title" href="#"><i class="fa fa-external-link" aria-hidden="true"></i>Item Five Title</a>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                      </div>
+                    </article>
+                  </div>
+                </div>
               </div>
-            </div>
             </div>
         </div>
         <!-- /page content -->

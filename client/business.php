@@ -23,6 +23,9 @@ switch($_REQUEST["action"]){
     case "mylinks":
         require_once(dirname(__FILE__)."/business/mylinks.php");
     break;
+    case "mysearches":
+        require_once(dirname(__FILE__)."/business/mysearches.php");
+    break;
     case "mynews":
         require_once(dirname(__FILE__)."/business/mynews.php");
     break;
@@ -38,8 +41,8 @@ switch($_REQUEST["action"]){
     case "mig_id_confirmation";
         require_once(dirname(__FILE__)."/business/mig_id_confirmation.php");
     break;
-    case "add_serverplat":
-        require_once(dirname(__FILE__)."/business/add_serverplat.php");
+    case "servicesplatform":
+        require_once(dirname(__FILE__)."/business/servicesplatform.php");
     break;
     default:
         die("default");

@@ -57,6 +57,9 @@ switch($_REQUEST["action"]){
             require_once(dirname(__FILE__)."/templates/".$_SESSION["skin"]."/mylinks.tpl.php");
         }
     break;
+    case "mysearches":
+        require_once(dirname(__FILE__)."/templates/".$_SESSION["skin"]."/mysearches.tpl.php");
+    break;
     case "mynews":
         if (($_REQUEST["task"] == "add") or ($_REQUEST["task"] == "edit")){
             require_once(dirname(__FILE__)."/templates/".$_SESSION["skin"]."/mynews_add.tpl.php");
