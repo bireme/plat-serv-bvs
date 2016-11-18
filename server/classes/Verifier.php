@@ -74,7 +74,7 @@ class Verifier {
                 $this->_data['userTK'] = $arrUserParm;
                 $retValue = true;
             }
-        } elseif ( LDAPAuthenticator::authenticateUser($arrUserParm['userID'],$arrUserParm['userPass']) || $arrUserParm['socialMedia'] ){
+        } elseif ( LDAPAuthenticator::authenticateUser($arrUserParm['userID'],$arrUserParm['userPass']) || ( $arrUserParm['socialMedia'] && in_array( $arrUserParm['socialMedia'], array('facebook', 'google') ) ) ){
             $this->_data['userTK'] = $arrUserParm;
             $retValue = true;
         }

@@ -127,7 +127,7 @@ class Token {
             $tmp2['userID'] = $tmp1[0];
             $tmp2['userPass'] = $tmp1[1];
             $retValue = $tmp2;
-        }elseif($tmp1[2]){
+        }elseif($tmp1[2] && in_array($tmp1[2], array('facebook', 'google'))){
             $tmp2['userID'] = $tmp1[0];
             $tmp2['userPass'] = $tmp1[1];
             $tmp2['socialMedia'] = $tmp1[2];
