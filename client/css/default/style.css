@@ -17,3 +17,36 @@
 p.excerpt span {
   color: #23527c;
 }
+
+#squareSpaceModal.modal {
+    display: block;
+}
+
+#squareSpaceModal .modal-header {
+    padding-bottom: 5px;
+}
+
+#squareSpaceModal .modal-footer {
+    padding: 0;
+}
+    
+#squareSpaceModal .modal-footer .btn-group button {
+    height:40px;
+    border-top-left-radius : 0;
+    border-top-right-radius : 0;
+    border: none;
+    border-right: 1px solid #ddd;
+}
+    
+#squareSpaceModal .modal-footer .btn-group:last-child > button {
+    border-right: 0;
+}
+
+#squareSpaceModal .alert {
+    padding: 0;
+    margin: 0 0 20px;
+}
+
+#squareSpaceModal .radio-child {
+    padding-left: 20px;
+}

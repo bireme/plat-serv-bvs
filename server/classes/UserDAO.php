@@ -50,7 +50,11 @@ class UserDAO {
             $iterations = $passChunks[1];
             $salt = $passChunks[2];
             $hash = $passChunks[3];
-            $pbkdf2 = base64_encode(hash_pbkdf2("sha256", $userPass, $salt, $iterations, 32, true));
+
+            if ( function_exists( 'hash_pbkdf2' ) )
+                $pbkdf2 = base64_encode(hash_pbkdf2("sha256", $userPass, $salt, $iterations, 32, true));
+            else
+                $pbkdf2 = base64_encode(Crypt::hash_pbkdf2("sha256", $userPass, $salt, $iterations, 32, true));
 
             if($hash == $pbkdf2){
                 $objUser = new User();

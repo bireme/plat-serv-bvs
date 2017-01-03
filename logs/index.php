@@ -82,6 +82,8 @@ if ( isset( $_GET['debug'] ) && 'true' == $_GET['debug'] ) {
     }
 
     //echo "<pre>"; print_r($data); echo "</pre>";
+    
+    //$result = $collection->drop();
 }
 
 ?>

@@ -18,8 +18,8 @@
                 <?if ($_REQUEST["directory"] != 0){?>
                     <div class="folderTools">
                         <ul>
-                            <li><a href="javascript: void(0);" onclick="window.open('<?=RELATIVE_PATH?>/controller/directories/control/business/task/edit/directory/<?=$_REQUEST["directory"]?>','','resizable=no,scrollbars=1,width=420,height=280')"><img src="<?=RELATIVE_PATH?>/images/<?=$_SESSION["skin"]?>/folder_edit.gif" border="0"/><?=$trans->getTrans($_REQUEST["action"],'EDIT_FOLDER')?></a></li>
-                            <li><a href="javascript: void(0);" onClick="window.open('<?=RELATIVE_PATH?>/controller/directories/control/business/task/delete/directory/<?=$_REQUEST["directory"]?>','','resizable=no,scrollbars=1,width=420,height=280')"><img src="<?=RELATIVE_PATH?>/images/<?=$_SESSION["skin"]?>/folder_delete.gif" border="0"/><?=$trans->getTrans($_REQUEST["action"],'REMOVE_FOLDER')?></a></li>
+                            <li><a href="javascript: void(0);" onclick="window.open('<?=RELATIVE_PATH?>/controller/directories/control/business/task/edit/directory/<?=$_REQUEST["directory"]?>','','resizable=no,scrollbars=1,width=420,height=250')"><img style="vertical-align: text-bottom;" src="<?=RELATIVE_PATH?>/images/<?=$_SESSION["skin"]?>/folder_edit.gif" border="0"/><?=$trans->getTrans($_REQUEST["action"],'EDIT_FOLDER')?></a></li>
+                            <li><a href="javascript: void(0);" onclick="window.open('<?=RELATIVE_PATH?>/controller/directories/control/business/task/delete/directory/<?=$_REQUEST["directory"]?>','','resizable=no,scrollbars=1,width=420,height=295')"><img style="vertical-align: text-bottom;" src="<?=RELATIVE_PATH?>/images/<?=$_SESSION["skin"]?>/folder_delete.gif" border="0"/><?=$trans->getTrans($_REQUEST["action"],'REMOVE_FOLDER')?></a></li>
                             <!--li><a href="<?=RELATIVE_PATH?>/controller/directories/control/business/task/<?= $isCurrDirPublic ? 'nopublish' : 'publish' ?>/directory/<?=$_REQUEST["directory"]?>"><img src="<?=RELATIVE_PATH?>/images/<?=$_SESSION["skin"]?>/network.png" border="0"/><?= $isCurrDirPublic ? $trans->getTrans($_REQUEST["action"],'MAKE_FOLDER_PRIVATE') : $trans->getTrans($_REQUEST["action"],'PUBLISH_FOLDER') ?></a></li-->
                         </ul>
                     </div>
@@ -51,7 +51,7 @@
                                 <?if ($register["dirID"] == null){ $dirID = 0;}?>
                                 <div class="actions">
                                     <a class="remove" href="<?=RELATIVE_PATH?>/controller/mydocuments/control/business/task/removedoc/document/<?=$register["docID"]?>/directory/<?=$register["dirID"]?>"><img src="<?=RELATIVE_PATH?>/images/<?=$_SESSION["skin"]?>/doc_delete.gif" border="0"/><?=$trans->getTrans($_REQUEST["action"],'REMOVE_FROM_COLLECTION')?></a> |
-                                    <a class="move" href="javascript: void(0);" onclick="window.open('<?=RELATIVE_PATH?>/controller/directories/control/business/task/movedoc/document/<?=$register["docID"]?>/directory/<?=$register["dirID"]?>','','resizable=no,width=420,height=420')"><img src="<?=RELATIVE_PATH?>/images/<?=$_SESSION["skin"]?>/doc_move.gif" border="0"/><?=$trans->getTrans($_REQUEST["action"],'MOVE_TO')?></a> |
+                                    <a class="move" href="javascript: void(0);" onclick="window.open('<?=RELATIVE_PATH?>/controller/directories/control/business/task/movedoc/document/<?=$register["docID"]?>/directory/<?=$register["dirID"]?>','','resizable=no,width=420,height=270')"><img src="<?=RELATIVE_PATH?>/images/<?=$_SESSION["skin"]?>/doc_move.gif" border="0"/><?=$trans->getTrans($_REQUEST["action"],'MOVE_TO')?></a> |
                                     <a class="fulltext" href="<?=$register["docURL"]?>" target="_blank"><img src="<?=RELATIVE_PATH?>/images/<?=$_SESSION["skin"]?>/fullText.gif" border="0"/><?=$trans->getTrans($_REQUEST["action"],'FULL_TEXT')?></a>
                                 </div>
                             </div>
@@ -71,7 +71,7 @@
             <h3><span><?=$trans->getTrans($_REQUEST["action"],'MY_FOLDERS')?></span></h3>
             <div id="rssFeeds">
                 <ul>
-                    <li><a href="javascript: void(0);" onclick="window.open('<?=RELATIVE_PATH?>/controller/directories/control/view/task/add','','resizable=no,width=420,height=280')"><img src="<?=RELATIVE_PATH?>/images/<?=$_SESSION["skin"]?>/add-folder-orange.gif" border="0"/><?=$trans->getTrans($_REQUEST["action"],'ADD_FOLDER')?></a></li>
+                    <li><a href="javascript: void(0);" onclick="window.open('<?=RELATIVE_PATH?>/controller/directories/control/view/task/add','','resizable=no,width=420,height=250')"><img src="<?=RELATIVE_PATH?>/images/<?=$_SESSION["skin"]?>/add-folder-orange.gif" border="0"/><?=$trans->getTrans($_REQUEST["action"],'ADD_FOLDER')?></a></li>
                     <li><a href="<?=RELATIVE_PATH?>/controller/mydocuments/control/business/directory/0"><img src="<?=RELATIVE_PATH?>/images/<?=$_SESSION["skin"]?>/folder.gif" border="0"/><?=$trans->getTrans($_REQUEST["action"],'INCOMING_FOLDER')?></a></li>
                     <?if ($responseListDirs["values"] != false ){?>
                         <?foreach ($responseListDirs["values"] as $listDirs){?>

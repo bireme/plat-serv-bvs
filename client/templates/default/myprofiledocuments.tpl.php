@@ -11,11 +11,11 @@
                 <?if ($responseProfile["values"] != false ){
                     $registerProfile = $responseProfile["values"][0];?>
                     <div class="topicFolder">
-                       <h3><img src="<?=RELATIVE_PATH?>/images/<?=$_SESSION["skin"]?>/articleFolder.gif"/><span>Trangolango<?=$registerProfile["profileName"]?></span></h3>
+                       <h3><img src="<?=RELATIVE_PATH?>/images/<?=$_SESSION["skin"]?>/articleFolder.gif"/><span><?=$registerProfile["profileName"]?></span></h3>
                     </div>
                     <div class="folderTools">
                         <ul>
-                            <li><a class="edit" href="javascript: void(0);" onClick="window.open('<?=RELATIVE_PATH?>/controller/myprofiledocuments/control/business/task/edit/profile/<?=$registerProfile["profileID"]?>','','resizable=no,scrollbars=1,width=420,height=280')"><img src="<?=RELATIVE_PATH?>/images/<?=$_SESSION["skin"]?>/edit-page-yellow.gif" border="0"/><?=$trans->getTrans($_REQUEST["action"],'EDIT_PROFILE')?></a></li>
+                            <li><a class="edit" href="javascript: void(0);" onClick="window.open('<?=RELATIVE_PATH?>/controller/myprofiledocuments/control/business/task/edit/profile/<?=$registerProfile["profileID"]?>','','resizable=no,scrollbars=1,width=420,height=385')"><img src="<?=RELATIVE_PATH?>/images/<?=$_SESSION["skin"]?>/edit-page-yellow.gif" border="0"/><?=$trans->getTrans($_REQUEST["action"],'EDIT_PROFILE')?></a></li>
                             <li><a class="remove" href="<?=RELATIVE_PATH?>/controller/myprofiledocuments/control/business/task/delete/profile/<?=$registerProfile["profileID"]?>"><img src="<?=RELATIVE_PATH?>/images/<?=$_SESSION["skin"]?>/delete-folder-orange.gif" border="0"/><?=$trans->getTrans($_REQUEST["action"],'REMOVE_PROFILE')?></a></li>
                         </ul>
                     </div>
@@ -55,7 +55,7 @@
             <h3><span><?=$trans->getTrans($_REQUEST["action"],'TOOLS')?></span></h3>
             <div id="rssFeeds">
                 <ul>
-                    <li><a href="javascript: void(0);" onclick="window.open('<?=RELATIVE_PATH?>/controller/myprofiledocuments/control/view/task/add','','resizable=no,width=420,height=280')"><img src="<?=RELATIVE_PATH?>/images/<?=$_SESSION["skin"]?>/add-folder-orange.gif" border="0"/><?=$trans->getTrans($_REQUEST["action"],'ADD_PROFILE')?></a></li>
+                    <li><a href="javascript: void(0);" onclick="window.open('<?=RELATIVE_PATH?>/controller/myprofiledocuments/control/view/task/add','','resizable=no,width=420,height=385')"><img src="<?=RELATIVE_PATH?>/images/<?=$_SESSION["skin"]?>/add-folder-orange.gif" border="0"/><?=$trans->getTrans($_REQUEST["action"],'ADD_PROFILE')?></a></li>
                 </ul>
             </div>
         </div>

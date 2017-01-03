@@ -1,52 +1,58 @@
 <?require_once(dirname(__FILE__)."/header.tpl.php");?>
-<body>
-    <?if ($response["status"] == null or $response["status"] == false){?>
-        <div class="form">
-            <form name="addDir" method="post" action="<?=RELATIVE_PATH?>/controller/mylinks">
-                <input type="hidden" name="control" value="business"/>
-                <input type="hidden" name="task" value="<?=$_REQUEST["task"]?>"/>
-                <?if ($_REQUEST["task"] == "edit") {?>
-                <input type="hidden" name="link" value="<?=$_REQUEST["link"]?>"/>
-                <input type="hidden" name="persist" value="true"/>
+
+                <?if ($response["status"] == null or $response["status"] == false){?>
+                <div class="modal" id="squareSpaceModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                        <form name="addDir" method="post" action="<?=RELATIVE_PATH?>/controller/mylinks">
+                          <input type="hidden" name="control" value="business"/>
+                          <input type="hidden" name="task" value="<?=$_REQUEST["task"]?>"/>
+                          <?if ($_REQUEST["task"] == "edit") {?>
+                            <input type="hidden" name="link" value="<?=$_REQUEST["link"]?>"/>
+                            <input type="hidden" name="persist" value="true"/>
+                          <?}?>
+                            <div class="modal-header">
+                                <h2 class="modal-title"><?=$trans->getTrans($_REQUEST["action"],'EDIT_LINK')?></h2>
+                            </div>
+                            <div class="modal-body">
+                                  <div class="form-group">
+                                    <label for="linkName"><?=$trans->getTrans($_REQUEST["action"],'LINK_TITLE')?></label>
+                                    <input type="text" class="form-control" id="linkName" name="linkName" value="<?=$response["values"]["name"]?>" required>
+                                  </div>
+                                  <div class="form-group">
+                                    <label for="linkUrl"><?=$trans->getTrans($_REQUEST["action"],'LINK_URL')?></label>
+                                    <input type="text" class="form-control" id="linkUrl" name="linkUrl" value="<?=$response["values"]["url"]?>" required>
+                                  </div>
+                                  <div class="form-group">
+                                    <label for="linkDescription"><?=$trans->getTrans($_REQUEST["action"],'LINK_DESCRIPTION')?></label>
+                                    <input type="text" class="form-control" id="linkDescription" name="linkDescription" value="<?=$response["values"]["description"]?>">
+                                  </div>
+                            </div>
+                            <?if ($response["status"] === false){?>
+                                <div class="alert"><?=$trans->getTrans($_REQUEST["action"],'ADD_LINK_ERROR')?></div>
+                            <?}?>
+                            <div class="modal-footer">
+                                <div class="btn-group btn-group-justified" role="group" aria-label="group button">
+                                    <div class="btn-group" role="group">
+                                        <button type="button" class="btn btn-default submitFalse" data-dismiss="modal" role="button" onclick="window.close();"><?=$trans->getTrans($_REQUEST["action"],'CANCEL')?></button>
+                                    </div>
+                                    <div class="btn-group" role="group">
+                                        <button type="submit" class="btn btn-default btn-hover-green submitTrue" data-action="save" role="button"><?=$trans->getTrans($_REQUEST["action"],'SAVE')?></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                  </div>
+                </div>
+                <?}else{?>
+                    <script language="javascript">
+                        opener.location.reload(true);
+                        window.close();
+                    </script>
+                    <div class="alert"><?=$trans->getTrans($_REQUEST["action"],'ADD_LINK_SUCESS')?></div>
                 <?}?>
-                <h4><img src="<?=RELATIVE_PATH?>/images/<?=$_SESSION["skin"]?>/link_edit.gif" /><span><?=$trans->getTrans($_REQUEST["action"],'EDIT_LINK')?>:</span></h4>
-                <table class="form" cellspacing="0">
-                    <tr>
-                        <td><?=$trans->getTrans($_REQUEST["action"],'LINK_TITLE')?>:</td>
-                        <td class="inputArea">
-                            <input type="text" name="linkName" value="<?=$response["values"]["name"]?>" maxlength="50" size="20" class="textEntry"/>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><?=$trans->getTrans($_REQUEST["action"],'LINK_URL')?>:</td>
-                        <td class="inputArea">
-                            <input type="text" name="linkUrl" value="<?=$response["values"]["url"]?>" maxlength="300" size="20" class="textEntry"/>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><?=$trans->getTrans($_REQUEST["action"],'LINK_DESCRIPTION')?>:</td>
-                        <td class="inputArea">
-                            <input type="text" name="linkDescription" value="<?=$response["values"]["description"]?>" maxlength="200" size="20" class="textEntry"/>
-                        </td>
-                    </tr>
-                     <tr>
-                        <td colspan="2">
-                          <input type="submit" value="<?=$trans->getTrans($_REQUEST["action"],'SAVE')?>" class="submitTrue" />
-                          <input type="button" value="<?=$trans->getTrans($_REQUEST["action"],'CANCEL')?>" class="submitFalse" onClick="window.close(); " />
-                        </td>
-                    </tr>
-                </table>
-            </form>
+            </div>
         </div>
-        <?if ($response["status"] === false){?>
-            <div class="alert"><?=$trans->getTrans($_REQUEST["action"],'ADD_LINK_ERROR')?></div>
-        <?}?>
-    <?}else{?>
-        <script language="javascript">
-            opener.location.reload(true);
-            window.close();
-        </script>
-        <div class="alert"><?=$trans->getTrans($_REQUEST["action"],'ADD_LINK_SUCESS')?></div>
-    <?}?>
-</body>
-<?require_once(dirname(__FILE__)."/footer.tpl.php");?>
+    </body>
+</html>

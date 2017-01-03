@@ -49,38 +49,7 @@ function loginUser($userID,$userPass,$socialMedia){
     $dUserPass = Crypt::decrypt($userPass, CRYPT_PUBKEY);
 
     if(!empty($dUserID) && !empty($dUserPass)){
-        /* check users from Social Medias */
-        if ( SocialNetwork::validateObjUser( $socialMedia ) === true ) {
-
-            $result["source"] = $socialMedia['social_media'];
-            $result["status"] = true;
-            $result["userID"] = $dUserID;
-
-            /* if the user does not exist in SP database */
-            if(!UserDAO::isUser($dUserID)){
-                $name = array( 'facebook' => 'first_name', 'google' => 'given_name' );
-                $name = $name[$socialMedia['social_media']];
-                $surname = array( 'facebook' => 'last_name', 'google' => 'family_name' );
-                $surname = $surname[$socialMedia['social_media']];
-
-                $objUser = new User();
-                $objUser->setID($socialMedia['email']);
-                $objUser->setFirstName($socialMedia[$name]);
-                $objUser->setLastName($socialMedia[$surname]);
-                $objUser->setEmail($socialMedia['email']);
-                $objUser->setPassword($dUserPass);
-                $objUser->setSource($socialMedia['social_media']);
-
-                $addResult = UserDAO::addUser($objUser);
-                $result["userDataStatus"] = false; /* need to complete user data */
-
-            }
-
-            $response = $result;
-
-        } else {
-            $response = ToolsAuthentication::authenticateUser($dUserID ,$dUserPass);
-        }
+        $response = ToolsAuthentication::authenticateUser($dUserID ,$dUserPass, $socialMedia);
 
         if ($response["status"] === true){
             $objUser = UserDAO::getUser($response["userID"]);

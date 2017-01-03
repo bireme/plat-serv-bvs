@@ -43,12 +43,35 @@ class ToolsAuthentication {
      * @param String $userPass
      * @return Boolean
      */
-    public static function authenticateUser($userID, $userPass, $userDataConfirmation=null, $newUserID=null){
+    public static function authenticateUser($userID, $userPass, $socialMedia, $userDataConfirmation=null, $newUserID=null){
 
-        /* check users from BIREME Acccounts */
-        $user = UserDAO::getAccountsUser($userID, $userPass);
+        if ( SocialNetwork::validateObjUser( $socialMedia ) === true ) { /* check users from Social Medias */
 
-        if($user){
+            $result["source"] = $socialMedia['social_media'];
+            $result["status"] = true;
+            $result["userID"] = $userID;
+
+            /* if the user does not exist in SP database */
+            if(!UserDAO::isUser($userID)){
+                $name = array( 'facebook' => 'first_name', 'google' => 'given_name' );
+                $name = $name[$socialMedia['social_media']];
+                $surname = array( 'facebook' => 'last_name', 'google' => 'family_name' );
+                $surname = $surname[$socialMedia['social_media']];
+
+                $objUser = new User();
+                $objUser->setID($socialMedia['email']);
+                $objUser->setFirstName($socialMedia[$name]);
+                $objUser->setLastName($socialMedia[$surname]);
+                $objUser->setEmail($socialMedia['email']);
+                $objUser->setPassword($userPass);
+                $objUser->setSource($socialMedia['social_media']);
+
+                $addResult = UserDAO::addUser($objUser);
+                $result["userDataStatus"] = false; /* need to complete user data */
+
+            }
+
+        } elseif ( $user = UserDAO::getAccountsUser($userID, $userPass) ) { /* check users from BIREME Acccounts */
 
             $result["source"] = "bireme_accounts";
             $result["status"] = true;
@@ -62,7 +85,7 @@ class ToolsAuthentication {
 
             }
 
-        } elseif (LDAPAuthenticator::authenticateUser($userID, $userPass) === true){
+        } elseif ( LDAPAuthenticator::authenticateUser($userID, $userPass) === true ) {
 
             $result["source"] = "ldap";
             $result["status"] = true;

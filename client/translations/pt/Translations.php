@@ -101,19 +101,19 @@ class Translations {
         self::$trans["mydocuments"]["MONITOR_CITATION"] = 'citações monitoradas';
         self::$trans["mydocuments"]["MONITOR_ACCESS"] = 'acesso monitorado';
         self::$trans["mydocuments"]["ACCESS_LIST_NO_REGISTERS_FOUND"] = 'Nenhum registro encontrado';
-        self::$trans["mydocuments"]["EDIT_FOLDER"] = 'Editar Pasta';
-        self::$trans["mydocuments"]["REMOVE_FOLDER"] = 'Remover Pasta';
+        self::$trans["mydocuments"]["EDIT_FOLDER"] = 'editar pasta';
+        self::$trans["mydocuments"]["REMOVE_FOLDER"] = 'remover pasta';
         self::$trans["mydocuments"]["PUBLISH_FOLDER"] = 'Tornar público';
         self::$trans["mydocuments"]["MAKE_FOLDER_PRIVATE"] = 'Tornar privado';
         self::$trans["mydocuments"]["PAGE"] = 'Página';
 
     // Tems of directories pages
-        self::$trans["directories"]["FOLDER_NAME"] = 'Nome da Pasta';
-        self::$trans["directories"]["EDIT_FOLDER"] = 'Editar Pasta';
+        self::$trans["directories"]["FOLDER_NAME"] = 'Nome da pasta';
+        self::$trans["directories"]["EDIT_FOLDER"] = 'editar pasta';
         self::$trans["directories"]["SAVE"] = 'salvar';
         self::$trans["directories"]["CANCEL"] = 'cancelar';
         self::$trans["directories"]["REMOVE"] = 'remover';
-        self::$trans["directories"]["REMOVE_FOLDER"] = 'Remover Pasta';
+        self::$trans["directories"]["REMOVE_FOLDER"] = 'remover pasta';
         self::$trans["directories"]["REMOVE_CONTENT"] = 'Remover conteúdo';
         self::$trans["directories"]["MOVE"] = 'mover';
         self::$trans["directories"]["MOVE_TO"] = 'mover para';
@@ -121,8 +121,11 @@ class Translations {
         self::$trans["directories"]["MOVE_CONTENT_TO_OTHER_FOLDER"] = 'Mover conteúdo para outra pasta';
         self::$trans["directories"]["INCOMING_FOLDER"] = 'Pasta de Entrada';
         self::$trans["directories"]["ADD_DIR_SUCESS"] = 'Operação realizada com sucesso.';
-        self::$trans["directories"]["REMOVE_DIR_SUCESS"] = 'Operação realizada com sucesso.';        
+        self::$trans["directories"]["REMOVE_DIR_SUCESS"] = 'Operação realizada com sucesso.';
         self::$trans["directories"]["MOVE_DOC_SUCESS"] = 'Operação realizada com sucesso.';        
+        self::$trans["directories"]["ADD_DIR_ERROR"] = 'Erro ao adicionar pasta';
+        self::$trans["directories"]["REMOVE_DIR_ERROR"] = 'Erro ao remover pasta';
+        self::$trans["directories"]["MOVE_DOC_ERROR"] = 'Erro ao mover pasta';
 
     // Tems of mylinks pages
         self::$trans["mylinks"]["HOME"] = 'Home';
@@ -145,6 +148,7 @@ class Translations {
         self::$trans["mylinks"]["MY_LINKS_NO_REGISTERS_FOUND"] = 'Nenhum registro encontrado';
         self::$trans["mylinks"]["ADD_LINK_SUCESS"] = 'Operação realizada com sucesso.';
         self::$trans["mylinks"]["PAGE"] = 'Página';
+        self::$trans["mylinks"]["ADD_LINK_ERROR"] = 'Erro ao adicionar link';
 
     // Tems of mylinks pages
         self::$trans["mynews"]["HOME"] = 'Home';

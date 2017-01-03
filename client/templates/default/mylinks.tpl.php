@@ -31,7 +31,7 @@
                                 <div class="description"><?=$register["description"]?></div>
                                 <div class="actions">
                                     <a class="remove" href="<?=RELATIVE_PATH?>/controller/mylinks/control/business/task/delete/link/<?=$register["linkID"]?>"><img src="<?=RELATIVE_PATH?>/images/<?=$_SESSION["skin"]?>/link_delete.gif" border="0"/><?=$trans->getTrans($_REQUEST["action"],'REMOVE_LINK')?></a> |
-                                    <a class="edit" href="javascript: void(0);" onClick="window.open('<?=RELATIVE_PATH?>/controller/mylinks/control/business/task/edit/link/<?=$register["linkID"]?>','','resizable=no,scrollbars=1,width=420,height=280')"><img src="<?=RELATIVE_PATH?>/images/<?=$_SESSION["skin"]?>/link_edit.gif" border="0"/><?=$trans->getTrans($_REQUEST["action"],'EDIT_LINK')?></a>
+                                    <a class="edit" href="javascript: void(0);" onClick="window.open('<?=RELATIVE_PATH?>/controller/mylinks/control/business/task/edit/link/<?=$register["linkID"]?>','','resizable=no,scrollbars=1,width=420,height=385')"><img src="<?=RELATIVE_PATH?>/images/<?=$_SESSION["skin"]?>/link_edit.gif" border="0"/><?=$trans->getTrans($_REQUEST["action"],'EDIT_LINK')?></a>
                                 </div>
                             </div>
                         </li>
@@ -50,7 +50,7 @@
             <h3><span><?=$trans->getTrans($_REQUEST["action"],'TOOLS')?></span></h3>
             <div id="rssFeeds">
                 <ul>
-                    <li><a href="javascript: void(0);" onclick="window.open('<?=RELATIVE_PATH?>/controller/mylinks/control/view/task/add','','resizable=no,width=420,height=280')"><img src="<?=RELATIVE_PATH?>/images/<?=$_SESSION["skin"]?>/link_add.gif" border="0"/><?=$trans->getTrans($_REQUEST["action"],'ADD_LINK')?></a></li>
+                    <li><a href="javascript: void(0);" onclick="window.open('<?=RELATIVE_PATH?>/controller/mylinks/control/view/task/add','','resizable=no,width=420,height=385')"><img src="<?=RELATIVE_PATH?>/images/<?=$_SESSION["skin"]?>/link_add.gif" border="0"/><?=$trans->getTrans($_REQUEST["action"],'ADD_LINK')?></a></li>
                 </ul>
             </div>
         </div>
