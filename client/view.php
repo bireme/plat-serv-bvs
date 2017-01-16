@@ -31,7 +31,6 @@ switch($_REQUEST["action"]){
             echo 'window.open("'.$redirectCommand.'","_parent")';
             echo '</script>';
         }
-               
         require_once(dirname(__FILE__)."/templates/".$_SESSION["skin"]."/menu.tpl.php");
     break;
     case "mydocuments":

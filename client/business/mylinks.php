@@ -17,6 +17,7 @@ require_once(dirname(__FILE__)."/../classes/MyLinks.php");
 if ($_REQUEST["task"] === null){
     $_REQUEST["task"] = "list";
 }
+
 $response["status"] = false;
 $params["sort"]=$_REQUEST["sort"];
 

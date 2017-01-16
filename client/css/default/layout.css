@@ -152,3 +152,12 @@ a.operator {
 .popover {
     white-space: nowrap;
 }
+
+.starOn {
+    padding-bottom: 3px;
+}
+
+.tile_count .tile_stats_count {
+    text-overflow: clip !important;
+    /*overflow: visible !important;*/
+}

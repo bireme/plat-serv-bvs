@@ -4,6 +4,9 @@
 switch($_REQUEST["action"]){
     case "authentication":
         require_once(dirname(__FILE__)."/business/authentication.php");
+        if ( $_SESSION['userTK'] ) {
+            require_once(dirname(__FILE__)."/business/widgets.php");
+        }
     break;
     case "new_pass":
         require_once(dirname(__FILE__)."/business/new_pass.php");
@@ -12,11 +15,7 @@ switch($_REQUEST["action"]){
         require_once(dirname(__FILE__)."/business/mydocuments.php");
     break;
     case "directories":
-        if ($_REQUEST["task"] == "add" or $_REQUEST["task"] == "edit" or
-            $_REQUEST["task"] == "delete" or $_REQUEST["task"] == "publish"){
-            require_once(dirname(__FILE__)."/business/directories.php");
-        }
-        if ($_REQUEST["task"] == "movedoc"){
+        if ($_REQUEST["task"] == "add" or $_REQUEST["task"] == "edit" or $_REQUEST["task"] == "delete" or $_REQUEST["task"] == "publish" or $_REQUEST["task"] == "movedoc"){
             require_once(dirname(__FILE__)."/business/directories.php");
         }
     break;

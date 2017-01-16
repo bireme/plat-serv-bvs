@@ -13,6 +13,7 @@
  * Edit this file in UTF-8 - Test String "áéíóú"
  */
 require_once(dirname(__FILE__)."/../classes/DocsCollection.php");
+
 if ($_REQUEST["task"] === null){
     $_REQUEST["task"] = "list";
 }

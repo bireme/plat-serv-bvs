@@ -269,7 +269,7 @@ class ShelfDAO {
 
         $sysUID = UserDAO::getSysUID($shelf->getUserID());
 
-        $count = DOCUMENTS_PER_PAGE;
+        $count = ( $params["widget"] ) ? WIDGETS_ITEMS_LIMIT : DOCUMENTS_PER_PAGE;
         $from = $count * $params["page"];
         $objUserDirectory = $shelf->getDir();
         
@@ -286,7 +286,7 @@ class ShelfDAO {
                     and userShelf.userDirID=".$dirID;
             }
         }else{
-            $filter = " and userShelf.userDirID=0";
+            $filter = ( !$params["widget"] ) ? " and userShelf.userDirID=0" : "";
         }
 
         switch ($params["sort"]){
@@ -569,7 +569,7 @@ class ShelfDAO {
      * @return int|boolean
      */
     public static function getTotalItens($userID, $dirID){
-
+        $filter = "";
         $sysUID = UserDAO::getSysUID($userID);
         
         if(isset($dirID)){

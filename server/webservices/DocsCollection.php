@@ -55,7 +55,7 @@ function listDocs($userTK,$dirID=null,$filter=null){
     return $retValue;
 }
 
-function getTotalDocs($userTK,$dirID=null){
+function getTotalDocs($userTK,$dirID=null,$widget=false){
     $retValue = false;
 
     $dirID = empty($dirID) ? 0 : $dirID;
@@ -67,15 +67,19 @@ function getTotalDocs($userTK,$dirID=null){
     if($retVerifier = $objVerifier->canPass()){
         $retParams = $objVerifier->getParams();
 
-        $retValue['items'] = ShelfDAO::getTotalItens($retParams['userTK']['userID'],$retParams['dirID']);
-        $retValue['pages'] = ShelfDAO::getTotalPages($retParams['userTK']['userID'],$retParams['dirID']);
+        if ( !$widget ) {
+            $retValue['items'] = ShelfDAO::getTotalItens($retParams['userTK']['userID'],$retParams['dirID']);
+            $retValue['pages'] = ShelfDAO::getTotalPages($retParams['userTK']['userID'],$retParams['dirID']);
+        } else {
+            $retValue = ShelfDAO::getTotalItens($retParams['userTK']['userID'], null);
+        }
     }
 
     return $retValue;
 }
 
 /**
- * aAdd new document
+ * Add new document
  *
  * @param string $userTK mcrypt(userID+password)
  * @param string $appID mcrypt(source id) necessita implementacao

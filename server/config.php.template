@@ -44,6 +44,7 @@ define("HOME","/users/loginLDAP.php");
 define("LOGOUT","");
 
 define("DOCUMENTS_PER_PAGE","10"); /* pagination */
+define("WIDGETS_ITEMS_LIMIT","5"); /* itens limit in widgets */
 
 /* Regular Expressions */
 define("REGEXP_LANGUAGE","^(pt)|(es)|(en)$");

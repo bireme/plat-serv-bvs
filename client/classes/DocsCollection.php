@@ -28,12 +28,12 @@ class DocsCollection {
         return $retValue;
     }
 
-    function getTotalDocs($userTK,$dirID=null){
+    public function getTotalDocs($userTK,$dirID=null,$widget=false){
         $retValue = false;
 
         try{
             $objSoapClient = self::getSoapClient();
-            $retValue = $objSoapClient->getTotalDocs($userTK,$dirID);
+            $retValue = $objSoapClient->getTotalDocs($userTK,$dirID,$widget);
         }catch(Exception $e){
             $logger = &Log::singleton('file', LOG_FILE, __CLASS__, $_conf);
             $logger->log($e->getMessage(),PEAR_LOG_EMERG);
@@ -84,90 +84,89 @@ class DocsCollection {
         return $retValue;
     }
 
-/**
- * Turn off the citation alerts
- *
- * @param string $userID User ID
- * @param int $docID Document ID
- * @return boolean
- */
-function deleteCitedAlert($userTK,$docID){
-    $retValue = false;
+    /**
+     * Turn off the citation alerts
+     *
+     * @param string $userID User ID
+     * @param int $docID Document ID
+     * @return boolean
+     */
+    public static function deleteCitedAlert($userTK,$docID){
+        $retValue = false;
 
-    try{
-        $objSoapClient = self::getSoapClient();
-        $retValue = $objSoapClient->deleteCitedAlert($retParams['userTK']['userID'],$docID);
-    }catch(Exception $e){
-        $logger = &Log::singleton('file', LOG_FILE, __CLASS__, $_conf);
-        $logger->log($e->getMessage(),PEAR_LOG_EMERG);
+        try{
+            $objSoapClient = self::getSoapClient();
+            $retValue = $objSoapClient->deleteCitedAlert($retParams['userTK']['userID'],$docID);
+        }catch(Exception $e){
+            $logger = &Log::singleton('file', LOG_FILE, __CLASS__, $_conf);
+            $logger->log($e->getMessage(),PEAR_LOG_EMERG);
+        }
+
+        return $retValue;
     }
 
-    return $retValue;
-}
+    /**
+     * Turn on the citation alerts
+     *
+     * @param string $userID User ID
+     * @param int $docID Document ID
+     * @return boolean
+     */
+    public static function enableCitedAlert($userTK,$docID){
+        $retValue = false;
+        
+        try{
+            $objSoapClient = self::getSoapClient();
+            $retValue = $objSoapClient->enableCitedAlert($retParams['userTK']['userID'],$docID);
+        }catch(Exception $e){
+            $logger = &Log::singleton('file', LOG_FILE, __CLASS__, $_conf);
+            $logger->log($e->getMessage(),PEAR_LOG_EMERG);
+        }
 
-/**
- * Turn on the citation alerts
- *
- * @param string $userID User ID
- * @param int $docID Document ID
- * @return boolean
- */
-function enableCitedAlert($userTK,$docID){
-    $retValue = false;
-    
-    try{
-        $objSoapClient = self::getSoapClient();
-        $retValue = $objSoapClient->enableCitedAlert($retParams['userTK']['userID'],$docID);
-    }catch(Exception $e){
-        $logger = &Log::singleton('file', LOG_FILE, __CLASS__, $_conf);
-        $logger->log($e->getMessage(),PEAR_LOG_EMERG);
+        return $retValue;
     }
 
-    return $retValue;
-}
+    /**
+     * Turn off the access alerts
+     *
+     * @param string $userID User ID
+     * @param int $docID Document ID
+     * @return boolean
+     */
+    public static function deleteAccessAlert($userTK,$docID){
+        $retValue = false;
 
-/**
- * Turn off the access alerts
- *
- * @param string $userID User ID
- * @param int $docID Document ID
- * @return boolean
- */
-function deleteAccessAlert($userTK,$docID){
-    $retValue = false;
+        try{
+            $objSoapClient = self::getSoapClient();
+            $retValue = $objSoapClient->deleteAccessAlert($retParams['userTK']['userID'],$docID);
+        }catch(Exception $e){
+            $logger = &Log::singleton('file', LOG_FILE, __CLASS__, $_conf);
+            $logger->log($e->getMessage(),PEAR_LOG_EMERG);
+        }
 
-    try{
-        $objSoapClient = self::getSoapClient();
-        $retValue = $objSoapClient->deleteAccessAlert($retParams['userTK']['userID'],$docID);
-    }catch(Exception $e){
-        $logger = &Log::singleton('file', LOG_FILE, __CLASS__, $_conf);
-        $logger->log($e->getMessage(),PEAR_LOG_EMERG);
+        return $retValue;
     }
 
-    return $retValue;
-}
+    /**
+     * Turn on the access alerts
+     *
+     * @param string $userID User ID
+     * @param int $docID Document ID
+     * @return boolean
+     */
+    public static function enableAccessAlert($userTK,$docID){
+        $retValue = false;
 
-/**
- * Turn on the access alerts
- *
- * @param string $userID User ID
- * @param int $docID Document ID
- * @return boolean
- */
-function enableAccessAlert($userTK,$docID){
-    $retValue = false;
+        try{
+            $objSoapClient = self::getSoapClient();
+            $retValue = $objSoapClient->enableAccessAlert($retParams['userTK']['userID'],$docID);
+        }catch(Exception $e){
+            $logger = &Log::singleton('file', LOG_FILE, __CLASS__, $_conf);
+            $logger->log($e->getMessage(),PEAR_LOG_EMERG);
+        }
 
-    try{
-        $objSoapClient = self::getSoapClient();
-        $retValue = $objSoapClient->enableAccessAlert($retParams['userTK']['userID'],$docID);
-    }catch(Exception $e){
-        $logger = &Log::singleton('file', LOG_FILE, __CLASS__, $_conf);
-        $logger->log($e->getMessage(),PEAR_LOG_EMERG);
+        return $retValue;
     }
-
-    return $retValue;
-}
-
 
     public static function getCitedAlertList($userTK){
         $retValue = false;

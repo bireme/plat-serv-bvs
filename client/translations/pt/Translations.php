@@ -72,6 +72,12 @@ class Translations {
         self::$trans["menu"]["SEARCH"] = 'Pesquisar';
         self::$trans["menu"]["SEARCH_FOR"] = 'Pesquisar por...';
         self::$trans["menu"]["MY_SEARCHES"] = 'Minhas Pesquisas';
+        self::$trans["menu"]["KEYWORDS"] = 'Palavras-chave';
+        self::$trans["menu"]["SUGGESTED_DOCS"] = 'Documentos Sugeridos';
+        self::$trans["menu"]["RECENT_ACTIVITIES"] = 'Atividades Recentes';
+        self::$trans["menu"]["SEE_ALL_DOCS"] = 'Ver todas as coleções';
+        self::$trans["menu"]["SEE_ALL_LINKS"] = 'Ver todos os links';
+        self::$trans["menu"]["SEE_ALL_PROFILES"] = 'Ver todos os perfis';
 
     // Terms of mysearches pages
         self::$trans["mysearches"]["PAGE"] = 'Página';

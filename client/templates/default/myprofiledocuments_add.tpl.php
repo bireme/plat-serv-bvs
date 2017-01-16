@@ -26,7 +26,7 @@
                                   </div>
                                   <div class="checkbox">
                                     <label>
-                                    <input type="checkbox" name="profileDefault" value="1" <?if ($response["values"]["profileDefault"] == 1){?>checked="true"<?}?>> <?=$trans->getTrans($_REQUEST["action"],'PROFILE_DEFAULT')?>
+                                      <input type="checkbox" name="profileDefault" value="1" <?if ($response["values"]["profileDefault"] == 1){?>checked="true"<?}?>> <?=$trans->getTrans($_REQUEST["action"],'PROFILE_DEFAULT')?>
                                     </label>
                                   </div>
                             </div>

@@ -6,19 +6,19 @@
             <!-- top tiles -->
             <div class="row tile_count">
               <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
-                <span class="count_top"><i class="fa fa-file-o"></i> My Collections</span>
-                <div class="count">250</div>
-                <span class="count_bottom"><a href="#">See all collections</a></span>
+                <span class="count_top"><i class="fa fa-file-o"></i> <?=$trans->getTrans('menu','MY_SHELF')?></span>
+                <div class="count"><?php echo $totalCollections; ?></div>
+                <span class="count_bottom"><a href="<?=RELATIVE_PATH?>/controller/mydocuments/control/business"><?=$trans->getTrans('menu','SEE_ALL_DOCS')?></a></span>
               </div>
               <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
-                <span class="count_top"><i class="fa fa-external-link"></i> My Links</span>
-                <div class="count green">123</div>
-                <span class="count_bottom"><a href="#">See all links</a></span>
+                <span class="count_top"><i class="fa fa-external-link"></i> <?=$trans->getTrans('menu','MY_LINKS')?></span>
+                <div class="count green"><?php echo $totalLinks; ?></div>
+                <span class="count_bottom"><a href="<?=RELATIVE_PATH?>/controller/mylinks/control/business"><?=$trans->getTrans('menu','SEE_ALL_LINKS')?></a></span>
               </div>
               <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
-                <span class="count_top"><i class="fa fa-folder-open-o"></i> Profile Documents</span>
-                <div class="count">5</div>
-                <span class="count_bottom"><a href="#">See all profile documents</a></span>
+                <span class="count_top"><i class="fa fa-folder-open-o"></i> <?=$trans->getTrans('menu','MY_PROFILE_DOCUMENTS')?></span>
+                <div class="count"><?php echo $totalProfiles; ?></div>
+                <span class="count_bottom"><a href="<?=RELATIVE_PATH?>/controller/myprofiledocuments/control/business"><?=$trans->getTrans('menu','SEE_ALL_PROFILES')?></a></span>
               </div>
             </div>
             <!-- /top tiles -->
@@ -70,7 +70,7 @@
               <div class="col-md-4">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>My Collections<small></small></h2>
+                    <h2><?=$trans->getTrans('menu','MY_SHELF')?><small></small></h2>
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
@@ -80,31 +80,15 @@
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content">
-                    <article class="media event">
-                      <div class="media-body">
-                        <a class="title" href="#"><i class="fa fa-file-o" aria-hidden="true"></i>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a>
-                      </div>
-                    </article>
-                    <article class="media event">
-                      <div class="media-body">
-                        <a class="title" href="#"><i class="fa fa-file-o" aria-hidden="true"></i>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a>
-                      </div>
-                    </article>
-                    <article class="media event">
-                      <div class="media-body">
-                        <a class="title" href="#"><i class="fa fa-file-o" aria-hidden="true"></i>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a>
-                      </div>
-                    </article>
-                    <article class="media event">
-                      <div class="media-body">
-                        <a class="title" href="#"><i class="fa fa-file-o" aria-hidden="true"></i>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a>
-                      </div>
-                    </article>
-                    <article class="media event">
-                      <div class="media-body">
-                        <a class="title" href="#"><i class="fa fa-file-o" aria-hidden="true"></i>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a>
-                      </div>
-                    </article>
+                    <?php if ( $collections ) : ?>
+                      <?php foreach ( $collections as $col ) : ?>
+                        <article class="media event">
+                          <div class="media-body">
+                            <a class="title" href="<?php echo $col['docURL'] ?>" target="_blank"><i class="fa fa-file-o" aria-hidden="true"></i><?php echo $col['title'] ?></a>
+                          </div>
+                        </article>
+                      <?php endforeach; ?>
+                    <?php endif; ?>
                   </div>
                 </div>
               </div>
@@ -112,7 +96,7 @@
               <div class="col-md-4">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>Profile Documents<small></small></h2>
+                    <h2><?=$trans->getTrans('menu','MY_PROFILE_DOCUMENTS')?><small></small></h2>
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
@@ -122,36 +106,16 @@
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content">
-                    <article class="media event">
-                      <div class="media-body">
-                        <a class="title" href="#"><i class="fa fa-folder-open-o" aria-hidden="true"></i>Profile One Title</a>
-                        <p><span>Keywords: </span>lorem ipsum dolor sit amet</p>
-                      </div>
-                    </article>
-                    <article class="media event">
-                      <div class="media-body">
-                        <a class="title" href="#"><i class="fa fa-folder-open-o" aria-hidden="true"></i>Profile Two Title</a>
-                        <p><span>Keywords: </span>lorem ipsum dolor sit amet</p>
-                      </div>
-                    </article>
-                    <article class="media event">
-                      <div class="media-body">
-                        <a class="title" href="#"><i class="fa fa-folder-open-o" aria-hidden="true"></i>Profile Three Title</a>
-                        <p><span>Keywords: </span>lorem ipsum dolor sit amet</p>
-                      </div>
-                    </article>
-                    <article class="media event">
-                      <div class="media-body">
-                        <a class="title" href="#"><i class="fa fa-folder-open-o" aria-hidden="true"></i>Profile Four Title</a>
-                        <p><span>Keywords: </span>lorem ipsum dolor sit amet</p>
-                      </div>
-                    </article>
-                    <article class="media event">
-                      <div class="media-body">
-                        <a class="title" href="#"><i class="fa fa-folder-open-o" aria-hidden="true"></i>Profile Five Title</a>
-                        <p><span>Keywords: </span>lorem ipsum dolor sit amet</p>
-                      </div>
-                    </article>
+                    <?php if ( $profiles ) : ?>
+                      <?php foreach ( $profiles as $profile ) : ?>
+                        <article class="media event">
+                          <div class="media-body">
+                            <a class="title" href="<?php echo RELATIVE_PATH."/controller/myprofiledocuments/control/business/profile/".$profile["profileID"]."/mode/".DEFAULT_TRIGRAMAS_MODE; ?>"><i class="fa fa-folder-open-o" aria-hidden="true"></i><?php echo $profile['profileName']; ?></a>
+                            <p><span><?=$trans->getTrans('menu','KEYWORDS')?>: </span><?php echo $profile['profileText']; ?></p>
+                          </div>
+                        </article>
+                      <?php endforeach; ?>
+                    <?php endif; ?>
                   </div>
                 </div>
               </div>
@@ -408,7 +372,7 @@
               <div class="col-md-4">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>My Links<small></small></h2>
+                    <h2><?=$trans->getTrans('menu','MY_LINKS')?><small></small></h2>
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
@@ -418,36 +382,16 @@
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content">
-                    <article class="media event">
-                      <div class="media-body">
-                        <a class="title" href="#"><i class="fa fa-external-link" aria-hidden="true"></i>Item One Title</a>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                      </div>
-                    </article>
-                    <article class="media event">
-                      <div class="media-body">
-                        <a class="title" href="#"><i class="fa fa-external-link" aria-hidden="true"></i>Item Two Title</a>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                      </div>
-                    </article>
-                    <article class="media event">
-                      <div class="media-body">
-                        <a class="title" href="#"><i class="fa fa-external-link" aria-hidden="true"></i>Item Three Title</a>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                      </div>
-                    </article>
-                    <article class="media event">
-                      <div class="media-body">
-                        <a class="title" href="#"><i class="fa fa-external-link" aria-hidden="true"></i>Item Four Title</a>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                      </div>
-                    </article>
-                    <article class="media event">
-                      <div class="media-body">
-                        <a class="title" href="#"><i class="fa fa-external-link" aria-hidden="true"></i>Item Five Title</a>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                      </div>
-                    </article>
+                    <?php if ( $links ) : ?>
+                      <?php foreach ( $links as $link ) : ?>
+                        <article class="media event">
+                          <div class="media-body">
+                            <a class="title" href="<?php echo $link['url']; ?>" target="_blank"><i class="fa fa-external-link" aria-hidden="true"></i><?php echo $link['name']; ?></a>
+                            <p><?php echo $link['description']; ?></p>
+                          </div>
+                        </article>
+                      <?php endforeach; ?>
+                    <?php endif; ?>
                   </div>
                 </div>
               </div>

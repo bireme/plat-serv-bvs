@@ -144,7 +144,7 @@ class LinksDAO {
         $retValue = false;
 
         $sysUID = UserDAO::getSysUID($userID);
-        $count = DOCUMENTS_PER_PAGE;
+        $count = ( $params["widget"] ) ? WIDGETS_ITEMS_LIMIT : DOCUMENTS_PER_PAGE;
         $from = $count * $params["page"];
 
         if($sysUID){

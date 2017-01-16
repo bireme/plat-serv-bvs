@@ -18,6 +18,7 @@ require_once(dirname(__FILE__)."/../classes/Trigramas.php");
 if ($_REQUEST["task"] === null){
     $_REQUEST["task"] = "list";
 }
+
 $response["status"] = false;
 
 switch($_REQUEST["task"]){

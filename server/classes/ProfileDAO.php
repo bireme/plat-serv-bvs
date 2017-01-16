@@ -136,10 +136,11 @@ class ProfileDAO {
      * @param string $userID user id
      * @return array object Profile
      */
-    public static function getProfileList($userID, $from=0, $count=0){
+    public static function getProfileList($userID, $params, $from=0, $count=-1){
         global $_conf;
         $retValue = false;
         $sysUID = UserDAO::getSysUID($userID);
+        $count = ( $params["widget"] ) ? WIDGETS_ITEMS_LIMIT : $count;
         $strsql = "SELECT * FROM  profiles
             WHERE sysUID = '".$sysUID."'";
 
