@@ -124,7 +124,7 @@ function getTotalItens($userTK){
  * @param int $count total of registers
  * @return false|array record set with user profiles
  */
-function getProfileList($userTK, $params, $from=0, $count=-1){
+function getProfileList($userTK, $args, $from=0, $count=-1){
     $profileList = false;
 
     /*  parameter validation */
@@ -133,7 +133,7 @@ function getProfileList($userTK, $params, $from=0, $count=-1){
 
     if($retVerifier = $objVerifier->canPass()){
         $retParams = $objVerifier->getParams();        
-        $profileList = ProfileDAO::getProfileList($retParams['userTK']['userID'],$params,$from,$count);
+        $profileList = ProfileDAO::getProfileList($retParams['userTK']['userID'],$args,$from,$count);
     }
     return $profileList;
 }

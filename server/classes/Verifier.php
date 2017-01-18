@@ -176,8 +176,6 @@ class Verifier {
                     case 'dirID':
                         $retValue['dirID']=$this->chkDirID();
                         break;
-                    case 'docID':
-                        break;
                     case 'rankValue':
                         $retValue['rankValue']=$this->chkRankValue();
                         break;

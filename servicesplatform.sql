@@ -25,6 +25,21 @@ USE `servicesplatform`;
 -- --------------------------------------------------------
 
 --
+-- Estrutura para tabela `dataHistory`
+--
+
+CREATE TABLE `dataHistory` (
+  `traceID` bigint(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `sysUID` varchar(150) NOT NULL DEFAULT '',
+  `datetime` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `type` varchar(150) NOT NULL DEFAULT '',
+  `action` varchar(150) NOT NULL DEFAULT '',
+  `target` varchar(500) NOT NULL DEFAULT ''
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura da tabela `directories`
 --
 

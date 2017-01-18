@@ -18,6 +18,7 @@
 require_once(dirname(__FILE__).'/../include/DAO.inc.php');
 require_once(dirname(__FILE__)."/Links.php");
 require_once(dirname(__FILE__)."/UserDAO.php");
+require_once(dirname(__FILE__)."/Tracking.php");
 
 /**
  * Links DAO Class
@@ -57,6 +58,7 @@ class LinksDAO {
             if ($result === null){
                 $result = false;
             }else{
+                $trace = Tracking::addTrace( $userID, 'link', 'add', $link->getName() );
                 $result = true;
             }
         }
@@ -77,6 +79,8 @@ class LinksDAO {
         $sysUID = UserDAO::getSysUID($userID);
 
         if($sysUID){
+            $link = self::getLink($userID,$linkID);
+
             $strsql = "DELETE FROM userLinks WHERE linkID=".$linkID." and
             sysUID='".$sysUID."'";
 
@@ -91,6 +95,7 @@ class LinksDAO {
             if ($result === 0){
                 $retValue = false;
             }else{
+                $trace = Tracking::addTrace( $userID, 'link', 'remove', $link[0]['name'] );
                 $retValue = true;
             }
         }
@@ -150,14 +155,14 @@ class LinksDAO {
         if($sysUID){
             switch ($params["sort"]){
                 case "rate":
-                $sort = "rate desc";
-                break;
-            case "date":
-                $sort = "linkID desc";
-                break;
-            default:
-                $sort = "rate desc";
-                break;
+                    $sort = "rate desc";
+                    break;
+                case "date":
+                    $sort = "linkID desc";
+                    break;
+                default:
+                    $sort = "rate desc";
+                    break;
             }
 
             $strsql = "SELECT * FROM userLinks WHERE
@@ -310,6 +315,7 @@ class LinksDAO {
             }
 
             if ($result !== 0 ){
+                $trace = Tracking::addTrace( $userID, 'link', 'update', $link->getName() );
                 $retValue = true;
             }
         }

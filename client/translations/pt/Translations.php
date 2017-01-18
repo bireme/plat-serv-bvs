@@ -78,6 +78,15 @@ class Translations {
         self::$trans["menu"]["SEE_ALL_DOCS"] = 'Ver todas as coleções';
         self::$trans["menu"]["SEE_ALL_LINKS"] = 'Ver todos os links';
         self::$trans["menu"]["SEE_ALL_PROFILES"] = 'Ver todos os perfis';
+        self::$trans["menu"]["ADD_COLLECTION"] = 'Coleção adicionada';
+        self::$trans["menu"]["UPDATE_COLLECTION"] = 'Coleção atualizada';
+        self::$trans["menu"]["REMOVE_COLLECTION"] = 'Coleção removida';
+        self::$trans["menu"]["ADD_PROFILE"] = 'Perfil adicionado';
+        self::$trans["menu"]["UPDATE_PROFILE"] = 'Perfil atualizado';
+        self::$trans["menu"]["REMOVE_PROFILE"] = 'Perfil removido';
+        self::$trans["menu"]["ADD_LINK"] = 'Link adicionado';
+        self::$trans["menu"]["UPDATE_LINK"] = 'Link atualizado';
+        self::$trans["menu"]["REMOVE_LINK"] = 'Link removido';
 
     // Terms of mysearches pages
         self::$trans["mysearches"]["PAGE"] = 'Página';
@@ -215,6 +224,7 @@ class Translations {
         self::$trans["myprofiledocuments"]["MY_PROFILES_NO_REGISTERS_FOUND"] = 'Nenhum registro encontrado';
         self::$trans["myprofiledocuments"]["SERVICE_TEMPORARY_UNAVAILABLE"] = 'Serviço temporariamente indisponível';
         self::$trans["myprofiledocuments"]["ADD_PROFILE_SUCESS"] = 'Operação realizada com sucesso.';
+        self::$trans["myprofiledocuments"]["ADD_PROFILE_ERROR"] = 'Erro ao adicionar perfil';
 
     // Terms of mig_id_confirmation pages
         self::$trans["mig_id_confirmation"]["TITLE"] = 'Confirmação de Login';

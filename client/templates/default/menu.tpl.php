@@ -125,7 +125,7 @@
               <div class="col-md-4">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>Recent Activities <small></small></h2>
+                    <h2><?=$trans->getTrans('menu','RECENT_ACTIVITIES')?><small></small></h2>
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
@@ -136,96 +136,24 @@
                   </div>
                   <div class="x_content">
                     <div class="dashboard-widget-content">
-
                       <ul class="list-unstyled timeline widget">
-                        <li>
-                          <div class="block">
-                            <div class="block_content">
-                              <h2 class="title"></h2>
-                              <div class="byline">
-                                <span>13 hours ago</span>
+                        <?php if ( $dataHistory ) : ?>
+                          <?php foreach ( $dataHistory as $trace ) : ?>
+                            <?php $date = date("d/m/Y - H:i A", strtotime($trace['datetime'])); ?>
+                            <?php $label = $trans->getTrans('menu',$trace['action'].'_'.$trace['type']); ?>
+                            <li>
+                              <div class="block">
+                                <div class="block_content">
+                                  <h2 class="title"></h2>
+                                  <div class="byline">
+                                    <span><?php echo $date; ?></span>
+                                  </div>
+                                  <p class="excerpt"><?php echo $label; ?>: <span><?php echo $trace['target']; ?></span></p>
+                                </div>
                               </div>
-                              <p class="excerpt">Add collection: <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span></p>
-                            </div>
-                          </div>
-                        </li>
-                        <li>
-                          <div class="block">
-                            <div class="block_content">
-                              <h2 class="title"></h2>
-                              <div class="byline">
-                                <span>1 week ago</span>
-                              </div>
-                              <p class="excerpt">Remove collection: <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span></p>
-                            </div>
-                          </div>
-                        </li>
-                        <li>
-                          <div class="block">
-                            <div class="block_content">
-                              <h2 class="title"></h2>
-                              <div class="byline">
-                                <span>06/10/2016 - 10:00 AM</span>
-                              </div>
-                              <p class="excerpt">Add link: <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span></p>
-                            </div>
-                          </div>
-                        </li>
-                        <li>
-                          <div class="block">
-                            <div class="block_content">
-                              <h2 class="title"></h2>
-                              <div class="byline">
-                                <span>01/10/2016 - 11:30 AM</span>
-                              </div>
-                              <p class="excerpt">Update link: <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span></p>
-                            </div>
-                          </div>
-                        </li>
-                        <li>
-                          <div class="block">
-                            <div class="block_content">
-                              <h2 class="title"></h2>
-                              <div class="byline">
-                                <span>20/09/2016 - 11:00 AM</span>
-                              </div>
-                              <p class="excerpt">Remove link: <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span></p>
-                            </div>
-                          </div>
-                        </li>
-                        <li>
-                          <div class="block">
-                            <div class="block_content">
-                              <h2 class="title"></h2>
-                              <div class="byline">
-                                <span>15/09/2016 - 12:00 PM</span>
-                              </div>
-                              <p class="excerpt">Add profile: <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span></p>
-                            </div>
-                          </div>
-                        </li>
-                        <li>
-                          <div class="block">
-                            <div class="block_content">
-                              <h2 class="title"></h2>
-                              <div class="byline">
-                                <span>05/10/2016 - 15:30 AM</span>
-                              </div>
-                              <p class="excerpt">Update profile: <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span></p>
-                            </div>
-                          </div>
-                        </li>
-                        <li>
-                          <div class="block">
-                            <div class="block_content">
-                              <h2 class="title"></h2>
-                              <div class="byline">
-                                <span>1 month ago</span>
-                              </div>
-                              <p class="excerpt">Remove profile: <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span></p>
-                            </div>
-                          </div>
-                        </li>
+                            </li>
+                          <?php endforeach; ?>
+                        <?php endif; ?>
                       </ul>
                     </div>
                   </div>

@@ -18,6 +18,7 @@ require_once(dirname(__FILE__)."/Shelf.php");
 require_once(dirname(__FILE__)."/DocumentDAO.php");
 require_once(dirname(__FILE__)."/UserDirectoryDAO.php");
 require_once(dirname(__FILE__)."/UserDAO.php");
+require_once(dirname(__FILE__)."/Tracking.php");
 
 class ShelfDAO {
 
@@ -79,11 +80,13 @@ class ShelfDAO {
             }
             
             if(!is_array($insertID)){
+                $trace = Tracking::addTrace( $shelf->getUserID(), 'collection', 'add', $objDocument->getDocTitle() );
                 $retValue = true;
             }
         }else{
-	    $retValue = true;
-	}
+    	    $retValue = true;
+    	}
+
         return $retValue;
 	}
 
@@ -179,6 +182,8 @@ class ShelfDAO {
         $sysUID = UserDAO::getSysUID($userID);
 
         if($sysUID){
+            $shelf = self::getShelfItem( $userID, $docID );
+            $doc = $shelf->getDocument();
 
             $strsql = "DELETE FROM userShelf
                 WHERE sysUID = '".$sysUID."' AND docID = '".$docID."'";
@@ -192,6 +197,7 @@ class ShelfDAO {
             }
 
             if($res > 0){
+                $trace = Tracking::addTrace( $userID, 'collection', 'remove', $doc->getDocTitle() );
                 $retValue = true;
             }
         }
@@ -254,7 +260,7 @@ class ShelfDAO {
 
             $retValue = $shelf;
         }
-        return $shelf;
+        return $retValue;
     }
 
     /**

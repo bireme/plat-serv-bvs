@@ -17,6 +17,7 @@
 require_once(dirname(__FILE__).'/../include/DAO.inc.php');
 require_once(dirname(__FILE__)."/Profile.php");
 require_once(dirname(__FILE__)."/UserDAO.php");
+require_once(dirname(__FILE__)."/Tracking.php");
 
 class ProfileDAO {
     /**
@@ -30,7 +31,7 @@ class ProfileDAO {
 
         $sysUID = UserDAO::getSysUID($userID);
 
-        if(!self::isProfile($objProfile->getProfileID())){
+        if(!self::isProfile($objProfile->getProfileID(),$objProfile->getProfileName())){
             if ($objProfile->getProfileDefault() == 1){
                 $strsql = "UPDATE profiles set profileDefault=0
                              WHERE sysUID='".$sysUID."'";
@@ -42,21 +43,6 @@ class ProfileDAO {
                     $logger->log($e->getMessage(),PEAR_LOG_EMERG);
                 }
             }
-
-/*
-            $strsql = "INSERT INTO profiles(profileID,
-                                            sysUID,
-                                            profileText,
-                                            profileName,
-                                            creationDate,
-                                            profileDefault)
-                                VALUES ('".$objProfile->getProfileID()."','".
-                                           $sysUID."','".
-                                           $objProfile->getProfileText()."','".
-                                           $objProfile->getProfileName()."','".
-                                           date("Y-m-d H:i:s")."','".
-                                           $objProfile->getProfileDefault()."')";
-*/
             
             $strsql = "INSERT INTO profiles(sysUID,
                                             profileText,
@@ -79,6 +65,7 @@ class ProfileDAO {
         }
 
         if ($result !== null){
+            $trace = Tracking::addTrace( $userID, 'profile', 'add', $objProfile->getProfileName() );
             $retValue = true;
         }
 
@@ -123,7 +110,8 @@ class ProfileDAO {
                 $logger->log($e->getMessage(),PEAR_LOG_EMERG);
             }
 
-            if ($result !== 0 ){
+            if ($result !== 0){
+                $trace = Tracking::addTrace( $userID, 'profile', 'update', $profile->getProfileName() );
                 $retValue = true;
             }
 
@@ -201,7 +189,6 @@ class ProfileDAO {
      * @return boolean|int
      */
     public static function getTotalItens($userID){
-
         $retValue = false;
 
         $sysUID = UserDAO::getSysUID($userID);
@@ -244,10 +231,11 @@ class ProfileDAO {
      * @return boolean
      */
     public static function removeProfile($userID,$profileID){
-
         $retValue = false;
 
         $sysUID = UserDAO::getSysUID($userID);
+
+        $profile = self::getProfile( $userID, $profileID );
 
         $strsql = "DELETE FROM profiles
             WHERE profileID=".$profileID." and sysUID='".$sysUID."'";
@@ -261,6 +249,7 @@ class ProfileDAO {
         }
 
         if ($result !== 0){
+            $trace = Tracking::addTrace( $userID, 'profile', 'remove', $profile[0]['profileName'] );
             $retValue = true;
         }
         
@@ -271,13 +260,14 @@ class ProfileDAO {
      * Check if the profile exists
      *
      * @param integer $profileID profile ID
+     * @param string $profileName profile name
      * @return boolean
      */
-    public static function isProfile($profileID){
+    public static function isProfile($profileID,$profileName){
         $retValue = false;
 
         $strsql = "SELECT count(profileID) FROM  profiles
-            WHERE profileID = '".trim($profileID)."'";
+            WHERE profileID = '".trim($profileID)."' OR profileName = '".$profileName."'";
 
         try{
             $_db = new DBClass();
