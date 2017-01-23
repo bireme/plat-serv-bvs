@@ -78,6 +78,11 @@ define("TRIGRAMAS_SIMILARS_ID","http://trigramas.bireme.br/cgi-bin/mx/cgi=@sciel
 define("TRIGRAMAS_SIMILARS_STRING","http://trigramas.bireme.br/cgi-bin/mx/cgi=@1?xml&collection=#COLLECTION_MODE#.TiKwAb&minsim=0.30&maxrel=30&text=");
 define('DEFAULT_TRIGRAMAS_MODE','LILACS.orgiahx'); /* LILACS.orgiahx|SciELO.orgiahx */
 
+/* SimilarDocs service */
+define("SIMDOCS_ADD_PROFILE", "http://ts10vm.bireme.br:8180/SDService/SDService?psId=#PSID#&addProfile=#PROFILE#&sentence=");
+define("SIMDOCS_DELETE_PROFILE", "http://ts10vm.bireme.br:8180/SDService/SDService?psId=#PSID#&deleteProfile=#PROFILE#");
+define("SIMDOCS_SIMILARS_STRING", "http://ts10vm.bireme.br:8180/SDService/SDService?psId=#PSID#&getSimDocs=#PROFILE#&outFields=id,ti,au,ur");
+
 /* log configuration */
 $_conf = array('mode' => 0600, 'timeFormat' => '%X %x');
 define('LOG_FILE',APP_BASEDIR.'/out.log');

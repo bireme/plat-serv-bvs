@@ -13,7 +13,7 @@
  * Edit this file in UTF-8 - Test String "áéíóú"
  */
 require_once(dirname(__FILE__)."/../classes/MyProfiles.php");
-require_once(dirname(__FILE__)."/../classes/Trigramas.php");
+require_once(dirname(__FILE__)."/../classes/SimilarDocs.php");
 
 if ($_REQUEST["task"] === null){
     $_REQUEST["task"] = "list";
@@ -44,13 +44,12 @@ switch($_REQUEST["task"]){
 
         $responseProfile["values"] = $result;
         $responseProfile["status"] = true;
-        $_REQUEST['mode'] = ($_REQUEST['mode']=="")?DEFAULT_TRIGRAMAS_MODE:$_REQUEST['mode'];
-        $result = Trigramas::getSimilarsByStringISO($responseProfile["values"][0]["profileText"],$_REQUEST['mode']);
+        $result = SimilarDocs::getSimilarsDocs($_SESSION["userTK"],$responseProfile["values"][0]["profileName"]);
         if ($result === false){
-            $responseTrigramas["status"] = false;
+            $responseSimilarDocs["status"] = false;
         }else{
-            $responseTrigramas["values"] = $result;
-            $responseTrigramas["status"] = true;
+            $responseSimilarDocs["values"] = $result;
+            $responseSimilarDocs["status"] = true;
         }
 
     break;

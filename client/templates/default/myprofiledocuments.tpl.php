@@ -21,21 +21,17 @@
                     </div>
                     <div class="articleBlock">
                         <div class="description"><?=$trans->getTrans($_REQUEST["action"],'PROFILE_KEYWORDS')?>: <?=$registerProfile["profileText"]?></div>
-                        <div class="services">
-                            <?=$trans->getTrans($_REQUEST["action"],'VIEW_RESULTS_IN')?>:
-                            [<a class="view" href="<?=RELATIVE_PATH?>/controller/myprofiledocuments/control/business/profile/<?=$registerProfile["profileID"]?>/task/list/mode/LILACS.orgiahx"><img src="<?=RELATIVE_PATH?>/images/<?=$_SESSION["skin"]?>/folder-orange.gif" border="0"/>LILACS</a>]
-                            [<a class="view" href="<?=RELATIVE_PATH?>/controller/myprofiledocuments/control/business/profile/<?=$registerProfile["profileID"]?>/task/list/mode/SciELO.orgiahx"><img src="<?=RELATIVE_PATH?>/images/<?=$_SESSION["skin"]?>/folder-orange.gif" border="0"/>SciELO</a>]
-                        </div>
                     </div>
-                    <h3><span><?=$trans->getTrans($_REQUEST["action"],'SIMILARS_IN')?>: <?=$trans->getTrans($_REQUEST["action"],$_REQUEST["mode"])?></span></h3>
-                    <?if ($responseTrigramas["status"] === true){?>
+                    <h3><span><?=$trans->getTrans($_REQUEST["action"],'SIMILARS_IN')?>:</span></h3>
+                    <?if ($responseSimilarDocs["status"] === true){?>
                     <ul>
-                        <?foreach ($responseTrigramas["values"] as $similar){
+                        <?foreach ($responseSimilarDocs["values"] as $similar){
                           $count++;
                         ?>
                         <li>
                             <div class="articleBlock">
-                                <?=$similar?>
+                                <i><?php echo implode("; ", $similar["au"]); ?></i>
+                                <a href="<?php echo $similar["ur"]; ?>" target="_blank"><b><?php echo implode(" / ", $similar["ti"]); ?></b></a>
                             </div>
                         </li>
                         <?}?>

@@ -17,6 +17,7 @@
 require_once(dirname(__FILE__).'/../include/DAO.inc.php');
 require_once(dirname(__FILE__)."/Profile.php");
 require_once(dirname(__FILE__)."/UserDAO.php");
+require_once(dirname(__FILE__)."/SimilarDocs.php");
 require_once(dirname(__FILE__)."/Tracking.php");
 
 class ProfileDAO {
@@ -65,6 +66,7 @@ class ProfileDAO {
         }
 
         if ($result !== null){
+            $similarDocs = SimilarDocs::addProfile( $userID, $objProfile->getProfileName(), $objProfile->getProfileText() );
             $trace = Tracking::addTrace( $userID, 'profile', 'add', $objProfile->getProfileName() );
             $retValue = true;
         }
@@ -111,6 +113,7 @@ class ProfileDAO {
             }
 
             if ($result !== 0){
+                $similarDocs = SimilarDocs::addProfile( $userID, $profile->getProfileName(), $profile->getProfileText() );
                 $trace = Tracking::addTrace( $userID, 'profile', 'update', $profile->getProfileName() );
                 $retValue = true;
             }
@@ -249,6 +252,7 @@ class ProfileDAO {
         }
 
         if ($result !== 0){
+            $similarDocs = SimilarDocs::deleteProfile( $userID, $profile[0]['profileName'] );
             $trace = Tracking::addTrace( $userID, 'profile', 'remove', $profile[0]['profileName'] );
             $retValue = true;
         }

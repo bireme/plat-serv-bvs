@@ -18,6 +18,7 @@ require_once(dirname(__FILE__).'/Tools.php');
 require_once(dirname(__FILE__)."/LDAPAuthenticator.php");
 require_once(dirname(__FILE__).'/../config.php');
 require_once(dirname(__FILE__)."/User.php");
+require_once(dirname(__FILE__)."/UserDAO.php");
 
 class Verifier {
 
