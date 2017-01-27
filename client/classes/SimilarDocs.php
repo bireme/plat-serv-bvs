@@ -81,5 +81,74 @@ class SimilarDocs {
         
         return $retValue;
     }
+
+    /**
+     * List suggested documents
+     *
+     * @param string $userTK User hash
+     * @return array
+     */
+    public static function getSuggestedDocs($userTK){
+        $retValue = false;
+
+        try{
+            $objSoapClient = self::getSoapClient();
+            $retValue = $objSoapClient->getSuggestedDocs($userTK);
+        }catch(Exception $e){
+            $logger = &Log::singleton('file', LOG_FILE, __CLASS__, $_conf);
+            $logger->log($e->getMessage(),PEAR_LOG_EMERG);
+        }
+        
+        return $retValue;
+    }
+
+    /**
+     * List ORCID works
+     *
+     * @param string $userTK User hash
+     * @param array $params
+     * @return array
+     */
+    public static function getOrcidWorks($userTK,$params){
+        $retValue = false;
+
+        try{
+            $objSoapClient = self::getSoapClient();
+            $retValue = $objSoapClient->getOrcidWorks($userTK,$params);
+        }catch(Exception $e){
+            $logger = &Log::singleton('file', LOG_FILE, __CLASS__, $_conf);
+            $logger->log($e->getMessage(),PEAR_LOG_EMERG);
+        }
+        
+        return $retValue;
+    }
+
+    public static function getTotalItens($userTK){
+        $retValue = false;
+
+        try{
+            $objSoapClient = self::getSoapClient();
+            $retValue = $objSoapClient->getTotalItens($userTK);
+        }catch(Exception $e){
+            $logger = &Log::singleton('file', LOG_FILE, __CLASS__, $_conf);
+            $logger->log($e->getMessage(),PEAR_LOG_EMERG);
+        }
+
+        return $retValue;
+    }
+
+    public static function getTotalPages($userTK){
+        $retValue = false;
+
+        try{
+            $objSoapClient = self::getSoapClient();
+            $retValue = $objSoapClient->getTotalPages($userTK);
+        }catch(Exception $e){
+            $logger = &Log::singleton('file', LOG_FILE, __CLASS__, $_conf);
+            $logger->log($e->getMessage(),PEAR_LOG_EMERG);
+        }
+
+        return $retValue;
+    }
 }
 ?>

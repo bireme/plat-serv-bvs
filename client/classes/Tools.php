@@ -23,6 +23,7 @@ class Crypt {
                 mcrypt_create_iv(mcrypt_get_iv_size(MCRYPT_RIJNDAEL_256,
                         MCRYPT_MODE_ECB), MCRYPT_RAND)));
     }
+
 }
 
 class Paginator {
@@ -136,5 +137,6 @@ class Token {
 
         return $retValue;
     }
+
 }
 ?>

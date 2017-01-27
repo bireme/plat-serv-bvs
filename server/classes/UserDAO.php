@@ -448,6 +448,7 @@ class UserDAO {
             );
             $context = stream_context_create($opts);
             $content = file_get_contents($requestURI,false,$context);
+            $content = CharTools::mysql_escape_mimic($content);
 
             if ( $content ) {
                 $strsql = "UPDATE users

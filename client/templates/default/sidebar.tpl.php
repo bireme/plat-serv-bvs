@@ -33,6 +33,8 @@
                       <li><a href="<?=RELATIVE_PATH?>/controller/mylinks/control/business"><?=$trans->getTrans('menu','MY_LINKS')?></a></li>
                       <li><a href="<?=RELATIVE_PATH?>/controller/mydocuments/control/business"><?=$trans->getTrans('menu','MY_SHELF')?></a></li>
                       <li><a href="<?=RELATIVE_PATH?>/controller/mysearches/control/business"><?=$trans->getTrans('menu','MY_SEARCHES')?></a></li>
+                      <li><a href="<?=RELATIVE_PATH?>/controller/suggesteddocs/control/business"><?=$trans->getTrans('menu','SUGGESTED_DOCS')?></a></li>
+                      <li><a href="<?=RELATIVE_PATH?>/controller/orcidworks/control/business"><?=$trans->getTrans('menu','ORCID_WORKS')?></a></li>
                       <? if ( $_SESSION["source"] && $_SESSION["source"] == 'ldap' ) { ?>
                         <li><a href="<?=RELATIVE_PATH?>/controller/mynews/control/business"><?=$trans->getTrans('menu','MY_NEWS')?></a></li>
                         <li><a href="<?=RELATIVE_PATH?>/controller/myalerts/control/business"><?=$trans->getTrans('menu','MY_ALERTS')?></a></li>

@@ -77,6 +77,12 @@ switch($_REQUEST["action"]){
             require_once(dirname(__FILE__)."/templates/".$_SESSION["skin"]."/myprofiledocuments.tpl.php");
         }
     break;
+    case "suggesteddocs":
+        require_once(dirname(__FILE__)."/templates/".$_SESSION["skin"]."/suggesteddocs.tpl.php");
+    break;
+    case "orcidworks":
+        require_once(dirname(__FILE__)."/templates/".$_SESSION["skin"]."/orcidworks.tpl.php");
+    break;
     case "logout":
         header("Location:".RELATIVE_PATH."/controller/".MAIN_PAGE);
         die();

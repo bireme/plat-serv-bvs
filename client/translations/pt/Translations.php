@@ -74,6 +74,7 @@ class Translations {
         self::$trans["menu"]["MY_SEARCHES"] = 'Minhas Pesquisas';
         self::$trans["menu"]["KEYWORDS"] = 'Palavras-chave';
         self::$trans["menu"]["SUGGESTED_DOCS"] = 'Documentos Sugeridos';
+        self::$trans["menu"]["ORCID_WORKS"] = 'ORCID Works';
         self::$trans["menu"]["RECENT_ACTIVITIES"] = 'Atividades Recentes';
         self::$trans["menu"]["SEE_ALL_DOCS"] = 'Ver todas as coleções';
         self::$trans["menu"]["SEE_ALL_LINKS"] = 'Ver todos os links';
@@ -93,6 +94,22 @@ class Translations {
         self::$trans["mysearches"]["MY_SEARCHES_NO_REGISTERS_FOUND"] = 'Nenhum registro encontrado';
         self::$trans["mysearches"]["NEXT"] = 'Próximo';
         self::$trans["mysearches"]["PREVIOUS"] = 'Anterior';
+
+    // Terms of suggesteddocs pages
+        self::$trans["suggesteddocs"]["PAGE"] = 'Página';
+        self::$trans["suggesteddocs"]["NEXT"] = 'Próximo';
+        self::$trans["suggesteddocs"]["PREVIOUS"] = 'Anterior';
+        self::$trans["suggesteddocs"]["SUGGESTED_DOCS"] = 'Documentos Sugeridos';
+        self::$trans["suggesteddocs"]["SUGGESTED_DOCS_NO_REGISTERS_FOUND"] = 'Nenhuma sugestão de documentos';
+        self::$trans["suggesteddocs"]["ADD_COLLECTION"] = 'Adicionar Coleção';
+
+    // Terms of orcidworks pages
+        self::$trans["orcidworks"]["PAGE"] = 'Página';
+        self::$trans["orcidworks"]["NEXT"] = 'Próximo';
+        self::$trans["orcidworks"]["PREVIOUS"] = 'Anterior';
+        self::$trans["orcidworks"]["ORCID_WORKS"] = 'ORCID Works';
+        self::$trans["orcidworks"]["ORCID_WORKS_NO_REGISTERS_FOUND"] = 'Nenhum trabalho publicado no ORCID';
+        self::$trans["orcidworks"]["GOOGLE_SCHOLAR"] = 'Ver no Google Scholar';
 
     // General Terms
         self::$trans["general"]["IDENTIFICATION"] = 'Biblioteca Virtual em Saúde';
