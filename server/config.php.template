@@ -81,6 +81,7 @@ define('DEFAULT_TRIGRAMAS_MODE','LILACS.orgiahx'); /* LILACS.orgiahx|SciELO.orgi
 /* SimilarDocs service */
 define("SIMDOCS_ADD_PROFILE", "http://ts10vm.bireme.br:8180/SDService/SDService?psId=#PSID#&addProfile=#PROFILE#&sentence=");
 define("SIMDOCS_DELETE_PROFILE", "http://ts10vm.bireme.br:8180/SDService/SDService?psId=#PSID#&deleteProfile=#PROFILE#");
+define("SIMDOCS_GET_PROFILES", "http://ts10vm.bireme.br:8180/SDService/SDService?psId=#PSID#&showProfiles=");
 define("SIMDOCS_SIMILARS_STRING", "http://ts10vm.bireme.br:8180/SDService/SDService?psId=#PSID#&getSimDocs=#PROFILE#&outFields=id,ti,au,ur");
 
 /* log configuration */

@@ -110,7 +110,7 @@
                       <?php foreach ( $profiles as $profile ) : ?>
                         <article class="media event">
                           <div class="media-body">
-                            <a class="title" href="<?php echo RELATIVE_PATH."/controller/myprofiledocuments/control/business/profile/".$profile["profileID"]."/mode/".DEFAULT_TRIGRAMAS_MODE; ?>"><i class="fa fa-folder-open-o" aria-hidden="true"></i><?php echo $profile['profileName']; ?></a>
+                            <a class="title" href="<?php echo RELATIVE_PATH.'/controller/myprofiledocuments/control/business/profile/'.$profile["profileID"]; ?>"><i class="fa fa-folder-open-o" aria-hidden="true"></i><?php echo $profile['profileName']; ?></a>
                             <p><span><?=$trans->getTrans('menu','KEYWORDS')?>: </span><?php echo $profile['profileText']; ?></p>
                           </div>
                         </article>

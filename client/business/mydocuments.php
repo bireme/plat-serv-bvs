@@ -67,7 +67,7 @@ switch($_REQUEST["task"]){
             }
         }
         unset($shallBreak);
-        $isCurrDirPublic = $responseListDirs['values'][$currDirIndex]['public']!= 0 ? true : false;
+        $isCurrDirPublic = $responseListDirs['values'][$currDirIndex]['public'] != 0 ? true : false;
 //        var_dump($paginationData);
 //        echo 'Page: ' . (string)$_REQUEST['page'];
     break;

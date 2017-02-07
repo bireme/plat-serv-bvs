@@ -23,5 +23,9 @@
     <script src="<?=RELATIVE_PATH?>/js/scripts.js"></script>
     <!-- Custom Theme Scripts -->
     <script src="<?=RELATIVE_PATH?>/build/js/custom.min.js"></script>
+    <?php if ( isset( $_REQUEST['action'] ) && $_REQUEST['action'] == 'suggesteddocs' ) : ?>
+    <!-- Suggested Docs Ajax -->
+    <script src="<?=RELATIVE_PATH?>/js/suggested-docs.js"></script>
+    <?php endif; ?>
   </body>
 </html>

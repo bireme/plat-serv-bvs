@@ -101,7 +101,21 @@ class Translations {
         self::$trans["suggesteddocs"]["PREVIOUS"] = 'Anterior';
         self::$trans["suggesteddocs"]["SUGGESTED_DOCS"] = 'Documentos Sugeridos';
         self::$trans["suggesteddocs"]["SUGGESTED_DOCS_NO_REGISTERS_FOUND"] = 'Nenhuma sugestão de documentos';
+        self::$trans["suggesteddocs"]["REFERENCE"] = 'Escolha os documentos de referência para sugestões:';
+        self::$trans["suggesteddocs"]["NO_REFERENCES"] = 'Nenhum documento encontrado com essa referência';
         self::$trans["suggesteddocs"]["ADD_COLLECTION"] = 'Adicionar Coleção';
+        self::$trans["suggesteddocs"]["CONFIG"] = 'Configurações';
+        self::$trans["suggesteddocs"]["DOCS"] = 'Documentos';
+        self::$trans["suggesteddocs"]["DOCS_SOURCE"] = 'Origem dos documentos';
+        self::$trans["suggesteddocs"]["ORCID"] = 'ORCID';
+        self::$trans["suggesteddocs"]["COLLECTIONS"] = 'Coleções';
+        self::$trans["suggesteddocs"]["PROFILES"] = 'Perfis';
+        self::$trans["suggesteddocs"]["INCOMING_FOLDER"] = 'Pasta de Entrada';
+        self::$trans["suggesteddocs"]["FOLDERS_LIST"] = 'Escolha uma pasta:';
+        self::$trans["suggesteddocs"]["PROFILES_LIST"] = 'Escolha um perfil:';
+        self::$trans["suggesteddocs"]["LOADING"] = 'CARREGANDO';
+        self::$trans["suggesteddocs"]["SELECTED_DOCS"] = 'documentos selecionados';
+        self::$trans["suggesteddocs"]["SEND"] = 'Enviar';
 
     // Terms of orcidworks pages
         self::$trans["orcidworks"]["PAGE"] = 'Página';

@@ -21,7 +21,7 @@ $params["sort"]=$_REQUEST["sort"];
 
 switch($_REQUEST["task"]){
     case "list":
-        $paginationData['pages'] = SimilarDocs::getTotalPages($_SESSION["userTK"]);
+        $paginationData['pages'] = SimilarDocs::getTotalOrcidWorksPages($_SESSION["userTK"]);
         $objPaginator = new Paginator($paginationData['pages'],
             !empty($_REQUEST['page']) ? $_REQUEST['page'] : 1);
         $params['page'] = $objPaginator->getCurrentPage();

@@ -18,7 +18,7 @@
                     <?php if ( $response["values"] != false ) : ?>
                         <?php //echo $objPaginator->render($trans->getTrans($_REQUEST["action"],'NEXT'), $trans->getTrans($_REQUEST["action"],'PREVIOUS')); ?>
                         <!-- start project list -->
-                        <table class="table table-striped projects">
+                        <table class="table table-striped table-list">
                           <!--thead>
                             <tr>
                               <th>#</th>
@@ -28,16 +28,16 @@
                             <?php $count = $_REQUEST["page"] ? --$_REQUEST["page"] * DOCUMENTS_PER_PAGE : 0; ?>
                             <?php foreach ( $response["values"] as $register) : $count++; ?>
                             <tr>
-                              <td id="sd<?php echo $count; ?>">
-                                <?php if ( $register["url"] ) : ?>
-                                  <a href="<?php echo $register["url"]; ?>" target="_blank"><?php echo $register["title"]; ?></a>
+                              <td id="ow<?php echo $count; ?>">
+                                <?php if ( $register["docURL"] ) : ?>
+                                  <a href="<?php echo $register["docURL"]; ?>" target="_blank"><?php echo $register["title"]; ?></a>
                                 <?php else : ?>
                                   <?php echo $register["title"]; ?>
                                 <?php endif; ?>
                                 <small style="display: block;"><?php echo implode("; ", $register["authors"]); ?></small>
                               </td>
                               <td style="text-align: right;">
-                                <button id="ap<?php echo $count; ?>" class="btn btn-success btn-xs"><?=$trans->getTrans($_REQUEST["action"],'GOOGLE_SCHOLAR')?></button>
+                                <button class="btn btn-success btn-xs"><?=$trans->getTrans($_REQUEST["action"],'GOOGLE_SCHOLAR')?></button>
                               </td>
                             </tr>
                             <?php endforeach; ?>

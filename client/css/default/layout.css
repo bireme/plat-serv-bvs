@@ -161,3 +161,39 @@ a.operator {
     text-overflow: clip !important;
     /*overflow: visible !important;*/
 }
+
+.x_title h2 small {
+    display: block;
+    margin-left: 0 !important;
+}
+
+.table-list td {
+    vertical-align: middle !important;
+}
+
+.none-docs {
+    text-align: center;
+    margin: 100px 0;
+}
+
+#loading {
+    background:url(../../images/default/loading.gif) no-repeat center center;
+    height: 60px;
+    text-align: center;
+    margin-top: 25px;
+    display: none;
+}
+/*
+#loading {
+    background:url(../../images/default/loading.gif) no-repeat center center;
+    height: 100px;
+    width: 100px;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    margin: -25px 0 0 -25px;
+    z-index: 1000;
+    text-align: center;
+    display: none;
+}
+*/

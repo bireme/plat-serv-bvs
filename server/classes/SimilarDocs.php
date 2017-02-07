@@ -29,10 +29,10 @@ class SimilarDocs {
      * @return boolean
      */
     static function addProfile($userID,$profile,$string){
-        $similarStr = str_replace("#PSID#",$userID,SIMDOCS_ADD_PROFILE);
-        $similarStr = str_replace("#PROFILE#",$profile,SIMDOCS_ADD_PROFILE);
+        $similiar = str_replace("#PSID#",$userID,SIMDOCS_ADD_PROFILE);
+        $similiar = str_replace("#PROFILE#",$profile,$similiar);
         
-        $xml = utf8_encode(file_get_contents($similarStr.urlencode($string)));
+        $xml = utf8_encode(file_get_contents($similiar.urlencode($string)));
 
         if($xml){
             $xml = simplexml_load_string($xml,'SimpleXMLElement',LIBXML_NOCDATA);
@@ -51,10 +51,10 @@ class SimilarDocs {
      * @return boolean
      */
     static function deleteProfile($userID,$profile){
-        $similarStr = str_replace("#PSID#",$userID,SIMDOCS_DELETE_PROFILE);
-        $similarStr = str_replace("#PROFILE#",$profile,SIMDOCS_DELETE_PROFILE);
+        $similiar = str_replace("#PSID#",$userID,SIMDOCS_DELETE_PROFILE);
+        $similiar = str_replace("#PROFILE#",$profile,$similiar);
         
-        $content = utf8_encode(file_get_contents($similarStr));
+        $content = utf8_encode(file_get_contents($similiar));
 
         if($content){
             $xml = simplexml_load_string($content,'SimpleXMLElement',LIBXML_NOCDATA);
@@ -66,20 +66,18 @@ class SimilarDocs {
     }
 
     /**
-     * List similars documents
+     * Get profiles in SimiliarDocs service
      *
      * @param string $userID User ID
-     * @param string $profile Profile name
-     * @return array
+     * @return boolean
      */
-    static function getSimilarsDocs($userID,$profile){
-        $similarStr = str_replace("#PSID#",$userID,SIMDOCS_SIMILARS_STRING);
-        $similarStr = str_replace("#PROFILE#",$profile,SIMDOCS_SIMILARS_STRING);
-        
-        $content = utf8_encode(file_get_contents($similarStr));
+    static function getProfiles($userID){
+        $profiles = str_replace("#PSID#",$userID,SIMDOCS_GET_PROFILES);        
+        $content = utf8_encode(file_get_contents($profiles));
 
         if($content){
             $result = self::xmlToArray($content);
+            $result = ( array_key_exists('profile', $result) ) ? $result['profile'] : false;
         }else{
             $result = false;
         }
@@ -87,53 +85,91 @@ class SimilarDocs {
     }
 
     /**
-     * Convert XML to Array
+     * List similars documents
      *
-     * @param string $xmlProfile
+     * @param string $userID User ID
+     * @param string $profile Profile name
+     * @param array $params
      * @return array
      */
-    static function xmlToArray($xmlProfile){
-        /* load simpleXML object */
-        $xmlProfile = str_replace("&lt;","<",$xmlProfile);
-        $xmlProfile = str_replace("&gt;",">",$xmlProfile);
-        $xmlProfile = str_replace("&quot;","\"",$xmlProfile);
-        $xmlProfile = utf8_decode($xmlProfile);
+    static function getSimilarsDocs($userID,$profile,$params){
+        $count = (int) DOCUMENTS_PER_PAGE;
+        $from = $count * $params["page"];
 
-        $xml = simplexml_load_string($xmlProfile,'SimpleXMLElement',LIBXML_NOCDATA);
+        $similiar = str_replace("#PSID#",$userID,SIMDOCS_SIMILARS_STRING);
+        $similiar = str_replace("#PROFILE#",$profile,$similiar);
+        
+        $content = utf8_encode(file_get_contents($similiar));
 
-        if($xml){
-            /* array of profile objects */
-            $arrProfile = array();
+        if($content){
+            $result = self::xmlToArray($content);
+            $result = ( array_key_exists('document', $result) ) ? array_slice($result['document'], $from, $count) : false;
+        }else{
+            $result = false;
+        }
+        return $result;
+    }
 
-            foreach($xml->document as $document){
-                foreach($document as $fieldOcc){
-                    if ($fieldOcc->getName() == "id"){
-                        $ID = (string)$fieldOcc;
-                        break;
-                    }
-                }
+    /**
+     * Add suggested documents profiles
+     *
+     * @param string $userID User ID
+     * @param array $suggestions
+     * @return array
+     */
+    static function addSuggestedDocsProfiles($userID,$suggestions){
+        $retValue = false;
 
-                foreach($document as $fieldOcc){
-                    $fname = $fieldOcc->getName();
-                    $arrProfile[$ID][$fname][] = (string)$fieldOcc;
+        if ($suggestions && is_array($suggestions)) {
+            $prefix = 'SD$';
+            $date = date('Ymd');
+            $profiles = self::getProfiles($userID);
+
+            foreach ($profiles as $profile) {
+                if ($prefix === substr($profile['name'], 0, 3)) {
+                    $deleteProfile = self::deleteProfile($userID,$profile['name']);
                 }
             }
 
-            $result = $arrProfile;
+            foreach ($suggestions as $suggestion) {
+                $prefix = $prefix . $date . '$';
+                $profile = $prefix . md5($suggestion);
+                $addProfile = self::addProfile($userID,$profile,$suggestion);
+            }
+
+            $retValue = true;
         }
-        return $result;
+
+        return $retValue;
     }
 
     /**
      * List suggested documents
      *
      * @param string $userID User ID
+     * @param array $params
      * @return array
      */
-    static function getSuggestedDocs($userID){
-        $suggestedDocs = self::getSimilarsDocs($retParams['userTK']['userID'],'SUGGESTED_DOCS_PROFILE');
+    static function getSuggestedDocs($userID,$params){
+        $count = (int) DOCUMENTS_PER_PAGE;
+        $from = $count * $params["page"];
 
-        $result = $suggestedDocs ? $suggestedDocs : false;
+        $prefix = 'SD$';
+        $suggestedDocs = array();
+        $profiles = self::getProfiles($userID);
+
+        foreach ($profiles as $profile) {
+            if ($prefix === substr($profile['name'], 0, 3)) {
+                $similars = self::getSimilarsDocs($userID,$profile['name']);
+/*
+                foreach ($similars as $key => $value)
+                    $similars[$key]['reference'] = $profile['content'];
+*/
+                $suggestedDocs = array_unique( array_merge( $suggestedDocs, $similars ) );
+            }
+        }
+
+        $result = $suggestedDocs ? array_slice($suggestedDocs, $from, $count) : false;
 
         return $result;
     }
@@ -183,7 +219,7 @@ class SimilarDocs {
 
                 $w = array();
                 $w['title'] = $title ? $title : '';
-                $w['url'] = $url ? $url : '';
+                $w['docURL'] = $url ? $url : '';
                 $w['authors'] = $authors ? $authors : '';
 
                 $works[] = $w;
@@ -196,12 +232,49 @@ class SimilarDocs {
     }
 
     /**
-     * Get the total number of records
+     * Get the total number of similars documents
      *
-     * @param string $userID user mail
+     * @param string $userID User ID
+     * @param string $profile Profile name
+     * @return array
+     */
+    static function getTotalSimilarsDocs($userID,$profile){
+        $retValue = false;
+
+        $similiar = str_replace("#PSID#",$userID,SIMDOCS_SIMILARS_STRING);
+        $similiar = str_replace("#PROFILE#",$profile,$similiar);
+        
+        $content = utf8_encode(file_get_contents($similiar));
+
+        if($content){
+            $result = self::xmlToArray($content);
+            $retValue = ( array_key_exists('document', $result) ) ? count($result['document']) : false;
+        }
+
+        return $retValue;
+    }
+
+    /**
+     * Get the total pages from similars documents set if using pagination. The number of
+     * registers per page is configured in the config.php file
+     *
+     * @param string $userID User ID
+     * @param string $profile Profile name
+     * @param int $itensPerPage
+     * @return int
+     */
+    public static function getTotalSimilarsDocsPages($userID, $profile, $itensPerPage){
+        $total = self::getTotalSimilarsDocs($userID,$profile);
+        return ceil($total/$itensPerPage);
+    }
+    
+    /**
+     * Get the total number of ORCID works
+     *
+     * @param string $userID User ID
      * @return false|int int > 0
      */
-    public static function getTotalItens($userID){
+    public static function getTotalOrcidWorks($userID){
         $retValue = false;
 
         if($userID){
@@ -216,16 +289,72 @@ class SimilarDocs {
     }
 
     /**
-     * Get the total pages from a record set if using pagination. The number of
+     * Get the total pages from ORCID works set if using pagination. The number of
      * registers per page is configured in the config.php file
      *
-     * @param string $userID user mail
+     * @param string $userID User ID
      * @param int $itensPerPage
      * @return int
      */
-    public static function getTotalPages($userID, $itensPerPage){
-        $total = self::getTotalItens($userID);
+    public static function getTotalOrcidWorksPages($userID, $itensPerPage){
+        $total = self::getTotalOrcidWorks($userID);
         return ceil($total/$itensPerPage);
+    }
+
+    /**
+     * Get the total number of suggested documents
+     *
+     * @param string $userID User ID
+     * @return false|int int > 0
+     */
+    public static function getTotalSuggestedDocs($userID){
+        $prefix = 'SD$';
+        $suggestedDocs = array();
+        $profiles = self::getProfiles($userID);
+
+        foreach ($profiles as $profile) {
+            if ($prefix === substr($profile['name'], 0, 3)) {
+                $similars = self::getSimilarsDocs($userID,$profile['name']);
+                $suggestedDocs = array_unique( array_merge( $suggestedDocs, $similars ) );
+            }
+        }
+
+        $result = $suggestedDocs ? count($suggestedDocs) : false;
+
+        return $result;
+    }
+
+    /**
+     * Get the total pages from suggested documents set if using pagination. The number of
+     * registers per page is configured in the config.php file
+     *
+     * @param string $userID User ID
+     * @param int $itensPerPage
+     * @return int
+     */
+    public static function getTotalSuggestedDocsPages($userID, $itensPerPage){
+        $total = self::getTotalSuggestedDocs($userID);
+        return ceil($total/$itensPerPage);
+    }
+
+    /**
+     * Convert XML to Array
+     *
+     * @param string $xmlProfile
+     * @return array
+     */
+    static function xmlToArray($xmlProfile){
+        /* load simpleXML object */
+        $xmlProfile = str_replace("&lt;","<",$xmlProfile);
+        $xmlProfile = str_replace("&gt;",">",$xmlProfile);
+        $xmlProfile = str_replace("&quot;","\"",$xmlProfile);
+        $xmlProfile = utf8_decode($xmlProfile);
+
+        $xml = simplexml_load_string($xmlProfile,'SimpleXMLElement',LIBXML_NOCDATA);
+        $json = json_encode($xml);
+        $result = json_decode($json,true);
+
+        return $result;
     }
 }
 ?>
