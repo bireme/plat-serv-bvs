@@ -114,7 +114,7 @@
                           <?php if ( $responseDocs["values"] != false ) : ?>
                             <?php //echo $sdPaginator->render($trans->getTrans($_REQUEST["action"],'NEXT'), $trans->getTrans($_REQUEST["action"],'PREVIOUS')); ?>
                             <!-- start project list -->
-                            <table class="table table-striped projects">
+                            <table class="table table-striped table-list">
                               <!--thead>
                                 <tr>
                                   <th>#</th>

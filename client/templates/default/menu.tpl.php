@@ -28,7 +28,7 @@
               <div class="col-md-4">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>Suggested Documents<small></small></h2>
+                    <h2><?=$trans->getTrans('menu','SUGGESTED_DOCS')?><small></small></h2>
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
@@ -38,31 +38,15 @@
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content">
-                    <article class="media event">
-                      <div class="media-body">
-                        <a class="title" href="#"><i class="fa fa-file-o" aria-hidden="true"></i>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a>
-                      </div>
-                    </article>
-                    <article class="media event">
-                      <div class="media-body">
-                        <a class="title" href="#"><i class="fa fa-file-o" aria-hidden="true"></i>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a>
-                      </div>
-                    </article>
-                    <article class="media event">
-                      <div class="media-body">
-                        <a class="title" href="#"><i class="fa fa-file-o" aria-hidden="true"></i>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a>
-                      </div>
-                    </article>
-                    <article class="media event">
-                      <div class="media-body">
-                        <a class="title" href="#"><i class="fa fa-file-o" aria-hidden="true"></i>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a>
-                      </div>
-                    </article>
-                    <article class="media event">
-                      <div class="media-body">
-                        <a class="title" href="#"><i class="fa fa-file-o" aria-hidden="true"></i>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a>
-                      </div>
-                    </article>
+                    <?php if ( $suggestedDocs ) : ?>
+                      <?php foreach ( $suggestedDocs as $docs ) : ?>
+                        <article class="media event">
+                          <div class="media-body">
+                            <a class="title" href="<?php echo $docs['ur'] ?>" target="_blank"><i class="fa fa-file-o" aria-hidden="true"></i><?php echo $docs['ti'] ?></a>
+                          </div>
+                        </article>
+                      <?php endforeach; ?>
+                    <?php endif; ?>
                   </div>
                 </div>
               </div>
@@ -230,6 +214,33 @@
                 </div>
               </div>
 
+              <div class="col-md-4">
+                <div class="x_panel">
+                  <div class="x_title">
+                    <h2><?=$trans->getTrans('menu','MY_LINKS')?><small></small></h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                      </li>
+                      <li><a class="close-link"><i class="fa fa-close"></i></a>
+                      </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content">
+                    <?php if ( $links ) : ?>
+                      <?php foreach ( $links as $link ) : ?>
+                        <article class="media event">
+                          <div class="media-body">
+                            <a class="title" href="<?php echo $link['url']; ?>" target="_blank"><i class="fa fa-external-link" aria-hidden="true"></i><?php echo $link['name']; ?></a>
+                            <p><?php echo $link['description']; ?></p>
+                          </div>
+                        </article>
+                      <?php endforeach; ?>
+                    <?php endif; ?>
+                  </div>
+                </div>
+              </div>
+
               <!--div class="col-md-4">
                 <div class="x_panel">
                   <div class="x_title">
@@ -296,33 +307,6 @@
                   </div>
                 </div>
               </div-->
-
-              <div class="col-md-4">
-                <div class="x_panel">
-                  <div class="x_title">
-                    <h2><?=$trans->getTrans('menu','MY_LINKS')?><small></small></h2>
-                    <ul class="nav navbar-right panel_toolbox">
-                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                      </li>
-                      <li><a class="close-link"><i class="fa fa-close"></i></a>
-                      </li>
-                    </ul>
-                    <div class="clearfix"></div>
-                  </div>
-                  <div class="x_content">
-                    <?php if ( $links ) : ?>
-                      <?php foreach ( $links as $link ) : ?>
-                        <article class="media event">
-                          <div class="media-body">
-                            <a class="title" href="<?php echo $link['url']; ?>" target="_blank"><i class="fa fa-external-link" aria-hidden="true"></i><?php echo $link['name']; ?></a>
-                            <p><?php echo $link['description']; ?></p>
-                          </div>
-                        </article>
-                      <?php endforeach; ?>
-                    <?php endif; ?>
-                  </div>
-                </div>
-              </div>
             </div>
         </div>
         <!-- /page content -->

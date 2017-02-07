@@ -151,7 +151,7 @@ class SimilarDocs {
      * @return array
      */
     static function getSuggestedDocs($userID,$params){
-        $count = (int) DOCUMENTS_PER_PAGE;
+        $count = ( $params["widget"] ) ? WIDGETS_ITEMS_LIMIT : DOCUMENTS_PER_PAGE;
         $from = $count * $params["page"];
 
         $prefix = 'SD$';

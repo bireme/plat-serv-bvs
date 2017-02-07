@@ -14,6 +14,7 @@
 require_once(dirname(__FILE__)."/../classes/MyLinks.php");
 require_once(dirname(__FILE__)."/../classes/DocsCollection.php");
 require_once(dirname(__FILE__)."/../classes/MyProfiles.php");
+require_once(dirname(__FILE__)."/../classes/SimilarDocs.php");
 require_once(dirname(__FILE__)."/../classes/Tracking.php");
 
 $params["widget"] = true;
@@ -26,11 +27,14 @@ $totalCollections = DocsCollection::getTotalDocs( $_SESSION["userTK"], null, tru
 $links = MyLinks::getLinkList( $_SESSION["userTK"], $params );
 $totalLinks = MyLinks::getTotalItens( $_SESSION["userTK"] );
 
-// Profile Dcouments widget
+// Profile Documents widget
 $profiles = MyProfiles::getProfileList( $_SESSION["userTK"], $params );
 $totalProfiles = MyProfiles::getTotalItens( $_SESSION["userTK"] );
 
 // Recent Activities widget
 //$params["sort"] = 'date';
 $dataHistory = Tracking::getTraceList( $_SESSION["userTK"], $params );
+
+// Suggested Documents widget
+$suggestedDocs = SimilarDocs::getSuggestedDocs( $_SESSION["userTK"]. $params );
 ?>
