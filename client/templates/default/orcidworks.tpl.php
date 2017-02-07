@@ -37,7 +37,7 @@
                                 <small style="display: block;"><?php echo implode("; ", $register["authors"]); ?></small>
                               </td>
                               <td style="text-align: right;">
-                                <button class="btn btn-success btn-xs"><?=$trans->getTrans($_REQUEST["action"],'GOOGLE_SCHOLAR')?></button>
+                                <a href="https://scholar.google.com.br/scholar?as_q=&as_epq=<?php echo urlencode($register["title"]); ?>" target="_blank"><button class="btn btn-success btn-xs"><?=$trans->getTrans($_REQUEST["action"],'GOOGLE_SCHOLAR')?></button></a>
                               </td>
                             </tr>
                             <?php endforeach; ?>
