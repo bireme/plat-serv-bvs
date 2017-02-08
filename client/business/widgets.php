@@ -16,6 +16,7 @@ require_once(dirname(__FILE__)."/../classes/DocsCollection.php");
 require_once(dirname(__FILE__)."/../classes/MyProfiles.php");
 require_once(dirname(__FILE__)."/../classes/SimilarDocs.php");
 require_once(dirname(__FILE__)."/../classes/Tracking.php");
+require_once(dirname(__FILE__)."/../../logs/functions.php");
 
 $params["widget"] = true;
 
@@ -37,4 +38,9 @@ $dataHistory = Tracking::getTraceList( $_SESSION["userTK"], $params );
 
 // Suggested Documents widget
 $suggestedDocs = SimilarDocs::getSuggestedDocs( $_SESSION["userTK"]. $params );
+
+// My Searches widget
+$obj = new MySearches($_SESSION["userTK"]);
+$retParams = $obj->getParams();
+$searches = $obj->getSearchList($retParams['userID'], $params);
 ?>

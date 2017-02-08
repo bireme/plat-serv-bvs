@@ -39,6 +39,7 @@ $EscapeRedirectToHome = array(substr(HOME,(strrpos(HOME,'/'))+1),
                                 'forgot.php'); /* escape from authentication */
 
 define("DOCUMENTS_PER_PAGE","200"); /* pagination */
+define("WIDGETS_ITEMS_LIMIT","5"); /* itens limit in widgets */
 
 define("BIR_ACCOUNTS_DOMAIN","http://accounts.bireme.org"); /* BIREME Accounts configuration */
 

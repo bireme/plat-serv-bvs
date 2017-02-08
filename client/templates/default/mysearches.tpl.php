@@ -22,9 +22,9 @@
                           <thead>
                             <tr>
                               <th style="width: 10%">#</th>
-                              <th style="width: 35%">Query</th>
-                              <th style="width: 35%">Filters</th>
-                              <th style="width: 20%">Actions</th>
+                              <th style="width: 35%"><?=$trans->getTrans($_REQUEST["action"],'QUERY')?></th>
+                              <th style="width: 35%"><?=$trans->getTrans($_REQUEST["action"],'FILTERS')?></th>
+                              <th style="width: 20%"><?=$trans->getTrans($_REQUEST["action"],'ACTIONS')?></th>
                             </tr>
                           </thead>
                           <tbody>
@@ -35,8 +35,8 @@
                               <td class="query"><?php echo $register['query']; ?></td>
                               <td class="filter"><?php echo $register['filter']; ?></td>
                               <td>
-                                <button id="v<?php echo $count; ?>" class="btn btn-primary btn-xs search" value="<?php echo $register['site']; ?>"><i class="fa fa-search search"></i> View</button>
-                                <button id="c<?php echo $count; ?>" class="btn btn-info btn-xs combine"><i class="fa fa-compress combine"></i> Combine</button>
+                                <button id="v<?php echo $count; ?>" class="btn btn-primary btn-xs search" value="<?php echo $register['site']; ?>"><i class="fa fa-search search"></i> <?=$trans->getTrans($_REQUEST["action"],'VIEW')?></button>
+                                <button id="c<?php echo $count; ?>" class="btn btn-info btn-xs combine"><i class="fa fa-compress combine"></i> <?=$trans->getTrans($_REQUEST["action"],'COMBINE')?></button>
                               </td>
                             </tr>
                             <?php endforeach; ?>

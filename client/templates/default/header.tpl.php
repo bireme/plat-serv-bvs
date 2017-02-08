@@ -22,8 +22,11 @@
     <link href="<?=RELATIVE_PATH?>/build/css/custom.min.css" rel="stylesheet">
     <!-- Theme Style -->
     <link href="<?=RELATIVE_PATH?>/css/<?=$_SESSION["skin"]?>/style.css" type="text/css" rel="stylesheet" />
+
+    <script type="text/javascript">
+        var LANG = "<?php echo $_SESSION['lang'] ? $_SESSION['lang'] : DEFAULT_LANG; ?>";
+    </script>
   </head>
   <body class="nav-md">
     <div class="container body">
       <div class="main_container">
-        <?php require_once(dirname(__FILE__)."/../cookies.tpl.php"); ?>

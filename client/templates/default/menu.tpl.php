@@ -147,7 +147,7 @@
               <div class="col-md-4">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>My Searches</h2>
+                    <h2><?=$trans->getTrans('menu','MY_SEARCHES')?></h2>
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
@@ -161,53 +161,22 @@
                       <thead>
                         <tr>
                           <th>#</th>
-                          <th>Query</th>
+                          <th><?=$trans->getTrans('menu','QUERY')?></th>
                           <th></th>
                         </tr>
                       </thead>
                       <tbody>
-                        <tr>
-                          <td id="s1">1</td>
-                          <td class="query">malaria</td>
-                          <td>
-                            <button id="v1" class="btn btn-primary btn-xs search" value="portal" data-original-title="" title=""><i class="fa fa-search search"></i> View</button>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td id="s2">2</td>
-                          <td class="query">covarde</td>
-                          <td>
-                            <button id="v2" class="btn btn-primary btn-xs search" value="portal" data-original-title="" title=""><i class="fa fa-search search"></i> View</button>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td id="s3">3</td>
-                          <td class="query">dengue tw:malaria</td>
-                          <td>
-                            <button id="v3" class="btn btn-primary btn-xs search" value="portal" data-original-title="" title=""><i class="fa fa-search search"></i> View</button>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td id="s4">4</td>
-                          <td class="query">dengue malaria</td>
-                          <td>
-                            <button id="v4" class="btn btn-primary btn-xs search" value="portal" data-original-title="" title=""><i class="fa fa-search search"></i> View</button>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td id="s5">5</td>
-                          <td class="query">dengue</td>
-                          <td>
-                            <button id="v5" class="btn btn-primary btn-xs search" value="portal" data-original-title="" title=""><i class="fa fa-search search"></i> View</button>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td id="s6">6</td>
-                          <td class="query">zika</td>
-                          <td>
-                            <button id="v6" class="btn btn-primary btn-xs search" value="portal" data-original-title="" title=""><i class="fa fa-search search"></i> View</button>
-                          </td>
-                        </tr>
+                        <?php if ( $searches ) : ?>
+                          <?php foreach ( $searches as $search ) : ?>
+                            <tr>
+                              <td id="s1">1</td>
+                              <td class="query"><?php echo $search['query']; ?></td>
+                              <td style="text-align: right;">
+                                <button id="v1" class="btn btn-primary btn-xs search" value="<?php echo $search['site']; ?>" data-original-title="" title=""><i class="fa fa-search search"></i> <?=$trans->getTrans('menu','VIEW')?></button>
+                              </td>
+                            </tr>
+                          <?php endforeach; ?>
+                        <?php endif; ?>
                       </tbody>
                     </table>
                   </div>

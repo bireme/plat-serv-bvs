@@ -41,7 +41,7 @@ class MySearches {
     public static function getSearchList($userID, $params){
         $retValue = false;
 
-        $count = (int) DOCUMENTS_PER_PAGE;
+        $count = ( $params["widget"] ) ? WIDGETS_ITEMS_LIMIT : DOCUMENTS_PER_PAGE;
         $from = $count * $params["page"];
 
         if($userID){
@@ -58,7 +58,7 @@ class MySearches {
                     )
                 ),
                 array(
-                    'limit' => $count,
+                    'limit' => (int) $count,
                     'skip' => $from,
                     'sort' => array( 'date' => -1 )
                 )

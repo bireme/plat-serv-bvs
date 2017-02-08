@@ -11,6 +11,10 @@
       </div>
     </div>
 
+    <div>
+        <?php require_once(dirname(__FILE__)."/../cookies.tpl.php"); ?>
+    </div>
+
     <!-- jQuery -->
     <script src="<?=RELATIVE_PATH?>/vendors/jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap -->
@@ -19,6 +23,8 @@
     <script src="<?=RELATIVE_PATH?>/vendors/fastclick/lib/fastclick.js"></script>
     <!-- Form Validator -->
     <script src="<?=RELATIVE_PATH?>/js/gen_validatorv31.js"></script>
+    <!-- i18n Scripts -->
+    <script src="<?=RELATIVE_PATH?>/js/i18n.js"></script>
     <!-- Theme Scripts -->
     <script src="<?=RELATIVE_PATH?>/js/scripts.js"></script>
     <!-- Custom Theme Scripts -->

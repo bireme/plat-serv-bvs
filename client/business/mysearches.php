@@ -24,15 +24,14 @@ switch($_REQUEST["task"]){
     case "list":
         $obj = new MySearches($_SESSION["userTK"]);
         $retParams = $obj->getParams();
+        
         $paginationData['pages'] = $obj->getTotalPages($retParams['userID'], DOCUMENTS_PER_PAGE);
-
         $objPaginator = new Paginator($paginationData['pages'],
             !empty($_REQUEST['page']) ? $_REQUEST['page'] : 1);
-
         $params['page'] = $objPaginator->getCurrentPage();
+
         $result = $obj->getSearchList($retParams['userID'], $params);
         $response["values"] = $result;
-
         $response["status"] = true;        
     break;
     default:

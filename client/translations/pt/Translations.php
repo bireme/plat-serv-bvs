@@ -88,12 +88,19 @@ class Translations {
         self::$trans["menu"]["ADD_LINK"] = 'Link adicionado';
         self::$trans["menu"]["UPDATE_LINK"] = 'Link atualizado';
         self::$trans["menu"]["REMOVE_LINK"] = 'Link removido';
+        self::$trans["menu"]["QUERY"] = 'Query';
+        self::$trans["menu"]["VIEW"] = 'Exibir';
 
     // Terms of mysearches pages
         self::$trans["mysearches"]["PAGE"] = 'Página';
         self::$trans["mysearches"]["MY_SEARCHES_NO_REGISTERS_FOUND"] = 'Nenhum registro encontrado';
         self::$trans["mysearches"]["NEXT"] = 'Próximo';
         self::$trans["mysearches"]["PREVIOUS"] = 'Anterior';
+        self::$trans["mysearches"]["QUERY"] = 'Query';
+        self::$trans["mysearches"]["FILTERS"] = 'Filtros';
+        self::$trans["mysearches"]["ACTIONS"] = 'Ações';
+        self::$trans["mysearches"]["VIEW"] = 'Exibir';
+        self::$trans["mysearches"]["COMBINE"] = 'Combinar';
 
     // Terms of suggesteddocs pages
         self::$trans["suggesteddocs"]["PAGE"] = 'Página';

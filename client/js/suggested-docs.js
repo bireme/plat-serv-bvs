@@ -1,5 +1,5 @@
 var url;
-var docs = new Array();
+var docs = [];
 
 $( document ).ready(
     function(){
@@ -58,6 +58,16 @@ $( document ).ready(
 
         $( this ).on( "change", "input[type='checkbox']", function(e) {
                 e.preventDefault();
+
+                size = arrayLength(docs);
+
+                if ( size == 10 ) {
+                    if ( $(this).is(":checked") ){
+                        alert(labels[LANG]['MAX_DOCS']);
+                        $(this).prop('checked', false);
+                        return false;
+                    }
+                }
 
                 id = $( this ).attr("id");
                 val = $( this ).val();
@@ -118,9 +128,9 @@ $( document ).ready(
 
             $.post( href, obj, function(data) {
                 if(data == true){
-                    alert('Documento adicionado à coleção.');
+                    alert(labels[LANG]['ADD_DOC_SUCCESS']);
                 }else{
-                    alert('O documento não foi adicionado corretamente à coleção.');
+                    alert(labels[LANG]['ADD_DOC_FAIL']);
                 }
             });
         })
