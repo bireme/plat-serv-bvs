@@ -61,8 +61,8 @@ class Translations {
         self::$trans["menu"]["USERS_SERVICES"] = 'Serviços Personalizados';
         self::$trans["menu"]["OLA"] = 'Olá';
         self::$trans["menu"]["LOGOUT"] = 'Sair';
-        self::$trans["menu"]["MY_PROFILE_DOCUMENTS"] = 'Documentos do Perfil';
-        self::$trans["menu"]["MY_SHELF"] = 'Minhas Coleções';
+        self::$trans["menu"]["MY_PROFILE_DOCUMENTS"] = 'Meus Perfis de Interesse';
+        self::$trans["menu"]["MY_SHELF"] = 'Documentos Favoritos';
         self::$trans["menu"]["MY_LINKS"] = 'Meus Links';
         self::$trans["menu"]["MY_NEWS"] = 'Minhas Notícias';
         self::$trans["menu"]["FORGOT_MY_PASSWORD"] = 'esqueci minha senha';
@@ -71,12 +71,12 @@ class Translations {
         self::$trans["menu"]["MY_ALERTS"] = 'Meus Alertas';
         self::$trans["menu"]["SEARCH"] = 'Pesquisar';
         self::$trans["menu"]["SEARCH_FOR"] = 'Pesquisar por...';
-        self::$trans["menu"]["MY_SEARCHES"] = 'Minhas Pesquisas';
+        self::$trans["menu"]["MY_SEARCHES"] = 'Histórico de Buscas na BVS';
         self::$trans["menu"]["KEYWORDS"] = 'Palavras-chave';
-        self::$trans["menu"]["SUGGESTED_DOCS"] = 'Documentos Sugeridos';
-        self::$trans["menu"]["ORCID_WORKS"] = 'ORCID Works';
+        self::$trans["menu"]["SUGGESTED_DOCS"] = 'Documentos Relacionados';
+        self::$trans["menu"]["ORCID_WORKS"] = 'ORCID - Minhas Publicações';
         self::$trans["menu"]["RECENT_ACTIVITIES"] = 'Atividades Recentes';
-        self::$trans["menu"]["SEE_ALL_DOCS"] = 'Ver todas as coleções';
+        self::$trans["menu"]["SEE_ALL_DOCS"] = 'Ver todos os documentos';
         self::$trans["menu"]["SEE_ALL_LINKS"] = 'Ver todos os links';
         self::$trans["menu"]["SEE_ALL_PROFILES"] = 'Ver todos os perfis';
         self::$trans["menu"]["ADD_COLLECTION"] = 'Coleção adicionada';
@@ -90,8 +90,12 @@ class Translations {
         self::$trans["menu"]["REMOVE_LINK"] = 'Link removido';
         self::$trans["menu"]["QUERY"] = 'Query';
         self::$trans["menu"]["VIEW"] = 'Exibir';
+        self::$trans["menu"]["SEARCH_WIDGET"] = 'Buscas na BVS';
+        self::$trans["menu"]["PROFILE_WIDGET"] = 'Perfis de Interesse';
+        self::$trans["menu"]["SHELF_WIDGET"] = 'Documentos das Coleções';
 
     // Terms of mysearches pages
+        self::$trans["mysearches"]["MY_SEARCHES"] = 'Histórico de Buscas na BVS';
         self::$trans["mysearches"]["PAGE"] = 'Página';
         self::$trans["mysearches"]["MY_SEARCHES_NO_REGISTERS_FOUND"] = 'Nenhum registro encontrado';
         self::$trans["mysearches"]["NEXT"] = 'Próximo';
@@ -106,7 +110,7 @@ class Translations {
         self::$trans["suggesteddocs"]["PAGE"] = 'Página';
         self::$trans["suggesteddocs"]["NEXT"] = 'Próximo';
         self::$trans["suggesteddocs"]["PREVIOUS"] = 'Anterior';
-        self::$trans["suggesteddocs"]["SUGGESTED_DOCS"] = 'Documentos Sugeridos';
+        self::$trans["suggesteddocs"]["SUGGESTED_DOCS"] = 'Documentos Relacionados';
         self::$trans["suggesteddocs"]["SUGGESTED_DOCS_NO_REGISTERS_FOUND"] = 'Nenhuma sugestão de documentos';
         self::$trans["suggesteddocs"]["REFERENCE"] = 'Escolha os documentos de referência para sugestões:';
         self::$trans["suggesteddocs"]["NO_REFERENCES"] = 'Nenhum documento encontrado com essa referência';
@@ -128,7 +132,7 @@ class Translations {
         self::$trans["orcidworks"]["PAGE"] = 'Página';
         self::$trans["orcidworks"]["NEXT"] = 'Próximo';
         self::$trans["orcidworks"]["PREVIOUS"] = 'Anterior';
-        self::$trans["orcidworks"]["ORCID_WORKS"] = 'ORCID Works';
+        self::$trans["orcidworks"]["ORCID_WORKS"] = 'ORCID - Minhas Publicações';
         self::$trans["orcidworks"]["ORCID_WORKS_NO_REGISTERS_FOUND"] = 'Nenhum trabalho publicado no ORCID';
         self::$trans["orcidworks"]["GOOGLE_SCHOLAR"] = 'Ver no Google Scholar';
 
@@ -242,7 +246,7 @@ class Translations {
     // Terms of myprofiledocuments pages
         self::$trans["myprofiledocuments"]["LILACS.orgiahx"] = 'Base de dados LILACS';
         self::$trans["myprofiledocuments"]["SciELO.orgiahx"] = 'Rede SciELO';
-        self::$trans["myprofiledocuments"]["MY_PROFILES"] = 'Meus Perfis';
+        self::$trans["myprofiledocuments"]["MY_PROFILES"] = 'Meus Perfis de Interesse';
         self::$trans["myprofiledocuments"]["VIEW_RESULTS_IN"] = 'ver resultados em';
         self::$trans["myprofiledocuments"]["REMOVE_PROFIVE"] = 'remover perfil';
         self::$trans["myprofiledocuments"]["EDIT_PROFILE"] = 'editar perfil';

@@ -5,17 +5,17 @@
         <div class="right_col" role="main">
             <!-- top tiles -->
             <div class="row tile_count">
-              <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+              <div class="col-md-3 col-sm-4 col-xs-6 tile_stats_count">
                 <span class="count_top"><i class="fa fa-file-o"></i> <?=$trans->getTrans('menu','MY_SHELF')?></span>
                 <div class="count"><?php echo $totalCollections; ?></div>
                 <span class="count_bottom"><a href="<?=RELATIVE_PATH?>/controller/mydocuments/control/business"><?=$trans->getTrans('menu','SEE_ALL_DOCS')?></a></span>
               </div>
-              <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+              <div class="col-md-3 col-sm-4 col-xs-6 tile_stats_count">
                 <span class="count_top"><i class="fa fa-external-link"></i> <?=$trans->getTrans('menu','MY_LINKS')?></span>
                 <div class="count green"><?php echo $totalLinks; ?></div>
                 <span class="count_bottom"><a href="<?=RELATIVE_PATH?>/controller/mylinks/control/business"><?=$trans->getTrans('menu','SEE_ALL_LINKS')?></a></span>
               </div>
-              <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+              <div class="col-md-3 col-sm-4 col-xs-6 tile_stats_count">
                 <span class="count_top"><i class="fa fa-folder-open-o"></i> <?=$trans->getTrans('menu','MY_PROFILE_DOCUMENTS')?></span>
                 <div class="count"><?php echo $totalProfiles; ?></div>
                 <span class="count_bottom"><a href="<?=RELATIVE_PATH?>/controller/myprofiledocuments/control/business"><?=$trans->getTrans('menu','SEE_ALL_PROFILES')?></a></span>
@@ -54,7 +54,7 @@
               <div class="col-md-4">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2><?=$trans->getTrans('menu','MY_SHELF')?><small></small></h2>
+                    <h2><?=$trans->getTrans('menu','SHELF_WIDGET')?><small></small></h2>
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
@@ -80,7 +80,7 @@
               <div class="col-md-4">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2><?=$trans->getTrans('menu','MY_PROFILE_DOCUMENTS')?><small></small></h2>
+                    <h2><?=$trans->getTrans('menu','PROFILE_WIDGET')?><small></small></h2>
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
@@ -147,7 +147,7 @@
               <div class="col-md-4">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2><?=$trans->getTrans('menu','MY_SEARCHES')?></h2>
+                    <h2><?=$trans->getTrans('menu','SEARCH_WIDGET')?></h2>
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>

@@ -11,7 +11,7 @@
               <div class="col-md-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2><?=$trans->getTrans('menu','MY_SEARCHES')?></h2>
+                    <h2><?=$trans->getTrans($_REQUEST["action"],'MY_SEARCHES')?></h2>
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content">

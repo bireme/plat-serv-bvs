@@ -6,7 +6,7 @@ $( document ).ready(
         $( "#reference" ).change(
             function(e){
                 e.preventDefault();
-               
+
                 reference = $( this ).val();
                 url = window.location.pathname + '/task/reference/type/' + reference;
 
@@ -23,7 +23,7 @@ $( document ).ready(
                 else if ( reference == 'orcidworks' ) {
                     $( ".docs-folder" ).hide();
                     $( ".profiles" ).hide();
-                    loadData( url );
+                    loadData( url, e.type );
                 }
                 else {
                     $( ".docs-folder" ).hide();
@@ -39,7 +39,7 @@ $( document ).ready(
 
                 if ( folder ) {
                     href = url + '/folder/' + folder;
-                    loadData( href );
+                    loadData( href, e.type );
                 }
             }
         )
@@ -51,7 +51,7 @@ $( document ).ready(
 
                 if ( profile ) {
                     href = url + '/profile/' + profile;
-                    loadData( href );
+                    loadData( href, e.type );
                 }
             }
         )
@@ -135,15 +135,22 @@ $( document ).ready(
             });
         })
 
-        function loadData(url, obj) {
+        function loadData(url, type, obj) {
             $('#loading').show();
+            
             $(".result").load( url + ' .result', obj, function() {
+                if ( 'change' == type ) {
+                    docs = [];
+                    $( ".count" ).text(0);
+                } else{
+                    for (var key in docs) {
+                        size = arrayLength(docs);
+                        $( ".count" ).text(size);
+                        $('#'+key).prop('checked', true);
+                    }
+                }                
+
                 $('#loading').hide();
-                for (var key in docs) {
-                    size = arrayLength(docs);
-                    $( ".count" ).text(size);
-                    $('#'+key).prop('checked', true);
-                }
             });
         }
 
