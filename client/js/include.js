@@ -56,7 +56,7 @@ $( document ).ready(
             }
         )
 
-        $( this ).on( "change", "input[type='checkbox']", function(e) {
+        $( this ).on( "change", "#tab_config input[type='checkbox']", function(e) {
                 e.preventDefault();
 
                 size = arrayLength(docs);
@@ -83,14 +83,14 @@ $( document ).ready(
             }
         )
 
-        $( this ).on( "click", ".paginate_button a", function(e) {
+        $( this ).on( "click", "#tab_config .paginate_button a", function(e) {
                 e.preventDefault();
                 href = $( this ).attr("href");
                 loadData( href );
             }
         )
 
-        $( this ).on( "click", "button.submit", function(e) {
+        $( this ).on( "click", "#tab_config button.submit", function(e) {
                 e.preventDefault();
 
                 size = arrayLength(docs);

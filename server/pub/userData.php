@@ -1,4 +1,4 @@
-<?
+<?php
 ob_start("ob_gzhandler");
 session_start();
 require_once(dirname(__FILE__)."/include/includes.php");
@@ -9,6 +9,10 @@ require_once(dirname(__FILE__)."/../classes/UserDAO.php");
 require_once(dirname(__FILE__)."/../classes/Tools.php");
 require_once(dirname(__FILE__)."/../classes/ToolsAuthentication.php");
 require_once(dirname(__FILE__)."/../classes/Verifier.php");
+
+//echo "<pre>"; print_r($_SESSION); echo "</pre>";
+//echo "<pre>"; print_r($_REQUEST); echo "</pre>";
+//echo "<pre>"; print_r($_SERVER); echo "</pre>";
 
 $src = $_SESSION['source'] ? $_SESSION['source'] : false;
 
@@ -68,7 +72,7 @@ switch($acao){
             $migrationResult = ToolsRegister::authenticateRegisteringUser($usr);
         }
         if ($migrationResult["status"] === true){          
-            $response["msg"] = ADD_SUCSSESS;
+            $response["msg"] = ADD_SUCCESS;
             $response["status"] = true;
             $orcidData = UserDAO::fillOrcidData($usr->getID(), $usr->getOrcid());
 
@@ -113,252 +117,284 @@ switch($acao){
             $response["status"] = false;
         }
         break;
-    default:
-        break;
 }
 
 if(isset($userID)){
     $isUser = UserDAO::isUser($userID);
     if($isUser){
         $usr = UserDAO::getUser($userID);
+        $_SESSION["userFirstName"] = $usr->getFirstName();
+        $_SESSION["userLastName"] = $usr->getLastName();
     }
 }else{
     $usr = new User();
 }
 
 $DocTitle = $isUser?UPDATE_USER_TITLE:REGISTER_NEW_USER_TITLE;
-
 ?>
-<?=DOCTYPE?>
-<html>
-    <head>
-        <title><?=$DocTitle?></title>
-        <? require_once(dirname(__FILE__)."/include/head.php"); ?>
-        <script language="javascript" src="js/gen_validatorv31.js" ></script>
-        <link rel="stylesheet" type="text/css" href="css/styles/regional/main.css" />
-    </head>
-    <body>
-        <div class="container">
-            <div id="header">
-                <h1 id="logo">
-                    <a href="">
-                        <span><?=BVSSIGLA?></span>
-                    </a>
-                </h1>
-                <h2><?=BVS?></h2>
-                <div id="profile" class="index"></div>
-                <div id="idioma">                                        
-                    <?if ($lang != "pt"){?><a href='<?=$_SERVER['REQUEST_URI']?>&lang=pt' title='Mudar para português'> Português </a> <?}?>
-                    <?if ($lang != "en"){?><a href='<?=$_SERVER['REQUEST_URI']?>&lang=en' title='Switch to English'> English </a> <?}?>
-                    <?if ($lang != "es"){?><a href='<?=$_SERVER['REQUEST_URI']?>&lang=es' title='Cambiar para Español'> Español </a> <?}?>
-                </div>
-                <div id="institutions">
-                    <ul>
-                        <li><a href="#"><img title="<?=BIREME?>" alt="<?=BIREME?>" src="images/pt/logobir.gif"/></a></li>
-                    </ul>
-                </div>
-                <div id="empty"></div>
-            </div>
-            <div id="area" class="level2">
-                <div id="cache" style="position:absolute;left:0;top:0;z-index:8;display:none;"></div>
-                    <div class="secondLevel">
-                        <? if($callerURL){ ?>
-                            <a href="http://<?=$callerURL?>">home</a> &gt;
-                        <?}?>
-                        <?
-                            if($isUser){
-                                echo UPDATE_USER_TITLE;
-                                $showLoginField = false;
-                                $act = "update";
-                            }else{
-                                echo REGISTER_NEW_USER_TITLE;
-                                $showLoginField = true;
-                                $act = "registry";
-                            }
-                        ?>
-                        
-                        <?if (($response["status"] === false) || (empty($response["status"]))){?>
-                        <?if ($response["status"] === false){?>
-                        <div class="alert">
-                            <div class="error">
-                                <img src="images/warning.png" border="0" style="float: left; margin-right: 10px;"/> <?=$response["msg"];?>
-                            </div>
+
+        <?php require_once(dirname(__FILE__)."/../templates/".DEFAULT_SKIN."/header.tpl.php"); ?>
+
+        <?php
+            if($isUser) {
+                require_once(dirname(__FILE__)."/../templates/".DEFAULT_SKIN."/sidebar.tpl.php");
+            } else { ?>
+                <div class="col-md-3 left_col">
+                  <div class="left_col scroll-view">
+                    <div class="navbar nav_title" style="border: 0;">
+                        <div class="site_title">
+                            <i class="fa fa-cloud"></i> <span>Services Platform</span>
                         </div>
-                        <?}?>
-                        <form method="post" name="cadastro" action="">
-                            <input type="hidden" name="postback" value="1" />                            
-                            <input type="hidden" name="userid" value="<?=trim($usr->getID())?> " />
-                            <input type="hidden" name="source" value="<?=trim($usr->getSource())?>" />
-                            <fieldset>
-                                <legend><?=PERSONAL_DATA?></legend>
-                                <img src="images/exclaim.gif" border="0" /> <?=REQUIRED_FIELD_TEXT?><br />
-                                <div class="fieldmandatory">
-                                    <span class="legend"><?=FIELD_FIRST_NAME?>:</span>
-                                    <input class="thinbox" name="firstName" value="<?=trim($usr->getFirstName())?>" maxlength="150" type="text"/>
-                                    <div id='cadastro_firstName_errorloc' class="tfvNormal"></div>
-                                </div>
-                                <div class="spacer"></div>
-                                <div class="fieldmandatory">
-                                    <span class="legend"><?=FIELD_LAST_NAME?>:</span>
-                                    <input class="thinbox" name="lastName" value="<?=trim($usr->getLastName())?>" maxlength="150" type="text"/>
-                                    <div id='cadastro_lastName_errorloc' class="tfvNormal"></div>
-                                </div>
-                                <div class="spacer"></div>
-
-                                <?php
-                                    if($showLoginField){
-                                ?>
-                                    <div class="fieldmandatory">
-                                        <span class="legend"><?=FIELD_LOGIN?>:</span>
-                                        <input class="thinbox" name="login" value="<?=trim($usr->getID())?>" maxlength="64" type="text" />
-                                        <div id='cadastro_login_errorloc' class="tfvNormal"></div>
-                                    </div>
-                                    <div class="spacer"></div>
-                                    <div class="fieldmandatory">
-                                        <span class="legend"><?=FIELD_PASSWORD?>:</span>
-                                        <input class="thinbox" name="password" maxlength="16" type="password"/>
-                                        <div id='cadastro_password_errorloc' class="tfvNormal"></div>
-                                    </div>
-                                    <div class="spacer"></div>
-                                <?}else{?>
-                                    <div class="field">
-                                    <span class="legend"><?=FIELD_LOGIN?>:</span>
-                                    <input class="thinbox" name="login" value="<?=trim($usr->getID())?>" disabled="true" style="color: #999;"/>
-                                    </div>
-                                <?}?>
-                                <div class="field">
-                                    <span class="legend"><?=FIELD_AFILIATION?>:</span>
-                                    <input class="thinbox" name="afiliacao" maxlength="45" type="text"  value="<?=$usr->getAffiliation()?>"/>
-                                </div>
-                                <div class="spacer"></div>
-                                <div class="field">
-                                    <span class="legend"><?=FIELD_LATTES?>:</span>
-                                    <input class="thinbox" name="lattes" type="text" value="<?=$usr->getLattes()?>"/>
-                                </div>
-                                <div class="spacer"></div>
-                                <div class="field">
-                                    <span class="legend"><?=FIELD_LINKEDIN?>:</span>
-                                    <input class="thinbox" name="linkedin" type="text" value="<?=$usr->getLinkedin()?>"/>
-                                </div>
-                                <div class="spacer"></div>
-                                <div class="field">
-                                    <span class="legend"><?=FIELD_RESEARCHGATE?>:</span>
-                                    <input class="thinbox" name="researchGate" type="text" value="<?=$usr->getResearchGate()?>"/>
-                                </div>
-                                <div class="spacer"></div>
-                                <div class="field">
-                                    <span class="legend"><?=FIELD_ORCID?>:</span>
-                                    <input class="thinbox" name="orcid" type="text" value="<?=$usr->getOrcid()?>"/>
-                                </div>
-                                <div class="spacer"></div>
-                                <div class="field">
-                                    <span class="legend"><?=FIELD_RESEARCHERID?>:</span>
-                                    <input class="thinbox" name="researcherID" type="text" value="<?=$usr->getResearcherID()?>"/>
-                                </div>
-                                <div class="spacer"></div>
-                                <div class="field">
-                                    <span class="legend"><?=FIELD_COUNTRY?>:</span>
-                                    <select class="thinbox" name="country">
-                                        <option value=""><?=CHOOSE_COUNTRY?></option>
-                                        <?foreach ($countries as $key => $value){
-                                            $languageCountries[$key] = $value[$lang];
-
-                                        }
-                                        asort($languageCountries,SORT_STRING);
-                                        foreach ($languageCountries as $key => $value){ ?>
-                                            <option value="<?=$key?>" <?if ($usr->getCountry() == $key){?>selected=""<?}?>><?=$value?></option>
-                                        <?}?>
-                                    </select>
-                                </div>
-                                <div class="spacer"></div>
-                                <div class="field">
-                                <span class="legend"><?=DEGREE?>:</span>
-                                    <select name="degree" class="expression">
-                                        <option value=""><?=CHOOSE_DEGREE?></option>
-                                        <?
-                                            $arr = explode(",",FIELD_DEGREE);
-
-                                            foreach($arr as $item){
-                                                $arr2 = explode("|",$item);
-
-                                                if($arr2[0] == $usr->getDegree()){
-                                                    echo '<option SELECTED value="'.$arr2[0].'">'.$arr2[1].'</option>'."\n";
-                                                }else{
-                                                    echo '<option value="'.$arr2[0].'">'.$arr2[1].'</option>'."\n";
-                                                }
-                                            }
-                                        ?>
-                                    </select>
-                                </div>
-                                <div class="spacer"></div>
-                                <div class="fieldmandatory">
-                                    <span class="legend"><?=FIELD_GENDER?>:</span>
-                                    <input type="radio" <?if ($usr->getGender() == "M") echo "checked"; ?> name="gender" value="M" />
-                                    <label for="genderM" /><?=FIELD_GENDER_MALE?><br />
-                                    <input type="radio" <?if ($usr->getGender() == "F") echo "checked"; ?> name="gender" value="F" />
-                                    <label for="genderF" /><?=FIELD_GENDER_FEMALE?>
-                                    <div id='cadastro_gender_errorloc' class="tfvNormal"></div>
-                                </div>
-                                <div class="spacer"></div>
-                            </fieldset>
-                            <?if ($act == "registry"){?>
-                            <div class="help">
-                                <h5><span><?=FREE_REGISTRY?></span></h5>
-                                <?=FREE_REGISTRY_MESSAGE?>
-                                <a href="notice.php"><?=LEARN_MORE?></a>
-                            </div>
-                            <?}?>
-                            <div class="actionBtn">
-                                <? if($callerURL){ ?>
-                                    <input type="button" value="<?=BUTTON_CANCEL?>" class="cancel" onCLick="javascript:window.location='http://<?=$callerURL?>'; return false;"/>
-                                <?}
-                                if($isUser){?>
-                                    <input type="hidden" value="atualizar" name="acao" />
-                                    <input type="submit" value="<?=BUTTON_UPDATE_USER?>" class="submit" />
-                                <?}else{?>
-                                    <input type="hidden" value="gravar" name="acao" />
-                                    <input type="submit" value="<?=BUTTON_NEW_USER?>" class="submit" />
-                                <?}?>
-
-                                <div class="spacer">&#160;</div>
-                            </div>
-
-                            <div class="spacer"></div>
-                            <input type="hidden" name="autoconn" value=""/>
-                        </form>
-                        <script language="JavaScript" type="text/javascript">
-                            //You should create the validator only after the definition of the HTML form
-                            var frmvalidator  = new Validator("cadastro");
-                            frmvalidator.EnableOnPageErrorDisplay();
-                            frmvalidator.EnableMsgsTogether();
-                            <?php if($showLoginField){ ?>
-                            frmvalidator.addValidation("login","maxlen=50");
-                            frmvalidator.addValidation("login","req","<?=VALMSG_G_EMPTY?>");
-                            frmvalidator.addValidation("login","email","<?=VALMSG_LOGIN?>");
-                            frmvalidator.addValidation("password","maxlen=50");
-                            frmvalidator.addValidation("password","req","<?=VALMSG_G_EMPTY?>");
-                            <?php } ?>
-                            frmvalidator.addValidation("firstName","req","<?=VALMSG_G_EMPTY?>");
-                            frmvalidator.addValidation("lastName","req","<?=VALMSG_G_EMPTY?>");
-                            frmvalidator.addValidation("gender","req");
-                            frmvalidator.addValidation("gender","selone_radio","<?=VALMSG_G_EMPTY?>");
-                            frmvalidator.addValidation("email","maxlen=50");
-                            frmvalidator.addValidation("email","req","<?=VALMSG_G_EMPTY?>");
-                            frmvalidator.addValidation("email","email","<?=VALMSG_EMAIL?>");
-                        </script>
-                        <?}else{?>
-                        <div class="alert">
-                            <div class="ok">
-                                <img src="images/ok.png" border="0" style="float: left; margin-right: 10px;" /><?=$response["msg"];?>
-                            </div>
-                        </div>
-                        <?}?>
                     </div>
-                    <div class="spacer"></div>
+                    <div class="clearfix"></div>
+                  </div>
+                </div>
+        <?php } ?>
+
+        <!-- page content -->
+        <div class="right_col" role="main">
+          <div>
+            <div class="clearfix"></div>
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                  <?php
+                      if($isUser){
+                          $showLoginField = false;
+                          $act = "update";
+                      }else{
+                          if($callerURL) { ?>
+                              <div class="breadcrumb"><a href="http://<?=$callerURL?>">home</a> &gt; <?=REGISTER_NEW_USER_TITLE?></div>
+                          <?php }
+                          $showLoginField = true;
+                          $act = "registry";
+                      }
+                  ?>
+                  <?php if($isUser) : ?>
+                      <div class="x_title">
+                        <h2><?=MY_DATA?><small></small></h2>
+                        <div class="clearfix"></div>
+                      </div>
+                  <?php endif; ?>
+                  <div class="x_content">
+                    <?php if ($response["status"] === true) : ?>
+                    <div class="alert alert-success alert-dismissible fade in" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
+                        </button>
+                        <strong><?=$response["msg"];?></strong>
+                    </div>
+                    <?php endif; ?>
+                    <?php if ($response["status"] === false) : ?>
+                    <div class="alert alert-danger alert-dismissible fade in" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
+                        </button>
+                        <strong><?=$response["msg"];?></strong>
+                    </div>
+                    <?php endif; ?>
+
+                    <?php if ($act == "registry") : ?>
+                    <div class="help">
+                      <h2><?=FREE_REGISTRY?></h2>
+                      <?=FREE_REGISTRY_MESSAGE?>
+
+                      <!-- modal -->
+                      <button type="button" class="btn btn-info" data-toggle="modal" data-target=".bs-example-modal-lg"><?=LEARN_MORE?></button>
+
+                      <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="true" style="z-index: 9999;">
+                        <div class="modal-dialog modal-lg">
+                          <div class="modal-content">
+
+                            <div class="modal-header">
+                              <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span>
+                              </button>
+                              <h2 class="modal-title" id="myModalLabel"><?=NOTICE?></h2>
+                            </div>
+                            <div class="modal-body">
+                              <?=NOTICE_MESSAGE?>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-default" data-dismiss="modal"><?=BUTTON_CLOSE?></button>
+                            </div>
+
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <?php endif; ?>
+
+                    <form method="post" name="cadastro" class="form-horizontal form-label-left" novalidate>
+
+                      <input type="hidden" name="postback" value="1" />                            
+                      <input type="hidden" name="userid" value="<?=trim($usr->getID())?> " />
+                      <input type="hidden" name="source" value="<?=trim($usr->getSource())?>" />
+
+                      <span class="section"><?=PERSONAL_DATA?></span>
+
+                      <div class="item form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="firstName"><?=FIELD_FIRST_NAME?> <span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input id="firstName" class="form-control col-md-7 col-xs-12" data-validate-length-range="0,150" name="firstName" required="required" type="text" value="<?=trim($usr->getFirstName())?>">
+                        </div>
+                      </div>
+                      <div class="item form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="lastName"><?=FIELD_LAST_NAME?> <span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input id="lastName" class="form-control col-md-7 col-xs-12" data-validate-length-range="0,150" name="lastName" required="required" type="text" value="<?=trim($usr->getLastName())?>">
+                        </div>
+                      </div>
+                      <?php if($showLoginField) : ?>
+                      <div class="item form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="login"><?=FIELD_LOGIN?> <span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="email" id="login" name="login" required="required" class="form-control col-md-7 col-xs-12" data-validate-length-range="0,50" value="<?=trim($usr->getID())?>">
+                        </div>
+                      </div>
+                      <div class="item form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="confirmLogin"><?=FIELD_LOGIN_CONFIRMATION?> <span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="email" id="confirmLogin" name="confirmLogin" data-validate-linked="login" required="required" class="form-control col-md-7 col-xs-12">
+                        </div>
+                      </div>
+                      <div class="item form-group">
+                        <label for="password" class="control-label col-md-3"><?=FIELD_PASSWORD?> <span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input id="password" type="password" name="password" data-validate-length-range="8,40" class="form-control col-md-7 col-xs-12" required="required">
+                        </div>
+                      </div>
+                      <div class="item form-group">
+                        <label for="confirmPassword" class="control-label col-md-3 col-sm-3 col-xs-12"><?=FIELD_PASSWORD_CONFIRMATION?> <span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input id="confirmPassword" type="password" name="confirmPassword" data-validate-linked="password" class="form-control col-md-7 col-xs-12" required="required">
+                        </div>
+                      </div>
+                      <?php else : ?>
+                      <div class="item form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="login"><?=FIELD_LOGIN?></label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="email" id="login" name="login" class="form-control col-md-7 col-xs-12" value="<?=trim($usr->getID())?>" disabled>
+                        </div>
+                      </div>
+                      <?php endif; ?>
+                      <div class="item form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="afiliacao"><?=FIELD_AFILIATION?></label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input id="afiliacao" type="text" name="afiliacao" class="optional form-control col-md-7 col-xs-12" value="<?=$usr->getAffiliation()?>">
+                        </div>
+                      </div>
+                      <div class="item form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="lattes"><?=FIELD_LATTES?></label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="url" id="lattes" name="lattes" class="form-control col-md-7 col-xs-12" value="<?=$usr->getLattes()?>">
+                        </div>
+                      </div>
+                      <div class="item form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="linkedin"><?=FIELD_LINKEDIN?></label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="url" id="linkedin" name="linkedin" class="form-control col-md-7 col-xs-12" value="<?=$usr->getLinkedin()?>">
+                        </div>
+                      </div>
+                      <div class="item form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="researchGate"><?=FIELD_RESEARCHGATE?></label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="url" id="researchGate" name="researchGate" class="form-control col-md-7 col-xs-12" value="<?=$usr->getResearchGate()?>">
+                        </div>
+                      </div>
+                      <div class="item form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="orcid"><?=FIELD_ORCID?></label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input id="orcid" type="text" name="orcid" class="optional form-control col-md-7 col-xs-12" value="<?=$usr->getOrcid()?>">
+                        </div>
+                      </div>
+                      <div class="item form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="researcherID"><?=FIELD_RESEARCHERID?></label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input id="researcherID" type="text" name="researcherID" class="optional form-control col-md-7 col-xs-12" value="<?=$usr->getResearcherID()?>">
+                        </div>
+                      </div>
+                      <div class="item form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12"><?=FIELD_COUNTRY?></label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <select class="form-control" name="country">
+                            <?php
+                                foreach ($countries as $key => $value)
+                                    $languageCountries[$key] = $value[$lang];
+
+                                asort($languageCountries,SORT_STRING);
+                            ?>
+                            <option value=""><?=CHOOSE_COUNTRY?></option>
+                            <?php foreach ($languageCountries as $key => $value) : ?>
+                            <option value="<?php echo $key; ?>" <?php if ( $usr->getCountry() == $key ) echo 'selected'; ?>><?php echo $value; ?></option>
+                            <?php endforeach; ?>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="item form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12"><?=DEGREE?></label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <select name="degree" class="form-control">
+                            <option value=""><?=CHOOSE_DEGREE?></option>
+                            <?php
+                                $arr = explode(",",FIELD_DEGREE);
+
+                                foreach($arr as $item){
+                                    $arr2 = explode("|",$item);
+
+                                    if($arr2[0] == $usr->getDegree()){
+                                        echo '<option selected value="'.$arr2[0].'">'.$arr2[1].'</option>'."\n";
+                                    }else{
+                                        echo '<option value="'.$arr2[0].'">'.$arr2[1].'</option>'."\n";
+                                    }
+                                }
+                            ?>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="item form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12"><?=FIELD_GENDER?></label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <div id="gender" class="btn-group" data-toggle="buttons">
+                            <label class="btn btn-default <?php if ($usr->getGender() == "M") echo "active"; ?>" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
+                              <input type="radio" name="gender" value="M" data-parsley-multiple="gender" <?php if ($usr->getGender() == "M") echo "checked"; ?>> <?=FIELD_GENDER_MALE?>
+                            </label>
+                            <label class="btn btn-default <?php if ($usr->getGender() == "F") echo "active"; ?>" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
+                              <input type="radio" name="gender" value="F" data-parsley-multiple="gender" <?php if ($usr->getGender() == "F") echo "checked"; ?>> <?=FIELD_GENDER_FEMALE?>
+                            </label>
+                          </div>
+                          <!--p>
+                            Masculino: <input type="radio" class="flat" name="gender" id="genderM" value="M" />
+                            Feminino: <input type="radio" class="flat" name="gender" id="genderF" value="F" />
+                          </p-->
+                        </div>
+                      </div>
+                      <div class="ln_solid"></div>
+                      <div class="form-group">
+                        <div class="col-md-6 col-md-offset-3">
+                          <? if($callerURL){ ?>
+                              <input type="button" value="<?=BUTTON_CANCEL?>" class="btn btn-primary cancel" onclick="javascript:window.location='http://<?=$callerURL?>'; return false;" />
+                          <?}
+                          if($isUser){?>
+                              <input type="hidden" value="atualizar" name="acao" />
+                              <input id="send" type="submit" value="<?=BUTTON_UPDATE_USER?>" class="btn btn-success submit" />
+                          <?}else{?>
+                              <input type="hidden" value="gravar" name="acao" />
+                              <input id="send" type="submit" value="<?=BUTTON_NEW_USER?>" class="btn btn-success submit" />
+                          <?}?>
+                        </div>
+                      </div>
+                      <input type="hidden" name="autoconn" value=""/>
+                    </form>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div id="footer">
-                <?=FOOTER_MESSAGE?>
-            </div>
+          </div>
         </div>
-    </body>
-</html>
+        <!-- /page content -->
+
+        <?php require_once(dirname(__FILE__)."/../templates/".DEFAULT_SKIN."/footer.tpl.php"); ?>

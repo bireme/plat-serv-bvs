@@ -8,6 +8,7 @@ if($lang == 'pt'){
     define('BIREME','BIREME | OPS | OMS');
     define('BUTTON_NEW_USER','Gravar');
     define('BUTTON_CANCEL','Cancelar');
+    define('BUTTON_CLOSE','Fechar');
     define('BUTTON_SEND','Enviar');
     define("BUTTON_UPDATE_USER","Atualizar");
     define('BVSSIGLA','BVS');
@@ -28,6 +29,7 @@ if($lang == 'pt'){
     define('FIELD_AFILIATION','Instituição');
     define('FIELD_COUNTRY','País');
     define('FIELD_LOGIN','E-mail ou login');
+    define('FIELD_LOGIN_CONFIRMATION','Confirme seu e-mail ou login');
     define('FIELD_PASSWORD','Senha');
     define('FIELD_PASSWORD_CONFIRMATION','Confirme sua senha');
     define('FIELD_GENDER_MALE','Masculino');
@@ -58,7 +60,7 @@ if($lang == 'pt'){
     define("UPDATE_USER_TITLE","Atualização dos dados");
     define("USER_ADDED",'Usuario adicionado com sucesso.');
     define("USER_EXISTS","<b>Usuário já cadastrado</b><br />Tente se autenticar com este usuário, caso não lembre a senha de cadastro utilize o link  <b>esqueci minha senha</b> na caixa de login de usuários.");
-    define("ADD_SUCSSESS","<b>Usuário criado com sucesso</b><br />Seu usuário agora faz parte do passaporte da BVS, Você esta habilitado para se conectar nas aplicações da SciELO e BVS com este usuário.");
+    define("ADD_SUCCESS","<b>Usuário criado com sucesso</b><br />Seu usuário agora faz parte do passaporte da BVS<br />Você esta habilitado para se conectar nas aplicações da SciELO e BVS com este usuário");
     define("ADD_ERROR","<b>Erro no cadastro</b><br />Se seu email é um email Bireme. Neste caso seu usuário já possui login para acesso ao passaporte BVS, basta utilizar seu email e senha da Bireme para acessar esta aplicação.");
     define("USER_UPDATED",'Usuario atualizado com sucesso.');
     define("USER_UPDATE_ERROR",'<b>Problemas durante atualização</b><br />O sistema não conseguiu atualizar os dados do usuário. Tente mais tarde.');
@@ -85,6 +87,44 @@ Se você possui usuário cadastrado no site ScIELO, na próxima vez que acessar 
     define('FIELD_ORCID','ORCID');
     define('FIELD_RESEARCHERID','ResearcherID');
     define('FIELD_LATTES','Lattes (URL)');
+
+    define('HOMEPAGE','Home');
+    define("WELCOME",'Bem vindo');
+    define("USERS_SERVICES",'Serviços Personalizados');
+    define("OLA",'Olá');
+    define("LOGOFF",'Sair');
+    define("MY_PROFILE_DOCUMENTS",'Meus Perfis de Interesse');
+    define("MY_SHELF",'Documentos Favoritos');
+    define("MY_LINKS",'Meus Links');
+    define("MY_NEWS",'Minhas Notícias');
+    define("FORGOT_MY_PASSWORD",'esqueci minha senha');
+    define("CHANGE_PASSWORD",'Alterar Senha');
+    define("MY_DATA",'Editar Perfil');
+    define("MY_ALERTS",'Meus Alertas');
+    define("SEARCH",'Pesquisar');
+    define("SEARCH_FOR",'Pesquisar por...');
+    define("MY_SEARCHES",'Histórico de Buscas na BVS');
+    define("KEYWORDS",'Palavras-chave');
+    define("SUGGESTED_DOCS",'Documentos Relacionados');
+    define("ORCID_WORKS",'ORCID - Minhas Publicações');
+    define("RECENT_ACTIVITIES",'Atividades Recentes');
+    define("SEE_ALL_DOCS",'Ver todos os documentos');
+    define("SEE_ALL_LINKS",'Ver todos os links');
+    define("SEE_ALL_PROFILES",'Ver todos os perfis');
+    define("ADD_COLLECTION",'Coleção adicionada');
+    define("UPDATE_COLLECTION",'Coleção atualizada');
+    define("REMOVE_COLLECTION",'Coleção removida');
+    define("ADD_PROFILE",'Perfil adicionado');
+    define("UPDATE_PROFILE",'Perfil atualizado');
+    define("REMOVE_PROFILE",'Perfil removido');
+    define("ADD_LINK",'Link adicionado');
+    define("UPDATE_LINK",'Link atualizado');
+    define("REMOVE_LINK",'Link removido');
+    define("QUERY",'Query');
+    define("VIEW",'Exibir');
+    define("SEARCH_WIDGET",'Buscas na BVS');
+    define("PROFILE_WIDGET",'Perfis de Interesse');
+    define("SHELF_WIDGET",'Documentos das Coleções');
 }
 
 if($lang == 'es'){
@@ -92,6 +132,7 @@ if($lang == 'es'){
     define('BIREME','BIREME | OPS | OMS');
     define('BUTTON_NEW_USER','Grabar');
     define('BUTTON_CANCEL','Cancelar');
+    define('BUTTON_CLOSE','Fechar');
     define('BUTTON_SEND','Enviar');
     define("BUTTON_UPDATE_USER","Actualizar");
     define('BVSSIGLA','BVS');
@@ -112,6 +153,7 @@ if($lang == 'es'){
     define('FIELD_AFILIATION','Instituición');
     define('FIELD_COUNTRY','País');
     define('FIELD_LOGIN','E-mail o login');
+    define('FIELD_LOGIN_CONFIRMATION','Confirme su e-mail o login');
     define('FIELD_PASSWORD','Contraseña');
     define('FIELD_PASSWORD_CONFIRMATION','Confirme su contrasenã');
     define('FIELD_GENDER_MALE','Masculino');
@@ -137,7 +179,7 @@ if($lang == 'es'){
     define("USER_ADDED",'Usuario añadido con succeso.');
     define("USER_EXISTS","<b>Usuário já cadastrado</b><br />Pruebe autenticarse con ese usuário, si no te acuerdas de la contraseña utilize el link  <b>esqueci minha senha</b> en la caja de login de usuários.");
     define("ADD_ERROR","<b>Erro en el registro</b><br />Si su email es un email de Bireme. En ese caso su usuário ya tiene login para acceso a los aplicativos de la BVS, basta utilizar su email y contraseña de Bireme para acceder a esa aplicación.");
-    define("ADD_SUCSSESS","<b>Usuário añadido con succeso</b><br />Su usuário ahora hace parte del passaporte de la BVS, Usted esta habilitado para conectarse en las aplicaciones de SciELO y BVS con ese usuário.");
+    define("ADD_SUCCESS","<b>Usuário añadido con succeso</b><br />Su usuário ahora hace parte del passaporte de la BVS<br />Usted esta habilitado para conectarse en las aplicaciones de SciELO y BVS con ese usuário.");
     define("USER_UPDATED",'Usuario actualizado con succeso.');
     define("USER_UPDATE_ERROR",'<b>Problemas en la actualización</b><br />El sistema no logro actualizar los datos del usuário. Tente mas tardera.');
     define("VALMSG_G_EMPTY","Campo obligatório. Não puede quedarse en blanco.");
@@ -164,6 +206,44 @@ Si usted tiene usuário cadastrado en el sitio ScIELO, la próxima vez que acced
     define('FIELD_ORCID','ORCID');
     define('FIELD_RESEARCHERID','ResearcherID');
     define('FIELD_LATTES','Lattes (URL)');
+
+    define("HOMEPAGE",'Home');
+    define("WELCOME",'Bem vindo');
+    define("USERS_SERVICES",'Serviços Personalizados');
+    define("OLA",'Olá');
+    define("LOGOFF",'Sair');
+    define("MY_PROFILE_DOCUMENTS",'Meus Perfis de Interesse');
+    define("MY_SHELF",'Documentos Favoritos');
+    define("MY_LINKS",'Meus Links');
+    define("MY_NEWS",'Minhas Notícias');
+    define("FORGOT_MY_PASSWORD",'esqueci minha senha');
+    define("CHANGE_PASSWORD",'Alterar Senha');
+    define("MY_DATA",'Editar Perfil');
+    define("MY_ALERTS",'Meus Alertas');
+    define("SEARCH",'Pesquisar');
+    define("SEARCH_FOR",'Pesquisar por...');
+    define("MY_SEARCHES",'Histórico de Buscas na BVS');
+    define("KEYWORDS",'Palavras-chave');
+    define("SUGGESTED_DOCS",'Documentos Relacionados');
+    define("ORCID_WORKS",'ORCID - Minhas Publicações');
+    define("RECENT_ACTIVITIES",'Atividades Recentes');
+    define("SEE_ALL_DOCS",'Ver todos os documentos');
+    define("SEE_ALL_LINKS",'Ver todos os links');
+    define("SEE_ALL_PROFILES",'Ver todos os perfis');
+    define("ADD_COLLECTION",'Coleção adicionada');
+    define("UPDATE_COLLECTION",'Coleção atualizada');
+    define("REMOVE_COLLECTION",'Coleção removida');
+    define("ADD_PROFILE",'Perfil adicionado');
+    define("UPDATE_PROFILE",'Perfil atualizado');
+    define("REMOVE_PROFILE",'Perfil removido');
+    define("ADD_LINK",'Link adicionado');
+    define("UPDATE_LINK",'Link atualizado');
+    define("REMOVE_LINK",'Link removido');
+    define("QUERY",'Query');
+    define("VIEW",'Exibir');
+    define("SEARCH_WIDGET",'Buscas na BVS');
+    define("PROFILE_WIDGET",'Perfis de Interesse');
+    define("SHELF_WIDGET",'Documentos das Coleções');
 }
 
 if($lang == 'en'){
@@ -171,6 +251,7 @@ if($lang == 'en'){
     define('BIREME','BIREME | OPS | OMS');
     define('BUTTON_NEW_USER','Create');
     define('BUTTON_CANCEL','Cancel');
+    define('BUTTON_CLOSE','Close');
     define('BUTTON_SEND','Send');
     define("BUTTON_UPDATE_USER","Update");
     define('BVSSIGLA','BVS');
@@ -191,6 +272,7 @@ if($lang == 'en'){
     define('FIELD_AFILIATION','Institution');
     define('FIELD_COUNTRY','Country');
     define('FIELD_LOGIN','E-mail or login');
+    define('FIELD_LOGIN_CONFIRMATION','E-mail or login confirmation');
     define('FIELD_PASSWORD','Password');
     define('FIELD_PASSWORD_CONFIRMATION','Password confirmation');
     define('FIELD_GENDER_MALE','Male');
@@ -216,7 +298,7 @@ if($lang == 'en'){
     define("USER_ADDED",'User added');
     define("USER_EXISTS","<b>User already exists</b><br />Try to login with this user, if you have no success trying to authenticate with this user and don't remember the password, use the link  <b>forgot my password</b> in the user login box.");
     define("ADD_ERROR","<b>Registry error</b><br />Your mail is a Bireme mail. In this case your user already have on login to access the BVS aplications, just use you network login and password to have access to this application.");
-    define("ADD_SUCSSESS","<b>User success registered</b><br />Your user is now registered in the VHL Passport, You are able to connect in SciELO and BVS applications with this user.");
+    define("ADD_SUCCESS","<b>User success registered</b><br />Your user is now registered in the VHL Passport<br />You are able to connect in SciELO and BVS applications with this user.");
     define("USER_UPDATED",'User updated');
     define("USER_UPDATE_ERROR",'<b>Problems updating user data</b><br />The applications doesn\'t success to update the user data. Try again later.');
     define("VALMSG_G_EMPTY","Mandatory field.");
@@ -243,6 +325,44 @@ If you have a registered user in ScIELO website, the next time you access SciELO
     define('FIELD_ORCID','ORCID');
     define('FIELD_RESEARCHERID','ResearcherID');
     define('FIELD_LATTES','Lattes (URL)');
+
+    define("HOMEPAGE",'Home');
+    define("WELCOME",'Bem vindo');
+    define("USERS_SERVICES",'Serviços Personalizados');
+    define("OLA",'Olá');
+    define("LOGOFF",'Sair');
+    define("MY_PROFILE_DOCUMENTS",'Meus Perfis de Interesse');
+    define("MY_SHELF",'Documentos Favoritos');
+    define("MY_LINKS",'Meus Links');
+    define("MY_NEWS",'Minhas Notícias');
+    define("FORGOT_MY_PASSWORD",'esqueci minha senha');
+    define("CHANGE_PASSWORD",'Alterar Senha');
+    define("MY_DATA",'Editar Perfil');
+    define("MY_ALERTS",'Meus Alertas');
+    define("SEARCH",'Pesquisar');
+    define("SEARCH_FOR",'Pesquisar por...');
+    define("MY_SEARCHES",'Histórico de Buscas na BVS');
+    define("KEYWORDS",'Palavras-chave');
+    define("SUGGESTED_DOCS",'Documentos Relacionados');
+    define("ORCID_WORKS",'ORCID - Minhas Publicações');
+    define("RECENT_ACTIVITIES",'Atividades Recentes');
+    define("SEE_ALL_DOCS",'Ver todos os documentos');
+    define("SEE_ALL_LINKS",'Ver todos os links');
+    define("SEE_ALL_PROFILES",'Ver todos os perfis');
+    define("ADD_COLLECTION",'Coleção adicionada');
+    define("UPDATE_COLLECTION",'Coleção atualizada');
+    define("REMOVE_COLLECTION",'Coleção removida');
+    define("ADD_PROFILE",'Perfil adicionado');
+    define("UPDATE_PROFILE",'Perfil atualizado');
+    define("REMOVE_PROFILE",'Perfil removido');
+    define("ADD_LINK",'Link adicionado');
+    define("UPDATE_LINK",'Link atualizado');
+    define("REMOVE_LINK",'Link removido');
+    define("QUERY",'Query');
+    define("VIEW",'Exibir');
+    define("SEARCH_WIDGET",'Buscas na BVS');
+    define("PROFILE_WIDGET",'Perfis de Interesse');
+    define("SHELF_WIDGET",'Documentos das Coleções');
 }
 ?>
 

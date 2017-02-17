@@ -1,74 +1,106 @@
-<?require_once(dirname(__FILE__)."/header.tpl.php");?>
-<?require_once(dirname(__FILE__)."/sidebar.tpl.php");?>
+<?
+    if ( in_array( $_REQUEST["task"], array( 'rate', 'removedoc' ) ) )
+        header("Location: " . $_SERVER['HTTP_REFERER']);
+?>
 
-<!-- page content -->
-<div class="right_col" role="main">
-    <div class="middle">
-        <div class="content">
-            <h2><span><?=$trans->getTrans($_REQUEST["action"],'MY_PROFILES')?></span></h2>
+        <?require_once(dirname(__FILE__)."/header.tpl.php");?>
+        <?require_once(dirname(__FILE__)."/sidebar.tpl.php");?>
 
-            <div class="articlelist">
-                <?if ($responseProfile["values"] != false ){
-                    $registerProfile = $responseProfile["values"][0];?>
-                    <div class="topicFolder">
-                       <h3><img src="<?=RELATIVE_PATH?>/images/<?=$_SESSION["skin"]?>/articleFolder.gif"/><span><?=$registerProfile["profileName"]?></span></h3>
-                    </div>
-                    <div class="folderTools">
-                        <ul>
-                            <li><a class="edit" href="javascript: void(0);" onClick="window.open('<?=RELATIVE_PATH?>/controller/myprofiledocuments/control/business/task/edit/profile/<?=$registerProfile["profileID"]?>','','resizable=no,scrollbars=1,width=420,height=385')"><img src="<?=RELATIVE_PATH?>/images/<?=$_SESSION["skin"]?>/edit-page-yellow.gif" border="0"/><?=$trans->getTrans($_REQUEST["action"],'EDIT_PROFILE')?></a></li>
-                            <li><a class="remove" href="<?=RELATIVE_PATH?>/controller/myprofiledocuments/control/business/task/delete/profile/<?=$registerProfile["profileID"]?>"><img src="<?=RELATIVE_PATH?>/images/<?=$_SESSION["skin"]?>/delete-folder-orange.gif" border="0"/><?=$trans->getTrans($_REQUEST["action"],'REMOVE_PROFILE')?></a></li>
-                        </ul>
-                    </div>
-                    <div class="articleBlock">
-                        <div class="description"><?=$trans->getTrans($_REQUEST["action"],'PROFILE_KEYWORDS')?>: <?=$registerProfile["profileText"]?></div>
-                    </div>
-                    <h3><span><?=$trans->getTrans($_REQUEST["action"],'SIMILARS_IN')?>:</span></h3>
-                    <?if ($responseSimilarDocs["status"] === true){?>
-                    <ul>
-                        <?foreach ($responseSimilarDocs["values"] as $similar){
-                          $count++;
-                        ?>
-                        <li>
-                            <div class="articleBlock">
-                                <i><?php echo implode("; ", $similar["au"]); ?></i>
-                                <a href="<?php echo $similar["ur"]; ?>" target="_blank"><b><?php echo implode(" / ", $similar["ti"]); ?></b></a>
+        <!-- page content -->
+        <div class="right_col" role="main">
+          <div class="">
+            
+            <div class="clearfix"></div>
+
+            <div class="row">
+              <div class="col-sm-12 col-md-12">
+                <div class="x_panel">
+                  <div class="x_title">
+                    <h2><?=$trans->getTrans($_REQUEST["action"],'MY_PROFILES')?></h2>
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content">
+                    <?php if ($responseProfile["values"] != false ) : ?>
+                      <?php $registerProfile = $responseProfile["values"][0]; ?>
+                      <div class="folder-data">
+                          <h4><i class="fa fa-folder-o"></i> <?=$registerProfile["profileName"]?></h4>
+                          <a class="edit" href="javascript: void(0);" onClick="window.open('<?=RELATIVE_PATH?>/controller/myprofiledocuments/control/business/task/edit/profile/<?=$registerProfile["profileID"]?>','','resizable=no,scrollbars=1,width=420,height=385')"><span class="label label-info"><?=$trans->getTrans($_REQUEST["action"],'EDIT_PROFILE')?></span></a>
+                          <a class="remove" href="<?=RELATIVE_PATH?>/controller/myprofiledocuments/control/business/task/delete/profile/<?=$registerProfile["profileID"]?>"><span class="label label-danger"><?=$trans->getTrans($_REQUEST["action"],'REMOVE_PROFILE')?></span></a>
+                      </div>
+                      <div class="keywords"><small><?=$trans->getTrans($_REQUEST["action"],'PROFILE_KEYWORDS')?>: <?=$registerProfile["profileText"]?></small></div>
+                      <div class="col-md-9 col-sm-9 col-xs-12">
+                          <?php if ( $responseSimilarDocs["values"] != false ) : ?>
+                              <?php //echo $objPaginator->render($trans->getTrans($_REQUEST["action"],'NEXT'), $trans->getTrans($_REQUEST["action"],'PREVIOUS')); ?>
+                              <!-- start project list -->
+                              <table class="table table-striped table-list">
+                                <!--thead>
+                                  <tr>
+                                    <th>#</th>
+                                  </tr>
+                                </thead-->
+                                <tbody>
+                                  <?php foreach ( $responseSimilarDocs["values"] as $similar) : ?>
+                                  <tr>
+                                    <td>
+                                      <div>
+                                          <a href="<?php echo $similar["ur"]; ?>" target="_blank"><?php echo implode(" / ", $similar["ti"]); ?></a>
+                                          <small style="display: block;"><?php echo implode("; ", $similar["au"]); ?></small>
+                                      </div>
+                                      <!--div>
+                                        <span class="label label-default">Default</span>
+                                        <span class="label label-primary">Primary</span>
+                                        <span class="label label-success">Success</span>
+                                        <span class="label label-info">Info</span>
+                                        <span class="label label-warning">Warning</span>
+                                        <span class="label label-danger">Danger</span>
+                                      </div-->
+                                    </td>
+                                    <td style="text-align: right;">
+                                        <button class="btn btn-success btn-xs add-collection" value="<?php echo $similar["id"]; ?>"><?=$trans->getTrans($_REQUEST["action"],'ADD_COLLECTION')?></button>
+                                    </td>
+                                  </tr>
+                                  <?php endforeach; ?>
+                                </tbody>
+                              </table>
+                              <!-- end project list -->
+                              <?php echo $objPaginator->render($trans->getTrans($_REQUEST["action"],'NEXT'), $trans->getTrans($_REQUEST["action"],'PREVIOUS')); ?>
+                          <?php else : ?>
+                              <p class="none-docs"><?=$trans->getTrans($_REQUEST["action"],'SERVICE_TEMPORARY_UNAVAILABLE')?></p>
+                          <?php endif; ?>
+                      </div>
+                    <?php else : ?>
+                      <div class="col-md-9 col-sm-9 col-xs-12">
+                          <p class="none-docs"><?php echo $trans->getTrans($_REQUEST["action"],'MY_PROFILES_NO_REGISTERS_FOUND'); ?></p>
+                      </div>
+                    <?php endif; ?>
+                    <div class="col-md-3 col-sm-3 col-xs-12">
+                        <section class="panel panel-folder">
+                            <div class="panel-body">
+                                <h5><?=$trans->getTrans($_REQUEST["action"],'TOOLS')?></h5>
+                                <ul class="list-docs-unstyled project_files">
+                                    <li><a href="javascript: void(0);" onclick="window.open('<?=RELATIVE_PATH?>/controller/myprofiledocuments/control/view/task/add','','resizable=no,width=420,height=385')"><i class="fa fa-plus-circle"></i><?=$trans->getTrans($_REQUEST["action"],'ADD_PROFILE')?></a></li>
+                                </ul>
                             </div>
-                        </li>
-                        <?}?>
-                    </ul>
-                    <?}else{?>
-                        <div class="alert"><?=$trans->getTrans($_REQUEST["action"],'SERVICE_TEMPORARY_UNAVAILABLE')?></div>
-                    <?}?>
-                <?}else{?>
-                    <div class="alert"><?=$trans->getTrans($_REQUEST["action"],'MY_PROFILES_NO_REGISTERS_FOUND')?></div>
-                <?}?>
-            </div>
-
-        </div>
-    </div>
-    <div class="serviceColumn">
-        <div class="box">
-            <h3><span><?=$trans->getTrans($_REQUEST["action"],'TOOLS')?></span></h3>
-            <div id="rssFeeds">
-                <ul>
-                    <li><a href="javascript: void(0);" onclick="window.open('<?=RELATIVE_PATH?>/controller/myprofiledocuments/control/view/task/add','','resizable=no,width=420,height=385')"><img src="<?=RELATIVE_PATH?>/images/<?=$_SESSION["skin"]?>/add-folder-orange.gif" border="0"/><?=$trans->getTrans($_REQUEST["action"],'ADD_PROFILE')?></a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="box">
-            <h3><span><?=$trans->getTrans($_REQUEST["action"],'PROFILES')?></span></h3>
-            <?if ($response["values"] != false ){?>
-                <ul>
-                    <div id="rssFeeds">
-                    <?foreach ($response["values"] as $register){
-                         $count++;?>
-                        <li><a href="<?=RELATIVE_PATH?>/controller/myprofiledocuments/control/business/profile/<?=$register["profileID"]?>/mode/<?=$_REQUEST["mode"]?>"><?=$register["profileName"]?></a><?if ($register["profileDefault"] == 1){?>&nbsp;<img class="starOn" src="<?=RELATIVE_PATH?>/images/<?=$_SESSION["skin"]?>/starOn.gif" border="0"/><?}?></li>
-                    <?}?>
+                        </section>
+                        <section class="panel panel-folder">
+                            <div class="panel-body">
+                                <h5><?=$trans->getTrans($_REQUEST["action"],'PROFILES')?></h5>
+                                <?php if ($response["values"] != false ) : ?>
+                                  <ul class="list-docs-unstyled project_files">
+                                      <?php foreach ($response["values"] as $register) : ?>
+                                          <li><a href="<?=RELATIVE_PATH?>/controller/myprofiledocuments/control/business/profile/<?=$register["profileID"]?>"><?=$register["profileName"]?></a><?if ($register["profileDefault"] == 1){?>&nbsp;<img class="starOn" src="<?=RELATIVE_PATH?>/images/<?=$_SESSION["skin"]?>/starOn.gif" border="0"/><?}?></li>
+                                      <?php endforeach; ?>
+                                  </ul>
+                                <?php endif; ?>
+                            </div>
+                        </section>
                     </div>
-                </ul>
-            <?}?>
+                  </div>
+                </div>
+              </div>
             </div>
+          </div>
         </div>
-    </div> <!-- end serviceColumn -->
-</div>
-<?require_once(dirname(__FILE__)."/footer.tpl.php");?>
+        <!-- /page content -->
+
+        <?require_once(dirname(__FILE__)."/footer.tpl.php");?>

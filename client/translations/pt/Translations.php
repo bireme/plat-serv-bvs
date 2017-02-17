@@ -133,7 +133,7 @@ class Translations {
         self::$trans["orcidworks"]["NEXT"] = 'Próximo';
         self::$trans["orcidworks"]["PREVIOUS"] = 'Anterior';
         self::$trans["orcidworks"]["ORCID_WORKS"] = 'ORCID - Minhas Publicações';
-        self::$trans["orcidworks"]["ORCID_WORKS_NO_REGISTERS_FOUND"] = 'Nenhum trabalho publicado no ORCID';
+        self::$trans["orcidworks"]["ORCID_WORKS_NO_REGISTERS_FOUND"] = 'Nenhuma publicação encontrada. Para vizualizar suas publicações, favor informar o ORCID ID no seu cadastro.';
         self::$trans["orcidworks"]["GOOGLE_SCHOLAR"] = 'Ver no Google Scholar';
 
     // General Terms
@@ -144,9 +144,9 @@ class Translations {
         self::$trans["mydocuments"]["MY_COLLECTION"] = 'Meus Documentos';
         self::$trans["mydocuments"]["BY_DATE"] = 'por Data';
         self::$trans["mydocuments"]["INCOMING_FOLDER"] = 'Pasta de Entrada';
-        self::$trans["mydocuments"]["ADD_FOLDER"] = 'Adicionar Pasta';
-        self::$trans["mydocuments"]["MY_FOLDERS"] = 'Minhas Pastas';
-        self::$trans["mydocuments"]["SHOW_BY"] = 'Visualizar Lista por';
+        self::$trans["mydocuments"]["ADD_FOLDER"] = 'Adicionar Coleção';
+        self::$trans["mydocuments"]["MY_FOLDERS"] = 'Minhas Coleções';
+        self::$trans["mydocuments"]["SHOW_BY"] = 'Visualizar Lista por:';
         self::$trans["mydocuments"]["DATE"] = 'Data';
         self::$trans["mydocuments"]["MY_RANK"] = 'Meu ranking';
         self::$trans["mydocuments"]["MOVE"] = 'mover';
@@ -158,11 +158,13 @@ class Translations {
         self::$trans["mydocuments"]["MONITOR_CITATION"] = 'citações monitoradas';
         self::$trans["mydocuments"]["MONITOR_ACCESS"] = 'acesso monitorado';
         self::$trans["mydocuments"]["ACCESS_LIST_NO_REGISTERS_FOUND"] = 'Nenhum registro encontrado';
-        self::$trans["mydocuments"]["EDIT_FOLDER"] = 'editar pasta';
-        self::$trans["mydocuments"]["REMOVE_FOLDER"] = 'remover pasta';
+        self::$trans["mydocuments"]["EDIT_FOLDER"] = 'editar coleção';
+        self::$trans["mydocuments"]["REMOVE_FOLDER"] = 'remover coleção';
         self::$trans["mydocuments"]["PUBLISH_FOLDER"] = 'Tornar público';
         self::$trans["mydocuments"]["MAKE_FOLDER_PRIVATE"] = 'Tornar privado';
         self::$trans["mydocuments"]["PAGE"] = 'Página';
+        self::$trans["mydocuments"]["NEXT"] = 'Próximo';
+        self::$trans["mydocuments"]["PREVIOUS"] = 'Anterior';
 
     // Tems of directories pages
         self::$trans["directories"]["FOLDER_NAME"] = 'Nome da pasta';
@@ -206,6 +208,8 @@ class Translations {
         self::$trans["mylinks"]["ADD_LINK_SUCESS"] = 'Operação realizada com sucesso.';
         self::$trans["mylinks"]["PAGE"] = 'Página';
         self::$trans["mylinks"]["ADD_LINK_ERROR"] = 'Erro ao adicionar link';
+        self::$trans["mylinks"]["NEXT"] = 'Próximo';
+        self::$trans["mylinks"]["PREVIOUS"] = 'Anterior';
 
     // Tems of mylinks pages
         self::$trans["mynews"]["HOME"] = 'Home';
@@ -267,6 +271,10 @@ class Translations {
         self::$trans["myprofiledocuments"]["SERVICE_TEMPORARY_UNAVAILABLE"] = 'Serviço temporariamente indisponível';
         self::$trans["myprofiledocuments"]["ADD_PROFILE_SUCESS"] = 'Operação realizada com sucesso.';
         self::$trans["myprofiledocuments"]["ADD_PROFILE_ERROR"] = 'Erro ao adicionar perfil';
+        self::$trans["myprofiledocuments"]["PAGE"] = 'Página';
+        self::$trans["myprofiledocuments"]["NEXT"] = 'Próximo';
+        self::$trans["myprofiledocuments"]["PREVIOUS"] = 'Anterior';
+        self::$trans["myprofiledocuments"]["ADD_COLLECTION"] = 'Adicionar Coleção';
 
     // Terms of mig_id_confirmation pages
         self::$trans["mig_id_confirmation"]["TITLE"] = 'Confirmação de Login';

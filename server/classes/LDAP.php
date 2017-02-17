@@ -89,8 +89,8 @@ class LDAP{
             $server_config["BASEDN_LDAP"];
 
         /* Try to distinguish duplicated users from existing LDAP users */
-//        if ($ldap->dnExists($dn)) {
-          if (LDAPAuthenticator::authenticateUser($userAttributes['cn'],
+        //if ($ldap->dnExists($dn)) {
+        if (LDAPAuthenticator::authenticateUser($userAttributes['cn'],
                   $userAttributes['userPassword'])) {
             /* Check user's credentials */
             $chkCredentials = LDAPAuthenticator::authenticateUser(
@@ -104,7 +104,7 @@ class LDAP{
                 ' already exists.', 500);
             }
             
-        }elseif($userDomain == 'bireme.org'){
+        } elseif($userDomain == 'bireme.org') {
             throw new Exception('CN=' . $userAttributes['cn'] .
                 ' invalid domain.', 503);
         }
@@ -147,7 +147,7 @@ class LDAP{
         $entry->replace($attributes2,true);
         $entry->update($ldap);
 
-        if (PEAR::isError($entry)) {            
+        if (PEAR::isError($entry)) {
             throw new Exception($entry->getMessage(), 501);
         }
         return true;

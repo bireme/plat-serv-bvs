@@ -234,7 +234,6 @@ class UserDAO {
                             linkedin ='".$objUser->getLinkedin()."',
                             researchGate ='".$objUser->getResearchGate()."',
                             orcid ='".$objUser->getOrcid()."',
-                            orcidData ='".$objUser->getOrcidData()."',
                             researcherID ='".$objUser->getResearcherID()."',
                             lattes ='".$objUser->getLattes()."'";
 

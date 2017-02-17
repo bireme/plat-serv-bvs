@@ -176,6 +176,39 @@ a.operator {
     margin: 100px 0;
 }
 
+.list-docs-unstyled {
+    padding-left: 15px;
+    list-style: none;
+}
+
+.folder-data {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.folder-data h4 {
+    margin-right: 10px;
+}
+
+.keywords {
+    margin-bottom: 15px;
+    margin-top: -15px;
+}
+
+.site_title {
+    text-align: center;
+    padding: 0 !important;
+}
+
+.help {
+    margin-bottom: 20px;
+}
+
+.panel-folder {
+    /*border-bottom: 1px solid #ddd;*/
+}
+
 #loading {
     background:url(../../images/default/loading.gif) no-repeat center center;
     height: 60px;

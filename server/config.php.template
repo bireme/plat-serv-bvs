@@ -29,6 +29,7 @@ define("BIR_ACCOUNTS_DB_DBNAME","");
 define("SITENAME","Plataforma de Serviços da BVS");
 
 define("APP_BASEDIR",dirname(__FILE__)); /* app base dir ex. /home/servplat/htdocs */
+define("DEFAULT_SKIN","default");
 define("CHARSET","utf-8"); /* output charset */
 define("ACCEPTED_CHARSETS","UTF-8,ISO-8859-1"); /* input charsets */
 define("SYS_CHARSET","UTF-8"); /* internal sys charset */
