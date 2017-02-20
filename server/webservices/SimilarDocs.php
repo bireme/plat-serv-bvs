@@ -23,7 +23,7 @@ $objSoapServer->addFunction(SOAP_FUNCTIONS_ALL);
 $objSoapServer->handle();
 
 /**
- * Add profile in SimiliarDocs service
+ * Add profile in SimilarDocs service
  *
  * @param string $userID User ID
  * @param string $profile Profile name
@@ -45,7 +45,7 @@ function addProfile($userTK,$profile,$string){
 }
 
 /**
- * Delete profile in SimiliarDocs service
+ * Delete profile in SimilarDocs service
  *
  * @param string $userID User ID
  * @param string $profile Profile name

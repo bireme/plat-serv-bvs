@@ -43,8 +43,8 @@
                                   <tr>
                                     <td>
                                       <div>
-                                          <a href="<?php echo $similar["ur"]; ?>" target="_blank"><?php echo implode(" / ", $similar["ti"]); ?></a>
-                                          <small style="display: block;"><?php echo implode("; ", $similar["au"]); ?></small>
+                                          <a href="<?php echo $similar["docURL"]; ?>" target="_blank"><?php echo $similar["title"]; ?></a>
+                                          <small style="display: block;"><?php echo $similar["authors"]; ?></small>
                                       </div>
                                       <!--div>
                                         <span class="label label-default">Default</span>
@@ -56,7 +56,7 @@
                                       </div-->
                                     </td>
                                     <td style="text-align: right;">
-                                        <button class="btn btn-success btn-xs add-collection" value="<?php echo $similar["id"]; ?>"><?=$trans->getTrans($_REQUEST["action"],'ADD_COLLECTION')?></button>
+                                        <button class="btn btn-success btn-xs add-collection" value="<?php echo $similar["docID"]; ?>"><?=$trans->getTrans($_REQUEST["action"],'ADD_COLLECTION')?></button>
                                     </td>
                                   </tr>
                                   <?php endforeach; ?>

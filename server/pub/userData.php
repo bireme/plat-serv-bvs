@@ -116,6 +116,7 @@ switch($acao){
             $response["msg"] = USER_UPDATE_ERROR;
             $response["status"] = false;
         }
+
         break;
 }
 

@@ -13,6 +13,7 @@
  */
 
 require_once(dirname(__FILE__)."/../config.php");
+require_once(dirname(__FILE__).'/../include/DAO.inc.php');
 require_once(dirname(__FILE__)."/UserDAO.php");
 require_once(dirname(__FILE__)."/Verifier.php");
 
@@ -21,7 +22,123 @@ class SimilarDocs {
     function SimilarDocs(){}
 
     /**
-     * Add profile in SimiliarDocs service
+     * Add documents from SimilarDocs service
+     *
+     * @param string $userID User ID
+     * @param string $profile Profile name
+     * @param array $similars
+     * @return boolean
+     */
+    static function addProfileDocs($userID,$profile,$similars){
+        global $_conf;
+        $result = null;
+        $retValue = false;
+
+        $is_user = UserDAO::isUser($userID);
+
+        if($is_user){
+            $deleteProfileDocs = self::deleteProfileDocs($userID,$profile);
+
+            foreach ($similars as $similar) {
+                $strsql = "INSERT INTO suggestions(docID,
+                                            profile,
+                                            authors,
+                                            docURL,
+                                            title,
+                                            userID,
+                                            creation_date)
+                                    VALUES ('".$similar['id']."','".
+                                               $profile."','".
+                                               implode("; ", $similar["au"])."','".
+                                               $similar['ur']."','".
+                                               implode(" / ", $similar["ti"])."','".
+                                               $userID."','".
+                                               date("Ymd")."')";
+
+                try{
+                    $_db = new DBClass();
+                    $result = $_db->databaseExecInsert($strsql);
+                }catch(DBClassException $e){
+                    $logger = &Log::singleton('file', LOG_FILE, __CLASS__, $_conf);
+                    $logger->log($e->getMessage(),PEAR_LOG_EMERG);
+                }
+            }
+
+            $retValue = ($result !== null) ? true : false;
+        }
+
+        return $retValue;
+    }
+
+    /**
+     * Delete documents from SimilarDocs service
+     *
+     * @param string $userID User ID
+     * @param string $profile Profile name
+     * @return boolean
+     */
+    static function deleteProfileDocs($userID,$profile){
+        global $_conf;
+        $result = 0;
+        $retValue = false;
+
+        $is_user = UserDAO::isUser($userID);
+
+        if($is_user){
+            $strsql = "DELETE FROM suggestions
+                WHERE userID = ".$userID." and profile = '".$profile."'";
+
+            try{
+                $_db = new DBClass();
+                $result = $_db->databaseExecUpdate($strsql);
+            }catch(DBClassException $e){
+                $logger = &Log::singleton('file', LOG_FILE, __CLASS__, $_conf);
+                $logger->log($e->getMessage(),PEAR_LOG_EMERG);
+            }
+
+            $retValue = ($result !== 0) ? true : false;
+        }
+
+        return $retValue;
+    }
+
+    /**
+     * List similar documents
+     *
+     * @param string $userID User ID
+     * @param string $profile Profile name
+     * @param array $params
+     * @return array
+     */
+    static function getSimilarsDocs($userID,$profile,$params){
+        $retValue = false;
+        $count = ( $params["widget"] ) ? WIDGETS_ITEMS_LIMIT : DOCUMENTS_PER_PAGE;
+        $from = $count * $params["page"];
+
+        $strsql = "SELECT * FROM  suggestions
+            WHERE userID = ".$userID." and profile = '".$profile."'";
+
+        if($count > 0){
+            $strsql .= " LIMIT $from,$count";
+        }
+
+        try{
+            $_db = new DBClass();
+            $result = $_db->databaseQuery($strsql);
+        }catch(DBClassException $e){
+            $logger = &Log::singleton('file', LOG_FILE, __CLASS__, $_conf);
+            $logger->log($e->getMessage(),PEAR_LOG_EMERG);
+        }
+
+        if (count($result) !== 0 ){
+            $retValue = $result;
+        }
+
+        return $result;
+    }
+
+    /**
+     * Add profile in SimilarDocs service
      *
      * @param string $userID User ID
      * @param string $profile Profile name
@@ -29,36 +146,40 @@ class SimilarDocs {
      * @return boolean
      */
     static function addProfile($userID,$profile,$string){
-        $similiar = str_replace("#PSID#",$userID,SIMDOCS_ADD_PROFILE);
-        $similiar = str_replace("#PROFILE#",$profile,$similiar);
-        
-        $xml = utf8_encode(file_get_contents($similiar.urlencode($string)));
+        $result = false;
 
+        $similar = str_replace("#PSID#",$userID,SIMDOCS_ADD_PROFILE);
+        $similar = str_replace("#PROFILE#",$profile,$similar);
+        
+        $xml = utf8_encode(file_get_contents($similar.urlencode($string)));
+        $xml = simplexml_load_string($xml,'SimpleXMLElement',LIBXML_NOCDATA);
+        $xml = (string)$xml;
+        
         if($xml){
-            $xml = simplexml_load_string($xml,'SimpleXMLElement',LIBXML_NOCDATA);
-            $result = (string)$xml;
-        }else{
-            $result = false;
+            $similars = self::getSimilars($userID,$profile);
+            $result = self::addProfileDocs($userID,$profile,$similars);
         }
+
         return $result;
     }
 
     /**
-     * Delete profile in SimiliarDocs service
+     * Delete profile in SimilarDocs service
      *
      * @param string $userID User ID
      * @param string $profile Profile name
      * @return boolean
      */
     static function deleteProfile($userID,$profile){
-        $similiar = str_replace("#PSID#",$userID,SIMDOCS_DELETE_PROFILE);
-        $similiar = str_replace("#PROFILE#",$profile,$similiar);
+        $similar = str_replace("#PSID#",$userID,SIMDOCS_DELETE_PROFILE);
+        $similar = str_replace("#PROFILE#",$profile,$similar);
         
-        $content = utf8_encode(file_get_contents($similiar));
+        $xml = utf8_encode(file_get_contents($similar));
+        $xml = simplexml_load_string($xml,'SimpleXMLElement',LIBXML_NOCDATA);
+        $xml = (string)$xml;
 
-        if($content){
-            $xml = simplexml_load_string($content,'SimpleXMLElement',LIBXML_NOCDATA);
-            $result = (string)$xml;
+        if($xml){
+            $result = self::deleteProfileDocs($userID,$profile);
         }else{
             $result = false;
         }
@@ -66,7 +187,7 @@ class SimilarDocs {
     }
 
     /**
-     * Get profiles in SimiliarDocs service
+     * Get profiles in SimilarDocs service
      *
      * @param string $userID User ID
      * @return boolean
@@ -85,21 +206,21 @@ class SimilarDocs {
     }
 
     /**
-     * List similars documents
+     * List similar documents from SimilarDocs service
      *
      * @param string $userID User ID
      * @param string $profile Profile name
      * @param array $params
      * @return array
      */
-    static function getSimilarsDocs($userID,$profile,$params){
+    static function getSimilars($userID,$profile,$params){
         $count = (int) DOCUMENTS_PER_PAGE;
         $from = $count * $params["page"];
 
-        $similiar = str_replace("#PSID#",$userID,SIMDOCS_SIMILARS_STRING);
-        $similiar = str_replace("#PROFILE#",$profile,$similiar);
+        $similar = str_replace("#PSID#",$userID,SIMDOCS_SIMILARS_STRING);
+        $similar = str_replace("#PROFILE#",$profile,$similar);
         
-        $content = utf8_encode(file_get_contents($similiar));
+        $content = utf8_encode(file_get_contents($similar));
 
         if($content){
             $result = self::xmlToArray($content);
@@ -147,29 +268,33 @@ class SimilarDocs {
      * List suggested documents
      *
      * @param string $userID User ID
+     * @param string $profile Profile name
      * @param array $params
      * @return array
      */
     static function getSuggestedDocs($userID,$params){
+        $retValue = false;
         $count = ( $params["widget"] ) ? WIDGETS_ITEMS_LIMIT : DOCUMENTS_PER_PAGE;
         $from = $count * $params["page"];
 
-        $prefix = 'SD$';
-        $suggestedDocs = array();
-        $profiles = self::getProfiles($userID);
+        $strsql = "SELECT * FROM  suggestions
+            WHERE userID = ".$userID." and profile LIKE BINARY 'SD$%'";
 
-        foreach ($profiles as $profile) {
-            if ($prefix === substr($profile['name'], 0, 3)) {
-                $similars = self::getSimilarsDocs($userID,$profile['name']);
-/*
-                foreach ($similars as $key => $value)
-                    $similars[$key]['reference'] = $profile['content'];
-*/
-                $suggestedDocs = array_unique( array_merge( $suggestedDocs, $similars ) );
-            }
+        if($count > 0){
+            $strsql .= " LIMIT $from,$count";
         }
 
-        $result = $suggestedDocs ? array_slice($suggestedDocs, $from, $count) : false;
+        try{
+            $_db = new DBClass();
+            $result = $_db->databaseQuery($strsql);
+        }catch(DBClassException $e){
+            $logger = &Log::singleton('file', LOG_FILE, __CLASS__, $_conf);
+            $logger->log($e->getMessage(),PEAR_LOG_EMERG);
+        }
+
+        if (count($result) !== 0 ){
+            $retValue = $result;
+        }
 
         return $result;
     }
@@ -232,30 +357,35 @@ class SimilarDocs {
     }
 
     /**
-     * Get the total number of similars documents
+     * Get the total number of similar documents
      *
      * @param string $userID User ID
      * @param string $profile Profile name
-     * @return array
+     * @return boolean|int
      */
-    static function getTotalSimilarsDocs($userID,$profile){
+    public static function getTotalSimilarsDocs($userID,$profile){
         $retValue = false;
+      
+        $strsql = "SELECT count(*) as total FROM suggestions
+            WHERE userID = ".$userID." and profile = '".$profile."'";
 
-        $similiar = str_replace("#PSID#",$userID,SIMDOCS_SIMILARS_STRING);
-        $similiar = str_replace("#PROFILE#",$profile,$similiar);
-        
-        $content = utf8_encode(file_get_contents($similiar));
+        try{
+            $_db = new DBClass();
+            $result = $_db->databaseQuery($strsql);
+        }catch(DBClassException $e){
+            $logger = &Log::singleton('file', LOG_FILE, __CLASS__, $_conf);
+            $logger->log($e->getMessage(),PEAR_LOG_EMERG);
+        }
 
-        if($content){
-            $result = self::xmlToArray($content);
-            $retValue = ( array_key_exists('document', $result) ) ? count($result['document']) : false;
+        if ($result[0]["total"] !== 0 ){
+            $retValue = $result[0]['total'];
         }
 
         return $retValue;
     }
 
     /**
-     * Get the total pages from similars documents set if using pagination. The number of
+     * Get the total pages from similar documents set if using pagination. The number of
      * registers per page is configured in the config.php file
      *
      * @param string $userID User ID
@@ -305,23 +435,28 @@ class SimilarDocs {
      * Get the total number of suggested documents
      *
      * @param string $userID User ID
-     * @return false|int int > 0
+     * @param string $profile Profile name
+     * @return boolean|int
      */
     public static function getTotalSuggestedDocs($userID){
-        $prefix = 'SD$';
-        $suggestedDocs = array();
-        $profiles = self::getProfiles($userID);
+        $retValue = false;
+      
+        $strsql = "SELECT count(*) as total FROM suggestions
+            WHERE userID = ".$userID." and profile LIKE BINARY 'SD$%'";
 
-        foreach ($profiles as $profile) {
-            if ($prefix === substr($profile['name'], 0, 3)) {
-                $similars = self::getSimilarsDocs($userID,$profile['name']);
-                $suggestedDocs = array_unique( array_merge( $suggestedDocs, $similars ) );
-            }
+        try{
+            $_db = new DBClass();
+            $result = $_db->databaseQuery($strsql);
+        }catch(DBClassException $e){
+            $logger = &Log::singleton('file', LOG_FILE, __CLASS__, $_conf);
+            $logger->log($e->getMessage(),PEAR_LOG_EMERG);
         }
 
-        $result = $suggestedDocs ? count($suggestedDocs) : false;
+        if ($result[0]["total"] !== 0 ){
+            $retValue = $result[0]['total'];
+        }
 
-        return $result;
+        return $retValue;
     }
 
     /**

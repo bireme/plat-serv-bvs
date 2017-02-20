@@ -91,14 +91,31 @@ CREATE TABLE IF NOT EXISTS `documents` (
 -- --------------------------------------------------------
 
 --
+-- Estrutura da tabela `suggestions`
+--
+
+CREATE TABLE IF NOT EXISTS `suggestions` (
+  `docID` varchar(100) NOT NULL,
+  `profile` varchar(150) NOT NULL DEFAULT '',
+  `authors` longtext NOT NULL,
+  `docURL` varchar(1000) NOT NULL,
+  `title` varchar(500) DEFAULT '',
+  `userID` varchar(150) NOT NULL DEFAULT '',
+  `creation_date` varchar(22) DEFAULT '',
+  PRIMARY KEY (`docID`,`profile`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura da tabela `profiles`
 --
 
 CREATE TABLE IF NOT EXISTS `profiles` (
   `profileID` bigint(10) UNSIGNED NOT NULL AUTO_INCREMENT,
   `sysUID` int(10) UNSIGNED NOT NULL DEFAULT '0',
-  `profileText` varchar(150) NOT NULL DEFAULT '',
-  `profileName` varchar(25) NOT NULL DEFAULT '',
+  `profileText` varchar(500) NOT NULL DEFAULT '',
+  `profileName` varchar(150) NOT NULL DEFAULT '',
   `profileStatus` char(3) NOT NULL DEFAULT '',
   `creationDate` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `id_grande_area` int(10) UNSIGNED DEFAULT '0',

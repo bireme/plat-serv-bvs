@@ -19,7 +19,7 @@ class SimilarDocs {
     }
 
     /**
-     * Add profile in SimiliarDocs service
+     * Add profile in SimilarDocs service
      *
      * @param string $userID User ID
      * @param string $profile Profile name
@@ -41,7 +41,7 @@ class SimilarDocs {
     }
 
     /**
-     * Delete profile in SimiliarDocs service
+     * Delete profile in SimilarDocs service
      *
      * @param string $userID User ID
      * @param string $profile Profile name

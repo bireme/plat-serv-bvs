@@ -32,7 +32,7 @@ class ProfileDAO {
 
         $sysUID = UserDAO::getSysUID($userID);
 
-        if(!self::isProfile($objProfile->getProfileID(),$objProfile->getProfileName())){
+        if(!self::isProfile($sysUID, $objProfile->getProfileID(), $objProfile->getProfileName())){
             if ($objProfile->getProfileDefault() == 1){
                 $strsql = "UPDATE profiles set profileDefault=0
                              WHERE sysUID='".$sysUID."'";
@@ -125,13 +125,16 @@ class ProfileDAO {
      * get user's profiles
      *
      * @param string $userID user id
-     * @return array object Profile
+     * @param int $from offset number
+     * @param int $count limit number
+     * @return array object Profile list
      */
     public static function getProfileList($userID, $params, $from=0, $count=-1){
         global $_conf;
         $retValue = false;
         $sysUID = UserDAO::getSysUID($userID);
         $count = ( $params["widget"] ) ? WIDGETS_ITEMS_LIMIT : $count;
+        
         $strsql = "SELECT * FROM  profiles
             WHERE sysUID = '".$sysUID."'";
 
@@ -263,15 +266,18 @@ class ProfileDAO {
     /**
      * Check if the profile exists
      *
+     * @param integer $sysUID user ID
      * @param integer $profileID profile ID
      * @param string $profileName profile name
      * @return boolean
      */
-    public static function isProfile($profileID,$profileName){
+    public static function isProfile($sysUID,$profileID,$profileName){
         $retValue = false;
 
         $strsql = "SELECT count(profileID) FROM  profiles
-            WHERE profileID = '".trim($profileID)."' OR profileName = '".$profileName."'";
+            WHERE sysUID = '".$sysUID."'
+            AND (profileID = '".trim($profileID)."'
+            OR profileName = '".$profileName."')";
 
         try{
             $_db = new DBClass();

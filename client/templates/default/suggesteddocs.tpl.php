@@ -124,9 +124,9 @@
                                 <?php $count = $_REQUEST["page"] ? --$_REQUEST["page"] * DOCUMENTS_PER_PAGE : 0; ?>
                                 <?php foreach ( $responseDocs["values"] as $register ) : $count++; ?>
                                 <tr>
-                                  <td id="sd<?php echo $count; ?>"><a href="<?php echo $register["ur"]; ?>" target="_blank"><?php echo implode(" / ", $register["ti"]); ?></a><small style="display: block;"><?php echo implode("; ", $register["au"]); ?></small></td>
+                                  <td id="sd<?php echo $count; ?>"><a href="<?php echo $register["docURL"]; ?>" target="_blank"><?php echo $register["title"]; ?></a><small style="display: block;"><?php echo $register["authors"]; ?></small></td>
                                   <td style="text-align: right;">
-                                    <button class="btn btn-success btn-xs add-collection" value="<?php echo $register["id"]; ?>"><?=$trans->getTrans($_REQUEST["action"],'ADD_COLLECTION')?></button>
+                                    <button class="btn btn-success btn-xs add-collection" value="<?php echo $register["docID"]; ?>"><?=$trans->getTrans($_REQUEST["action"],'ADD_COLLECTION')?></button>
                                   </td>
                                 </tr>
                                 <?php endforeach; ?>

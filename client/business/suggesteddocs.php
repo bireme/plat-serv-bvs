@@ -50,7 +50,7 @@ switch($_REQUEST["task"]){
                 $response["status"] = true;
             break;
             case "myprofiledocuments":
-                $similiarDocs = false;
+                $similarDocs = false;
                 $profile = $_REQUEST["profile"] ? $_REQUEST["profile"] : 0;
                 $result = MyProfiles::getProfile($_SESSION["userTK"], $profile);
 
@@ -60,10 +60,10 @@ switch($_REQUEST["task"]){
                     !empty($_REQUEST['page']) ? $_REQUEST['page'] : 1);
                     $params['page'] = $objPaginator->getCurrentPage();
 
-                    $similiarDocs = SimilarDocs::getSimilarsDocs( $_SESSION["userTK"], $result["values"][0]["profileName"], $params );
+                    $similarDocs = SimilarDocs::getSimilarsDocs( $_SESSION["userTK"], $result["values"][0]["profileName"], $params );
                 }
 
-                $response["values"] = $similiarDocs;
+                $response["values"] = $similarDocs;
                 $response["status"] = true;
             break;
             case "orcidworks":
