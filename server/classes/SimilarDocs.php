@@ -286,18 +286,20 @@ class SimilarDocs {
                 return $arr[key];
             }, $profiles);
 */
-            foreach ($profiles as $profile) {
-                if ($prefix === substr($profile['name'], 0, 3)) {
-                    $data = explode('$', $profile['name']);
-                    $sentence = $profile['content'];
+            if ($profiles) {
+                foreach ($profiles as $profile) {
+                    if ($prefix === substr($profile['name'], 0, 3)) {
+                        $data = explode('$', $profile['name']);
+                        $sentence = $profile['content'];
 
-                    // Update suggested documents if last modification date is older than 30 days 
-                    if(strtotime($data[1]) < strtotime('-30 days')){
-                        $prefix = $prefix . $date . '$';
-                        $profileName = $prefix . md5($sentence);
+                        // Update suggested documents if last modification date is older than 30 days 
+                        if(strtotime($data[1]) < strtotime('-30 days')){
+                            $prefix = $prefix . $date . '$';
+                            $profileName = $prefix . md5($sentence);
 
-                        $deleteProfile = self::deleteProfile($userID,$profile['name']);
-                        $addProfile = self::addProfile($userID,$profileName,$sentence);
+                            $deleteProfile = self::deleteProfile($userID,$profile['name']);
+                            $addProfile = self::addProfile($userID,$profileName,$sentence);
+                        }
                     }
                 }
             }
