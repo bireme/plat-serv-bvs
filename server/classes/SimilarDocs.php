@@ -37,8 +37,6 @@ class SimilarDocs {
         $is_user = UserDAO::isUser($userID);
 
         if($is_user){
-            $deleteProfileDocs = self::deleteProfileDocs($userID,$profile);
-
             foreach ($similars as $similar) {
                 $strsql = "INSERT INTO suggestions(docID,
                                             profile,
@@ -86,7 +84,7 @@ class SimilarDocs {
 
         if($is_user){
             $strsql = "DELETE FROM suggestions
-                WHERE userID = ".$userID." and profile = '".$profile."'";
+                WHERE userID = '".$userID."' and profile = '".$profile."'";
 
             try{
                 $_db = new DBClass();
@@ -111,12 +109,13 @@ class SimilarDocs {
      * @return array
      */
     static function getSimilarsDocs($userID,$profile,$params){
+        global $_conf;
         $retValue = false;
         $count = ( $params["widget"] ) ? WIDGETS_ITEMS_LIMIT : DOCUMENTS_PER_PAGE;
         $from = $count * $params["page"];
 
         $strsql = "SELECT * FROM  suggestions
-            WHERE userID = ".$userID." and profile = '".$profile."'";
+            WHERE userID = '".$userID."' and profile = '".$profile."'";
 
         if($count > 0){
             $strsql .= " LIMIT $from,$count";
@@ -272,13 +271,40 @@ class SimilarDocs {
      * @param array $params
      * @return array
      */
-    static function getSuggestedDocs($userID,$params){
+    static function getSuggestedDocs($userID,$params,$update=false){
+        global $_conf;
         $retValue = false;
         $count = ( $params["widget"] ) ? WIDGETS_ITEMS_LIMIT : DOCUMENTS_PER_PAGE;
         $from = $count * $params["page"];
 
+        if ($update) {
+            $prefix = 'SD$';
+            $date = date('Ymd');
+            $profiles = self::getProfiles($userID);
+/*
+            $profiles = array_map(function($arr) {
+                return $arr[key];
+            }, $profiles);
+*/
+            foreach ($profiles as $profile) {
+                if ($prefix === substr($profile['name'], 0, 3)) {
+                    $data = explode('$', $profile['name']);
+                    $sentence = $profile['content'];
+
+                    // Update suggested documents if last modification date is older than 30 days 
+                    if(strtotime($data[1]) < strtotime('-30 days')){
+                        $prefix = $prefix . $date . '$';
+                        $profileName = $prefix . md5($sentence);
+
+                        $deleteProfile = self::deleteProfile($userID,$profile['name']);
+                        $addProfile = self::addProfile($userID,$profileName,$sentence);
+                    }
+                }
+            }
+        }
+
         $strsql = "SELECT * FROM  suggestions
-            WHERE userID = ".$userID." and profile LIKE BINARY 'SD$%'";
+            WHERE userID = '".$userID."' and profile LIKE BINARY 'SD$%'";
 
         if($count > 0){
             $strsql .= " LIMIT $from,$count";
@@ -364,10 +390,11 @@ class SimilarDocs {
      * @return boolean|int
      */
     public static function getTotalSimilarsDocs($userID,$profile){
+        global $_conf;
         $retValue = false;
       
         $strsql = "SELECT count(*) as total FROM suggestions
-            WHERE userID = ".$userID." and profile = '".$profile."'";
+            WHERE userID = '".$userID."' and profile = '".$profile."'";
 
         try{
             $_db = new DBClass();
@@ -439,10 +466,11 @@ class SimilarDocs {
      * @return boolean|int
      */
     public static function getTotalSuggestedDocs($userID){
+        global $_conf;
         $retValue = false;
       
         $strsql = "SELECT count(*) as total FROM suggestions
-            WHERE userID = ".$userID." and profile LIKE BINARY 'SD$%'";
+            WHERE userID = '".$userID."' and profile LIKE BINARY 'SD$%'";
 
         try{
             $_db = new DBClass();

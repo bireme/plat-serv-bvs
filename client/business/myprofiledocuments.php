@@ -37,9 +37,9 @@ switch($_REQUEST["task"]){
         }
 
         if ($_REQUEST["profile"] != null){
-            $result = MyProfiles::getProfile($_SESSION["userTK"], $_REQUEST["profile"]);
+            $result = MyProfiles::getProfile($_SESSION["userTK"], $_REQUEST["profile"]), true;
         }else{
-            $result = MyProfiles::getProfile($_SESSION["userTK"], $defaultProfile);
+            $result = MyProfiles::getProfile($_SESSION["userTK"], $defaultProfile, true);
         }
 
         $responseProfile["values"] = $result;

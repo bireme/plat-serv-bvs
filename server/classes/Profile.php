@@ -132,6 +132,24 @@ class Profile{
 	}
 
     /*
+     * set last modified date
+     *
+     * @return void
+     */
+     function setLastModified($date){
+        $this->_lastModified = $date;
+    }
+
+    /*
+     * get last modified date generated automaticaly when the profile is updated
+     *
+     * @return string
+     */
+     function getLastModified(){
+        return ($this->_lastModified);
+    }
+
+    /*
      * set GrandeAreaID
      *
      * @param integer $param

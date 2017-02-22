@@ -108,14 +108,15 @@ class SimilarDocs {
      *
      * @param string $userTK User hash
      * @param array $params
+     * @param boolean $update
      * @return array
      */
-    public static function getSuggestedDocs($userTK,$params){
+    public static function getSuggestedDocs($userTK,$params,$update){
         $retValue = false;
 
         try{
             $objSoapClient = self::getSoapClient();
-            $retValue = $objSoapClient->getSuggestedDocs($userTK,$params);
+            $retValue = $objSoapClient->getSuggestedDocs($userTK,$params,$update);
         }catch(Exception $e){
             $logger = &Log::singleton('file', LOG_FILE, __CLASS__, $_conf);
             $logger->log($e->getMessage(),PEAR_LOG_EMERG);

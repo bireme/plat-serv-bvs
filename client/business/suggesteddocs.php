@@ -31,7 +31,7 @@ switch($_REQUEST["task"]){
             !empty($_REQUEST['page']) ? $_REQUEST['page'] : 1);
         $params['page'] = $sdPaginator->getCurrentPage();
 
-        $suggestedDocs = SimilarDocs::getSuggestedDocs( $_SESSION["userTK"]. $params );
+        $suggestedDocs = SimilarDocs::getSuggestedDocs( $_SESSION["userTK"], $params );
         $responseDocs["values"] = $suggestedDocs;
         $responseDocs["status"] = true;
     break;

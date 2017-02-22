@@ -78,9 +78,10 @@ function removeProfile($userTK,$profileID){
  *
  * @param string $userTK user hash
  * @param int $profileID
+ * @param boolean $update
  * @return array object Profile
  */
-function getProfile($userTK,$profileID){
+function getProfile($userTK,$profileID,$update){
     $profileItem = false;
 
     /*  parameter validation */
@@ -90,7 +91,7 @@ function getProfile($userTK,$profileID){
 
     if($retVerifier = $objVerifier->canPass()){
         $retParams = $objVerifier->getParams();
-        $profileItem = ProfileDAO::getProfile($retParams['userTK']['userID'],$retParams['profileID']);
+        $profileItem = ProfileDAO::getProfile($retParams['userTK']['userID'],$retParams['profileID'],$update);
     }
 
     return $profileItem;

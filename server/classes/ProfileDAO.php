@@ -49,10 +49,12 @@ class ProfileDAO {
                                             profileText,
                                             profileName,
                                             creationDate,
+                                            lastModified,
                                             profileDefault)
                                 VALUES ('".$sysUID."','".
                                            $objProfile->getProfileText()."','".
                                            $objProfile->getProfileName()."','".
+                                           date("Y-m-d H:i:s")."','".
                                            date("Y-m-d H:i:s")."','".
                                            $objProfile->getProfileDefault()."')";
 
@@ -66,7 +68,7 @@ class ProfileDAO {
         }
 
         if ($result !== null){
-            $similarDocs = SimilarDocs::addProfile( $userID, $objProfile->getProfileName(), $objProfile->getProfileText() );
+            $addProfile = SimilarDocs::addProfile( $userID, $objProfile->getProfileName(), $objProfile->getProfileText() );
             $trace = Tracking::addTrace( $userID, 'profile', 'add', $objProfile->getProfileName() );
             $retValue = true;
         }
@@ -102,6 +104,7 @@ class ProfileDAO {
                         "', profileText='".$profile->getProfileText().
                         "', profileStatus='".$profile->getProfileStatus().
                         "', profileDefault='".$profile->getProfileDefault().
+                        "', lastModified='".date("Y-m-d H:i:s").
                         "' WHERE profileID=".$profileID." and sysUID='".$sysUID."'";
 
             try{
@@ -113,7 +116,8 @@ class ProfileDAO {
             }
 
             if ($result !== 0){
-                $similarDocs = SimilarDocs::addProfile( $userID, $profile->getProfileName(), $profile->getProfileText() );
+                $deleteProfile = SimilarDocs::deleteProfile( $userID, $profile->getProfileName() );
+                $addProfile = SimilarDocs::addProfile( $userID, $profile->getProfileName(), $profile->getProfileText() );
                 $trace = Tracking::addTrace( $userID, 'profile', 'update', $profile->getProfileName() );
                 $retValue = true;
             }
@@ -162,9 +166,10 @@ class ProfileDAO {
      *
      * @param string $userID user id
      * @param string $profileID profile id
+     * @param boolean $update update profile documents
      * @return array object Profile
      */
-    public static function getProfile($userID,$profileID){
+    public static function getProfile($userID,$profileID,$update=false){
         $retValue = false;
 
         $sysUID = UserDAO::getSysUID($userID);
@@ -182,6 +187,20 @@ class ProfileDAO {
         }
 
         if (count($result) !== 0 ){
+            if ($update) {
+                // Update profile documents if last modification date is older than 30 days 
+                if(strtotime($result[0]['lastModified']) < strtotime('-30 days')){
+                    $objProfile = new Profile();
+                    $objProfile->setProfileText($result[0]['profileText']);
+                    $objProfile->setProfileName($result[0]['profileName']);
+                    $objProfile->setProfileStatus($result[0]['profileStatus']);
+                    $objProfile->setProfileDefault($result[0]['profileDefault']);
+
+                    $updateProfile = updateProfile($userID,$profileID,$objProfile);
+                    $result = self::getProfile($userID,$profileID);
+                }
+            }
+
             $retValue = $result;
         }
 
@@ -255,7 +274,7 @@ class ProfileDAO {
         }
 
         if ($result !== 0){
-            $similarDocs = SimilarDocs::deleteProfile( $userID, $profile[0]['profileName'] );
+            $deleteProfile = SimilarDocs::deleteProfile( $userID, $profile[0]['profileName'] );
             $trace = Tracking::addTrace( $userID, 'profile', 'remove', $profile[0]['profileName'] );
             $retValue = true;
         }

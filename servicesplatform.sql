@@ -28,7 +28,7 @@ USE `servicesplatform`;
 -- Estrutura para tabela `dataHistory`
 --
 
-CREATE TABLE `dataHistory` (
+CREATE TABLE IF NOT EXISTS `dataHistory` (
   `traceID` bigint(10) UNSIGNED NOT NULL AUTO_INCREMENT,
   `sysUID` varchar(150) NOT NULL DEFAULT '',
   `datetime` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -82,7 +82,7 @@ CREATE TABLE IF NOT EXISTS `documents` (
   `volume` varchar(10) DEFAULT '',
   `suppl` varchar(50) DEFAULT '',
   `publication_date` varchar(22) DEFAULT '',
-  `process_date` varchar(22) DEFAULT '',
+  `process_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `docURL` varchar(1000) NOT NULL,
   `title` varchar(500) DEFAULT '',
   PRIMARY KEY (`docID`,`srcID`)
@@ -101,7 +101,7 @@ CREATE TABLE IF NOT EXISTS `suggestions` (
   `docURL` varchar(1000) NOT NULL,
   `title` varchar(500) DEFAULT '',
   `userID` varchar(150) NOT NULL DEFAULT '',
-  `creation_date` varchar(22) DEFAULT '',
+  `creation_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`docID`,`profile`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
@@ -118,6 +118,7 @@ CREATE TABLE IF NOT EXISTS `profiles` (
   `profileName` varchar(150) NOT NULL DEFAULT '',
   `profileStatus` char(3) NOT NULL DEFAULT '',
   `creationDate` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `lastModified` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `id_grande_area` int(10) UNSIGNED DEFAULT '0',
   `id_sub_area` int(10) UNSIGNED DEFAULT '0',
   `profileDefault` tinyint(1) NOT NULL,

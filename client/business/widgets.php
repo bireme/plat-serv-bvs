@@ -37,7 +37,7 @@ $totalProfiles = MyProfiles::getTotalItens( $_SESSION["userTK"] );
 $dataHistory = Tracking::getTraceList( $_SESSION["userTK"], $params );
 
 // Suggested Documents widget
-$suggestedDocs = SimilarDocs::getSuggestedDocs( $_SESSION["userTK"]. $params );
+$suggestedDocs = SimilarDocs::getSuggestedDocs( $_SESSION["userTK"], $params, true );
 
 // My Searches widget
 $obj = new MySearches($_SESSION["userTK"]);

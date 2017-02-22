@@ -62,12 +62,12 @@ class MyProfiles {
      * @param <type> $profile
      * @return <type>
      */
-    public static function getProfile($userTK,$profileID){
+    public static function getProfile($userTK,$profileID,$update){
         $retValue = false;
 
         try{
             $objSoapClient = self::getSoapClient();
-            $retValue = $objSoapClient->getProfile($userTK,$profileID);
+            $retValue = $objSoapClient->getProfile($userTK,$profileID,$update);
         }catch(Exception $e){
             $logger = &Log::singleton('file', LOG_FILE, __CLASS__, $_conf);
             $logger->log($e->getMessage(),PEAR_LOG_EMERG);
