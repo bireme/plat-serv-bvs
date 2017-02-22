@@ -31,7 +31,7 @@ switch($_REQUEST["action"]){
     case "myalerts":
         require_once(dirname(__FILE__)."/business/myalerts.php");
     break;
-    case "myprofiledocuments";
+    case "myprofiledocuments":
         require_once(dirname(__FILE__)."/business/myprofiledocuments.php");
     break;
     case "suggesteddocs":
@@ -40,10 +40,10 @@ switch($_REQUEST["action"]){
     case "orcidworks":
         require_once(dirname(__FILE__)."/business/orcidworks.php");
     break;
-    case "logout";
+    case "logout":
         require_once(dirname(__FILE__)."/business/logout.php");
     break;
-    case "mig_id_confirmation";
+    case "mig_id_confirmation":
         require_once(dirname(__FILE__)."/business/mig_id_confirmation.php");
     break;
     case "servicesplatform":
