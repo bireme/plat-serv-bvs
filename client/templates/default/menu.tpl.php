@@ -42,7 +42,7 @@
                       <?php foreach ( $suggestedDocs as $docs ) : ?>
                         <article class="media event">
                           <div class="media-body">
-                            <a class="title" href="<?php echo $docs['ur'] ?>" target="_blank"><i class="fa fa-file-o" aria-hidden="true"></i><?php echo $docs['ti'] ?></a>
+                            <a class="title" href="<?php echo $docs['docURL'] ?>" target="_blank"><i class="fa fa-file-o" aria-hidden="true"></i><?php echo $docs['title'] ?></a>
                           </div>
                         </article>
                       <?php endforeach; ?>
