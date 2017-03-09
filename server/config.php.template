@@ -47,6 +47,8 @@ define("LOGOUT","");
 define("DOCUMENTS_PER_PAGE","10"); /* pagination */
 define("WIDGETS_ITEMS_LIMIT","5"); /* itens limit in widgets */
 
+define("VHL_SEARCH_PORTAL_DOMAIN","http://pesquisa.bvsalud.org");
+
 /* Regular Expressions */
 define("REGEXP_LANGUAGE","^(pt)|(es)|(en)$");
 define("REGEXP_EMAIL","/^[a-z_][a-z0-9_\.]+@[a-z0-9]+(\.[a-z0-9_]+)+$/i");

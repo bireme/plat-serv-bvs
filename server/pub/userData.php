@@ -10,10 +10,6 @@ require_once(dirname(__FILE__)."/../classes/Tools.php");
 require_once(dirname(__FILE__)."/../classes/ToolsAuthentication.php");
 require_once(dirname(__FILE__)."/../classes/Verifier.php");
 
-//echo "<pre>"; print_r($_SESSION); echo "</pre>";
-//echo "<pre>"; print_r($_REQUEST); echo "</pre>";
-//echo "<pre>"; print_r($_SERVER); echo "</pre>";
-
 $src = $_SESSION['source'] ? $_SESSION['source'] : false;
 
 if(!empty($_GET['userTK'])){

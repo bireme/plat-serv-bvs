@@ -55,7 +55,7 @@
                 <a id="menu_toggle"><i class="fa fa-bars"></i></a>
               </div>
 
-              <form action="http://pesquisa.bvsalud.org/portal/" method="get">
+              <form action="<?=VHL_SEARCH_PORTAL_DOMAIN?>/portal/" method="get">
                 <div class="search_bar">
                   <div class="col-xs-11 form-group pull-right top_search">
                     <div class="input-group">
