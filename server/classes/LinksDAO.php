@@ -260,12 +260,10 @@ class LinksDAO {
      * @return false|int int > 0
      */
     public static function getTotalItens($userID){
-
         $retValue = false;
-
         $sysUID = UserDAO::getSysUID($userID);
 
-        if($sysUID){
+        if( $sysUID ) {
             $strsql = "SELECT count(*) as total FROM userLinks
                 WHERE sysUID='".$sysUID."'";
 
@@ -277,12 +275,24 @@ class LinksDAO {
                 $logger->log($e->getMessage(),PEAR_LOG_EMERG);
             }
 
-            if ($result[0]["total"] != 0 ){
-                $retValue = $result[0]['total'];
-            }
+            $retValue = isset( $result[0]['total'] ) ? $result[0]['total'] : false;
         }
 
         return $retValue;
+    }
+
+    /**
+     * Get the total pages from a record set if using pagination. The number of
+     * registers per page is configured in the config.php file
+     *
+     * @param string $userID user mail
+     * @param int $itensPerPage
+     * @return int
+     */
+    public static function getTotalPages($userID,$itensPerPage){
+        $_db = new DBClass();
+        $total = self::getTotalItens($userID);
+        return ceil($total/$itensPerPage);
     }
 
     /**
@@ -422,20 +432,6 @@ class LinksDAO {
         }
         
         return $retValue;
-    }
-
-    /**
-     * Get the total pages from a record set if using pagination. The number of
-     * registers per page is configured in the config.php file
-     *
-     * @param string $userID user mail
-     * @param int $itensPerPage
-     * @return int
-     */
-    public static function getTotalPages($userID,$itensPerPage){
-        $_db = new DBClass();
-        $total = self::getTotalItens($userID);
-        return ceil($total/$itensPerPage);
     }
 
     /**

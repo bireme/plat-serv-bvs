@@ -77,7 +77,7 @@
                             <!-- end project list -->
                             <?php echo $objPaginator->render($trans->getTrans($_REQUEST["action"],'NEXT'), $trans->getTrans($_REQUEST["action"],'PREVIOUS')); ?>
                         <?php else : ?>
-                            <p><?=$trans->getTrans($_REQUEST["action"],'ACCESS_LIST_NO_REGISTERS_FOUND')?></p>
+                            <p class="none-docs"><?=$trans->getTrans($_REQUEST["action"],'ACCESS_LIST_NO_REGISTERS_FOUND')?></p>
                         <?php endif; ?>
                     </div>
                     <div class="col-md-3 col-sm-3 col-xs-12">

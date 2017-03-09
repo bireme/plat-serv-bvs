@@ -215,22 +215,21 @@ class ProfileDAO {
      */
     public static function getTotalItens($userID){
         $retValue = false;
-
         $sysUID = UserDAO::getSysUID($userID);
-      
-        $strsql = "SELECT count(*) as total FROM profiles
-            WHERE sysUID='".$sysUID."'";
 
-        try{
-            $_db = new DBClass();
-            $result = $_db->databaseQuery($strsql);
-        }catch(DBClassException $e){
-            $logger = &Log::singleton('file', LOG_FILE, __CLASS__, $_conf);
-            $logger->log($e->getMessage(),PEAR_LOG_EMERG);
-        }
+        if ( $sysUID ) {
+            $strsql = "SELECT count(*) as total FROM profiles
+                WHERE sysUID='".$sysUID."'";
 
-        if ($result[0]["total"] !== 0 ){
-            $retValue = $result[0]['total'];
+            try{
+                $_db = new DBClass();
+                $result = $_db->databaseQuery($strsql);
+            }catch(DBClassException $e){
+                $logger = &Log::singleton('file', LOG_FILE, __CLASS__, $_conf);
+                $logger->log($e->getMessage(),PEAR_LOG_EMERG);
+            }
+
+            $retValue = isset( $result[0]['total'] ) ? $result[0]['total'] : false;
         }
 
         return $retValue;

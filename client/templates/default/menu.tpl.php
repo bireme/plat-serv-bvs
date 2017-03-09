@@ -119,9 +119,9 @@
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content">
-                    <div class="dashboard-widget-content">
-                      <ul class="list-unstyled timeline widget">
-                        <?php if ( $dataHistory ) : ?>
+                    <?php if ( $dataHistory ) : ?>
+                      <div class="dashboard-widget-content">
+                        <ul class="list-unstyled timeline widget">
                           <?php foreach ( $dataHistory as $trace ) : ?>
                             <?php $date = date("d/m/Y - H:i A", strtotime($trace['datetime'])); ?>
                             <?php $label = $trans->getTrans('menu',$trace['action'].'_'.$trace['type']); ?>
@@ -137,9 +137,9 @@
                               </div>
                             </li>
                           <?php endforeach; ?>
-                        <?php endif; ?>
-                      </ul>
-                    </div>
+                        </ul>
+                      </div>
+                    <?php endif; ?>
                   </div>
                 </div>
               </div>
@@ -157,16 +157,16 @@
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content">
-                    <table class="table table-striped projects">
-                      <thead>
-                        <tr>
-                          <th>#</th>
-                          <th><?=$trans->getTrans('menu','QUERY')?></th>
-                          <th></th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <?php if ( $searches ) : ?>
+                    <?php if ( $searches ) : ?>
+                      <table class="table table-striped projects">
+                        <thead>
+                          <tr>
+                            <th>#</th>
+                            <th><?=$trans->getTrans('menu','QUERY')?></th>
+                            <th></th>
+                          </tr>
+                        </thead>
+                        <tbody>
                           <?php foreach ( $searches as $search ) : ?>
                             <tr>
                               <td id="s1">1</td>
@@ -176,9 +176,9 @@
                               </td>
                             </tr>
                           <?php endforeach; ?>
-                        <?php endif; ?>
-                      </tbody>
-                    </table>
+                        </tbody>
+                      </table>
+                    <?php endif; ?>
                   </div>
                 </div>
               </div>

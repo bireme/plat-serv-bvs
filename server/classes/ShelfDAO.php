@@ -575,25 +575,30 @@ class ShelfDAO {
      * @return int|boolean
      */
     public static function getTotalItens($userID, $dirID){
+        $retValue = false;
         $filter = "";
         $sysUID = UserDAO::getSysUID($userID);
         
-        if(isset($dirID)){
-            $filter = " and userDirID=".$dirID;
+        if ( $sysUID ) {
+            if(isset($dirID)){
+                $filter = " and userDirID=".$dirID;
+            }
+
+            $strsql = "SELECT count(*) as total FROM userShelf
+                WHERE sysUID ='".$sysUID."' AND visible = 1 ".$filter ;
+
+            try{
+                $_db = new DBClass();
+                $result = $_db->databaseQuery($strsql);
+            }catch(DBClassException $e){
+                $logger = &Log::singleton('file', LOG_FILE, __CLASS__, $_conf);
+                $logger->log($e->getMessage(),PEAR_LOG_EMERG);
+            }
+
+            $retValue = isset( $result[0]['total'] ) ? $result[0]['total'] : false;
         }
 
-        $strsql = "SELECT count(*) as total FROM userShelf
-            WHERE sysUID ='".$sysUID."' AND visible = 1 ".$filter ;
-
-        try{
-            $_db = new DBClass();
-            $result = $_db->databaseQuery($strsql);
-        }catch(DBClassException $e){
-            $logger = &Log::singleton('file', LOG_FILE, __CLASS__, $_conf);
-            $logger->log($e->getMessage(),PEAR_LOG_EMERG);
-        }
-
-        return isset($result[0]['total'])?$result[0]['total']:false;
+        return $retValue;
     }
 
     /**
