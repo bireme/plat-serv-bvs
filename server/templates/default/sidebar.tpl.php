@@ -76,7 +76,6 @@
                     <span class=" fa fa-angle-down"></span>
                   </a>
                   <ul class="dropdown-menu dropdown-usermenu pull-right">
-                    <li><a href="<?=$_SERVER["SCRIPT_NAME"]?>?userTK=<?=urlencode($_SESSION["userTK"])?>&c=<?=$b64HttpHost?>&lang=<?=$_SESSION['lang']?>"><?=MY_DATA?></a></li>
                     <!--li><a href="javascript:;"><?=CHANGE_PASSWORD?></a></li-->
                     <li><a href="<?=RELATIVE_PATH?>/controller/logout/control/business"><i class="fa fa-sign-out pull-right"></i><?=LOGOFF?></a></li>
                   </ul>
