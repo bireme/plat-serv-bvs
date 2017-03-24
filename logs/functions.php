@@ -46,7 +46,7 @@ class MySearches {
 
         if($userID){
             $data = array();
-            $client = new MongoDB\Client();
+            $client = new MongoDB\Client(MONGODB_SERVER);
             $collection = $client->servicesplatform->logs;
             $result = $collection->find(
                 array(
@@ -85,7 +85,7 @@ class MySearches {
 
         if($userID){
             $data = array();
-            $client = new MongoDB\Client();
+            $client = new MongoDB\Client(MONGODB_SERVER);
             $collection = $client->servicesplatform->logs;
             $result = $collection->find(
                 array(

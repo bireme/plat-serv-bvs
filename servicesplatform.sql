@@ -34,7 +34,8 @@ CREATE TABLE IF NOT EXISTS `dataHistory` (
   `datetime` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `type` varchar(150) NOT NULL DEFAULT '',
   `action` varchar(150) NOT NULL DEFAULT '',
-  `target` varchar(500) NOT NULL DEFAULT ''
+  `target` varchar(500) NOT NULL DEFAULT '',
+  PRIMARY KEY (`traceID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -82,7 +83,7 @@ CREATE TABLE IF NOT EXISTS `documents` (
   `volume` varchar(10) DEFAULT '',
   `suppl` varchar(50) DEFAULT '',
   `publication_date` varchar(22) DEFAULT '',
-  `process_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `process_date` varchar(22) DEFAULT '',
   `docURL` varchar(1000) NOT NULL,
   `title` varchar(500) DEFAULT '',
   PRIMARY KEY (`docID`,`srcID`)

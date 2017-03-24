@@ -44,7 +44,7 @@ if ( $userTK ) {
     $log['sort'] = isset($_REQUEST['sort'])?$_REQUEST['sort']:'';
 
     // Conexão ao banco de dados, porta padrão 27017
-    $client = new MongoDB\Client();
+    $client = new MongoDB\Client(MONGODB_SERVER);
 
     // Retorna uma referência a coleção "logs" do banco "servicesplatform"
     $collection = $client->servicesplatform->logs;
@@ -68,7 +68,7 @@ if ( $userTK ) {
 
 if ( isset( $_GET['debug'] ) && 'true' == $_GET['debug'] ) {
     $data = array();
-    $client = new MongoDB\Client();
+    $client = new MongoDB\Client(MONGODB_SERVER);
     $collection = $client->servicesplatform->logs;
     $result = $collection->find();
 
