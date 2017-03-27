@@ -55,12 +55,12 @@ switch($_REQUEST["task"]){
                 $result = MyProfiles::getProfile($_SESSION["userTK"], $profile);
 
                 if ( $result ) {
-                    $paginationData['pages'] = SimilarDocs::getTotalSimilarsDocsPages($_SESSION["userTK"],$result["values"][0]["profileName"]);
+                    $paginationData['pages'] = SimilarDocs::getTotalSimilarsDocsPages($_SESSION["userTK"],$result[0]["profileName"]);
                     $objPaginator = new Paginator($paginationData['pages'],
                     !empty($_REQUEST['page']) ? $_REQUEST['page'] : 1);
                     $params['page'] = $objPaginator->getCurrentPage();
 
-                    $similarDocs = SimilarDocs::getSimilarsDocs( $_SESSION["userTK"], $result["values"][0]["profileName"], $params );
+                    $similarDocs = SimilarDocs::getSimilarsDocs( $_SESSION["userTK"], $result[0]["profileName"], $params );
                 }
 
                 $response["values"] = $similarDocs;
@@ -85,8 +85,7 @@ switch($_REQUEST["task"]){
             $suggestions = SimilarDocs::addSuggestedDocsProfiles($_SESSION["userTK"],$_REQUEST['suggestions']);
         }
 
-        $response["values"] = $suggestions;
-        $response["status"] = true;
+        die($suggestions);
     break;
     default:
         die("default");

@@ -1,4 +1,7 @@
 <?php
+//ini_set('display_errors', 1);
+//ini_set('display_startup_errors', 1);
+//error_reporting(E_ALL);
 /**
  * SimilarDocs interface
  *
@@ -38,6 +41,10 @@ class SimilarDocs {
 
         if($is_user){
             foreach ($similars as $similar) {
+                $title = self::getSimilarDocTitle($similar);
+                $docURL = self::generateSimilarDocURL($similar['id']);
+                $authors = self::getSimilarDocAuthors($similar['au']);
+
                 $strsql = "INSERT INTO suggestions(docID,
                                             profile,
                                             authors,
@@ -47,9 +54,9 @@ class SimilarDocs {
                                             creation_date)
                                     VALUES ('".$similar['id']."','".
                                                $profile."','".
-                                               implode("; ", $similar["au"])."','".
-                                               $similar['ur']."','".
-                                               implode(" / ", $similar["ti"])."','".
+                                               $authors."','".
+                                               $docURL."','".
+                                               $title."','".
                                                $userID."','".
                                                date("Ymd")."')";
 
@@ -167,9 +174,12 @@ class SimilarDocs {
      *
      * @param string $userID User ID
      * @param string $profile Profile name
+     * @param boolean $skip
      * @return boolean
      */
-    static function deleteProfile($userID,$profile){
+    static function deleteProfile($userID,$profile,$skip=false){
+        $result =  false;
+
         $similar = str_replace("#PSID#",$userID,SIMDOCS_DELETE_PROFILE);
         $similar = str_replace("#PROFILE#",$profile,$similar);
         
@@ -177,11 +187,12 @@ class SimilarDocs {
         $xml = simplexml_load_string($xml,'SimpleXMLElement',LIBXML_NOCDATA);
         $xml = (string)$xml;
 
-        if($xml){
-            $result = self::deleteProfileDocs($userID,$profile);
-        }else{
-            $result = false;
+        if(!$skip){
+            if($xml){
+                $result = self::deleteProfileDocs($userID,$profile);
+            }
         }
+
         return $result;
     }
 
@@ -197,7 +208,16 @@ class SimilarDocs {
 
         if($content){
             $result = self::xmlToArray($content);
-            $result = ( array_key_exists('profile', $result) ) ? $result['profile'] : false;
+
+            if( array_key_exists('profile', $result) && count($result) > 0 ){
+                if( array_key_exists( 0, $result['profile'] ) )
+                    $result = $result['profile'];
+                else
+                    $result = array_values($result);
+            }
+            else{
+                $result = false;
+            }
         }else{
             $result = false;
         }
@@ -223,7 +243,16 @@ class SimilarDocs {
 
         if($content){
             $result = self::xmlToArray($content);
-            $result = ( array_key_exists('document', $result) ) ? array_slice($result['document'], $from, $count) : false;
+
+            if( array_key_exists('document', $result) && count($result) > 0 ){
+                if( array_key_exists( 0, $result['document'] ) )
+                    $result = array_slice($result['document'], $from, $count);
+                else
+                    $result = array_values($result);
+            }
+            else{
+                $result = false;
+            }
         }else{
             $result = false;
         }
@@ -240,16 +269,18 @@ class SimilarDocs {
     static function addSuggestedDocsProfiles($userID,$suggestions){
         $retValue = false;
 
-        if ($suggestions && is_array($suggestions)) {
+        if ($suggestions && is_array($suggestions) && count($suggestions) > 0) {
             $prefix = 'SD$';
             $date = date('Ymd');
             $profiles = self::getProfiles($userID);
 
             foreach ($profiles as $profile) {
                 if ($prefix === substr($profile['name'], 0, 3)) {
-                    $deleteProfile = self::deleteProfile($userID,$profile['name']);
+                    $deleteProfile = self::deleteProfile($userID,$profile['name'],true);
                 }
             }
+
+            $deleteSuggestedDocs = self::deleteSuggestedDocs($userID);
 
             foreach ($suggestions as $suggestion) {
                 $prefix = $prefix . $date . '$';
@@ -258,6 +289,37 @@ class SimilarDocs {
             }
 
             $retValue = true;
+        }
+
+        return $retValue;
+    }
+
+    /**
+     * Delete suggested documents
+     *
+     * @param string $userID User ID
+     * @return array
+     */
+    static function deleteSuggestedDocs($userID){
+        global $_conf;
+        $resul = 0;
+        $retValue = false;
+
+        $is_user = UserDAO::isUser($userID);
+
+        if($is_user){
+            $strsql = "DELETE FROM  suggestions
+                WHERE userID = '".$userID."' and profile LIKE BINARY 'SD$%'";
+
+            try{
+                $_db = new DBClass();
+                $result = $_db->databaseExecUpdate($strsql);
+            }catch(DBClassException $e){
+                $logger = &Log::singleton('file', LOG_FILE, __CLASS__, $_conf);
+                $logger->log($e->getMessage(),PEAR_LOG_EMERG);
+            }
+
+            $retValue = ($result !== 0) ? true : false;
         }
 
         return $retValue;
@@ -520,6 +582,56 @@ class SimilarDocs {
         $result = json_decode($json,true);
 
         return $result;
+    }
+
+    /**
+     * Generate the similar document URL
+     *
+     * @param string $docID
+     * @return string $docURL Similar document URL
+     */
+    static function generateSimilarDocURL($docID){
+        $docURL = VHL_SEARCH_PORTAL_DOMAIN."/portal/resource/".DEFAULT_LANG."/".$docID;
+        return $docURL;
+    }
+
+    /**
+     * Get the similar document authors
+     *
+     * @param string|array $authors
+     * @return string $authors Similar document authors
+     */
+    static function getSimilarDocAuthors($authors){
+        $authors = ( is_array($authors) ) ? implode("; ", $authors) : $authors;
+        return CharTools::mysql_escape_mimic($authors);
+    }
+
+    /**
+     * Get the similar document title
+     *
+     * @param array $similar
+     * @return string $title Similar document title
+     */
+    static function getSimilarDocTitle($similar){
+        $key = '';
+        $title = '';
+
+        if ( array_key_exists('ti', $similar) ) {
+            $title = $similar['ti'];
+        }
+        elseif ( array_key_exists('la', $similar) ) {
+            $key = 'ti_'.$similar['la'];
+
+            if ( array_key_exists($key, $similar) )
+                $title = $similar[$key];
+        }
+        
+        if ( array_key_exists('ti_'.DEFAULT_LANG, $similar) && empty($title) ) {
+            $key = 'ti_'.DEFAULT_LANG;
+            $title = $similar[$key];
+        }
+        
+        return CharTools::mysql_escape_mimic($title);
     }
 }
 ?>

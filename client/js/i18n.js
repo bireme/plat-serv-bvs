@@ -24,6 +24,7 @@ labels['pt']['REPEAT']          = 'sem correspondência';
 labels['pt']['COMPLETE']        = 'incompleto';
 labels['pt']['SELECT']          = 'selecione uma opção';
 labels['pt']['DATE']            = 'não é uma data real';
+labels['pt']['SD_FAIL']         = 'ERRO: Ocorreu um problema na requisição dos documentos relacionados.';
 
 /* English */
 labels['en'] = [];
@@ -49,6 +50,7 @@ labels['en']['REPEAT']          = 'no match';
 labels['en']['COMPLETE']        = 'input is not complete';
 labels['en']['SELECT']          = 'Please select an option';
 labels['en']['DATE']            = 'not a real date';
+labels['en']['SD_FAIL']         = 'ERROR: An error occurred in the request for related documents.';
 
 /* Spanish */
 labels['es'] = [];
@@ -74,3 +76,4 @@ labels['es']['REPEAT']          = 'sem correspondência';
 labels['es']['COMPLETE']        = 'incompleto';
 labels['es']['SELECT']          = 'selecione uma opção';
 labels['es']['DATE']            = 'não é uma data real';
+labels['es']['SD_FAIL']         = 'ERROR: Ocurrió un incoveniente en la solicitud de documentos relacionados';

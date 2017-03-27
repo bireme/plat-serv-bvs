@@ -101,8 +101,19 @@ $( document ).ready(
                     obj.suggestions = data;
                     href = window.location.pathname + '/task/suggestions';
 
+                    $('#loading').show();
+/*                    
+                    $('html, body').animate({
+                        scrollTop: $("#loading").offset().top
+                    }, "fast");
+*/
                     $.post( href, obj, function(data) {
-                        location.reload();
+                        if(data == true){
+                            location.reload();
+                        }else{
+                            $('#loading').hide();
+                            alert(labels[LANG]['SD_FAIL']);
+                        }
                     });
                 }
             }
