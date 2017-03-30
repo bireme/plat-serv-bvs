@@ -1,8 +1,9 @@
 <?php
+/*
 include_once("config.php");
-include_once(dirname(__FILE__)."/../../lib/libLog/Log.php");
-include_once(dirname(__FILE__)."/../../classes/Tools.php");
-include_once(dirname(__FILE__)."/../../classes/Authentication.php");
+include_once($_SERVER['DOCUMENT_ROOT']."/client/lib/libLog/Log.php");
+include_once($_SERVER['DOCUMENT_ROOT']."/client/classes/Tools.php");
+include_once($_SERVER['DOCUMENT_ROOT']."/client/classes/Authentication.php");
 
 //destroy facebook session if user clicks reset
 if(!$fbuser){
@@ -35,4 +36,5 @@ if(!$fbuser){
     header("location:$homeurl");
     exit;
 }
+*/
 ?>

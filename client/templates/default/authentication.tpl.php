@@ -9,19 +9,19 @@
             <h3 class="omb_authTitle"><?=$trans->getTrans($_REQUEST["action"],'TITLE')?></h3>
             <div class="row omb_row-sm-offset-3 omb_socialButtons">
                 <div class="col-xs-4 col-sm-3">
-                    <a href="<?=RELATIVE_PATH?>/connector/facebook" class="btn btn-lg btn-block omb_btn-facebook">
+                    <a href="/connector/facebook" class="btn btn-lg btn-block omb_btn-facebook">
                         <i class="fa fa-facebook visible-xs"></i>
                         <span class="hidden-xs">Facebook</span>
                     </a>
                 </div>
                 <!--div class="col-xs-4 col-sm-2">
-                    <a href="<?=RELATIVE_PATH?>/connector/linkedin" class="btn btn-lg btn-block omb_btn-linkedin">
+                    <a href="/connector/linkedin" class="btn btn-lg btn-block omb_btn-linkedin">
                         <i class="fa fa-linkedin visible-xs"></i>
                         <span class="hidden-xs">LinkedIn</span>
                     </a>
                 </div-->
                 <div class="col-xs-4 col-sm-3">
-                    <a href="<?=RELATIVE_PATH?>/connector/google" class="btn btn-lg btn-block omb_btn-google">
+                    <a href="/connector/google" class="btn btn-lg btn-block omb_btn-google">
                         <i class="fa fa-google visible-xs"></i>
                         <span class="hidden-xs">Google</span>
                     </a>
