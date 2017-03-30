@@ -1,0 +1,21 @@
+<?php
+
+session_start();
+
+include_once("src/facebook.php"); // include Facebook SDK
+
+$appID = ''; // Facebook App ID
+$appSecret = ''; // Facebook App Secret
+$redirectURL = ''; // return to home
+$homeURL = ''; // return url (url to script)
+$permissions = ['email', 'public_profile', 'user_friends']; // Optional permissions
+
+$fb = new Facebook\Facebook([
+    'app_id' => $appID,
+    'app_secret' => $appSecret,
+    'default_graph_version' => 'v2.2',
+]);
+
+$helper = $fb->getRedirectLoginHelper();
+
+?>

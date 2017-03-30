@@ -302,7 +302,7 @@ class SimilarDocs {
      */
     static function deleteSuggestedDocs($userID){
         global $_conf;
-        $resul = 0;
+        $result = 0;
         $retValue = false;
 
         $is_user = UserDAO::isUser($userID);
