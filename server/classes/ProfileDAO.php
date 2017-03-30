@@ -188,8 +188,8 @@ class ProfileDAO {
 
         if (count($result) !== 0 ){
             if ($update) {
-                // Update profile documents if last modification date is older than 30 days 
-                if(strtotime($result[0]['lastModified']) < strtotime('-30 days')){
+                // Update profile documents if last modification date is older than 7 days 
+                if(strtotime($result[0]['lastModified']) < strtotime('-1 week')){
                     $objProfile = new Profile();
                     $objProfile->setProfileText($result[0]['profileText']);
                     $objProfile->setProfileName($result[0]['profileName']);
