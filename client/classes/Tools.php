@@ -124,7 +124,7 @@ class Token {
 
         $tmp1 = explode('%+%',Crypt::decrypt($userTK, CRYPT_PUBKEY));
 
-        if($force === true || preg_match(REGEXP_EMAIL,$tmp1[0])){
+        if(($force === true || preg_match(REGEXP_EMAIL,$tmp1[0])) && count($tmp1) < 3){
             $tmp2['userID'] = $tmp1[0];
             $tmp2['userPass'] = $tmp1[1];
             $retValue = $tmp2;
