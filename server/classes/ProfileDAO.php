@@ -196,7 +196,7 @@ class ProfileDAO {
                     $objProfile->setProfileStatus($result[0]['profileStatus']);
                     $objProfile->setProfileDefault($result[0]['profileDefault']);
 
-                    $updateProfile = updateProfile($userID,$profileID,$objProfile);
+                    $updateProfile = self::updateProfile($userID,$profileID,$objProfile);
                     $result = self::getProfile($userID,$profileID);
                 }
             }
