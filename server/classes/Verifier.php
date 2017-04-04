@@ -257,7 +257,7 @@ class Verifier {
         /* check users from BIREME Acccounts */
         if ( empty( $source ) || 'bireme_accounts' != $source ){
             if($objUser->getID()){
-                if(!preg_match(REGEXP_EMAIL, $objUser->getID())){
+                if(!filter_var($objUser->getID(), FILTER_VALIDATE_EMAIL)){
                     return false;
                 }
             }
@@ -266,7 +266,7 @@ class Verifier {
         //if($objUser->getPassword()){}
 
         if($objUser->getEmail()){
-            if(!preg_match(REGEXP_EMAIL, $objUser->getEmail())){
+            if(!filter_var($objUser->getEmail(), FILTER_VALIDATE_EMAIL)){
                 return false;
             }
         }

@@ -118,7 +118,7 @@ class ToolsAuthentication {
      */
     public static function isValidMail($userID){
         
-        if( preg_match(REGEXP_EMAIL, $userID )){
+        if( filter_var($userID, FILTER_VALIDATE_EMAIL) ){
             $retValue = true;
         }else{
             $retValue = false;
@@ -213,7 +213,7 @@ class ToolsRegister {
      *
      */
     public static function isValidMail($userID){
-        if( preg_match(REGEXP_EMAIL, $userID )){
+        if( filter_var($userID, FILTER_VALIDATE_EMAIL) ){
             $retValue = true;
         }else{
             $retValue = false;
