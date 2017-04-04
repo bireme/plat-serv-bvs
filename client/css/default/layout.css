@@ -135,9 +135,7 @@
 }
 
 .search_bar {
-    position: absolute;
     padding-top: 12px;
-    padding-right: 10em;
 }
 
 .toggle {
@@ -207,6 +205,16 @@ a.operator {
 
 .panel-folder {
     /*border-bottom: 1px solid #ddd;*/
+}
+
+.profile_menu {
+    white-space: nowrap;
+    width: auto !important;
+}
+
+.profile_info h2 {
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 #loading {
