@@ -33,9 +33,10 @@ $(document).ready(
                 var filter   = $(this).parents().siblings('.filter').text();
                 var search   = $("input[name='q']").val();
 
+                filter = ( filter !== '' && filter !== '*' ) ? ' AND ' + filter : '';
                 search = ( search !== '' ) ? search + ' ' + operator + ' ' : '';
 
-                $("input[name='q']").val(search +  '(' + query + ' AND ' + filter + ')');
+                $("input[name='q']").val(search +  '(' + query + filter + ')');
                 $(this).parents().siblings('button.combine').click();
             }
         );

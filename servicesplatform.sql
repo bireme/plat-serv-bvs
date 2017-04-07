@@ -103,8 +103,8 @@ CREATE TABLE IF NOT EXISTS `suggestions` (
   `title` varchar(500) DEFAULT '',
   `userID` varchar(150) NOT NULL DEFAULT '',
   `creation_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (`docID`,`profile`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+  PRIMARY KEY (`docID`,`profile`,`userID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 

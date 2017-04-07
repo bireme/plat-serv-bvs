@@ -143,18 +143,16 @@
                   </div>
                   <div class="x_content">
                     <?php if ( $searches ) : ?>
-                      <table class="table table-striped projects">
+                      <table class="table table-striped">
                         <thead>
                           <tr>
-                            <th>#</th>
                             <th><?=$trans->getTrans('menu','QUERY')?></th>
                             <th></th>
                           </tr>
                         </thead>
-                        <tbody>
+                        <tbody style="word-break: break-word;">
                           <?php foreach ( $searches as $search ) : ?>
                             <tr>
-                              <td id="s1">1</td>
                               <td class="query"><?php echo $search['query']; ?></td>
                               <td style="text-align: right;">
                                 <button id="v1" class="btn btn-primary btn-xs search" value="<?php echo $search['site']; ?>" data-original-title="" title=""><i class="fa fa-search search"></i> <?=$trans->getTrans('menu','VIEW')?></button>
