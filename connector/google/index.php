@@ -5,11 +5,24 @@ include_once($_SERVER['DOCUMENT_ROOT']."/client/classes/Tools.php");
 include_once($_SERVER['DOCUMENT_ROOT']."/client/classes/Authentication.php");
 
 if ( $_REQUEST['error'] && $_REQUEST['error'] == 'access_denied' ) {
+    if ( isset($_REQUEST['state']) && !empty($_REQUEST['state']) ) {
+        $state = json_decode(base64_decode($_REQUEST['state']), true);
+        if (isset($state['origin']) && !empty($state['origin'])) {
+            $origin = 'origin/'.$state['origin'].'/';
+            $homeURL .= $origin;
+        }
+    }
+
     header("location:".$homeURL."?".http_build_query($_REQUEST));
     exit;
 }
 
 if(isset($_REQUEST['code'])){
+    if ( isset($_REQUEST['state']) && !empty($_REQUEST['state']) ) {
+        $origin = '?state='.$_REQUEST['state'];
+        $redirectURL .= $origin;
+    }
+
 	$gClient->authenticate($_REQUEST['code']);
 	$_SESSION['google_access_token'] = $gClient->getAccessToken();
 	header('Location: ' . filter_var($redirectURL, FILTER_SANITIZE_URL));
@@ -34,13 +47,28 @@ if ($gClient->getAccessToken()) {
         $_SESSION["source"] = $result["source"];
         //$response["status"] = true;
         //$response["values"] = $result;
-        setcookie("userTK", $result["userTK"], 0, '/');
+        setcookie("userTK", $result["userTK"], 0, '/', COOKIE_DOMAIN_SCOPE);
+    }
+
+    if ( isset($_REQUEST['state']) && !empty($_REQUEST['state']) ) {
+        $state = json_decode(base64_decode($_REQUEST['state']), true);
+        if (isset($state['origin']) && !empty($state['origin'])) {
+            $origin = 'origin/'.$state['origin'];
+            $homeURL .= $origin;
+        }
     }
 
 	header("location:$homeURL");
 	exit;
 } else {
-	$authURL = $gClient->createAuthUrl();
+    $state = '';
+
+    if ( isset($_REQUEST['origin']) && !empty($_REQUEST['origin']) ) {
+        $state = base64_encode('{ "origin" : "'.$_REQUEST['origin'].'" }');
+    }
+
+    $authURL = $gClient->createAuthUrl();
+    $authURL .= '&state='.$state;
 	header("location:$authURL");
 	exit;
 }

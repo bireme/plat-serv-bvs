@@ -1,9 +1,13 @@
 <?php
 // VIEW controller
 session_start();
+
 if (($_REQUEST["action"] == 'authentication' or $_REQUEST["action"] == 'requestauth') and $_SESSION["userTK"] != ""){
     $_REQUEST["action"] = 'menu';
 }
+
+$lang = ( $_REQUEST["lang"] ) ? $_REQUEST["lang"] : DEFAULT_LANG;
+
 switch($_REQUEST["action"]){
     case "authentication":
         require_once(dirname(__FILE__)."/templates/".$_SESSION["skin"]."/authentication.tpl.php");
@@ -22,11 +26,15 @@ switch($_REQUEST["action"]){
          */
         if($_REQUEST["origin"] != ""){
             $origin = base64_decode($_REQUEST["origin"]);
+
             if(strpos($origin,"?")){
-                $redirectCommand = ($origin."&userID=".$_SESSION["userTK"]."&firstName=".$_SESSION["userFirstName"]."&lastName=".$_SESSION["userLastName"]."&email=".$_SESSION["userMail"]."&tlng=en&lng=en");
+                //$redirectCommand = ($origin."&userID=".$_SESSION["userTK"]."&firstName=".$_SESSION["userFirstName"]."&lastName=".$_SESSION["userLastName"]."&email=".$_SESSION["userMail"]."&lang=".$lang);
+                $redirectCommand = ($origin."&userID=".$_SESSION["userTK"]."&lang=".$lang);
             }else{
-                $redirectCommand = ($origin."?userID=".$_SESSION["userTK"]."&firstName=".$_SESSION["userFirstName"]."&lastName=".$_SESSION["userLastName"]."&email=".$_SESSION["userMail"]."&tlng=en&lng=en");
+                //$redirectCommand = ($origin."?userID=".$_SESSION["userTK"]."&firstName=".$_SESSION["userFirstName"]."&lastName=".$_SESSION["userLastName"]."&email=".$_SESSION["userMail"]."&lang=".$lang);
+                $redirectCommand = ($origin."?userID=".$_SESSION["userTK"]."&lang=".$lang);
             }
+
             echo '<script language="javascript">';
             echo 'window.open("'.$redirectCommand.'","_parent")';
             echo '</script>';

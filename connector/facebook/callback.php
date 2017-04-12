@@ -63,8 +63,13 @@ if (isset($accessToken)) {
             $_SESSION["source"] = $result["source"];
             //$response["status"] = true;
             //$response["values"] = $result;
-            setcookie("userTK", $result["userTK"], 0, '/');
+            setcookie("userTK", $result["userTK"], 0, '/', COOKIE_DOMAIN_SCOPE);
         }
+    }
+
+    if ( isset($_REQUEST['origin']) && !empty($_REQUEST['origin']) ) {
+        $origin = 'origin/'.$_REQUEST['origin'];
+        $homeURL .= $origin;
     }
 
     // Now you can redirect to another page and use the
@@ -75,6 +80,11 @@ if (isset($accessToken)) {
 
 if (! isset($accessToken)) {
     if ($helper->getError()) {
+        if ( isset($_REQUEST['origin']) && !empty($_REQUEST['origin']) ) {
+            $origin = 'origin/'.$_REQUEST['origin'].'/';
+            $homeURL .= $origin;
+        }
+
         header("location:".$homeURL."?".http_build_query($_REQUEST));
         exit;
     } else {

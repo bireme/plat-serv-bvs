@@ -15,6 +15,5 @@
 /* destroy session data */
 session_destroy();
 $_SESSION = array();
-setcookie('userTK','',time() -3600,'/');
-//setcookie('userTK','',time() -3600,'/',COOKIE_DOMAIN_SCOPE);
+setcookie('userTK','',time() -3600,'/',COOKIE_DOMAIN_SCOPE);
 ?>

@@ -17,8 +17,11 @@ require_once(dirname(__FILE__)."/../classes/Authentication.php");
 if ($_REQUEST["task"] === null){
     $_REQUEST["task"] = "authenticate";
 }
+
 $response["status"] = false;
-$params["sort"]=$_REQUEST["sort"];
+$params["sort"] = $_REQUEST["sort"];
+$lang = ( $_REQUEST["lang"] ) ? $_REQUEST["lang"] : DEFAULT_LANG;
+
 switch($_REQUEST["task"]){
     case "authenticate":
         if (empty($_SESSION["userTK"])){
@@ -31,17 +34,21 @@ switch($_REQUEST["task"]){
                 $_SESSION["source"] = $result["source"];
                 $response["status"] = true;
                 $response["values"] = $result;
-                setcookie("userTK", $result["userTK"], 0, '/');
-                //setcookie("userTK", $result["userTK"], 0, '/', COOKIE_DOMAIN_SCOPE);
+                setcookie("userTK", $result["userTK"], 0, '/', COOKIE_DOMAIN_SCOPE);
+
                 // SSO LOGIN
-                if(ENABLE_SCIELO_SSO === true){
+                if(ENABLE_SSO_LOGIN){
                   if($_REQUEST["origin"] != ""){
                       $origin = base64_decode($_REQUEST["origin"]);
+
                       if(strpos($origin,"?")){
-                          $redirectCommand = ($origin."&userID=".$result["userTK"]."&firstName=".$_SESSION["userFirstName"]."&lastName=".$_SESSION["userLastName"]."&email=".$_SESSION["userMail"]."&lang=en&tlng=en&lng=en");
+                          //$redirectCommand = ($origin."&userID=".$result["userTK"]."&firstName=".$_SESSION["userFirstName"]."&lastName=".$_SESSION["userLastName"]."&email=".$_SESSION["userMail"]."&lang=".$lang);
+                          $redirectCommand = ($origin."&userID=".$result["userTK"]."&lang=".$lang);
                       }else{
-                          $redirectCommand = ($origin."?userID=".$result["userTK"]."&firstName=".$_SESSION["userFirstName"]."&lastName=".$_SESSION["userLastName"]."&email=".$_SESSION["userMail"]."&lang=en&tlng=en&lng=en");
+                          //$redirectCommand = ($origin."?userID=".$result["userTK"]."&firstName=".$_SESSION["userFirstName"]."&lastName=".$_SESSION["userLastName"]."&email=".$_SESSION["userMail"]."&lang=".$lang);
+                          $redirectCommand = ($origin."?userID=".$result["userTK"]."&lang=".$lang);
                       }
+
                       echo '<script language="javascript">';
                       echo 'window.open("'.$redirectCommand.'","_parent")';
                       echo '</script>';
@@ -67,7 +74,22 @@ switch($_REQUEST["task"]){
 
 /* Redirect To */
 if($_REQUEST["origin"] != "" and empty($_SESSION["userTK"])){
-    if($response["status"] = false){
+    if($response["status"] === false){
+        $state = "false";
+        $origin = base64_decode($_REQUEST["origin"]);
+
+        if ( $_REQUEST['error'] == 'access_denied' )
+            $state = $_REQUEST['error'];
+
+        if(strpos($origin,"?")){
+            $redirectCommand = ($origin."&status=$state");
+        }else{
+            $redirectCommand = ($origin."?status=$state");
+        }
+
+        echo '<script language="javascript">';
+        echo 'window.open("'.$redirectCommand.'","_parent")';
+        echo '</script>';
     }
 }
 
