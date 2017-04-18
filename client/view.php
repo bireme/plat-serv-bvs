@@ -2,11 +2,11 @@
 // VIEW controller
 session_start();
 
-if (($_REQUEST["action"] == 'authentication' or $_REQUEST["action"] == 'requestauth') and $_SESSION["userTK"] != ""){
+if (($_REQUEST["action"] == 'authentication' or $_REQUEST["action"] == 'requestauth') and (isset($_SESSION['userTK']) and !empty($_SESSION['userTK']))){
     $_REQUEST["action"] = 'menu';
 }
 
-$lang = ( $_REQUEST["lang"] ) ? $_REQUEST["lang"] : DEFAULT_LANG;
+$lang = ( $_SESSION["lang"] ) ? $_SESSION["lang"] : DEFAULT_LANG;
 
 switch($_REQUEST["action"]){
     case "authentication":

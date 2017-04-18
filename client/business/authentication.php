@@ -20,7 +20,7 @@ if ($_REQUEST["task"] === null){
 
 $response["status"] = false;
 $params["sort"] = $_REQUEST["sort"];
-$lang = ( $_REQUEST["lang"] ) ? $_REQUEST["lang"] : DEFAULT_LANG;
+$lang = ( $_SESSION["lang"] ) ? $_SESSION["lang"] : DEFAULT_LANG;
 
 switch($_REQUEST["task"]){
     case "authenticate":

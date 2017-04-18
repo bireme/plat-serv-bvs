@@ -6,7 +6,7 @@ require_once(dirname(__FILE__)."/includes/includes.php");
 if ($control == "business" || $_REQUEST["action"] == 'authentication'){
     require_once(dirname(__FILE__)."/business.php");
 }
-require_once(dirname(__FILE__)."/view.php");
 
+require_once(dirname(__FILE__)."/view.php");
 ob_end_flush();
 ?>

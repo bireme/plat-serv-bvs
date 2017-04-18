@@ -1,11 +1,18 @@
 <?php
 // BUSINESS controller
 
+if ($_REQUEST["action"] != 'authentication' and (!isset($_SESSION['userTK']) || empty($_SESSION['userTK']))){
+    $_REQUEST["action"] = 'logout';
+}
+
 switch($_REQUEST["action"]){
     case "authentication":
         require_once(dirname(__FILE__)."/business/authentication.php");
         if ( $_SESSION['userTK'] ) {
             require_once(dirname(__FILE__)."/business/widgets.php");
+        } else {
+            require_once(dirname(__FILE__)."/business/logout.php");
+            require(dirname(__FILE__)."/includes/sessionHandler.php");
         }
     break;
     case "new_pass":
