@@ -1,0 +1,57 @@
+.bootstrap-iso .box {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 1.42857143;
+    color: #333;
+    /*font-size: 14px*/
+    /*background-color: #fff;*/
+}
+
+.bootstrap-iso .box div {
+    padding-bottom: 0;
+}
+
+.bootstrap-iso .box .social-sharing {
+    display: flex;
+    justify-content: center;
+    padding: 0 0 25px;
+}
+
+.bootstrap-iso .box button {
+    margin-bottom: 10px;
+}
+
+.bootstrap-iso .box .help-block {
+    color: red;
+    text-align: center;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.bootstrap-iso .box p {
+    margin: 5px 0 0;
+}
+
+.bootstrap-iso .box img.avatar {
+    float: left;
+    margin-top: -2px;
+    margin-right: 10px;
+    width: 50px;
+    height: 50px;
+}
+
+.bootstrap-iso .box .btn,
+.bootstrap-iso .box .form-control {
+    font-size: 13px;
+}
+
+.bootstrap-iso a:visited {
+    color: #337ab7;
+}
+
+.bootstrap-iso .social-sharing a:visited {
+    color: #ffffff;
+}
+
+.bootstrap-iso .well.box {
+    margin-bottom: 0;
+}
