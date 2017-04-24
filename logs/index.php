@@ -7,24 +7,13 @@ header('Access-Control-Allow-Methods: GET, POST');
 require_once __DIR__.'/vendor/autoload.php';
 require_once __DIR__.'/../server/classes/Tools.php';
 
-?>
-
-<!DOCTYPE html>
-<html>
-    <head>
-        <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    </head>
-    <body>
-
-<?php
-
 $userTK = isset($_REQUEST['userTK'])?$_REQUEST['userTK']:false;
 
 if ( $userTK ) {
     $log = array();
     $data = array();
 
-    $userData = Token::unmakeUserTK($userTK);
+    $userData = Token::unmakeUserTK($userTK, true);
 
     $log['userID'] = $userData['userID'];
     $log['date'] = date('Y-m-d H:i:s');
@@ -66,7 +55,18 @@ if ( $userTK ) {
     //echo "<pre>"; print_r($data); echo "</pre>"; die();
 }
 
-if ( isset( $_GET['debug'] ) && 'true' == $_GET['debug'] ) {
+?>
+
+<?php if ( isset( $_GET['debug'] ) && 'true' == $_GET['debug'] ) : ?>
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    </head>
+    <body>
+<?php
+
     $data = array();
     $client = new MongoDB\Client(MONGODB_SERVER);
     $collection = $client->servicesplatform->logs;
@@ -84,9 +84,9 @@ if ( isset( $_GET['debug'] ) && 'true' == $_GET['debug'] ) {
     //echo "<pre>"; print_r($data); echo "</pre>";
     
     //$result = $collection->drop();
-}
 
 ?>
-
     </body>
 </html>
+
+<?php endif; ?>

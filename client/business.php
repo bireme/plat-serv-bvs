@@ -2,7 +2,7 @@
 // BUSINESS controller
 
 if ($_REQUEST["action"] != 'authentication' and (!isset($_SESSION['userTK']) || empty($_SESSION['userTK']))){
-    $_REQUEST["action"] = 'logout';
+    if ( 'servicesplatform' != $_REQUEST["action"] ) $_REQUEST["action"] = 'logout';
 }
 
 switch($_REQUEST["action"]){

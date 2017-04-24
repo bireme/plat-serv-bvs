@@ -58,7 +58,7 @@ class UserDAO {
 
             if($hash == $pbkdf2){
                 $objUser = new User();
-                $objUser->setID($res[0]['email']);
+                $objUser->setID($res[0]['username']);
                 $objUser->setFirstName($res[0]['first_name']);
                 $objUser->setLastName($res[0]['last_name']);
                 $objUser->setEmail($res[0]['email']);

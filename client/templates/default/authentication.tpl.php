@@ -36,6 +36,7 @@
             <div class="row omb_row-sm-offset-3">
                 <div class="col-xs-12 col-sm-6">    
                     <form class="omb_loginForm" action="<?=RELATIVE_PATH?>/controller/authentication" autocomplete="off" method="POST">
+                        <input type="hidden" name="origin" value="<?php echo $origin; ?>" />
                         <input type="hidden" name="control" value="business" />
                         <input type="hidden" name="action" value="authentication" />
                         <input type="hidden" name="lang" value="<?php echo $lang; ?>" />

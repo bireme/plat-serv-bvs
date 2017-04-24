@@ -124,14 +124,15 @@ class Token {
         $tmp1 = explode('%+%',Crypt::decrypt($userTK, CRYPT_PUBKEY));
         $valid_email = filter_var($tmp1[0], FILTER_VALIDATE_EMAIL);
 
-        if(($force === true || $valid_email) && count($tmp1) < 3){
+        if($force === true){
             $tmp2['userID'] = $tmp1[0];
             $tmp2['userPass'] = $tmp1[1];
+            $tmp2['userSource'] = $tmp1[2];
             $retValue = $tmp2;
-        }elseif($tmp1[2] && in_array($tmp1[2], array('facebook', 'google'))){
+        }elseif($valid_email){
             $tmp2['userID'] = $tmp1[0];
             $tmp2['userPass'] = $tmp1[1];
-            $tmp2['socialMedia'] = $tmp1[2];
+            $tmp2['userSource'] = $tmp1[2];
             $retValue = $tmp2;
         }
 

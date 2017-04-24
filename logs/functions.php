@@ -16,7 +16,15 @@ class MySearches {
      * @param string $userTK User's token
      */
     public function __construct($userTK){
-        $this->_data = Token::unmakeUserTK($userTK);
+        $token = Token::unmakeUserTK($userTK, true);
+
+        if ( 'bireme_accounts' == $token['userSource'] ) {
+            $this->_data = $token;
+        }
+        else {
+            $token = Token::unmakeUserTK($userTK);
+            $this->_data = $token;
+        }
     }
 
     /**

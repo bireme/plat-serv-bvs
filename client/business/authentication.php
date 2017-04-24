@@ -21,6 +21,7 @@ if ($_REQUEST["task"] === null){
 $response["status"] = false;
 $params["sort"] = $_REQUEST["sort"];
 $lang = ( $_SESSION["lang"] ) ? $_SESSION["lang"] : DEFAULT_LANG;
+$origin = ( $_REQUEST["origin"] ) ? $_REQUEST["origin"] : '';
 
 switch($_REQUEST["task"]){
     case "authenticate":
@@ -38,15 +39,15 @@ switch($_REQUEST["task"]){
 
                 // SSO LOGIN
                 if(ENABLE_SSO_LOGIN){
-                  if($_REQUEST["origin"] != ""){
-                      $origin = base64_decode($_REQUEST["origin"]);
+                  if(!empty($origin)){
+                      $originURL = base64_decode($origin);
 
-                      if(strpos($origin,"?")){
-                          //$redirectCommand = ($origin."&userID=".$result["userTK"]."&firstName=".$_SESSION["userFirstName"]."&lastName=".$_SESSION["userLastName"]."&email=".$_SESSION["userMail"]."&lang=".$lang);
-                          $redirectCommand = ($origin."&userID=".$result["userTK"]."&lang=".$lang);
+                      if(strpos($originURL,"?")){
+                          //$redirectCommand = ($originURL."&userID=".$result["userTK"]."&firstName=".$_SESSION["userFirstName"]."&lastName=".$_SESSION["userLastName"]."&email=".$_SESSION["userMail"]."&lang=".$lang);
+                          $redirectCommand = ($originURL."&userID=".$result["userTK"]."&source=".$result["source"]."&lang=".$lang);
                       }else{
-                          //$redirectCommand = ($origin."?userID=".$result["userTK"]."&firstName=".$_SESSION["userFirstName"]."&lastName=".$_SESSION["userLastName"]."&email=".$_SESSION["userMail"]."&lang=".$lang);
-                          $redirectCommand = ($origin."?userID=".$result["userTK"]."&lang=".$lang);
+                          //$redirectCommand = ($originURL."?userID=".$result["userTK"]."&firstName=".$_SESSION["userFirstName"]."&lastName=".$_SESSION["userLastName"]."&email=".$_SESSION["userMail"]."&lang=".$lang);
+                          $redirectCommand = ($originURL."?userID=".$result["userTK"]."&source=".$result["source"]."&lang=".$lang);
                       }
 
                       echo '<script language="javascript">';
@@ -57,10 +58,11 @@ switch($_REQUEST["task"]){
             }else{
                 $response["status"] = false;
                 $response["values"] = $result;
-            }            
+            }
+
             if($response['values']['idConfirmation'] === true){
-                if($_REQUEST["origin"] != ""){
-                    $ssoParams = '/origin/'.$_REQUEST['origin'];
+                if(!empty($origin)){
+                    $ssoParams = '/origin/'.$origin;
                 }
                 header('Location:'. RELATIVE_PATH .
                     '/controller/mig_id_confirmation/userTK/'.
@@ -73,18 +75,18 @@ switch($_REQUEST["task"]){
 }
 
 /* Redirect To */
-if($_REQUEST["origin"] != "" and empty($_SESSION["userTK"])){
+if(!empty($origin) and empty($_SESSION["userTK"]) and $control != "home"){
     if($response["status"] === false){
         $state = "false";
-        $origin = base64_decode($_REQUEST["origin"]);
+        $originURL = base64_decode($origin);
 
         if ( $_REQUEST['error'] == 'access_denied' )
             $state = $_REQUEST['error'];
 
-        if(strpos($origin,"?")){
-            $redirectCommand = ($origin."&status=$state");
+        if(strpos($originURL,"?")){
+            $redirectCommand = ($originURL."&status=$state");
         }else{
-            $redirectCommand = ($origin."?status=$state");
+            $redirectCommand = ($originURL."?status=$state");
         }
 
         echo '<script language="javascript">';

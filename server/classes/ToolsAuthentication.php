@@ -68,7 +68,6 @@ class ToolsAuthentication {
 
                 $addResult = UserDAO::addUser($objUser);
                 $result["userDataStatus"] = false; /* need to complete user data */
-
             }
 
         } elseif ( $user = UserDAO::getAccountsUser($userID, $userPass) ) { /* check users from BIREME Acccounts */
@@ -79,10 +78,15 @@ class ToolsAuthentication {
 
             /* if the user exists in BIREME Accounts, but does not exist in SP database */
             if(!UserDAO::isUser($user->getID())){
+                $name = $user->getFirstName();
+
+                if ( !isset($name) || empty($name) )
+                    $name = $user->getID();
+
+                $user->setFirstName($name);
 
                 $addResult = UserDAO::addUser($user);
                 $result["userDataStatus"] = false; /* need to complete user data */
-
             }
 
         } elseif ( LDAPAuthenticator::authenticateUser($userID, $userPass) === true ) {
@@ -93,15 +97,13 @@ class ToolsAuthentication {
 
             /* if the user exists in ldap, but does not exist in SP database */
             if(!UserDAO::isUser($userID)){
-
                 $objUser = new User();
-                $objUser->setID($userID);                
+                $objUser->setID($userID);
                 $objUser->setEmail($userID);
                 $objUser->setFirstName($userID);
                 $objUser->setPassword($userPass);
 
                 $addResult = UserDAO::addUser($objUser);
-
                 $result["userDataStatus"] = false; /* need to complete user data */
             }
         }else{

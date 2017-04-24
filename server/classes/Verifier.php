@@ -62,23 +62,28 @@ class Verifier {
      * @return mixed
      */
     public function chkUserTK(){
+        $result = false;
         $retValue = false;
-        $arrUserParm = Token::unmakeUserTK($this->_data['userTK']);
-        $user = UserDAO::getUser($arrUserParm['userID']);
-        $source = $user->getSource() ? $user->getSource() : '';
+        $userParm = Token::unmakeUserTK($this->_data['userTK'], true);
 
-        if ( !empty($source) && 'bireme_accounts' == $source ) { /* check if user is from BIREME Acccounts */
-            $arrUserParm = Token::unmakeUserTK($this->_data['userTK'], true);
-            $user = UserDAO::getAccountsUser($arrUserParm['userID'], $arrUserParm['userPass']);
+        if ( 'bireme_accounts' == $userParm['userSource'] ) { /* check if user is from BIREME Acccounts */
+            if ( UserDAO::getAccountsUser($userParm['userID'], $userParm['userPass']) )
+                $result = true;
+        } else {
+            $userParm = Token::unmakeUserTK($this->_data['userTK']);
 
-            if($user){
-                $this->_data['userTK'] = $arrUserParm;
-                $retValue = true;
+            if ( in_array( $userParm['userSource'], array('facebook', 'google') ) ) { /* check if user is from Social Medias */
+                $result = true;
+            } elseif ( LDAPAuthenticator::authenticateUser($userParm['userID'],$userParm['userPass']) ) {
+                $result = true;
             }
-        } elseif ( LDAPAuthenticator::authenticateUser($arrUserParm['userID'],$arrUserParm['userPass']) || ( $arrUserParm['socialMedia'] && in_array( $arrUserParm['socialMedia'], array('facebook', 'google') ) ) ){
-            $this->_data['userTK'] = $arrUserParm;
+        }
+
+        if ( $result ) {
+            $this->_data['userTK'] = $userParm;
             $retValue = true;
         }
+
         return $retValue;
     }
 
@@ -258,6 +263,12 @@ class Verifier {
         if ( empty( $source ) || 'bireme_accounts' != $source ){
             if($objUser->getID()){
                 if(!filter_var($objUser->getID(), FILTER_VALIDATE_EMAIL)){
+                    return false;
+                }
+            }
+        } else {
+            if($objUser->getID()){            
+                if(!preg_match(REGEXP_USER_NAME, $objUser->getID())){
                     return false;
                 }
             }

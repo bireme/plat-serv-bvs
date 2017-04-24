@@ -29,10 +29,10 @@ switch($_REQUEST["action"]){
 
             if(strpos($origin,"?")){
                 //$redirectCommand = ($origin."&userID=".$_SESSION["userTK"]."&firstName=".$_SESSION["userFirstName"]."&lastName=".$_SESSION["userLastName"]."&email=".$_SESSION["userMail"]."&lang=".$lang);
-                $redirectCommand = ($origin."&userID=".$_SESSION["userTK"]."&lang=".$lang);
+                $redirectCommand = ($origin."&userID=".$_SESSION["userTK"]."&source=".$_SESSION["source"]."&lang=".$lang);
             }else{
                 //$redirectCommand = ($origin."?userID=".$_SESSION["userTK"]."&firstName=".$_SESSION["userFirstName"]."&lastName=".$_SESSION["userLastName"]."&email=".$_SESSION["userMail"]."&lang=".$lang);
-                $redirectCommand = ($origin."?userID=".$_SESSION["userTK"]."&lang=".$lang);
+                $redirectCommand = ($origin."?userID=".$_SESSION["userTK"]."&source=".$_SESSION["source"]."&lang=".$lang);
             }
 
             echo '<script language="javascript">';

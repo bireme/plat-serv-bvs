@@ -53,15 +53,11 @@ function loginUser($userID,$userPass,$socialMedia){
 
         if ($response["status"] === true){
             $objUser = UserDAO::getUser($response["userID"]);
-            $retValue['userFirstName']=$objUser->getFirstName();
-            $retValue['userLastName']=$objUser->getLastName();              
-            $retValue['userMail']=$objUser->getEmail();
+            $retValue['userFirstName'] = $objUser->getFirstName();
+            $retValue['userLastName'] = $objUser->getLastName();              
+            $retValue['userMail'] = $objUser->getEmail();
             $retValue['source'] = $response["source"];
-
-            if ( $socialMedia['social_media'] )
-                $retValue['userTK']=Token::makeUserTK($objUser->getID(),$dUserPass,$socialMedia['social_media']);
-            else
-                $retValue['userTK']=Token::makeUserTK($objUser->getID(),$dUserPass);
+            $retValue['userTK'] = Token::makeUserTK($objUser->getID(),$dUserPass,$response['source']);
         }else{
             $retValue = array(); /* redeclare the variable */
             $retValue = $response;
