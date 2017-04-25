@@ -11,10 +11,6 @@
       </div>
     </div>
 
-    <div>
-        <?php require_once(dirname(__FILE__)."/../cookies.tpl.php"); ?>
-    </div>
-
     <!-- jQuery -->
     <script src="<?=RELATIVE_PATH?>/vendors/jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap -->
