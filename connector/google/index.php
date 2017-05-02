@@ -48,13 +48,19 @@ if ($gClient->getAccessToken()) {
         //$response["status"] = true;
         //$response["values"] = $result;
         setcookie("userTK", $result["userTK"], 0, '/', COOKIE_DOMAIN_SCOPE);
+        $ud = UserData::sendCookie($result["userTK"]);
     }
 
     if ( isset($_REQUEST['state']) && !empty($_REQUEST['state']) ) {
         $state = json_decode(base64_decode($_REQUEST['state']), true);
         if (isset($state['origin']) && !empty($state['origin'])) {
             $origin = 'origin/'.$state['origin'];
-            $homeURL .= $origin;
+            $homeURL .= $origin.'/userdata/'.$ud;
+
+            echo '<script language="javascript">';
+            echo 'window.open("'.$homeURL.'","_parent")';
+            echo '</script>';
+            exit;
         }
     }
 

@@ -64,12 +64,18 @@ if (isset($accessToken)) {
             //$response["status"] = true;
             //$response["values"] = $result;
             setcookie("userTK", $result["userTK"], 0, '/', COOKIE_DOMAIN_SCOPE);
+            $ud = UserData::sendCookie($result["userTK"]);
         }
     }
 
     if ( isset($_REQUEST['origin']) && !empty($_REQUEST['origin']) ) {
         $origin = 'origin/'.$_REQUEST['origin'];
-        $homeURL .= $origin;
+        $homeURL .= $origin.'/userdata/'.$ud;
+
+        echo '<script language="javascript">';
+        echo 'window.open("'.$homeURL.'","_parent")';
+        echo '</script>';
+        exit;
     }
 
     // Now you can redirect to another page and use the

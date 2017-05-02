@@ -112,11 +112,8 @@ class Paginator {
  */
 class Token {
 
-    public static function makeUserTK($userID,$userPass,$socialMedia){
-        if ( $socialMedia )
-            return Crypt::encrypt($userID.'%+%'.$userPass.'%+%'.$socialMedia, CRYPT_PUBKEY);
-        else
-            return Crypt::encrypt($userID.'%+%'.$userPass, CRYPT_PUBKEY);
+    public static function makeUserTK($userID,$userPass,$userSource){
+        return Crypt::encrypt($userID.'%+%'.$userPass.'%+%'.$userSource, CRYPT_PUBKEY);
     }
 
     public static function unmakeUserTK($userTK, $force=null){
@@ -141,31 +138,38 @@ class Token {
 
 }
 
-/**
- * manage user cookies
- */
-class Cookie {
+class UserData {
 
     public static function sendCookie($userTK){
         $userData = '';
 
         if ( isset($userTK) && !empty($userTK) ) {
-            unset($userData);
-            $userData = array();
-            $userData['firstName'] = $_SESSION["userFirstName"];
-            $userData['lastName'] = $_SESSION["userLastName"];
-            $userData['email'] = $_SESSION["userMail"];
-            $userData['source'] = $_SESSION["source"];
+            $source = ( $_SESSION['source'] ) ? $_SESSION['source'] : '';
 
-            // Facebook data
-            if ( isset($_SESSION["fb_data"]) && !empty($_SESSION["fb_data"]) )
-                $userData['fb_data'] = $_SESSION["fb_data"];
+            if ( 'bireme_accounts' == $source )
+                $data = Token::unmakeUserTK($userTK, true);
+            else
+                $data = Token::unmakeUserTK($userTK);
 
-            // Google data
-            if ( isset($_SESSION["google_data"]) && !empty($_SESSION["google_data"]) )
-                $userData['google_data'] = $_SESSION["google_data"];
+            if ( $data ) {
+                unset($userData);
+                $userData = array();
+                $userData['userTK'] = $userTK;
+                $userData['firstName'] = $_SESSION["userFirstName"];
+                $userData['lastName'] = $_SESSION["userLastName"];
+                $userData['email'] = $_SESSION["userMail"];
+                $userData['source'] = $_SESSION["source"];
 
-            $userData = base64_encode(json_encode($userData));
+                // Facebook data
+                if ( isset($_SESSION["fb_data"]) && !empty($_SESSION["fb_data"]) )
+                    $userData['fb_data'] = $_SESSION["fb_data"];
+
+                // Google data
+                if ( isset($_SESSION["google_data"]) && !empty($_SESSION["google_data"]) )
+                    $userData['google_data'] = $_SESSION["google_data"];
+
+                $userData = base64_encode(json_encode($userData));
+            }
         }
 
         $src = BVS_COOKIE_DOMAIN.'/cookies.php?userData='.$userData;
@@ -176,6 +180,8 @@ class Cookie {
             element.setAttribute('src', "<?php echo $src; ?>");
         </script>
         <?php
+
+        return $userData;
     }
 
 }

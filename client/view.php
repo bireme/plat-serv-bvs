@@ -6,8 +6,6 @@ if (($_REQUEST["action"] == 'authentication' or $_REQUEST["action"] == 'requesta
     $_REQUEST["action"] = 'menu';
 }
 
-$lang = ( $_SESSION["lang"] ) ? $_SESSION["lang"] : DEFAULT_LANG;
-
 switch($_REQUEST["action"]){
     case "authentication":
         require_once(dirname(__FILE__)."/templates/".$_SESSION["skin"]."/authentication.tpl.php");
@@ -19,27 +17,22 @@ switch($_REQUEST["action"]){
         require_once(dirname(__FILE__)."/templates/".$_SESSION["skin"]."/new_pass.tpl.php");
     break;
     case "menu":
-        /*
-         * fixme: if add to handle SSO, needs to be rearranged in the bussines file and removed when Shibbolized
-         * reporter: Fabio Batalha (fabio.santos@bireme.org)
-         * date: 20091012
-         */
-        if($_REQUEST["origin"] != ""){
+        if( isset($_REQUEST['origin']) && !empty($_REQUEST['origin']) ){
             $origin = base64_decode($_REQUEST["origin"]);
 
             if(strpos($origin,"?")){
-                //$redirectCommand = ($origin."&userID=".$_SESSION["userTK"]."&firstName=".$_SESSION["userFirstName"]."&lastName=".$_SESSION["userLastName"]."&email=".$_SESSION["userMail"]."&lang=".$lang);
-                $redirectCommand = ($origin."&userID=".$_SESSION["userTK"]."&source=".$_SESSION["source"]."&lang=".$lang);
+                $redirectCommand = ($origin."&userData=".$_REQUEST["userdata"]."&userTK=".md5($_SESSION["userTK"]));
             }else{
-                //$redirectCommand = ($origin."?userID=".$_SESSION["userTK"]."&firstName=".$_SESSION["userFirstName"]."&lastName=".$_SESSION["userLastName"]."&email=".$_SESSION["userMail"]."&lang=".$lang);
-                $redirectCommand = ($origin."?userID=".$_SESSION["userTK"]."&source=".$_SESSION["source"]."&lang=".$lang);
+                $redirectCommand = ($origin."?userData=".$_REQUEST["userdata"]."&userTK=".md5($_SESSION["userTK"]));
             }
 
             echo '<script language="javascript">';
             echo 'window.open("'.$redirectCommand.'","_parent")';
             echo '</script>';
+            exit;
+        } else {
+            require_once(dirname(__FILE__)."/templates/".$_SESSION["skin"]."/menu.tpl.php");
         }
-        require_once(dirname(__FILE__)."/templates/".$_SESSION["skin"]."/menu.tpl.php");
     break;
     case "mydocuments":
         require_once(dirname(__FILE__)."/templates/".$_SESSION["skin"]."/mydocuments.tpl.php");
@@ -92,8 +85,23 @@ switch($_REQUEST["action"]){
         require_once(dirname(__FILE__)."/templates/".$_SESSION["skin"]."/orcidworks.tpl.php");
     break;
     case "logout":
-        header("Location:".RELATIVE_PATH."/controller/".MAIN_PAGE);
-        die();
+        if( isset($_REQUEST['origin']) && !empty($_REQUEST['origin']) ) {
+            $origin = base64_decode($_REQUEST["origin"]);
+
+            if(strpos($origin,"?")){
+                $redirectCommand = ($origin."&userData=".$_REQUEST["userdata"]."&userTK=".$_REQUEST["userTK"]."&logout=true");
+            }else{
+                $redirectCommand = ($origin."?userData=".$_REQUEST["userdata"]."&userTK=".$_REQUEST["userTK"]."&logout=true");
+            }
+
+            echo '<script language="javascript">';
+            echo 'window.open("'.$redirectCommand.'","_parent")';
+            echo '</script>';
+            exit;
+        } else {
+            header("Location:".RELATIVE_PATH."/controller/".MAIN_PAGE);
+            die();
+        }
         break;
     case "mig_id_confirmation":
         require_once(dirname(__FILE__)."/templates/".$_SESSION["skin"]."/mig_id_confirmation.tpl.php");

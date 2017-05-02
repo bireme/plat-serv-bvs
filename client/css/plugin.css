@@ -27,6 +27,13 @@
     margin-bottom: 5px;
 }
 
+.bootstrap-iso .link .help-block  {
+    color: red;
+    text-align: center;
+    display: block;
+    margin-bottom: 0;
+}
+
 .bootstrap-iso .box p {
     margin: 5px 0 0;
 }
@@ -59,6 +66,7 @@
 .bootstrap-iso .link {
     margin: 0;
     text-align: center;
+    line-height: 120%;
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 

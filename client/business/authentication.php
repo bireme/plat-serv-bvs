@@ -20,7 +20,6 @@ if ($_REQUEST["task"] === null){
 
 $response["status"] = false;
 $params["sort"] = $_REQUEST["sort"];
-$lang = ( $_SESSION["lang"] ) ? $_SESSION["lang"] : DEFAULT_LANG;
 $origin = ( $_REQUEST["origin"] ) ? $_REQUEST["origin"] : '';
 
 switch($_REQUEST["task"]){
@@ -36,7 +35,7 @@ switch($_REQUEST["task"]){
                 $response["status"] = true;
                 $response["values"] = $result;
                 setcookie("userTK", $result["userTK"], 0, '/', COOKIE_DOMAIN_SCOPE);
-                Cookie::sendCookie($result["userTK"]);
+                $userData = UserData::sendCookie($result["userTK"]);
 
                 // SSO LOGIN
                 if(ENABLE_SSO_LOGIN){
@@ -44,16 +43,15 @@ switch($_REQUEST["task"]){
                       $originURL = base64_decode($origin);
 
                       if(strpos($originURL,"?")){
-                          //$redirectCommand = ($originURL."&userID=".$result["userTK"]."&firstName=".$_SESSION["userFirstName"]."&lastName=".$_SESSION["userLastName"]."&email=".$_SESSION["userMail"]."&lang=".$lang);
-                          $redirectCommand = ($originURL."&userID=".$result["userTK"]."&source=".$result["source"]."&lang=".$lang);
+                          $redirectCommand = ($originURL."&userData=".$userData."&userTK=".md5($result["userTK"]));
                       }else{
-                          //$redirectCommand = ($originURL."?userID=".$result["userTK"]."&firstName=".$_SESSION["userFirstName"]."&lastName=".$_SESSION["userLastName"]."&email=".$_SESSION["userMail"]."&lang=".$lang);
-                          $redirectCommand = ($originURL."?userID=".$result["userTK"]."&source=".$result["source"]."&lang=".$lang);
+                          $redirectCommand = ($originURL."?userData=".$userData."&userTK=".md5($result["userTK"]));
                       }
 
                       echo '<script language="javascript">';
                       echo 'window.open("'.$redirectCommand.'","_parent")';
                       echo '</script>';
+                      exit;
                   }
                 }
             }else{
@@ -93,6 +91,7 @@ if(!empty($origin) and empty($_SESSION["userTK"]) and $control != "home"){
         echo '<script language="javascript">';
         echo 'window.open("'.$redirectCommand.'","_parent")';
         echo '</script>';
+        exit;
     }
 }
 
