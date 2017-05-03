@@ -91,6 +91,8 @@
     text-decoration: underline;
 }
 
+.header .bootstrap-iso .link,
+.top_sidebar .bootstrap-iso .link,
 .header .bootstrap-iso .icon,
 .top_sidebar .bootstrap-iso .icon {
     color: #000;
@@ -103,6 +105,12 @@
     width: 100px;
 }
 
+.header .bootstrap-iso .link:not(.logged),
+.top_sidebar .bootstrap-iso .link:not(.logged) {
+    width: 200px;
+}
+
+.top_sidebar .bootstrap-iso .link.logged,
 .top_sidebar .bootstrap-iso .icon.logged {
     display: inline-block;
 }
