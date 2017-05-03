@@ -27,6 +27,7 @@
     margin-bottom: 5px;
 }
 
+.bootstrap-iso .icon .help-block,
 .bootstrap-iso .link .help-block  {
     color: red;
     text-align: center;
@@ -63,6 +64,7 @@
     margin-bottom: 0;
 }
 
+.bootstrap-iso .icon,
 .bootstrap-iso .link {
     margin: 0;
     text-align: center;
@@ -70,6 +72,50 @@
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
+.bootstrap-iso .icon p,
 .bootstrap-iso .link p {
     margin: 0;
+}
+
+.bootstrap-iso .icon i {
+    font-size: 18px;
+    vertical-align: middle;
+    margin-bottom: 1px;
+}
+
+.bootstrap-iso .icon a {
+    text-decoration: none;
+}
+
+.bootstrap-iso .icon a span:hover {
+    text-decoration: underline;
+}
+
+.header .bootstrap-iso .icon,
+.top_sidebar .bootstrap-iso .icon {
+    color: #000;
+    padding: 5px;
+    margin: 0 10px 0 auto;
+}
+
+.header .bootstrap-iso .icon:not(.logged),
+.top_sidebar .bootstrap-iso .icon:not(.logged) {
+    width: 100px;
+}
+
+.top_sidebar .bootstrap-iso .icon.logged {
+    display: inline-block;
+}
+
+.header .servplat-login {
+    font-size: 13px;
+}
+
+.top_sidebar .servplat-login {
+    text-align: right;
+}
+
+.header .servplat-login .widget-title,
+.top_sidebar .servplat-login .widget-title {
+    display: none;
 }
