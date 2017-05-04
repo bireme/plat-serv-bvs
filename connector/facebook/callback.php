@@ -64,13 +64,13 @@ if (isset($accessToken)) {
             //$response["status"] = true;
             //$response["values"] = $result;
             setcookie("userTK", $result["userTK"], 0, '/', COOKIE_DOMAIN_SCOPE);
-            $ud = UserData::sendCookie($result["userTK"]);
+            UserData::sendCookie($result["userTK"]);
         }
     }
 
     if ( isset($_REQUEST['origin']) && !empty($_REQUEST['origin']) ) {
         $origin = 'origin/'.$_REQUEST['origin'];
-        $homeURL .= $origin.'/userdata/'.$ud;
+        $homeURL .= $origin;
 
         echo '<script language="javascript">';
         echo 'window.open("'.$homeURL.'","_parent")';
