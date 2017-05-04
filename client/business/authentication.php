@@ -35,18 +35,17 @@ switch($_REQUEST["task"]){
                 $response["status"] = true;
                 $response["values"] = $result;
                 setcookie("userTK", $result["userTK"], 0, '/', COOKIE_DOMAIN_SCOPE);
-                $userData = UserData::sendCookie($result["userTK"]);
+                UserData::sendCookie($result["userTK"]);
 
                 // SSO LOGIN
                 if(ENABLE_SSO_LOGIN){
                   if(!empty($origin)){
                       $originURL = base64_decode($origin);
 
-                      if(strpos($originURL,"?")){
-                          $redirectCommand = ($originURL."&userData=".$userData."&userTK=".md5($result["userTK"]));
-                      }else{
-                          $redirectCommand = ($originURL."?userData=".$userData."&userTK=".md5($result["userTK"]));
-                      }
+                      if(strpos($originURL,"?"))
+                          $redirectCommand = $originURL."&spauth=true";
+                      else
+                          $redirectCommand = $originURL."?spauth=true";
 
                       echo '<script language="javascript">';
                       echo 'window.open("'.$redirectCommand.'","_parent")';

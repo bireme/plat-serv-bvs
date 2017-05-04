@@ -140,7 +140,7 @@ class Token {
 
 class UserData {
 
-    public static function sendCookie($userTK){
+    public static function sendCookie($userTK,$return=false){
         $userData = '';
 
         if ( isset($userTK) && !empty($userTK) ) {
@@ -181,7 +181,7 @@ class UserData {
         </script>
         <?php
 
-        return $userData;
+        if ( $return ) return $userData;
     }
 
 }

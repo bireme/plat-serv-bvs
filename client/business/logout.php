@@ -16,5 +16,5 @@
 session_destroy();
 $_SESSION = array();
 setcookie('userTK','',time() -3600,'/',COOKIE_DOMAIN_SCOPE);
-$userData = UserData::sendCookie();
+UserData::sendCookie();
 ?>

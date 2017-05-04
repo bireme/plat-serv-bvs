@@ -20,11 +20,10 @@ switch($_REQUEST["action"]){
         if( isset($_REQUEST['origin']) && !empty($_REQUEST['origin']) ){
             $origin = base64_decode($_REQUEST["origin"]);
 
-            if(strpos($origin,"?")){
-                $redirectCommand = ($origin."&userData=".$_REQUEST["userdata"]."&userTK=".md5($_SESSION["userTK"]));
-            }else{
-                $redirectCommand = ($origin."?userData=".$_REQUEST["userdata"]."&userTK=".md5($_SESSION["userTK"]));
-            }
+            if(strpos($origin,"?"))
+                $redirectCommand = $origin."&spauth=true";
+            else
+                $redirectCommand = $origin."?spauth=true";
 
             echo '<script language="javascript">';
             echo 'window.open("'.$redirectCommand.'","_parent")';
@@ -88,11 +87,10 @@ switch($_REQUEST["action"]){
         if( isset($_REQUEST['origin']) && !empty($_REQUEST['origin']) ) {
             $origin = base64_decode($_REQUEST["origin"]);
 
-            if(strpos($origin,"?")){
-                $redirectCommand = ($origin."&userData=".$_REQUEST["userdata"]."&userTK=".$_REQUEST["userTK"]."&logout=true");
-            }else{
-                $redirectCommand = ($origin."?userData=".$_REQUEST["userdata"]."&userTK=".$_REQUEST["userTK"]."&logout=true");
-            }
+            if(strpos($origin,"?"))
+                $redirectCommand = $origin."&splogout=true";
+            else
+                $redirectCommand = $origin."?splogout=true";
 
             echo '<script language="javascript">';
             echo 'window.open("'.$redirectCommand.'","_parent")';
