@@ -1,15 +1,23 @@
 $(document).ready(
     function(){
+        $('button.portal').on('click', function(e){
+            var portal = "http://pesquisa.bvsalud.org/portal";
+            var query  = encodeURIComponent($(this).parent().siblings('.query').text());
+            var filter = encodeURIComponent($(this).parent().siblings('.filter').text());
+            var expr = ( filter != '*' && filter != '' ) ? '?q='+query+' AND '+filter : '?q='+query;
+
+            window.open(portal+expr, '_blank');
+        });
+
         $('button.search').popover({
             html : true,
             placement : 'bottom',
             title: labels[LANG]['VIEW_ON'],
             trigger: 'manual',
             content: function() {
-                var site   = $(this).val();
                 var query  = encodeURIComponent($(this).parent().siblings('.query').text());
                 var filter = encodeURIComponent($(this).parent().siblings('.filter').text());
-                var origin = "http://pesquisa.bvsalud.org/" + site;
+                var origin = $(this).val();
                 var portal = "http://pesquisa.bvsalud.org/portal";
                 var expr   = ( filter != '*' && filter != '' ) ? '?q=' + query + ' AND ' + filter : '?q=' + query;
                 var html   = '<a href="' + origin + expr + '" target="_blank">' + labels[LANG]['ORIGIN_SITE'] + '</a><br /><a href="' + portal + expr + '" target="_blank">' + labels[LANG]['VHL_PORTAL'] + '</a>';

@@ -21,6 +21,7 @@ if ($_REQUEST["task"] === null){
 $response["status"] = false;
 $params["sort"] = $_REQUEST["sort"];
 $origin = ( $_REQUEST["origin"] ) ? $_REQUEST["origin"] : '';
+$iahx = ( $_REQUEST['iahx'] ) ? $_REQUEST['iahx'] : base64_encode('portal');
 
 switch($_REQUEST["task"]){
     case "authenticate":
@@ -32,6 +33,7 @@ switch($_REQUEST["task"]){
                 $_SESSION["userLastName"] = $result["userLastName"];
                 $_SESSION["userMail"] = $result["userMail"];
                 $_SESSION["source"] = $result["source"];
+                $_SESSION["iahx"] = base64_decode($iahx);
                 $response["status"] = true;
                 $response["values"] = $result;
                 setcookie("userTK", $result["userTK"], 0, '/', COOKIE_DOMAIN_SCOPE);

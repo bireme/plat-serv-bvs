@@ -53,6 +53,8 @@ if (isset($accessToken)) {
         $result = Authentication::loginUser($userData['email'], $userData['id'], $userData);
 
         if (($result["status"] !== false) and ($result !== false)){
+            $iahx = ( $_REQUEST['iahx'] ) ? $_REQUEST['iahx'] : base64_encode('portal');
+
             // Logged in!
             $_SESSION['fb_access_token'] = (string) $accessToken;
             $_SESSION['fb_data'] = $userData; // Storing Facebook User Data in Session
@@ -61,6 +63,7 @@ if (isset($accessToken)) {
             $_SESSION["userLastName"] = $result["userLastName"];
             $_SESSION["userMail"] = $result["userMail"];
             $_SESSION["source"] = $result["source"];
+            $_SESSION["iahx"] = base64_decode($iahx);
             //$response["status"] = true;
             //$response["values"] = $result;
             setcookie("userTK", $result["userTK"], 0, '/', COOKIE_DOMAIN_SCOPE);

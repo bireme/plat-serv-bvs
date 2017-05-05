@@ -38,13 +38,25 @@ if ($gClient->getAccessToken()) {
 	$userProfile['social_media'] = 'google';
 
 	$result = Authentication::loginUser($userProfile['email'],$userProfile['id'], $userProfile);
+
     if (($result["status"] !== false) and ($result !== false)){
+        $iahx = base64_encode('portal');
+
+        if ( isset($_REQUEST['state']) && !empty($_REQUEST['state']) ) {
+            $state = json_decode(base64_decode($_REQUEST['state']), true);
+
+            if (isset($state['iahx']) && !empty($state['iahx']))
+                $iahx = $state['iahx'];
+        }
+
+        // Logged in!
     	$_SESSION['google_data'] = $userProfile; // Storing Google User Data in Session
         $_SESSION["userTK"] = $result["userTK"];
         $_SESSION["userFirstName"] = $result["userFirstName"];
         $_SESSION["userLastName"] = $result["userLastName"];
         $_SESSION["userMail"] = $result["userMail"];
         $_SESSION["source"] = $result["source"];
+        $_SESSION["iahx"] = base64_decode($iahx);
         //$response["status"] = true;
         //$response["values"] = $result;
         setcookie("userTK", $result["userTK"], 0, '/', COOKIE_DOMAIN_SCOPE);
@@ -53,6 +65,7 @@ if ($gClient->getAccessToken()) {
 
     if ( isset($_REQUEST['state']) && !empty($_REQUEST['state']) ) {
         $state = json_decode(base64_decode($_REQUEST['state']), true);
+
         if (isset($state['origin']) && !empty($state['origin'])) {
             $origin = 'origin/'.$state['origin'];
             $homeURL .= $origin;
@@ -69,9 +82,8 @@ if ($gClient->getAccessToken()) {
 } else {
     $state = '';
 
-    if ( isset($_REQUEST['origin']) && !empty($_REQUEST['origin']) ) {
-        $state = base64_encode('{ "origin" : "'.$_REQUEST['origin'].'" }');
-    }
+    if ( array_key_exists('origin', $_REQUEST) || array_key_exists('iahx', $_REQUEST) )
+        $state = base64_encode(json_encode($_REQUEST));
 
     $authURL = $gClient->createAuthUrl();
     $authURL .= '&state='.$state;

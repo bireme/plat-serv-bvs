@@ -2,8 +2,8 @@
 
 include_once("config.php");
 
-if ( isset($_REQUEST['origin']) && !empty($_REQUEST['origin']) )
-    $redirectURL .= '?origin='.$_REQUEST['origin'];
+if ( array_key_exists('origin', $_REQUEST) || array_key_exists('iahx', $_REQUEST) )
+    $redirectURL .= "?".http_build_query($_REQUEST);
 
 $loginURL = $helper->getLoginUrl($redirectURL, $permissions);
 

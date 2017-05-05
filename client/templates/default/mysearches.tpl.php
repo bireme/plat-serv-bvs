@@ -35,7 +35,11 @@
                               <td class="query"><?php echo $register['query']; ?></td>
                               <td class="filter"><?php echo $register['filter']; ?></td>
                               <td>
-                                <button id="v<?php echo $count; ?>" class="btn btn-primary btn-xs search" value="<?php echo $register['site']; ?>"><i class="fa fa-search search"></i> <?=$trans->getTrans($_REQUEST["action"],'VIEW')?></button>
+                                <?php if ( 'portal' == $_SESSION['iahx'] ) : ?>
+                                <button id="v<?php echo $count; ?>" class="btn btn-primary btn-xs portal" value="portal"><i class="fa fa-search"></i> <?=$trans->getTrans($_REQUEST["action"],'VIEW')?></button>
+                                <?php else : ?>
+                                <button id="v<?php echo $count; ?>" class="btn btn-primary btn-xs search" value="<?php echo $_SESSION['iahx']; ?>"><i class="fa fa-search search"></i> <?=$trans->getTrans($_REQUEST["action"],'VIEW')?></button>
+                                <?php endif; ?>
                                 <button id="c<?php echo $count; ?>" class="btn btn-info btn-xs combine"><i class="fa fa-compress combine"></i> <?=$trans->getTrans($_REQUEST["action"],'COMBINE')?></button>
                               </td>
                             </tr>

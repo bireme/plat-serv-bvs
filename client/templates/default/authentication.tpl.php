@@ -40,6 +40,7 @@
                         <input type="hidden" name="control" value="business" />
                         <input type="hidden" name="action" value="authentication" />
                         <input type="hidden" name="lang" value="<?php echo $lang; ?>" />
+                        <input type="hidden" name="iahx" value="<?php echo $iahx; ?>" />
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-user"></i></span>
                             <input type="text" class="form-control" name="userID" maxlenght="50" placeholder="<?=$trans->getTrans($_REQUEST['action'],'LOGIN')?>">
