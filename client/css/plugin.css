@@ -116,10 +116,12 @@
 
 .header .servplat-login {
     font-size: 13px;
+    margin-top: -15px;
 }
 
 .top_sidebar .servplat-login {
     text-align: right;
+    margin-top: 5px;
 }
 
 .header .servplat-login .widget-title,
