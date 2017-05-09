@@ -45,10 +45,18 @@
                             </div>
                         </form>
                       <?}else{?>
-                        <script language="javascript">
-                            opener.location.reload(true);
-                            window.close();
-                        </script>
+                        <?php if ( 'add' == $_REQUEST['task'] ) : ?>
+                          <?php $href = RELATIVE_PATH.'/controller/myprofiledocuments/control/business/profile/'.$response['values']; ?>
+                          <script language="javascript">
+                              window.opener.location = "<?php echo $href ?>";
+                              window.close();
+                          </script>
+                        <?php else : ?>
+                          <script language="javascript">
+                              window.opener.location.reload(true);
+                              window.close();
+                          </script>
+                        <?php endif; ?>
                         <div class="alert"><?=$trans->getTrans($_REQUEST["action"],'ADD_PROFILE_SUCESS')?></div>
                       <?}?>
                     </div>

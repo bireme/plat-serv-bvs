@@ -45,6 +45,9 @@ class ProfileDAO {
                 }
             }
             
+            $total = ProfileDAO::getTotalItens($userID);
+            if ( $total == 0 ) $objProfile->setProfileDefault(1);
+
             $strsql = "INSERT INTO profiles(sysUID,
                                             profileText,
                                             profileName,
@@ -70,7 +73,7 @@ class ProfileDAO {
         if ($result !== null){
             $addProfile = SimilarDocs::addProfile( $userID, $objProfile->getProfileName(), $objProfile->getProfileText() );
             $trace = Tracking::addTrace( $userID, 'profile', 'add', $objProfile->getProfileName() );
-            $retValue = true;
+            $retValue = $result;
         }
 
         return $retValue;

@@ -1,6 +1,8 @@
 <?
-    if ( in_array( $_REQUEST["task"], array( 'rate', 'removedoc' ) ) )
+    if ( 'rate' == $_REQUEST["task"] )
         header("Location: " . $_SERVER['HTTP_REFERER']);
+    if ( 'delete' == $_REQUEST["task"] )
+        header("Location: ".RELATIVE_PATH.'/controller/myprofiledocuments/control/business');
 ?>
 
         <?require_once(dirname(__FILE__)."/header.tpl.php");?>
