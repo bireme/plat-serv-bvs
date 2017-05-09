@@ -1,9 +1,9 @@
 <?require_once(dirname(__FILE__)."/header.tpl.php");?>
 
-                <?if ($response["status"] == null or $response["status"] == false){?>
                 <div class="modal" id="squareSpaceModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
                   <div class="modal-dialog">
                     <div class="modal-content">
+                      <?if ($response["status"] == null or $response["status"] == false){?>
                         <form name="form" method="post" action="<?=RELATIVE_PATH?>/controller/directories">
                           <input type="hidden" name="control" value="business"/>
                           <input type="hidden" name="task" value="<?=$_REQUEST["task"]?>"/>
@@ -43,16 +43,16 @@
                                 </div>
                             </div>
                         </form>
+                      <?}else{?>
+                        <script language="javascript">
+                            window.opener.location.reload(true);
+                            window.close();
+                        </script>
+                        <div class="alert"><?=$trans->getTrans($_REQUEST["action"],'MOVE_DOC_SUCESS')?></div>
+                      <?}?>
                     </div>
                   </div>
                 </div>
-                <?}else{?>
-                    <script language="javascript">
-                        opener.location.reload(true);
-                        window.close();
-                    </script>
-                    <div class="alert"><?=$trans->getTrans($_REQUEST["action"],'MOVE_DOC_SUCESS')?></div>
-                <?}?>
             </div>
         </div>
     </body>

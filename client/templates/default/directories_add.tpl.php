@@ -1,9 +1,9 @@
 <?require_once(dirname(__FILE__)."/header.tpl.php");?>
 
-                <?if ($response["status"] == null or $response["status"] == false){?>
                 <div class="modal" id="squareSpaceModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
                   <div class="modal-dialog">
                     <div class="modal-content">
+                      <?if ($response["status"] == null or $response["status"] == false){?>
                         <form name="addDir" method="post" action="<?=RELATIVE_PATH?>/controller/directories">
                           <input type="hidden" name="control" value="business"/>
                           <input type="hidden" name="task" value="<?=$_REQUEST["task"]?>"/>
@@ -37,16 +37,24 @@
                                 </div>
                             </div>
                         </form>
+                      <?}else{?>
+                        <?php if ( 'add' == $_REQUEST['task'] ) : ?>
+                            <?php $href = RELATIVE_PATH.'/controller/mydocuments/control/business/directory/'.$response['values'][0]->_data['dirID']; ?>
+                            <script language="javascript">
+                                window.opener.location = "<?php echo $href; ?>";
+                                window.close();
+                            </script>
+                        <?php else : ?>
+                            <script language="javascript">
+                                window.opener.location.reload(true);
+                                window.close();
+                            </script>
+                        <?php endif; ?>
+                        <div class="alert"><?=$trans->getTrans($_REQUEST["action"],'ADD_DIR_SUCESS')?></div>
+                      <?}?>
                     </div>
                   </div>
                 </div>
-                <?}else{?>
-                    <script language="javascript">
-                        opener.location.reload(true);
-                        window.close();
-                    </script>
-                    <div class="alert"><?=$trans->getTrans($_REQUEST["action"],'ADD_DIR_SUCESS')?></div>
-                <?}?>
             </div>
         </div>
     </body>
