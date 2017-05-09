@@ -1,6 +1,8 @@
-<? require_once(dirname(__FILE__)."/header.tpl.php"); ?>
+<?php require_once(dirname(__FILE__)."/header.tpl.php"); ?>
 
-<? $b64HttpHost = base64_encode($_SERVER["HTTP_HOST"].$_SERVER["SCRIPT_NAME"].'/authentication'); ?>
+<?php $b64HttpHost = base64_encode($_SERVER["HTTP_HOST"].$_SERVER["SCRIPT_NAME"].'/authentication'); ?>
+
+<?php $build_query = '?origin='.$origin.'&iahx='.$iahx; ?>
 
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 
@@ -9,7 +11,7 @@
             <h3 class="omb_authTitle"><?=$trans->getTrans($_REQUEST["action"],'TITLE')?></h3>
             <div class="row omb_row-sm-offset-3 omb_socialButtons">
                 <div class="col-xs-4 col-sm-3">
-                    <a href="/connector/facebook" class="btn btn-lg btn-block omb_btn-facebook">
+                    <a href="/connector/facebook/<?php echo $build_query; ?>" class="btn btn-lg btn-block omb_btn-facebook">
                         <i class="fa fa-facebook visible-xs"></i>
                         <span class="hidden-xs">Facebook</span>
                     </a>
@@ -21,7 +23,7 @@
                     </a>
                 </div-->
                 <div class="col-xs-4 col-sm-3">
-                    <a href="/connector/google" class="btn btn-lg btn-block omb_btn-google">
+                    <a href="/connector/google/<?php echo $build_query; ?>" class="btn btn-lg btn-block omb_btn-google">
                         <i class="fa fa-google visible-xs"></i>
                         <span class="hidden-xs">Google</span>
                     </a>
