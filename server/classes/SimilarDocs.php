@@ -155,9 +155,20 @@ class SimilarDocs {
         $result = false;
 
         $similar = str_replace("#PSID#",$userID,SIMDOCS_ADD_PROFILE);
-        $similar = str_replace("#PROFILE#",$profile,$similar);
+        $similar = str_replace("#PROFILE#",urlencode($profile),$similar);
+
+        $opts = array(
+            'http'=>array(
+                'method'=>"GET",
+                'header'=> implode("\r\n", array(
+                           'Content-type: text/html,application/xhtml+xml,application/xml'
+                        ))
+            )
+        );
+
+        $context = stream_context_create($opts);
         
-        $xml = utf8_encode(file_get_contents($similar.urlencode($string)));
+        $xml = utf8_encode(file_get_contents($similar.urlencode($string),false,$context));
         $xml = simplexml_load_string($xml,'SimpleXMLElement',LIBXML_NOCDATA);
         $xml = (string)$xml;
         
@@ -181,9 +192,20 @@ class SimilarDocs {
         $result =  false;
 
         $similar = str_replace("#PSID#",$userID,SIMDOCS_DELETE_PROFILE);
-        $similar = str_replace("#PROFILE#",$profile,$similar);
+        $similar = str_replace("#PROFILE#",urlencode($profile),$similar);
+
+        $opts = array(
+            'http'=>array(
+                'method'=>"GET",
+                'header'=> implode("\r\n", array(
+                           'Content-type: text/html,application/xhtml+xml,application/xml'
+                        ))
+            )
+        );
+
+        $context = stream_context_create($opts);
         
-        $xml = utf8_encode(file_get_contents($similar));
+        $xml = utf8_encode(file_get_contents($similar,false,$context));
         $xml = simplexml_load_string($xml,'SimpleXMLElement',LIBXML_NOCDATA);
         $xml = (string)$xml;
 
@@ -203,8 +225,19 @@ class SimilarDocs {
      * @return boolean
      */
     static function getProfiles($userID){
-        $profiles = str_replace("#PSID#",$userID,SIMDOCS_GET_PROFILES);        
-        $content = utf8_encode(file_get_contents($profiles));
+        $profiles = str_replace("#PSID#",$userID,SIMDOCS_GET_PROFILES);
+
+        $opts = array(
+            'http'=>array(
+                'method'=>"GET",
+                'header'=> implode("\r\n", array(
+                           'Content-type: text/html,application/xhtml+xml,application/xml'
+                        ))
+            )
+        );
+
+        $context = stream_context_create($opts);        
+        $content = utf8_encode(file_get_contents($profiles,false,$context));
 
         if($content){
             $result = self::xmlToArray($content);
@@ -237,9 +270,19 @@ class SimilarDocs {
         $from = $count * $params["page"];
 
         $similar = str_replace("#PSID#",$userID,SIMDOCS_SIMILARS_STRING);
-        $similar = str_replace("#PROFILE#",$profile,$similar);
-        
-        $content = utf8_encode(file_get_contents($similar));
+        $similar = str_replace("#PROFILE#",urlencode($profile),$similar);
+
+        $opts = array(
+            'http'=>array(
+                'method'=>"GET",
+                'header'=> implode("\r\n", array(
+                           'Content-type: text/html,application/xhtml+xml,application/xml'
+                        ))
+            )
+        );
+
+        $context = stream_context_create($opts);
+        $content = utf8_encode(file_get_contents($similar,false,$context));
 
         if($content){
             $result = self::xmlToArray($content);
