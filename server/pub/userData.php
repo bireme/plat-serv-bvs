@@ -67,11 +67,11 @@ switch($acao){
         if(Verifier::chkObjUser($usr)){
             $migrationResult = ToolsRegister::authenticateRegisteringUser($usr);
         }
+        
         if ($migrationResult["status"] === true){          
             $response["msg"] = ADD_SUCCESS;
             $response["status"] = true;
             $orcidData = UserDAO::fillOrcidData($usr->getID(), $usr->getOrcid());
-
         }elseif (($migrationResult["status"] === false) &&
                 ($migrationResult["error"] === "userexists")){
             $response["msg"] = USER_EXISTS;

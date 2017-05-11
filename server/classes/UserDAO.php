@@ -436,9 +436,10 @@ class UserDAO {
     public static function fillOrcidData($userID, $orcid, $assoc=false){
         global $_conf;
         $retValue = false;
+        $content = '';
 
         if ( $userID && $orcid ) {
-            $requestURI = ORCID_API . $orcid . '/orcid-profile';
+            $requestURI = ORCID_API . urlencode($orcid) . '/orcid-profile';
             $opts = array(
                 'http'=>array(
                     'method'=>"GET",
@@ -448,24 +449,22 @@ class UserDAO {
             $context = stream_context_create($opts);
             $content = file_get_contents($requestURI,false,$context);
             $content = CharTools::mysql_escape_mimic($content);
-
-            if ( $content ) {
-                $strsql = "UPDATE users
-                            SET orcidData ='".$content."'
-                            WHERE userID ='".$userID."'";
-
-                try{
-                    $_db = new DBClass();
-                    $res = $_db->databaseQuery($strsql);
-                }catch(DBClassException $e){
-                    $logger = &Log::singleton('file', LOG_FILE, __CLASS__, $_conf);
-                    $logger->log($e->getMessage(),PEAR_LOG_EMERG);
-                }
-
-                if ($res !== false )
-                    $retValue = $assoc ? json_decode($content, true) : true;
-            }
         }
+
+        $strsql = "UPDATE users
+                    SET orcidData ='".$content."'
+                    WHERE userID ='".$userID."'";
+
+        try{
+            $_db = new DBClass();
+            $res = $_db->databaseQuery($strsql);
+        }catch(DBClassException $e){
+            $logger = &Log::singleton('file', LOG_FILE, __CLASS__, $_conf);
+            $logger->log($e->getMessage(),PEAR_LOG_EMERG);
+        }
+
+        if ($res !== false )
+            $retValue = $assoc ? json_decode($content, true) : true;
 
         return $retValue;
     }
