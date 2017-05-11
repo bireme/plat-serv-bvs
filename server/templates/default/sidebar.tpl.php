@@ -1,4 +1,8 @@
-<? $b64HttpHost = base64_encode($_SERVER["HTTP_HOST"].$_SERVER["SCRIPT_NAME"].'/authentication'); ?>
+<?php
+    unset($_REQUEST['lang']);
+    $path = rtrim($_SERVER['PHP_SELF'], '/').'/?'.http_build_query($_REQUEST);
+    $b64HttpHost = base64_encode($_SERVER["HTTP_HOST"].$_SERVER["SCRIPT_NAME"].'/authentication');
+?>
 
         <div class="col-md-3 left_col">
           <div class="left_col scroll-view">
@@ -35,10 +39,6 @@
                       <li><a href="<?=RELATIVE_PATH?>/controller/mysearches/control/business"><?=MY_SEARCHES?></a></li>
                       <li><a href="<?=RELATIVE_PATH?>/controller/suggesteddocs/control/business"><?=SUGGESTED_DOCS?></a></li>
                       <li><a href="<?=RELATIVE_PATH?>/controller/orcidworks/control/business"><?=ORCID_WORKS?></a></li>
-                      <? if ( $_SESSION["source"] && $_SESSION["source"] == 'ldap' ) { ?>
-                        <li><a href="<?=RELATIVE_PATH?>/controller/mynews/control/business"><?=MY_NEWS?></a></li>
-                        <li><a href="<?=RELATIVE_PATH?>/controller/myalerts/control/business"><?=MY_ALERTS?></a></li>
-                      <? } ?>
                     </ul>
                   </li>
                 </ul>
@@ -72,6 +72,21 @@
                   </div>
                 </div>
               </form>
+
+              <ul class="nav navbar-nav navbar-right profile_menu language_switcher">
+                <li>
+                  <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false" style="padding-bottom: 21px;">
+                    <i class="fa fa-flag"></i> <?php echo $languages[$_SESSION['lang']]; ?>
+                    <span class=" fa fa-angle-down"></span>
+                  </a>
+                  <ul class="dropdown-menu dropdown-usermenu pull-right">
+                    <?php foreach ($languages as $key => $value) : ?>
+                      <?php if ( $key == $_SESSION['lang'] ) continue; ?>
+                      <li><a href="<?php echo $path.'&lang='.$key; ?>"><?php echo $value; ?></a></li>
+                    <?php endforeach; ?>
+                  </ul>
+                </li>
+              </ul>
 
               <ul class="nav navbar-nav navbar-right profile_menu">
                 <li>

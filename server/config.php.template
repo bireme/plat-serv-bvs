@@ -37,7 +37,6 @@ define("SYS_CHARSET","UTF-8"); /* internal sys charset */
 define("DOCTYPE",'<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">');
 define("VERSION","4.0-rc7");
-define("DEFAULT_LANG","pt");
 define("USE_SERVER_PATH",false);
 define("RELATIVE_PATH",""); /*if the app isnt installed at the root directory */
 
@@ -51,7 +50,8 @@ define("VHL_SEARCH_PORTAL_DOMAIN","http://pesquisa.bvsalud.org");
 define("MONGODB_SERVER","mongodb://ts10vm.bireme.br:27017");
 
 /* Regular Expressions */
-define("REGEXP_LANGUAGE","^(pt)|(es)|(en)$");
+define("REGEXP_LANGUAGE","/^(pt)|(es)|(en)$/");
+define("REGEXP_SKIN","/^(default)|(scielo)|(regional)$/");
 define("REGEXP_EMAIL","/^[a-z_][a-z0-9_\.]+@[a-z0-9]+(\.[a-z0-9_]+)+$/i");
 define("REGEXP_INTEGER","/^[0-9]+$/");
 define("REGEXP_DIRNAME",'/[À-ÖØ-öø-ÿ\w\-]+/');
@@ -104,4 +104,11 @@ define("EMAIL_NEWPASSWORD_TEMPLATE",APP_BASEDIR.'/templates/mail/sendNewEMail.tp
 /* WWW Public files */
 define("ERROR_REPORTING",0); // 0 || E_ALL
 
+/* language configuration */
+define("DEFAULT_LANG","pt");
+$languages = array(
+    'pt' => 'Português',
+    'es' => 'Español',
+    'en' => 'English'
+);
 ?>

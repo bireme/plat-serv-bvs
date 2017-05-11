@@ -18,7 +18,6 @@ define("CHARSET","utf-8");
 define("DOCTYPE",'<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">');
 define("VERSION","4.0-rc7");
-define("DEFAULT_LANG","pt");
 define("ERROR_REPORTING",0);
 define("USE_SERVER_PATH",false);
 
@@ -48,7 +47,7 @@ define("BVS_COOKIE_DOMAIN","http://brasil.bvs.br");
 define("MONGODB_SERVER","mongodb://ts10vm.bireme.br:27017");
 
 /* Regular Expressions */
-define("REGEXP_LANGUAGE","/^(pt)|(es)|(en)|(fr)|(ja)|(ar)$/");
+define("REGEXP_LANGUAGE","/^(pt)|(es)|(en)$/");
 define("REGEXP_SKIN","/^(default)|(scielo)|(regional)$/");
 define("REGEXP_EMAIL","/^[a-z_][a-z0-9_\.]+@[a-z0-9]+(\.[a-z0-9_]+)+$/i");
 
@@ -61,4 +60,12 @@ define('DEFAULT_TRIGRAMAS_MODE','LILACS.orgiahx'); /* LILACS.orgiahx|SciELO.orgi
 /* log configuration */
 $_conf = array('mode' => 0600, 'timeFormat' => '%X %x');
 define('LOG_FILE',dirname(__FILE__).'/out.log');
+
+/* language configuration */
+define("DEFAULT_LANG","pt");
+$languages = array(
+    'pt' => 'Português',
+    'es' => 'Español',
+    'en' => 'English'
+);
 ?>

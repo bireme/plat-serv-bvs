@@ -217,6 +217,15 @@ a.operator {
     text-overflow: ellipsis;
 }
 
+.language_switcher i {
+    margin-right: 5px;
+}
+
+.language_switcher ul {
+    width: 100% !important;
+    min-width: 125px;
+}
+
 #loading {
     background:url(../../images/default/loading.gif) no-repeat center center;
     height: 60px;
