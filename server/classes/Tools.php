@@ -149,7 +149,7 @@ class Token {
      * @return string
      */
     public static function makeUserTK($userID,$userPass,$userSource){
-        return Crypt::encrypt($userID.'%+%'.$userPass.'%+%'.$userSource, CRYPT_PUBKEY);
+        return Crypt::encrypt($userID.CRYPT_SEPARATOR.$userPass.CRYPT_SEPARATOR.$userSource, CRYPT_PUBKEY);
     }
 
     /**
@@ -160,7 +160,7 @@ class Token {
      */
     public static function unmakeUserTK($userTK, $force=null){
         $retValue = false;
-        $tmp1 = explode('%+%',Crypt::decrypt($userTK, CRYPT_PUBKEY));
+        $tmp1 = explode(CRYPT_SEPARATOR,Crypt::decrypt($userTK, CRYPT_PUBKEY));
         $valid_email = filter_var($tmp1[0], FILTER_VALIDATE_EMAIL);
 
         if($force === true){

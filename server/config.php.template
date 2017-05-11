@@ -72,6 +72,7 @@ define("XSD_XMLTRIGRAMAS",APP_BASEDIR."/xsd/xmlTrigramas.xsd");
 /* MCRYPT configuration */
 define("CRYPT_KEY","bireme"); /* private */
 define('CRYPT_PUBKEY','biremepublicckey'); /* shared */
+define('CRYPT_SEPARATOR','$');
 
 /* ORCID API */
 define("ORCID_API","https://pub.orcid.org/v1.2/");

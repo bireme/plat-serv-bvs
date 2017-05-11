@@ -53,6 +53,7 @@ define("REGEXP_EMAIL","/^[a-z_][a-z0-9_\.]+@[a-z0-9]+(\.[a-z0-9_]+)+$/i");
 
 /* MCRYPT */
 define('CRYPT_PUBKEY','biremepublicckey'); /* public */
+define('CRYPT_SEPARATOR','$');
 
 /* TRIGRAMAS */
 define('DEFAULT_TRIGRAMAS_MODE','LILACS.orgiahx'); /* LILACS.orgiahx|SciELO.orgiahx */
