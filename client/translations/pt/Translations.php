@@ -263,7 +263,7 @@ class Translations {
         self::$trans["myprofiledocuments"]["HOME"] = 'Home';
         self::$trans["myprofiledocuments"]["PROFILE_NAME"] = 'Nome do perfil';
         self::$trans["myprofiledocuments"]["PROFILE_TEXT"] = 'Palavras-chave';
-        self::$trans["myprofiledocuments"]["PROFILE_TEXT_HELP"] = 'As palavras devem ser inseridas separadas por espaços.';
+        self::$trans["myprofiledocuments"]["PROFILE_TEXT_HELP"] = 'Os termos devem ser separados por vírgula.';
         self::$trans["myprofiledocuments"]["PROFILE_DEFAULT"] = 'Definir como padrão';
         self::$trans["myprofiledocuments"]["SAVE"] = 'salvar';
         self::$trans["myprofiledocuments"]["CANCEL"] = 'cancelar';
