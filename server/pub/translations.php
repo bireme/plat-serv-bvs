@@ -88,14 +88,15 @@ Se você possui usuário cadastrado no site ScIELO, na próxima vez que acessar 
     define('FIELD_RESEARCHERID','ResearcherID');
     define('FIELD_LATTES','Lattes (URL)');
 
-    define('HOMEPAGE','Home');
-    define("WELCOME",'Bem vindo');
+    define('DASHBOARD','Meus Conteúdos');
+    define('HOMEPAGE','Visão Geral');
+    define("WELCOME",'Bem-vindo');
     define("USERS_SERVICES",'Serviços Personalizados');
     define("OLA",'Olá');
     define("LOGOFF",'Sair');
-    define("MY_PROFILE_DOCUMENTS",'Meus Perfis de Interesse');
+    define("MY_PROFILE_DOCUMENTS",'Temas de Interesse');
     define("MY_SHELF",'Documentos Favoritos');
-    define("MY_LINKS",'Meus Links');
+    define("MY_LINKS",'Links Favoritos');
     define("MY_NEWS",'Minhas Notícias');
     define("FORGOT_MY_PASSWORD",'esqueci minha senha');
     define("CHANGE_PASSWORD",'Alterar Senha');
@@ -207,14 +208,15 @@ Si usted tiene usuário cadastrado en el sitio ScIELO, la próxima vez que acced
     define('FIELD_RESEARCHERID','ResearcherID');
     define('FIELD_LATTES','Lattes (URL)');
 
-    define("HOMEPAGE",'Home');
-    define("WELCOME",'Bem vindo');
+    define('DASHBOARD','Meus Conteúdos');
+    define('HOMEPAGE','Visão Geral');
+    define("WELCOME",'Bem-vindo');
     define("USERS_SERVICES",'Serviços Personalizados');
     define("OLA",'Olá');
     define("LOGOFF",'Sair');
-    define("MY_PROFILE_DOCUMENTS",'Meus Perfis de Interesse');
+    define("MY_PROFILE_DOCUMENTS",'Temas de Interesse');
     define("MY_SHELF",'Documentos Favoritos');
-    define("MY_LINKS",'Meus Links');
+    define("MY_LINKS",'Links Favoritos');
     define("MY_NEWS",'Minhas Notícias');
     define("FORGOT_MY_PASSWORD",'esqueci minha senha');
     define("CHANGE_PASSWORD",'Alterar Senha');
@@ -326,14 +328,15 @@ If you have a registered user in ScIELO website, the next time you access SciELO
     define('FIELD_RESEARCHERID','ResearcherID');
     define('FIELD_LATTES','Lattes (URL)');
 
-    define("HOMEPAGE",'Home');
-    define("WELCOME",'Bem vindo');
+    define('DASHBOARD','Meus Conteúdos');
+    define('HOMEPAGE','Visão Geral');
+    define("WELCOME",'Bem-vindo');
     define("USERS_SERVICES",'Serviços Personalizados');
     define("OLA",'Olá');
     define("LOGOFF",'Sair');
-    define("MY_PROFILE_DOCUMENTS",'Meus Perfis de Interesse');
+    define("MY_PROFILE_DOCUMENTS",'Temas de Interesse');
     define("MY_SHELF",'Documentos Favoritos');
-    define("MY_LINKS",'Meus Links');
+    define("MY_LINKS",'Links Favoritos');
     define("MY_NEWS",'Minhas Notícias');
     define("FORGOT_MY_PASSWORD",'esqueci minha senha');
     define("CHANGE_PASSWORD",'Alterar Senha');

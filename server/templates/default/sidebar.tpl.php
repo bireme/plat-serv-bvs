@@ -32,14 +32,14 @@
             <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
               <div class="menu_section">
                 <ul class="nav side-menu">
-                  <li class="active"><a><i class="fa fa-dashboard"></i> Dashboard <span class="fa fa-chevron-down"></span></a>
+                  <li class="active"><a><i class="fa fa-dashboard"></i> <?=DASHBOARD?> <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu" style="display: block;">
                       <li><a href="<?=RELATIVE_PATH?>/controller/authentication"><?=HOMEPAGE?></a></li>
-                      <li><a href="<?=RELATIVE_PATH?>/controller/myprofiledocuments/control/business"><?=MY_PROFILE_DOCUMENTS?></a></li>
-                      <li><a href="<?=RELATIVE_PATH?>/controller/mylinks/control/business"><?=MY_LINKS?></a></li>
                       <li><a href="<?=RELATIVE_PATH?>/controller/mydocuments/control/business"><?=MY_SHELF?></a></li>
-                      <li><a href="<?=RELATIVE_PATH?>/controller/mysearches/control/business"><?=MY_SEARCHES?></a></li>
+                      <li><a href="<?=RELATIVE_PATH?>/controller/myprofiledocuments/control/business"><?=MY_PROFILE_DOCUMENTS?></a></li>
                       <li><a href="<?=RELATIVE_PATH?>/controller/suggesteddocs/control/business"><?=SUGGESTED_DOCS?></a></li>
+                      <li><a href="<?=RELATIVE_PATH?>/controller/mysearches/control/business"><?=MY_SEARCHES?></a></li>
+                      <li><a href="<?=RELATIVE_PATH?>/controller/mylinks/control/business"><?=MY_LINKS?></a></li>
                       <li><a href="<?=RELATIVE_PATH?>/controller/orcidworks/control/business"><?=ORCID_WORKS?></a></li>
                     </ul>
                   </li>

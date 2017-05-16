@@ -30,9 +30,9 @@
                               <div class="col-md-3 col-sm-3 col-xs-12">
                                 <select id="reference" name="reference" class="form-control">
                                   <option></option>
-                                  <option value="orcidworks"><?=$trans->getTrans($_REQUEST["action"],'ORCID')?></option>
                                   <option value="mydocuments"><?=$trans->getTrans($_REQUEST["action"],'COLLECTIONS')?></option>
                                   <option value="myprofiledocuments"><?=$trans->getTrans($_REQUEST["action"],'PROFILES')?></option>
+                                  <option value="orcidworks"><?=$trans->getTrans($_REQUEST["action"],'ORCID')?></option>
                                 </select>
                               </div>
                             </div>

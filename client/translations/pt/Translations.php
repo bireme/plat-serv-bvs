@@ -56,14 +56,15 @@ class Translations {
         self::$trans["new_pass"]["CANCEL"] = 'cancelar';
 
     // Terms of the menu pages
-        self::$trans["menu"]["HOME"] = 'Home';
-        self::$trans["menu"]["WELCOME"] = 'Bem vindo';
+        self::$trans["menu"]["DASHBOARD"] = 'Meus Conteúdos';
+        self::$trans["menu"]["HOME"] = 'Visão Geral';
+        self::$trans["menu"]["WELCOME"] = 'Bem-vindo';
         self::$trans["menu"]["USERS_SERVICES"] = 'Serviços Personalizados';
         self::$trans["menu"]["OLA"] = 'Olá';
         self::$trans["menu"]["LOGOUT"] = 'Sair';
-        self::$trans["menu"]["MY_PROFILE_DOCUMENTS"] = 'Meus Perfis de Interesse';
+        self::$trans["menu"]["MY_PROFILE_DOCUMENTS"] = 'Temas de Interesse';
         self::$trans["menu"]["MY_SHELF"] = 'Documentos Favoritos';
-        self::$trans["menu"]["MY_LINKS"] = 'Meus Links';
+        self::$trans["menu"]["MY_LINKS"] = 'Links Favoritos';
         self::$trans["menu"]["MY_NEWS"] = 'Minhas Notícias';
         self::$trans["menu"]["FORGOT_MY_PASSWORD"] = 'esqueci minha senha';
         self::$trans["menu"]["CHANGE_PASSWORD"] = 'Alterar Senha';
@@ -78,21 +79,21 @@ class Translations {
         self::$trans["menu"]["RECENT_ACTIVITIES"] = 'Atividades Recentes';
         self::$trans["menu"]["SEE_ALL_DOCS"] = 'Ver todos os documentos';
         self::$trans["menu"]["SEE_ALL_LINKS"] = 'Ver todos os links';
-        self::$trans["menu"]["SEE_ALL_PROFILES"] = 'Ver todos os perfis';
+        self::$trans["menu"]["SEE_ALL_PROFILES"] = 'Ver todos os temas';
         self::$trans["menu"]["ADD_COLLECTION"] = 'Coleção adicionada';
         self::$trans["menu"]["UPDATE_COLLECTION"] = 'Coleção atualizada';
         self::$trans["menu"]["REMOVE_COLLECTION"] = 'Coleção removida';
-        self::$trans["menu"]["ADD_PROFILE"] = 'Perfil adicionado';
-        self::$trans["menu"]["UPDATE_PROFILE"] = 'Perfil atualizado';
-        self::$trans["menu"]["REMOVE_PROFILE"] = 'Perfil removido';
+        self::$trans["menu"]["ADD_PROFILE"] = 'Tema adicionado';
+        self::$trans["menu"]["UPDATE_PROFILE"] = 'Tema atualizado';
+        self::$trans["menu"]["REMOVE_PROFILE"] = 'Tema removido';
         self::$trans["menu"]["ADD_LINK"] = 'Link adicionado';
         self::$trans["menu"]["UPDATE_LINK"] = 'Link atualizado';
         self::$trans["menu"]["REMOVE_LINK"] = 'Link removido';
         self::$trans["menu"]["QUERY"] = 'Query';
         self::$trans["menu"]["VIEW"] = 'Exibir';
         self::$trans["menu"]["SEARCH_WIDGET"] = 'Buscas na BVS';
-        self::$trans["menu"]["PROFILE_WIDGET"] = 'Perfis de Interesse';
-        self::$trans["menu"]["SHELF_WIDGET"] = 'Documentos das Coleções';
+        self::$trans["menu"]["PROFILE_WIDGET"] = 'Temas de Interesse';
+        self::$trans["menu"]["SHELF_WIDGET"] = 'Documentos Favoritos';
 
     // Terms of mysearches pages
         self::$trans["mysearches"]["MY_SEARCHES"] = 'Histórico de Buscas na BVS';
@@ -118,12 +119,12 @@ class Translations {
         self::$trans["suggesteddocs"]["CONFIG"] = 'Configurações';
         self::$trans["suggesteddocs"]["DOCS"] = 'Documentos';
         self::$trans["suggesteddocs"]["DOCS_SOURCE"] = 'Origem dos documentos';
-        self::$trans["suggesteddocs"]["ORCID"] = 'ORCID';
-        self::$trans["suggesteddocs"]["COLLECTIONS"] = 'Coleções';
-        self::$trans["suggesteddocs"]["PROFILES"] = 'Perfis';
+        self::$trans["suggesteddocs"]["ORCID"] = 'ORCID - Minhas Publicações';
+        self::$trans["suggesteddocs"]["COLLECTIONS"] = 'Documentos Favoritos';
+        self::$trans["suggesteddocs"]["PROFILES"] = 'Temas de Interesse';
         self::$trans["suggesteddocs"]["INCOMING_FOLDER"] = 'Pasta de Entrada';
         self::$trans["suggesteddocs"]["FOLDERS_LIST"] = 'Escolha uma pasta:';
-        self::$trans["suggesteddocs"]["PROFILES_LIST"] = 'Escolha um perfil:';
+        self::$trans["suggesteddocs"]["PROFILES_LIST"] = 'Escolha um tema:';
         self::$trans["suggesteddocs"]["LOADING"] = 'CARREGANDO';
         self::$trans["suggesteddocs"]["SELECTED_DOCS"] = 'documentos selecionados';
         self::$trans["suggesteddocs"]["SEND"] = 'Enviar';
@@ -141,7 +142,7 @@ class Translations {
         self::$trans["general"]["LOGO"] = 'pt/logobvs.gif';
 
     // Tems of mydocuments pages
-        self::$trans["mydocuments"]["MY_COLLECTION"] = 'Meus Documentos';
+        self::$trans["mydocuments"]["MY_COLLECTION"] = 'Documentos Favoritos';
         self::$trans["mydocuments"]["BY_DATE"] = 'por Data';
         self::$trans["mydocuments"]["INCOMING_FOLDER"] = 'Pasta de Entrada';
         self::$trans["mydocuments"]["ADD_FOLDER"] = 'Adicionar Coleção';
@@ -193,7 +194,7 @@ class Translations {
         self::$trans["mylinks"]["MY_RANK"] = 'Meu ranking';
         self::$trans["mylinks"]["TOOLS"] = 'Ferramentas';
         self::$trans["mylinks"]["ADD_LINK"] = 'Adicionar Link';
-        self::$trans["mylinks"]["MY_LINKS"] = 'Meus Links';
+        self::$trans["mylinks"]["MY_LINKS"] = 'Links Favoritos';
         self::$trans["mylinks"]["REMOVE_LINK"] = 'remover link';
         self::$trans["mylinks"]["EDIT_LINK"] = 'editar link';
         self::$trans["mylinks"]["HIDE_FROM_HOME"] = 'remover da home page';
@@ -250,28 +251,28 @@ class Translations {
     // Terms of myprofiledocuments pages
         self::$trans["myprofiledocuments"]["LILACS.orgiahx"] = 'Base de dados LILACS';
         self::$trans["myprofiledocuments"]["SciELO.orgiahx"] = 'Rede SciELO';
-        self::$trans["myprofiledocuments"]["MY_PROFILES"] = 'Meus Perfis de Interesse';
+        self::$trans["myprofiledocuments"]["MY_PROFILES"] = 'Temas de Interesse';
         self::$trans["myprofiledocuments"]["VIEW_RESULTS_IN"] = 'ver resultados em';
-        self::$trans["myprofiledocuments"]["REMOVE_PROFIVE"] = 'remover perfil';
-        self::$trans["myprofiledocuments"]["EDIT_PROFILE"] = 'editar perfil';
-        self::$trans["myprofiledocuments"]["ADD_PROFILE"] = 'Adicionar perfil';
+        self::$trans["myprofiledocuments"]["REMOVE_PROFIVE"] = 'remover tema';
+        self::$trans["myprofiledocuments"]["EDIT_PROFILE"] = 'editar tema';
+        self::$trans["myprofiledocuments"]["ADD_PROFILE"] = 'Adicionar tema';
         self::$trans["myprofiledocuments"]["TOOLS"] = 'Ferramentas';
         self::$trans["myprofiledocuments"]["SIMILARS_IN"] = 'Similares em';
-        self::$trans["myprofiledocuments"]["PROFILE_KEYWORDS"] = 'Palavras-chave do Perfil';
+        self::$trans["myprofiledocuments"]["PROFILE_KEYWORDS"] = 'Palavras-chave do Tema';
         self::$trans["myprofiledocuments"]["PROFILES"] = 'Perfis';
-        self::$trans["myprofiledocuments"]["REMOVE_PROFILE"] = 'remover perfil';
+        self::$trans["myprofiledocuments"]["REMOVE_PROFILE"] = 'remover tema';
         self::$trans["myprofiledocuments"]["HOME"] = 'Home';
-        self::$trans["myprofiledocuments"]["PROFILE_NAME"] = 'Nome do perfil';
+        self::$trans["myprofiledocuments"]["PROFILE_NAME"] = 'Nome do tema';
         self::$trans["myprofiledocuments"]["PROFILE_TEXT"] = 'Palavras-chave';
         self::$trans["myprofiledocuments"]["PROFILE_TEXT_HELP"] = 'Os termos devem ser separados por vírgula.';
         self::$trans["myprofiledocuments"]["PROFILE_DEFAULT"] = 'Definir como padrão';
         self::$trans["myprofiledocuments"]["SAVE"] = 'salvar';
         self::$trans["myprofiledocuments"]["CANCEL"] = 'cancelar';
         self::$trans["myprofiledocuments"]["MY_PROFILES_NO_REGISTERS_FOUND"] = 'Nenhum registro encontrado';
-        self::$trans["myprofiledocuments"]["MY_PROFILES_NO_SUGGESTIONS_FOUND"] = 'Nenhum documento encontrado. Tente atualizar o perfil em <code>editar perfil > salvar</code> ou altere as palavras-chave.';
+        self::$trans["myprofiledocuments"]["MY_PROFILES_NO_SUGGESTIONS_FOUND"] = 'Nenhum documento encontrado. Tente atualizar o tema em <code>editar tema > salvar</code> ou altere as palavras-chave.';
         self::$trans["myprofiledocuments"]["SERVICE_TEMPORARY_UNAVAILABLE"] = 'Serviço temporariamente indisponível';
         self::$trans["myprofiledocuments"]["ADD_PROFILE_SUCESS"] = 'Operação realizada com sucesso.';
-        self::$trans["myprofiledocuments"]["ADD_PROFILE_ERROR"] = 'Erro ao adicionar perfil';
+        self::$trans["myprofiledocuments"]["ADD_PROFILE_ERROR"] = 'Erro ao adicionar tema';
         self::$trans["myprofiledocuments"]["PAGE"] = 'Página';
         self::$trans["myprofiledocuments"]["NEXT"] = 'Próximo';
         self::$trans["myprofiledocuments"]["PREVIOUS"] = 'Anterior';
