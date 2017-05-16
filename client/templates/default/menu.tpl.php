@@ -143,19 +143,23 @@
                   </div>
                   <div class="x_content">
                     <?php if ( $searches ) : ?>
-                      <table class="table table-striped">
+                      <table class="table table-striped servplat-widget">
                         <thead>
                           <tr>
-                            <th><?=$trans->getTrans('menu','QUERY')?></th>
+                            <th style="font-size: 13px;"><?=$trans->getTrans('menu','QUERY')?></th>
                             <th></th>
                           </tr>
                         </thead>
                         <tbody style="word-break: break-word;">
-                          <?php foreach ( $searches as $search ) : ?>
+                          <?php foreach ( $searches as $search ) : $count++ ?>
                             <tr>
                               <td class="query"><?php echo $search['query']; ?></td>
                               <td style="text-align: right;">
-                                <button id="v1" class="btn btn-primary btn-xs search" value="<?php echo $search['site']; ?>" data-original-title="" title=""><i class="fa fa-search search"></i> <?=$trans->getTrans('menu','VIEW')?></button>
+                                <?php if ( 'portal' == $_SESSION['iahx'] ) : ?>
+                                <button id="v<?php echo $count; ?>" class="btn btn-primary btn-xs portal" value="portal"><i class="fa fa-search"></i> <?=$trans->getTrans('menu','VIEW')?></button>
+                                <?php else : ?>
+                                <button id="v<?php echo $count; ?>" class="btn btn-primary btn-xs search" value="<?php echo $_SESSION['iahx']; ?>" data-original-title="" title=""><i class="fa fa-search search"></i> <?=$trans->getTrans('menu','VIEW')?></button>
+                                <?php endif; ?>
                               </td>
                             </tr>
                           <?php endforeach; ?>

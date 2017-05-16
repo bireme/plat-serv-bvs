@@ -58,11 +58,11 @@ if($lang == 'pt'){
     define('OPTIONAL_FIELD_TEXT','campos opcionais');
     define("TIP_LOGIN","O login de acesso deve ser o email do usuário, por exemplo: usuario@bireme.org");
     define("UPDATE_USER_TITLE","Atualização dos dados");
-    define("USER_ADDED",'Usuario adicionado com sucesso.');
+    define("USER_ADDED",'Usuário adicionado com sucesso.');
     define("USER_EXISTS","<b>Usuário já cadastrado</b><br />Tente se autenticar com este usuário, caso não lembre a senha de cadastro utilize o link  <b>esqueci minha senha</b> na caixa de login de usuários.");
     define("ADD_SUCCESS","<b>Usuário criado com sucesso</b><br />Seu usuário agora faz parte do passaporte da BVS<br />Você esta habilitado para se conectar nas aplicações da SciELO e BVS com este usuário");
     define("ADD_ERROR","<b>Erro no cadastro</b><br />Se seu email é um email Bireme. Neste caso seu usuário já possui login para acesso ao passaporte BVS, basta utilizar seu email e senha da Bireme para acessar esta aplicação.");
-    define("USER_UPDATED",'Usuario atualizado com sucesso.');
+    define("USER_UPDATED",'Usuário atualizado com sucesso.');
     define("USER_UPDATE_ERROR",'<b>Problemas durante atualização</b><br />O sistema não conseguiu atualizar os dados do usuário. Tente mais tarde.');
     define("VALMSG_G_EMPTY","Campo obrigatório. Não pode ficar em branco.");
     define("VALMSG_LOGIN","Digite um email válido.");
@@ -77,7 +77,7 @@ Se você possui usuário cadastrado no site ScIELO, na próxima vez que acessar 
 <h4>Saiba mais</h4>
 <p>A nova Plataforma de Serviços Integrada das redes Biblioteca Virtual em Saúde (BVS) e Scientific Eletronic Library Online (SciELO) permitirá que o conteúdo de ambas as redes possa ser acessado de forma integrada. Para isso, será necessário que você apenas se identifique por meio de seu passaporte, ou seja, seu usuário e senha. Se você é um novo usuário, registre-se aqui (link para o passaporte).</p>
 <h4>Menor esforço para o usuário, maior uso dos conteúdos</h4>
-<p>A maior novidade é que o passaporte dará acesso aos mesmos serviços personalizados na BVS ou na SciELO. Isto significa que você poderá selecionar documentos de interesse, definir sua própria coleção, acessar documentos relacionados a perfis de seu interesse, selecionar notícias entre outros produtos e serviços de informação e salvá-los em seu perfil de usuário. Posteriormente, estes conteúdos continuarão acessíveis ao utilizar seu passaporte de acesso à BVS ou SciELO.</p>
+<p>A maior novidade é que o passaporte dará acesso aos mesmos serviços personalizados na BVS ou na SciELO. Isto significa que você poderá selecionar documentos de interesse, definir sua própria coleção, acessar documentos relacionados a temas de seu interesse, selecionar notícias entre outros produtos e serviços de informação e salvá-los em seu perfil de usuário. Posteriormente, estes conteúdos continuarão acessíveis ao utilizar seu passaporte de acesso à BVS ou SciELO.</p>
 <h4>Serviços gratuitos</h4>
 <p>O registro e todos os produtos e serviços de informação continuarão gratuitos. As redes BVS e SciELO mantêm os princípios da modalidade de Acesso Aberto, portanto, da disponibilização da literatura científica e técnica na Internet sem custo para o usuário, licenças de uso ou barreiras restritivas de acesso.</p>
 <p>Futuramente, as novidades serão aplicadas nas demais instâncias da BVS, em todas as regiões geográficas e áreas temáticas da BVS, por meio do conceito de passaporte BVS.</p>
@@ -88,8 +88,9 @@ Se você possui usuário cadastrado no site ScIELO, na próxima vez que acessar 
     define('FIELD_RESEARCHERID','ResearcherID');
     define('FIELD_LATTES','Lattes (URL)');
 
-    define('DASHBOARD','Meus Conteúdos');
-    define('HOMEPAGE','Visão Geral');
+    define("DASHBOARD",'Meus Conteúdos');
+    define("INDEX",'home');
+    define("HOMEPAGE",'Visão Geral');
     define("WELCOME",'Bem-vindo');
     define("USERS_SERVICES",'Serviços Personalizados');
     define("OLA",'Olá');
@@ -111,20 +112,20 @@ Se você possui usuário cadastrado no site ScIELO, na próxima vez que acessar 
     define("RECENT_ACTIVITIES",'Atividades Recentes');
     define("SEE_ALL_DOCS",'Ver todos os documentos');
     define("SEE_ALL_LINKS",'Ver todos os links');
-    define("SEE_ALL_PROFILES",'Ver todos os perfis');
+    define("SEE_ALL_PROFILES",'Ver todos os temas');
     define("ADD_COLLECTION",'Coleção adicionada');
     define("UPDATE_COLLECTION",'Coleção atualizada');
     define("REMOVE_COLLECTION",'Coleção removida');
-    define("ADD_PROFILE",'Perfil adicionado');
-    define("UPDATE_PROFILE",'Perfil atualizado');
-    define("REMOVE_PROFILE",'Perfil removido');
+    define("ADD_PROFILE",'Tema adicionado');
+    define("UPDATE_PROFILE",'Tema atualizado');
+    define("REMOVE_PROFILE",'Tema removido');
     define("ADD_LINK",'Link adicionado');
     define("UPDATE_LINK",'Link atualizado');
     define("REMOVE_LINK",'Link removido');
     define("QUERY",'Query');
     define("VIEW",'Exibir');
     define("SEARCH_WIDGET",'Buscas na BVS');
-    define("PROFILE_WIDGET",'Perfis de Interesse');
+    define("PROFILE_WIDGET",'Temas de Interesse');
     define("SHELF_WIDGET",'Documentos das Coleções');
 }
 
@@ -178,7 +179,7 @@ if($lang == 'es'){
     define("TIP_LOGIN","El login de acceso debrá ser el email del usuário, por ejemplo: usuario@bireme.org");
     define("UPDATE_USER_TITLE","Atualización de los datos");
     define("USER_ADDED",'Usuario añadido con succeso.');
-    define("USER_EXISTS","<b>Usuário já cadastrado</b><br />Pruebe autenticarse con ese usuário, si no te acuerdas de la contraseña utilize el link  <b>esqueci minha senha</b> en la caja de login de usuários.");
+    define("USER_EXISTS","<b>Usuário ya cadastrado</b><br />Pruebe autenticarse con ese usuário, si no te acuerdas de la contraseña utilize el link  <b>esqueci minha senha</b> en la caja de login de usuários.");
     define("ADD_ERROR","<b>Erro en el registro</b><br />Si su email es un email de Bireme. En ese caso su usuário ya tiene login para acceso a los aplicativos de la BVS, basta utilizar su email y contraseña de Bireme para acceder a esa aplicación.");
     define("ADD_SUCCESS","<b>Usuário añadido con succeso</b><br />Su usuário ahora hace parte del passaporte de la BVS<br />Usted esta habilitado para conectarse en las aplicaciones de SciELO y BVS con ese usuário.");
     define("USER_UPDATED",'Usuario actualizado con succeso.');
@@ -197,7 +198,7 @@ Si usted tiene usuário cadastrado en el sitio ScIELO, la próxima vez que acced
 <h4>Sepa mas</h4>
 <p>La nueva Plataforma de Servicios Integrada de las redes Biblioteca Virtual em Salud (BVS) y Scientific Electronic Library Online (SciELO), permitira que se pueda acceder el contenído de ambas las redes de modo integrado. Para eso, sera neceario que usted solamente se identifique por medio de su passaporte, o sea, su usuário y contraseña. Si usted es un nuevo usuario, se registre aqui.</p>
 <h4>Menor esfuerzo para el usuario, mayor uso de los contenidos</h4>
-<p>La mayor novidad es que el passaporte dara acceso a los mismos servicios personalizados en la BVS y SciELO. Eso significa que usted podrá elijir documentos de  su interez, definir su propria colección, acceder documentos relacionados a perfiles de su interez, elijir noticias de otros productos y servicios de información y grabarlos em su perfil de usuário. Posteriormente, eses contenidos continuaran disponibles cuando autenticarse com su passaporte de acceso a BVS o SciELO.</p>
+<p>La mayor novidad es que el passaporte dara acceso a los mismos servicios personalizados en la BVS y SciELO. Eso significa que usted podrá elijir documentos de  su interez, definir su propria colección, acceder documentos relacionados a temas de su interez, elijir noticias de otros productos y servicios de información y grabarlos em su perfil de usuário. Posteriormente, eses contenidos continuaran disponibles cuando autenticarse com su passaporte de acceso a BVS o SciELO.</p>
 <h4>Servicios gratuitos</h4>
 <p>El registro y todos los productis y servicios de información continuaran gratuitos. Las redes BVS e SciELO mantienem los princípios del Acceso Abierto, portanto, da disponibilización de la literatura cientifica e tecnica em la Iternet sin costo para el usuario, licensas de uso o barreras restritivas de acceso.</p>
 <p>En el futuro, las novidades seran aplicadas en otras instancias de productos de la BVS, en todas las regiones geograficas y areas tematicas de la BVS, por medio del concepto de pasaporte BVS y SciELO</p>
@@ -208,8 +209,9 @@ Si usted tiene usuário cadastrado en el sitio ScIELO, la próxima vez que acced
     define('FIELD_RESEARCHERID','ResearcherID');
     define('FIELD_LATTES','Lattes (URL)');
 
-    define('DASHBOARD','Meus Conteúdos');
-    define('HOMEPAGE','Visão Geral');
+    define("DASHBOARD",'Meus Conteúdos');
+    define("INDEX",'home');
+    define("HOMEPAGE",'Visão Geral');
     define("WELCOME",'Bem-vindo');
     define("USERS_SERVICES",'Serviços Personalizados');
     define("OLA",'Olá');
@@ -231,20 +233,20 @@ Si usted tiene usuário cadastrado en el sitio ScIELO, la próxima vez que acced
     define("RECENT_ACTIVITIES",'Atividades Recentes');
     define("SEE_ALL_DOCS",'Ver todos os documentos');
     define("SEE_ALL_LINKS",'Ver todos os links');
-    define("SEE_ALL_PROFILES",'Ver todos os perfis');
+    define("SEE_ALL_PROFILES",'Ver todos os temas');
     define("ADD_COLLECTION",'Coleção adicionada');
     define("UPDATE_COLLECTION",'Coleção atualizada');
     define("REMOVE_COLLECTION",'Coleção removida');
-    define("ADD_PROFILE",'Perfil adicionado');
-    define("UPDATE_PROFILE",'Perfil atualizado');
-    define("REMOVE_PROFILE",'Perfil removido');
+    define("ADD_PROFILE",'Tema adicionado');
+    define("UPDATE_PROFILE",'Tema atualizado');
+    define("REMOVE_PROFILE",'Tema removido');
     define("ADD_LINK",'Link adicionado');
     define("UPDATE_LINK",'Link atualizado');
     define("REMOVE_LINK",'Link removido');
     define("QUERY",'Query');
     define("VIEW",'Exibir');
     define("SEARCH_WIDGET",'Buscas na BVS');
-    define("PROFILE_WIDGET",'Perfis de Interesse');
+    define("PROFILE_WIDGET",'Temas de Interesse');
     define("SHELF_WIDGET",'Documentos das Coleções');
 }
 
@@ -317,7 +319,7 @@ If you have a registered user in ScIELO website, the next time you access SciELO
 <h4>Learn More</h4>
 <p>The new Integrated Services Platform for Virtual Health Library (VHL) and Scientific Electronic Library Online (SciELO) networks will allow the contents of both networks to be accessed seamlessly. This will require you to identify yourself through your passport, or your user name and password. If you are a new user, register here (link to the passport).</p>
 <h4>Less work for the user, more use for contents</h4>
-<p>The biggest news is that the passport will give access to the same personalized services on the VHL and SciELO network. This means you can select documents of interest, define your own collection, access documents related to your interest profiles, news and other select products and services information and save them on your User Profile. Subsequently, these contents remain accessible when using your passport to access VHL and SciELO sites.</p>
+<p>The biggest news is that the passport will give access to the same personalized services on the VHL and SciELO network. This means you can select documents of interest, define your own collection, access documents related to your interest topics, news and other select products and services information and save them on your User Profile. Subsequently, these contents remain accessible when using your passport to access VHL and SciELO sites.</p>
 <h4>Free Services</h4>
 <p>The registration, all products and information services will remain free. The VHL and SciELO maintain the principles of open access, thus providing the scientific and technical literature on the Internet without cost to the user, usage license or barriers restricting access.</p>
 <p>In the future, these new features will be applied in other instances of VHL in all geographical regions and thematic areas of the VHL, through the concept of passport VHL and SciELO.</p>
@@ -328,8 +330,9 @@ If you have a registered user in ScIELO website, the next time you access SciELO
     define('FIELD_RESEARCHERID','ResearcherID');
     define('FIELD_LATTES','Lattes (URL)');
 
-    define('DASHBOARD','Meus Conteúdos');
-    define('HOMEPAGE','Visão Geral');
+    define("DASHBOARD",'Meus Conteúdos');
+    define("INDEX",'home');
+    define("HOMEPAGE",'Visão Geral');
     define("WELCOME",'Bem-vindo');
     define("USERS_SERVICES",'Serviços Personalizados');
     define("OLA",'Olá');
@@ -351,20 +354,20 @@ If you have a registered user in ScIELO website, the next time you access SciELO
     define("RECENT_ACTIVITIES",'Atividades Recentes');
     define("SEE_ALL_DOCS",'Ver todos os documentos');
     define("SEE_ALL_LINKS",'Ver todos os links');
-    define("SEE_ALL_PROFILES",'Ver todos os perfis');
+    define("SEE_ALL_PROFILES",'Ver todos os temas');
     define("ADD_COLLECTION",'Coleção adicionada');
     define("UPDATE_COLLECTION",'Coleção atualizada');
     define("REMOVE_COLLECTION",'Coleção removida');
-    define("ADD_PROFILE",'Perfil adicionado');
-    define("UPDATE_PROFILE",'Perfil atualizado');
-    define("REMOVE_PROFILE",'Perfil removido');
+    define("ADD_PROFILE",'Tema adicionado');
+    define("UPDATE_PROFILE",'Tema atualizado');
+    define("REMOVE_PROFILE",'Tema removido');
     define("ADD_LINK",'Link adicionado');
     define("UPDATE_LINK",'Link atualizado');
     define("REMOVE_LINK",'Link removido');
     define("QUERY",'Query');
     define("VIEW",'Exibir');
     define("SEARCH_WIDGET",'Buscas na BVS');
-    define("PROFILE_WIDGET",'Perfis de Interesse');
+    define("PROFILE_WIDGET",'Temas de Interesse');
     define("SHELF_WIDGET",'Documentos das Coleções');
 }
 ?>

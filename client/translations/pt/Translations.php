@@ -123,7 +123,7 @@ class Translations {
         self::$trans["suggesteddocs"]["COLLECTIONS"] = 'Documentos Favoritos';
         self::$trans["suggesteddocs"]["PROFILES"] = 'Temas de Interesse';
         self::$trans["suggesteddocs"]["INCOMING_FOLDER"] = 'Pasta de Entrada';
-        self::$trans["suggesteddocs"]["FOLDERS_LIST"] = 'Escolha uma pasta:';
+        self::$trans["suggesteddocs"]["FOLDERS_LIST"] = 'Escolha um tema:';
         self::$trans["suggesteddocs"]["PROFILES_LIST"] = 'Escolha um tema:';
         self::$trans["suggesteddocs"]["LOADING"] = 'CARREGANDO';
         self::$trans["suggesteddocs"]["SELECTED_DOCS"] = 'documentos selecionados';
@@ -153,9 +153,8 @@ class Translations {
         self::$trans["mydocuments"]["MOVE"] = 'mover';
         self::$trans["mydocuments"]["MOVE_TO"] = 'mover para';
         self::$trans["mydocuments"]["MOVE_DOCUMENT_TO"] = 'mover para';
-        self::$trans["mydocuments"]["FULL_TEXT"] = 'texto completo';
+        self::$trans["mydocuments"]["FULL_TEXT"] = 'exibir documento';
         self::$trans["mydocuments"]["REMOVE_FROM_COLLECTION"] = 'remover da coleção';
-        self::$trans["mydocuments"]["HOME"] = 'Home';
         self::$trans["mydocuments"]["MONITOR_CITATION"] = 'citações monitoradas';
         self::$trans["mydocuments"]["MONITOR_ACCESS"] = 'acesso monitorado';
         self::$trans["mydocuments"]["ACCESS_LIST_NO_REGISTERS_FOUND"] = 'Nenhum registro encontrado';
@@ -168,27 +167,26 @@ class Translations {
         self::$trans["mydocuments"]["PREVIOUS"] = 'Anterior';
 
     // Tems of directories pages
-        self::$trans["directories"]["FOLDER_NAME"] = 'Nome da pasta';
-        self::$trans["directories"]["EDIT_FOLDER"] = 'editar pasta';
+        self::$trans["directories"]["FOLDER_NAME"] = 'Nome da coleção';
+        self::$trans["directories"]["EDIT_FOLDER"] = 'editar coleção';
         self::$trans["directories"]["SAVE"] = 'salvar';
         self::$trans["directories"]["CANCEL"] = 'cancelar';
         self::$trans["directories"]["REMOVE"] = 'remover';
-        self::$trans["directories"]["REMOVE_FOLDER"] = 'remover pasta';
+        self::$trans["directories"]["REMOVE_FOLDER"] = 'remover coleção';
         self::$trans["directories"]["REMOVE_CONTENT"] = 'Remover conteúdo';
         self::$trans["directories"]["MOVE"] = 'mover';
         self::$trans["directories"]["MOVE_TO"] = 'mover para';
         self::$trans["directories"]["MOVE_DOCUMENT_TO"] = 'mover para';
-        self::$trans["directories"]["MOVE_CONTENT_TO_OTHER_FOLDER"] = 'Mover conteúdo para outra pasta';
+        self::$trans["directories"]["MOVE_CONTENT_TO_OTHER_FOLDER"] = 'Mover conteúdo para outra coleção';
         self::$trans["directories"]["INCOMING_FOLDER"] = 'Pasta de Entrada';
         self::$trans["directories"]["ADD_DIR_SUCESS"] = 'Operação realizada com sucesso.';
         self::$trans["directories"]["REMOVE_DIR_SUCESS"] = 'Operação realizada com sucesso.';
         self::$trans["directories"]["MOVE_DOC_SUCESS"] = 'Operação realizada com sucesso.';        
-        self::$trans["directories"]["ADD_DIR_ERROR"] = 'Erro ao adicionar pasta';
-        self::$trans["directories"]["REMOVE_DIR_ERROR"] = 'Erro ao remover pasta';
-        self::$trans["directories"]["MOVE_DOC_ERROR"] = 'Erro ao mover pasta';
+        self::$trans["directories"]["ADD_DIR_ERROR"] = 'Erro ao adicionar coleção';
+        self::$trans["directories"]["REMOVE_DIR_ERROR"] = 'Erro ao remover coleção';
+        self::$trans["directories"]["MOVE_DOC_ERROR"] = 'Erro ao mover coleção';
 
     // Tems of mylinks pages
-        self::$trans["mylinks"]["HOME"] = 'Home';
         self::$trans["mylinks"]["SHOW_BY"] = 'Visualizar Lista por';
         self::$trans["mylinks"]["DATE"] = 'Data';
         self::$trans["mylinks"]["MY_RANK"] = 'Meu ranking';
@@ -213,7 +211,6 @@ class Translations {
         self::$trans["mylinks"]["PREVIOUS"] = 'Anterior';
 
     // Tems of mylinks pages
-        self::$trans["mynews"]["HOME"] = 'Home';
         self::$trans["mynews"]["SHOW_BY"] = 'Visualizar Lista por';
         self::$trans["mynews"]["DATE"] = 'Data';
         self::$trans["mynews"]["MY_RANK"] = 'Meu ranking';
@@ -235,7 +232,6 @@ class Translations {
         self::$trans["mynews"]["PAGE"] = 'Página';
 
     // Tems of myalerts pages
-        self::$trans["myalerts"]["HOME"] = 'Home';
         self::$trans["myalerts"]["TOOLS"] = 'Ferramentas';
         self::$trans["myalerts"]["MY_ALERTS"] = 'Meus Alertas';
         self::$trans["myalerts"]["ACCESS_LIST"] = 'Estatísticas de Acesso';
@@ -259,9 +255,8 @@ class Translations {
         self::$trans["myprofiledocuments"]["TOOLS"] = 'Ferramentas';
         self::$trans["myprofiledocuments"]["SIMILARS_IN"] = 'Similares em';
         self::$trans["myprofiledocuments"]["PROFILE_KEYWORDS"] = 'Palavras-chave do Tema';
-        self::$trans["myprofiledocuments"]["PROFILES"] = 'Perfis';
+        self::$trans["myprofiledocuments"]["PROFILES"] = 'Temas';
         self::$trans["myprofiledocuments"]["REMOVE_PROFILE"] = 'remover tema';
-        self::$trans["myprofiledocuments"]["HOME"] = 'Home';
         self::$trans["myprofiledocuments"]["PROFILE_NAME"] = 'Nome do tema';
         self::$trans["myprofiledocuments"]["PROFILE_TEXT"] = 'Palavras-chave';
         self::$trans["myprofiledocuments"]["PROFILE_TEXT_HELP"] = 'Os termos devem ser separados por vírgula.';

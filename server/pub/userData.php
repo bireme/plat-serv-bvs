@@ -161,7 +161,7 @@ $DocTitle = $isUser?UPDATE_USER_TITLE:REGISTER_NEW_USER_TITLE;
                           $act = "update";
                       }else{
                           if($callerURL) { ?>
-                              <div class="breadcrumb"><a href="http://<?=$callerURL?>">home</a> &gt; <?=REGISTER_NEW_USER_TITLE?></div>
+                              <div class="breadcrumb"><a href="http://<?=$callerURL?>"><?=INDEX?></a> &gt; <?=REGISTER_NEW_USER_TITLE?></div>
                           <?php }
                           $showLoginField = true;
                           $act = "registry";

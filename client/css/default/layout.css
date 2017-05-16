@@ -189,6 +189,10 @@ a.operator {
     margin-right: 10px;
 }
 
+.folder-data a {
+    margin-right: 2px;
+}
+
 .keywords {
     margin-bottom: 15px;
     margin-top: -15px;
@@ -230,6 +234,11 @@ ul.project_files.profiles li {
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+}
+
+.servplat-widget td.query {
+    font-size: 13px;
+    font-weight: 400;
 }
 
 #loading {
