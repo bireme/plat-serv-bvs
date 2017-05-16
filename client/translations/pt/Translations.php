@@ -268,6 +268,7 @@ class Translations {
         self::$trans["myprofiledocuments"]["SAVE"] = 'salvar';
         self::$trans["myprofiledocuments"]["CANCEL"] = 'cancelar';
         self::$trans["myprofiledocuments"]["MY_PROFILES_NO_REGISTERS_FOUND"] = 'Nenhum registro encontrado';
+        self::$trans["myprofiledocuments"]["MY_PROFILES_NO_SUGGESTIONS_FOUND"] = 'Nenhum documento encontrado. Tente atualizar o perfil em <code>editar perfil > salvar</code> ou altere as palavras-chave.';
         self::$trans["myprofiledocuments"]["SERVICE_TEMPORARY_UNAVAILABLE"] = 'Serviço temporariamente indisponível';
         self::$trans["myprofiledocuments"]["ADD_PROFILE_SUCESS"] = 'Operação realizada com sucesso.';
         self::$trans["myprofiledocuments"]["ADD_PROFILE_ERROR"] = 'Erro ao adicionar perfil';

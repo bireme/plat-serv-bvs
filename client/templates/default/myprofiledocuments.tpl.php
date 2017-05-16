@@ -31,7 +31,7 @@
                       </div>
                       <div class="keywords"><small><?=$trans->getTrans($_REQUEST["action"],'PROFILE_KEYWORDS')?>: <?=$registerProfile["profileText"]?></small></div>
                       <div class="col-md-9 col-sm-9 col-xs-12">
-                          <?php if ( $responseSimilarDocs["values"] != false ) : ?>
+                          <?php if ( 'on' == $responseSimilarDocs["values"]['status'] ) : ?>
                               <?php //echo $objPaginator->render($trans->getTrans($_REQUEST["action"],'NEXT'), $trans->getTrans($_REQUEST["action"],'PREVIOUS')); ?>
                               <!-- start project list -->
                               <table class="table table-striped table-list">
@@ -41,7 +41,7 @@
                                   </tr>
                                 </thead-->
                                 <tbody>
-                                  <?php foreach ( $responseSimilarDocs["values"] as $similar) : ?>
+                                  <?php foreach ( $responseSimilarDocs["values"]['similars'] as $similar) : ?>
                                   <tr>
                                     <td>
                                       <div>
@@ -67,12 +67,16 @@
                               <!-- end project list -->
                               <?php echo $objPaginator->render($trans->getTrans($_REQUEST["action"],'NEXT'), $trans->getTrans($_REQUEST["action"],'PREVIOUS')); ?>
                           <?php else : ?>
+                            <?php if ( 'none' == $responseSimilarDocs["values"]['status'] ) : ?>
+                              <p class="none-docs"><?=$trans->getTrans($_REQUEST["action"],'MY_PROFILES_NO_SUGGESTIONS_FOUND')?></p>
+                            <?php else : ?>
                               <p class="none-docs"><?=$trans->getTrans($_REQUEST["action"],'SERVICE_TEMPORARY_UNAVAILABLE')?></p>
+                            <?php endif; ?>
                           <?php endif; ?>
                       </div>
                     <?php else : ?>
                       <div class="col-md-9 col-sm-9 col-xs-12">
-                          <p class="none-docs"><?php echo $trans->getTrans($_REQUEST["action"],'MY_PROFILES_NO_REGISTERS_FOUND'); ?></p>
+                          <p class="none-docs"><?=$trans->getTrans($_REQUEST["action"],'MY_PROFILES_NO_REGISTERS_FOUND')?></p>
                       </div>
                     <?php endif; ?>
                     <div class="col-md-3 col-sm-3 col-xs-12">
@@ -88,9 +92,9 @@
                             <div class="panel-body">
                                 <h5><?=$trans->getTrans($_REQUEST["action"],'PROFILES')?></h5>
                                 <?php if ($response["values"] != false ) : ?>
-                                  <ul class="list-docs-unstyled project_files">
+                                  <ul class="list-docs-unstyled project_files profiles">
                                       <?php foreach ($response["values"] as $register) : ?>
-                                          <li><a href="<?=RELATIVE_PATH?>/controller/myprofiledocuments/control/business/profile/<?=$register["profileID"]?>"><?=$register["profileName"]?></a><?if ($register["profileDefault"] == 1){?>&nbsp;<img class="starOn" src="<?=RELATIVE_PATH?>/images/<?=$_SESSION["skin"]?>/starOn.gif" border="0"/><?}?></li>
+                                          <li><a href="<?=RELATIVE_PATH?>/controller/myprofiledocuments/control/business/profile/<?=$register["profileID"]?>"><?php echo $register["profileName"]; ?></a><?php if ($register["profileDefault"] == 1) { ?>&nbsp;<img class="starOn" src="<?=RELATIVE_PATH?>/images/<?=$_SESSION["skin"]?>/starOn.gif" border="0"/><?php } ?></li>
                                       <?php endforeach; ?>
                                   </ul>
                                 <?php endif; ?>

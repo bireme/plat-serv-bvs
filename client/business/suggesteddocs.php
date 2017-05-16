@@ -63,7 +63,7 @@ switch($_REQUEST["task"]){
                     $similarDocs = SimilarDocs::getSimilarsDocs( $_SESSION["userTK"], $result[0]["profileName"], $params );
                 }
 
-                $response["values"] = $similarDocs;
+                $response["values"] = $similarDocs['similars'];
                 $response["status"] = true;
             break;
             case "orcidworks":

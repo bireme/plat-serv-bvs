@@ -226,6 +226,12 @@ a.operator {
     min-width: 125px;
 }
 
+ul.project_files.profiles li {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
 #loading {
     background:url(../../images/default/loading.gif) no-repeat center center;
     height: 60px;

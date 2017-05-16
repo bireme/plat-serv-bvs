@@ -117,7 +117,7 @@ CREATE TABLE IF NOT EXISTS `profiles` (
   `sysUID` int(10) UNSIGNED NOT NULL DEFAULT '0',
   `profileText` varchar(500) NOT NULL DEFAULT '',
   `profileName` varchar(150) NOT NULL DEFAULT '',
-  `profileStatus` char(3) NOT NULL DEFAULT '',
+  `profileStatus` char(4) NOT NULL DEFAULT '',
   `creationDate` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `lastModified` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `id_grande_area` int(10) UNSIGNED DEFAULT '0',

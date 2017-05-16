@@ -1,7 +1,4 @@
 <?php
-//ini_set('display_errors', 1);
-//ini_set('display_startup_errors', 1);
-//error_reporting(E_ALL);
 /**
  * SimilarDocs interface
  *
@@ -121,12 +118,11 @@ class SimilarDocs {
         $count = ( $params["widget"] ) ? WIDGETS_ITEMS_LIMIT : DOCUMENTS_PER_PAGE;
         $from = $count * $params["page"];
 
-        $strsql = "SELECT * FROM  suggestions
-            WHERE userID = '".$userID."' and profile = '".$profile."'";
+        $sysUID = UserDAO::getSysUID($userID);
 
-        if($count > 0){
-            $strsql .= " LIMIT $from,$count";
-        }
+        $strsql = "SELECT profileStatus FROM profiles
+            WHERE sysUID = '".$sysUID."' and
+            profileName='".$profile."'";
 
         try{
             $_db = new DBClass();
@@ -136,11 +132,36 @@ class SimilarDocs {
             $logger->log($e->getMessage(),PEAR_LOG_EMERG);
         }
 
-        if (count($result) !== 0 ){
-            $retValue = $result;
+
+
+        if ( $result ) {
+            unset($retValue);
+            $retValue =  array();
+            $retValue['status'] = $result[0]['profileStatus'];
+
+            if ( 'on' == $result[0]['profileStatus'] ) {
+                $strsql = "SELECT * FROM  suggestions
+                    WHERE userID = '".$userID."' and profile = '".$profile."'";
+
+                if($count > 0){
+                    $strsql .= " LIMIT $from,$count";
+                }
+
+                try{
+                    $_db = new DBClass();
+                    $result = $_db->databaseQuery($strsql);
+                }catch(DBClassException $e){
+                    $logger = &Log::singleton('file', LOG_FILE, __CLASS__, $_conf);
+                    $logger->log($e->getMessage(),PEAR_LOG_EMERG);
+                }
+
+                if (count($result) !== 0 ){
+                    $retValue['similars'] = $result;
+                }
+            }
         }
 
-        return $result;
+        return $retValue;
     }
 
     /**
@@ -153,16 +174,17 @@ class SimilarDocs {
      */
     static function addProfile($userID,$profile,$string){
         $result = false;
+        $status = 'on';
 
         $similar = str_replace("#PSID#",$userID,SIMDOCS_ADD_PROFILE);
         $similar = str_replace("#PROFILE#",urlencode($profile),$similar);
 
         $opts = array(
-            'http'=>array(
-                'method'=>"GET",
-                'header'=> implode("\r\n", array(
-                           'Content-type: text/html,application/xhtml+xml,application/xml'
-                        ))
+            'http' => array(
+                'method' => "GET",
+                'header' => implode("\r\n", array(
+                                'Content-type: text/html,application/xhtml+xml,application/xml'
+                            ))
             )
         );
 
@@ -174,7 +196,29 @@ class SimilarDocs {
         
         if($xml){
             $similars = self::getSimilars($userID,$profile);
-            $result = self::addProfileDocs($userID,$profile,$similars);
+
+            if ( $similars ) {
+                if ( 'none' == $similars )
+                    $status = 'none';
+                else
+                    $result = self::addProfileDocs($userID,$profile,$similars);
+            } else {
+                $status = 'off';
+            }
+        } else {
+            $status = 'off';
+        }
+
+        $sysUID = UserDAO::getSysUID($userID);
+
+        $strsql = "UPDATE profiles set profileStatus='".$status."' WHERE profileName='".$profile."' and sysUID='".$sysUID."'";
+
+        try{
+            $_db = new DBClass();
+            $res = $_db->databaseExecUpdate($strsql);
+        }catch(DBClassException $e){
+            $logger = &Log::singleton('file', LOG_FILE, __CLASS__, $_conf);
+            $logger->log($e->getMessage(),PEAR_LOG_EMERG);
         }
 
         return $result;
@@ -195,11 +239,11 @@ class SimilarDocs {
         $similar = str_replace("#PROFILE#",urlencode($profile),$similar);
 
         $opts = array(
-            'http'=>array(
-                'method'=>"GET",
-                'header'=> implode("\r\n", array(
-                           'Content-type: text/html,application/xhtml+xml,application/xml'
-                        ))
+            'http' => array(
+                'method' => "GET",
+                'header' => implode("\r\n", array(
+                                'Content-type: text/html,application/xhtml+xml,application/xml'
+                            ))
             )
         );
 
@@ -225,14 +269,15 @@ class SimilarDocs {
      * @return boolean
      */
     static function getProfiles($userID){
+        $retValue = false;
         $profiles = str_replace("#PSID#",$userID,SIMDOCS_GET_PROFILES);
 
         $opts = array(
-            'http'=>array(
-                'method'=>"GET",
-                'header'=> implode("\r\n", array(
-                           'Content-type: text/html,application/xhtml+xml,application/xml'
-                        ))
+            'http' => array(
+                'method' => "GET",
+                'header' => implode("\r\n", array(
+                                'Content-type: text/html,application/xhtml+xml,application/xml'
+                            ))
             )
         );
 
@@ -244,17 +289,13 @@ class SimilarDocs {
 
             if( array_key_exists('profile', $result) && count($result) > 0 ){
                 if( array_key_exists( 0, $result['profile'] ) )
-                    $result = $result['profile'];
+                    $retValue = $result['profile'];
                 else
-                    $result = array_values($result);
+                    $retValue = array_values($result);
             }
-            else{
-                $result = false;
-            }
-        }else{
-            $result = false;
         }
-        return $result;
+
+        return $retValue;
     }
 
     /**
@@ -266,6 +307,7 @@ class SimilarDocs {
      * @return array
      */
     static function getSimilars($userID,$profile,$params){
+        $retValue = false;
         $count = (int) DOCUMENTS_PER_PAGE;
         $from = $count * $params["page"];
 
@@ -273,11 +315,11 @@ class SimilarDocs {
         $similar = str_replace("#PROFILE#",urlencode($profile),$similar);
 
         $opts = array(
-            'http'=>array(
-                'method'=>"GET",
-                'header'=> implode("\r\n", array(
-                           'Content-type: text/html,application/xhtml+xml,application/xml'
-                        ))
+            'http' => array(
+                'method' => "GET",
+                'header' => implode("\r\n", array(
+                                'Content-type: text/html,application/xhtml+xml,application/xml'
+                            ))
             )
         );
 
@@ -289,17 +331,15 @@ class SimilarDocs {
 
             if( array_key_exists('document', $result) && count($result) > 0 ){
                 if( array_key_exists( 0, $result['document'] ) )
-                    $result = array_slice($result['document'], $from, $count);
+                    $retValue = array_slice($result['document'], $from, $count);
                 else
-                    $result = array_values($result);
+                    $retValue = array_values($result);
+            } else {
+                $retValue = 'none';
             }
-            else{
-                $result = false;
-            }
-        }else{
-            $result = false;
         }
-        return $result;
+
+        return $retValue;
     }
 
     /**

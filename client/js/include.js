@@ -102,11 +102,11 @@ $( document ).ready(
                     href = window.location.pathname + '/task/suggestions';
 
                     $('#loading').show();
-/*                    
+                    
                     $('html, body').animate({
                         scrollTop: $("#loading").offset().top
                     }, "fast");
-*/
+
                     $.post( href, obj, function(data) {
                         if(data == true){
                             location.reload();
