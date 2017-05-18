@@ -10,6 +10,9 @@ require_once(dirname(__FILE__)."/../classes/Tools.php");
 require_once(dirname(__FILE__)."/../classes/ToolsAuthentication.php");
 require_once(dirname(__FILE__)."/../classes/Verifier.php");
 
+if ( empty($_SESSION['userTK']) && !empty($_GET['userTK']) )
+    header("Location: ".RELATIVE_PATH.'/controller/authentication');
+
 $src = $_SESSION['source'] ? $_SESSION['source'] : false;
 
 if(!empty($_GET['userTK'])){

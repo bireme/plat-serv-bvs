@@ -1,7 +1,7 @@
 <?php
 require_once(dirname(__FILE__).'/../config.php');
 
-$lang = isset($_REQUEST['lang'])?$_REQUEST['lang']:DEFAULT_LANG;
+$lang = isset($_SESSION['lang'])?$_SESSION['lang']:DEFAULT_LANG;
 
 if($lang == 'pt'){
     /* tela de cadastro do usuário*/

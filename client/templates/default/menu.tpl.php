@@ -25,7 +25,7 @@
 
             <!-- Services Platform Dashboard -->
             <div class="row">
-              <div class="col-md-4">
+              <!-- <div class="col-md-4">
                 <div class="x_panel">
                   <div class="x_title">
                     <h2><?=$trans->getTrans('menu','SUGGESTED_DOCS')?><small></small></h2>
@@ -46,7 +46,7 @@
                     <?php endif; ?>
                   </div>
                 </div>
-              </div>
+              </div> -->
 
               <div class="col-md-4">
                 <div class="x_panel">
@@ -87,6 +87,30 @@
                           <div class="media-body">
                             <a class="title" href="<?php echo RELATIVE_PATH.'/controller/myprofiledocuments/control/business/profile/'.$profile["profileID"]; ?>"><i class="fa fa-folder-open-o" aria-hidden="true"></i><?php echo $profile['profileName']; ?></a>
                             <p><span><?=$trans->getTrans('menu','KEYWORDS')?>: </span><?php echo $profile['profileText']; ?></p>
+                          </div>
+                        </article>
+                      <?php endforeach; ?>
+                    <?php endif; ?>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="x_panel">
+                  <div class="x_title">
+                    <h2><?=$trans->getTrans('menu','MY_LINKS')?><small></small></h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a></li>
+                    </ul>
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content">
+                    <?php if ( $links ) : ?>
+                      <?php foreach ( $links as $link ) : ?>
+                        <article class="media event">
+                          <div class="media-body">
+                            <a class="title" href="<?php echo $link['url']; ?>" target="_blank"><i class="fa fa-external-link" aria-hidden="true"></i><?php echo $link['name']; ?></a>
+                            <p><?php echo $link['description']; ?></p>
                           </div>
                         </article>
                       <?php endforeach; ?>
@@ -165,30 +189,6 @@
                           <?php endforeach; ?>
                         </tbody>
                       </table>
-                    <?php endif; ?>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-md-4">
-                <div class="x_panel">
-                  <div class="x_title">
-                    <h2><?=$trans->getTrans('menu','MY_LINKS')?><small></small></h2>
-                    <ul class="nav navbar-right panel_toolbox">
-                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a></li>
-                    </ul>
-                    <div class="clearfix"></div>
-                  </div>
-                  <div class="x_content">
-                    <?php if ( $links ) : ?>
-                      <?php foreach ( $links as $link ) : ?>
-                        <article class="media event">
-                          <div class="media-body">
-                            <a class="title" href="<?php echo $link['url']; ?>" target="_blank"><i class="fa fa-external-link" aria-hidden="true"></i><?php echo $link['name']; ?></a>
-                            <p><?php echo $link['description']; ?></p>
-                          </div>
-                        </article>
-                      <?php endforeach; ?>
                     <?php endif; ?>
                   </div>
                 </div>
