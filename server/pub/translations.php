@@ -102,6 +102,7 @@ Se você possui usuário cadastrado no site ScIELO, na próxima vez que acessar 
     define("MY_SHELF",'Documentos Favoritos');
     define("MY_LINKS",'Links Favoritos');
     define("MY_NEWS",'Minhas Notícias');
+    define("FORGOT_PASSWORD",'Esqueceu sua senha?');
     define("FORGOT_MY_PASSWORD",'esqueci minha senha');
     define("CHANGE_PASSWORD",'Alterar Senha');
     define("MY_DATA",'Editar Perfil');
@@ -226,6 +227,7 @@ Si usted tiene usuário cadastrado en el sitio ScIELO, la próxima vez que acced
     define("MY_SHELF",'Documentos Favoritos');
     define("MY_LINKS",'Links Favoritos');
     define("MY_NEWS",'Minhas Notícias');
+    define("FORGOT_PASSWORD",'Esqueceu sua senha?');
     define("FORGOT_MY_PASSWORD",'esqueci minha senha');
     define("CHANGE_PASSWORD",'Alterar Senha');
     define("MY_DATA",'Editar Perfil');
@@ -350,6 +352,7 @@ If you have a registered user in ScIELO website, the next time you access SciELO
     define("MY_SHELF",'Documentos Favoritos');
     define("MY_LINKS",'Links Favoritos');
     define("MY_NEWS",'Minhas Notícias');
+    define("FORGOT_PASSWORD",'Esqueceu sua senha?');
     define("FORGOT_MY_PASSWORD",'esqueci minha senha');
     define("CHANGE_PASSWORD",'Alterar Senha');
     define("MY_DATA",'Editar Perfil');
