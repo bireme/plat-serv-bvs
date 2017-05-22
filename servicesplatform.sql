@@ -30,7 +30,7 @@ USE `servicesplatform`;
 
 CREATE TABLE IF NOT EXISTS `dataHistory` (
   `traceID` bigint(10) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `sysUID` varchar(150) NOT NULL DEFAULT '',
+  `sysUID` int(10) UNSIGNED NOT NULL DEFAULT '0',
   `datetime` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `type` varchar(150) NOT NULL DEFAULT '',
   `action` varchar(150) NOT NULL DEFAULT '',
@@ -48,7 +48,7 @@ CREATE TABLE IF NOT EXISTS `directories` (
   `dirID` bigint(10) UNSIGNED NOT NULL AUTO_INCREMENT,
   `name` char(20) NOT NULL,
   `offline` int(10) NOT NULL DEFAULT '0',
-  `sysUID` int(10) UNSIGNED NOT NULL,
+  `sysUID` int(10) UNSIGNED NOT NULL DEFAULT '0',
   `public` int(10) DEFAULT '0',
   PRIMARY KEY (`dirID`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
@@ -133,7 +133,7 @@ CREATE TABLE IF NOT EXISTS `profiles` (
 --
 
 CREATE TABLE IF NOT EXISTS `userLinks` (
-  `linkID` bigint(10) unsigned NOT NULL AUTO_INCREMENT,
+  `linkID` bigint(10) UNSIGNED NOT NULL AUTO_INCREMENT,
   `url` varchar(300) NOT NULL,
   `description` text NOT NULL,
   `inHome` tinyint(1) NOT NULL DEFAULT '0',
@@ -150,7 +150,7 @@ CREATE TABLE IF NOT EXISTS `userLinks` (
 --
 
 CREATE TABLE IF NOT EXISTS `userNews` (
-  `sysUID` int(150) UNSIGNED NOT NULL DEFAULT '0',
+  `sysUID` int(10) UNSIGNED NOT NULL DEFAULT '0',
   `url` varchar(300) NOT NULL,
   `inHome` tinyint(1) NOT NULL DEFAULT '0',
   `newsID` bigint(10) UNSIGNED NOT NULL AUTO_INCREMENT,
@@ -173,11 +173,27 @@ CREATE TABLE IF NOT EXISTS `userShelf` (
   `citedStat` tinyint(1) NOT NULL DEFAULT '0',
   `accessStat` tinyint(1) NOT NULL DEFAULT '0',
   `insertDate` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `rate` int(11) NOT NULL DEFAULT '0',
+  `rate` int(10) NOT NULL DEFAULT '0',
   `visible` tinyint(1) NOT NULL DEFAULT '0',
-  `shelfID` bigint(10) NOT NULL AUTO_INCREMENT,
+  `shelfID` bigint(10) UNSIGNED NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`shelfID`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `userConfirm`
+--
+
+CREATE TABLE IF NOT EXISTS `userConfirm` (
+  `id` bigint(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `sysUID` int(10) UNSIGNED NOT NULL DEFAULT '0',
+  `key` varchar(150) NOT NULL DEFAULT '',
+  `email` varchar(150) NOT NULL DEFAULT '',
+  `creation_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `confirmation_date` datetime,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -188,12 +204,12 @@ CREATE TABLE IF NOT EXISTS `userShelf` (
 CREATE TABLE IF NOT EXISTS `users` (
   `userFirstName` varchar(150) NOT NULL DEFAULT '',
   `userLastName` varchar(150) NOT NULL DEFAULT '',
-  `userEmail` varchar(45) NOT NULL DEFAULT '',
+  `userEmail` varchar(150) NOT NULL DEFAULT '',
   `userPassword` varchar(32) NOT NULL DEFAULT '',
   `userGender` char(1) NOT NULL DEFAULT '',
   `userAffiliation` varchar(45) DEFAULT '',
   `userDegree` varchar(45) DEFAULT '',
-  `sysUID` bigint(10) NOT NULL AUTO_INCREMENT,
+  `sysUID` bigint(10) UNSIGNED NOT NULL AUTO_INCREMENT,
   `userID` varchar(150) NOT NULL DEFAULT '',
   `sguID` varchar(150) DEFAULT '',
   `userCountry` varchar(150) DEFAULT '',

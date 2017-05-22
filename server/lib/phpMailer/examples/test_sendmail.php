@@ -11,7 +11,7 @@ include_once('class.phpmailer.php');
 
 $mail             = new PHPMailer();
 $body             = $mail->getFile('contents.html');
-$body             = eregi_replace("[\]",'',$body);
+$body             = preg_replace('/[\]/i','',$body);
 
 $mail->IsSendmail(); // telling the class to use SendMail transport
 

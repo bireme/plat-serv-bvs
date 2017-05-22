@@ -66,7 +66,7 @@ class ToolsAuthentication {
                 $objUser->setPassword($userPass);
                 $objUser->setSource($socialMedia['social_media']);
 
-                $addResult = UserDAO::addUser($objUser);
+                $addResult = UserDAO::addUser($objUser, 1);
                 $result["userDataStatus"] = false; /* need to complete user data */
             }
 
@@ -85,7 +85,7 @@ class ToolsAuthentication {
 
                 $user->setFirstName($name);
 
-                $addResult = UserDAO::addUser($user);
+                $addResult = UserDAO::addUser($user, 1);
                 $result["userDataStatus"] = false; /* need to complete user data */
             }
 
@@ -103,7 +103,7 @@ class ToolsAuthentication {
                 $objUser->setFirstName($userID);
                 $objUser->setPassword($userPass);
 
-                $addResult = UserDAO::addUser($objUser);
+                $addResult = UserDAO::addUser($objUser, 1);
                 $result["userDataStatus"] = false; /* need to complete user data */
             }
         }else{
@@ -166,9 +166,6 @@ class ToolsRegister {
     /**
      * Authenticate user before register.
      *
-     * @param String $userID
-     * @param String $userPass
-     * @return Boolean
      */
     public static function authenticateRegisteringUser($objUserArg){
         if (LDAPAuthenticator::authenticateUser($objUserArg->getID(),
