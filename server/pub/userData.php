@@ -46,6 +46,7 @@ $orcid = !empty($_REQUEST['orcid']) ? $_REQUEST['orcid'] : false;
 $researcherID = !empty($_REQUEST['researcherID']) ? $_REQUEST['researcherID'] : false;
 $lattes = !empty($_REQUEST['lattes']) ? $_REQUEST['lattes'] : false;
 $acao = !empty($_REQUEST['acao']) ? $_REQUEST['acao'] : 'default';
+$userKey = !empty($_REQUEST['key']) ? $_REQUEST['key'] : false;
 $msg = null; /* system messages */
 
 switch($acao){
@@ -70,8 +71,8 @@ switch($acao){
         if(Verifier::chkObjUser($usr)){
             $migrationResult = ToolsRegister::authenticateRegisteringUser($usr);
         }
-        
-        if ($migrationResult["status"] === true){          
+
+        if ($migrationResult["status"] === true){
             $response["msg"] = ADD_SUCCESS;
             $response["status"] = true;
             $orcidData = UserDAO::fillOrcidData($usr->getID(), $usr->getOrcid());
@@ -113,6 +114,24 @@ switch($acao){
             $orcidData = UserDAO::fillOrcidData($usr->getID(), $usr->getOrcid());
         }else{
             $response["msg"] = USER_UPDATE_ERROR;
+            $response["status"] = false;
+        }
+
+        break;
+    case "confirmar":
+        $result = UserDAO::userConfirmation($email, $userKey);
+
+        if($result === true){
+            $usr = UserDAO::getUser(trim($email));
+            $addUser = UserDAO::addUser($usr, 1);
+
+            if($addUser === true) {
+                $response["msg"] = USER_CONFIRMED;
+                $response["status"] = true;
+                $orcidData = UserDAO::fillOrcidData($usr->getID(), $usr->getOrcid());
+            }
+        }else{
+            $response["msg"] = USER_CONFIRMATION_ERROR;
             $response["status"] = false;
         }
 
@@ -224,7 +243,7 @@ $DocTitle = $isUser?UPDATE_USER_TITLE:REGISTER_NEW_USER_TITLE;
 
                     <form method="post" name="cadastro" class="form-horizontal form-label-left" novalidate>
 
-                      <input type="hidden" name="postback" value="1" />                            
+                      <input type="hidden" name="postback" value="1" />
                       <input type="hidden" name="userid" value="<?=trim($usr->getID())?> " />
                       <input type="hidden" name="source" value="<?=trim($usr->getSource())?>" />
 

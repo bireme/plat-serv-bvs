@@ -80,6 +80,7 @@ class UserDAO {
     public static function getUser($userID){
         global $_conf;
         $retValue = false;
+
         $strsql = "SELECT *
                     FROM users
                     WHERE userID = '".$userID."'" ;
@@ -113,6 +114,7 @@ class UserDAO {
 
             $retValue = $objUser;
         }
+
         return $retValue;
     }
 
@@ -120,15 +122,17 @@ class UserDAO {
      * Add a new user
      *
      * @param object $objUser User object
+     * @param int $active
      * @return boolean
      */
-    public static function addUser($objUser){
+    public static function addUser($objUser, $active=0){
         global $_conf;
         $retValue = true;
         $canInsert = true;
+
         $source = $objUser->getSource() ? $objUser->getSource() : '';
 
-        if ( empty($source) || 'ldap' == $source ){
+        if ( $active && ( empty($source) || 'ldap' == $source ) ) {
 
             /* add user to LDAP */
             $attrs = array('cn' => $objUser->getID(),
@@ -159,7 +163,7 @@ class UserDAO {
         if(!self::isUser($objUser->getID())){
             if($canInsert === true){
 
-                $strsql =  "INSERT INTO users ( userID,
+                $strsql = "INSERT INTO users ( userID,
                                                  userFirstName,
                                                  userLastName,
                                                  userGender,
@@ -174,6 +178,7 @@ class UserDAO {
                                                  orcidData,
                                                  researcherID,
                                                  lattes,
+                                                 active,
                                                  userPassword )
                                      VALUES ('".$objUser->getID()."','".
                                                 $objUser->getFirstName()."','".
@@ -189,25 +194,54 @@ class UserDAO {
                                                 $objUser->getOrcid()."','".
                                                 $objUser->getOrcidData()."','".
                                                 $objUser->getResearcherID()."','".
-                                                $objUser->getLattes()."',''";
+                                                $objUser->getLattes()."','".
+                                                $active."',''";
                                                 // empty password
                 $strsql .= ")";
 
                 try{
                     $_db = new DBClass();
-                    $res = $_db->databaseExecInsert($strsql);
+                    $result = $_db->databaseExecInsert($strsql);
                 }catch(DBClassException $e){
                     $logger = &Log::singleton('file', LOG_FILE, __CLASS__, $_conf);
                     $logger->log($e->getMessage(),PEAR_LOG_EMERG);
                 }
 
-                if ($res === false ){
+                if ($result === false ){
                     $retValue = false;
+                } else {
+                    if ( !$active ) { //
+                        $sysUID = $result;
+                        $email = $objUser->getEmail();
+                        $date = date('Y-m-d H:i:s');
+                                     
+                        //create a random key
+                        $key = md5(uniqid(mt_rand(), true));
+
+                        $deleteConfirm = self::deleteUserConfirm($email);
+
+                        $addConfirm = self::addUserConfirm($email,$key,$date);
+
+                        if($addConfirm !== false){
+                            $to = array($email);
+                            $home = $_SERVER['HTTP_HOST'] . RELATIVE_PATH . '/controller/authentication';
+                            $body = str_replace('#SITE#',
+                                $_SERVER['HTTP_HOST'],
+                                file_get_contents(EMAIL_CONFIRMATION_TEMPLATE));
+                            $body = str_replace('#USERNAME#', $objUser->getFirstName(), $body);
+                            $body = str_replace('#HOME#', base64_encode($home), $body);
+                            $body = str_replace('#EMAIL#', $email, $body);
+                            $body = str_replace('#KEY#', $key, $body);
+                            $sendMail = Mailer::sendMail($body,
+                                "New Services Platform User: ".$objUser->getFirstName(),$to);
+                        }
+                    }
                 }
             }else{
                 $retValue = false;
             }
         }
+        
         return $retValue;
     }
 
@@ -267,7 +301,7 @@ class UserDAO {
                 $logger->log($e->getMessage(),PEAR_LOG_EMERG);
             }
 
-            if ($res !== false ){
+            if ( $res !== false ){
                 $retValue = true;
             }
         }
@@ -300,7 +334,114 @@ class UserDAO {
         }
         return $retValue;
     }
-    
+
+    /**
+     * Check user confirmation
+     *
+     * @param string $userEmail user email
+     * @param string $userKey user key
+     * @return boolean
+     */
+    public static function userConfirmation($userEmail, $userKey){
+        global $_conf;
+        $retValue = false;
+
+        $sysUID = self::getSysUID(trim($userEmail));
+
+        if ( $sysUID ) {
+            $strsql = "SELECT * FROM `userConfirm`
+                        WHERE `sysUID` = '".$sysUID."'
+                        AND `key` = '".$userKey."'";
+
+            try{
+                $_db = new DBClass();
+                $result = $_db->databaseQuery($strsql);
+            }catch(DBClassException $e){
+                $logger = &Log::singleton('file', LOG_FILE, __CLASS__, $_conf);
+                $logger->log($e->getMessage(),PEAR_LOG_EMERG);
+            }
+
+            if( $result[0]['key'] ) {
+                $strsql = "UPDATE users
+                        SET active = '1',
+                        confirmation_date = '".date('Y-m-d H:i:s')."'
+                        WHERE sysUID = '".$sysUID."'";
+
+                try{
+                    $_db = new DBClass();
+                    $res = $_db->databaseQuery($strsql);
+                }catch(DBClassException $e){
+                    $logger = &Log::singleton('file', LOG_FILE, __CLASS__, $_conf);
+                    $logger->log($e->getMessage(),PEAR_LOG_EMERG);
+                }
+
+                if ( $res !== false ) $retValue = true;
+            }
+        }
+
+        return $retValue;
+    }
+
+    /**
+     * Add user confirmation data
+     *
+     * @param string $email user email
+     * @param string $key user key
+     * @param string $date
+     * @return boolean
+     */
+    public static function addUserConfirm($email, $key, $date){
+        global $_conf;
+        $retValue = false;
+
+        $sysUID = self::getSysUID($email);
+
+        if ( $sysUID ) {
+            $strsql = "INSERT INTO `userConfirm` VALUES ('$sysUID','$key','$email','$date')";
+
+            try{
+                $_db = new DBClass();
+                $result = $_db->databaseExecInsert($strsql);
+            }catch(DBClassException $e){
+                $logger = &Log::singleton('file', LOG_FILE, __CLASS__, $_conf);
+                $logger->log($e->getMessage(),PEAR_LOG_EMERG);
+            }
+
+            if ( $result !== false ) $retValue = true;
+        }
+
+        return $retValue;
+    }
+
+    /**
+     * Delete user confirmation data
+     *
+     * @param string $email user email
+     * @return boolean
+     */
+    public static function deleteUserConfirm($email){
+        global $_conf;
+        $retValue = false;
+
+        $sysUID = self::getSysUID($email);
+
+        if ( $sysUID ) {
+            $strsql = "DELETE FROM `userConfirm` WHERE `sysUID` = '".$sysUID."'";
+
+            try{
+                $_db = new DBClass();
+                $result = $_db->databaseQuery($strsql);
+            }catch(DBClassException $e){
+                $logger = &Log::singleton('file', LOG_FILE, __CLASS__, $_conf);
+                $logger->log($e->getMessage(),PEAR_LOG_EMERG);
+            }
+
+            if ( $result ) $retValue = true;
+        }
+
+        return $retValue;
+    }
+
     public static function changePassword(){}
 
     /**
@@ -351,7 +492,7 @@ class UserDAO {
     public static function getSysUID($userID){
         global $_conf;
 
-        $strsql = "SELECT sysUID FROM users WHERE userID = '".$userID."'" ;
+        $strsql = "SELECT sysUID FROM users WHERE userID = '".$userID."'";
 
         try{
             $_db = new DBClass();
@@ -361,7 +502,7 @@ class UserDAO {
             $logger->log($e->getMessage(),PEAR_LOG_EMERG);
         }
         
-        return $res[0]['sysUID']?$res[0]['sysUID']:false;
+        return $res[0]['sysUID'] ? $res[0]['sysUID'] : false;
     }
 
     /**
@@ -463,7 +604,7 @@ class UserDAO {
             $logger->log($e->getMessage(),PEAR_LOG_EMERG);
         }
 
-        if ($res !== false )
+        if ( $res !== false )
             $retValue = $assoc ? json_decode($content, true) : true;
 
         return $retValue;

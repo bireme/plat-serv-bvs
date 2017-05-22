@@ -93,7 +93,7 @@ class Mailer {
      */
     public static function sendMail($body,$subject,$to,$fromMail=EMAIL_FROM,
         $fromName=EMAIL_FROMNAME){
-        // send an email to $userID
+        global $_conf;
         
         $objMailer = new PHPMailer();
         $objMailer->Host = EMAIL_HOST;

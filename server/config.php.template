@@ -101,6 +101,7 @@ define("EMAIL_FROMNAME",'BVS Network');
 define("EMAIL_USERNAME",'');
 define("EMAIL_PASSWORD",'');
 define("EMAIL_NEWPASSWORD_TEMPLATE",APP_BASEDIR.'/templates/mail/sendNewEMail.tpl');
+define("EMAIL_CONFIRMATION_TEMPLATE",APP_BASEDIR.'/templates/mail/confirmEMail.tpl');
 
 /* WWW Public files */
 define("ERROR_REPORTING",0); // 0 || E_ALL
