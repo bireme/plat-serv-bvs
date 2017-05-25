@@ -61,5 +61,17 @@ switch($_REQUEST["action"]){
         die("default");
     break;
 }
-//header("Location: ../view/".$_REQUEST["action"]);
+
+if ( isset($_SESSION['userTK']) && !empty($_SESSION['userTK']) ) {
+    require_once(dirname(__FILE__)."/classes/Authentication.php");
+
+    $data = Authentication::getUserData($_SESSION["userTK"]);
+    
+    if ( !$data['agreement_date'] ) {
+        $b64HttpHost = base64_encode($_SERVER["HTTP_HOST"].$_SERVER["SCRIPT_NAME"].'/authentication');
+        header('Location:'.SERVICES_PLATFORM_DOMAIN.'/pub/userData.php?userTK='.urlencode($_SESSION["userTK"]).'&c='.$b64HttpHost);
+        exit();
+    }
+}
+
 ?>

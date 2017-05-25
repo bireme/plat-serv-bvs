@@ -294,6 +294,12 @@ class Verifier {
             }
         }
 
+        if($objUser->getAgreementDate()){            
+            if(!preg_match(REGEXP_AGREEMENT_DATE, $objUser->getAgreementDate())){
+                return false;
+            }
+        }
+
         return true;
     }
 

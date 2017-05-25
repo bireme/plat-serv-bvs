@@ -22,7 +22,7 @@ class User {
 	private $_password;
 	private $_profiles = array();
 	private $_degree;
-	private $_affiliation;        
+	private $_affiliation;
     private $_sguID;
     private $_country;
     private $_source;
@@ -32,6 +32,7 @@ class User {
     private $_orcidData;
     private $_researcherID;
     private $_lattes;
+    private $_agreementDate;
 
     public function __construct(){}
 
@@ -356,6 +357,24 @@ class User {
      */
     public function getLattes(){
         return (trim($this->_lattes));
+    }
+
+    /**
+     * Set agreement date
+     *
+     * @param string $date
+     */
+    public function setAgreementDate($date){
+        $this->_agreementDate = $date;
+    }
+
+    /**
+     * Get agreement date
+     *
+     * @return string
+     */
+    public function getAgreementDate(){
+        return $this->_agreementDate;
     }
 }
 ?>

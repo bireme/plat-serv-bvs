@@ -11,7 +11,7 @@ require_once(dirname(__FILE__)."/../classes/ToolsAuthentication.php");
 require_once(dirname(__FILE__)."/../classes/Verifier.php");
 
 if ( empty($_SESSION['userTK']) && !empty($_GET['userTK']) )
-    header("Location: ".RELATIVE_PATH.'/controller/authentication');
+    header("Location: ".RELATIVE_PATH."/controller/authentication");
 
 $src = $_SESSION['source'] ? $_SESSION['source'] : false;
 
@@ -45,6 +45,7 @@ $researchGate = !empty($_REQUEST['researchGate']) ? $_REQUEST['researchGate'] : 
 $orcid = !empty($_REQUEST['orcid']) ? $_REQUEST['orcid'] : false;
 $researcherID = !empty($_REQUEST['researcherID']) ? $_REQUEST['researcherID'] : false;
 $lattes = !empty($_REQUEST['lattes']) ? $_REQUEST['lattes'] : false;
+$terms = !empty($_REQUEST['terms']) ? $_REQUEST['terms'] : false;
 $acao = !empty($_REQUEST['acao']) ? $_REQUEST['acao'] : 'default';
 $userKey = !empty($_REQUEST['key']) ? $_REQUEST['key'] : false;
 $msg = null; /* system messages */
@@ -67,13 +68,14 @@ switch($acao){
         $usr->setOrcid($orcid);
         $usr->setResearcherID($researcherID);
         $usr->setLattes($lattes);
+        $usr->setAgreementDate($terms);
 
         if(Verifier::chkObjUser($usr)){
             $migrationResult = ToolsRegister::authenticateRegisteringUser($usr);
         }
 
         if ($migrationResult["status"] === true){
-            $response["msg"] = ADD_SUCCESS;
+            $response["msg"] = USER_ADD_SUCCESS;
             $response["status"] = true;
             $orcidData = UserDAO::fillOrcidData($usr->getID(), $usr->getOrcid());
         }elseif (($migrationResult["status"] === false) &&
@@ -81,7 +83,7 @@ switch($acao){
             $response["msg"] = USER_EXISTS;
             $response["status"] = false;
         }else{
-            $response["msg"] = "ERROR!";
+            $response["msg"] = USER_ADD_ERROR;
             $response["status"] = false;
         }
 
@@ -103,6 +105,7 @@ switch($acao){
         $usr->setOrcid($orcid);
         $usr->setResearcherID($researcherID);
         $usr->setLattes($lattes);
+        $usr->setAgreementDate($terms);
 
         if(Verifier::chkObjUser($usr)){
             $result = UserDAO::updateUser($usr);
@@ -210,6 +213,13 @@ $DocTitle = $isUser?UPDATE_USER_TITLE:REGISTER_NEW_USER_TITLE;
                         <strong><?=$response["msg"];?></strong>
                     </div>
                     <?php endif; ?>
+                    <?php if( $isUser && !$usr->getAgreementDate() ) : ?>
+                    <div class="alert alert-info alert-dismissible fade in" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
+                        </button>
+                        <strong><?=UPDATE_INFO?></strong>
+                    </div>
+                    <?php endif; ?>
 
                     <?php if ($act == "registry") : ?>
                     <div class="help">
@@ -217,9 +227,9 @@ $DocTitle = $isUser?UPDATE_USER_TITLE:REGISTER_NEW_USER_TITLE;
                       <?=FREE_REGISTRY_MESSAGE?>
 
                       <!-- modal -->
-                      <button type="button" class="btn btn-info" data-toggle="modal" data-target=".bs-example-modal-lg"><?=LEARN_MORE?></button>
+                      <button type="button" class="btn btn-info" data-toggle="modal" data-target=".bs-modal-lg"><?=LEARN_MORE?></button>
 
-                      <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="true" style="z-index: 9999;">
+                      <div class="modal fade bs-modal-lg" tabindex="-1" role="dialog" aria-hidden="true" style="z-index: 9999;">
                         <div class="modal-dialog modal-lg">
                           <div class="modal-content">
 
@@ -249,14 +259,14 @@ $DocTitle = $isUser?UPDATE_USER_TITLE:REGISTER_NEW_USER_TITLE;
 
                       <span class="section"><?=PERSONAL_DATA?></span>
 
-                      <div class="item form-group">
+                      <div class="item field form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="firstName"><?=FIELD_FIRST_NAME?> <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
                           <input id="firstName" class="form-control col-md-7 col-xs-12" data-validate-length-range="0,150" name="firstName" required="required" type="text" value="<?=trim($usr->getFirstName())?>">
                         </div>
                       </div>
-                      <div class="item form-group">
+                      <div class="item field form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="lastName"><?=FIELD_LAST_NAME?> <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
@@ -264,28 +274,28 @@ $DocTitle = $isUser?UPDATE_USER_TITLE:REGISTER_NEW_USER_TITLE;
                         </div>
                       </div>
                       <?php if($showLoginField) : ?>
-                      <div class="item form-group">
+                      <div class="item field form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="login"><?=FIELD_LOGIN?> <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
                           <input type="email" id="login" name="login" required="required" class="form-control col-md-7 col-xs-12" data-validate-length-range="0,50" value="<?=trim($usr->getID())?>">
                         </div>
                       </div>
-                      <div class="item form-group">
+                      <div class="item field form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="confirmLogin"><?=FIELD_LOGIN_CONFIRMATION?> <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
                           <input type="email" id="confirmLogin" name="confirmLogin" data-validate-linked="login" required="required" class="form-control col-md-7 col-xs-12">
                         </div>
                       </div>
-                      <div class="item form-group">
+                      <div class="item field form-group">
                         <label for="password" class="control-label col-md-3"><?=FIELD_PASSWORD?> <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
                           <input id="password" type="password" name="password" data-validate-length-range="8,40" class="form-control col-md-7 col-xs-12" required="required">
                         </div>
                       </div>
-                      <div class="item form-group">
+                      <div class="item field form-group">
                         <label for="confirmPassword" class="control-label col-md-3 col-sm-3 col-xs-12"><?=FIELD_PASSWORD_CONFIRMATION?> <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
@@ -293,50 +303,50 @@ $DocTitle = $isUser?UPDATE_USER_TITLE:REGISTER_NEW_USER_TITLE;
                         </div>
                       </div>
                       <?php else : ?>
-                      <div class="item form-group">
+                      <div class="item field form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="login"><?=FIELD_LOGIN?></label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
                           <input type="email" id="login" name="login" class="form-control col-md-7 col-xs-12" value="<?=trim($usr->getID())?>" disabled>
                         </div>
                       </div>
                       <?php endif; ?>
-                      <div class="item form-group">
+                      <div class="item field form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="afiliacao"><?=FIELD_AFILIATION?></label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
                           <input id="afiliacao" type="text" name="afiliacao" class="optional form-control col-md-7 col-xs-12" value="<?=$usr->getAffiliation()?>">
                         </div>
                       </div>
-                      <div class="item form-group">
+                      <div class="item field form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="lattes"><?=FIELD_LATTES?></label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
                           <input type="url" id="lattes" name="lattes" class="form-control col-md-7 col-xs-12" value="<?=$usr->getLattes()?>">
                         </div>
                       </div>
-                      <div class="item form-group">
+                      <div class="item field form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="linkedin"><?=FIELD_LINKEDIN?></label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
                           <input type="url" id="linkedin" name="linkedin" class="form-control col-md-7 col-xs-12" value="<?=$usr->getLinkedin()?>">
                         </div>
                       </div>
-                      <div class="item form-group">
+                      <div class="item field form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="researchGate"><?=FIELD_RESEARCHGATE?></label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
                           <input type="url" id="researchGate" name="researchGate" class="form-control col-md-7 col-xs-12" value="<?=$usr->getResearchGate()?>">
                         </div>
                       </div>
-                      <div class="item form-group">
+                      <div class="item field form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="orcid"><?=FIELD_ORCID?></label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
                           <input id="orcid" type="text" name="orcid" class="optional form-control col-md-7 col-xs-12" value="<?=$usr->getOrcid()?>">
                         </div>
                       </div>
-                      <div class="item form-group">
+                      <div class="item field form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="researcherID"><?=FIELD_RESEARCHERID?></label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
                           <input id="researcherID" type="text" name="researcherID" class="optional form-control col-md-7 col-xs-12" value="<?=$usr->getResearcherID()?>">
                         </div>
                       </div>
-                      <div class="item form-group">
+                      <div class="item field form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12"><?=FIELD_COUNTRY?></label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
                           <select class="form-control" name="country">
@@ -353,10 +363,10 @@ $DocTitle = $isUser?UPDATE_USER_TITLE:REGISTER_NEW_USER_TITLE;
                           </select>
                         </div>
                       </div>
-                      <div class="item form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12"><?=DEGREE?></label>
+                      <div class="item field form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="degree"><?=DEGREE?></label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <select name="degree" class="form-control">
+                          <select id="degree" name="degree" class="form-control">
                             <option value=""><?=CHOOSE_DEGREE?></option>
                             <?php
                                 $arr = explode(",",FIELD_DEGREE);
@@ -374,8 +384,8 @@ $DocTitle = $isUser?UPDATE_USER_TITLE:REGISTER_NEW_USER_TITLE;
                           </select>
                         </div>
                       </div>
-                      <div class="item form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12"><?=FIELD_GENDER?></label>
+                      <div class="item field form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="gender"><?=FIELD_GENDER?></label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
                           <div id="gender" class="btn-group" data-toggle="buttons">
                             <label class="btn btn-default <?php if ($usr->getGender() == "M") echo "active"; ?>" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
@@ -391,6 +401,39 @@ $DocTitle = $isUser?UPDATE_USER_TITLE:REGISTER_NEW_USER_TITLE;
                           </p-->
                         </div>
                       </div>
+                      <?php if( !$usr->getAgreementDate() ) : ?>
+                      <div class="item field form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="terms"><?=TERMS?> <span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <div class="checkbox">
+                              <input id="terms" name="terms" type="checkbox" class="flat" value="<?php echo date('Y-m-d'); ?>" required="required"> <?=TERMS_AGREE_MESSAGE?>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="modal fade bs-terms-modal-lg" tabindex="-1" role="dialog" aria-hidden="true" style="z-index: 9999;">
+                        <div class="modal-dialog modal-lg">
+                          <div class="modal-content">
+
+                            <div class="modal-header">
+                              <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span>
+                              </button>
+                              <h2 class="modal-title" id="myModalLabel"><?=TERMS?></h2>
+                            </div>
+                            <div class="modal-body">
+                              <?=TERMS_MESSAGE?>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-default" data-dismiss="modal"><?=BUTTON_CLOSE?></button>
+                            </div>
+
+                          </div>
+                        </div>
+                      </div>
+                      <?php else : ?>
+                      <input type="hidden" name="terms" value="<?=$usr->getAgreementDate()?>" />
+                      <?php endif; ?>
                       <div class="ln_solid"></div>
                       <div class="form-group">
                         <div class="col-md-6 col-md-offset-3">

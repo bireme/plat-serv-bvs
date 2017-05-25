@@ -68,6 +68,7 @@ switch($_REQUEST["task"]){
                     '/controller/mig_id_confirmation/userTK/'.
                     base64_encode($response['values']['tmpTK']).'/userID/'.
                     base64_encode($response['values']['userID']).$ssoParams);
+                exit();
             }
         }
     break;
@@ -99,6 +100,7 @@ if(!empty($origin) and empty($_SESSION["userTK"]) and $control != "home"){
 /* Reload user data  */
 if(!empty($_SESSION["userTK"])){
     $result = Authentication::getUserData($_SESSION["userTK"]);
+
     if ($result != false){
         $_SESSION["userFirstName"] = $result["userFirstName"];
         $_SESSION["userLastName"] = $result["userLastName"];

@@ -98,7 +98,7 @@ switch($_REQUEST["action"]){
             exit;
         } else {
             header("Location:".RELATIVE_PATH."/controller/".MAIN_PAGE);
-            die();
+            exit();
         }
         break;
     case "mig_id_confirmation":

@@ -110,6 +110,7 @@ class UserDAO {
             $objUser->setOrcidData($res[0]['orcidData']);
             $objUser->setResearcherID($res[0]['researcherID']);
             $objUser->setLattes($res[0]['lattes']);
+            $objUser->setAgreementDate($res[0]['agreement_date']);
             $objUser->setProfile(ProfileDAO::getProfileList($objUser->getID()));
 
             $retValue = $objUser;
@@ -178,6 +179,7 @@ class UserDAO {
                                                  orcidData,
                                                  researcherID,
                                                  lattes,
+                                                 agreement_date,
                                                  active,
                                                  userPassword )
                                      VALUES ('".$objUser->getID()."','".
@@ -195,6 +197,7 @@ class UserDAO {
                                                 $objUser->getOrcidData()."','".
                                                 $objUser->getResearcherID()."','".
                                                 $objUser->getLattes()."','".
+                                                $objUser->getAgreementDate()."','".
                                                 $active."',''";
                                                 // empty password
                 $strsql .= ")";
@@ -269,7 +272,8 @@ class UserDAO {
                             researchGate ='".$objUser->getResearchGate()."',
                             orcid ='".$objUser->getOrcid()."',
                             researcherID ='".$objUser->getResearcherID()."',
-                            lattes ='".$objUser->getLattes()."'";
+                            lattes ='".$objUser->getLattes()."',
+                            agreement_date ='".$objUser->getAgreementDate()."'";
 
             /*  check if the password will be updated */
 

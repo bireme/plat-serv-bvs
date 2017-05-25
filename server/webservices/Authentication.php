@@ -110,6 +110,7 @@ function getUserData($userTK){
             $retValue['userLastName']=$objUser->getLastName();
             $retValue['userMail']=$objUser->getEmail();
             $retValue['source']=$objUser->getSource();
+            $retValue['agreement_date']=$objUser->getAgreementDate();
         }
     }
     return $retValue;

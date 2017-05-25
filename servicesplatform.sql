@@ -220,6 +220,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `orcidData` longtext,
   `researcherID` varchar(150) DEFAULT '',
   `lattes` varchar(300) DEFAULT '',
+  `agreement_date` date,
   PRIMARY KEY (`sysUID`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
 

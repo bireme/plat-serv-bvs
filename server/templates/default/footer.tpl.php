@@ -19,7 +19,7 @@
     <!-- NProgress -->
     <script src="<?=RELATIVE_PATH?>/vendors/nprogress/nprogress.js"></script>
     <!-- Validator Form -->
-    <script src="<?=RELATIVE_PATH?>/vendors/validator/validator.min.js"></script>
+    <script src="<?=RELATIVE_PATH?>/vendors/validator/validator.js"></script>
     <!-- iCheck -->
     <script src="<?=RELATIVE_PATH?>/vendors/iCheck/icheck.min.js"></script>
 
@@ -34,47 +34,52 @@
 
     <!-- Validator -->
     <script>
-      // initialize the validator function
-      validator.message.invalid         = labels[LANG]['INVALID'];
-      validator.message.empty           = labels[LANG]['EMPTY'];
-      validator.message.min             = labels[LANG]['MIN'];
-      validator.message.max             = labels[LANG]['MAX'];
-      validator.message.number_min      = labels[LANG]['NUMBER_MIN'];
-      validator.message.number_max      = labels[LANG]['NUMBER_MAX'];
-      validator.message.url             = labels[LANG]['URL'];
-      validator.message.number          = labels[LANG]['NUMBER'];
-      validator.message.email           = labels[LANG]['EMAIL'];
-      validator.message.email_repeat    = labels[LANG]['EMAIL_REPEAT'];
-      validator.message.password_repeat = labels[LANG]['PASSWORD_REPEAT'];
-      validator.message.repeat          = labels[LANG]['REPEAT'];
-      validator.message.complete        = labels[LANG]['COMPLETE'];
-      validator.message.select          = labels[LANG]['SELECT'];
-      validator.message.date            = labels[LANG]['DATA'];
+        // initialize the validator
+        var validator = new FormValidator(),
+            $form = $('form');
 
-      // validate a field on "blur" event, a 'select' on 'change' event & a '.required' classed multifield on 'keyup':
-      $('form')
-        .on('blur', 'input[required], input.optional, select.required', validator.checkField)
-        .on('change', 'select.required', validator.checkField)
-        .on('keypress', 'input[required][pattern]', validator.keypress);
+        // initialize the validator function
+        validator.texts.invalid         = labels[LANG]['INVALID'];
+        validator.texts.empty           = labels[LANG]['EMPTY'];
+        validator.texts.short           = labels[LANG]['SHORT'];
+        validator.texts.long            = labels[LANG]['LONG'];
+        validator.texts.number_min      = labels[LANG]['NUMBER_MIN'];
+        validator.texts.number_max      = labels[LANG]['NUMBER_MAX'];
+        validator.texts.url             = labels[LANG]['URL'];
+        validator.texts.number          = labels[LANG]['NUMBER'];
+        validator.texts.email           = labels[LANG]['EMAIL'];
+        validator.texts.email_repeat    = labels[LANG]['EMAIL_REPEAT'];
+        validator.texts.password_repeat = labels[LANG]['PASSWORD_REPEAT'];
+        validator.texts.no_match        = labels[LANG]['NO_MATCH'];
+        validator.texts.complete        = labels[LANG]['COMPLETE'];
+        validator.texts.select          = labels[LANG]['SELECT'];
+        validator.texts.date            = labels[LANG]['DATA'];
+        validator.texts.time            = labels[LANG]['TIME'];
+        validator.texts.checked         = labels[LANG]['CHECKED'];
 
-      $('.multi.required').on('keyup blur', 'input', function() {
-        validator.checkField.apply($(this).siblings().last()[0]);
-      });
+        document.forms[0].addEventListener('blur', function(e){
+            validator.checkField.call(validator, e.target)
+        }, true);
 
-      $('form').submit(function(e) {
-        e.preventDefault();
-        var submit = true;
+        document.forms[0].addEventListener('input', function(e){
+            validator.checkField.call(validator, e.target);
+        }, true);
 
-        // evaluate the form using generic validating
-        if (!validator.checkAll($(this))) {
-          submit = false;
-        }
+        document.forms[0].addEventListener('change', function(e){
+            validator.checkField.call(validator, e.target)
+        }, true);
 
-        if (submit)
-          this.submit();
+        document.forms[0].onsubmit = function(e){
+            var submit = true,
+                validatorResult = validator.checkAll(this);
 
-        return false;
-      });
+            console.log(validatorResult);
+            return !!validatorResult.valid;
+        };
+
+        // $('.multi.required').on('keyup blur', 'input', function(){
+        //     var field = validator.checkField.call( validator, this).siblings('[required]')[0] );
+        // });
     </script>
   </body>
 </html>
