@@ -17,8 +17,14 @@
             <!-- menu profile quick info -->
             <div class="profile">
               <div class="profile_pic">
-                <img src="<?=RELATIVE_PATH?>/images/<?=$_SESSION["skin"]?>/loggedin.png" alt="..." class="img-circle profile_img">
-              </div>
+                <?php if ( $_SESSION['fb_data']['picture']['data']['url'] ) : ?>
+                <img src="<?php echo $_SESSION['fb_data']['picture']['data']['url']; ?>" alt="avatar" class="img-circle profile_img">
+                <?php elseif ( $_SESSION['google_data']['picture'] ) : ?>
+                <img src="<?php echo $_SESSION['google_data']['picture']; ?>" alt="avatar" class="img-circle profile_img">
+                <?php else : ?>
+                <img src="<?=RELATIVE_PATH?>/images/<?=$_SESSION["skin"]?>/logged.png" alt="avatar" class="img-circle profile_img">
+                <?php endif; ?>
+                </div>
               <div class="profile_info">
                 <span><?=WELCOME?>,</span>
                 <h2><?=$_SESSION["userFirstName"]?></h2>
@@ -93,7 +99,13 @@
               <ul class="nav navbar-nav navbar-right profile_menu">
                 <li>
                   <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false" style="padding-bottom: 21px;">
-                    <img src="<?=RELATIVE_PATH?>/images/<?=$_SESSION["skin"]?>/loggedin.png" alt=""><?=$_SESSION["userFirstName"]?>
+                    <?php if ( $_SESSION['fb_data']['picture']['data']['url'] ) : ?>
+                    <img src="<?php echo $_SESSION['fb_data']['picture']['data']['url']; ?>" alt="avatar"><?=$_SESSION["userFirstName"]?>
+                    <?php elseif ( $_SESSION['google_data']['picture'] ) : ?>
+                    <img src="<?php echo $_SESSION['google_data']['picture']; ?>" alt="avatar"><?=$_SESSION["userFirstName"]?>
+                    <?php else : ?>
+                    <img src="<?=RELATIVE_PATH?>/images/<?=$_SESSION["skin"]?>/logged.png" alt="avatar"><?=$_SESSION["userFirstName"]?>
+                    <?php endif; ?>
                     <span class=" fa fa-angle-down"></span>
                   </a>
                   <ul class="dropdown-menu dropdown-usermenu pull-right" style="width: 100%;">

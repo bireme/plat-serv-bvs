@@ -85,9 +85,9 @@ Se você possui usuário cadastrado no site ScIELO, na próxima vez que acessar 
 <p>O registro e todos os produtos e serviços de informação continuarão gratuitos. As redes BVS e SciELO mantêm os princípios da modalidade de Acesso Aberto, portanto, da disponibilização da literatura científica e técnica na Internet sem custo para o usuário, licenças de uso ou barreiras restritivas de acesso.</p>
 <p>Futuramente, as novidades serão aplicadas nas demais instâncias da BVS, em todas as regiões geográficas e áreas temáticas da BVS, por meio do conceito de passaporte BVS.</p>
 ');
-    define("UPDATE_INFO",'<b>Por favor, atualize seus dados para que possa utilizar a Plataforma de Serviços.</b>');
+    define("UPDATE_INFO",'<b>Por favor, revise seus dados no formulário abaixo para continuar utilizando a Plataforma de Serviços.</b>');
     define("TERMS",'Termos de uso');
-    define("TERMS_AGREE_MESSAGE",'Eu concordo com os <a data-toggle="modal" data-target=".bs-terms-modal-lg" style="cursor: pointer;">Termos</a> da Plataforma de Serviços');
+    define("TERMS_AGREE_MESSAGE",'Eu concordo com os <a data-toggle="modal" data-target=".bs-terms-modal-lg" style="cursor: pointer; text-decoration: underline;">Termos</a> da Plataforma de Serviços');
     define("TERMS_MESSAGE",'
 <h4>Serviços gratuitos</h4>
 <p>O registro e todos os produtos e serviços de informação continuarão gratuitos. As redes BVS e SciELO mantêm os princípios da modalidade de Acesso Aberto, portanto, da disponibilização da literatura científica e técnica na Internet sem custo para o usuário, licenças de uso ou barreiras restritivas de acesso.</p>
@@ -218,9 +218,9 @@ Si usted tiene usuário cadastrado en el sitio ScIELO, la próxima vez que acced
 <p>El registro y todos los productis y servicios de información continuaran gratuitos. Las redes BVS e SciELO mantienem los princípios del Acceso Abierto, portanto, da disponibilización de la literatura cientifica e tecnica em la Iternet sin costo para el usuario, licensas de uso o barreras restritivas de acceso.</p>
 <p>En el futuro, las novidades seran aplicadas en otras instancias de productos de la BVS, en todas las regiones geograficas y areas tematicas de la BVS, por medio del concepto de pasaporte BVS y SciELO</p>
 ');
-    define("UPDATE_INFO",'<b>Por favor, atualize seus dados para que possa utilizar a Plataforma de Serviços.</b>');
+    define("UPDATE_INFO",'<b>Por favor, revise seus dados no formulário abaixo para continuar utilizando a Plataforma de Serviços.</b>');
     define("TERMS",'Terminos de uso');
-    define("TERMS_AGREE_MESSAGE",'Eu concordo com os <a data-toggle="modal" data-target=".bs-terms-modal-lg" style="cursor: pointer;">Termos</a> da Plataforma de Serviços');
+    define("TERMS_AGREE_MESSAGE",'Eu concordo com os <a data-toggle="modal" data-target=".bs-terms-modal-lg" style="cursor: pointer; text-decoration: underline;">Termos</a> da Plataforma de Serviços');
     define("TERMS_MESSAGE",'
 <h4>Serviços gratuitos</h4>
 <p>O registro e todos os produtos e serviços de informação continuarão gratuitos. As redes BVS e SciELO mantêm os princípios da modalidade de Acesso Aberto, portanto, da disponibilização da literatura científica e técnica na Internet sem custo para o usuário, licenças de uso ou barreiras restritivas de acesso.</p>
@@ -351,9 +351,9 @@ If you have a registered user in ScIELO website, the next time you access SciELO
 <p>The registration, all products and information services will remain free. The VHL and SciELO maintain the principles of open access, thus providing the scientific and technical literature on the Internet without cost to the user, usage license or barriers restricting access.</p>
 <p>In the future, these new features will be applied in other instances of VHL in all geographical regions and thematic areas of the VHL, through the concept of passport VHL and SciELO.</p>
 ');
-    define("UPDATE_INFO",'<b>Por favor, atualize seus dados para que possa utilizar a Plataforma de Serviços.</b>');
+    define("UPDATE_INFO",'<b>Por favor, revise seus dados no formulário abaixo para continuar utilizando a Plataforma de Serviços.</b>');
     define("TERMS",'Terms of use');
-    define("TERMS_AGREE_MESSAGE",'Eu concordo com os <a data-toggle="modal" data-target=".bs-terms-modal-lg" style="cursor: pointer;">Termos</a> da Plataforma de Serviços');
+    define("TERMS_AGREE_MESSAGE",'Eu concordo com os <a data-toggle="modal" data-target=".bs-terms-modal-lg" style="cursor: pointer; text-decoration: underline;">Termos</a> da Plataforma de Serviços');
     define("TERMS_MESSAGE",'
 <h4>Serviços gratuitos</h4>
 <p>O registro e todos os produtos e serviços de informação continuarão gratuitos. As redes BVS e SciELO mantêm os princípios da modalidade de Acesso Aberto, portanto, da disponibilização da literatura científica e técnica na Internet sem custo para o usuário, licenças de uso ou barreiras restritivas de acesso.</p>

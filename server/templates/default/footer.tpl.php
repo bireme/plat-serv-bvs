@@ -35,8 +35,7 @@
     <!-- Validator -->
     <script>
         // initialize the validator
-        var validator = new FormValidator(),
-            $form = $('form');
+        var validator = new FormValidator();
 
         // initialize the validator function
         validator.texts.invalid         = labels[LANG]['INVALID'];
@@ -57,19 +56,19 @@
         validator.texts.time            = labels[LANG]['TIME'];
         validator.texts.checked         = labels[LANG]['CHECKED'];
 
-        document.forms[0].addEventListener('blur', function(e){
+        document.forms['cadastro'].addEventListener('blur', function(e){
             validator.checkField.call(validator, e.target)
         }, true);
 
-        document.forms[0].addEventListener('input', function(e){
+        document.forms['cadastro'].addEventListener('input', function(e){
             validator.checkField.call(validator, e.target);
         }, true);
 
-        document.forms[0].addEventListener('change', function(e){
+        document.forms['cadastro'].addEventListener('change', function(e){
             validator.checkField.call(validator, e.target)
         }, true);
 
-        document.forms[0].onsubmit = function(e){
+        document.forms['cadastro'].onsubmit = function(e){
             var submit = true,
                 validatorResult = validator.checkAll(this);
 
