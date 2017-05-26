@@ -15,7 +15,11 @@
                             <input type="hidden" name="mode" value="persist"/>
                           <?}?>
                             <div class="modal-header">
+                                <?php if ( 'edit' == $_REQUEST['task'] ) : ?>
                                 <h2 class="modal-title"><?=$trans->getTrans($_REQUEST["action"],'EDIT_FOLDER')?></h2>
+                                <?php else : ?>
+                                <h2 class="modal-title"><?=$trans->getTrans($_REQUEST["action"],'ADD_FOLDER')?></h2>
+                                <?php endif; ?>
                             </div>
                             <div class="modal-body">
                                   <div class="form-group">

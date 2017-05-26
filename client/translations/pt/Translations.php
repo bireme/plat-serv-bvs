@@ -122,7 +122,7 @@ class Translations {
         self::$trans["suggesteddocs"]["ORCID"] = 'ORCID - Minhas Publicações';
         self::$trans["suggesteddocs"]["COLLECTIONS"] = 'Documentos Favoritos';
         self::$trans["suggesteddocs"]["PROFILES"] = 'Temas de Interesse';
-        self::$trans["suggesteddocs"]["INCOMING_FOLDER"] = 'Pasta de Entrada';
+        self::$trans["suggesteddocs"]["INCOMING_FOLDER"] = 'Caixa de Entrada';
         self::$trans["suggesteddocs"]["FOLDERS_LIST"] = 'Escolha um tema:';
         self::$trans["suggesteddocs"]["PROFILES_LIST"] = 'Escolha um tema:';
         self::$trans["suggesteddocs"]["LOADING"] = 'CARREGANDO';
@@ -144,7 +144,7 @@ class Translations {
     // Tems of mydocuments pages
         self::$trans["mydocuments"]["MY_COLLECTION"] = 'Documentos Favoritos';
         self::$trans["mydocuments"]["BY_DATE"] = 'por Data';
-        self::$trans["mydocuments"]["INCOMING_FOLDER"] = 'Pasta de Entrada';
+        self::$trans["mydocuments"]["INCOMING_FOLDER"] = 'Caixa de Entrada';
         self::$trans["mydocuments"]["ADD_FOLDER"] = 'Adicionar Coleção';
         self::$trans["mydocuments"]["MY_FOLDERS"] = 'Minhas Coleções';
         self::$trans["mydocuments"]["SHOW_BY"] = 'Visualizar Lista por:';
@@ -168,6 +168,7 @@ class Translations {
 
     // Tems of directories pages
         self::$trans["directories"]["FOLDER_NAME"] = 'Nome da coleção';
+        self::$trans["directories"]["ADD_FOLDER"] = 'adicionar coleção';
         self::$trans["directories"]["EDIT_FOLDER"] = 'editar coleção';
         self::$trans["directories"]["SAVE"] = 'salvar';
         self::$trans["directories"]["CANCEL"] = 'cancelar';
@@ -178,7 +179,7 @@ class Translations {
         self::$trans["directories"]["MOVE_TO"] = 'mover para';
         self::$trans["directories"]["MOVE_DOCUMENT_TO"] = 'mover para';
         self::$trans["directories"]["MOVE_CONTENT_TO_OTHER_FOLDER"] = 'Mover conteúdo para outra coleção';
-        self::$trans["directories"]["INCOMING_FOLDER"] = 'Pasta de Entrada';
+        self::$trans["directories"]["INCOMING_FOLDER"] = 'Caixa de Entrada';
         self::$trans["directories"]["ADD_DIR_SUCESS"] = 'Operação realizada com sucesso.';
         self::$trans["directories"]["REMOVE_DIR_SUCESS"] = 'Operação realizada com sucesso.';
         self::$trans["directories"]["MOVE_DOC_SUCESS"] = 'Operação realizada com sucesso.';        
@@ -191,7 +192,7 @@ class Translations {
         self::$trans["mylinks"]["DATE"] = 'Data';
         self::$trans["mylinks"]["MY_RANK"] = 'Meu ranking';
         self::$trans["mylinks"]["TOOLS"] = 'Ferramentas';
-        self::$trans["mylinks"]["ADD_LINK"] = 'Adicionar Link';
+        self::$trans["mylinks"]["ADD_LINK"] = 'adicionar link';
         self::$trans["mylinks"]["MY_LINKS"] = 'Links Favoritos';
         self::$trans["mylinks"]["REMOVE_LINK"] = 'remover link';
         self::$trans["mylinks"]["EDIT_LINK"] = 'editar link';
@@ -251,7 +252,7 @@ class Translations {
         self::$trans["myprofiledocuments"]["VIEW_RESULTS_IN"] = 'ver resultados em';
         self::$trans["myprofiledocuments"]["REMOVE_PROFIVE"] = 'remover tema';
         self::$trans["myprofiledocuments"]["EDIT_PROFILE"] = 'editar tema';
-        self::$trans["myprofiledocuments"]["ADD_PROFILE"] = 'Adicionar tema';
+        self::$trans["myprofiledocuments"]["ADD_PROFILE"] = 'adicionar tema';
         self::$trans["myprofiledocuments"]["TOOLS"] = 'Ferramentas';
         self::$trans["myprofiledocuments"]["SIMILARS_IN"] = 'Similares em';
         self::$trans["myprofiledocuments"]["PROFILE_KEYWORDS"] = 'Palavras-chave do Tema';

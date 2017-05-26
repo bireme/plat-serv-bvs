@@ -74,7 +74,7 @@
                             <div class="panel-body">
                                 <h5><?=$trans->getTrans($_REQUEST["action"],'TOOLS')?></h5>
                                 <ul class="list-docs-unstyled project_files">
-                                    <li><a href="javascript: void(0);" onclick="window.open('<?=RELATIVE_PATH?>/controller/mylinks/control/view/task/add','','resizable=no,width=420,height=385')"><i class="fa fa-plus-circle"></i><?=$trans->getTrans($_REQUEST["action"],'ADD_LINK')?></a></li>
+                                    <li><a href="javascript: void(0);" onclick="window.open('<?=RELATIVE_PATH?>/controller/mylinks/control/view/task/add','','resizable=no,width=420,height=385')"><i class="fa fa-plus-circle"></i><?=ucfirst($trans->getTrans($_REQUEST["action"],'ADD_LINK'))?></a></li>
                                 </ul>
                             </div>
                         </section>
