@@ -407,7 +407,7 @@ $DocTitle = $isUser?UPDATE_USER_TITLE:REGISTER_NEW_USER_TITLE;
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
                           <div class="checkbox">
-                              <input id="terms" name="terms" type="checkbox" class="flat" value="<?php echo date('Y-m-d'); ?>" required="required"> <?=TERMS_AGREE_MESSAGE?>
+                              <input id="terms" name="terms" type="checkbox" class="flat" value="<?php echo date('Y-m-d'); ?>" required="required"> <?=TERMS_AGREEMENT_MESSAGE?>
                           </div>
                         </div>
                       </div>
@@ -419,7 +419,7 @@ $DocTitle = $isUser?UPDATE_USER_TITLE:REGISTER_NEW_USER_TITLE;
                             <div class="modal-header">
                               <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span>
                               </button>
-                              <h2 class="modal-title" id="myModalLabel"><?=TERMS?></h2>
+                              <h2 class="modal-title" id="myModalLabel"><?=SERVPLAT?></h2>
                             </div>
                             <div class="modal-body">
                               <?=TERMS_MESSAGE?>

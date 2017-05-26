@@ -241,6 +241,20 @@ ul.project_files.profiles li {
     font-weight: 400;
 }
 
+div.terms {
+    height:600px;
+    border:1px solid #ccc;
+    background:#f2f2f2;
+    padding:6px;
+    overflow:auto;
+}
+
+div.terms p,
+div.terms li {font:normal 11px/15px arial;color:#333;}
+div.terms h3 {font:bold 14px/19px arial;color:#000;}
+div.terms h4 {font:bold 12px/17px arial;color:#000;}
+div.terms strong {color:#000;}
+
 #loading {
     background:url(../../images/default/loading.gif) no-repeat center center;
     height: 60px;
