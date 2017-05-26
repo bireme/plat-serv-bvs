@@ -303,7 +303,7 @@ class ShelfDAO {
                 $sort = "insertDate desc";
             break;
             default:
-                $sort = "insertDate desc";
+                $sort = "rate desc";
             break;
         }
 
