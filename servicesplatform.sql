@@ -221,6 +221,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `researcherID` varchar(150) DEFAULT '',
   `lattes` varchar(300) DEFAULT '',
   `agreement_date` date,
+  `last_login` datetime,
   PRIMARY KEY (`sysUID`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
 

@@ -446,6 +446,37 @@ class UserDAO {
         return $retValue;
     }
 
+    /**
+     * Set user's last login
+     *
+     * @param string $userID User ID
+     * @return boolean
+     */
+    public static function setLastLogin($userID){
+        global $_conf;
+        $retValue = false;
+
+        $sysUID = self::getSysUID($userID);
+
+        if ( $sysUID ) {
+            $strsql = "UPDATE users
+                    SET last_login = '".date('Y-m-d H:i:s')."'
+                    WHERE sysUID = '".$sysUID."'";
+
+            try{
+                $_db = new DBClass();
+                $result = $_db->databaseQuery($strsql);
+            }catch(DBClassException $e){
+                $logger = &Log::singleton('file', LOG_FILE, __CLASS__, $_conf);
+                $logger->log($e->getMessage(),PEAR_LOG_EMERG);
+            }
+
+            if ( $result !== false ) $retValue = true;
+        }
+
+        return $retValue;
+    }
+
     public static function changePassword(){}
 
     /**

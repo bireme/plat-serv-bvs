@@ -44,7 +44,6 @@ class ToolsAuthentication {
      * @return Boolean
      */
     public static function authenticateUser($userID, $userPass, $socialMedia, $userDataConfirmation=null, $newUserID=null){
-
         if ( SocialNetwork::validateObjUser( $socialMedia ) === true ) { /* check users from Social Medias */
 
             $result["source"] = $socialMedia['social_media'];
@@ -110,8 +109,12 @@ class ToolsAuthentication {
             //user not exists
             $result["status"] = false;
         }
+
+        if ( $result["status"] ) { // Set user's last login
+            $ll = UserDAO::setLastLogin($userID);
+        }
+
         return $result;
-       
     }
 
     /**
@@ -119,12 +122,12 @@ class ToolsAuthentication {
      *
      */
     public static function isValidMail($userID){
-        
         if( filter_var($userID, FILTER_VALIDATE_EMAIL) ){
             $retValue = true;
         }else{
             $retValue = false;
         }
+
         return $retValue;
     }
 
