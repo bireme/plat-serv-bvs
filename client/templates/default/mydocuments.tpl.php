@@ -61,7 +61,6 @@
                                     <div>
                                         <a class="remove" href="<?=RELATIVE_PATH?>/controller/mydocuments/control/business/task/removedoc/document/<?=$register["docID"]?>/directory/<?=$register["dirID"]?>"><span class="label label-danger"><?=$trans->getTrans($_REQUEST["action"],'REMOVE_FROM_COLLECTION')?></span></a>
                                         <a class="move" href="javascript: void(0);" onclick="window.open('<?=RELATIVE_PATH?>/controller/directories/control/business/task/movedoc/document/<?=$register["docID"]?>/directory/<?=$register["dirID"]?>','','resizable=no,width=420,height=270')"><span class="label label-info"><?=$trans->getTrans($_REQUEST["action"],'MOVE_TO')?></span></a>
-                                        <a class="fulltext" href="<?=$register["docURL"]?>" target="_blank"><span class="label label-primary"><?=$trans->getTrans($_REQUEST["action"],'FULL_TEXT')?></span></a>
                                     </div>
                                     <!--div>
                                       <span class="label label-default">Default</span>
