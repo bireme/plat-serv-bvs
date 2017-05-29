@@ -12,6 +12,7 @@
 /*
  * Edit this file in UTF-8 - Test String "áéíóú"
  */
+require_once(dirname(__FILE__)."/../classes/DocsCollection.php");
 require_once(dirname(__FILE__)."/../classes/MyProfiles.php");
 require_once(dirname(__FILE__)."/../classes/SimilarDocs.php");
 
@@ -20,6 +21,8 @@ if ($_REQUEST["task"] === null){
 }
 $response["status"] = false;
 $params["sort"]=$_REQUEST["sort"];
+
+$docsFolders = DocsCollection::listDirs($_SESSION["userTK"]);
 
 switch($_REQUEST["task"]){
     case "list":

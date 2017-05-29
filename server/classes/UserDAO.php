@@ -210,7 +210,7 @@ class UserDAO {
                     $logger->log($e->getMessage(),PEAR_LOG_EMERG);
                 }
 
-                if ($result === false ){
+                if ( $result === false ){
                     $retValue = false;
                 } else {
                     if ( !$active ) { //

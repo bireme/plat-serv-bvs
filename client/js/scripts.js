@@ -13,7 +13,7 @@ $(document).ready(
             html : true,
             placement : 'bottom',
             title: labels[LANG]['VIEW_ON'],
-            trigger: 'manual',
+            // trigger: 'manual',
             content: function() {
                 var query  = encodeURIComponent($(this).parent().siblings('.query').text());
                 var filter = encodeURIComponent($(this).parent().siblings('.filter').text());
@@ -30,7 +30,7 @@ $(document).ready(
             html : true,
             placement : 'bottom',
             title: labels[LANG]['OPERATOR'],
-            trigger: 'manual',
+            // trigger: 'manual',
             content : '<a class="operator">AND</a> | <a class="operator">OR</a> | <a class="operator">AND NOT</a>'
         });
 
@@ -49,6 +49,17 @@ $(document).ready(
             }
         );
 
+        $(document).on('click', function (e) {
+            $('[data-toggle="popover"],[data-original-title]').each(function () {
+                //the 'is' for buttons that trigger popups
+                //the 'has' for icons within a button that triggers a popup
+                if (!$(this).is(e.target) && $(this).has(e.target).length === 0 && $('.popover').has(e.target).length === 0) {                
+                    (($(this).popover('hide').data('bs.popover')||{}).inState||{}).click = false  // fix for BS 3.3.6
+                }
+
+            });
+        });
+/*
         $(this).on('click', function(e){
             if ( ! $(e.target).is('.combine, .search') ) {
                 $('button.combine, button.search').popover('hide');
@@ -73,5 +84,6 @@ $(document).ready(
                 }
             }
         });
+*/
     }
 );

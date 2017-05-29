@@ -2,13 +2,15 @@ var labels = [];
 
 /* Portuguese */
 labels['pt'] = [];
+labels['pt']['COLLECTIONS']     = 'Coleções:';
 labels['pt']['VIEW_ON']         = 'Exibir no:';
 labels['pt']['ORIGIN_SITE']     = 'Site de origem';
 labels['pt']['VHL_PORTAL']      = 'Portal Regional da BVS';
 labels['pt']['OPERATOR']        = 'Operador';
 labels['pt']['MAX_DOCS']        = 'AVISO: Escolha no máximo 10 documentos.';
 labels['pt']['ADD_DOC_FAIL']    = 'O documento não foi adicionado corretamente à coleção.';
-labels['pt']['ADD_DOC_SUCCESS'] = 'Documento adicionado à coleção.';
+labels['pt']['ADD_DOC_SUCCESS'] = 'Documento adicionado à coleção';
+labels['pt']['DOC_EXISTS']      = 'Documento já adicionado aos favoritos.';
 labels['pt']['INVALID']         = 'inválido';
 labels['pt']['EMPTY']           = 'campo vazio';
 labels['pt']['SHORT']           = 'muito curto';
@@ -30,13 +32,15 @@ labels['pt']['SD_FAIL']         = 'ERRO: Ocorreu um problema na requisição dos
 
 /* English */
 labels['en'] = [];
+labels['en']['COLLECTIONS']     = 'Collections:';
 labels['en']['VIEW_ON']         = 'View on the:';
 labels['en']['ORIGIN_SITE']     = 'Origin site';
 labels['en']['VHL_PORTAL']      = 'VHL Regional Portal';
 labels['en']['OPERATOR']        = 'Operator';
 labels['en']['MAX_DOCS']        = 'WARNING: Choose a maximum of 10 documents.';
 labels['en']['ADD_DOC_FAIL']    = 'The document was not correctly added to the collection.';
-labels['en']['ADD_DOC_SUCCESS'] = 'Document added to the collection.';
+labels['en']['ADD_DOC_SUCCESS'] = 'Document added to the collection';
+labels['en']['DOC_EXISTS']      = 'Document has already been added to favorites.';
 labels['en']['INVALID']         = 'invalid input';
 labels['en']['EMPTY']           = 'please put something here';
 labels['en']['SHORT']           = 'input is too short';
@@ -58,13 +62,15 @@ labels['en']['SD_FAIL']         = 'ERROR: An error occurred in the request for r
 
 /* Spanish */
 labels['es'] = [];
+labels['es']['COLLECTIONS']     = 'Colecciones:';
 labels['es']['VIEW_ON']         = 'Exibir no:';
 labels['es']['ORIGIN_SITE']     = 'Site de origem';
 labels['es']['VHL_PORTAL']      = 'Portal Regional da BVS';
 labels['es']['OPERATOR']        = 'Operador';
 labels['es']['MAX_DOCS']        = 'AVISO: Escolha no máximo 10 documentos.';
 labels['es']['ADD_DOC_FAIL']    = 'O documento não foi adicionado corretamente à coleção.';
-labels['es']['ADD_DOC_SUCCESS'] = 'Documento adicionado à coleção.';
+labels['es']['ADD_DOC_SUCCESS'] = 'Documento adicionado à coleção';
+labels['es']['DOC_EXISTS']      = 'Documento ya se encuentra a los favoritos.';
 labels['es']['INVALID']         = 'inválido';
 labels['es']['EMPTY']           = 'campo vazio';
 labels['es']['SHORT']           = 'valor muito curto';

@@ -119,12 +119,26 @@ $( document ).ready(
             }
         )
 
-        $( "button.add-collection" ).on( "click", function(e) {
+        $('button.add-collection').popover({
+            html : true,
+            placement : 'left',
+            title: labels[LANG]['COLLECTIONS'],
+            // trigger: 'manual',
+            content : function() {
+                return $('#docsfolderlist').html();
+            }
+        });
+
+        $( document ).on('change', '.docsfolderlist', function(e) {
+            e.preventDefault();
+
             path = window.location.pathname;
             parts = path.split("/controller/");
             href = parts[0]+"/controller/servicesplatform/control/business/task/addDoc";
 
-            id = $(this).val();
+            folder = $(this).val();
+            text = $('.docsfolderlist option:selected').text();
+            id = $(this).closest('td').find('button.add-collection').val();
             title = $(this).closest('tr').find('a').text();
             url = $(this).closest('tr').find('a').attr('href');
             author = $(this).closest('tr').find('small').text();
@@ -139,12 +153,24 @@ $( document ).ready(
 
             $.post( href, obj, function(data) {
                 if(data == true){
-                    alert(labels[LANG]['ADD_DOC_SUCCESS']);
+                    href = parts[0]+"/controller/directories/control/business/task/movedoc";
+
+                    obj = new Object();
+                    obj.mode = 'persist';
+                    obj.document = $.trim(id);
+                    obj.fromDirectory = 0;
+                    obj.moveToDirectory = folder;
+
+                    $.post( href, obj, function(data) {
+                        alert(labels[LANG]['ADD_DOC_SUCCESS']+' '+text);
+                    });
+                }else if(/OK/.test(data)) {
+                    alert(labels[LANG]['DOC_EXISTS']);
                 }else{
                     alert(labels[LANG]['ADD_DOC_FAIL']);
                 }
             });
-        })
+        });
 
         function loadData(url, type, obj) {
             $('#loading').show();

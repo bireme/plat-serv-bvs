@@ -273,6 +273,7 @@ class Translations {
         self::$trans["myprofiledocuments"]["NEXT"] = 'Próximo';
         self::$trans["myprofiledocuments"]["PREVIOUS"] = 'Anterior';
         self::$trans["myprofiledocuments"]["ADD_COLLECTION"] = 'Adicionar aos Favoritos';
+        self::$trans["myprofiledocuments"]["INCOMING_FOLDER"] = 'Caixa de Entrada';
 
     // Terms of mig_id_confirmation pages
         self::$trans["mig_id_confirmation"]["TITLE"] = 'Confirmação de Login';

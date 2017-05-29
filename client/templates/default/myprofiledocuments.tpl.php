@@ -10,7 +10,7 @@
 
         <!-- page content -->
         <div class="right_col" role="main">
-          <div class="">
+          <div>
             
             <div class="clearfix"></div>
 
@@ -108,5 +108,15 @@
           </div>
         </div>
         <!-- /page content -->
+
+        <div id="docsfolderlist" style="display: none">
+          <select name="docs-folder-list" class="form-control docsfolderlist">
+            <option></option>
+            <option value="0"><?=$trans->getTrans($_REQUEST["action"],'INCOMING_FOLDER')?></option>
+            <?php foreach ($docsFolders as $folder) : ?>
+            <option value="<?php echo $folder['dirID'] ?>"><?php echo $folder['name']; ?></option>
+            <?php endforeach ?>
+          </select>
+        </div>
 
         <?require_once(dirname(__FILE__)."/footer.tpl.php");?>

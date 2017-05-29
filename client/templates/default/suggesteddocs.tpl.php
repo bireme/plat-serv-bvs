@@ -44,7 +44,7 @@
                                   <option value="0"><?=$trans->getTrans($_REQUEST["action"],'INCOMING_FOLDER')?></option>
                                   <?php foreach ($docsFolders as $folder) : ?>
                                   <option value="<?php echo $folder['dirID'] ?>"><?php echo $folder['name']; ?></option>
-                                <?php endforeach ?>
+                                  <?php endforeach ?>
                                 </select>
                               </div>
                             </div>

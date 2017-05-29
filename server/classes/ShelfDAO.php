@@ -84,7 +84,7 @@ class ShelfDAO {
                 $retValue = true;
             }
         }else{
-    	    $retValue = true;
+    	    $retValue = 'OK';
     	}
 
         return $retValue;
