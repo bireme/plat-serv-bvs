@@ -5,6 +5,7 @@ $lang = isset($_SESSION['lang'])?$_SESSION['lang']:DEFAULT_LANG;
 
 if($lang == 'pt'){
     /* tela de cadastro do usuário*/
+    define("MY_VHL",'Minha BVS');
     define("SERVPLAT",'Plataforma de Serviços');
     define('BIREME','BIREME | OPS | OMS');
     define('BUTTON_NEW_USER','Gravar');
@@ -174,6 +175,7 @@ Se você possui usuário cadastrado no site ScIELO, na próxima vez que acessar 
 
 if($lang == 'es'){
     /* tela de cadastro do usuário*/
+    define("MY_VHL",'Mi BVS');
     define("SERVPLAT",'Plataforma de Servicios');
     define('BIREME','BIREME | OPS | OMS');
     define('BUTTON_NEW_USER','Grabar');
@@ -338,6 +340,7 @@ Si usted tiene usuário cadastrado en el sitio ScIELO, la próxima vez que acced
 
 if($lang == 'en'){
     /* tela de cadastro do usuário*/
+    define("MY_VHL",'My VHL');
     define("SERVPLAT",'Service Platform');
     define('BIREME','BIREME | OPS | OMS');
     define('BUTTON_NEW_USER','Create');

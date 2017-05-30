@@ -56,6 +56,8 @@ class Translations {
         self::$trans["new_pass"]["CANCEL"] = 'cancelar';
 
     // Terms of the menu pages
+        self::$trans["menu"]["MY_VHL"] = 'Minha BVS';
+        self::$trans["menu"]["SERVPLAT"] = 'Plataforma de Serviços';
         self::$trans["menu"]["DASHBOARD"] = 'Meus Conteúdos';
         self::$trans["menu"]["HOME"] = 'Visão Geral';
         self::$trans["menu"]["WELCOME"] = 'Bem-vindo';

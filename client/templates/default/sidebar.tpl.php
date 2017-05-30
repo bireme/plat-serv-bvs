@@ -6,7 +6,7 @@
         <div class="col-md-3 left_col">
           <div class="left_col scroll-view">
             <div class="navbar nav_title" style="border: 0;">
-              <a href="<?php echo $_SERVER['SCRIPT_NAME']; ?>/authentication" class="site_title"><i class="fa fa-cloud"></i> <span>Services Platform</span></a>
+              <a href="<?php echo $_SERVER['SCRIPT_NAME']; ?>/authentication" class="site_title"><img src="<?=RELATIVE_PATH?>/images/<?=$_SESSION["skin"]?>/bvs_icon-<?=$_SESSION["lang"]?>.jpg" alt="VHL icon"> <span><?=$trans->getTrans('menu','MY_VHL')?></span></a>
             </div>
 
             <div class="clearfix"></div>
