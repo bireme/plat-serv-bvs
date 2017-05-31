@@ -257,7 +257,7 @@ class Translations {
         self::$trans["myprofiledocuments"]["ADD_PROFILE"] = 'adicionar tema';
         self::$trans["myprofiledocuments"]["TOOLS"] = 'Ferramentas';
         self::$trans["myprofiledocuments"]["SIMILARS_IN"] = 'Similares em';
-        self::$trans["myprofiledocuments"]["PROFILE_KEYWORDS"] = 'Palavras-chave do Tema';
+        self::$trans["myprofiledocuments"]["PROFILE_KEYWORDS"] = 'Palavras-chave do tema';
         self::$trans["myprofiledocuments"]["PROFILES"] = 'Temas';
         self::$trans["myprofiledocuments"]["REMOVE_PROFILE"] = 'remover tema';
         self::$trans["myprofiledocuments"]["PROFILE_NAME"] = 'Nome do tema';

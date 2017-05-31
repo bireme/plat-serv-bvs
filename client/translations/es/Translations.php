@@ -56,16 +56,88 @@ class Translations {
         self::$trans["new_pass"]["CANCEL"] = 'cancelar';
 
     // Terms of the menu pages
-        self::$trans["menu"]["USERS_SERVICES"] = 'Servicios Personalizados';
-        self::$trans["menu"]["OLA"] = 'Hola';
-        self::$trans["menu"]["LOGOUT"] = 'salir';
-        self::$trans["menu"]["MY_PROFILE_DOCUMENTS"] = 'Documentos del perfil';
-        self::$trans["menu"]["MY_SHELF"] = 'Mi colección';
-        self::$trans["menu"]["MY_LINKS"] = 'Mis enlaces';
-        self::$trans["menu"]["MY_NEWS"] = 'Mis notícias';
-        self::$trans["menu"]["FORGOT_MY_PASSWORD"] = 'olvidé la contraseña';
-        self::$trans["menu"]["MY_DATA"] = 'mis datos';
-        self::$trans["menu"]["MY_ALERTS"] = 'Mis alertas';
+        self::$trans["menu"]["MY_VHL"] = 'Minha BVS';
+        self::$trans["menu"]["SERVPLAT"] = 'Plataforma de Serviços';
+        self::$trans["menu"]["DASHBOARD"] = 'Meus Conteúdos';
+        self::$trans["menu"]["HOME"] = 'Visão Geral';
+        self::$trans["menu"]["WELCOME"] = 'Bem-vindo';
+        self::$trans["menu"]["USERS_SERVICES"] = 'Serviços Personalizados';
+        self::$trans["menu"]["OLA"] = 'Olá';
+        self::$trans["menu"]["LOGOUT"] = 'Sair';
+        self::$trans["menu"]["MY_PROFILE_DOCUMENTS"] = 'Temas de Interesse';
+        self::$trans["menu"]["MY_SHELF"] = 'Documentos Favoritos';
+        self::$trans["menu"]["MY_LINKS"] = 'Links Favoritos';
+        self::$trans["menu"]["MY_NEWS"] = 'Minhas Notícias';
+        self::$trans["menu"]["FORGOT_MY_PASSWORD"] = 'esqueci minha senha';
+        self::$trans["menu"]["CHANGE_PASSWORD"] = 'Alterar Senha';
+        self::$trans["menu"]["MY_DATA"] = 'Editar Perfil';
+        self::$trans["menu"]["MY_ALERTS"] = 'Meus Alertas';
+        self::$trans["menu"]["SEARCH"] = 'Pesquisar';
+        self::$trans["menu"]["SEARCH_FOR"] = 'Pesquisar por...';
+        self::$trans["menu"]["MY_SEARCHES"] = 'Histórico de Buscas na BVS';
+        self::$trans["menu"]["KEYWORDS"] = 'Palavras-chave';
+        self::$trans["menu"]["SUGGESTED_DOCS"] = 'Documentos Relacionados';
+        self::$trans["menu"]["ORCID_WORKS"] = 'ORCID - Minhas Publicações';
+        self::$trans["menu"]["RECENT_ACTIVITIES"] = 'Atividades Recentes';
+        self::$trans["menu"]["SEE_ALL_DOCS"] = 'Ver todos os documentos';
+        self::$trans["menu"]["SEE_ALL_LINKS"] = 'Ver todos os links';
+        self::$trans["menu"]["SEE_ALL_PROFILES"] = 'Ver todos os temas';
+        self::$trans["menu"]["ADD_COLLECTION"] = 'Coleção adicionada';
+        self::$trans["menu"]["UPDATE_COLLECTION"] = 'Coleção atualizada';
+        self::$trans["menu"]["REMOVE_COLLECTION"] = 'Coleção removida';
+        self::$trans["menu"]["ADD_PROFILE"] = 'Tema adicionado';
+        self::$trans["menu"]["UPDATE_PROFILE"] = 'Tema atualizado';
+        self::$trans["menu"]["REMOVE_PROFILE"] = 'Tema removido';
+        self::$trans["menu"]["ADD_LINK"] = 'Link adicionado';
+        self::$trans["menu"]["UPDATE_LINK"] = 'Link atualizado';
+        self::$trans["menu"]["REMOVE_LINK"] = 'Link removido';
+        self::$trans["menu"]["QUERY"] = 'Query';
+        self::$trans["menu"]["VIEW"] = 'Exibir';
+        self::$trans["menu"]["SEARCH_WIDGET"] = 'Buscas na BVS';
+        self::$trans["menu"]["PROFILE_WIDGET"] = 'Temas de Interesse';
+        self::$trans["menu"]["SHELF_WIDGET"] = 'Documentos Favoritos';
+
+    // Terms of mysearches pages
+        self::$trans["mysearches"]["MY_SEARCHES"] = 'Histórico de Buscas na BVS';
+        self::$trans["mysearches"]["PAGE"] = 'Página';
+        self::$trans["mysearches"]["MY_SEARCHES_NO_REGISTERS_FOUND"] = 'Nenhum registro encontrado';
+        self::$trans["mysearches"]["NEXT"] = 'Próximo';
+        self::$trans["mysearches"]["PREVIOUS"] = 'Anterior';
+        self::$trans["mysearches"]["QUERY"] = 'Query';
+        self::$trans["mysearches"]["FILTERS"] = 'Filtros';
+        self::$trans["mysearches"]["ACTIONS"] = 'Ações';
+        self::$trans["mysearches"]["VIEW"] = 'Exibir';
+        self::$trans["mysearches"]["COMBINE"] = 'Combinar';
+
+    // Terms of suggesteddocs pages
+        self::$trans["suggesteddocs"]["PAGE"] = 'Página';
+        self::$trans["suggesteddocs"]["NEXT"] = 'Próximo';
+        self::$trans["suggesteddocs"]["PREVIOUS"] = 'Anterior';
+        self::$trans["suggesteddocs"]["SUGGESTED_DOCS"] = 'Documentos Relacionados';
+        self::$trans["suggesteddocs"]["SUGGESTED_DOCS_NO_REGISTERS_FOUND"] = 'Nenhuma sugestão de documentos';
+        self::$trans["suggesteddocs"]["REFERENCE"] = 'Escolha os documentos de referência para sugestões:';
+        self::$trans["suggesteddocs"]["NO_REFERENCES"] = 'Nenhum documento encontrado com essa referência';
+        self::$trans["suggesteddocs"]["ADD_COLLECTION"] = 'Adicionar aos Favoritos';
+        self::$trans["suggesteddocs"]["CONFIG"] = 'Configurações';
+        self::$trans["suggesteddocs"]["DOCS"] = 'Documentos';
+        self::$trans["suggesteddocs"]["DOCS_SOURCE"] = 'Origem dos documentos';
+        self::$trans["suggesteddocs"]["ORCID"] = 'ORCID - Minhas Publicações';
+        self::$trans["suggesteddocs"]["COLLECTIONS"] = 'Documentos Favoritos';
+        self::$trans["suggesteddocs"]["PROFILES"] = 'Temas de Interesse';
+        self::$trans["suggesteddocs"]["INCOMING_FOLDER"] = 'Caixa de Entrada';
+        self::$trans["suggesteddocs"]["FOLDERS_LIST"] = 'Escolha um tema:';
+        self::$trans["suggesteddocs"]["PROFILES_LIST"] = 'Escolha um tema:';
+        self::$trans["suggesteddocs"]["LOADING"] = 'CARREGANDO';
+        self::$trans["suggesteddocs"]["SELECTED_DOCS"] = 'documentos selecionados';
+        self::$trans["suggesteddocs"]["SEND"] = 'Enviar';
+
+    // Terms of orcidworks pages
+        self::$trans["orcidworks"]["PAGE"] = 'Página';
+        self::$trans["orcidworks"]["NEXT"] = 'Próximo';
+        self::$trans["orcidworks"]["PREVIOUS"] = 'Anterior';
+        self::$trans["orcidworks"]["ORCID_WORKS"] = 'ORCID - Minhas Publicações';
+        self::$trans["orcidworks"]["ORCID_WORKS_NO_REGISTERS_FOUND"] = 'Nenhuma publicação encontrada. Para vizualizar suas publicações, favor informar o ORCID ID no seu cadastro.';
+        self::$trans["orcidworks"]["GOOGLE_SCHOLAR"] = 'Ver no Google Scholar';
 
     // General Terms
         self::$trans["general"]["IDENTIFICATION"] = 'Biblioteca Virtual en Salud';
@@ -85,7 +157,6 @@ class Translations {
         self::$trans["mydocuments"]["MOVE_DOCUMENT_TO"] = 'mover para';
         self::$trans["mydocuments"]["FULL_TEXT"] = 'texto completo';
         self::$trans["mydocuments"]["REMOVE_FROM_COLLECTION"] = 'retirar de mi colección';
-        self::$trans["mydocuments"]["HOME"] = 'home';
         self::$trans["mydocuments"]["MONITOR_CITATION"] = 'citaciones monitoradas';
         self::$trans["mydocuments"]["MONITOR_ACCESS"] = 'acceso monitorado';
         self::$trans["mydocuments"]["ACCESS_LIST_NO_REGISTERS_FOUND"] = 'Ningún registro localizado';
@@ -94,26 +165,31 @@ class Translations {
         self::$trans["mydocuments"]["PUBLISH_FOLDER"] = 'Tornar público';
         self::$trans["mydocuments"]["MAKE_FOLDER_PRIVATE"] = 'Tornar privado';
         self::$trans["mydocuments"]["PAGE"] = 'Pagina';
+        self::$trans["mydocuments"]["NEXT"] = 'Próximo';
+        self::$trans["mydocuments"]["PREVIOUS"] = 'Anterior';
 
     // Tems of directories pages
-        self::$trans["directories"]["FOLDER_NAME"] = 'Nombre de la Carpeta';
-        self::$trans["directories"]["EDIT_FOLDER"] = 'Editar Carpeta';
+        self::$trans["directories"]["FOLDER_NAME"] = 'Nombre de la colección';
+        self::$trans["directories"]["ADD_FOLDER"] = 'añadir colección';
+        self::$trans["directories"]["EDIT_FOLDER"] = 'editar colección';
         self::$trans["directories"]["SAVE"] = 'crear';
         self::$trans["directories"]["CANCEL"] = 'cancelar';
-        self::$trans["directories"]["REMOVE"] = 'apagar';
-        self::$trans["directories"]["REMOVE_FOLDER"] = 'Apagar Carpeta';
-        self::$trans["directories"]["REMOVE_CONTENT"] = 'Apagar contenído';
+        self::$trans["directories"]["REMOVE"] = 'borrar';
+        self::$trans["directories"]["REMOVE_FOLDER"] = 'borrar colección';
+        self::$trans["directories"]["REMOVE_CONTENT"] = 'Borrar contenído';
         self::$trans["directories"]["MOVE"] = 'mover';
         self::$trans["directories"]["MOVE_TO"] = 'mover para';
         self::$trans["directories"]["MOVE_DOCUMENT_TO"] = 'mover para';
-        self::$trans["directories"]["MOVE_CONTENT_TO_OTHER_FOLDER"] = 'Mover contenído para otra carpeta';
-        self::$trans["directories"]["INCOMING_FOLDER"] = 'Carpeta de Entrada';
+        self::$trans["directories"]["MOVE_CONTENT_TO_OTHER_FOLDER"] = 'Mover contenído para otra colección';
+        self::$trans["directories"]["INCOMING_FOLDER"] = 'Caja de Entrada';
         self::$trans["directories"]["ADD_DIR_SUCESS"] = 'Operación realizada con succeso.';
         self::$trans["directories"]["REMOVE_DIR_SUCESS"] = 'Operación realizada con succeso.';
         self::$trans["directories"]["MOVE_DOC_SUCESS"] = 'Operación realizada con succeso.';
+        self::$trans["directories"]["ADD_DIR_ERROR"] = 'Error al añadir colección';
+        self::$trans["directories"]["REMOVE_DIR_ERROR"] = 'Error al borrar colección';
+        self::$trans["directories"]["MOVE_DOC_ERROR"] = 'Error al mover colección';
 
     // Tems of mylinks pages
-        self::$trans["mylinks"]["HOME"] = 'home';
         self::$trans["mylinks"]["SHOW_BY"] = 'Ver la Lista por';
         self::$trans["mylinks"]["DATE"] = 'Fecha';
         self::$trans["mylinks"]["MY_RANK"] = 'Mi clasificación';
@@ -133,9 +209,11 @@ class Translations {
         self::$trans["mylinks"]["MY_LINKS_NO_REGISTERS_FOUND"] = 'Ningún registro localizado';
         self::$trans["mylinks"]["ADD_LINK_SUCESS"] = 'Operación realizada con succeso.';
         self::$trans["mylinks"]["PAGE"] = 'Pagina';
+        self::$trans["mylinks"]["ADD_LINK_ERROR"] = 'Error al añadir enlace';
+        self::$trans["mylinks"]["NEXT"] = 'Próximo';
+        self::$trans["mylinks"]["PREVIOUS"] = 'Anterior';
 
     // Tems of mylinks pages
-        self::$trans["mynews"]["HOME"] = 'home';
         self::$trans["mynews"]["SHOW_BY"] = 'Ver la Lista por';
         self::$trans["mynews"]["DATE"] = 'Fecha';
         self::$trans["mynews"]["MY_RANK"] = 'Mi clasificación';
@@ -157,7 +235,6 @@ class Translations {
         self::$trans["mynews"]["PAGE"] = 'Pagina';
 
     // Tems of myalerts pages
-        self::$trans["myalerts"]["HOME"] = 'home';
         self::$trans["myalerts"]["TOOLS"] = 'Herramientas';
         self::$trans["myalerts"]["MY_ALERTS"] = 'Mis Alertas';
         self::$trans["myalerts"]["ACCESS_LIST"] = 'Estadísticas de Acceso';
@@ -173,26 +250,32 @@ class Translations {
     // Terms of myprofiledocuments pages
         self::$trans["myprofiledocuments"]["LILACS.orgiahx"] = 'Base de datos LILACS';
         self::$trans["myprofiledocuments"]["SciELO.orgiahx"] = 'Rede SciELO';
-        self::$trans["myprofiledocuments"]["MY_PROFILES"] = 'Mis Perfiles';
+        self::$trans["myprofiledocuments"]["MY_PROFILES"] = 'Temas de Interés';
         self::$trans["myprofiledocuments"]["VIEW_RESULTS_IN"] = 'ver resultados em';
-        self::$trans["myprofiledocuments"]["REMOVE_PROFIVE"] = 'remover perfil';
-        self::$trans["myprofiledocuments"]["EDIT_PROFILE"] = 'editar perfil';
-        self::$trans["myprofiledocuments"]["ADD_PROFILE"] = 'Adicionar perfil';
+        self::$trans["myprofiledocuments"]["REMOVE_PROFIVE"] = 'remover tema';
+        self::$trans["myprofiledocuments"]["EDIT_PROFILE"] = 'editar tema';
+        self::$trans["myprofiledocuments"]["ADD_PROFILE"] = 'añadir tema';
         self::$trans["myprofiledocuments"]["TOOLS"] = 'Herramientas';
         self::$trans["myprofiledocuments"]["SIMILARS_IN"] = 'Similares en';
-        self::$trans["myprofiledocuments"]["PROFILE_KEYWORDS"] = 'Palabras del Perfil';
-        self::$trans["myprofiledocuments"]["PROFILES"] = 'Perfis';
-        self::$trans["myprofiledocuments"]["REMOVE_PROFILE"] = 'remover perfil';
-        self::$trans["myprofiledocuments"]["HOME"] = 'home';
-        self::$trans["myprofiledocuments"]["PROFILE_NAME"] = 'Nombre del perfil';
-        self::$trans["myprofiledocuments"]["PROFILE_TEXT"] = 'Palavras des perfil';
-        self::$trans["myprofiledocuments"]["PROFILE_TEXT_HELP"] = 'Las palabras deven ser escritas separadas por espacio.';
+        self::$trans["myprofiledocuments"]["PROFILE_KEYWORDS"] = 'Palabras-clave del tema';
+        self::$trans["myprofiledocuments"]["PROFILES"] = 'Temas';
+        self::$trans["myprofiledocuments"]["REMOVE_PROFILE"] = 'remover tema';
+        self::$trans["myprofiledocuments"]["PROFILE_NAME"] = 'Nombre del tema';
+        self::$trans["myprofiledocuments"]["PROFILE_TEXT"] = 'Palabras-clave';
+        self::$trans["myprofiledocuments"]["PROFILE_TEXT_HELP"] = 'Los términos deven ser escritos separados por coma.';
         self::$trans["myprofiledocuments"]["PROFILE_DEFAULT"] = 'Definir como padrón';
         self::$trans["myprofiledocuments"]["SAVE"] = 'salvar';
         self::$trans["myprofiledocuments"]["CANCEL"] = 'cancelar';
         self::$trans["myprofiledocuments"]["MY_PROFILES_NO_REGISTERS_FOUND"] = 'Ningún registro encontrado';
+        self::$trans["myprofiledocuments"]["MY_PROFILES_NO_SUGGESTIONS_FOUND"] = 'No se ha encontrado ningún documento. Intente actualizar el tema en <code>editar tema > grabar</code> o cambiar las palabras-clave.';
         self::$trans["myprofiledocuments"]["SERVICE_TEMPORARY_UNAVAILABLE"] = 'Temporariamente sin servicio';
         self::$trans["myprofiledocuments"]["ADD_PROFILE_SUCESS"] = 'Operación realizada con succeso.';
+        self::$trans["myprofiledocuments"]["ADD_PROFILE_ERROR"] = 'Error al añadir tema';
+        self::$trans["myprofiledocuments"]["PAGE"] = 'Pagina';
+        self::$trans["myprofiledocuments"]["NEXT"] = 'Próximo';
+        self::$trans["myprofiledocuments"]["PREVIOUS"] = 'Anterior';
+        self::$trans["myprofiledocuments"]["ADD_COLLECTION"] = 'Añadir a Favoritos';
+        self::$trans["myprofiledocuments"]["INCOMING_FOLDER"] = 'Caja de Entrada';
 
     // Terms of mig_id_confirmation pages
         self::$trans["mig_id_confirmation"]["TITLE"] = 'Confirmación de Login';

@@ -7,7 +7,7 @@ if($lang == 'pt'){
     /* tela de cadastro do usuário*/
     define("MY_VHL",'Minha BVS');
     define("SERVPLAT",'Plataforma de Serviços');
-    define('BIREME','BIREME | OPS | OMS');
+    define('BIREME','BIREME | OPAS | OMS');
     define('BUTTON_NEW_USER','Gravar');
     define('BUTTON_CANCEL','Cancelar');
     define('BUTTON_CLOSE','Fechar');
@@ -36,12 +36,6 @@ if($lang == 'pt'){
     define('FIELD_PASSWORD_CONFIRMATION','Confirme sua senha');
     define('FIELD_GENDER_MALE','Masculino');
     define('FIELD_GENDER_FEMALE','Feminino');
-    define("FIELD_FIRST_NAME_ERROR_DESCRIPTION","*");
-    define("FIELD_LAST_NAME_ERROR_DESCRIPTION","*");
-    define("FIELD_GENDER_ERROR_DESCRIPTION","*");
-    define("FIELD_PASSWORD_ERROR_DESCRIPTION","*");
-    define("FIELD_EMAIL_ERROR_DESCRIPTION","*");
-    define("FIELD_LOGIN_ERROR_DESCRIPTION","*");
     define("FIELD_DEGREE","Ensino_Fundamental|Ensino Fundamental (1o Grau),Ensino_Medio|Ensino Médio (2o Grau),Ensino_Tecnico|Ensino Profissional De Nível Técnico,Graduacao|Graduação,Especializacao|Especialização,Mestrado_Profissionalizante|Mestrado Profissionalizante,Mestrado|Mestrado,Doutorado|Doutorado,MBA|MBA,Pos_Doutorado|Pós Doutorado,PHD|PHD");
     define("FREE_REGISTRY","Registre-se gratuitamente!");
     define("FREE_REGISTRY_MESSAGE","
@@ -51,8 +45,8 @@ if($lang == 'pt'){
 ");
     define("FOOTER_MESSAGE",'<p><a href="http://www.bireme.br/local/Site/bireme/homepage.htm" target="_blank">BIREME</a> é um Centro Especializado da OPAS, estabelecido no Brasil desde 1967, em colaboração com <a href="http://portal.saude.gov.br/saude/" target="_blank">Ministério de Saúde</a>, <a href="http://portal.mec.gov.br/" target="_blank">Ministério da Educação</a>, <a href="http://www.saude.sp.gov.br/" target="_blank">Secretaria da Saúde do Estado de São Paulo</a> e <a href="http://www.unifesp.br/" target="_blank">Universidade Federal de São Paulo</a></p>
                              <p><strong>BIREME - OPAS - OMS</strong><br/>
-                                Centro Latino-Americano e do Caribe de Informação em Ciências da Saúde<br/>
-                                Rua Botucatu, 862 - 04023-901 - São Paulo/SP - Brasil - Tel: (55 11) 5576-9800 - Fax: (55 11) 5575-8868<br/></p>');
+                             Centro Latino-Americano e do Caribe de Informação em Ciências da Saúde<br/>
+                             Rua Botucatu, 862 - 04023-901 - São Paulo/SP - Brasil - Tel: (55 11) 5576-9800 - Fax: (55 11) 5575-8868<br/></p>');
     define('LEARN_MORE','saiba mais');
     define('PERSONAL_DATA','Dados Pessoais');
     define('REGISTER_NEW_USER_TITLE','Cadastro de Novo Usuário');
@@ -62,16 +56,17 @@ if($lang == 'pt'){
     define("UPDATE_USER_TITLE","Atualização dos dados");
     define("USER_ADDED",'Usuário adicionado com sucesso.');
     define("USER_EXISTS","<b>Usuário já cadastrado</b><br />Tente se autenticar com este usuário, caso não lembre a senha de cadastro utilize o link  <b>esqueci minha senha</b> na caixa de login de usuários.");
+    define("USER_ADD_ERROR","<b>Erro no cadastro</b><br />Se seu email é um email Bireme. Neste caso seu usuário já possui login para acesso ao passaporte BVS, basta utilizar seu email e senha da Bireme para acessar esta aplicação.");
     //define("USER_ADD_SUCCESS","<b>Usuário criado com sucesso</b><br />Seu usuário agora faz parte do passaporte da BVS<br />Você esta habilitado para se conectar nas aplicações da SciELO e BVS com este usuário");
     define("USER_ADD_SUCCESS","<b>Cadastro de usuário realizado com sucesso!</b><br />Enviamos para o seu e-mail um link de confirmação da sua conta.<br />Favor clicar no link enviado para ativar sua conta na Plataforma de Serviços.");
-    define("USER_ADD_ERROR","<b>Erro no cadastro</b><br />Se seu email é um email Bireme. Neste caso seu usuário já possui login para acesso ao passaporte BVS, basta utilizar seu email e senha da Bireme para acessar esta aplicação.");
     define("USER_UPDATED",'Usuário atualizado com sucesso.');
     define("USER_UPDATE_ERROR",'<b>Problemas durante atualização</b><br />O sistema não conseguiu atualizar os dados do usuário. Tente mais tarde.');
     define("USER_CONFIRMED",'<b>Sua conta foi confirmada com sucesso!</b><br />Para acessar a Plataforma de Serviços, basta informar seu e-mail e senha na área de login');
-    define("USER_CONFIRMATION_ERROR",'<b>ERRO: Não foi possível realizar a confirmação de conta.');
+    define("USER_CONFIRMATION_ERROR",'<b>ERRO: Não foi possível realizar a confirmação de conta.</b');
     define("VALMSG_G_EMPTY","Campo obrigatório. Não pode ficar em branco.");
     define("VALMSG_LOGIN","Digite um email válido.");
     define("VALMSG_EMAIL","Digite um email válido.");
+    
     define("NEWPASS_DOMAIN_NOT_PERMITTED",'Ação não permitida para este usuário. Entre em contato com o departamento de suporte da sua instituição.');
     define("NEWPASS_PASSWORD_SENT",'Uma nova senha foi enviada para o seu email.');
     define("NOTICE",'Mensagem ao usuário');
@@ -87,9 +82,9 @@ Se você possui usuário cadastrado no site ScIELO, na próxima vez que acessar 
 <p>O registro e todos os produtos e serviços de informação continuarão gratuitos. As redes BVS e SciELO mantêm os princípios da modalidade de Acesso Aberto, portanto, da disponibilização da literatura científica e técnica na Internet sem custo para o usuário, licenças de uso ou barreiras restritivas de acesso.</p>
 <p>Futuramente, as novidades serão aplicadas nas demais instâncias da BVS, em todas as regiões geográficas e áreas temáticas da BVS, por meio do conceito de passaporte BVS.</p>
 ');
-    define("UPDATE_INFO",'<b>Por favor, revise seus dados no formulário abaixo para continuar utilizando a Plataforma de Serviços.</b>');
+    define("UPDATE_INFO",'<b>Por favor, revise seus dados no formulário abaixo para continuar utilizando a Minha BVS.</b>');
     define("TERMS",'Termos de uso');
-    define("TERMS_AGREEMENT_MESSAGE",'Eu concordo com os <a data-toggle="modal" data-target=".bs-terms-modal-lg" style="cursor: pointer; text-decoration: underline;">Termos</a> da Plataforma de Serviços');
+    define("TERMS_AGREEMENT_MESSAGE",'Eu concordo com os <a data-toggle="modal" data-target=".bs-terms-modal-lg" style="cursor: pointer; text-decoration: underline;">Termos</a> e confirmo que li a <a data-toggle="modal" data-target=".bs-policy-modal-lg" style="cursor: pointer; text-decoration: underline;">Política de Dados</a> da Minha BVS');
     define("TERMS_MESSAGE",'
 <div class="terms">
 <h3>Terms and Conditions</h3>
@@ -125,6 +120,7 @@ Se você possui usuário cadastrado no site ScIELO, na próxima vez que acessar 
 <p>Coordinated transmission overflow floating-point distributed supporting scan converter. <strong>Bridgeware backbone</strong> coordinated sampling overflow broadband normalizing connectivity or, internet transmission, bus, encapsulated. Extended element element echo messaging scan, cache video deviation debugged broadband. Pc, supporting hyperlinked coordinated patch, bridgeware transistorized, led frequency scalar. Servicing, plasma recursive boolean includes, computer, femtosecond inversion. Services integer harmonic mainframe scalar prototype broadband n-tier. Echo software application indeterminate dithering bypass plasma bus harmonic patch. Digital, mainframe scalar anomoly bypass, bus potentiometer phaselock plasma, phaselock prompt data disk inversion. </p>
 </div>
 ');
+    define('DATA_POLICY_MESSAGE',TERMS_MESSAGE);
     define('FIELD_LINKEDIN','LinkedIn (URL)');
     define('FIELD_RESEARCHGATE','ResearchGate (URL)');
     define('FIELD_ORCID','ORCID');
@@ -180,11 +176,11 @@ if($lang == 'es'){
     define('BIREME','BIREME | OPS | OMS');
     define('BUTTON_NEW_USER','Grabar');
     define('BUTTON_CANCEL','Cancelar');
-    define('BUTTON_CLOSE','Fechar');
+    define('BUTTON_CLOSE','Cerrar');
     define('BUTTON_SEND','Enviar');
     define("BUTTON_UPDATE_USER","Actualizar");
     define('BVSSIGLA','BVS');
-    define('BVS','Pasaporte BVS e SciELO');
+    define('BVS','Pasaporte BVS y SciELO');
     define('CONTACT_FORM','Formulário para contacto');
     define('CHOOSE_DEGREE','elijir');
     define('CHOOSE_COUNTRY','elijir');
@@ -209,9 +205,9 @@ if($lang == 'es'){
     define("FIELD_DEGREE","Ensino_Fundamental|Enseñanza o Educación Básica,Ensino_Medio|Enseñanza o Educación Media,Ensino_Tecnico|Enseñanza o Educación Técnico-Profesional,Graduacao|Superior Universitario de Grado,Especializacao|Especialización,Mestrado_Profissionalizante|Maestría Profisionalizante,Mestrado|Maestría,Doutorado|Doctorado,MBA|MBA,Pos_Doutorado|Pos Doctorado,PHD|PHD");
     define("FREE_REGISTRY","Registrese Gratuitamente!");
     define("FREE_REGISTRY_MESSAGE","
-<p>Bem-vindo ao passaporte das redes BVS e SciELO</p>
-<p>O objetivo do passaporte é permitir que você utilize um único usuário e senha para ser reconhecido na rede Biblioteca Virtual em Saúde (BVS) e Scientific Eletronic Library Online (SciELO).</p>
-<p>Registre-se e, além das fontes de informação da BVS e SciELO, acesse gratuitamente produtos e serviços de informação personalizados. </p>
+<p>Bienvenido al pasaporte de las redes BVS y SciELO</p>
+<p>El objetivo del pasaporte es permitir que utilice un único usuario y contraseña para ser reconocido en la red Biblioteca Virtual en Salud (BVS) y Scientific Eletronic Library Online (SciELO).</p>
+<p>Registrese y, además de las fuentes de información de la BVS y SciELO, acceda gratuitamente productos y servicios de información personalizados.</p>
 ");
     define("FOOTER_MESSAGE",'<p><a href="http://www.bireme.br/local/Site/bireme/homepage.htm" target="_blank">BIREME</a> é um Centro Especializado da OPAS, estabelecido no Brasil desde 1967, em colaboração com <a href="http://portal.saude.gov.br/saude/" target="_blank">Ministério de Saúde</a>, <a href="http://portal.mec.gov.br/" target="_blank">Ministério da Educação</a>, <a href="http://www.saude.sp.gov.br/" target="_blank">Secretaria da Saúde do Estado de São Paulo</a> e <a href="http://www.unifesp.br/" target="_blank">Universidade Federal de São Paulo</a></p>
                              <p><strong>BIREME - OPAS - OMS</strong><br/>
@@ -228,11 +224,11 @@ if($lang == 'es'){
     define("USER_EXISTS","<b>Usuário ya cadastrado</b><br />Pruebe autenticarse con ese usuário, si no te acuerdas de la contraseña utilize el link  <b>esqueci minha senha</b> en la caja de login de usuários.");
     define("USER_ADD_ERROR","<b>Erro en el registro</b><br />Si su email es un email de Bireme. En ese caso su usuário ya tiene login para acceso a los aplicativos de la BVS, basta utilizar su email y contraseña de Bireme para acceder a esa aplicación.");
     //define("USER_ADD_SUCCESS","<b>Usuário añadido con succeso</b><br />Su usuário ahora hace parte del passaporte de la BVS<br />Usted esta habilitado para conectarse en las aplicaciones de SciELO y BVS con ese usuário.");
-    define("USER_ADD_SUCCESS","<b>Cadastro de usuário realizado com sucesso!</b><br />Enviamos para o seu e-mail um link de confirmação da sua conta.<br />Favor clicar no link enviado para ativar sua conta na Plataforma de Serviços.");
+    define("USER_ADD_SUCCESS","<b>Registro de usuario realizado con éxito!</b><br />Enviamos a su e-mail un enlace de confirmación de su cuenta.<br />Por favor haga clic en el enlace enviado para activar su cuenta en la Plataforma de Servicios.");
     define("USER_UPDATED",'Usuario actualizado con succeso.');
     define("USER_UPDATE_ERROR",'<b>Problemas en la actualización</b><br />El sistema no logro actualizar los datos del usuário. Tente mas tardera.');
-    define("USER_CONFIRMED",'<b>Sua conta foi confirmada com sucesso!</b><br />Para acessar a Plataforma de Serviços, basta informar seu e-mail e senha na área de login');
-    define("USER_CONFIRMATION_ERROR",'<b>ERRO: Não foi possível realizar a confirmação de conta.');
+    define("USER_CONFIRMED",'<b>Su cuenta ha sido confirmada con éxito!</b><br />Para acceder a la Plataforma de Servicios, basta informar su e-mail y contraseña en el área de login');
+    define("USER_CONFIRMATION_ERROR",'<b>ERROR: No fue posible confirmar la cuenta.</b>');
     define("VALMSG_G_EMPTY","Campo obligatório. Não puede quedarse en blanco.");
     define("VALMSG_LOGIN","Digite un email válido.");
     define("VALMSG_EMAIL","Digite un email válido.");
@@ -252,9 +248,9 @@ Si usted tiene usuário cadastrado en el sitio ScIELO, la próxima vez que acced
 <p>El registro y todos los productis y servicios de información continuaran gratuitos. Las redes BVS e SciELO mantienem los princípios del Acceso Abierto, portanto, da disponibilización de la literatura cientifica e tecnica em la Iternet sin costo para el usuario, licensas de uso o barreras restritivas de acceso.</p>
 <p>En el futuro, las novidades seran aplicadas en otras instancias de productos de la BVS, en todas las regiones geograficas y areas tematicas de la BVS, por medio del concepto de pasaporte BVS y SciELO</p>
 ');
-    define("UPDATE_INFO",'<b>Por favor, revise seus dados no formulário abaixo para continuar utilizando a Plataforma de Serviços.</b>');
-    define("TERMS",'Terminos de uso');
-    define("TERMS_AGREEMENT_MESSAGE",'Eu concordo com os <a data-toggle="modal" data-target=".bs-terms-modal-lg" style="cursor: pointer; text-decoration: underline;">Termos</a> da Plataforma de Serviços');
+    define("UPDATE_INFO",'<b>Por favor, revise sus datos en el formulario abajo para continuar utilizando la Plataforma de Servicios.</b>');
+    define("TERMS",'Condiciones de uso');
+    define("TERMS_AGREEMENT_MESSAGE",'Estoy de acuerdo con las <a data-toggle="modal" data-target=".bs-terms-modal-lg" style="cursor: pointer; text-decoration: underline;">Condiciones</a> y confirmo que leí la <a data-toggle="modal" data-target=".bs-policy-modal-lg" style="cursor: pointer; text-decoration: underline;">Política de Datos</a> de Mi BVS');
     define("TERMS_MESSAGE",'
 <div class="terms">
 <h3>Terms and Conditions</h3>
@@ -290,65 +286,66 @@ Si usted tiene usuário cadastrado en el sitio ScIELO, la próxima vez que acced
 <p>Coordinated transmission overflow floating-point distributed supporting scan converter. <strong>Bridgeware backbone</strong> coordinated sampling overflow broadband normalizing connectivity or, internet transmission, bus, encapsulated. Extended element element echo messaging scan, cache video deviation debugged broadband. Pc, supporting hyperlinked coordinated patch, bridgeware transistorized, led frequency scalar. Servicing, plasma recursive boolean includes, computer, femtosecond inversion. Services integer harmonic mainframe scalar prototype broadband n-tier. Echo software application indeterminate dithering bypass plasma bus harmonic patch. Digital, mainframe scalar anomoly bypass, bus potentiometer phaselock plasma, phaselock prompt data disk inversion. </p>
 </div>
 ');
+    define('DATA_POLICY_MESSAGE',TERMS_MESSAGE);
     define('FIELD_LINKEDIN','LinkedIn (URL)');
     define('FIELD_RESEARCHGATE','ResearchGate (URL)');
     define('FIELD_ORCID','ORCID');
     define('FIELD_RESEARCHERID','ResearcherID');
     define('FIELD_LATTES','Lattes (URL)');
 
-    define("DASHBOARD",'Meus Conteúdos');
+    define("DASHBOARD",'Mis Contenidos');
     define("INDEX",'home');
-    define("HOMEPAGE",'Visão Geral');
-    define("WELCOME",'Bem-vindo');
-    define("USERS_SERVICES",'Serviços Personalizados');
-    define("OLA",'Olá');
-    define("LOGOFF",'Sair');
-    define("MY_PROFILE_DOCUMENTS",'Temas de Interesse');
+    define("HOMEPAGE",'Visión General');
+    define("WELCOME",'Bienvenido');
+    define("USERS_SERVICES",'Servicios Personalizados');
+    define("OLA",'Hola');
+    define("LOGOFF",'Salir');
+    define("MY_PROFILE_DOCUMENTS",'Temas de Interés');
     define("MY_SHELF",'Documentos Favoritos');
-    define("MY_LINKS",'Links Favoritos');
-    define("MY_NEWS",'Minhas Notícias');
-    define("FORGOT_PASSWORD",'Esqueceu sua senha?');
-    define("FORGOT_MY_PASSWORD",'esqueci minha senha');
-    define("CHANGE_PASSWORD",'Alterar Senha');
+    define("MY_LINKS",'Enlaces Favoritos');
+    define("MY_NEWS",'Mis Noticias');
+    define("FORGOT_PASSWORD",'¿Olvidó su contraseña?');
+    define("FORGOT_MY_PASSWORD",'olvide mi contraseña');
+    define("CHANGE_PASSWORD",'cambiar contraseña');
     define("MY_DATA",'Editar Perfil');
-    define("MY_ALERTS",'Meus Alertas');
-    define("SEARCH",'Pesquisar');
-    define("SEARCH_FOR",'Pesquisar por...');
-    define("MY_SEARCHES",'Histórico de Buscas na BVS');
-    define("KEYWORDS",'Palavras-chave');
+    define("MY_ALERTS",'Mis Alertas');
+    define("SEARCH",'Buscar');
+    define("SEARCH_FOR",'Buscar por...');
+    define("MY_SEARCHES",'Historial de Búsquedas en la BVS');
+    define("KEYWORDS",'Palabras-clave');
     define("SUGGESTED_DOCS",'Documentos Relacionados');
-    define("ORCID_WORKS",'ORCID - Minhas Publicações');
-    define("RECENT_ACTIVITIES",'Atividades Recentes');
-    define("SEE_ALL_DOCS",'Ver todos os documentos');
-    define("SEE_ALL_LINKS",'Ver todos os links');
-    define("SEE_ALL_PROFILES",'Ver todos os temas');
-    define("ADD_COLLECTION",'Coleção adicionada');
-    define("UPDATE_COLLECTION",'Coleção atualizada');
-    define("REMOVE_COLLECTION",'Coleção removida');
-    define("ADD_PROFILE",'Tema adicionado');
-    define("UPDATE_PROFILE",'Tema atualizado');
-    define("REMOVE_PROFILE",'Tema removido');
-    define("ADD_LINK",'Link adicionado');
-    define("UPDATE_LINK",'Link atualizado');
-    define("REMOVE_LINK",'Link removido');
+    define("ORCID_WORKS",'ORCID - Mis Publicaciones');
+    define("RECENT_ACTIVITIES",'Actividades Recientes');
+    define("SEE_ALL_DOCS",'Ver todos los documentos');
+    define("SEE_ALL_LINKS",'Ver todos los enlaces');
+    define("SEE_ALL_PROFILES",'Ver todos los temas');
+    define("ADD_COLLECTION",'Colección añadida');
+    define("UPDATE_COLLECTION",'Colección actualizada');
+    define("REMOVE_COLLECTION",'Colección borrada');
+    define("ADD_PROFILE",'Tema añadido');
+    define("UPDATE_PROFILE",'Tema actualizado');
+    define("REMOVE_PROFILE",'Tema borrado');
+    define("ADD_LINK",'Enlace añadida');
+    define("UPDATE_LINK",'Enlace actualizado');
+    define("REMOVE_LINK",'Enlace borrado');
     define("QUERY",'Query');
-    define("VIEW",'Exibir');
-    define("SEARCH_WIDGET",'Buscas na BVS');
-    define("PROFILE_WIDGET",'Temas de Interesse');
-    define("SHELF_WIDGET",'Documentos das Coleções');
+    define("VIEW",'Mostrar');
+    define("SEARCH_WIDGET",'Búsquedas en la BVS');
+    define("PROFILE_WIDGET",'Temas de Interés');
+    define("SHELF_WIDGET",'Documentos Favoritos');
 }
 
 if($lang == 'en'){
     /* tela de cadastro do usuário*/
     define("MY_VHL",'My VHL');
     define("SERVPLAT",'Service Platform');
-    define('BIREME','BIREME | OPS | OMS');
+    define('BIREME','BIREME | PAHO | WHO');
     define('BUTTON_NEW_USER','Create');
     define('BUTTON_CANCEL','Cancel');
     define('BUTTON_CLOSE','Close');
     define('BUTTON_SEND','Send');
     define("BUTTON_UPDATE_USER","Update");
-    define('BVSSIGLA','BVS');
+    define('BVSSIGLA','VHL');
     define('BVS','VHL and SciELO Passport');
     define('CONTACT_FORM','Contact form');
     define('CHOOSE_DEGREE','choose');
@@ -389,15 +386,15 @@ if($lang == 'en'){
     define('OPTIONAL_FIELD_TEXT','optional fields');
     define("TIP_LOGIN","The access login needs to be the user mail, eg: user@bireme.org");
     define("UPDATE_USER_TITLE","Update user");
-    define("USER_ADDED",'User added');
+    define("USER_ADDED",'User added successfully');
     define("USER_EXISTS","<b>User already exists</b><br />Try to login with this user, if you have no success trying to authenticate with this user and don't remember the password, use the link  <b>forgot my password</b> in the user login box.");
     define("USER_ADD_ERROR","<b>Registry error</b><br />Your mail is a Bireme mail. In this case your user already have on login to access the BVS aplications, just use you network login and password to have access to this application.");
     //define("USER_ADD_SUCCESS","<b>User success registered</b><br />Your user is now registered in the VHL Passport<br />You are able to connect in SciELO and BVS applications with this user.");
     define("USER_ADD_SUCCESS","<b>Cadastro de usuário realizado com sucesso!</b><br />Enviamos para o seu e-mail um link de confirmação da sua conta.<br />Favor clicar no link enviado para ativar sua conta na Plataforma de Serviços.");
     define("USER_UPDATED",'User updated');
     define("USER_UPDATE_ERROR",'<b>Problems updating user data</b><br />The applications doesn\'t success to update the user data. Try again later.');
-    define("USER_CONFIRMED",'<b>Your account has been confirmed successfully!</b>');
-    define("USER_CONFIRMATION_ERROR",'<b>ERRO: Não foi possível realizar a confirmação de conta.');
+    define("USER_CONFIRMED",'<b>Your account has been confirmed successfully!</b><br />To access the Services Platform, enter your email and password in the login area');
+    define("USER_CONFIRMATION_ERROR",'<b>ERROR: Account verification failed.</b>');
     define("VALMSG_G_EMPTY","Mandatory field.");
     define("VALMSG_LOGIN","Type a valid mail.");
     define("VALMSG_EMAIL","Type a valid mail.");
@@ -417,9 +414,9 @@ If you have a registered user in ScIELO website, the next time you access SciELO
 <p>The registration, all products and information services will remain free. The VHL and SciELO maintain the principles of open access, thus providing the scientific and technical literature on the Internet without cost to the user, usage license or barriers restricting access.</p>
 <p>In the future, these new features will be applied in other instances of VHL in all geographical regions and thematic areas of the VHL, through the concept of passport VHL and SciELO.</p>
 ');
-    define("UPDATE_INFO",'<b>Por favor, revise seus dados no formulário abaixo para continuar utilizando a Plataforma de Serviços.</b>');
+    define("UPDATE_INFO",'<b>Please review your data in the form below to continue using the Services Platform.</b>');
     define("TERMS",'Terms of use');
-    define("TERMS_AGREEMENT_MESSAGE",'Eu concordo com os <a data-toggle="modal" data-target=".bs-terms-modal-lg" style="cursor: pointer; text-decoration: underline;">Termos</a> da Plataforma de Serviços');
+    define("TERMS_AGREEMENT_MESSAGE",'I agree to the <a data-toggle="modal" data-target=".bs-terms-modal-lg" style="cursor: pointer; text-decoration: underline;">Terms</a> and have read the <a data-toggle="modal" data-target=".bs-policy-modal-lg" style="cursor: pointer; text-decoration: underline;">Data Policy</a> of My VHL');
     define("TERMS_MESSAGE",'
 <div class="terms">
 <h3>Terms and Conditions</h3>
@@ -455,52 +452,53 @@ If you have a registered user in ScIELO website, the next time you access SciELO
 <p>Coordinated transmission overflow floating-point distributed supporting scan converter. <strong>Bridgeware backbone</strong> coordinated sampling overflow broadband normalizing connectivity or, internet transmission, bus, encapsulated. Extended element element echo messaging scan, cache video deviation debugged broadband. Pc, supporting hyperlinked coordinated patch, bridgeware transistorized, led frequency scalar. Servicing, plasma recursive boolean includes, computer, femtosecond inversion. Services integer harmonic mainframe scalar prototype broadband n-tier. Echo software application indeterminate dithering bypass plasma bus harmonic patch. Digital, mainframe scalar anomoly bypass, bus potentiometer phaselock plasma, phaselock prompt data disk inversion. </p>
 </div>
 ');
+    define('DATA_POLICY_MESSAGE',TERMS_MESSAGE);
     define('FIELD_LINKEDIN','LinkedIn (URL)');
     define('FIELD_RESEARCHGATE','ResearchGate (URL)');
     define('FIELD_ORCID','ORCID');
     define('FIELD_RESEARCHERID','ResearcherID');
     define('FIELD_LATTES','Lattes (URL)');
 
-    define("DASHBOARD",'Meus Conteúdos');
+    define("DASHBOARD",'My Contents');
     define("INDEX",'home');
-    define("HOMEPAGE",'Visão Geral');
-    define("WELCOME",'Bem-vindo');
-    define("USERS_SERVICES",'Serviços Personalizados');
-    define("OLA",'Olá');
-    define("LOGOFF",'Sair');
-    define("MY_PROFILE_DOCUMENTS",'Temas de Interesse');
-    define("MY_SHELF",'Documentos Favoritos');
-    define("MY_LINKS",'Links Favoritos');
-    define("MY_NEWS",'Minhas Notícias');
-    define("FORGOT_PASSWORD",'Esqueceu sua senha?');
-    define("FORGOT_MY_PASSWORD",'esqueci minha senha');
-    define("CHANGE_PASSWORD",'Alterar Senha');
-    define("MY_DATA",'Editar Perfil');
-    define("MY_ALERTS",'Meus Alertas');
-    define("SEARCH",'Pesquisar');
-    define("SEARCH_FOR",'Pesquisar por...');
-    define("MY_SEARCHES",'Histórico de Buscas na BVS');
-    define("KEYWORDS",'Palavras-chave');
-    define("SUGGESTED_DOCS",'Documentos Relacionados');
-    define("ORCID_WORKS",'ORCID - Minhas Publicações');
-    define("RECENT_ACTIVITIES",'Atividades Recentes');
-    define("SEE_ALL_DOCS",'Ver todos os documentos');
-    define("SEE_ALL_LINKS",'Ver todos os links');
-    define("SEE_ALL_PROFILES",'Ver todos os temas');
-    define("ADD_COLLECTION",'Coleção adicionada');
-    define("UPDATE_COLLECTION",'Coleção atualizada');
-    define("REMOVE_COLLECTION",'Coleção removida');
-    define("ADD_PROFILE",'Tema adicionado');
-    define("UPDATE_PROFILE",'Tema atualizado');
-    define("REMOVE_PROFILE",'Tema removido');
-    define("ADD_LINK",'Link adicionado');
-    define("UPDATE_LINK",'Link atualizado');
-    define("REMOVE_LINK",'Link removido');
+    define("HOMEPAGE",'Overview');
+    define("WELCOME",'Welcome');
+    define("USERS_SERVICES",'Custom Services');
+    define("OLA",'Hello');
+    define("LOGOFF",'Exit');
+    define("MY_PROFILE_DOCUMENTS",'Interest Topics');
+    define("MY_SHELF",'Favorite Documents');
+    define("MY_LINKS",'Favorite Links');
+    define("MY_NEWS",'My News');
+    define("FORGOT_PASSWORD",'Forgot your password?');
+    define("FORGOT_MY_PASSWORD",'forgot my password');
+    define("CHANGE_PASSWORD",'Change Password');
+    define("MY_DATA",'Edit Profile');
+    define("MY_ALERTS",'My Alerts');
+    define("SEARCH",'Search');
+    define("SEARCH_FOR",'Search for...');
+    define("MY_SEARCHES",'VHL Search History');
+    define("KEYWORDS",'Keywords');
+    define("SUGGESTED_DOCS",'Related Documents');
+    define("ORCID_WORKS",'ORCID - My Publications');
+    define("RECENT_ACTIVITIES",'Recent Activities');
+    define("SEE_ALL_DOCS",'See all documents');
+    define("SEE_ALL_LINKS",'See all links');
+    define("SEE_ALL_PROFILES",'See all topics');
+    define("ADD_COLLECTION",'Collection added');
+    define("UPDATE_COLLECTION",'Collection updated');
+    define("REMOVE_COLLECTION",'Coleção deleted');
+    define("ADD_PROFILE",'Topic added');
+    define("UPDATE_PROFILE",'Topic updated');
+    define("REMOVE_PROFILE",'Topic deleted');
+    define("ADD_LINK",'Link added');
+    define("UPDATE_LINK",'Link updated');
+    define("REMOVE_LINK",'Link deleted');
     define("QUERY",'Query');
-    define("VIEW",'Exibir');
-    define("SEARCH_WIDGET",'Buscas na BVS');
-    define("PROFILE_WIDGET",'Temas de Interesse');
-    define("SHELF_WIDGET",'Documentos das Coleções');
+    define("VIEW",'View');
+    define("SEARCH_WIDGET",'VHL Search');
+    define("PROFILE_WIDGET",'Interest Topics');
+    define("SHELF_WIDGET",'Favorite Documents');
 }
 ?>
 
