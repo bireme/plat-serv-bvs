@@ -165,7 +165,7 @@ $DocTitle = $isUser?UPDATE_USER_TITLE:REGISTER_NEW_USER_TITLE;
                   <div class="left_col scroll-view">
                     <div class="navbar nav_title" style="border: 0;">
                         <div class="site_title">
-                            <i class="fa fa-cloud"></i> <span>Services Platform</span>
+                            <img src="<?=RELATIVE_PATH?>/images/<?=$_SESSION["skin"]?>/bvs_icon-<?=$_SESSION["lang"]?>.jpg" alt="VHL icon"> <span><?=MY_VHL?></span>
                         </div>
                     </div>
                     <div class="clearfix"></div>
@@ -407,7 +407,8 @@ $DocTitle = $isUser?UPDATE_USER_TITLE:REGISTER_NEW_USER_TITLE;
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
                           <div class="checkbox">
-                              <input id="terms" name="terms" type="checkbox" class="flat" value="<?php echo date('Y-m-d'); ?>" required="required"> <?=TERMS_AGREEMENT_MESSAGE?>
+                              <input id="terms" name="terms" type="checkbox" class="flat" value="<?php echo date('Y-m-d'); ?>" required="required">
+                              <span class="terms-agreement"><?=TERMS_AGREEMENT_MESSAGE?></span>
                           </div>
                         </div>
                       </div>
@@ -419,10 +420,30 @@ $DocTitle = $isUser?UPDATE_USER_TITLE:REGISTER_NEW_USER_TITLE;
                             <div class="modal-header">
                               <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span>
                               </button>
-                              <h2 class="modal-title" id="myModalLabel"><?=SERVPLAT?></h2>
+                              <h2 class="modal-title" id="myModalLabel"><?=MY_VHL?></h2>
                             </div>
                             <div class="modal-body">
                               <?=TERMS_MESSAGE?>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-default" data-dismiss="modal"><?=BUTTON_CLOSE?></button>
+                            </div>
+
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="modal fade bs-policy-modal-lg" tabindex="-1" role="dialog" aria-hidden="true" style="z-index: 9999;">
+                        <div class="modal-dialog modal-lg">
+                          <div class="modal-content">
+
+                            <div class="modal-header">
+                              <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span>
+                              </button>
+                              <h2 class="modal-title" id="myModalLabel"><?=MY_VHL?></h2>
+                            </div>
+                            <div class="modal-body">
+                              <?=DATA_POLICY_MESSAGE?>
                             </div>
                             <div class="modal-footer">
                               <button type="button" class="btn btn-default" data-dismiss="modal"><?=BUTTON_CLOSE?></button>

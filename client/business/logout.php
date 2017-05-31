@@ -12,9 +12,17 @@
 /*
  * Edit this file in UTF-8 - Test String "áéíóú"
  */
+
+$tmplang = $_SESSION['lang'];
+$tmpskin = $_SESSION['skin'];
+
 /* destroy session data */
 session_destroy();
 $_SESSION = array();
 setcookie('userTK','',time() -3600,'/',COOKIE_DOMAIN_SCOPE);
 UserData::sendCookie();
+
+session_start();
+$_SESSION['lang'] = $tmplang;
+$_SESSION['skin'] = $tmpskin;
 ?>

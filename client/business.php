@@ -12,7 +12,6 @@ switch($_REQUEST["action"]){
             require_once(dirname(__FILE__)."/business/widgets.php");
         } else {
             require_once(dirname(__FILE__)."/business/logout.php");
-            require(dirname(__FILE__)."/includes/sessionHandler.php");
         }
     break;
     case "new_pass":
@@ -49,7 +48,6 @@ switch($_REQUEST["action"]){
     break;
     case "logout":
         require_once(dirname(__FILE__)."/business/logout.php");
-        require(dirname(__FILE__)."/includes/sessionHandler.php");
     break;
     case "mig_id_confirmation":
         require_once(dirname(__FILE__)."/business/mig_id_confirmation.php");

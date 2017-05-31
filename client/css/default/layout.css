@@ -260,6 +260,11 @@ img.star {
     width: 12px;
 }
 
+span.terms-agreement {
+    position: absolute;
+    padding-left: 5px;
+}
+
 #loading {
     background:url(../../images/default/loading.gif) no-repeat center center;
     height: 60px;
