@@ -120,7 +120,7 @@ class UserDirectoryDAO {
             for($i = 0; $i < count($result); $i++)
             {
                 $directory = new UserDirectory();
-                $directory->setdirID($result[$i]['dirID']);
+                $directory->setDirID($result[$i]['dirID']);
                 $directory->setDirName($result[$i]['name']);
                 $directory->setOffline($result[$i]['offline']);
                 $directory->setUserID($result[$i]['userID']);

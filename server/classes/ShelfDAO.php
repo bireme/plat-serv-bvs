@@ -29,6 +29,7 @@ class ShelfDAO {
      * @return boolean
      */
 	public static function addDocToShelf($shelf){
+        $retValue = false;
         
         $sysUID = UserDAO::getSysUID($shelf->getUserID());
 
@@ -43,9 +44,9 @@ class ShelfDAO {
             $dirID = $objUserDirectory[0]->getDirID();
         }
 
-        $retValue = false;
+        $in_shelf = self::isInShelf($shelf);
         
-        if(!self::isInShelf($shelf)){
+        if(!$in_shelf){
             if($shelf->getCitedStat()){
 			$citedStat = $shelf->getCitedStat();
             }else{
@@ -84,7 +85,8 @@ class ShelfDAO {
                 $retValue = true;
             }
         }else{
-    	    $retValue = 'OK';
+            $dir = UserDirectoryDAO::getDir($shelf->getUserID(), $in_shelf[0]['userDirID']);
+            $retValue = '{ "dir" : "'.$dir[0]->getDirName().'" }';
     	}
 
         return $retValue;
@@ -335,8 +337,6 @@ class ShelfDAO {
      * @return boolean
      */
     public static function isInShelf($shelf){
-        $retValue = false;
-
         $sysUID = UserDAO::getSysUID($shelf->getUserID());
 
         $objDocument = $shelf->getDocument();
@@ -353,11 +353,13 @@ class ShelfDAO {
             $logger->log($e->getMessage(),PEAR_LOG_EMERG);
         }
         
-        if (count($result) === 0 ){
-            return false;
+        if ( count($result) === 0 ){
+            $retValue = false;
         }else{
-            return true;
+            $retValue = $result;
         }
+
+        return $retValue;
     }
 
     /*

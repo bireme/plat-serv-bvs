@@ -152,6 +152,8 @@ $( document ).ready(
             obj.userTK = unescape(getCookie('userTK'));
 
             $.post( href, obj, function(data) {
+                response = $.parseJSON(data);
+
                 if(data == true){
                     href = parts[0]+"/controller/directories/control/business/task/movedoc";
 
@@ -164,11 +166,13 @@ $( document ).ready(
                     $.post( href, obj, function(data) {
                         alert(labels[LANG]['ADD_DOC_SUCCESS']+' '+text);
                     });
-                }else if(/OK/.test(data)) {
-                    alert(labels[LANG]['DOC_EXISTS']);
+                }else if(typeof response == 'object'){
+                    alert(labels[LANG]['DOC_EXISTS']+' '+response.dir);
                 }else{
                     alert(labels[LANG]['ADD_DOC_FAIL']);
                 }
+                
+                $('.popover').popover('hide');
             });
         });
 
