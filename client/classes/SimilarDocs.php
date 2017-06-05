@@ -146,6 +146,27 @@ class SimilarDocs {
         return $retValue;
     }
 
+    /**
+     * Get related documents
+     *
+     * @param string $userID User ID
+     * @param string $string
+     * @return boolean|array
+     */
+    public static function getRelatedDocs($userID,$string){
+        $retValue = false;
+
+        try{
+            $objSoapClient = self::getSoapClient();
+            $retValue = $objSoapClient->getRelatedDocs($userID,$string);
+        }catch(Exception $e){
+            $logger = &Log::singleton('file', LOG_FILE, __CLASS__, $_conf);
+            $logger->log($e->getMessage(),PEAR_LOG_EMERG);
+        }
+        
+        return $retValue;
+    }
+
     public static function getTotalOrcidWorks($userTK){
         $retValue = false;
 

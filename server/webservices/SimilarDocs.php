@@ -152,6 +152,27 @@ function getOrcidWorks($userTK,$args){
 }
 
 /**
+ * Get related documents
+ *
+ * @param string $userID User ID
+ * @param string $string
+ * @return boolean|array
+ */
+function getRelatedDocs($userTK,$string){
+    $result = false;
+
+    /*  parameter validation */
+    $params = array('userTK' => $userTK);
+    $objVerifier = new Verifier($params);
+
+    if($retVerifier = $objVerifier->canPass()){
+        $retParams = $objVerifier->getParams();
+        $result = SimilarDocs::getRelatedDocs($retParams['userTK']['userID'],$string);
+    }
+    return $result;
+}
+
+/**
  * Return the total number of ORCID works
  *
  * @param string $userTK user hash

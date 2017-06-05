@@ -49,7 +49,7 @@
                                         <?if ($register["rate"] >= 4){?><a href="<?=RELATIVE_PATH?>/controller/mydocuments/control/business/task/rate/document/<?=$register["docID"]?>/grade/3/directory/<?=$register["dirID"]?>"><img src="<?=RELATIVE_PATH?>/images/<?=$_SESSION["skin"]?>/starOn.png" border="0" class="star" /></a><?}else{?><a href="<?=RELATIVE_PATH?>/controller/mydocuments/control/business/task/rate/document/<?=$register["docID"]?>/grade/4/directory/<?=$register["dirID"]?>"><img src="<?=RELATIVE_PATH?>/images/<?=$_SESSION["skin"]?>/starOff.png" border="0" class="star" /></a><?}?>
                                         <?if ($register["rate"] >= 5){?><a href="<?=RELATIVE_PATH?>/controller/mydocuments/control/business/task/rate/document/<?=$register["docID"]?>/grade/4/directory/<?=$register["dirID"]?>"><img src="<?=RELATIVE_PATH?>/images/<?=$_SESSION["skin"]?>/starOn.png" border="0" class="star" /></a><?}else{?><a href="<?=RELATIVE_PATH?>/controller/mydocuments/control/business/task/rate/document/<?=$register["docID"]?>/grade/5/directory/<?=$register["dirID"]?>"><img src="<?=RELATIVE_PATH?>/images/<?=$_SESSION["skin"]?>/starOff.png" border="0" class="star" /></a><?}?>
                                     </div>
-                                    <div>
+                                    <div class="record">
                                         <?php if ( $register["docURL"] ) : ?>
                                           <a href="<?php echo $register["docURL"]; ?>" target="_blank"><?php echo $register["title"]; ?></a>
                                         <?php else : ?>
@@ -57,10 +57,11 @@
                                         <?php endif; ?>
                                         <small style="display: block;"><?php echo $register["authors"]; ?></small>
                                     </div>
-                                    <?if ($register["dirID"] == null){ $dirID = 0;}?>
+                                    <?if ($register["dirID"] == null){ $dirID = 0; }?>
                                     <div>
-                                        <a class="remove" href="<?=RELATIVE_PATH?>/controller/mydocuments/control/business/task/removedoc/document/<?=$register["docID"]?>/directory/<?=$register["dirID"]?>"><span class="label label-danger"><?=$trans->getTrans($_REQUEST["action"],'REMOVE_FROM_COLLECTION')?></span></a>
-                                        <a class="move" href="javascript: void(0);" onclick="window.open('<?=RELATIVE_PATH?>/controller/directories/control/business/task/movedoc/document/<?=$register["docID"]?>/directory/<?=$register["dirID"]?>','','resizable=no,width=420,height=270')"><span class="label label-info"><?=$trans->getTrans($_REQUEST["action"],'MOVE_TO')?></span></a>
+                                        <a class="remove" href="<?=RELATIVE_PATH?>/controller/mydocuments/control/business/task/removedoc/document/<?=$register["docID"]?>/directory/<?=$register["dirID"]?>"><span class="label label-danger"><?php echo $trans->getTrans($_REQUEST["action"],'REMOVE_FROM_COLLECTION'); ?></span></a>
+                                        <a class="move" href="javascript: void(0);" onclick="window.open('<?=RELATIVE_PATH?>/controller/directories/control/business/task/movedoc/document/<?=$register["docID"]?>/directory/<?=$register["dirID"]?>','','resizable=no,width=420,height=270')"><span class="label label-info"><?php echo $trans->getTrans($_REQUEST["action"],'MOVE_TO'); ?></span></a>
+                                        <a class="related-docs" href="javascript:;"><span class="label label-primary"><?php echo $trans->getTrans('suggesteddocs','RELATED_DOCS'); ?></span></a>
                                     </div>
                                     <!--div>
                                       <span class="label label-default">Default</span>
@@ -70,6 +71,13 @@
                                       <span class="label label-warning">Warning</span>
                                       <span class="label label-danger">Danger</span>
                                     </div-->
+                                    <div class="related_docs">
+                                        <div class="related-loading"><?php echo $trans->getTrans('suggesteddocs','LOADING'); ?></div>
+                                        <div class="related-list">
+                                            <p><?php echo ucwords($trans->getTrans('suggesteddocs','RELATED_DOCS')); ?>:</p>
+                                        </div>
+                                        <div class="related-alert"><?php echo $trans->getTrans('suggesteddocs','RELATED_DOCS_ALERT'); ?></di>
+                                    </div>
                                   </td>
                                 </tr>
                                 <?php endforeach; ?>

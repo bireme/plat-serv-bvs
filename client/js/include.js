@@ -176,6 +176,48 @@ $( document ).ready(
             });
         });
 
+        $(this).on('click', 'a.related-docs',
+            function(e){
+                e.preventDefault();
+
+                path = window.location.pathname;
+                parts = path.split("/controller/");
+                href = parts[0]+"/controller/suggesteddocs/control/business/task/related";
+
+                content = $(this).closest('td').find('div.related_docs');
+                title = $(this).closest('td').find('div.record a').text();
+
+                obj = new Object();
+                obj.sentence = $.trim(title);
+
+                content.find('.related-list').hide();
+                content.find('.related-list').find('small').remove();
+                content.find('.related-loading').show();
+
+                $.post( href, obj, function(data) {
+                    response = $.parseJSON(data);
+
+                    if(typeof response == 'object') {
+                        var html;
+                        var before = '<small><ol>';
+                        var after = '</ol></small>';
+
+                        html = before;
+                        $.each(response, function(index, res) {
+                            html += '<li><a href="'+res.docURL+'" target="_blank">'+res.title+'</a></li>';
+                        });
+                        html += after;
+
+                        content.find('.related-loading').hide();
+                        content.find('.related-list').append(html).show();
+                    } else {
+                        content.find('.related-loading').hide();
+                        alert(content.find('.related-alert').text());
+                    }
+                });
+            }
+        );
+
         function loadData(url, type, obj) {
             $('#loading').show();
             

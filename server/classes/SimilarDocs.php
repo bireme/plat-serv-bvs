@@ -29,7 +29,7 @@ class SimilarDocs {
      * @param array $similars
      * @return boolean
      */
-    static function addProfileDocs($userID,$profile,$similars){
+    public static function addProfileDocs($userID,$profile,$similars){
         global $_conf;
         $result = null;
         $retValue = false;
@@ -79,7 +79,7 @@ class SimilarDocs {
      * @param string $profile Profile name
      * @return boolean
      */
-    static function deleteProfileDocs($userID,$profile){
+    public static function deleteProfileDocs($userID,$profile){
         global $_conf;
         $result = 0;
         $retValue = false;
@@ -112,7 +112,7 @@ class SimilarDocs {
      * @param array $params
      * @return array
      */
-    static function getSimilarsDocs($userID,$profile,$params){
+    public static function getSimilarsDocs($userID,$profile,$params){
         global $_conf;
         $retValue = false;
         $count = ( $params["widget"] ) ? WIDGETS_ITEMS_LIMIT : DOCUMENTS_PER_PAGE;
@@ -170,9 +170,10 @@ class SimilarDocs {
      * @param string $userID User ID
      * @param string $profile Profile name
      * @param string $string
+     * @param boolean $skip
      * @return boolean
      */
-    static function addProfile($userID,$profile,$string){
+    public static function addProfile($userID,$profile,$string,$skip=false){
         $result = false;
         $status = 'on';
 
@@ -193,32 +194,34 @@ class SimilarDocs {
         $xml = utf8_encode(file_get_contents($similar.urlencode($string),false,$context));
         $xml = simplexml_load_string($xml,'SimpleXMLElement',LIBXML_NOCDATA);
         $xml = (string)$xml;
-        
-        if($xml){
-            $similars = self::getSimilars($userID,$profile);
 
-            if ( $similars ) {
-                if ( 'none' == $similars )
-                    $status = 'none';
-                else
-                    $result = self::addProfileDocs($userID,$profile,$similars);
+        if(!$skip){
+            if($xml){
+                $similars = self::getSimilars($userID,$profile);
+
+                if ( $similars ) {
+                    if ( 'none' == $similars )
+                        $status = 'none';
+                    else
+                        $result = self::addProfileDocs($userID,$profile,$similars);
+                } else {
+                    $status = 'off';
+                }
             } else {
                 $status = 'off';
             }
-        } else {
-            $status = 'off';
-        }
 
-        $sysUID = UserDAO::getSysUID($userID);
+            $sysUID = UserDAO::getSysUID($userID);
 
-        $strsql = "UPDATE profiles set profileStatus='".$status."' WHERE profileName='".$profile."' and sysUID='".$sysUID."'";
+            $strsql = "UPDATE profiles set profileStatus='".$status."' WHERE profileName='".$profile."' and sysUID='".$sysUID."'";
 
-        try{
-            $_db = new DBClass();
-            $res = $_db->databaseExecUpdate($strsql);
-        }catch(DBClassException $e){
-            $logger = &Log::singleton('file', LOG_FILE, __CLASS__, $_conf);
-            $logger->log($e->getMessage(),PEAR_LOG_EMERG);
+            try{
+                $_db = new DBClass();
+                $res = $_db->databaseExecUpdate($strsql);
+            }catch(DBClassException $e){
+                $logger = &Log::singleton('file', LOG_FILE, __CLASS__, $_conf);
+                $logger->log($e->getMessage(),PEAR_LOG_EMERG);
+            }
         }
 
         return $result;
@@ -232,7 +235,7 @@ class SimilarDocs {
      * @param boolean $skip
      * @return boolean
      */
-    static function deleteProfile($userID,$profile,$skip=false){
+    public static function deleteProfile($userID,$profile,$skip=false){
         $result =  false;
 
         $similar = str_replace("#PSID#",$userID,SIMDOCS_DELETE_PROFILE);
@@ -268,7 +271,7 @@ class SimilarDocs {
      * @param string $userID User ID
      * @return boolean
      */
-    static function getProfiles($userID){
+    public static function getProfiles($userID){
         $retValue = false;
         $profiles = str_replace("#PSID#",$userID,SIMDOCS_GET_PROFILES);
 
@@ -306,7 +309,7 @@ class SimilarDocs {
      * @param array $params
      * @return array
      */
-    static function getSimilars($userID,$profile,$params){
+    public static function getSimilars($userID,$profile,$params){
         $retValue = false;
         $count = (int) DOCUMENTS_PER_PAGE;
         $from = $count * $params["page"];
@@ -349,7 +352,7 @@ class SimilarDocs {
      * @param array $suggestions
      * @return array
      */
-    static function addSuggestedDocsProfiles($userID,$suggestions){
+    public static function addSuggestedDocsProfiles($userID,$suggestions){
         $retValue = false;
 
         if ($suggestions && is_array($suggestions) && count($suggestions) > 0) {
@@ -383,7 +386,7 @@ class SimilarDocs {
      * @param string $userID User ID
      * @return array
      */
-    static function deleteSuggestedDocs($userID){
+    public static function deleteSuggestedDocs($userID){
         global $_conf;
         $result = 0;
         $retValue = false;
@@ -416,7 +419,7 @@ class SimilarDocs {
      * @param array $params
      * @return array
      */
-    static function getSuggestedDocs($userID,$params,$update=false){
+    public static function getSuggestedDocs($userID,$params,$update=false){
         global $_conf;
         $retValue = false;
         $count = ( $params["widget"] ) ? WIDGETS_ITEMS_LIMIT : DOCUMENTS_PER_PAGE;
@@ -479,7 +482,7 @@ class SimilarDocs {
      * @param array $params
      * @return array
      */
-    static function getOrcidWorks($userID,$params){
+    public static function getOrcidWorks($userID,$params){
         $count = (int) DOCUMENTS_PER_PAGE;
         $from = $count * $params["page"];
 
@@ -527,6 +530,44 @@ class SimilarDocs {
         $result = !empty( $works ) ? $works : false;
         
         return $result;
+    }
+
+    /**
+     * Get related documents
+     *
+     * @param string $userID User ID
+     * @param string $string
+     * @return boolean|array
+     */
+    public static function getRelatedDocs($userID,$string){
+        $retValue = false;
+        $profile = md5('SIMILARS');
+      
+        $addProfile = self::addProfile($userID,$profile,$string,true);
+        $similars = self::getSimilars($userID,$profile);
+
+        if ( $similars ) {
+            if ( 'none' != $similars ) {
+                $retValue = array();
+
+                foreach ($similars as $index => $similar) {
+                    if ( $index == RELATED_DOCUMENTS_LIMIT ) break;
+                    
+                    $title   = self::getSimilarDocTitle($similar);
+                    $docURL  = self::generateSimilarDocURL($similar['id']);
+                    $authors = self::getSimilarDocAuthors($similar['au']);
+
+                    $record = array();
+                    $record['title']   = $title;
+                    $record['docURL']  = $docURL;
+                    $record['authors'] = $authors;
+
+                    $retValue[] = $record;
+                }                
+            }
+        }
+
+        return $retValue;
     }
 
     /**
@@ -653,7 +694,7 @@ class SimilarDocs {
      * @param string $xmlProfile
      * @return array
      */
-    static function xmlToArray($xmlProfile){
+    public static function xmlToArray($xmlProfile){
         /* load simpleXML object */
         $xmlProfile = str_replace("&lt;","<",$xmlProfile);
         $xmlProfile = str_replace("&gt;",">",$xmlProfile);
@@ -673,7 +714,7 @@ class SimilarDocs {
      * @param string $docID
      * @return string $docURL Similar document URL
      */
-    static function generateSimilarDocURL($docID){
+    public static function generateSimilarDocURL($docID){
         $docURL = VHL_SEARCH_PORTAL_DOMAIN."/portal/resource/".DEFAULT_LANG."/".$docID;
         return $docURL;
     }
@@ -684,7 +725,7 @@ class SimilarDocs {
      * @param string|array $authors
      * @return string $authors Similar document authors
      */
-    static function getSimilarDocAuthors($authors){
+    public static function getSimilarDocAuthors($authors){
         $authors = ( is_array($authors) ) ? implode("; ", $authors) : $authors;
         return CharTools::mysql_escape_mimic($authors);
     }
@@ -695,7 +736,7 @@ class SimilarDocs {
      * @param array $similar
      * @return string $title Similar document title
      */
-    static function getSimilarDocTitle($similar){
+    public static function getSimilarDocTitle($similar){
         $key = '';
         $title = '';
 

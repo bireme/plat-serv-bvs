@@ -87,6 +87,10 @@ switch($_REQUEST["task"]){
 
         die($suggestions);
     break;
+    case "related":
+        $related = SimilarDocs::getRelatedDocs($_SESSION["userTK"],$_REQUEST['sentence']);
+        die(json_encode($related));
+    break;
     default:
         die("default");
     break;

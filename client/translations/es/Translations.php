@@ -127,9 +127,11 @@ class Translations {
         self::$trans["suggesteddocs"]["INCOMING_FOLDER"] = 'Caixa de Entrada';
         self::$trans["suggesteddocs"]["FOLDERS_LIST"] = 'Escolha um tema:';
         self::$trans["suggesteddocs"]["PROFILES_LIST"] = 'Escolha um tema:';
-        self::$trans["suggesteddocs"]["LOADING"] = 'CARREGANDO';
+        self::$trans["suggesteddocs"]["LOADING"] = 'Cargando...';
         self::$trans["suggesteddocs"]["SELECTED_DOCS"] = 'documentos selecionados';
         self::$trans["suggesteddocs"]["SEND"] = 'Enviar';
+        self::$trans["suggesteddocs"]["RELATED_DOCS"] = 'documentos relacionados';
+        self::$trans["suggesteddocs"]["RELATED_DOCS_ALERT"] = 'Ningún documento relacionado';
 
     // Terms of orcidworks pages
         self::$trans["orcidworks"]["PAGE"] = 'Página';

@@ -45,6 +45,7 @@ define("LOGOUT","");
 
 define("DOCUMENTS_PER_PAGE","10"); /* pagination */
 define("WIDGETS_ITEMS_LIMIT","5"); /* itens limit in widgets */
+define("RELATED_DOCUMENTS_LIMIT","5"); /* related documents limit */
 
 define("VHL_SEARCH_PORTAL_DOMAIN","http://pesquisa.bvsalud.org");
 define("MONGODB_SERVER","mongodb://ts10vm.bireme.br:27017");
