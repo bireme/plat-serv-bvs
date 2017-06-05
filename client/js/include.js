@@ -119,9 +119,9 @@ $( document ).ready(
             }
         )
 
-        $('button.add-collection').popover({
+        $('a.add-collection').popover({
             html : true,
-            placement : 'left',
+            placement : 'right',
             title: labels[LANG]['COLLECTIONS'],
             // trigger: 'manual',
             content : function() {
@@ -138,7 +138,7 @@ $( document ).ready(
 
             folder = $(this).val();
             text = $('.docsfolderlist option:selected').text();
-            id = $(this).closest('td').find('button.add-collection').val();
+            id = $(this).closest('td').find('a.add-collection').val();
             title = $(this).closest('tr').find('a').text();
             url = $(this).closest('tr').find('a').attr('href');
             author = $(this).closest('tr').find('small').text();

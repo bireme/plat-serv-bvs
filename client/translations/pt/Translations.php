@@ -117,7 +117,7 @@ class Translations {
         self::$trans["suggesteddocs"]["SUGGESTED_DOCS_NO_REGISTERS_FOUND"] = 'Nenhuma sugestão de documentos';
         self::$trans["suggesteddocs"]["REFERENCE"] = 'Escolha os documentos de referência para sugestões:';
         self::$trans["suggesteddocs"]["NO_REFERENCES"] = 'Nenhum documento encontrado com essa referência';
-        self::$trans["suggesteddocs"]["ADD_COLLECTION"] = 'Adicionar aos Favoritos';
+        self::$trans["suggesteddocs"]["ADD_COLLECTION"] = 'adicionar aos favoritos';
         self::$trans["suggesteddocs"]["CONFIG"] = 'Configurações';
         self::$trans["suggesteddocs"]["DOCS"] = 'Documentos';
         self::$trans["suggesteddocs"]["DOCS_SOURCE"] = 'Origem dos documentos';
@@ -276,7 +276,7 @@ class Translations {
         self::$trans["myprofiledocuments"]["PAGE"] = 'Página';
         self::$trans["myprofiledocuments"]["NEXT"] = 'Próximo';
         self::$trans["myprofiledocuments"]["PREVIOUS"] = 'Anterior';
-        self::$trans["myprofiledocuments"]["ADD_COLLECTION"] = 'Adicionar aos Favoritos';
+        self::$trans["myprofiledocuments"]["ADD_COLLECTION"] = 'adicionar aos favoritos';
         self::$trans["myprofiledocuments"]["INCOMING_FOLDER"] = 'Caixa de Entrada';
 
     // Terms of mig_id_confirmation pages

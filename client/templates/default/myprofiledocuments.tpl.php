@@ -44,9 +44,13 @@
                                   <?php foreach ( $responseSimilarDocs["values"]['similars'] as $similar) : ?>
                                   <tr>
                                     <td>
-                                      <div>
+                                      <div class="record">
                                           <a href="<?php echo $similar["docURL"]; ?>" target="_blank"><?php echo $similar["title"]; ?></a>
                                           <small style="display: block;"><?php echo $similar["authors"]; ?></small>
+                                      </div>
+                                      <div>
+                                          <a class="label label-success add-collection" value="<?php echo $similar["docID"]; ?>"><?=$trans->getTrans($_REQUEST["action"],'ADD_COLLECTION')?></a>
+                                          <a class="related-docs" href="javascript:;"><span class="label label-primary"><?php echo $trans->getTrans('suggesteddocs','RELATED_DOCS'); ?></span></a>
                                       </div>
                                       <!--div>
                                         <span class="label label-default">Default</span>
@@ -56,9 +60,13 @@
                                         <span class="label label-warning">Warning</span>
                                         <span class="label label-danger">Danger</span>
                                       </div-->
-                                    </td>
-                                    <td style="text-align: right;">
-                                        <button class="btn btn-success btn-xs add-collection" value="<?php echo $similar["docID"]; ?>"><?=$trans->getTrans($_REQUEST["action"],'ADD_COLLECTION')?></button>
+                                      <div class="related_docs">
+                                          <div class="related-loading"><?php echo $trans->getTrans('suggesteddocs','LOADING'); ?></div>
+                                          <div class="related-list">
+                                              <p><?php echo ucwords($trans->getTrans('suggesteddocs','RELATED_DOCS')); ?>:</p>
+                                          </div>
+                                          <div class="related-alert"><?php echo $trans->getTrans('suggesteddocs','RELATED_DOCS_ALERT'); ?></di>
+                                      </div>
                                     </td>
                                   </tr>
                                   <?php endforeach; ?>
