@@ -550,10 +550,12 @@ class SimilarDocs {
             if ( 'none' != $similars ) {
                 $retValue = array();
 
-                foreach ($similars as $index => $similar) {
-                    if ( $index == RELATED_DOCUMENTS_LIMIT ) break;
-                    
+                foreach ($similars as $similar) {                    
                     $title   = self::getSimilarDocTitle($similar);
+
+                    if ( strtolower(rtrim($title, '.')) == strtolower(rtrim($string, '.')) )
+                        continue;
+
                     $docURL  = self::generateSimilarDocURL($similar['id']);
                     $authors = self::getSimilarDocAuthors($similar['au']);
 
@@ -563,6 +565,8 @@ class SimilarDocs {
                     $record['authors'] = $authors;
 
                     $retValue[] = $record;
+
+                    if ( count($retValue) == RELATED_DOCUMENTS_LIMIT ) break;
                 }                
             }
         }
