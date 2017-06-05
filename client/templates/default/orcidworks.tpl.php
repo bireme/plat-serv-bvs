@@ -29,15 +29,25 @@
                             <?php foreach ( $response["values"] as $register) : $count++; ?>
                             <tr>
                               <td id="ow<?php echo $count; ?>">
-                                <?php if ( $register["docURL"] ) : ?>
-                                  <a href="<?php echo $register["docURL"]; ?>" target="_blank"><?php echo $register["title"]; ?></a>
-                                <?php else : ?>
-                                  <?php echo $register["title"]; ?>
-                                <?php endif; ?>
-                                <small style="display: block;"><?php echo implode("; ", $register["authors"]); ?></small>
-                              </td>
-                              <td style="text-align: right;">
-                                <a href="https://scholar.google.com.br/scholar?as_q=&as_epq=<?php echo urlencode($register["title"]); ?>" target="_blank"><button class="btn btn-success btn-xs"><?=$trans->getTrans($_REQUEST["action"],'GOOGLE_SCHOLAR')?></button></a>
+                                <div class="record">
+                                  <?php if ( $register["docURL"] ) : ?>
+                                    <a href="<?php echo $register["docURL"]; ?>" target="_blank"><?php echo $register["title"]; ?></a>
+                                  <?php else : ?>
+                                    <?php echo $register["title"]; ?>
+                                  <?php endif; ?>
+                                  <small style="display: block;"><?php echo implode("; ", $register["authors"]); ?></small>
+                                </div>
+                                <div>
+                                  <a class="label label-success" href="https://scholar.google.com.br/scholar?as_q=&as_epq=<?php echo urlencode($register["title"]); ?>" target="_blank"><?=$trans->getTrans($_REQUEST["action"],'GOOGLE_SCHOLAR')?></a>
+                                  <a class="label label-primary related-docs" href="javascript:;"><?php echo $trans->getTrans('suggesteddocs','RELATED_DOCS'); ?></a>
+                                </div>
+                                <div class="related_docs">
+                                  <div class="related-loading"><?php echo $trans->getTrans('suggesteddocs','LOADING'); ?></div>
+                                  <div class="related-list">
+                                      <p><?php echo ucwords($trans->getTrans('suggesteddocs','RELATED_DOCS')); ?>:</p>
+                                  </div>
+                                  <div class="related-alert"><?php echo $trans->getTrans('suggesteddocs','RELATED_DOCS_ALERT'); ?></div>
+                                </div>
                               </td>
                             </tr>
                             <?php endforeach; ?>

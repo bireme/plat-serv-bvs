@@ -741,18 +741,30 @@ class SimilarDocs {
         $title = '';
 
         if ( array_key_exists('ti', $similar) ) {
-            $title = $similar['ti'];
-        }
-        elseif ( array_key_exists('la', $similar) ) {
-            $key = 'ti_'.$similar['la'];
+            if ( is_array($similar['ti']) )
+                $title = $similar['ti'][0];
+            else
+                $title = $similar['ti'];
+        } elseif ( array_key_exists('la', $similar) ) {
+            if ( is_array($similar['la']) )
+                $key = 'ti_'.$similar['la'][0];
+            else
+                $key = 'ti_'.$similar['la'];
 
-            if ( array_key_exists($key, $similar) )
-                $title = $similar[$key];
+            if ( array_key_exists($key, $similar) ) $title = $similar[$key];
         }
-        
-        if ( array_key_exists('ti_'.DEFAULT_LANG, $similar) && empty($title) ) {
-            $key = 'ti_'.DEFAULT_LANG;
-            $title = $similar[$key];
+
+        if ( empty($title) ) {
+            if ( array_key_exists('ti_'.DEFAULT_LANG, $similar) ) {
+                $key = 'ti_'.DEFAULT_LANG;
+                $title = $similar[$key];
+            } else {
+                $similar = array_filter( $similar, function($key){
+                    return strpos($key, 'ti_') === 0;
+                }, ARRAY_FILTER_USE_KEY );
+
+                if ( !empty($similar) ) $title = array_shift($similar);
+            }
         }
         
         return CharTools::mysql_escape_mimic($title);

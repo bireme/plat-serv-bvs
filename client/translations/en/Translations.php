@@ -139,7 +139,7 @@ class Translations {
         self::$trans["orcidworks"]["PREVIOUS"] = 'Anterior';
         self::$trans["orcidworks"]["ORCID_WORKS"] = 'ORCID - Minhas Publicações';
         self::$trans["orcidworks"]["ORCID_WORKS_NO_REGISTERS_FOUND"] = 'Nenhuma publicação encontrada. Para vizualizar suas publicações, favor informar o ORCID ID no seu cadastro.';
-        self::$trans["orcidworks"]["GOOGLE_SCHOLAR"] = 'Ver no Google Scholar';
+        self::$trans["orcidworks"]["GOOGLE_SCHOLAR"] = 'ver no Google Scholar';
 
     // General Terms
         self::$trans["general"]["IDENTIFICATION"] = 'Virtual Health Library';

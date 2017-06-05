@@ -50,7 +50,7 @@
                                       </div>
                                       <div>
                                           <a class="label label-success add-collection" value="<?php echo $similar["docID"]; ?>"><?=$trans->getTrans($_REQUEST["action"],'ADD_COLLECTION')?></a>
-                                          <a class="related-docs" href="javascript:;"><span class="label label-primary"><?php echo $trans->getTrans('suggesteddocs','RELATED_DOCS'); ?></span></a>
+                                          <a class="label label-primary related-docs" href="javascript:;"><?php echo $trans->getTrans('suggesteddocs','RELATED_DOCS'); ?></a>
                                       </div>
                                       <!--div>
                                         <span class="label label-default">Default</span>
@@ -65,7 +65,7 @@
                                           <div class="related-list">
                                               <p><?php echo ucwords($trans->getTrans('suggesteddocs','RELATED_DOCS')); ?>:</p>
                                           </div>
-                                          <div class="related-alert"><?php echo $trans->getTrans('suggesteddocs','RELATED_DOCS_ALERT'); ?></di>
+                                          <div class="related-alert"><?php echo $trans->getTrans('suggesteddocs','RELATED_DOCS_ALERT'); ?></div>
                                       </div>
                                     </td>
                                   </tr>
