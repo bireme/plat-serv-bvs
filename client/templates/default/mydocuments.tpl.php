@@ -38,9 +38,17 @@
                                 </tr>
                               </thead-->
                               <tbody>
-                                <?php foreach ( $response["values"] as $register) : ?>
+                                <?php $count = $_REQUEST["page"] ? --$_REQUEST["page"] * DOCUMENTS_PER_PAGE : 0; ?>
+                                <?php foreach ( $response["values"] as $register) : $count++; ?>
                                     <?if (! isset($register["dirID"])){$register["dirID"] = 0;}?>
                                 <tr>
+                                  <td>
+                                    <div class="checkbox">
+                                      <label>
+                                        <input id="doc<?php echo $count; ?>" type="checkbox" value="<?php echo $register["docID"]; ?>">
+                                      </label>
+                                    </div>
+                                  </td>
                                   <td>
                                     <div class="rank">
                                         <?if ($register["rate"] >= 1){?><a href="<?=RELATIVE_PATH?>/controller/mydocuments/control/business/task/rate/document/<?=$register["docID"]?>/grade/0/directory/<?=$register["dirID"]?>"><img src="<?=RELATIVE_PATH?>/images/<?=$_SESSION["skin"]?>/starOn.png" border="0" class="star" /></a><?}else{?><a href="<?=RELATIVE_PATH?>/controller/mydocuments/control/business/task/rate/document/<?=$register["docID"]?>/grade/1/directory/<?=$register["dirID"]?>"><img src="<?=RELATIVE_PATH?>/images/<?=$_SESSION["skin"]?>/starOff.png" border="0" class="star" /></a><?}?>
@@ -101,6 +109,15 @@
                                             <li><a href="<?=RELATIVE_PATH?>/controller/mydocuments/control/business/directory/<?=$listDirs["dirID"]?>"><i class="fa fa-folder-open-o"></i><?=$listDirs["name"]?></a></li>
                                         <?}?>
                                    <?}?>
+                                </ul>
+                            </div>
+                        </section>
+                        <section class="panel panel-folder">
+                            <div class="panel-body">
+                                <h5><?=$trans->getTrans($_REQUEST["action"],'BULK_ACTIONS')?></h5>
+                                <ul class="list-docs-unstyled project_files">
+                                    <li><a id="bulkremovedoc" href="javascript:;" value="<?=RELATIVE_PATH?>/controller/mydocuments/control/business/task/removedoc/directory/<?=$register["dirID"]?>"><i class="fa fa-times"></i><?=$trans->getTrans($_REQUEST["action"],'BULK_REMOVE_DOCS')?></a></li>
+                                    <li><a id="bulkmovedoc" href="javascript:;" value="<?=RELATIVE_PATH?>/controller/directories/control/business/task/movedoc/directory/<?=$register["dirID"]?>"><i class="fa fa-random"></i><?=$trans->getTrans($_REQUEST["action"],'BULK_MOVE_DOCS')?></a></li>
                                 </ul>
                             </div>
                         </section>

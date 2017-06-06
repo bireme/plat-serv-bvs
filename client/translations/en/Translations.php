@@ -96,6 +96,13 @@ class Translations {
         self::$trans["menu"]["SEARCH_WIDGET"] = 'Buscas na BVS';
         self::$trans["menu"]["PROFILE_WIDGET"] = 'Temas de Interesse';
         self::$trans["menu"]["SHELF_WIDGET"] = 'Documentos Favoritos';
+        self::$trans["menu"]["FOOTER_MESSAGE"] = '
+<p><strong>BIREME - PAHO - WHO</strong><br/>
+Latin American and Caribbean Center on Health Sciences Information<br />
+Knowledge Management, Bioethics and Research Area - KBR<br />
+Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 | Fax: (55 11) 5575-8868<br />
+<a href="http://new.paho.org/bireme" title="My VHL">http://www.paho.org/bireme</a><br /></p>
+';
 
     // Terms of mysearches pages
         self::$trans["mysearches"]["MY_SEARCHES"] = 'Histórico de Buscas na BVS';
@@ -169,6 +176,9 @@ class Translations {
         self::$trans["mydocuments"]["PAGE"] = 'Page';
         self::$trans["mydocuments"]["NEXT"] = 'Next';
         self::$trans["mydocuments"]["PREVIOUS"] = 'Previous';
+        self::$trans["mydocuments"]["BULK_ACTIONS"] = 'Bulk Actions';
+        self::$trans["mydocuments"]["BULK_REMOVE_DOCS"] = 'Remove documents';
+        self::$trans["mydocuments"]["BULK_MOVE_DOCS"] = 'Move documents';
 
     // Tems of directories pages
         self::$trans["directories"]["FOLDER_NAME"] = 'Collection Name';

@@ -184,23 +184,27 @@ class ShelfDAO {
         $sysUID = UserDAO::getSysUID($userID);
 
         if($sysUID){
-            $shelf = self::getShelfItem( $userID, $docID );
-            $doc = $shelf->getDocument();
+            $docs = array_filter(explode(',', $docID));
 
-            $strsql = "DELETE FROM userShelf
-                WHERE sysUID = '".$sysUID."' AND docID = '".$docID."'";
+            foreach ($docs as $doc) {
+                $shelf = self::getShelfItem( $userID, $doc );
+                $objDoc = $shelf->getDocument();
 
-            try{
-                $_db = new DBClass();
-                $res = $_db->databaseExecUpdate($strsql);
-            }catch(DBClassException $e){
-                $logger = &Log::singleton('file', LOG_FILE, __CLASS__, $_conf);
-                $logger->log($e->getMessage(),PEAR_LOG_EMERG);
-            }
+                $strsql = "DELETE FROM userShelf
+                    WHERE sysUID = '".$sysUID."' AND docID = '".$doc."'";
 
-            if($res > 0){
-                $trace = Tracking::addTrace( $userID, 'collection', 'remove', $doc->getDocTitle() );
-                $retValue = true;
+                try{
+                    $_db = new DBClass();
+                    $res = $_db->databaseExecUpdate($strsql);
+                }catch(DBClassException $e){
+                    $logger = &Log::singleton('file', LOG_FILE, __CLASS__, $_conf);
+                    $logger->log($e->getMessage(),PEAR_LOG_EMERG);
+                }
+
+                if($res > 0){
+                    $trace = Tracking::addTrace( $userID, 'collection', 'remove', $objDoc->getDocTitle() );
+                    $retValue = true;
+                }
             }
         }
 
@@ -662,21 +666,24 @@ class ShelfDAO {
         $sysUID = UserDAO::getSysUID($userID);
 
         if($sysUID){
+            $docs = array_filter(explode(',', $docID));
 
-            $strsql = "Update userShelf SET userDirID=".$toDirID."
-                WHERE userDirID=".$fromDirID." and docID= '".$docID."'
-                and sysUID = '".$sysUID."'";
+            foreach ($docs as $doc) {
+                $strsql = "Update userShelf SET userDirID=".$toDirID."
+                    WHERE userDirID=".$fromDirID." and docID= '".$doc."'
+                    and sysUID = '".$sysUID."'";
 
-            try{
-                $_db = new DBClass();
-                $result = $_db->databaseExecUpdate($strsql);
-            }catch(DBClassException $e){
-                $logger = &Log::singleton('file', LOG_FILE, __CLASS__, $_conf);
-                $logger->log($e->getMessage(),PEAR_LOG_EMERG);
-            }
+                try{
+                    $_db = new DBClass();
+                    $result = $_db->databaseExecUpdate($strsql);
+                }catch(DBClassException $e){
+                    $logger = &Log::singleton('file', LOG_FILE, __CLASS__, $_conf);
+                    $logger->log($e->getMessage(),PEAR_LOG_EMERG);
+                }
 
-            if ($result !== 0 ){
-                $retValue = true;
+                if ($result !== 0 ){
+                    $retValue = true;
+                }
             }
         }
 

@@ -1,8 +1,8 @@
         <?php if ( isset( $_REQUEST['action'] ) && $_REQUEST['action'] != 'authentication' ) : ?>
         <!-- footer content -->
         <footer>
-          <div class="pull-right">
-            Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
+          <div>
+            <?=$trans->getTrans('menu','FOOTER_MESSAGE')?>
           </div>
           <div class="clearfix"></div>
         </footer>
@@ -19,13 +19,13 @@
     <script src="<?=RELATIVE_PATH?>/vendors/fastclick/lib/fastclick.js"></script>
     <!-- Form Validator -->
     <script src="<?=RELATIVE_PATH?>/js/gen_validatorv31.js"></script>
-    <!-- i18n Scripts -->
-    <script src="<?=RELATIVE_PATH?>/js/i18n.js"></script>
-    <!-- Theme Scripts -->
-    <script src="<?=RELATIVE_PATH?>/js/scripts.js"></script>
     <!-- Custom Theme Scripts -->
     <script src="<?=RELATIVE_PATH?>/build/js/custom.min.js"></script>
+    <!-- Translations Scripts -->
+    <script src="<?=RELATIVE_PATH?>/js/texts.js"></script>
+    <!-- Theme Scripts -->
+    <script src="<?=RELATIVE_PATH?>/js/functions.js"></script>
     <!-- Main Scripts -->
-    <script src="<?=RELATIVE_PATH?>/js/include.js"></script>
+    <script src="<?=RELATIVE_PATH?>/js/scripts.js"></script>
   </body>
 </html>

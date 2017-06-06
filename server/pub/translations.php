@@ -43,10 +43,11 @@ if($lang == 'pt'){
 <p>O objetivo do passaporte é permitir que você utilize um único usuário e senha para ser reconhecido na rede Biblioteca Virtual em Saúde (BVS) e Scientific Eletronic Library Online (SciELO).</p>
 <p>Registre-se e, além das fontes de informação da BVS e SciELO, acesse gratuitamente produtos e serviços de informação personalizados. </p>
 ");
-    define("FOOTER_MESSAGE",'<p><a href="http://www.bireme.br/local/Site/bireme/homepage.htm" target="_blank">BIREME</a> é um Centro Especializado da OPAS, estabelecido no Brasil desde 1967, em colaboração com <a href="http://portal.saude.gov.br/saude/" target="_blank">Ministério de Saúde</a>, <a href="http://portal.mec.gov.br/" target="_blank">Ministério da Educação</a>, <a href="http://www.saude.sp.gov.br/" target="_blank">Secretaria da Saúde do Estado de São Paulo</a> e <a href="http://www.unifesp.br/" target="_blank">Universidade Federal de São Paulo</a></p>
-                             <p><strong>BIREME - OPAS - OMS</strong><br/>
-                             Centro Latino-Americano e do Caribe de Informação em Ciências da Saúde<br/>
-                             Rua Botucatu, 862 - 04023-901 - São Paulo/SP - Brasil - Tel: (55 11) 5576-9800 - Fax: (55 11) 5575-8868<br/></p>');
+    define("FOOTER_MESSAGE",'<p><strong>BIREME - OPAS - OMS</strong><br/>
+Centro Latino-Americano e do Caribe de Informação em Ciências da Saúde<br />
+Área de Gestão do Conhecimento, Bioética e Pesquisa - KBR<br />
+Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 | Fax: (55 11) 5575-8868<br />
+<a href="http://new.paho.org/bireme" title="Minha BVS">http://www.paho.org/bireme/</a><br /></p>');
     define('LEARN_MORE','saiba mais');
     define('PERSONAL_DATA','Dados Pessoais');
     define('REGISTER_NEW_USER_TITLE','Cadastro de Novo Usuário');
@@ -209,10 +210,11 @@ if($lang == 'es'){
 <p>El objetivo del pasaporte es permitir que utilice un único usuario y contraseña para ser reconocido en la red Biblioteca Virtual en Salud (BVS) y Scientific Eletronic Library Online (SciELO).</p>
 <p>Registrese y, además de las fuentes de información de la BVS y SciELO, acceda gratuitamente productos y servicios de información personalizados.</p>
 ");
-    define("FOOTER_MESSAGE",'<p><a href="http://www.bireme.br/local/Site/bireme/homepage.htm" target="_blank">BIREME</a> é um Centro Especializado da OPAS, estabelecido no Brasil desde 1967, em colaboração com <a href="http://portal.saude.gov.br/saude/" target="_blank">Ministério de Saúde</a>, <a href="http://portal.mec.gov.br/" target="_blank">Ministério da Educação</a>, <a href="http://www.saude.sp.gov.br/" target="_blank">Secretaria da Saúde do Estado de São Paulo</a> e <a href="http://www.unifesp.br/" target="_blank">Universidade Federal de São Paulo</a></p>
-                             <p><strong>BIREME - OPAS - OMS</strong><br/>
-                             Centro Latino-Americano e do Caribe de Informação em Ciências da Saúde<br/>
-                             Rua Botucatu, 862 - 04023-901 - São Paulo/SP - Brasil - Tel: (55 11) 5576-9800 - Fax: (55 11) 5575-8868</p>');
+    define("FOOTER_MESSAGE",'<p><strong>BIREME - OPAS - OMS</strong><br/>
+Centro Latinoamericano y del Caribe de Información en Ciencias de la Salud<br />
+Area de Gestión del Conocimiento, Bioética e Investigación - KBR<br />
+Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 | Fax: (55 11) 5575-8868<br />
+<a href="http://new.paho.org/bireme" title="Mi BVS">http://www.paho.org/bireme</a><br /></p>');
     define('LEARN_MORE','sepa mas');
     define('PERSONAL_DATA','Datos Personales');
     define('REGISTER_NEW_USER_TITLE','Cadastro de Nuevo Usuario');
@@ -375,10 +377,11 @@ if($lang == 'en'){
 <p>The goal of the passport is to allow you to use a single user name and password to be recognized on the Virtual Health Library (VHL) and Scientific Electronic Library Online (SciELO) network.</p>
 <p>Register and in addition to information sources in the VHL and SciELO, have access to free products and personalized information services.</p>
 ");
-    define("FOOTER_MESSAGE",'<p><a href="http://www.bireme.br/local/Site/bireme/homepage.htm" target="_blank">BIREME</a> é um Centro Especializado da OPAS, estabelecido no Brasil desde 1967, em colaboração com <a href="http://portal.saude.gov.br/saude/" target="_blank">Ministério de Saúde</a>, <a href="http://portal.mec.gov.br/" target="_blank">Ministério da Educação</a>, <a href="http://www.saude.sp.gov.br/" target="_blank">Secretaria da Saúde do Estado de São Paulo</a> e <a href="http://www.unifesp.br/" target="_blank">Universidade Federal de São Paulo</a></p>
-                             <p><strong>BIREME - OPAS - OMS</strong><br/>
-                             Centro Latino-Americano e do Caribe de Informação em Ciências da Saúde<br/>
-                             Rua Botucatu, 862 - 04023-901 - São Paulo/SP - Brasil - Tel: (55 11) 5576-9800 - Fax: (55 11) 5575-8868<br/></p>');
+    define("FOOTER_MESSAGE",'<p><strong>BIREME - PAHO - WHO</strong><br/>
+Latin American and Caribbean Center on Health Sciences Information<br />
+Knowledge Management, Bioethics and Research Area - KBR<br />
+Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 | Fax: (55 11) 5575-8868<br />
+<a href="http://new.paho.org/bireme" title="My VHL">http://www.paho.org/bireme</a><br /></p>');
     define('LEARN_MORE','learn more');
     define('PERSONAL_DATA','Personal Data');
     define('REGISTER_NEW_USER_TITLE','Subscription Form');
