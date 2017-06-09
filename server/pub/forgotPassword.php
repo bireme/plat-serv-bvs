@@ -15,19 +15,20 @@ $acao = isset($_REQUEST['acao'])?$_REQUEST['acao']:'default';
 
 $callerURL = !empty($_REQUEST['c'])?base64_decode($_REQUEST['c']):false;
 
-switch($acao){
-    case 'enviar':
+if ( 'enviar' == $acao ) {
+    $retValue = false;
+
+    if( filter_var($_REQUEST['login'], FILTER_VALIDATE_EMAIL) ) {
         $retValue = UserDAO::createNewPassword($_REQUEST['login']);
  
-        if( 'DomainNotPermitted' == $retValue["status"] ){
+        if( $retValue === false || 'DomainNotPermitted' == $retValue ){
             $sysMsg = NEWPASS_DOMAIN_NOT_PERMITTED;
         }else{            
             $sysMsg = NEWPASS_PASSWORD_SENT;
         }
-
-        break;
-    default:
-        break;
+    } else {
+        $sysMsg = NEWPASS_DOMAIN_NOT_PERMITTED;
+    }
 }
 
 $DocTitle = FORGOT_PASSWORD;
@@ -39,7 +40,7 @@ $DocTitle = FORGOT_PASSWORD;
           <div class="left_col scroll-view">
             <div class="navbar nav_title" style="border: 0;">
                 <div class="site_title">
-                    <i class="fa fa-cloud"></i> <span>Services Platform</span>
+                    <img src="<?=RELATIVE_PATH?>/images/<?=$_SESSION["skin"]?>/bvs_icon-<?=$_SESSION["lang"]?>.jpg" alt="VHL icon"> <span><?=MY_VHL?></span>
                 </div>
             </div>
             <div class="clearfix"></div>
@@ -59,18 +60,18 @@ $DocTitle = FORGOT_PASSWORD;
                       <?php }
                   ?>
                   <div class="x_content">
-                    <?php if ($retValue["status"] === true) : ?>
+                    <?php if ( $retValue === true ) : ?>
                     <div class="alert alert-success alert-dismissible fade in" role="alert">
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
                         </button>
-                        <strong><?=$sysMsg;?></strong>
+                        <strong><?=$sysMsg?></strong>
                     </div>
                     <?php endif; ?>
-                    <?php if ( $retValue["status"] === false || 'DomainNotPermitted' == $retValue["status"] ) : ?>
+                    <?php if ( $retValue === false || 'DomainNotPermitted' == $retValue ) : ?>
                     <div class="alert alert-danger alert-dismissible fade in" role="alert">
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
                         </button>
-                        <strong><?=$sysMsg;?></strong>
+                        <strong><?=$sysMsg?></strong>
                     </div>
                     <?php endif; ?>
 

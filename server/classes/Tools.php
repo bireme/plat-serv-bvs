@@ -88,7 +88,7 @@ class Mailer {
      * Send Mail
      *
      * @param string $body email body
-     * @param string $subject  email subject
+     * @param string $subject email subject
      * @param string $to emails array
      */
     public static function sendMail($body,$subject,$to,$fromMail=EMAIL_FROM,
@@ -113,14 +113,14 @@ class Mailer {
         $objMailer->Body = $body;
 
         if(!$objMailer->Send()){
-            $retValue = array('mail' => false);
+            $retValue = false;
 
             $logger = &Log::singleton('file', LOG_FILE_MAIL,
                 __CLASS__, $_conf);
             $logger->log('Mail send error :' .
                 $objMailer->ErrorInfo,PEAR_LOG_INFO);
         }else{
-            $retValue = array('mail' => true);
+            $retValue = true;
 
             $logger = &Log::singleton('file', LOG_FILE_MAIL,
                 __CLASS__, $_conf);
@@ -128,7 +128,6 @@ class Mailer {
         }
 
         unset($objMailer);
-        $retValue = array('status' => true);
 
         return $retValue;
     }
