@@ -39,7 +39,7 @@ class LDAPAuthenticator {
 
         $userDomain = substr(stristr($userID,'@'),1);
 
-        if(($userDomain == 'bireme.org') or ($userDomain == 'scielo.org')){
+        if( ($userDomain == 'bireme.org') || ($userDomain == 'scielo.org') ){
             $connConfig = self::configLDAPConnection($userID);
             $userID = self::formatUserID($userID);
 

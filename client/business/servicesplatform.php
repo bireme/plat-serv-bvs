@@ -45,6 +45,8 @@ XML;
         break;
     }
 
+} else {
+    die("default");
 }
 
 ?>

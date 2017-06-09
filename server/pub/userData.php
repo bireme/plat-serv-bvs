@@ -126,11 +126,14 @@ switch($acao){
 
         if($result === true){
             $usr = UserDAO::getUser(trim($email));
+            $pass = explode(CRYPT_SEPARATOR,Crypt::decrypt($usr->getPassword(),CRYPT_PUBKEY));
+            $usr->setPassword($pass[1]);
             $addUser = UserDAO::addUser($usr, 1);
 
             if($addUser === true) {
                 $response["msg"] = USER_CONFIRMED;
                 $response["status"] = true;
+                $clearPass = UserDAO::clearPassword($usr->getID());
                 $orcidData = UserDAO::fillOrcidData($usr->getID(), $usr->getOrcid());
             }
         }else{

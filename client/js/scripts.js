@@ -138,7 +138,7 @@ $( document ).ready(
 
             folder = $(this).val();
             text = $('.docsfolderlist option:selected').text();
-            id = $(this).closest('td').find('a.add-collection').val();
+            id = $(this).closest('td').find('a.add-collection').attr('value');
             title = $(this).closest('tr').find('a').text();
             url = $(this).closest('tr').find('a').attr('href');
             author = $(this).closest('tr').find('small').text();

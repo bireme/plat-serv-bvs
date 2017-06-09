@@ -99,6 +99,7 @@ class UserDAO {
             $objUser->setFirstName($res[0]['userFirstName']);
             $objUser->setLastName($res[0]['userLastName']);
             $objUser->setEmail($res[0]['userEmail']);
+            $objUser->setPassword($res[0]['userPassword']);
             $objUser->setGender($res[0]['userGender']);
             $objUser->setAffiliation($res[0]['userAffiliation']);
             $objUser->setCountry($res[0]['userCountry']);
@@ -131,10 +132,13 @@ class UserDAO {
         $retValue = true;
         $canInsert = true;
 
+        $hash = '';
+        if ( !$active ) {
+            $hash = Crypt::encrypt($objUser->getID().CRYPT_SEPARATOR.$objUser->getPassword(), CRYPT_PUBKEY);
+        }
+
         $source = $objUser->getSource() ? $objUser->getSource() : '';
-
         if ( $active && ( empty($source) || 'ldap' == $source ) ) {
-
             /* add user to LDAP */
             $attrs = array('cn' => $objUser->getID(),
                            'userPassword' => (string)$objUser->getPassword(),
@@ -143,6 +147,7 @@ class UserDAO {
                            .' '.$objUser->getLastName());
 
             $connConfig = ToolsAuthentication::configLDAPConnection($objUser->getID());
+
             /* try to add the entry to LDAP */
             try{
                 LDAP::add($connConfig, $attrs);
@@ -155,9 +160,7 @@ class UserDAO {
                     $logger = &Log::singleton('file', LOG_FILE, __CLASS__, $_conf);
                     $logger->log($e->getMessage(),PEAR_LOG_EMERG);
                 }
-                
             }
-
         }
 
         /* if the user does not exist in SP database */
@@ -198,7 +201,8 @@ class UserDAO {
                                                 $objUser->getResearcherID()."','".
                                                 $objUser->getLattes()."','".
                                                 $objUser->getAgreementDate()."','".
-                                                $active."',''";
+                                                $active."','".
+                                                $hash."'";
                                                 // empty password
                 $strsql .= ")";
 
@@ -366,10 +370,11 @@ class UserDAO {
             }
 
             if( $result[0]['key'] ) {
-                $strsql = "UPDATE users
-                        SET active = '1',
-                        confirmation_date = '".date('Y-m-d H:i:s')."'
-                        WHERE sysUID = '".$sysUID."'";
+                $strsql = "UPDATE users u, userConfirm uc
+                        SET u.active = '1',
+                        uc.confirmation_date = '".date('Y-m-d H:i:s')."'
+                        WHERE u.sysUID = '".$sysUID."'
+                        AND uc.sysUID = '".$sysUID."'";
 
                 try{
                     $_db = new DBClass();
@@ -401,7 +406,8 @@ class UserDAO {
         $sysUID = self::getSysUID($email);
 
         if ( $sysUID ) {
-            $strsql = "INSERT INTO `userConfirm` VALUES ('$sysUID','$key','$email','$date')";
+            $strsql = "INSERT INTO `userConfirm` (`sysUID`,`key`,`email`,`creation_date`)
+                              VALUES ('$sysUID','$key','$email','$date')";
 
             try{
                 $_db = new DBClass();
@@ -492,7 +498,7 @@ class UserDAO {
         /* Get the custom LDAP data, based on user's mail domain */
         $userDomain = substr(stristr($userID,'@'),1);
 
-        if(($userDomain != 'bireme.org') or ($userDomain != 'scielo.org')){
+        if ( ($userDomain != 'bireme.org') && ($userDomain != 'scielo.org') ) {
             if(self::isUser($userID)){
 
                 $connConfig = ToolsAuthentication::configLDAPConnection($userID);
@@ -519,8 +525,40 @@ class UserDAO {
                 }
             }
         }else{
-            $retValue = array('status' => 'DomainNotPermitted');
+            $retValue = 'DomainNotPermitted';
         }
+
+        return $retValue;
+    }
+
+    /**
+     * Clear user's password
+     *
+     * @param string $userID User ID
+     * @return boolean
+     */
+    public static function clearPassword($userID){
+        global $_conf;
+        $retValue = false;
+
+        $sysUID = self::getSysUID($userID);
+
+        if ( $sysUID ) {
+            $strsql = "UPDATE users
+                    SET userPassword = ''
+                    WHERE sysUID = '".$sysUID."'";
+
+            try{
+                $_db = new DBClass();
+                $result = $_db->databaseQuery($strsql);
+            }catch(DBClassException $e){
+                $logger = &Log::singleton('file', LOG_FILE, __CLASS__, $_conf);
+                $logger->log($e->getMessage(),PEAR_LOG_EMERG);
+            }
+
+            if ( $result !== false ) $retValue = true;
+        }
+
         return $retValue;
     }
 

@@ -358,7 +358,7 @@ class LDAP{
         /*
          * Review LDAP configuration
          */
-        if(($userDomain == 'bireme.org') or ($userDomain == 'scielo.org')){
+        if( ($userDomain == 'bireme.org') || ($userDomain == 'scielo.org') ){
             $dn = $cUserID . '@bvs.bireme.local';
         }else{
             $dn = 'CN=' . $userID . ',' . $server_config["BASEDN_LDAP"];
@@ -377,7 +377,7 @@ class LDAP{
         /* Get the custom LDAP data, based on user's mail domain */
         $userDomain = substr(stristr($userID,'@'),1);
 
-        if(($userDomain != 'bireme.org') or ($userDomain != 'scielo.org')){
+        if( ($userDomain != 'bireme.org') && ($userDomain != 'scielo.org') ){
 
             $server_config = ToolsAuthentication::configLDAPConnection($userID);
 

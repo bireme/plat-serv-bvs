@@ -206,8 +206,8 @@ class ToolsRegister {
                 }
             }
         }
-        return $result;
 
+        return $result;
     }
 
     /**

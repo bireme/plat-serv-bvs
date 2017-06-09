@@ -59,10 +59,10 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
     define("USER_EXISTS","<b>Usuário já cadastrado</b><br />Tente se autenticar com este usuário, caso não lembre a senha de cadastro utilize o link  <b>esqueci minha senha</b> na caixa de login de usuários.");
     define("USER_ADD_ERROR","<b>Erro no cadastro</b><br />Se seu email é um email Bireme. Neste caso seu usuário já possui login para acesso ao passaporte BVS, basta utilizar seu email e senha da Bireme para acessar esta aplicação.");
     //define("USER_ADD_SUCCESS","<b>Usuário criado com sucesso</b><br />Seu usuário agora faz parte do passaporte da BVS<br />Você esta habilitado para se conectar nas aplicações da SciELO e BVS com este usuário");
-    define("USER_ADD_SUCCESS","<b>Cadastro de usuário realizado com sucesso!</b><br />Enviamos para o seu e-mail um link de confirmação da sua conta.<br />Favor clicar no link enviado para ativar sua conta na Plataforma de Serviços.");
+    define("USER_ADD_SUCCESS","<b>Cadastro de usuário realizado com sucesso!</b><br />Enviamos para o seu e-mail um link de confirmação da sua conta.<br />Favor clicar no link enviado para ativar sua conta na Minha BVS.");
     define("USER_UPDATED",'Usuário atualizado com sucesso.');
     define("USER_UPDATE_ERROR",'<b>Problemas durante atualização</b><br />O sistema não conseguiu atualizar os dados do usuário. Tente mais tarde.');
-    define("USER_CONFIRMED",'<b>Sua conta foi confirmada com sucesso!</b><br />Para acessar a Plataforma de Serviços, basta informar seu e-mail e senha na área de login');
+    define("USER_CONFIRMED",'<b>Sua conta foi confirmada com sucesso!</b><br />Para acessar a Minha BVS, basta informar seu e-mail e senha na área de login');
     define("USER_CONFIRMATION_ERROR",'<b>ERRO: Não foi possível realizar a confirmação de conta.</b');
     define("VALMSG_G_EMPTY","Campo obrigatório. Não pode ficar em branco.");
     define("VALMSG_LOGIN","Digite um email válido.");
@@ -226,10 +226,10 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
     define("USER_EXISTS","<b>Usuário ya cadastrado</b><br />Pruebe autenticarse con ese usuário, si no te acuerdas de la contraseña utilize el link  <b>esqueci minha senha</b> en la caja de login de usuários.");
     define("USER_ADD_ERROR","<b>Erro en el registro</b><br />Si su email es un email de Bireme. En ese caso su usuário ya tiene login para acceso a los aplicativos de la BVS, basta utilizar su email y contraseña de Bireme para acceder a esa aplicación.");
     //define("USER_ADD_SUCCESS","<b>Usuário añadido con succeso</b><br />Su usuário ahora hace parte del passaporte de la BVS<br />Usted esta habilitado para conectarse en las aplicaciones de SciELO y BVS con ese usuário.");
-    define("USER_ADD_SUCCESS","<b>Registro de usuario realizado con éxito!</b><br />Enviamos a su e-mail un enlace de confirmación de su cuenta.<br />Por favor haga clic en el enlace enviado para activar su cuenta en la Plataforma de Servicios.");
+    define("USER_ADD_SUCCESS","<b>Registro de usuario realizado con éxito!</b><br />Enviamos a su e-mail un enlace de confirmación de su cuenta.<br />Por favor haga clic en el enlace enviado para activar su cuenta en la Mi BVS.");
     define("USER_UPDATED",'Usuario actualizado con succeso.');
     define("USER_UPDATE_ERROR",'<b>Problemas en la actualización</b><br />El sistema no logro actualizar los datos del usuário. Tente mas tardera.');
-    define("USER_CONFIRMED",'<b>Su cuenta ha sido confirmada con éxito!</b><br />Para acceder a la Plataforma de Servicios, basta informar su e-mail y contraseña en el área de login');
+    define("USER_CONFIRMED",'<b>Su cuenta ha sido confirmada con éxito!</b><br />Para acceder a la Mi BVS, basta informar su e-mail y contraseña en el área de login');
     define("USER_CONFIRMATION_ERROR",'<b>ERROR: No fue posible confirmar la cuenta.</b>');
     define("VALMSG_G_EMPTY","Campo obligatório. Não puede quedarse en blanco.");
     define("VALMSG_LOGIN","Digite un email válido.");
@@ -250,7 +250,7 @@ Si usted tiene usuário cadastrado en el sitio ScIELO, la próxima vez que acced
 <p>El registro y todos los productis y servicios de información continuaran gratuitos. Las redes BVS e SciELO mantienem los princípios del Acceso Abierto, portanto, da disponibilización de la literatura cientifica e tecnica em la Iternet sin costo para el usuario, licensas de uso o barreras restritivas de acceso.</p>
 <p>En el futuro, las novidades seran aplicadas en otras instancias de productos de la BVS, en todas las regiones geograficas y areas tematicas de la BVS, por medio del concepto de pasaporte BVS y SciELO</p>
 ');
-    define("UPDATE_INFO",'<b>Por favor, revise sus datos en el formulario abajo para continuar utilizando la Plataforma de Servicios.</b>');
+    define("UPDATE_INFO",'<b>Por favor, revise sus datos en el formulario abajo para continuar utilizando la Mi BVS.</b>');
     define("TERMS",'Condiciones de uso');
     define("TERMS_AGREEMENT_MESSAGE",'Estoy de acuerdo con las <a data-toggle="modal" data-target=".bs-terms-modal-lg" style="cursor: pointer; text-decoration: underline;">Condiciones</a> y confirmo que leí la <a data-toggle="modal" data-target=".bs-policy-modal-lg" style="cursor: pointer; text-decoration: underline;">Política de Datos</a> de Mi BVS');
     define("TERMS_MESSAGE",'
@@ -393,10 +393,10 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
     define("USER_EXISTS","<b>User already exists</b><br />Try to login with this user, if you have no success trying to authenticate with this user and don't remember the password, use the link  <b>forgot my password</b> in the user login box.");
     define("USER_ADD_ERROR","<b>Registry error</b><br />Your mail is a Bireme mail. In this case your user already have on login to access the BVS aplications, just use you network login and password to have access to this application.");
     //define("USER_ADD_SUCCESS","<b>User success registered</b><br />Your user is now registered in the VHL Passport<br />You are able to connect in SciELO and BVS applications with this user.");
-    define("USER_ADD_SUCCESS","<b>Cadastro de usuário realizado com sucesso!</b><br />Enviamos para o seu e-mail um link de confirmação da sua conta.<br />Favor clicar no link enviado para ativar sua conta na Plataforma de Serviços.");
+    define("USER_ADD_SUCCESS","<b>Cadastro de usuário realizado com sucesso!</b><br />Enviamos para o seu e-mail um link de confirmação da sua conta.<br />Favor clicar no link enviado para ativar sua conta na Minha BVS.");
     define("USER_UPDATED",'User updated');
     define("USER_UPDATE_ERROR",'<b>Problems updating user data</b><br />The applications doesn\'t success to update the user data. Try again later.');
-    define("USER_CONFIRMED",'<b>Your account has been confirmed successfully!</b><br />To access the Services Platform, enter your email and password in the login area');
+    define("USER_CONFIRMED",'<b>Your account has been confirmed successfully!</b><br />To access the My VHL, enter your email and password in the login area');
     define("USER_CONFIRMATION_ERROR",'<b>ERROR: Account verification failed.</b>');
     define("VALMSG_G_EMPTY","Mandatory field.");
     define("VALMSG_LOGIN","Type a valid mail.");
@@ -417,7 +417,7 @@ If you have a registered user in ScIELO website, the next time you access SciELO
 <p>The registration, all products and information services will remain free. The VHL and SciELO maintain the principles of open access, thus providing the scientific and technical literature on the Internet without cost to the user, usage license or barriers restricting access.</p>
 <p>In the future, these new features will be applied in other instances of VHL in all geographical regions and thematic areas of the VHL, through the concept of passport VHL and SciELO.</p>
 ');
-    define("UPDATE_INFO",'<b>Please review your data in the form below to continue using the Services Platform.</b>');
+    define("UPDATE_INFO",'<b>Please review your data in the form below to continue using the My VHL.</b>');
     define("TERMS",'Terms of use');
     define("TERMS_AGREEMENT_MESSAGE",'I agree to the <a data-toggle="modal" data-target=".bs-terms-modal-lg" style="cursor: pointer; text-decoration: underline;">Terms</a> and have read the <a data-toggle="modal" data-target=".bs-policy-modal-lg" style="cursor: pointer; text-decoration: underline;">Data Policy</a> of My VHL');
     define("TERMS_MESSAGE",'

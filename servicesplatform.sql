@@ -205,7 +205,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `userFirstName` varchar(150) NOT NULL DEFAULT '',
   `userLastName` varchar(150) NOT NULL DEFAULT '',
   `userEmail` varchar(150) NOT NULL DEFAULT '',
-  `userPassword` varchar(32) NOT NULL DEFAULT '',
+  `userPassword` varchar(150) NOT NULL DEFAULT '',
   `userGender` char(1) NOT NULL DEFAULT '',
   `userAffiliation` varchar(45) DEFAULT '',
   `userDegree` varchar(45) DEFAULT '',
