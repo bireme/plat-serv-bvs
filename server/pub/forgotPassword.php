@@ -21,7 +21,7 @@ if ( 'enviar' == $acao ) {
     if( filter_var($_REQUEST['login'], FILTER_VALIDATE_EMAIL) ) {
         $retValue = UserDAO::createNewPassword($_REQUEST['login']);
  
-        if( $retValue === false || 'DomainNotPermitted' == $retValue ){
+        if( $retValue === false || 'DomainNotPermitted' === $retValue ){
             $sysMsg = NEWPASS_DOMAIN_NOT_PERMITTED;
         }else{            
             $sysMsg = NEWPASS_PASSWORD_SENT;
@@ -67,7 +67,7 @@ $DocTitle = FORGOT_PASSWORD;
                         <strong><?=$sysMsg?></strong>
                     </div>
                     <?php endif; ?>
-                    <?php if ( $retValue === false || 'DomainNotPermitted' == $retValue ) : ?>
+                    <?php if ( $retValue === false || 'DomainNotPermitted' === $retValue ) : ?>
                     <div class="alert alert-danger alert-dismissible fade in" role="alert">
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
                         </button>

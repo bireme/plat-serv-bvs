@@ -62,7 +62,7 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
     define("USER_ADD_SUCCESS","<b>Cadastro de usuário realizado com sucesso!</b><br />Enviamos para o seu e-mail um link de confirmação da sua conta.<br />Favor clicar no link enviado para ativar sua conta na Minha BVS.");
     define("USER_UPDATED",'Usuário atualizado com sucesso.');
     define("USER_UPDATE_ERROR",'<b>Problemas durante atualização</b><br />O sistema não conseguiu atualizar os dados do usuário. Tente mais tarde.');
-    define("USER_CONFIRMED",'<b>Sua conta foi confirmada com sucesso!</b><br />Para acessar a Minha BVS, basta informar seu e-mail e senha na área de login');
+    define("USER_CONFIRMED",'<b>Sua conta foi confirmada com sucesso!</b><br />Por favor, acesse o seu perfil na Minha BVS e complete seu cadastro');
     define("USER_CONFIRMATION_ERROR",'<b>ERRO: Não foi possível realizar a confirmação de conta.</b');
     define("VALMSG_G_EMPTY","Campo obrigatório. Não pode ficar em branco.");
     define("VALMSG_LOGIN","Digite um email válido.");
@@ -229,7 +229,7 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
     define("USER_ADD_SUCCESS","<b>Registro de usuario realizado con éxito!</b><br />Enviamos a su e-mail un enlace de confirmación de su cuenta.<br />Por favor haga clic en el enlace enviado para activar su cuenta en la Mi BVS.");
     define("USER_UPDATED",'Usuario actualizado con succeso.');
     define("USER_UPDATE_ERROR",'<b>Problemas en la actualización</b><br />El sistema no logro actualizar los datos del usuário. Tente mas tardera.');
-    define("USER_CONFIRMED",'<b>Su cuenta ha sido confirmada con éxito!</b><br />Para acceder a la Mi BVS, basta informar su e-mail y contraseña en el área de login');
+    define("USER_CONFIRMED",'<b>Su cuenta ha sido confirmada con éxito!</b><br />Por favor, acceda a su perfil en Mi BVS y complete su registro');
     define("USER_CONFIRMATION_ERROR",'<b>ERROR: No fue posible confirmar la cuenta.</b>');
     define("VALMSG_G_EMPTY","Campo obligatório. Não puede quedarse en blanco.");
     define("VALMSG_LOGIN","Digite un email válido.");
@@ -396,7 +396,7 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
     define("USER_ADD_SUCCESS","<b>Cadastro de usuário realizado com sucesso!</b><br />Enviamos para o seu e-mail um link de confirmação da sua conta.<br />Favor clicar no link enviado para ativar sua conta na Minha BVS.");
     define("USER_UPDATED",'User updated');
     define("USER_UPDATE_ERROR",'<b>Problems updating user data</b><br />The applications doesn\'t success to update the user data. Try again later.');
-    define("USER_CONFIRMED",'<b>Your account has been confirmed successfully!</b><br />To access the My VHL, enter your email and password in the login area');
+    define("USER_CONFIRMED",'<b>Your account has been confirmed successfully!</b><br />Please, access your profile in My VHL and complete your registration');
     define("USER_CONFIRMATION_ERROR",'<b>ERROR: Account verification failed.</b>');
     define("VALMSG_G_EMPTY","Mandatory field.");
     define("VALMSG_LOGIN","Type a valid mail.");

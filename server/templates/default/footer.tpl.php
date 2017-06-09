@@ -50,6 +50,7 @@
         validator.texts.no_match        = labels[LANG]['NO_MATCH'];
         validator.texts.complete        = labels[LANG]['COMPLETE'];
         validator.texts.select          = labels[LANG]['SELECT'];
+        validator.texts.radio           = labels[LANG]['RADIO'];
         validator.texts.date            = labels[LANG]['DATA'];
         validator.texts.time            = labels[LANG]['TIME'];
         validator.texts.checked         = labels[LANG]['CHECKED'];

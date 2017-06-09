@@ -277,41 +277,41 @@ $DocTitle = $isUser?UPDATE_USER_TITLE:REGISTER_NEW_USER_TITLE;
                         </div>
                       </div>
                       <?php if($showLoginField) : ?>
-                      <div class="item field form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="login"><?=FIELD_LOGIN?> <span class="required">*</span>
-                        </label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="email" id="login" name="login" required="required" class="form-control col-md-7 col-xs-12" data-validate-length-range="0,50" value="<?=trim($usr->getID())?>">
+                        <div class="item field form-group">
+                          <label class="control-label col-md-3 col-sm-3 col-xs-12" for="login"><?=FIELD_LOGIN?> <span class="required">*</span>
+                          </label>
+                          <div class="col-md-6 col-sm-6 col-xs-12">
+                            <input type="email" id="login" name="login" required="required" class="form-control col-md-7 col-xs-12" data-validate-length-range="0,50" value="<?=trim($usr->getID())?>">
+                          </div>
                         </div>
-                      </div>
-                      <div class="item field form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="confirmLogin"><?=FIELD_LOGIN_CONFIRMATION?> <span class="required">*</span>
-                        </label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="email" id="confirmLogin" name="confirmLogin" data-validate-linked="login" required="required" class="form-control col-md-7 col-xs-12">
+                        <div class="item field form-group">
+                          <label class="control-label col-md-3 col-sm-3 col-xs-12" for="confirmLogin"><?=FIELD_LOGIN_CONFIRMATION?> <span class="required">*</span>
+                          </label>
+                          <div class="col-md-6 col-sm-6 col-xs-12">
+                            <input type="email" id="confirmLogin" name="confirmLogin" data-validate-linked="login" required="required" class="form-control col-md-7 col-xs-12">
+                          </div>
                         </div>
-                      </div>
-                      <div class="item field form-group">
-                        <label for="password" class="control-label col-md-3"><?=FIELD_PASSWORD?> <span class="required">*</span>
-                        </label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input id="password" type="password" name="password" data-validate-length-range="8,40" class="form-control col-md-7 col-xs-12" required="required">
+                        <div class="item field form-group">
+                          <label for="password" class="control-label col-md-3"><?=FIELD_PASSWORD?> <span class="required">*</span>
+                          </label>
+                          <div class="col-md-6 col-sm-6 col-xs-12">
+                            <input id="password" type="password" name="password" data-validate-length-range="8,40" class="form-control col-md-7 col-xs-12" required="required">
+                          </div>
                         </div>
-                      </div>
-                      <div class="item field form-group">
-                        <label for="confirmPassword" class="control-label col-md-3 col-sm-3 col-xs-12"><?=FIELD_PASSWORD_CONFIRMATION?> <span class="required">*</span>
-                        </label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input id="confirmPassword" type="password" name="confirmPassword" data-validate-linked="password" class="form-control col-md-7 col-xs-12" required="required">
+                        <div class="item field form-group">
+                          <label for="confirmPassword" class="control-label col-md-3 col-sm-3 col-xs-12"><?=FIELD_PASSWORD_CONFIRMATION?> <span class="required">*</span>
+                          </label>
+                          <div class="col-md-6 col-sm-6 col-xs-12">
+                            <input id="confirmPassword" type="password" name="confirmPassword" data-validate-linked="password" class="form-control col-md-7 col-xs-12" required="required">
+                          </div>
                         </div>
-                      </div>
                       <?php else : ?>
-                      <div class="item field form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="login"><?=FIELD_LOGIN?></label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="email" id="login" name="login" class="form-control col-md-7 col-xs-12" value="<?=trim($usr->getID())?>" disabled>
+                        <div class="item field form-group">
+                          <label class="control-label col-md-3 col-sm-3 col-xs-12" for="login"><?=FIELD_LOGIN?></label>
+                          <div class="col-md-6 col-sm-6 col-xs-12">
+                            <input type="email" id="login" name="login" class="form-control col-md-7 col-xs-12" value="<?=trim($usr->getID())?>" disabled>
+                          </div>
                         </div>
-                      </div>
                       <?php endif; ?>
                       <div class="item field form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="afiliacao"><?=FIELD_AFILIATION?></label>
@@ -319,40 +319,43 @@ $DocTitle = $isUser?UPDATE_USER_TITLE:REGISTER_NEW_USER_TITLE;
                           <input id="afiliacao" type="text" name="afiliacao" class="optional form-control col-md-7 col-xs-12" value="<?=$usr->getAffiliation()?>">
                         </div>
                       </div>
-                      <div class="item field form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="lattes"><?=FIELD_LATTES?></label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="url" id="lattes" name="lattes" class="form-control col-md-7 col-xs-12" value="<?=$usr->getLattes()?>">
+                      <?php if ( $isUser ) : ?>
+                        <div class="item field form-group">
+                          <label class="control-label col-md-3 col-sm-3 col-xs-12" for="lattes"><?=FIELD_LATTES?></label>
+                          <div class="col-md-6 col-sm-6 col-xs-12">
+                            <input type="url" id="lattes" name="lattes" class="form-control col-md-7 col-xs-12" value="<?=$usr->getLattes()?>">
+                          </div>
                         </div>
-                      </div>
-                      <div class="item field form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="linkedin"><?=FIELD_LINKEDIN?></label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="url" id="linkedin" name="linkedin" class="form-control col-md-7 col-xs-12" value="<?=$usr->getLinkedin()?>">
+                        <div class="item field form-group">
+                          <label class="control-label col-md-3 col-sm-3 col-xs-12" for="linkedin"><?=FIELD_LINKEDIN?></label>
+                          <div class="col-md-6 col-sm-6 col-xs-12">
+                            <input type="url" id="linkedin" name="linkedin" class="form-control col-md-7 col-xs-12" value="<?=$usr->getLinkedin()?>">
+                          </div>
                         </div>
-                      </div>
-                      <div class="item field form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="researchGate"><?=FIELD_RESEARCHGATE?></label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="url" id="researchGate" name="researchGate" class="form-control col-md-7 col-xs-12" value="<?=$usr->getResearchGate()?>">
+                        <div class="item field form-group">
+                          <label class="control-label col-md-3 col-sm-3 col-xs-12" for="researchGate"><?=FIELD_RESEARCHGATE?></label>
+                          <div class="col-md-6 col-sm-6 col-xs-12">
+                            <input type="url" id="researchGate" name="researchGate" class="form-control col-md-7 col-xs-12" value="<?=$usr->getResearchGate()?>">
+                          </div>
                         </div>
-                      </div>
-                      <div class="item field form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="orcid"><?=FIELD_ORCID?></label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input id="orcid" type="text" name="orcid" class="optional form-control col-md-7 col-xs-12" value="<?=$usr->getOrcid()?>">
+                        <div class="item field form-group">
+                          <label class="control-label col-md-3 col-sm-3 col-xs-12" for="orcid"><?=FIELD_ORCID?></label>
+                          <div class="col-md-6 col-sm-6 col-xs-12">
+                            <input id="orcid" type="text" name="orcid" class="optional form-control col-md-7 col-xs-12" value="<?=$usr->getOrcid()?>">
+                          </div>
                         </div>
-                      </div>
-                      <div class="item field form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="researcherID"><?=FIELD_RESEARCHERID?></label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input id="researcherID" type="text" name="researcherID" class="optional form-control col-md-7 col-xs-12" value="<?=$usr->getResearcherID()?>">
+                        <div class="item field form-group">
+                          <label class="control-label col-md-3 col-sm-3 col-xs-12" for="researcherID"><?=FIELD_RESEARCHERID?></label>
+                          <div class="col-md-6 col-sm-6 col-xs-12">
+                            <input id="researcherID" type="text" name="researcherID" class="optional form-control col-md-7 col-xs-12" value="<?=$usr->getResearcherID()?>">
+                          </div>
                         </div>
-                      </div>
+                      <?php endif; ?>
                       <div class="item field form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12"><?=FIELD_COUNTRY?></label>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12"><?=FIELD_COUNTRY?> <span class="required">*</span>
+                        </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <select class="form-control" name="country">
+                          <select class="form-control" name="country" required="required">
                             <?php
                                 foreach ($countries as $key => $value)
                                     $languageCountries[$key] = $value[$lang];
@@ -367,9 +370,10 @@ $DocTitle = $isUser?UPDATE_USER_TITLE:REGISTER_NEW_USER_TITLE;
                         </div>
                       </div>
                       <div class="item field form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="degree"><?=DEGREE?></label>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="degree"><?=DEGREE?> <span class="required">*</span>
+                        </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <select id="degree" name="degree" class="form-control">
+                          <select id="degree" name="degree" class="form-control" required="required">
                             <option value=""><?=CHOOSE_DEGREE?></option>
                             <?php
                                 $arr = explode(",",FIELD_DEGREE);
@@ -388,11 +392,12 @@ $DocTitle = $isUser?UPDATE_USER_TITLE:REGISTER_NEW_USER_TITLE;
                         </div>
                       </div>
                       <div class="item field form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="gender"><?=FIELD_GENDER?></label>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="gender"><?=FIELD_GENDER?> <span class="required">*</span>
+                        </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
                           <div id="gender" class="btn-group" data-toggle="buttons">
                             <label class="btn btn-default <?php if ($usr->getGender() == "M") echo "active"; ?>" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
-                              <input type="radio" name="gender" value="M" data-parsley-multiple="gender" <?php if ($usr->getGender() == "M") echo "checked"; ?>> <?=FIELD_GENDER_MALE?>
+                              <input type="radio" name="gender" value="M" data-parsley-multiple="gender" <?php if ($usr->getGender() == "M") echo "checked"; ?> required> <?=FIELD_GENDER_MALE?>
                             </label>
                             <label class="btn btn-default <?php if ($usr->getGender() == "F") echo "active"; ?>" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
                               <input type="radio" name="gender" value="F" data-parsley-multiple="gender" <?php if ($usr->getGender() == "F") echo "checked"; ?>> <?=FIELD_GENDER_FEMALE?>

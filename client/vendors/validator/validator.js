@@ -20,7 +20,8 @@ FormValidator.prototype = {
         long            : 'input is too long',
         checked         : 'must be checked',
         empty           : 'please put something here',
-        select          : 'Please select an option',
+        select          : 'please select an option',
+        radio           : 'please select an option',
         number_min      : 'too low',
         number_max      : 'too high',
         url             : 'invalid URL',
@@ -239,6 +240,14 @@ FormValidator.prototype = {
             if( field.checked ) return true;
 
             return this.texts.checked;
+        },
+
+        radio : function( field, data ){
+            checked = $('input:radio[name='+field.name+']').is(':checked');
+
+            if( checked ) return true;
+
+            return this.texts.radio;
         }
     },
 
@@ -401,7 +410,7 @@ FormValidator.prototype = {
     */
     checkField : function( field, silent ){
         // skip testing fields whom their type is not HIDDEN but they are HIDDEN via CSS.
-        if( field.type !='hidden' && !field.clientWidth )
+        if( field.type != 'hidden' && !field.clientWidth )
             return { valid:true, error:"" }
 
         field = this.filterFormElements( [field] )[0];
@@ -425,7 +434,10 @@ FormValidator.prototype = {
         */
 
         // first, check if the field even has any value
-        testResult = this.tests.hasValue.call(this, data.value);
+        if( field.type == 'select-one' )
+            testResult = true;
+        else
+            testResult = this.tests.hasValue.call(this, data.value);
 
         // if the field has value, check if that value is same as placeholder
         if( testResult === true )
