@@ -21,6 +21,9 @@
     <script src="<?=RELATIVE_PATH?>/vendors/validator/validator.js"></script>
     <!-- iCheck -->
     <script src="<?=RELATIVE_PATH?>/vendors/iCheck/icheck.min.js"></script>
+    <!-- bootstrap-daterangepicker -->
+    <script src="<?=RELATIVE_PATH?>/vendors/moment/moment.min.js"></script>
+    <script src="<?=RELATIVE_PATH?>/vendors/datepicker/daterangepicker.js"></script>
     <!-- Custom Theme Scripts -->
     <script src="<?=RELATIVE_PATH?>/build/js/custom.min.js"></script>
     <!-- Translations Scripts -->
@@ -29,6 +32,31 @@
     <script src="<?=RELATIVE_PATH?>/js/functions.js"></script>
     <!-- Main Scripts -->
     <script src="<?=RELATIVE_PATH?>/js/scripts.js"></script>
+
+    <!-- bootstrap-daterangepicker -->
+    <script>
+      $(document).ready(function() {
+        var max = moment();
+        var min = moment().subtract(100, 'years');
+
+        $('#birthday').daterangepicker({
+          maxDate: max,
+          minDate: min,
+          format: 'DD/MM/YYYY',
+          singleDatePicker: true,
+          showDropdowns: true,
+          calender_style: "picker_2"
+        }, function(start, end, label) {
+          console.log(start.toISOString(), end.toISOString(), label);
+        });
+
+        $('#birthday').on('keydown', function (e) {
+            e.preventDefault();
+            return false;
+        });
+      });
+    </script>
+    <!-- /bootstrap-daterangepicker -->
 
     <!-- Validator -->
     <script>
@@ -56,7 +84,8 @@
         validator.texts.checked         = labels[LANG]['CHECKED'];
 
         document.forms['cadastro'].addEventListener('blur', function(e){
-            validator.checkField.call(validator, e.target)
+            if ( !$(e.target).is('#birthday') )
+                validator.checkField.call(validator, e.target);
         }, true);
 
         document.forms['cadastro'].addEventListener('input', function(e){
@@ -64,7 +93,7 @@
         }, true);
 
         document.forms['cadastro'].addEventListener('change', function(e){
-            validator.checkField.call(validator, e.target)
+            validator.checkField.call(validator, e.target);
         }, true);
 
         document.forms['cadastro'].onsubmit = function(e){

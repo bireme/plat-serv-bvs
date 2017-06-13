@@ -18,7 +18,8 @@ if($lang == 'pt'){
     define('CONTACT_FORM','Formulário de contato');
     define('CHOOSE_DEGREE','selecionar');
     define('CHOOSE_COUNTRY','selecionar');
-    define('DEGREE','Titulação');
+    define('DEGREE','Nível acadêmico');
+    define('PROFESSIONAL_AREA','Área de atuação profissional');
     define('EMAIL_SENT','E-mail enviado.');
     define('FIELD_CONTACT_NAME','nome');
     define('FIELD_CONTACT_EMAIL','e-mail');
@@ -36,6 +37,7 @@ if($lang == 'pt'){
     define('FIELD_PASSWORD_CONFIRMATION','Confirme sua senha');
     define('FIELD_GENDER_MALE','Masculino');
     define('FIELD_GENDER_FEMALE','Feminino');
+    define('FIELD_BIRTHDAY','Data de nascimento');
     define("FIELD_DEGREE","Ensino_Fundamental|Ensino Fundamental (1o Grau),Ensino_Medio|Ensino Médio (2o Grau),Ensino_Tecnico|Ensino Profissional De Nível Técnico,Graduacao|Graduação,Especializacao|Especialização,Mestrado_Profissionalizante|Mestrado Profissionalizante,Mestrado|Mestrado,Doutorado|Doutorado,MBA|MBA,Pos_Doutorado|Pós Doutorado,PHD|PHD");
     define("FREE_REGISTRY","Registre-se gratuitamente!");
     define("FREE_REGISTRY_MESSAGE","
@@ -185,7 +187,8 @@ if($lang == 'es'){
     define('CONTACT_FORM','Formulário para contacto');
     define('CHOOSE_DEGREE','elijir');
     define('CHOOSE_COUNTRY','elijir');
-    define('DEGREE','Título');
+    define('DEGREE','Nível académico');
+    define('PROFESSIONAL_AREA','Área de actuación profesional');
     define('EMAIL_SENT','E-mail enviado.');
     define('FIELD_CONTACT_NAME','nombre');
     define('FIELD_CONTACT_EMAIL','e-mail');
@@ -203,6 +206,7 @@ if($lang == 'es'){
     define('FIELD_PASSWORD_CONFIRMATION','Confirme su contrasenã');
     define('FIELD_GENDER_MALE','Masculino');
     define('FIELD_GENDER_FEMALE','Feminino');
+    define('FIELD_BIRTHDAY','Fecha de nacimiento');
     define("FIELD_DEGREE","Ensino_Fundamental|Enseñanza o Educación Básica,Ensino_Medio|Enseñanza o Educación Media,Ensino_Tecnico|Enseñanza o Educación Técnico-Profesional,Graduacao|Superior Universitario de Grado,Especializacao|Especialización,Mestrado_Profissionalizante|Maestría Profisionalizante,Mestrado|Maestría,Doutorado|Doctorado,MBA|MBA,Pos_Doutorado|Pos Doctorado,PHD|PHD");
     define("FREE_REGISTRY","Registrese Gratuitamente!");
     define("FREE_REGISTRY_MESSAGE","
@@ -354,6 +358,7 @@ if($lang == 'en'){
     define('CHOOSE_COUNTRY','choose');
     define('DEGREE','Degree');
     define('EMAIL_SENT','E-mail sent.');
+    define('PROFESSIONAL_AREA','Professional area');
     define('FIELD_CONTACT_NAME','name');
     define('FIELD_CONTACT_EMAIL','e-mail');
     define('FIELD_CONTACT_DESCRIPTION','description');
@@ -370,6 +375,7 @@ if($lang == 'en'){
     define('FIELD_PASSWORD_CONFIRMATION','Password confirmation');
     define('FIELD_GENDER_MALE','Male');
     define('FIELD_GENDER_FEMALE','Female');
+    define('FIELD_BIRTHDAY','Date of birth');
     define("FIELD_DEGREE","Ensino_Fundamental|Basic Education,Ensino_Medio|High School,Ensino_Tecnico|Technical Studies,Graduacao|Graduate Study,Especializacao|Specialization,Mestrado_Profissionalizante|Professional Master's Degree,Mestrado|Master's Degree,Doutorado|Doctorate,MBA|MBA,Pos_Doutorado|Post Doctorate,PHD|PHD");
     define("FREE_REGISTRY","Register for free!");
     define("FREE_REGISTRY_MESSAGE","

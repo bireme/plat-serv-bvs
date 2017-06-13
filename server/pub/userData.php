@@ -45,6 +45,7 @@ $researchGate = !empty($_REQUEST['researchGate']) ? $_REQUEST['researchGate'] : 
 $orcid = !empty($_REQUEST['orcid']) ? $_REQUEST['orcid'] : false;
 $researcherID = !empty($_REQUEST['researcherID']) ? $_REQUEST['researcherID'] : false;
 $lattes = !empty($_REQUEST['lattes']) ? $_REQUEST['lattes'] : false;
+$birthday = !empty($_REQUEST['birthday']) ? $_REQUEST['birthday'] : false;
 $terms = !empty($_REQUEST['terms']) ? $_REQUEST['terms'] : false;
 $acao = !empty($_REQUEST['acao']) ? $_REQUEST['acao'] : 'default';
 $userKey = !empty($_REQUEST['key']) ? $_REQUEST['key'] : false;
@@ -68,6 +69,7 @@ switch($acao){
         $usr->setOrcid($orcid);
         $usr->setResearcherID($researcherID);
         $usr->setLattes($lattes);
+        $usr->setBirthday(date("Y-m-d", strtotime($birthday)));
         $usr->setAgreementDate($terms);
 
         if(Verifier::chkObjUser($usr)){
@@ -105,6 +107,7 @@ switch($acao){
         $usr->setOrcid($orcid);
         $usr->setResearcherID($researcherID);
         $usr->setLattes($lattes);
+        $usr->setBirthday(date("Y-m-d", strtotime($birthday)));
         $usr->setAgreementDate($terms);
 
         if(Verifier::chkObjUser($usr)){
@@ -407,6 +410,14 @@ $DocTitle = $isUser?UPDATE_USER_TITLE:REGISTER_NEW_USER_TITLE;
                             Masculino: <input type="radio" class="flat" name="gender" id="genderM" value="M" />
                             Feminino: <input type="radio" class="flat" name="gender" id="genderF" value="F" />
                           </p-->
+                        </div>
+                      </div>
+                      <?php $birth = ( $usr->getBirthday() ) ? date("d/m/Y", strtotime($usr->getBirthday())) : ''; ?>
+                      <div class="item field form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="birthday"><?=FIELD_BIRTHDAY?> <span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input id="birthday" name="birthday" class="date-picker form-control col-md-7 col-xs-12" required="required" type="text" value="<?=$birth?>">
                         </div>
                       </div>
                       <?php if( !$usr->getAgreementDate() ) : ?>

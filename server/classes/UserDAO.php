@@ -111,6 +111,7 @@ class UserDAO {
             $objUser->setOrcidData($res[0]['orcidData']);
             $objUser->setResearcherID($res[0]['researcherID']);
             $objUser->setLattes($res[0]['lattes']);
+            $objUser->setBirthday($res[0]['birthday']);
             $objUser->setAgreementDate($res[0]['agreement_date']);
             $objUser->setProfile(ProfileDAO::getProfileList($objUser->getID()));
 
@@ -182,6 +183,7 @@ class UserDAO {
                                                  orcidData,
                                                  researcherID,
                                                  lattes,
+                                                 birthday,
                                                  agreement_date,
                                                  active,
                                                  userPassword )
@@ -200,6 +202,7 @@ class UserDAO {
                                                 $objUser->getOrcidData()."','".
                                                 $objUser->getResearcherID()."','".
                                                 $objUser->getLattes()."','".
+                                                $objUser->getBirthday()."','".
                                                 $objUser->getAgreementDate()."','".
                                                 $active."','".
                                                 $hash."'";
@@ -277,6 +280,7 @@ class UserDAO {
                             orcid ='".$objUser->getOrcid()."',
                             researcherID ='".$objUser->getResearcherID()."',
                             lattes ='".$objUser->getLattes()."',
+                            birthday ='".$objUser->getBirthday()."',
                             agreement_date ='".$objUser->getAgreementDate()."'";
 
             /*  check if the password will be updated */

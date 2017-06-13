@@ -32,6 +32,7 @@ class User {
     private $_orcidData;
     private $_researcherID;
     private $_lattes;
+    private $_birthday;
     private $_agreementDate;
 
     public function __construct(){}
@@ -357,6 +358,24 @@ class User {
      */
     public function getLattes(){
         return (trim($this->_lattes));
+    }
+
+    /**
+     * Set user birthday
+     *
+     * @param string $birthday
+     */
+    public function setBirthday($birthday){
+        $this->_birthday = $birthday;
+    }
+
+    /**
+     * Get user birthday
+     *
+     * @return string
+     */
+    public function getBirthday(){
+        return $this->_birthday;
     }
 
     /**
