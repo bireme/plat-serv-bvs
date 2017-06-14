@@ -65,7 +65,7 @@ define("REGEXP_USER_NAME",'/[À-ÖØ-öø-ÿ\w\-]+/');
 define("REGEXP_USER_GENDER",'/[MF]/');
 define("REGEXP_USER_DEGREE",'/[À-ÖØ-öø-ÿ\w\-]+/');
 define("REGEXP_USER_AFFILIATION",'/[À-ÖØ-öø-ÿ\w\-]+/');
-define("REGEXP_AGREEMENT_DATE","/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/");
+define("REGEXP_DATE","/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/");
 
 /* XML Schemas */
 define("XSD_XMLDOC",APP_BASEDIR."/xsd/xmlDoc.xsd");

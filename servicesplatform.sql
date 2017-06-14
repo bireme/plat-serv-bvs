@@ -221,9 +221,10 @@ CREATE TABLE IF NOT EXISTS `users` (
   `orcidData` longtext,
   `researcherID` varchar(150) DEFAULT '',
   `lattes` varchar(300) DEFAULT '',
-  `birthday` date,
-  `agreement_date` date,
+  `birthday` varchar(22) NOT NULL DEFAULT '',
+  `agreement_date` varchar(22) NOT NULL DEFAULT '',
   `last_login` datetime,
+  `active` binary(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`sysUID`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
 

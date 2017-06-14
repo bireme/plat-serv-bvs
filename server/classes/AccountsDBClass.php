@@ -39,10 +39,10 @@ class AccountsDBClass{
         $this->_conn = mysqli_connect($this->_host, $this->_user
             , $this->_password);
         if(!$this->_conn){
-            throw new AccountsDBClassException('Err:connect:'.mysql_error());
+            throw new AccountsDBClassException('Err:connect:'.mysqli_error($this->_conn));
         }
         if(!mysqli_select_db($this->_conn, $this->_db)){
-            throw new AccountsDBClassException('Err:selectDB:'.mysql_error());
+            throw new AccountsDBClassException('Err:selectDB:'.mysqli_error($this->_conn));
         }
     }
 

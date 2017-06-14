@@ -45,11 +45,16 @@ $researchGate = !empty($_REQUEST['researchGate']) ? $_REQUEST['researchGate'] : 
 $orcid = !empty($_REQUEST['orcid']) ? $_REQUEST['orcid'] : false;
 $researcherID = !empty($_REQUEST['researcherID']) ? $_REQUEST['researcherID'] : false;
 $lattes = !empty($_REQUEST['lattes']) ? $_REQUEST['lattes'] : false;
-$birthday = !empty($_REQUEST['birthday']) ? $_REQUEST['birthday'] : false;
 $terms = !empty($_REQUEST['terms']) ? $_REQUEST['terms'] : false;
 $acao = !empty($_REQUEST['acao']) ? $_REQUEST['acao'] : 'default';
 $userKey = !empty($_REQUEST['key']) ? $_REQUEST['key'] : false;
 $msg = null; /* system messages */
+$birthday = false;
+
+if ( !empty($_REQUEST['birthday']) ) {
+    $birthday = str_replace('/', '-', $_REQUEST['birthday']);
+    $birthday = date("Y-m-d", strtotime($birthday));
+}
 
 switch($acao){
     case "gravar":
@@ -69,7 +74,7 @@ switch($acao){
         $usr->setOrcid($orcid);
         $usr->setResearcherID($researcherID);
         $usr->setLattes($lattes);
-        $usr->setBirthday(date("Y-m-d", strtotime($birthday)));
+        $usr->setBirthday($birthday);
         $usr->setAgreementDate($terms);
 
         if(Verifier::chkObjUser($usr)){
