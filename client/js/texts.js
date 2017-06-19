@@ -2,6 +2,7 @@ var labels = [];
 
 /* Portuguese */
 labels['pt'] = [];
+labels['pt']['INCOMING_FOLDER'] = 'Caixa de Entrada';
 labels['pt']['COLLECTIONS']     = 'Coleções:';
 labels['pt']['VIEW_ON']         = 'Exibir no:';
 labels['pt']['ORIGIN_SITE']     = 'Site de origem';
@@ -34,6 +35,7 @@ labels['pt']['SD_FAIL']         = 'ERRO: Ocorreu um problema na requisição dos
 
 /* English */
 labels['en'] = [];
+labels['en']['INCOMING_FOLDER'] = 'Incoming Box';
 labels['en']['COLLECTIONS']     = 'Collections:';
 labels['en']['VIEW_ON']         = 'View on the:';
 labels['en']['ORIGIN_SITE']     = 'Origin site';
@@ -66,6 +68,7 @@ labels['en']['SD_FAIL']         = 'ERROR: An error occurred in the request for r
 
 /* Spanish */
 labels['es'] = [];
+labels['es']['INCOMING_FOLDER'] = 'Caja de Entrada';
 labels['es']['COLLECTIONS']     = 'Colecciones:';
 labels['es']['VIEW_ON']         = 'Mostrar en:';
 labels['es']['ORIGIN_SITE']     = 'Sitio de origen';

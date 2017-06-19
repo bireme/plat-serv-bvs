@@ -153,11 +153,11 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
         self::$trans["general"]["LOGO"] = 'en/logobvs.gif';
 
     // Tems of mydocuments pages
-        self::$trans["mydocuments"]["MY_COLLECTION"] = 'My Collection';
+        self::$trans["mydocuments"]["MY_COLLECTION"] = 'Favorite Documents';
         self::$trans["mydocuments"]["BY_DATE"] = 'by Date';
-        self::$trans["mydocuments"]["INCOMING_FOLDER"] = 'Incoming Folder';
-        self::$trans["mydocuments"]["ADD_FOLDER"] = 'Add Folder';
-        self::$trans["mydocuments"]["MY_FOLDERS"] = 'My Folders';
+        self::$trans["mydocuments"]["INCOMING_FOLDER"] = 'Incoming Box';
+        self::$trans["mydocuments"]["ADD_FOLDER"] = 'Add Collection';
+        self::$trans["mydocuments"]["MY_FOLDERS"] = 'My Collections';
         self::$trans["mydocuments"]["SHOW_BY"] = 'View List by';
         self::$trans["mydocuments"]["DATE"] = 'Date';
         self::$trans["mydocuments"]["MY_RANK"] = 'My ranking';
@@ -169,10 +169,10 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
         self::$trans["mydocuments"]["MONITOR_CITATION"] = 'monitored citations';
         self::$trans["mydocuments"]["MONITOR_ACCESS"] = 'monitored access';
         self::$trans["mydocuments"]["ACCESS_LIST_NO_REGISTERS_FOUND"] = 'No registers found';
-        self::$trans["mydocuments"]["EDIT_FOLDER"] = 'Edit Folder';
-        self::$trans["mydocuments"]["REMOVE_FOLDER"] = 'Remove Folder';
+        self::$trans["mydocuments"]["EDIT_FOLDER"] = 'Edit Collection';
+        self::$trans["mydocuments"]["REMOVE_FOLDER"] = 'Remove Collection';
         self::$trans["mydocuments"]["PUBLISH_FOLDER"] = 'Make public';
-        self::$trans["mydocuments"]["MAKE_FOLDER_PRIVATE"] = 'Make folder private';
+        self::$trans["mydocuments"]["MAKE_FOLDER_PRIVATE"] = 'Make private';
         self::$trans["mydocuments"]["PAGE"] = 'Page';
         self::$trans["mydocuments"]["NEXT"] = 'Next';
         self::$trans["mydocuments"]["PREVIOUS"] = 'Previous';

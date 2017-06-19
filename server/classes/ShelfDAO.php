@@ -85,8 +85,15 @@ class ShelfDAO {
                 $retValue = true;
             }
         }else{
-            $dir = UserDirectoryDAO::getDir($shelf->getUserID(), $in_shelf[0]['userDirID']);
-            $retValue = '{ "dir" : "'.$dir[0]->getDirName().'" }';
+            if ( $in_shelf[0]['userDirID'] == 0 ) {
+                $dirName = 'INCOMING_FOLDER';
+            }
+            else {
+                $dir = UserDirectoryDAO::getDir($shelf->getUserID(), $in_shelf[0]['userDirID']);
+                $dirName = $dir[0]->getDirName();
+            }
+
+            $retValue = '{ "dir" : "'.$dirName.'" }';
     	}
 
         return $retValue;

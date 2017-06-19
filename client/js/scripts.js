@@ -139,7 +139,7 @@ $( document ).ready(
             folder = $(this).val();
             text = $('.docsfolderlist option:selected').text();
             id = $(this).closest('td').find('a.add-collection').attr('value');
-            title = $(this).closest('tr').find('a').text();
+            title = $(this).closest('tr').find('div.record a').text();
             url = $(this).closest('tr').find('a').attr('href');
             author = $(this).closest('tr').find('small').text();
 
@@ -167,7 +167,10 @@ $( document ).ready(
                         alert(labels[LANG]['ADD_DOC_SUCCESS']+' '+text);
                     });
                 }else if(typeof response == 'object'){
-                    alert(labels[LANG]['DOC_EXISTS']+' '+response.dir);
+                    if ( response.dir == 'INCOMING_FOLDER' )
+                        alert(labels[LANG]['DOC_EXISTS']+' '+labels[LANG]['INCOMING_FOLDER']);
+                    else
+                        alert(labels[LANG]['DOC_EXISTS']+' '+response.dir);
                 }else{
                     alert(labels[LANG]['ADD_DOC_FAIL']);
                 }

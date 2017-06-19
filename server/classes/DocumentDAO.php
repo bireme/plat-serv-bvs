@@ -103,6 +103,7 @@ class DocumentDAO {
         if(isset($arr[0]['docID'])){
             $retValue = new document();
             $retValue->setDocID($arr[0]['docID']);
+            $retValue->setSrcID($arr[0]['srcID']);
             $retValue->setDocTitle($arr[0]['title']);
             $retValue->setSerial($arr[0]['serial']);
             $retValue->setVolume($arr[0]['volume']);

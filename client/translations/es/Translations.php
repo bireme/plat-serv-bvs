@@ -153,11 +153,11 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
         self::$trans["general"]["LOGO"] = 'es/logobvs.gif';
 
     // Tems of mydocuments pages
-        self::$trans["mydocuments"]["MY_COLLECTION"] = 'Mi Colección';
+        self::$trans["mydocuments"]["MY_COLLECTION"] = 'Documentos Favoritos';
         self::$trans["mydocuments"]["BY_DATE"] = 'por Fecha';
-        self::$trans["mydocuments"]["INCOMING_FOLDER"] = 'Carpeta de Entrada';
-        self::$trans["mydocuments"]["ADD_FOLDER"] = 'Añadir Carpeta';
-        self::$trans["mydocuments"]["MY_FOLDERS"] = 'Mis Carpetas';
+        self::$trans["mydocuments"]["INCOMING_FOLDER"] = 'Caja de Entrada';
+        self::$trans["mydocuments"]["ADD_FOLDER"] = 'Añadir Colección';
+        self::$trans["mydocuments"]["MY_FOLDERS"] = 'Mis Colecciones';
         self::$trans["mydocuments"]["SHOW_BY"] = 'Ver la Lista por';
         self::$trans["mydocuments"]["DATE"] = 'Fecha';
         self::$trans["mydocuments"]["MY_RANK"] = 'Mi clasificación';
@@ -169,8 +169,8 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
         self::$trans["mydocuments"]["MONITOR_CITATION"] = 'citaciones monitoradas';
         self::$trans["mydocuments"]["MONITOR_ACCESS"] = 'acceso monitorado';
         self::$trans["mydocuments"]["ACCESS_LIST_NO_REGISTERS_FOUND"] = 'Ningún registro localizado';
-        self::$trans["mydocuments"]["EDIT_FOLDER"] = 'Editar Carpeta';
-        self::$trans["mydocuments"]["REMOVE_FOLDER"] = 'Apagar Carpeta';
+        self::$trans["mydocuments"]["EDIT_FOLDER"] = 'Editar Coleccións';
+        self::$trans["mydocuments"]["REMOVE_FOLDER"] = 'Apagar Colección';
         self::$trans["mydocuments"]["PUBLISH_FOLDER"] = 'Tornar público';
         self::$trans["mydocuments"]["MAKE_FOLDER_PRIVATE"] = 'Tornar privado';
         self::$trans["mydocuments"]["PAGE"] = 'Pagina';
