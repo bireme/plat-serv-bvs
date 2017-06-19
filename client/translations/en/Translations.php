@@ -145,7 +145,7 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
         self::$trans["orcidworks"]["NEXT"] = 'Próximo';
         self::$trans["orcidworks"]["PREVIOUS"] = 'Anterior';
         self::$trans["orcidworks"]["ORCID_WORKS"] = 'ORCID - Minhas Publicações';
-        self::$trans["orcidworks"]["ORCID_WORKS_NO_REGISTERS_FOUND"] = 'Nenhuma publicação encontrada. Para vizualizar suas publicações, favor informar o ORCID ID no seu cadastro.';
+        self::$trans["orcidworks"]["ORCID_WORKS_NO_REGISTERS_FOUND"] = 'Nenhuma publicação encontrada. Para visualizar suas publicações, favor informar o ORCID ID no seu cadastro.';
         self::$trans["orcidworks"]["GOOGLE_SCHOLAR"] = 'ver no Google Scholar';
 
     // General Terms
