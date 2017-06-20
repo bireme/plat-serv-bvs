@@ -204,6 +204,8 @@ class ToolsRegister {
                 $objUserArg->setID($mailUserID);
 
                 if ( $isInServPlat ) {
+                    $retValue = UserDAO::updateUser($objUserArg);
+                    
                     if ( $is_active )
                         $retValue = UserDAO::addUser($objUserArg, 1);
                     else
