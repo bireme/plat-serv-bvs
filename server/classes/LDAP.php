@@ -221,6 +221,8 @@ class LDAP{
                 throw new Exception($entry->getMessage(), 501);
             }
             return true;
+        } else {
+            return false;
         }
     }
 

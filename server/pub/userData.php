@@ -82,8 +82,13 @@ switch($acao){
         }
 
         if ($migrationResult["status"] === true){
-            $response["msg"] = USER_ADD_SUCCESS;
             $response["status"] = true;
+
+            if ($migrationResult["error"] === "userexists")
+                $response["msg"] = USER_ADD_SUCCESS;
+            else
+                $response["msg"] = USER_SEND_CONFIRMATION;
+
             $orcidData = UserDAO::fillOrcidData($usr->getID(), $usr->getOrcid());
         }elseif (($migrationResult["status"] === false) &&
                 ($migrationResult["error"] === "userexists")){
@@ -130,7 +135,7 @@ switch($acao){
 
         break;
     case "confirmar":
-        $result = UserDAO::userConfirmation($email, $userKey);
+        $result = UserDAO::userConfirm($email, $userKey);
 
         if($result === true){
             $usr = UserDAO::getUser(trim($email));

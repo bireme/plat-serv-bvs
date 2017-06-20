@@ -220,31 +220,8 @@ class UserDAO {
                 if ( $result === false ){
                     $retValue = false;
                 } else {
-                    if ( !$active ) { //
-                        $sysUID = $result;
-                        $email = $objUser->getEmail();
-                        $date = date('Y-m-d H:i:s');
-                                     
-                        //create a random key
-                        $key = md5(uniqid(mt_rand(), true));
-
-                        $deleteConfirm = self::deleteUserConfirm($email);
-
-                        $addConfirm = self::addUserConfirm($email,$key,$date);
-
-                        if($addConfirm !== false){
-                            $to = array($email);
-                            $home = $_SERVER['HTTP_HOST'] . RELATIVE_PATH . '/controller/authentication';
-                            $body = str_replace('#SITE#',
-                                $_SERVER['HTTP_HOST'],
-                                file_get_contents(EMAIL_CONFIRMATION_TEMPLATE));
-                            $body = str_replace('#USERNAME#', $objUser->getFirstName(), $body);
-                            $body = str_replace('#HOME#', base64_encode($home), $body);
-                            $body = str_replace('#EMAIL#', $email, $body);
-                            $body = str_replace('#KEY#', $key, $body);
-                            $sendMail = Mailer::sendMail($body,
-                                "New Services Platform User: ".$objUser->getFirstName(),$to);
-                        }
+                    if ( !$active ) {
+                        $sendConfirm = UserDAO::sendUserConfirm($objUser);
                     }
                 }
             }else{
@@ -348,13 +325,40 @@ class UserDAO {
     }
 
     /**
+     * Check if the user is active
+     *
+     * @param string $userID user ID
+     * @return boolean
+     */
+    public static function isActive($userID){
+        global $_conf;
+        $retValue = false;
+        $strsql = "SELECT count(userID) FROM users
+                    WHERE userID = '".trim($userID)."'
+                    AND active = '1'";
+
+        try{
+            $_db = new DBClass();
+            $res = $_db->databaseQuery($strsql);
+        }catch(DBClassException $e){
+            $logger = &Log::singleton('file', LOG_FILE, __CLASS__, $_conf);
+            $logger->log($e->getMessage(),PEAR_LOG_EMERG);
+        }
+
+        if($res[0]['count(userID)'] >= 1){
+            $retValue = true;
+        }
+        return $retValue;
+    }
+
+    /**
      * Check user confirmation
      *
      * @param string $userEmail user email
      * @param string $userKey user key
      * @return boolean
      */
-    public static function userConfirmation($userEmail, $userKey){
+    public static function userConfirm($userEmail, $userKey){
         global $_conf;
         $retValue = false;
 
@@ -457,6 +461,43 @@ class UserDAO {
     }
 
     /**
+     * Send user confirmation
+     *
+     * @param object $objUser User object
+     * @return boolean
+     */
+    public static function sendUserConfirm($objUser){
+        $retValue = false;
+        $email = $objUser->getEmail();
+        $date = date('Y-m-d H:i:s');
+                     
+        //create a random key
+        $key = md5(uniqid(mt_rand(), true));
+
+        $deleteConfirm = self::deleteUserConfirm($email);
+
+        $addConfirm = self::addUserConfirm($email,$key,$date);
+
+        if($addConfirm !== false){
+            $to = array($email);
+            $home = $_SERVER['HTTP_HOST'] . RELATIVE_PATH . '/controller/authentication';
+            $body = str_replace('#SITE#',
+                $_SERVER['HTTP_HOST'],
+                file_get_contents(EMAIL_CONFIRMATION_TEMPLATE));
+            $body = str_replace('#USERNAME#', $objUser->getFirstName(), $body);
+            $body = str_replace('#HOME#', base64_encode($home), $body);
+            $body = str_replace('#EMAIL#', $email, $body);
+            $body = str_replace('#KEY#', $key, $body);
+            $sendMail = Mailer::sendMail($body,
+                "New Services Platform User: ".$objUser->getFirstName(),$to);
+
+            $retValue = true;
+        }
+
+        return $retValue;
+    }
+
+    /**
      * Set user's last login
      *
      * @param string $userID User ID
@@ -498,6 +539,7 @@ class UserDAO {
     public static function createNewPassword($userID){
         global $_conf;
         $retValue = false;
+        $retStats = false;
 
         /* Get the custom LDAP data, based on user's mail domain */
         $userDomain = substr(stristr($userID,'@'),1);
