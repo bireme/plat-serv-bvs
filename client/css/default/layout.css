@@ -275,6 +275,10 @@ div.related_docs p {
     font-weight: bold;
 }
 
+select.bulkactions {
+    margin-left: auto;
+}
+
 #loading, .related-loading {
     background:url(../../images/default/loading.gif) no-repeat center center;
     height: 60px;

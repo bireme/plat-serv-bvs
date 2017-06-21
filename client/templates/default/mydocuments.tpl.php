@@ -1,7 +1,9 @@
-<?
+<?php
     if ( in_array( $_REQUEST["task"], array( 'rate', 'removedoc' ) ) )
         header("Location: " . $_SERVER['HTTP_REFERER']);
 ?>
+
+<?php $directory = $_REQUEST["directory"] ? $_REQUEST["directory"] : 0; ?>
 
         <?require_once(dirname(__FILE__)."/header.tpl.php");?>
         <?require_once(dirname(__FILE__)."/sidebar.tpl.php");?>
@@ -20,12 +22,17 @@
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content">
-                    <div class="folder-data">
+                    <div class="folder-data col-md-9 col-sm-9 col-xs-12">
                         <h4><i class="fa fa-folder-o"></i> <?if ($resultDirName === null){ echo $trans->getTrans($_REQUEST["action"],'INCOMING_FOLDER'); }?><?=$resultDirName?></h4>
                         <?if ($_REQUEST["directory"] != 0){?>
                             <a href="javascript: void(0);" onclick="window.open('<?=RELATIVE_PATH?>/controller/directories/control/business/task/edit/directory/<?=$_REQUEST["directory"]?>','','resizable=no,scrollbars=1,width=420,height=250')"><span class="label label-info"><?=$trans->getTrans($_REQUEST["action"],'EDIT_FOLDER')?></span></a>
                             <a href="javascript: void(0);" onclick="window.open('<?=RELATIVE_PATH?>/controller/directories/control/business/task/delete/directory/<?=$_REQUEST["directory"]?>','','resizable=no,scrollbars=1,width=420,height=295')"><span class="label label-danger"><?=$trans->getTrans($_REQUEST["action"],'REMOVE_FOLDER')?></span></a>
                         <?}?>
+                        <select class="bulkactions">
+                            <option><?=$trans->getTrans($_REQUEST["action"],'BULK_ACTIONS')?></option>
+                            <option class="bulkremovedoc" value="<?=RELATIVE_PATH?>/controller/mydocuments/control/business/task/removedoc/directory/<?=$directory?>"><?=$trans->getTrans($_REQUEST["action"],'BULK_REMOVE_DOCS')?></option>
+                            <option class="bulkmovedoc" value="<?=RELATIVE_PATH?>/controller/directories/control/business/task/movedoc/directory/<?=$directory?>"><?=$trans->getTrans($_REQUEST["action"],'BULK_MOVE_DOCS')?></option>
+                        </select>
                     </div>
                     <div class="col-md-9 col-sm-9 col-xs-12">
                         <?php if ( $response["values"] != false ) : ?>
@@ -112,16 +119,6 @@
                                 </ul>
                             </div>
                         </section>
-                        <section class="panel panel-folder">
-                            <div class="panel-body">
-                                <h5><?=$trans->getTrans($_REQUEST["action"],'BULK_ACTIONS')?></h5>
-                                <ul class="list-docs-unstyled project_files">
-                                    <li><a id="bulkremovedoc" href="javascript:;" value="<?=RELATIVE_PATH?>/controller/mydocuments/control/business/task/removedoc/directory/<?=$register["dirID"]?>"><i class="fa fa-times"></i><?=$trans->getTrans($_REQUEST["action"],'BULK_REMOVE_DOCS')?></a></li>
-                                    <li><a id="bulkmovedoc" href="javascript:;" value="<?=RELATIVE_PATH?>/controller/directories/control/business/task/movedoc/directory/<?=$register["dirID"]?>"><i class="fa fa-random"></i><?=$trans->getTrans($_REQUEST["action"],'BULK_MOVE_DOCS')?></a></li>
-                                </ul>
-                            </div>
-                        </section>
-                        <?php $directory = $_REQUEST["directory"] ? $_REQUEST["directory"] : 0; ?>
                         <section class="panel panel-folder">
                             <div class="panel-body">
                                 <h5><?=$trans->getTrans($_REQUEST["action"],'SHOW_BY')?></h5>

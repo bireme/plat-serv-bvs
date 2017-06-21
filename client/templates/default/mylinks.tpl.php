@@ -1,4 +1,4 @@
-<?
+<?php
     if ( in_array( $_REQUEST["task"], array( 'rate', 'delete' ) ) )
         header("Location: " . $_SERVER['HTTP_REFERER']);
 ?>

@@ -221,46 +221,31 @@ $( document ).ready(
             }
         );
 
-        $(this).on('click', '#bulkremovedoc',
-            function(e){
-                e.preventDefault();
+        $( document ).on('change', '.bulkactions', function(e) {
+            e.preventDefault();
 
-                documents = [];
-                href = $(this).attr('value');
+            option = $('.bulkactions option:selected').attr('class');
+            href = $(this).val();
 
-                $("input:checkbox:checked").each(function(){
-                    documents.push($(this).val());
-                });
+            documents = [];
 
-                implode = documents.join();
+            $("input:checkbox:checked").each(function(){
+                documents.push($(this).val());
+            });
 
-                if ( implode ) {
+            implode = documents.join();
+
+            if ( implode ) {
+                if ( 'bulkremovedoc' == option ) {
                     response = confirm(labels[LANG]['REMOVE_DOCS']);
                     if (response == true) {
                         window.location.href = href+'/document/'+implode;
                     }
-                }
-            }
-        );
-
-        $(this).on('click', '#bulkmovedoc',
-            function(e){
-                e.preventDefault();
-
-                documents = [];
-                href = $(this).attr('value');
-
-                $("input:checkbox:checked").each(function(){
-                    documents.push($(this).val());
-                });
-
-                implode = documents.join();
-
-                if ( implode ) {
+                } else if ( 'bulkmovedoc' == option ) {
                     window.open(href+'/document/'+implode,'','resizable=no,width=420,height=270');
                 }
             }
-        );
+        });
 
         $('button.portal').on('click', function(e){
             var portal = "http://pesquisa.bvsalud.org/portal";

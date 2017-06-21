@@ -176,7 +176,7 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
         self::$trans["mydocuments"]["PAGE"] = 'Page';
         self::$trans["mydocuments"]["NEXT"] = 'Next';
         self::$trans["mydocuments"]["PREVIOUS"] = 'Previous';
-        self::$trans["mydocuments"]["BULK_ACTIONS"] = 'Bulk Actions';
+        self::$trans["mydocuments"]["BULK_ACTIONS"] = 'Bulk actions';
         self::$trans["mydocuments"]["BULK_REMOVE_DOCS"] = 'Remove documents';
         self::$trans["mydocuments"]["BULK_MOVE_DOCS"] = 'Move documents';
 
