@@ -86,6 +86,8 @@ switch($acao){
 
             if ($migrationResult["error"] === "userexists")
                 $response["msg"] = USER_ADD_SUCCESS;
+            elseif ($migrationResult["error"] === "sendnewpass")
+                $response["msg"] = SECURITY_PASSWORD_SENT;
             else
                 $response["msg"] = USER_SEND_CONFIRMATION;
 
@@ -487,16 +489,16 @@ $DocTitle = $isUser?UPDATE_USER_TITLE:REGISTER_NEW_USER_TITLE;
                       <div class="ln_solid"></div>
                       <div class="form-group">
                         <div class="col-md-6 col-md-offset-3">
-                          <? if($callerURL){ ?>
+                          <?php if($callerURL) : ?>
                               <input type="button" value="<?=BUTTON_CANCEL?>" class="btn btn-primary cancel" onclick="javascript:window.location='http://<?=$callerURL?>'; return false;" />
-                          <?}
-                          if($isUser){?>
+                          <?php endif; ?>
+                          <?php if($isUser) : ?>
                               <input type="hidden" value="atualizar" name="acao" />
                               <input id="send" type="submit" value="<?=BUTTON_UPDATE_USER?>" class="btn btn-success submit" />
-                          <?}else{?>
+                          <?php else : ?>
                               <input type="hidden" value="gravar" name="acao" />
                               <input id="send" type="submit" value="<?=BUTTON_NEW_USER?>" class="btn btn-success submit" />
-                          <?}?>
+                          <?php endif; ?>
                         </div>
                       </div>
                       <input type="hidden" name="autoconn" value=""/>

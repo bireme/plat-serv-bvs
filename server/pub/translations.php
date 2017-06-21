@@ -73,6 +73,7 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
     
     define("NEWPASS_DOMAIN_NOT_PERMITTED",'Ação não permitida para este usuário. Entre em contato com o departamento de suporte da sua instituição.');
     define("NEWPASS_PASSWORD_SENT",'Uma nova senha foi enviada para o seu email.');
+    define("SECURITY_PASSWORD_SENT",'<b>Usuário criado com sucesso!</b><br />Por questões de segurança, enviamos uma nova senha para o seu email.');
     define("NOTICE",'Mensagem ao usuário');
     define("NOTICE_MESSAGE",'
 <h4>Seu login SciELO agora será o Passaporte das Redes BVS e SciELO</h4>
@@ -243,6 +244,7 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
 
     define("NEWPASS_DOMAIN_NOT_PERMITTED",'Acción no permitida para el usuário. Contacte el departamiento de soporte de su institución.');
     define("NEWPASS_PASSWORD_SENT",'Una nueva contraseña fue enviada para su email.');
+    define("SECURITY_PASSWORD_SENT",'<b>¡Usuário añadido con succeso!</b><br />Por razones de seguridad, enviamos una nueva contraseña para su email.');
     define("NOTICE",'Mensaje al usuário');
     define("NOTICE_MESSAGE",'
 <h4>Su login SciELO ahora será el Pasaporte de las Redes BVS y SciELO</h4>
@@ -413,6 +415,7 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
 
     define("NEWPASS_DOMAIN_NOT_PERMITTED",'Action not allowed for this User. Please contact the support department of your institution.');    
     define("NEWPASS_PASSWORD_SENT",'A new password was sent to your email.');
+    define("SECURITY_PASSWORD_SENT",'<b>User registration successful!</b><br />For security reasons, we will send you a new password for your email.');
     define("NOTICE",'Notice to the users');
     define("NOTICE_MESSAGE",'
 <h4>Now your SciELO Login will be the Passaport to BVS and SciELO network.</h4>
