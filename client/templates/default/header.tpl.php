@@ -2,24 +2,29 @@
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <!-- Meta, title, CSS, favicons, etc. -->
-    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=<?=CHARSET?>">
+    <meta charset="<?=CHARSET?>">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Expires" content="-1" />
+    <meta http-equiv="pragma" content="no-cache" />  
+    <meta name="robots" content="all" />
+    <meta name="MSSmartTagsPreventParsing" content="true" />
+    <meta name="generator" content="BVSServices <?=VERSION?>" />
 
-    <title><?=$trans->getTrans('menu','MY_VHL')?></title>
+    <title><?=$trans->getTrans($_REQUEST["action"],'MY_VHL')?></title>
 
     <!-- Bootstrap -->
-    <link href="<?=RELATIVE_PATH?>/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?=RELATIVE_PATH?>/vendors/bootstrap/dist/css/bootstrap.min.css" type="text/css" rel="stylesheet">
     <!-- Font Awesome -->
-    <link href="<?=RELATIVE_PATH?>/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="<?=RELATIVE_PATH?>/vendors/font-awesome/css/font-awesome.min.css" type="text/css" rel="stylesheet">
     <!-- Theme Login Style -->
     <link href="<?=RELATIVE_PATH?>/css/<?=$_SESSION["skin"]?>/login.css" type="text/css" rel="stylesheet" />
     <!-- Theme Layout Style -->
     <link href="<?=RELATIVE_PATH?>/css/<?=$_SESSION["skin"]?>/layout.css" type="text/css" rel="stylesheet" />
     <!-- Custom Theme Style -->
-    <link href="<?=RELATIVE_PATH?>/build/css/custom.min.css" rel="stylesheet">
+    <link href="<?=RELATIVE_PATH?>/build/css/custom.min.css" type="text/css" rel="stylesheet">
     <!-- Theme Style -->
     <link href="<?=RELATIVE_PATH?>/css/<?=$_SESSION["skin"]?>/style.css" type="text/css" rel="stylesheet" />
 
@@ -38,7 +43,9 @@
         __gaTracker('send','pageview');
     </script>
     <?php endif; ?>
+
+    <?php $body_class = ( !$_SESSION['userTK'] ) ? 'main_page' : ''; ?>
   </head>
-  <body class="nav-md">
+  <body class="nav-md <?php echo $body_class; ?>">
     <div class="container body">
       <div class="main_container">

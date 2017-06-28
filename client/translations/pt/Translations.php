@@ -9,6 +9,39 @@ class Translations {
 
     public function translations(){
     // Terms of authentication pages
+        self::$trans["authentication"]["MY_VHL"] = 'Minha BVS';
+        self::$trans["authentication"]["MY_VHL_SUMMARY"] = '
+<p>O serviço Minha BVS registra as informações dos usuários e as preferências de pesquisa nas bases de dados da Rede BVS para fornecer serviços personalizados aos usuários da BVS.</p>
+<p>Isto significa que você poderá:</p>
+<ul>
+    <li>Selecionar documentos de interesse</li>
+    <li>Criar sua própria coleção</li>
+    <li>Acessar documentos relacionados aos temas de seu interesse</li>
+    <li>Guardar o histórico de busca realizadas na BVS</li>
+    <li>Organizar os links dos seus sites favoritos</li>
+    <li>Armazenar suas publicações por meio do ORCID</li>
+    <li>Ter um espaço próprio/dashboard para salvar todas as suas preferencias de pesquisa</li>
+</ul>
+<p>Tenha acesso gratuito aos produtos e serviços de informação da Minha BVS. <a href="javascript:;" class="decor" data-toggle="modal" data-target=".bs-modal-lg">Saiba mais</a><p>';
+        self::$trans["authentication"]["MY_VHL_DESCRIPTION"] = '
+<h4>Visão Geral da Minha BVS</h4>
+<p>O serviço Minha BVS registra as informações dos usuários e as preferências de pesquisa nas bases de dados da Rede BVS para fornecer serviços personalizados aos usuários da BVS.</p>
+<p>Isto significa que você poderá:</p>
+<ul>
+    <li>Selecionar documentos de interesse</li>
+    <li>Criar sua própria coleção</li>
+    <li>Acessar documentos relacionados aos temas de seu interesse</li>
+    <li>Guardar o histórico de busca realizadas na BVS</li>
+    <li>Organizar os links dos seus sites favoritos</li>
+    <li>Armazenar suas publicações por meio do ORCID</li>
+    <li>Ter um espaço próprio/dashboard para salvar todas as suas preferencias de pesquisa</li>
+</ul>';
+        self::$trans["authentication"]["NOTICE"] = 'É novo por aqui?';
+        self::$trans["authentication"]["BUTTON_CLOSE"] = 'Fechar';
+        self::$trans["authentication"]["RECOVER_ACCOUNTS"] = 'Se você faz parte da Rede BVS como um Centro Cooperante e já está cadastrado no BIREME Accounts para utilizar o Sitema de Administração de Fontes de Informação o FI-Admin, clique no link abaixo e recupere sua senha.';
+        self::$trans["authentication"]["RECOVER_ACCOUNTS_LINK"] = 'Redefinir a senha do usuário FI-ADMIN';
+        self::$trans["authentication"]["RECOVER_PASSWORD"] = 'Se você é um usuário comum e deseja utilizar o serviço Minha BVS e esqueceu sua senha, clique no link abaixo para redefiní-la.';
+        self::$trans["authentication"]["RECOVER_PASSWORD_LINK"] = 'Redefinir sua senha';
         self::$trans["authentication"]["TITLE"] = 'Autenticação de Usuários';
         self::$trans["authentication"]["NOREGISTRY"] = 'Registro de novos usuários indisponível temporariamente';
         self::$trans["authentication"]["HOME"] = 'home';
@@ -37,8 +70,8 @@ class Translations {
 </ol>
 ';
         self::$trans["authentication"]["BIREME_LOGIN_LDAP"] = 'utilize seu usuário e senha da rede BIREME';
-        self::$trans["authentication"]["FORGOT_MY_PASSWORD"] = 'esqueci minha senha';
-        self::$trans["authentication"]["REGISTRY"] = 'cadastrar-se';
+        self::$trans["authentication"]["FORGOT_MY_PASSWORD"] = 'Esqueceu sua senha?';
+        self::$trans["authentication"]["REGISTRY"] = 'Registre-se';
         self::$trans["authentication"]["HELPLOGINMESSAGE"] = 'A partir de agora, os serviços personalizados estão integrados por meio do passaporte de acesso das redes BVS e SciELO. O login SciELO é válido para essa autenticação.';
         self::$trans["authentication"]["KNOWMORE"] = ' saiba mais';
         self::$trans["authentication"]["ACCESS_DENIED"] = 'acesso negado';

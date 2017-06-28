@@ -239,36 +239,6 @@ $DocTitle = $isUser?UPDATE_USER_TITLE:REGISTER_NEW_USER_TITLE;
                     </div>
                     <?php endif; ?>
 
-                    <?php if ($act == "registry") : ?>
-                    <div class="help">
-                      <h2><?=FREE_REGISTRY?></h2>
-                      <?=FREE_REGISTRY_MESSAGE?>
-
-                      <!-- modal -->
-                      <button type="button" class="btn btn-info" data-toggle="modal" data-target=".bs-modal-lg"><?=LEARN_MORE?></button>
-
-                      <div class="modal fade bs-modal-lg" tabindex="-1" role="dialog" aria-hidden="true" style="z-index: 9999;">
-                        <div class="modal-dialog modal-lg">
-                          <div class="modal-content">
-
-                            <div class="modal-header">
-                              <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span>
-                              </button>
-                              <h2 class="modal-title" id="myModalLabel"><?=NOTICE?></h2>
-                            </div>
-                            <div class="modal-body">
-                              <?=NOTICE_MESSAGE?>
-                            </div>
-                            <div class="modal-footer">
-                              <button type="button" class="btn btn-default" data-dismiss="modal"><?=BUTTON_CLOSE?></button>
-                            </div>
-
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <?php endif; ?>
-
                     <form method="post" name="cadastro" class="form-horizontal form-label-left" novalidate>
 
                       <input type="hidden" name="postback" value="1" />

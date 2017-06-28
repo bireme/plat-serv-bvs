@@ -14,6 +14,15 @@
     text-align: center;
     line-height: 300%;
 }
+
+.omb_login .omb_authTitle img.logo {
+    padding-right: 20px;
+}
+
+.omb_login .omb_description {
+    margin-bottom: 2em;
+    text-align: justify;
+}
 /*
 .omb_login .omb_socialButtons {
     display: flex;
@@ -63,7 +72,7 @@
 }           
 
 .omb_login .omb_loginForm {
-    margin-bottom: 0;
+    margin-bottom: 10px;
 }
 
 .omb_login .omb_loginForm .input-group.i {
@@ -78,15 +87,27 @@
 .omb_forgotPwd a, .omb_registry a {
     border: 0;
 }
+
+.omb_login .omb_spacer hr {
+    background-color: #cdcdcd;
+    height: 1px;
+    margin-bottom: 0;
+}
+
+.omb_login a.decor {
+    text-decoration: underline;
+}
+
+.omb_login .omb_recover div.recover {
+    background: #eee;
+    padding: 20px;
+    margin-bottom: 20px;
+}
     
 @media (min-width: 768px) {
-    .omb_login .omb_forgotPwd {
-        text-align: right;
-        margin-top:10px;
-    }
-
+    .omb_login .omb_forgotPwd,
     .omb_login .omb_registry {
         text-align: left;
-        margin-top:10px;
+        margin-top: 10px;
     }
 }

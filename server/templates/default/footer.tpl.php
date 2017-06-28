@@ -34,7 +34,7 @@
     <script src="<?=RELATIVE_PATH?>/js/scripts.js"></script>
 
     <!-- bootstrap-daterangepicker -->
-    <script>
+    <script type="text/javascript">
       $(document).ready(function() {
         var max = moment();
         var min = moment().subtract(100, 'years');
@@ -59,7 +59,7 @@
     <!-- /bootstrap-daterangepicker -->
 
     <!-- Validator -->
-    <script>
+    <script type="text/javascript">
         // initialize the validator
         var validator = new FormValidator();
 

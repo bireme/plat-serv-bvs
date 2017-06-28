@@ -18,17 +18,17 @@
     <!-- Favicon -->
     <link rel="shortcut icon" href="favicon.ico"/>
     <!-- Bootstrap -->
-    <link href="<?=RELATIVE_PATH?>/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?=RELATIVE_PATH?>/vendors/bootstrap/dist/css/bootstrap.min.css" type="text/css" rel="stylesheet">
     <!-- Font Awesome -->
-    <link href="<?=RELATIVE_PATH?>/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="<?=RELATIVE_PATH?>/vendors/font-awesome/css/font-awesome.min.css" type="text/css" rel="stylesheet">
     <!-- iCheck -->
-    <link href="<?=RELATIVE_PATH?>/vendors/iCheck/skins/flat/green.css" rel="stylesheet">
+    <link href="<?=RELATIVE_PATH?>/vendors/iCheck/skins/flat/green.css" type="text/css" rel="stylesheet">
     <!-- Theme Login Style -->
     <link href="<?=RELATIVE_PATH?>/css/<?=$_SESSION["skin"]?>/login.css" type="text/css" rel="stylesheet" />
     <!-- Theme Layout Style -->
     <link href="<?=RELATIVE_PATH?>/css/<?=$_SESSION["skin"]?>/layout.css" type="text/css" rel="stylesheet" />
     <!-- Custom Theme Style -->
-    <link href="<?=RELATIVE_PATH?>/build/css/custom.min.css" rel="stylesheet">
+    <link href="<?=RELATIVE_PATH?>/build/css/custom.min.css" type="text/css" rel="stylesheet">
     <!-- Theme Style -->
     <link href="<?=RELATIVE_PATH?>/css/<?=$_SESSION["skin"]?>/style.css" type="text/css" rel="stylesheet" />
 

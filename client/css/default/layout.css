@@ -1,3 +1,22 @@
+body.main_page {
+    background: #FFFFFF;
+    color: #333333;
+}
+
+body.main_page .btn {
+    border-radius: 6px;
+}
+
+body.main_page.modal-open h4 {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+body.main_page .container {
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
 .middle {
     float: left;
     width: 60%;
@@ -286,17 +305,9 @@ select.bulkactions {
     margin-top: 25px;
     display: none;
 }
-/*
-#loading {
-    background:url(../../images/default/loading.gif) no-repeat center center;
-    height: 100px;
-    width: 100px;
-    position: fixed;
-    left: 50%;
-    top: 50%;
-    margin: -25px 0 0 -25px;
-    z-index: 1000;
-    text-align: center;
-    display: none;
+
+@media (min-width: 1200px) {
+    body.main_page .container {
+        width: 1170px;
+    }
 }
-*/
