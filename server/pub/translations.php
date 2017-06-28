@@ -40,11 +40,36 @@ if($lang == 'pt'){
     define('FIELD_BIRTHDAY','Data de nascimento');
     define("FIELD_DEGREE","Ensino_Fundamental|Ensino Fundamental (1o Grau),Ensino_Medio|Ensino Médio (2o Grau),Ensino_Tecnico|Ensino Profissional De Nível Técnico,Graduacao|Graduação,Especializacao|Especialização,Mestrado_Profissionalizante|Mestrado Profissionalizante,Mestrado|Mestrado,Doutorado|Doutorado,MBA|MBA,Pos_Doutorado|Pós Doutorado,PHD|PHD");
     define("FREE_REGISTRY","Registre-se gratuitamente!");
-    define("FREE_REGISTRY_MESSAGE","
-<p>Bem-vindo ao passaporte das redes BVS e SciELO</p>
-<p>O objetivo do passaporte é permitir que você utilize um único usuário e senha para ser reconhecido na rede Biblioteca Virtual em Saúde (BVS) e Scientific Eletronic Library Online (SciELO).</p>
-<p>Registre-se e, além das fontes de informação da BVS e SciELO, acesse gratuitamente produtos e serviços de informação personalizados. </p>
-");
+    define("FREE_REGISTRY_MESSAGE",'
+<p>O serviço Minha BVS registra as informações dos usuários e as preferências de pesquisa nas bases de dados da Rede BVS para fornecer serviços personalizados aos usuários da BVS.</p>
+<p>Isto significa que você poderá:</p>
+<ul>
+    <li>Selecionar documentos de interesse</li>
+    <li>Criar sua própria coleção</li>
+    <li>Acessar documentos relacionados aos temas de seu interesse</li>
+    <li>Guardar o histórico de busca realizadas na BVS</li>
+    <li>Organizar os links dos seus sites favoritos</li>
+    <li>Armazenar suas publicações por meio do ORCID</li>
+    <li>Ter um espaço próprio/dashboard para salvar todas as suas preferencias de pesquisa</li>
+</ul>
+<p>Tenha acesso gratuito aos produtos e serviços de informação da Minha BVS. <a href="javascript:;" class="decor" data-toggle="modal" data-target=".bs-modal-lg" style="text-decoration: underline;">Saiba mais</a><p>
+');
+    define("MY_VHL_DESCRIPTION",'
+<h4>Visão Geral da Minha BVS</h4>
+<p>O serviço Minha BVS registra as informações dos usuários e as preferências de pesquisa nas bases de dados da Rede BVS para fornecer serviços personalizados aos usuários da BVS.</p>
+<p>Isto significa que você poderá:</p>
+<ul>
+    <li>Selecionar documentos de interesse</li>
+    <li>Criar sua própria coleção</li>
+    <li>Acessar documentos relacionados aos temas de seu interesse</li>
+    <li>Guardar o histórico de busca realizadas na BVS</li>
+    <li>Organizar os links dos seus sites favoritos</li>
+    <li>Armazenar suas publicações por meio do ORCID</li>
+    <li>Ter um espaço próprio/dashboard para salvar todas as suas preferencias de pesquisa</li>
+</ul>
+');
+    define('MY_VHL_ENTRY','Já está registrado na Minha BVS?');
+    define('ENTER','Entrar');
     define("FOOTER_MESSAGE",'<p><strong>BIREME - OPAS - OMS</strong><br/>
 Centro Latino-Americano e do Caribe de Informação em Ciências da Saúde<br />
 Área de Gestão do Conhecimento, Bioética e Pesquisa - KBR<br />
@@ -211,11 +236,36 @@ if($lang == 'es'){
     define('FIELD_BIRTHDAY','Fecha de nacimiento');
     define("FIELD_DEGREE","Ensino_Fundamental|Enseñanza o Educación Básica,Ensino_Medio|Enseñanza o Educación Media,Ensino_Tecnico|Enseñanza o Educación Técnico-Profesional,Graduacao|Superior Universitario de Grado,Especializacao|Especialización,Mestrado_Profissionalizante|Maestría Profisionalizante,Mestrado|Maestría,Doutorado|Doctorado,MBA|MBA,Pos_Doutorado|Pos Doctorado,PHD|PHD");
     define("FREE_REGISTRY","Registrese Gratuitamente!");
-    define("FREE_REGISTRY_MESSAGE","
-<p>Bienvenido al pasaporte de las redes BVS y SciELO</p>
-<p>El objetivo del pasaporte es permitir que utilice un único usuario y contraseña para ser reconocido en la red Biblioteca Virtual en Salud (BVS) y Scientific Eletronic Library Online (SciELO).</p>
-<p>Registrese y, además de las fuentes de información de la BVS y SciELO, acceda gratuitamente productos y servicios de información personalizados.</p>
-");
+    define("FREE_REGISTRY_MESSAGE",'
+<p>O serviço Minha BVS registra as informações dos usuários e as preferências de pesquisa nas bases de dados da Rede BVS para fornecer serviços personalizados aos usuários da BVS.</p>
+<p>Isto significa que você poderá:</p>
+<ul>
+    <li>Selecionar documentos de interesse</li>
+    <li>Criar sua própria coleção</li>
+    <li>Acessar documentos relacionados aos temas de seu interesse</li>
+    <li>Guardar o histórico de busca realizadas na BVS</li>
+    <li>Organizar os links dos seus sites favoritos</li>
+    <li>Armazenar suas publicações por meio do ORCID</li>
+    <li>Ter um espaço próprio/dashboard para salvar todas as suas preferencias de pesquisa</li>
+</ul>
+<p>Tenha acesso gratuito aos produtos e serviços de informação da Minha BVS. <a href="javascript:;" class="decor" data-toggle="modal" data-target=".bs-modal-lg" style="text-decoration: underline;">Saiba mais</a><p>
+');
+    define("MY_VHL_DESCRIPTION",'
+<h4>Visão Geral da Minha BVS</h4>
+<p>O serviço Minha BVS registra as informações dos usuários e as preferências de pesquisa nas bases de dados da Rede BVS para fornecer serviços personalizados aos usuários da BVS.</p>
+<p>Isto significa que você poderá:</p>
+<ul>
+    <li>Selecionar documentos de interesse</li>
+    <li>Criar sua própria coleção</li>
+    <li>Acessar documentos relacionados aos temas de seu interesse</li>
+    <li>Guardar o histórico de busca realizadas na BVS</li>
+    <li>Organizar os links dos seus sites favoritos</li>
+    <li>Armazenar suas publicações por meio do ORCID</li>
+    <li>Ter um espaço próprio/dashboard para salvar todas as suas preferencias de pesquisa</li>
+</ul>
+');
+    define('MY_VHL_ENTRY','Já está registrado na Minha BVS?');
+    define('ENTER','Entrar');
     define("FOOTER_MESSAGE",'<p><strong>BIREME - OPAS - OMS</strong><br/>
 Centro Latinoamericano y del Caribe de Información en Ciencias de la Salud<br />
 Area de Gestión del Conocimiento, Bioética e Investigación - KBR<br />
@@ -382,11 +432,36 @@ if($lang == 'en'){
     define('FIELD_BIRTHDAY','Date of birth');
     define("FIELD_DEGREE","Ensino_Fundamental|Basic Education,Ensino_Medio|High School,Ensino_Tecnico|Technical Studies,Graduacao|Graduate Study,Especializacao|Specialization,Mestrado_Profissionalizante|Professional Master's Degree,Mestrado|Master's Degree,Doutorado|Doctorate,MBA|MBA,Pos_Doutorado|Post Doctorate,PHD|PHD");
     define("FREE_REGISTRY","Register for free!");
-    define("FREE_REGISTRY_MESSAGE","
-<p><p>Welcome to the VHL and SciELO network passport!</p>
-<p>The goal of the passport is to allow you to use a single user name and password to be recognized on the Virtual Health Library (VHL) and Scientific Electronic Library Online (SciELO) network.</p>
-<p>Register and in addition to information sources in the VHL and SciELO, have access to free products and personalized information services.</p>
-");
+    define("FREE_REGISTRY_MESSAGE",'
+<p>O serviço Minha BVS registra as informações dos usuários e as preferências de pesquisa nas bases de dados da Rede BVS para fornecer serviços personalizados aos usuários da BVS.</p>
+<p>Isto significa que você poderá:</p>
+<ul>
+    <li>Selecionar documentos de interesse</li>
+    <li>Criar sua própria coleção</li>
+    <li>Acessar documentos relacionados aos temas de seu interesse</li>
+    <li>Guardar o histórico de busca realizadas na BVS</li>
+    <li>Organizar os links dos seus sites favoritos</li>
+    <li>Armazenar suas publicações por meio do ORCID</li>
+    <li>Ter um espaço próprio/dashboard para salvar todas as suas preferencias de pesquisa</li>
+</ul>
+<p>Tenha acesso gratuito aos produtos e serviços de informação da Minha BVS. <a href="javascript:;" class="decor" data-toggle="modal" data-target=".bs-modal-lg" style="text-decoration: underline;">Saiba mais</a><p>
+');
+    define("MY_VHL_DESCRIPTION",'
+<h4>Visão Geral da Minha BVS</h4>
+<p>O serviço Minha BVS registra as informações dos usuários e as preferências de pesquisa nas bases de dados da Rede BVS para fornecer serviços personalizados aos usuários da BVS.</p>
+<p>Isto significa que você poderá:</p>
+<ul>
+    <li>Selecionar documentos de interesse</li>
+    <li>Criar sua própria coleção</li>
+    <li>Acessar documentos relacionados aos temas de seu interesse</li>
+    <li>Guardar o histórico de busca realizadas na BVS</li>
+    <li>Organizar os links dos seus sites favoritos</li>
+    <li>Armazenar suas publicações por meio do ORCID</li>
+    <li>Ter um espaço próprio/dashboard para salvar todas as suas preferencias de pesquisa</li>
+</ul>
+');
+    define('MY_VHL_ENTRY','Já está registrado na Minha BVS?');
+    define('ENTER','Entrar');
     define("FOOTER_MESSAGE",'<p><strong>BIREME - PAHO - WHO</strong><br/>
 Latin American and Caribbean Center on Health Sciences Information<br />
 Knowledge Management, Bioethics and Research Area - KBR<br />

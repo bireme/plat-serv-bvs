@@ -239,6 +239,31 @@ $DocTitle = $isUser?UPDATE_USER_TITLE:REGISTER_NEW_USER_TITLE;
                     </div>
                     <?php endif; ?>
 
+                    <div class="help">
+                        <h2><?=FREE_REGISTRY?></h2>
+                        <?=FREE_REGISTRY_MESSAGE?>
+                    </div>
+
+                    <div class="modal fade bs-modal-lg" tabindex="-1" role="dialog" aria-hidden="true" style="z-index: 9999; color: #73879C;">
+                      <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+
+                          <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span>
+                            </button>
+                            <h2 class="modal-title" id="myModalLabel"><?=MY_VHL?></h2>
+                          </div>
+                          <div class="modal-body">
+                            <?=MY_VHL_DESCRIPTION?>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal"><?=BUTTON_CLOSE?></button>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+
                     <form method="post" name="cadastro" class="form-horizontal form-label-left" novalidate>
 
                       <input type="hidden" name="postback" value="1" />
@@ -458,7 +483,7 @@ $DocTitle = $isUser?UPDATE_USER_TITLE:REGISTER_NEW_USER_TITLE;
                       <?php endif; ?>
                       <div class="ln_solid"></div>
                       <div class="form-group">
-                        <div class="col-md-6 col-md-offset-3">
+                        <div class="col-md-6 col-md-offset-3" style="text-align: center;">
                           <?php if($callerURL) : ?>
                               <input type="button" value="<?=BUTTON_CANCEL?>" class="btn btn-primary cancel" onclick="javascript:window.location='http://<?=$callerURL?>'; return false;" />
                           <?php endif; ?>
@@ -472,6 +497,33 @@ $DocTitle = $isUser?UPDATE_USER_TITLE:REGISTER_NEW_USER_TITLE;
                         </div>
                       </div>
                       <input type="hidden" name="autoconn" value=""/>
+                      <?php if(!$isUser) : ?>
+                      <div class="ln_solid"></div>
+                      <div style="text-align: center; font-size: 14px;"><?=MY_VHL_ENTRY?> <a href="<?=RELATIVE_PATH?>/controller/authentication" style="text-decoration: underline;"><?=ENTER?></a></div>
+                      <div class="form-group omb_login">
+                          <div class="omb_loginOr">
+                              <div>
+                                  <hr class="ln_solid" />
+                                  <span class="omb_spanOr">ou entre com</span>
+                              </div>
+                          </div>
+                          <?php $build_query = '?origin=&iahx='.base64_encode('portal'); ?>
+                          <div class="row omb_row-sm-offset-3 omb_socialButtons">
+                              <div class="col-xs-6 col-sm-3">
+                                  <a href="/connector/facebook/<?php echo $build_query; ?>" class="btn btn-lg btn-block omb_btn-facebook">
+                                      <i class="fa fa-facebook visible-xs"></i>
+                                      <span class="hidden-xs">Facebook</span>
+                                  </a>
+                              </div>
+                              <div class="col-xs-6 col-sm-3">
+                                  <a href="/connector/google/<?php echo $build_query; ?>" class="btn btn-lg btn-block omb_btn-google">
+                                      <i class="fa fa-google visible-xs"></i>
+                                      <span class="hidden-xs">Google</span>
+                                  </a>
+                              </div>
+                          </div>
+                      </div>
+                      <?php endif; ?>
                     </form>
                   </div>
                 </div>

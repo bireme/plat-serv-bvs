@@ -15,7 +15,7 @@
                 <div class="col-xs-12 col-sm-6">
                     <p><?=$trans->getTrans($_REQUEST["action"],'MY_VHL_SUMMARY')?></p>
                 </div>
-                <div class="modal fade bs-modal-lg" tabindex="-1" role="dialog" aria-hidden="true" style="z-index: 9999; color: #73879C;">
+                <div class="modal fade bs-modal-lg" tabindex="-1" role="dialog" aria-hidden="true" style="color: #73879C;">
                     <div class="modal-dialog modal-lg">
                       <div class="modal-content">
 
@@ -58,12 +58,6 @@
                         <span class="hidden-xs">Facebook</span>
                     </a>
                 </div>
-                <!--div class="col-xs-6 col-sm-3">
-                    <a href="/connector/linkedin" class="btn btn-lg btn-block omb_btn-linkedin">
-                        <i class="fa fa-linkedin visible-xs"></i>
-                        <span class="hidden-xs">LinkedIn</span>
-                    </a>
-                </div-->
                 <div class="col-xs-6 col-sm-3">
                     <a href="/connector/google/<?php echo $build_query; ?>" class="btn btn-lg btn-block omb_btn-google">
                         <i class="fa fa-google visible-xs"></i>
