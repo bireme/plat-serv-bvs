@@ -25,7 +25,7 @@ if(!empty($_GET['userTK'])){
 $callerURL = !empty($_REQUEST['c'])?base64_decode($_REQUEST['c']):false;
 
 /* variaveis do formulario */
-$userID = isset($arrUserData)?$arrUserData['userID']:$_REQUEST['id'];
+$userID = isset($arrUserData)?$arrUserData['userID']:$_REQUEST['userID'];
 
 $firstName = !empty($_REQUEST['firstName']) ? $_REQUEST['firstName'] : false;
 $lastName = !empty($_REQUEST['lastName']) ? $_REQUEST['lastName'] : false;
@@ -204,7 +204,7 @@ $DocTitle = $isUser?UPDATE_USER_TITLE:REGISTER_NEW_USER_TITLE;
                           $act = "update";
                       }else{
                           if($callerURL) { ?>
-                              <div class="breadcrumb"><a href="http://<?=$callerURL?>"><?=INDEX?></a> &gt; <?=REGISTER_NEW_USER_TITLE?></div>
+                              <div class="breadcrumb"><a href="<?=$callerURL?>"><?=INDEX?></a> &gt; <?=REGISTER_NEW_USER_TITLE?></div>
                           <?php }
                           $showLoginField = true;
                           $act = "registry";
@@ -239,36 +239,37 @@ $DocTitle = $isUser?UPDATE_USER_TITLE:REGISTER_NEW_USER_TITLE;
                     </div>
                     <?php endif; ?>
 
+                    <?php if ($act == "registry") : ?>
                     <div class="help">
-                        <h2><?=FREE_REGISTRY?></h2>
-                        <?=FREE_REGISTRY_MESSAGE?>
-                    </div>
+                      <h2><?=FREE_REGISTRY?></h2>
+                      <?=FREE_REGISTRY_MESSAGE?>
 
-                    <div class="modal fade bs-modal-lg" tabindex="-1" role="dialog" aria-hidden="true" style="z-index: 9999; color: #73879C;">
-                      <div class="modal-dialog modal-lg">
-                        <div class="modal-content">
-
-                          <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span>
-                            </button>
-                            <h2 class="modal-title" id="myModalLabel"><?=MY_VHL?></h2>
+                      <div class="modal fade bs-modal-lg" tabindex="-1" role="dialog" aria-hidden="true" style="z-index: 9999; color: #73879C;">
+                        <div class="modal-dialog modal-lg">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span>
+                              </button>
+                              <h2 class="modal-title"><?=MY_VHL?></h2>
+                            </div>
+                            <div class="modal-body">
+                              <?=MY_VHL_DESCRIPTION?>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-default" data-dismiss="modal"><?=BUTTON_CLOSE?></button>
+                            </div>
                           </div>
-                          <div class="modal-body">
-                            <?=MY_VHL_DESCRIPTION?>
-                          </div>
-                          <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal"><?=BUTTON_CLOSE?></button>
-                          </div>
-
                         </div>
                       </div>
                     </div>
+                    <?php endif; ?>
 
                     <form method="post" name="cadastro" class="form-horizontal form-label-left" novalidate>
 
                       <input type="hidden" name="postback" value="1" />
-                      <input type="hidden" name="userid" value="<?=trim($usr->getID())?> " />
+                      <input type="hidden" name="userID" value="<?=trim($usr->getID())?> " />
                       <input type="hidden" name="source" value="<?=trim($usr->getSource())?>" />
+                      <input type="hidden" name="autoconn" value="" />
 
                       <span class="section"><?=PERSONAL_DATA?></span>
 
@@ -442,11 +443,10 @@ $DocTitle = $isUser?UPDATE_USER_TITLE:REGISTER_NEW_USER_TITLE;
                       <div class="modal fade bs-terms-modal-lg" tabindex="-1" role="dialog" aria-hidden="true" style="z-index: 9999;">
                         <div class="modal-dialog modal-lg">
                           <div class="modal-content">
-
                             <div class="modal-header">
                               <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span>
                               </button>
-                              <h2 class="modal-title" id="myModalLabel"><?=MY_VHL?></h2>
+                              <h2 class="modal-title"><?=MY_VHL?></h2>
                             </div>
                             <div class="modal-body">
                               <?=TERMS_MESSAGE?>
@@ -454,7 +454,6 @@ $DocTitle = $isUser?UPDATE_USER_TITLE:REGISTER_NEW_USER_TITLE;
                             <div class="modal-footer">
                               <button type="button" class="btn btn-default" data-dismiss="modal"><?=BUTTON_CLOSE?></button>
                             </div>
-
                           </div>
                         </div>
                       </div>
@@ -462,11 +461,10 @@ $DocTitle = $isUser?UPDATE_USER_TITLE:REGISTER_NEW_USER_TITLE;
                       <div class="modal fade bs-policy-modal-lg" tabindex="-1" role="dialog" aria-hidden="true" style="z-index: 9999;">
                         <div class="modal-dialog modal-lg">
                           <div class="modal-content">
-
                             <div class="modal-header">
                               <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span>
                               </button>
-                              <h2 class="modal-title" id="myModalLabel"><?=MY_VHL?></h2>
+                              <h2 class="modal-title"><?=MY_VHL?></h2>
                             </div>
                             <div class="modal-body">
                               <?=DATA_POLICY_MESSAGE?>
@@ -474,7 +472,6 @@ $DocTitle = $isUser?UPDATE_USER_TITLE:REGISTER_NEW_USER_TITLE;
                             <div class="modal-footer">
                               <button type="button" class="btn btn-default" data-dismiss="modal"><?=BUTTON_CLOSE?></button>
                             </div>
-
                           </div>
                         </div>
                       </div>
@@ -485,7 +482,7 @@ $DocTitle = $isUser?UPDATE_USER_TITLE:REGISTER_NEW_USER_TITLE;
                       <div class="form-group">
                         <div class="col-md-6 col-md-offset-3" style="text-align: center;">
                           <?php if($callerURL) : ?>
-                              <input type="button" value="<?=BUTTON_CANCEL?>" class="btn btn-primary cancel" onclick="javascript:window.location='http://<?=$callerURL?>'; return false;" />
+                              <input type="button" value="<?=BUTTON_CANCEL?>" class="btn btn-primary cancel" onclick="javascript:window.location='<?=$callerURL?>'; return false;" />
                           <?php endif; ?>
                           <?php if($isUser) : ?>
                               <input type="hidden" value="atualizar" name="acao" />
@@ -496,7 +493,6 @@ $DocTitle = $isUser?UPDATE_USER_TITLE:REGISTER_NEW_USER_TITLE;
                           <?php endif; ?>
                         </div>
                       </div>
-                      <input type="hidden" name="autoconn" value=""/>
                       <?php if(!$isUser) : ?>
                       <div class="ln_solid"></div>
                       <div style="text-align: center; font-size: 14px;"><?=MY_VHL_ENTRY?> <a href="<?=RELATIVE_PATH?>/controller/authentication" style="text-decoration: underline;"><?=ENTER?></a></div>

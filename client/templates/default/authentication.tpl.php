@@ -1,6 +1,6 @@
 <?php require_once(dirname(__FILE__)."/header.tpl.php"); ?>
 
-<?php $b64HttpHost = base64_encode($_SERVER["HTTP_HOST"].$_SERVER["SCRIPT_NAME"].'/authentication'); ?>
+<?php $b64HttpHost = base64_encode(RELATIVE_PATH.'/controller/authentication'); ?>
 
 <?php $build_query = '?origin='.$origin.'&iahx='.$iahx; ?>
 
@@ -18,11 +18,10 @@
                 <div class="modal fade bs-modal-lg" tabindex="-1" role="dialog" aria-hidden="true" style="color: #73879C;">
                     <div class="modal-dialog modal-lg">
                       <div class="modal-content">
-
                         <div class="modal-header">
                           <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span>
                           </button>
-                          <h2 class="modal-title" id="myModalLabel"><?=$trans->getTrans($_REQUEST["action"],'MY_VHL')?></h2>
+                          <h2 class="modal-title"><?=$trans->getTrans($_REQUEST["action"],'MY_VHL')?></h2>
                         </div>
                         <div class="modal-body">
                           <?=$trans->getTrans($_REQUEST["action"],'MY_VHL_DESCRIPTION')?>
@@ -30,7 +29,6 @@
                         <div class="modal-footer">
                           <button type="button" class="btn btn-default" data-dismiss="modal"><?=$trans->getTrans($_REQUEST["action"],'BUTTON_CLOSE')?></button>
                         </div>
-
                       </div>
                     </div>
                 </div>

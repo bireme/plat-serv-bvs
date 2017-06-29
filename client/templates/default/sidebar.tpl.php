@@ -1,6 +1,6 @@
 <?php
     $path = rtrim($_SERVER['PHP_SELF'], '/') . '/';
-    $b64HttpHost = base64_encode($_SERVER["HTTP_HOST"].$_SERVER["SCRIPT_NAME"].'/authentication');
+    $b64HttpHost = base64_encode(RELATIVE_PATH.'/controller/authentication');
 ?>
 
         <div class="col-md-3 left_col">
@@ -107,7 +107,9 @@
                   </a>
                   <ul class="dropdown-menu dropdown-usermenu pull-right" style="width: 100%;">
                     <li><a href="<?=SERVICES_PLATFORM_DOMAIN?>/pub/userData.php?userTK=<?=urlencode($_SESSION["userTK"])?>&c=<?=$b64HttpHost?>"><?=$trans->getTrans('menu','MY_DATA')?></a></li>
-                    <!--li><a href="javascript:;"><?=$trans->getTrans('menu','CHANGE_PASSWORD')?></a></li-->
+                    <?php if ( empty($_SESSION["source"]) || 'ldap' == $_SESSION["source"] ) : ?>
+                    <li><a href="<?=SERVICES_PLATFORM_DOMAIN?>/pub/changePassword.php?userTK=<?=urlencode($_SESSION["userTK"])?>&c=<?=$b64HttpHost?>"><?=$trans->getTrans('menu','CHANGE_PASSWORD')?></a></li>
+                    <?php endif; ?>
                     <li><a href="<?=RELATIVE_PATH?>/controller/logout/control/business"><i class="fa fa-sign-out pull-right"></i><?=$trans->getTrans('menu','LOGOUT')?></a></li>
                   </ul>
                 </li>

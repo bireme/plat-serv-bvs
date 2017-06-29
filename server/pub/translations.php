@@ -34,6 +34,9 @@ if($lang == 'pt'){
     define('FIELD_LOGIN','E-mail ou login');
     define('FIELD_LOGIN_CONFIRMATION','Confirme seu e-mail ou login');
     define('FIELD_PASSWORD','Senha');
+    define('FIELD_OLD_PASSWORD','Atual');
+    define('FIELD_NEW_PASSWORD','Nova');
+    define('FIELD_NEW_PASSWORD_CONFIRM','Digite novamente');
     define('FIELD_PASSWORD_CONFIRMATION','Confirme sua senha');
     define('FIELD_GENDER_MALE','Masculino');
     define('FIELD_GENDER_FEMALE','Feminino');
@@ -41,31 +44,31 @@ if($lang == 'pt'){
     define("FIELD_DEGREE","Ensino_Fundamental|Ensino Fundamental (1o Grau),Ensino_Medio|Ensino Médio (2o Grau),Ensino_Tecnico|Ensino Profissional De Nível Técnico,Graduacao|Graduação,Especializacao|Especialização,Mestrado_Profissionalizante|Mestrado Profissionalizante,Mestrado|Mestrado,Doutorado|Doutorado,MBA|MBA,Pos_Doutorado|Pós Doutorado,PHD|PHD");
     define("FREE_REGISTRY","Registre-se gratuitamente!");
     define("FREE_REGISTRY_MESSAGE",'
-<p>O serviço Minha BVS registra as informações dos usuários e as preferências de pesquisa nas bases de dados da Rede BVS para fornecer serviços personalizados aos usuários da BVS.</p>
+<p>O serviço Minha BVS registra as informações dos usuários e as preferências de pesquisa nas bases de dados da Rede BVS, fornecendo serviços personalizados aos usuários da BVS.</p>
 <p>Isto significa que você poderá:</p>
 <ul>
     <li>Selecionar documentos de interesse</li>
     <li>Criar sua própria coleção</li>
     <li>Acessar documentos relacionados aos temas de seu interesse</li>
-    <li>Guardar o histórico de busca realizadas na BVS</li>
+    <li>Guardar o histórico de buscas realizadas na BVS</li>
     <li>Organizar os links dos seus sites favoritos</li>
-    <li>Armazenar suas publicações por meio do ORCID</li>
-    <li>Ter um espaço próprio/dashboard para salvar todas as suas preferencias de pesquisa</li>
+    <li>Acessar suas publicações por meio do ORCID</li>
+    <li>Ter um espaço próprio/dashboard para salvar todas as suas preferências de pesquisa</li>
 </ul>
 <p>Tenha acesso gratuito aos produtos e serviços de informação da Minha BVS. <a href="javascript:;" class="decor" data-toggle="modal" data-target=".bs-modal-lg" style="text-decoration: underline;">Saiba mais</a><p>
 ');
     define("MY_VHL_DESCRIPTION",'
 <h4>Visão Geral da Minha BVS</h4>
-<p>O serviço Minha BVS registra as informações dos usuários e as preferências de pesquisa nas bases de dados da Rede BVS para fornecer serviços personalizados aos usuários da BVS.</p>
+<p>O serviço Minha BVS registra as informações dos usuários e as preferências de pesquisa nas bases de dados da Rede BVS, fornecendo serviços personalizados aos usuários da BVS.</p>
 <p>Isto significa que você poderá:</p>
 <ul>
     <li>Selecionar documentos de interesse</li>
     <li>Criar sua própria coleção</li>
     <li>Acessar documentos relacionados aos temas de seu interesse</li>
-    <li>Guardar o histórico de busca realizadas na BVS</li>
+    <li>Guardar o histórico de buscas realizadas na BVS</li>
     <li>Organizar os links dos seus sites favoritos</li>
-    <li>Armazenar suas publicações por meio do ORCID</li>
-    <li>Ter um espaço próprio/dashboard para salvar todas as suas preferencias de pesquisa</li>
+    <li>Acessar suas publicações por meio do ORCID</li>
+    <li>Ter um espaço próprio/dashboard para salvar todas as suas preferências de pesquisa</li>
 </ul>
 ');
     define('MY_VHL_ENTRY','Já está registrado na Minha BVS?');
@@ -89,6 +92,7 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
     define("USER_ADD_SUCCESS","<b>Usuário criado com sucesso!</b>");
     define("USER_SEND_CONFIRMATION","<b>Cadastro de usuário realizado com sucesso!</b><br />Enviamos para o seu e-mail um link de confirmação da sua conta.<br />Favor clicar no link enviado para ativar sua conta na Minha BVS.");
     define("USER_UPDATED",'Usuário atualizado com sucesso.');
+    define("USER_PASSWORD_UPDATE",'Senha atualizada com sucesso!');
     define("USER_UPDATE_ERROR",'<b>Problemas durante atualização</b><br />O sistema não conseguiu atualizar os dados do usuário. Tente mais tarde.');
     define("USER_CONFIRMED",'<b>Sua conta foi confirmada com sucesso!</b><br />Por favor, acesse o seu perfil na Minha BVS e complete seu cadastro');
     define("USER_CONFIRMATION_ERROR",'<b>ERRO: Não foi possível realizar a confirmação de conta.</b');
@@ -96,6 +100,7 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
     define("VALMSG_LOGIN","Digite um email válido.");
     define("VALMSG_EMAIL","Digite um email válido.");
     
+    define("NEWPASS_INVALID_PASSWORD",'Senha inválida');
     define("NEWPASS_DOMAIN_NOT_PERMITTED",'Ação não permitida para este usuário. Entre em contato com o departamento de suporte da sua instituição.');
     define("NEWPASS_PASSWORD_SENT",'Uma nova senha foi enviada para o seu email.');
     define("SECURITY_PASSWORD_SENT",'<b>Usuário criado com sucesso!</b><br />Por questões de segurança, enviamos uma nova senha para o seu email.');
@@ -171,6 +176,7 @@ Se você possui usuário cadastrado no site ScIELO, na próxima vez que acessar 
     define("FORGOT_PASSWORD",'Esqueceu sua senha?');
     define("FORGOT_MY_PASSWORD",'esqueci minha senha');
     define("CHANGE_PASSWORD",'Alterar Senha');
+    define("RECOVER_PASSWORD",'Recuperar Senha');
     define("MY_DATA",'Editar Perfil');
     define("MY_ALERTS",'Meus Alertas');
     define("SEARCH",'Pesquisar');
@@ -230,6 +236,9 @@ if($lang == 'es'){
     define('FIELD_LOGIN','E-mail o login');
     define('FIELD_LOGIN_CONFIRMATION','Confirme su e-mail o login');
     define('FIELD_PASSWORD','Contraseña');
+    define('FIELD_OLD_PASSWORD','Actual');
+    define('FIELD_NEW_PASSWORD','Nueva');
+    define('FIELD_NEW_PASSWORD_CONFIRM','Repetir contraseña nueva');
     define('FIELD_PASSWORD_CONFIRMATION','Confirme su contrasenã');
     define('FIELD_GENDER_MALE','Masculino');
     define('FIELD_GENDER_FEMALE','Feminino');
@@ -237,31 +246,31 @@ if($lang == 'es'){
     define("FIELD_DEGREE","Ensino_Fundamental|Enseñanza o Educación Básica,Ensino_Medio|Enseñanza o Educación Media,Ensino_Tecnico|Enseñanza o Educación Técnico-Profesional,Graduacao|Superior Universitario de Grado,Especializacao|Especialización,Mestrado_Profissionalizante|Maestría Profisionalizante,Mestrado|Maestría,Doutorado|Doctorado,MBA|MBA,Pos_Doutorado|Pos Doctorado,PHD|PHD");
     define("FREE_REGISTRY","Registrese Gratuitamente!");
     define("FREE_REGISTRY_MESSAGE",'
-<p>O serviço Minha BVS registra as informações dos usuários e as preferências de pesquisa nas bases de dados da Rede BVS para fornecer serviços personalizados aos usuários da BVS.</p>
+<p>O serviço Minha BVS registra as informações dos usuários e as preferências de pesquisa nas bases de dados da Rede BVS, fornecendo serviços personalizados aos usuários da BVS.</p>
 <p>Isto significa que você poderá:</p>
 <ul>
     <li>Selecionar documentos de interesse</li>
     <li>Criar sua própria coleção</li>
     <li>Acessar documentos relacionados aos temas de seu interesse</li>
-    <li>Guardar o histórico de busca realizadas na BVS</li>
+    <li>Guardar o histórico de buscas realizadas na BVS</li>
     <li>Organizar os links dos seus sites favoritos</li>
-    <li>Armazenar suas publicações por meio do ORCID</li>
-    <li>Ter um espaço próprio/dashboard para salvar todas as suas preferencias de pesquisa</li>
+    <li>Acessar suas publicações por meio do ORCID</li>
+    <li>Ter um espaço próprio/dashboard para salvar todas as suas preferências de pesquisa</li>
 </ul>
 <p>Tenha acesso gratuito aos produtos e serviços de informação da Minha BVS. <a href="javascript:;" class="decor" data-toggle="modal" data-target=".bs-modal-lg" style="text-decoration: underline;">Saiba mais</a><p>
 ');
     define("MY_VHL_DESCRIPTION",'
 <h4>Visão Geral da Minha BVS</h4>
-<p>O serviço Minha BVS registra as informações dos usuários e as preferências de pesquisa nas bases de dados da Rede BVS para fornecer serviços personalizados aos usuários da BVS.</p>
+<p>O serviço Minha BVS registra as informações dos usuários e as preferências de pesquisa nas bases de dados da Rede BVS, fornecendo serviços personalizados aos usuários da BVS.</p>
 <p>Isto significa que você poderá:</p>
 <ul>
     <li>Selecionar documentos de interesse</li>
     <li>Criar sua própria coleção</li>
     <li>Acessar documentos relacionados aos temas de seu interesse</li>
-    <li>Guardar o histórico de busca realizadas na BVS</li>
+    <li>Guardar o histórico de buscas realizadas na BVS</li>
     <li>Organizar os links dos seus sites favoritos</li>
-    <li>Armazenar suas publicações por meio do ORCID</li>
-    <li>Ter um espaço próprio/dashboard para salvar todas as suas preferencias de pesquisa</li>
+    <li>Acessar suas publicações por meio do ORCID</li>
+    <li>Ter um espaço próprio/dashboard para salvar todas as suas preferências de pesquisa</li>
 </ul>
 ');
     define('MY_VHL_ENTRY','Já está registrado na Minha BVS?');
@@ -285,6 +294,7 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
     define("USER_ADD_SUCCESS","<b>¡Usuário añadido con succeso!</b>");
     define("USER_SEND_CONFIRMATION","<b>¡Registro de usuario realizado con éxito!</b><br />Enviamos a su e-mail un enlace de confirmación de su cuenta.<br />Por favor haga clic en el enlace enviado para activar su cuenta en la Mi BVS.");
     define("USER_UPDATED",'Usuario actualizado con succeso.');
+    define("USER_PASSWORD_UPDATE",'¡Contraseña actualizada con succeso!');
     define("USER_UPDATE_ERROR",'<b>Problemas en la actualización</b><br />El sistema no logro actualizar los datos del usuário. Tente mas tardera.');
     define("USER_CONFIRMED",'<b>Su cuenta ha sido confirmada con éxito!</b><br />Por favor, acceda a su perfil en Mi BVS y complete su registro');
     define("USER_CONFIRMATION_ERROR",'<b>ERROR: No fue posible confirmar la cuenta.</b>');
@@ -292,6 +302,7 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
     define("VALMSG_LOGIN","Digite un email válido.");
     define("VALMSG_EMAIL","Digite un email válido.");
 
+    define("NEWPASS_INVALID_PASSWORD",'Contraseña incorrecta');
     define("NEWPASS_DOMAIN_NOT_PERMITTED",'Acción no permitida para el usuário. Contacte el departamiento de soporte de su institución.');
     define("NEWPASS_PASSWORD_SENT",'Una nueva contraseña fue enviada para su email.');
     define("SECURITY_PASSWORD_SENT",'<b>¡Usuário añadido con succeso!</b><br />Por razones de seguridad, enviamos una nueva contraseña para su email.');
@@ -366,7 +377,8 @@ Si usted tiene usuário cadastrado en el sitio ScIELO, la próxima vez que acced
     define("MY_NEWS",'Mis Noticias');
     define("FORGOT_PASSWORD",'¿Olvidó su contraseña?');
     define("FORGOT_MY_PASSWORD",'olvide mi contraseña');
-    define("CHANGE_PASSWORD",'cambiar contraseña');
+    define("CHANGE_PASSWORD",'Cambiar Contraseña');
+    define("RECOVER_PASSWORD",'Recuperar Contraseña');
     define("MY_DATA",'Editar Perfil');
     define("MY_ALERTS",'Mis Alertas');
     define("SEARCH",'Buscar');
@@ -426,6 +438,9 @@ if($lang == 'en'){
     define('FIELD_LOGIN','E-mail or login');
     define('FIELD_LOGIN_CONFIRMATION','E-mail or login confirmation');
     define('FIELD_PASSWORD','Password');
+    define('FIELD_OLD_PASSWORD','Current');
+    define('FIELD_NEW_PASSWORD','New');
+    define('FIELD_NEW_PASSWORD_CONFIRM','Re-type new');
     define('FIELD_PASSWORD_CONFIRMATION','Password confirmation');
     define('FIELD_GENDER_MALE','Male');
     define('FIELD_GENDER_FEMALE','Female');
@@ -433,31 +448,31 @@ if($lang == 'en'){
     define("FIELD_DEGREE","Ensino_Fundamental|Basic Education,Ensino_Medio|High School,Ensino_Tecnico|Technical Studies,Graduacao|Graduate Study,Especializacao|Specialization,Mestrado_Profissionalizante|Professional Master's Degree,Mestrado|Master's Degree,Doutorado|Doctorate,MBA|MBA,Pos_Doutorado|Post Doctorate,PHD|PHD");
     define("FREE_REGISTRY","Register for free!");
     define("FREE_REGISTRY_MESSAGE",'
-<p>O serviço Minha BVS registra as informações dos usuários e as preferências de pesquisa nas bases de dados da Rede BVS para fornecer serviços personalizados aos usuários da BVS.</p>
+<p>O serviço Minha BVS registra as informações dos usuários e as preferências de pesquisa nas bases de dados da Rede BVS, fornecendo serviços personalizados aos usuários da BVS.</p>
 <p>Isto significa que você poderá:</p>
 <ul>
     <li>Selecionar documentos de interesse</li>
     <li>Criar sua própria coleção</li>
     <li>Acessar documentos relacionados aos temas de seu interesse</li>
-    <li>Guardar o histórico de busca realizadas na BVS</li>
+    <li>Guardar o histórico de buscas realizadas na BVS</li>
     <li>Organizar os links dos seus sites favoritos</li>
-    <li>Armazenar suas publicações por meio do ORCID</li>
-    <li>Ter um espaço próprio/dashboard para salvar todas as suas preferencias de pesquisa</li>
+    <li>Acessar suas publicações por meio do ORCID</li>
+    <li>Ter um espaço próprio/dashboard para salvar todas as suas preferências de pesquisa</li>
 </ul>
 <p>Tenha acesso gratuito aos produtos e serviços de informação da Minha BVS. <a href="javascript:;" class="decor" data-toggle="modal" data-target=".bs-modal-lg" style="text-decoration: underline;">Saiba mais</a><p>
 ');
     define("MY_VHL_DESCRIPTION",'
 <h4>Visão Geral da Minha BVS</h4>
-<p>O serviço Minha BVS registra as informações dos usuários e as preferências de pesquisa nas bases de dados da Rede BVS para fornecer serviços personalizados aos usuários da BVS.</p>
+<p>O serviço Minha BVS registra as informações dos usuários e as preferências de pesquisa nas bases de dados da Rede BVS, fornecendo serviços personalizados aos usuários da BVS.</p>
 <p>Isto significa que você poderá:</p>
 <ul>
     <li>Selecionar documentos de interesse</li>
     <li>Criar sua própria coleção</li>
     <li>Acessar documentos relacionados aos temas de seu interesse</li>
-    <li>Guardar o histórico de busca realizadas na BVS</li>
+    <li>Guardar o histórico de buscas realizadas na BVS</li>
     <li>Organizar os links dos seus sites favoritos</li>
-    <li>Armazenar suas publicações por meio do ORCID</li>
-    <li>Ter um espaço próprio/dashboard para salvar todas as suas preferencias de pesquisa</li>
+    <li>Acessar suas publicações por meio do ORCID</li>
+    <li>Ter um espaço próprio/dashboard para salvar todas as suas preferências de pesquisa</li>
 </ul>
 ');
     define('MY_VHL_ENTRY','Já está registrado na Minha BVS?');
@@ -480,7 +495,8 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
     //define("USER_ADD_SUCCESS","<b>User success registered</b><br />Your user is now registered in the VHL Passport<br />You are able to connect in SciELO and BVS applications with this user.");
     define("USER_ADD_SUCCESS","<b>User registration successful!</b>");
     define("USER_SEND_CONFIRMATION","<b>User registration successful!</b><br />We sent a confirmation link to your account for your email.<br />Please click on the link sent to activate your account in My VHL.");
-    define("USER_UPDATED",'User updated');
+    define("USER_UPDATED",'User updated successful!');
+    define("USER_PASSWORD_UPDATE",'Password updated successful!');
     define("USER_UPDATE_ERROR",'<b>Problems updating user data</b><br />The applications doesn\'t success to update the user data. Try again later.');
     define("USER_CONFIRMED",'<b>Your account has been confirmed successfully!</b><br />Please, access your profile in My VHL and complete your registration');
     define("USER_CONFIRMATION_ERROR",'<b>ERROR: Account verification failed.</b>');
@@ -488,6 +504,7 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
     define("VALMSG_LOGIN","Type a valid mail.");
     define("VALMSG_EMAIL","Type a valid mail.");
 
+    define("NEWPASS_INVALID_PASSWORD",'Invalid password');
     define("NEWPASS_DOMAIN_NOT_PERMITTED",'Action not allowed for this User. Please contact the support department of your institution.');    
     define("NEWPASS_PASSWORD_SENT",'A new password was sent to your email.');
     define("SECURITY_PASSWORD_SENT",'<b>User registration successful!</b><br />For security reasons, we will send you a new password for your email.');
@@ -563,6 +580,7 @@ If you have a registered user in ScIELO website, the next time you access SciELO
     define("FORGOT_PASSWORD",'Forgot your password?');
     define("FORGOT_MY_PASSWORD",'forgot my password');
     define("CHANGE_PASSWORD",'Change Password');
+    define("RECOVER_PASSWORD",'Recover Password');
     define("MY_DATA",'Edit Profile');
     define("MY_ALERTS",'My Alerts');
     define("SEARCH",'Search');

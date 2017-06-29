@@ -66,7 +66,7 @@ if ( isset($_SESSION['userTK']) && !empty($_SESSION['userTK']) ) {
     $data = Authentication::getUserData($_SESSION["userTK"]);
     
     if ( !$data['agreement_date'] ) {
-        $b64HttpHost = base64_encode($_SERVER["HTTP_HOST"].$_SERVER["SCRIPT_NAME"].'/authentication');
+        $b64HttpHost = base64_encode(RELATIVE_PATH.'/controller/authentication');
         header('Location:'.SERVICES_PLATFORM_DOMAIN.'/pub/userData.php?userTK='.urlencode($_SESSION["userTK"]).'&c='.$b64HttpHost);
         exit();
     }

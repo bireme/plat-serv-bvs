@@ -528,7 +528,51 @@ class UserDAO {
         return $retValue;
     }
 
-    public static function changePassword(){}
+    /**
+     * Change user password
+     *
+     * @param string $userID
+     * @param string $oldPassword
+     * @param string $newPassword
+     * @return boolean
+     */
+    public static function changePassword($userID, $oldPassword, $newPassword){
+        global $_conf;
+        $retValue = false;
+        $retStats = false;
+
+        /* Get the custom LDAP data, based on user's mail domain */
+        $userDomain = substr(stristr($userID,'@'),1);
+
+        if ( ($userDomain != 'bireme.org') && ($userDomain != 'scielo.org') ) {
+            if(self::isUser($userID)){
+
+                if ( LDAPAuthenticator::authenticateUser($userID, $oldPassword) ) {
+
+                    $connConfig = ToolsAuthentication::configLDAPConnection($userID);
+
+                    $userAttributes['userPassword'] = $newPassword;
+                    $userAttributes['cn'] = $userID; /* mandatory */
+
+                    try{
+                        $retStats = LDAP::update($connConfig, $userAttributes);
+                    }catch(Exception $e){
+                        $logger = &Log::singleton('file', LOG_FILE, __CLASS__, $_conf);
+                        $logger->log($e->getMessage(),PEAR_LOG_EMERG);
+                        throw $e;
+                    }
+
+                    if ( $retStats !== false ) $retValue = true;
+                } else {
+                    $retValue = 'invalidpass';
+                }
+            }
+        }else{
+            $retValue = 'DomainNotPermitted';
+        }
+
+        return $retValue;
+    }
 
     /**
      * Create and set a random password

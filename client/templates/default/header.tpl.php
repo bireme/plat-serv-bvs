@@ -13,7 +13,7 @@
     <meta name="MSSmartTagsPreventParsing" content="true" />
     <meta name="generator" content="BVSServices <?=VERSION?>" />
 
-    <title><?=$trans->getTrans($_REQUEST["action"],'MY_VHL')?></title>
+    <title><?=$trans->getTrans('authentication','MY_VHL')?></title>
 
     <!-- Bootstrap -->
     <link href="<?=RELATIVE_PATH?>/vendors/bootstrap/dist/css/bootstrap.min.css" type="text/css" rel="stylesheet">

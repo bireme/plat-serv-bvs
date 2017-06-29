@@ -13,6 +13,10 @@
  * Edit this file in UTF-8 - Test String "áéíóú"
  */
 
+/* Web Services configuration*/
+define("SERVICES_PLATFORM_DOMAIN","http://vm.platserver");
+define("SERVICES_PLATFORM_SERVER",SERVICES_PLATFORM_DOMAIN."/webservices");
+
 /* MYSQL Database configuration */
 define("DB_HOST","localhost");
 define("DB_USERNAME","");
