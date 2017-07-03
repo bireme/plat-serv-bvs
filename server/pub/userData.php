@@ -46,6 +46,7 @@ $orcid = !empty($_REQUEST['orcid']) ? $_REQUEST['orcid'] : false;
 $researcherID = !empty($_REQUEST['researcherID']) ? $_REQUEST['researcherID'] : false;
 $lattes = !empty($_REQUEST['lattes']) ? $_REQUEST['lattes'] : false;
 $terms = !empty($_REQUEST['terms']) ? $_REQUEST['terms'] : false;
+$acceptMail = !empty($_REQUEST['accept_mail']) ? $_REQUEST['accept_mail'] : 0;
 $acao = !empty($_REQUEST['acao']) ? $_REQUEST['acao'] : 'default';
 $userKey = !empty($_REQUEST['key']) ? $_REQUEST['key'] : false;
 $msg = null; /* system messages */
@@ -76,6 +77,7 @@ switch($acao){
         $usr->setLattes($lattes);
         $usr->setBirthday($birthday);
         $usr->setAgreementDate($terms);
+        $usr->setAcceptMail($acceptMail);
 
         if(Verifier::chkObjUser($usr)){
             $migrationResult = ToolsRegister::authenticateRegisteringUser($usr);
@@ -121,6 +123,7 @@ switch($acao){
         $usr->setLattes($lattes);
         $usr->setBirthday(date("Y-m-d", strtotime($birthday)));
         $usr->setAgreementDate($terms);
+        $usr->setAcceptMail($acceptMail);
 
         if(Verifier::chkObjUser($usr)){
             $result = UserDAO::updateUser($usr);
@@ -428,11 +431,21 @@ $DocTitle = $isUser?UPDATE_USER_TITLE:REGISTER_NEW_USER_TITLE;
                           <input id="birthday" name="birthday" class="date-picker form-control col-md-7 col-xs-12" required="required" type="text" value="<?=$birth?>">
                         </div>
                       </div>
+                      <div class="item field form-group">
+                        <div class="col-md-3 col-sm-3 col-xs-12"></div>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <div class="checkbox">
+                              <input id="accept_mail" name="accept_mail" type="checkbox" class="flat" value="1" <?php if ( $usr->getAcceptMail() ) echo "checked"; ?>>
+                              <span class="accept-mail"><?=ACCEPT_MAIL?></span>
+                          </div>
+                        </div>
+                      </div>
                       <?php if( !$usr->getAgreementDate() ) : ?>
+                      <div class="ln_solid"></div>
                       <div class="item field form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="terms"><?=TERMS?> <span class="required">*</span>
                         </label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
+                        <div class="col-md-6 col-sm-6 col-xs-12" style="padding-bottom: 20px;">
                           <div class="checkbox">
                               <input id="terms" name="terms" type="checkbox" class="flat" value="<?php echo date('Y-m-d'); ?>" required="required">
                               <span class="terms-agreement"><?=TERMS_AGREEMENT_MESSAGE?></span>

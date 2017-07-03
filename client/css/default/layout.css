@@ -279,7 +279,8 @@ img.star {
     width: 12px;
 }
 
-span.terms-agreement {
+span.terms-agreement,
+span.accept-mail {
     position: absolute;
     padding-left: 5px;
 }

@@ -39,10 +39,25 @@
         var max = moment();
         var min = moment().subtract(100, 'years');
 
+        var regional = [];
+        regional["pt"] = {
+            daysOfWeek: [ "Do", "2ª", "3ª", "4ª", "5ª", "6ª", "Sa" ],
+            monthNames: [ "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro" ]
+        };
+        regional["es"] = {
+            daysOfWeek: [ "Do", "Lu", "Ma", "Mi", "Ju", "Vi", "Sa" ],
+            monthNames: [ "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre" ]
+        };
+        regional["en"] = {
+            daysOfWeek: [ "Su", "Mo", "Tu", "We", "Th", "Fr", "Sa" ],
+            monthNames: [ "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ]
+        };
+
         $('#birthday').daterangepicker({
           maxDate: max,
           minDate: min,
           format: 'DD/MM/YYYY',
+          locale: regional[LANG],
           singleDatePicker: true,
           showDropdowns: true,
           calender_style: "picker_2"

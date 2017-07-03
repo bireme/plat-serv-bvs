@@ -224,6 +224,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `birthday` varchar(22) NOT NULL DEFAULT '',
   `agreement_date` varchar(22) NOT NULL DEFAULT '',
   `last_login` datetime,
+  `accept_mail` binary(1) NOT NULL DEFAULT '0',
   `active` binary(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`sysUID`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8;

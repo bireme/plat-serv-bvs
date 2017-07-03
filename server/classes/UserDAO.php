@@ -112,6 +112,7 @@ class UserDAO {
             $objUser->setResearcherID($res[0]['researcherID']);
             $objUser->setLattes($res[0]['lattes']);
             $objUser->setBirthday($res[0]['birthday']);
+            $objUser->setAcceptMail($res[0]['accept_mail']);
             $objUser->setAgreementDate($res[0]['agreement_date']);
             $objUser->setProfile(ProfileDAO::getProfileList($objUser->getID()));
 
@@ -185,6 +186,7 @@ class UserDAO {
                                                  lattes,
                                                  birthday,
                                                  agreement_date,
+                                                 accept_mail,
                                                  active,
                                                  userPassword )
                                      VALUES ('".$objUser->getID()."','".
@@ -204,6 +206,7 @@ class UserDAO {
                                                 $objUser->getLattes()."','".
                                                 $objUser->getBirthday()."','".
                                                 $objUser->getAgreementDate()."','".
+                                                $objUser->getAcceptMail()."','".
                                                 $active."','".
                                                 $hash."'";
                                                 // empty password
@@ -258,6 +261,7 @@ class UserDAO {
                             researcherID ='".$objUser->getResearcherID()."',
                             lattes ='".$objUser->getLattes()."',
                             birthday ='".$objUser->getBirthday()."',
+                            accept_mail ='".$objUser->getAcceptMail()."',
                             agreement_date ='".$objUser->getAgreementDate()."'";
 
             /*  check if the password will be updated */

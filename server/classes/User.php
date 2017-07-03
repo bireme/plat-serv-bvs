@@ -34,6 +34,7 @@ class User {
     private $_lattes;
     private $_birthday;
     private $_agreementDate;
+    private $_acceptMail = 0;
 
     public function __construct(){}
 
@@ -394,6 +395,24 @@ class User {
      */
     public function getAgreementDate(){
         return $this->_agreementDate;
+    }
+
+    /**
+     * Set accept mail permission
+     *
+     * @param int $binary
+     */
+    public function setAcceptMail($binary){
+        $this->_acceptMail = $binary;
+    }
+
+    /**
+     * Get accept mail permission
+     *
+     * @return int
+     */
+    public function getAcceptMail(){
+        return $this->_acceptMail;
     }
 }
 ?>

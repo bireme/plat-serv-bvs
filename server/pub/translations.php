@@ -118,6 +118,7 @@ Se você possui usuário cadastrado no site ScIELO, na próxima vez que acessar 
 <p>Futuramente, as novidades serão aplicadas nas demais instâncias da BVS, em todas as regiões geográficas e áreas temáticas da BVS, por meio do conceito de passaporte BVS.</p>
 ');
     define("UPDATE_INFO",'<b>Por favor, revise seus dados no formulário abaixo para continuar utilizando a Minha BVS.</b>');
+    define("ACCEPT_MAIL",'Gostaria de receber e-mails com informações da Minha BVS');
     define("TERMS",'Termos de uso');
     define("TERMS_AGREEMENT_MESSAGE",'Eu concordo com os <a data-toggle="modal" data-target=".bs-terms-modal-lg" style="cursor: pointer; text-decoration: underline;">Termos</a> e confirmo que li a <a data-toggle="modal" data-target=".bs-policy-modal-lg" style="cursor: pointer; text-decoration: underline;">Política de Dados</a> da Minha BVS');
     define("TERMS_MESSAGE",'
@@ -320,6 +321,7 @@ Si usted tiene usuário cadastrado en el sitio ScIELO, la próxima vez que acced
 <p>En el futuro, las novidades seran aplicadas en otras instancias de productos de la BVS, en todas las regiones geograficas y areas tematicas de la BVS, por medio del concepto de pasaporte BVS y SciELO</p>
 ');
     define("UPDATE_INFO",'<b>Por favor, revise sus datos en el formulario abajo para continuar utilizando la Mi BVS.</b>');
+    define("ACCEPT_MAIL",'Gostaria de receber e-mails com informações da Minha BVS');
     define("TERMS",'Condiciones de uso');
     define("TERMS_AGREEMENT_MESSAGE",'Estoy de acuerdo con las <a data-toggle="modal" data-target=".bs-terms-modal-lg" style="cursor: pointer; text-decoration: underline;">Condiciones</a> y confirmo que leí la <a data-toggle="modal" data-target=".bs-policy-modal-lg" style="cursor: pointer; text-decoration: underline;">Política de Datos</a> de Mi BVS');
     define("TERMS_MESSAGE",'
@@ -522,6 +524,7 @@ If you have a registered user in ScIELO website, the next time you access SciELO
 <p>In the future, these new features will be applied in other instances of VHL in all geographical regions and thematic areas of the VHL, through the concept of passport VHL and SciELO.</p>
 ');
     define("UPDATE_INFO",'<b>Please review your data in the form below to continue using the My VHL.</b>');
+    define("ACCEPT_MAIL",'Gostaria de receber e-mails com informações da Minha BVS');
     define("TERMS",'Terms of use');
     define("TERMS_AGREEMENT_MESSAGE",'I agree to the <a data-toggle="modal" data-target=".bs-terms-modal-lg" style="cursor: pointer; text-decoration: underline;">Terms</a> and have read the <a data-toggle="modal" data-target=".bs-policy-modal-lg" style="cursor: pointer; text-decoration: underline;">Data Policy</a> of My VHL');
     define("TERMS_MESSAGE",'
