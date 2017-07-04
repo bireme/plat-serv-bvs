@@ -24,7 +24,7 @@ if ( $userTK ) {
     $log['query'] = !empty($_REQUEST['query'])?$_REQUEST['query']:'*';
     $log['index'] = !empty($_REQUEST['index'])?$_REQUEST['index']:'*';
     $log['where'] = !empty($_REQUEST['where'])?$_REQUEST['where']:'*';
-    $log['filter'] = !empty($_REQUEST['filter'])?$_REQUEST['filter']:'*';
+    $log['filter'] = !empty($_REQUEST['filter'])?$_REQUEST['filter']:'';
     $log['page'] = isset($_REQUEST['page'])?$_REQUEST['page']:'';
     $log['output'] = isset($_REQUEST['output'])?$_REQUEST['output']:'';
     $log['referer'] = isset($_REQUEST['referer'])?$_REQUEST['referer']:'';

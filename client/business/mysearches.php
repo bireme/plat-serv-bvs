@@ -19,6 +19,20 @@ if ($_REQUEST["task"] === null){
 }
 $response["status"] = false;
 $params["sort"]=$_REQUEST["sort"];
+$label = $trans->getTrans($_REQUEST["action"], 'ORIGIN_SITE');
+
+if ( strpos($_SESSION['iahx'], VHL_SEARCH_PORTAL_DOMAIN) !== false ) {
+    $chunks = explode('/', $_SESSION['iahx']);
+    $chunks = array_values(array_filter($chunks));
+
+    if ( count($chunks) > 2 && !empty($chunks[2]) ) {
+        $label = strtoupper($chunks[2]);
+        $label = $trans->getTrans($_REQUEST["action"], $label);
+
+        if ( strpos($label, 'translate_') !== false )
+            $label = $trans->getTrans($_REQUEST["action"], 'ORIGIN_SITE');
+    }
+}
 
 switch($_REQUEST["task"]){
     case "list":

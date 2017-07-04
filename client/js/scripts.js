@@ -266,8 +266,9 @@ $( document ).ready(
                 var filter = encodeURIComponent($(this).parent().siblings('.filter').text());
                 var origin = $(this).val();
                 var portal = "http://pesquisa.bvsalud.org/portal";
+                var label  = $(this).attr('data-label');
                 var expr   = ( filter != '*' && filter != '' ) ? '?q=' + query + ' AND ' + filter : '?q=' + query;
-                var html   = '<a href="' + origin + expr + '" target="_blank">' + labels[LANG]['ORIGIN_SITE'] + '</a><br /><a href="' + portal + expr + '" target="_blank">' + labels[LANG]['VHL_PORTAL'] + '</a>';
+                var html   = '<a href="' + origin + expr + '" target="_blank">' + label + '</a><br /><a href="' + portal + expr + '" target="_blank">' + labels[LANG]['VHL_PORTAL'] + '</a>';
 
                 return html;
             }
