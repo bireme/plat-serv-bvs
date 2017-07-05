@@ -129,6 +129,7 @@ class Translations {
         self::$trans["menu"]["SEARCH_WIDGET"] = 'Buscas na BVS';
         self::$trans["menu"]["PROFILE_WIDGET"] = 'Temas de Interesse';
         self::$trans["menu"]["SHELF_WIDGET"] = 'Documentos Favoritos';
+        self::$trans["menu"]["START_TOUR"] = 'Iniciar Tour';
         self::$trans["menu"]["NEXT_PAGE"] = 'Próxima página';
         self::$trans["menu"]["BACK"] = '&larr; Voltar';
         self::$trans["menu"]["NEXT"] = 'Avançar &rarr;';

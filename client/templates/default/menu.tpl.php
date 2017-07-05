@@ -1,3 +1,5 @@
+        <?php parse_str($_SERVER['QUERY_STRING'], $output); ?>
+
         <?require_once(dirname(__FILE__)."/header.tpl.php");?>
         <?require_once(dirname(__FILE__)."/sidebar.tpl.php");?>
 
@@ -264,7 +266,7 @@
         </div>
         <!-- /page content -->
 
-        <?php if ( !$_SESSION['visited'] ) : $_SESSION['visited'] = true; ?>
+        <?php if ( !$_SESSION['visited'] || isset($output['tour']) ) : $_SESSION['visited'] = true; ?>
         <script type="text/javascript">
           function startIntro(){
             var intro = introJs();

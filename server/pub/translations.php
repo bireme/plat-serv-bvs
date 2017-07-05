@@ -204,6 +204,7 @@ Se você possui usuário cadastrado no site ScIELO, na próxima vez que acessar 
     define("SEARCH_WIDGET",'Buscas na BVS');
     define("PROFILE_WIDGET",'Temas de Interesse');
     define("SHELF_WIDGET",'Documentos das Coleções');
+    define("START_TOUR",'Iniciar Tour');
 }
 
 if($lang == 'es'){
@@ -407,6 +408,7 @@ Si usted tiene usuário cadastrado en el sitio ScIELO, la próxima vez que acced
     define("SEARCH_WIDGET",'Búsquedas en la BVS');
     define("PROFILE_WIDGET",'Temas de Interés');
     define("SHELF_WIDGET",'Documentos Favoritos');
+    define("START_TOUR",'Empezar Tour');
 }
 
 if($lang == 'en'){
@@ -610,6 +612,7 @@ If you have a registered user in ScIELO website, the next time you access SciELO
     define("SEARCH_WIDGET",'VHL Search');
     define("PROFILE_WIDGET",'Interest Topics');
     define("SHELF_WIDGET",'Favorite Documents');
+    define("START_TOUR",'Start Tour');
 }
 ?>
 

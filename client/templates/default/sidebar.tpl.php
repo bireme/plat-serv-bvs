@@ -110,6 +110,7 @@
                     <?php if ( empty($_SESSION["source"]) || 'ldap' == $_SESSION["source"] ) : ?>
                     <li><a href="<?=SERVICES_PLATFORM_DOMAIN?>/pub/changePassword.php?userTK=<?=urlencode($_SESSION["userTK"])?>&c=<?=$b64HttpHost?>"><?=$trans->getTrans('menu','CHANGE_PASSWORD')?></a></li>
                     <?php endif; ?>
+                    <li><a href="<?=RELATIVE_PATH?>/controller/authentication/?tour=true"><i class="fa pull-right"></i><?=$trans->getTrans('menu','START_TOUR')?></a></li>
                     <li><a href="<?=RELATIVE_PATH?>/controller/logout/control/business"><i class="fa fa-sign-out pull-right"></i><?=$trans->getTrans('menu','LOGOUT')?></a></li>
                   </ul>
                 </li>
