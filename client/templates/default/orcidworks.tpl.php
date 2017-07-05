@@ -66,4 +66,36 @@
         </div>
         <!-- /page content -->
 
+        <script type="text/javascript">
+          if (RegExp('multipage', 'gi').test(window.location.search)) {
+            function startIntro(){
+              var intro = introJs();
+                intro.setOptions({
+                  doneLabel: "<?=$trans->getTrans('menu','DONE')?>",
+                  prevLabel: "<?=$trans->getTrans('menu','BACK')?>",
+                  nextLabel: "<?=$trans->getTrans('menu','NEXT')?>",
+                  skipLabel: "<?=$trans->getTrans('menu','SKIP')?>",
+                  exitOnOverlayClick: false,
+                  steps: [
+                    {
+                      element: '#step19',
+                      intro: "ORCID - Minhas Publicações",
+                      position: 'right'
+                    },
+                    {
+                      intro: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi mattis libero ut condimentum commodo. Pellentesque pellentesque lorem pellentesque, lobortis turpis sed, interdum velit. Integer ac massa sed nulla accumsan interdum."
+                    },
+                    {
+                      intro: "FIM"
+                    }
+                  ]
+                });
+
+                intro.start();
+            }
+            
+            startIntro();
+          }
+        </script>
+
         <?require_once(dirname(__FILE__)."/footer.tpl.php");?>

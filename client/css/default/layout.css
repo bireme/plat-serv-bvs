@@ -307,6 +307,14 @@ select.bulkactions {
     display: none;
 }
 
+#sidebar-menu .introjs-showElement {
+    color: #000;
+}
+
+.tile_count {
+    margin-top: 50px !important;
+}
+
 @media (min-width: 1200px) {
     body.main_page .container {
         width: 1170px;

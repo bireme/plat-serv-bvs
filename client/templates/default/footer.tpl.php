@@ -12,20 +12,18 @@
     </div>
 
     <!-- jQuery -->
-    <script src="<?=RELATIVE_PATH?>/vendors/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="<?=RELATIVE_PATH?>/vendors/jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap -->
-    <script src="<?=RELATIVE_PATH?>/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="<?=RELATIVE_PATH?>/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
     <!-- FastClick -->
-    <script src="<?=RELATIVE_PATH?>/vendors/fastclick/lib/fastclick.js"></script>
-    <!-- Form Validator -->
-    <script src="<?=RELATIVE_PATH?>/js/gen_validatorv31.js"></script>
+    <script type="text/javascript" src="<?=RELATIVE_PATH?>/vendors/fastclick/lib/fastclick.js"></script>
     <!-- Custom Theme Scripts -->
-    <script src="<?=RELATIVE_PATH?>/build/js/custom.min.js"></script>
+    <script type="text/javascript" src="<?=RELATIVE_PATH?>/build/js/custom.min.js"></script>
     <!-- Translations Scripts -->
-    <script src="<?=RELATIVE_PATH?>/js/texts.js"></script>
+    <script type="text/javascript" src="<?=RELATIVE_PATH?>/js/texts.js"></script>
     <!-- Theme Scripts -->
-    <script src="<?=RELATIVE_PATH?>/js/functions.js"></script>
+    <script type="text/javascript" src="<?=RELATIVE_PATH?>/js/functions.js"></script>
     <!-- Main Scripts -->
-    <script src="<?=RELATIVE_PATH?>/js/scripts.js"></script>
+    <script type="text/javascript" src="<?=RELATIVE_PATH?>/js/scripts.js"></script>
   </body>
 </html>

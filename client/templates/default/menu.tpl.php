@@ -4,7 +4,7 @@
         <!-- page content -->
         <div class="right_col" role="main">
             <!-- top tiles -->
-            <div class="row tile_count">
+            <div id="step2" class="row tile_count">
               <div class="col-md-3 col-sm-4 col-xs-6 tile_stats_count">
                 <span class="count_top"><i class="fa fa-file-o"></i> <?=$trans->getTrans('menu','MY_SHELF')?></span>
                 <div class="count"><?php echo $totalCollections; ?></div>
@@ -48,7 +48,7 @@
                 </div>
               </div> -->
 
-              <div class="col-md-4">
+              <div id="step3" class="col-md-4">
                 <div class="x_panel">
                   <div class="x_title">
                     <h2><?=$trans->getTrans('menu','SHELF_WIDGET')?><small></small></h2>
@@ -71,7 +71,7 @@
                 </div>
               </div>
 
-              <div class="col-md-4">
+              <div id="step4" class="col-md-4">
                 <div class="x_panel">
                   <div class="x_title">
                     <h2><?=$trans->getTrans('menu','PROFILE_WIDGET')?><small></small></h2>
@@ -95,7 +95,7 @@
                 </div>
               </div>
 
-              <div class="col-md-4">
+              <div id="step5" class="col-md-4">
                 <div class="x_panel">
                   <div class="x_title">
                     <h2><?=$trans->getTrans('menu','MY_LINKS')?><small></small></h2>
@@ -121,7 +121,7 @@
             </div>
 
             <div class="row">
-              <div class="col-md-4">
+              <div id="step6" class="col-md-4">
                 <div class="x_panel">
                   <div class="x_title">
                     <h2><?=$trans->getTrans('menu','RECENT_ACTIVITIES')?><small></small></h2>
@@ -156,7 +156,7 @@
                 </div>
               </div>
 
-              <div class="col-md-4">
+              <div id="step7" class="col-md-4">
                 <div class="x_panel">
                   <div class="x_title">
                     <h2><?=$trans->getTrans('menu','SEARCH_WIDGET')?></h2>
@@ -263,5 +263,66 @@
             </div>
         </div>
         <!-- /page content -->
+
+        <?php if ( !$_SESSION['visited'] ) : $_SESSION['visited'] = true; ?>
+        <script type="text/javascript">
+          function startIntro(){
+            var intro = introJs();
+              intro.setOptions({
+                doneLabel: "<?=$trans->getTrans('menu','NEXT_PAGE')?>",
+                prevLabel: "<?=$trans->getTrans('menu','BACK')?>",
+                nextLabel: "<?=$trans->getTrans('menu','NEXT')?>",
+                skipLabel: "<?=$trans->getTrans('menu','SKIP')?>",
+                exitOnOverlayClick: false,
+                steps: [
+                  { 
+                    intro: "Minha BVS"
+                  },
+                  {
+                    element: '#step1',
+                    intro: "Visão Geral",
+                    position: 'right'
+                  },
+                  {
+                    element: '#step2',
+                    intro: "Total de Documentos/Links/Temas",
+                    position: 'bottom'
+                  },
+                  {
+                    element: '#step3',
+                    intro: "Widget - Documentos Favoritos",
+                    position: 'right'
+                  },
+                  {
+                    element: '#step4',
+                    intro: "Widget - Temas de Interesse",
+                    position: 'bottom'
+                  },
+                  {
+                    element: '#step5',
+                    intro: "Widget - Links Favoritos",
+                    position: 'left'
+                  },
+                  {
+                    element: '#step6',
+                    intro: "Widget - Atividades Recentes",
+                    position: 'right'
+                  },
+                  {
+                    element: '#step7',
+                    intro: "Widget - Buscas na BVS",
+                    position: 'right'
+                  }
+                ]
+              });
+              
+              intro.start().oncomplete(function() {
+                window.location.href = '<?php echo RELATIVE_PATH."/controller/mydocuments/control/business/?multipage=true"; ?>';
+              });
+          }
+
+          startIntro();
+        </script>
+        <?php endif; ?>
 
         <?require_once(dirname(__FILE__)."/footer.tpl.php");?>

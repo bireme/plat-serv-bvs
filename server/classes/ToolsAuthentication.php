@@ -48,6 +48,7 @@ class ToolsAuthentication {
 
             $result["source"] = $socialMedia['social_media'];
             $result["status"] = true;
+            $result["visited"] = false;
             $result["userID"] = $userID;
 
             /* if the user does not exist in SP database */
@@ -73,6 +74,7 @@ class ToolsAuthentication {
 
             $result["source"] = "bireme_accounts";
             $result["status"] = true;
+            $result["visited"] = false;
             $result["userID"] = $user->getID();
 
             /* if the user exists in BIREME Accounts, but does not exist in SP database */
@@ -92,6 +94,7 @@ class ToolsAuthentication {
 
             $result["source"] = "ldap";
             $result["status"] = true;
+            $result["visited"] = false;
             $result["userID"] = $userID;
 
             /* if the user exists in ldap, but does not exist in SP database */
@@ -111,7 +114,12 @@ class ToolsAuthentication {
         }
 
         if ( $result["status"] ) { // Set user's last login
-            $ll = UserDAO::setLastLogin($userID);
+            $gll = UserDAO::getLastLogin($userID);
+
+            if ( $gll )
+                $result["visited"] = true;
+
+            $sll = UserDAO::setLastLogin($userID);
         }
 
         return $result;

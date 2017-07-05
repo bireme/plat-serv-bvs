@@ -88,7 +88,7 @@
                       </div>
                     <?php endif; ?>
                     <div class="col-md-3 col-sm-3 col-xs-12">
-                        <section class="panel panel-folder">
+                        <section id="step13" class="panel panel-folder">
                             <div class="panel-body">
                                 <h5><?=$trans->getTrans($_REQUEST["action"],'TOOLS')?></h5>
                                 <ul class="list-docs-unstyled project_files">
@@ -96,7 +96,7 @@
                                 </ul>
                             </div>
                         </section>
-                        <section class="panel panel-folder">
+                        <section id="step14" class="panel panel-folder">
                             <div class="panel-body">
                                 <h5><?=$trans->getTrans($_REQUEST["action"],'PROFILES')?></h5>
                                 <?php if ($response["values"] != false ) : ?>
@@ -126,5 +126,43 @@
             <?php endforeach ?>
           </select>
         </div>
+
+        <script type="text/javascript">
+          if (RegExp('multipage', 'gi').test(window.location.search)) {
+            function startIntro(){
+              var intro = introJs();
+                intro.setOptions({
+                  doneLabel: "<?=$trans->getTrans('menu','NEXT_PAGE')?>",
+                  prevLabel: "<?=$trans->getTrans('menu','BACK')?>",
+                  nextLabel: "<?=$trans->getTrans('menu','NEXT')?>",
+                  skipLabel: "<?=$trans->getTrans('menu','SKIP')?>",
+                  exitOnOverlayClick: false,
+                  steps: [
+                    {
+                      element: '#step12',
+                      intro: "Temas de Interesse",
+                      position: 'right'
+                    },
+                    {
+                      element: '#step13',
+                      intro: "Ferramentas",
+                      position: 'left'
+                    },
+                    {
+                      element: '#step14',
+                      intro: "Temas",
+                      position: 'left'
+                    }
+                  ]
+                });
+
+                intro.start().oncomplete(function() {
+                  window.location.href = '<?php echo RELATIVE_PATH."/controller/mysearches/control/business/?multipage=true"; ?>';
+                });
+            }
+            
+            startIntro();
+          }
+        </script>
 
         <?require_once(dirname(__FILE__)."/footer.tpl.php");?>

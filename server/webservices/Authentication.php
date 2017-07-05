@@ -57,6 +57,7 @@ function loginUser($userID,$userPass,$socialMedia){
             $retValue['userLastName'] = $objUser->getLastName();              
             $retValue['userMail'] = $objUser->getEmail();
             $retValue['source'] = $response["source"];
+            $retValue['visited'] = $response["visited"];
             $retValue['userTK'] = Token::makeUserTK($objUser->getID(),$dUserPass,$response['source']);
         }else{
             $retValue = array(); /* redeclare the variable */

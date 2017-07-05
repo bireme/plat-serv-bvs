@@ -533,6 +533,33 @@ class UserDAO {
     }
 
     /**
+     * Get user's last login
+     *
+     * @param string $userID user ID
+     * @return string|boolean
+     */
+    public static function getLastLogin($userID){
+        global $_conf;
+        $retValue = false;
+        $strsql = "SELECT last_login FROM users
+                    WHERE userID = '".trim($userID)."'";
+
+        try{
+            $_db = new DBClass();
+            $res = $_db->databaseQuery($strsql);
+        }catch(DBClassException $e){
+            $logger = &Log::singleton('file', LOG_FILE, __CLASS__, $_conf);
+            $logger->log($e->getMessage(),PEAR_LOG_EMERG);
+        }
+
+        if($res[0]['last_login']){
+            $retValue = $res[0]['last_login'];
+        }
+
+        return $retValue;
+    }
+
+    /**
      * Change user password
      *
      * @param string $userID

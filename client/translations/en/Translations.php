@@ -129,6 +129,11 @@ class Translations {
         self::$trans["menu"]["SEARCH_WIDGET"] = 'Buscas na BVS';
         self::$trans["menu"]["PROFILE_WIDGET"] = 'Temas de Interesse';
         self::$trans["menu"]["SHELF_WIDGET"] = 'Documentos Favoritos';
+        self::$trans["menu"]["NEXT_PAGE"] = 'Próxima página';
+        self::$trans["menu"]["BACK"] = '&larr; Voltar';
+        self::$trans["menu"]["NEXT"] = 'Avançar &rarr;';
+        self::$trans["menu"]["SKIP"] = 'Pular';
+        self::$trans["menu"]["DONE"] = 'Concluir';
         self::$trans["menu"]["FOOTER_MESSAGE"] = '
 <p><strong>BIREME - PAHO - WHO</strong><br/>
 Latin American and Caribbean Center on Health Sciences Information<br />
