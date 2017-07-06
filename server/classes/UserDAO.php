@@ -99,7 +99,6 @@ class UserDAO {
             $objUser->setFirstName($res[0]['userFirstName']);
             $objUser->setLastName($res[0]['userLastName']);
             $objUser->setEmail($res[0]['userEmail']);
-            $objUser->setPassword($res[0]['userPassword']);
             $objUser->setGender($res[0]['userGender']);
             $objUser->setAffiliation($res[0]['userAffiliation']);
             $objUser->setCountry($res[0]['userCountry']);
@@ -133,11 +132,6 @@ class UserDAO {
         global $_conf;
         $retValue = true;
         $canInsert = true;
-
-        $hash = '';
-        if ( !$active ) {
-            $hash = Crypt::encrypt($objUser->getID().CRYPT_SEPARATOR.$objUser->getPassword(), CRYPT_PUBKEY);
-        }
 
         $source = $objUser->getSource() ? $objUser->getSource() : '';
         if ( $active && ( empty($source) || 'ldap' == $source ) ) {
@@ -207,8 +201,7 @@ class UserDAO {
                                                 $objUser->getBirthday()."','".
                                                 $objUser->getAgreementDate()."','".
                                                 $objUser->getAcceptMail()."','".
-                                                $active."','".
-                                                $hash."'";
+                                                $active."',''";
                                                 // empty password
                 $strsql .= ")";
 
@@ -224,7 +217,7 @@ class UserDAO {
                     $retValue = false;
                 } else {
                     if ( !$active ) {
-                        $sendConfirm = UserDAO::sendUserConfirm($objUser);
+                        $res = UserDAO::sendUserConfirm($objUser);
                     }
                 }
             }else{
@@ -647,37 +640,6 @@ class UserDAO {
             }
         }else{
             $retValue = 'DomainNotPermitted';
-        }
-
-        return $retValue;
-    }
-
-    /**
-     * Clear user's password
-     *
-     * @param string $userID User ID
-     * @return boolean
-     */
-    public static function clearPassword($userID){
-        global $_conf;
-        $retValue = false;
-
-        $sysUID = self::getSysUID($userID);
-
-        if ( $sysUID ) {
-            $strsql = "UPDATE users
-                    SET userPassword = ''
-                    WHERE sysUID = '".$sysUID."'";
-
-            try{
-                $_db = new DBClass();
-                $result = $_db->databaseQuery($strsql);
-            }catch(DBClassException $e){
-                $logger = &Log::singleton('file', LOG_FILE, __CLASS__, $_conf);
-                $logger->log($e->getMessage(),PEAR_LOG_EMERG);
-            }
-
-            if ( $result !== false ) $retValue = true;
         }
 
         return $retValue;

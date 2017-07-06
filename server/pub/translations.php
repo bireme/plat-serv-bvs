@@ -94,7 +94,8 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
     define("USER_UPDATED",'Usuário atualizado com sucesso.');
     define("USER_PASSWORD_UPDATE",'Senha atualizada com sucesso!');
     define("USER_UPDATE_ERROR",'<b>Problemas durante atualização</b><br />O sistema não conseguiu atualizar os dados do usuário. Tente mais tarde.');
-    define("USER_CONFIRMED",'<b>Sua conta foi confirmada com sucesso!</b><br />Por favor, acesse o seu perfil na Minha BVS e complete seu cadastro');
+    define("USER_CONFIRMED",'<b>Sua conta foi confirmada com sucesso!</b><br />A senha de acesso do seu usuário foi enviada por e-mail.<br />Por favor, acesse o seu perfil na Minha BVS e complete seu cadastro.');
+    define("USER_ADD_CONFIRMED",'<b>Usuário criado com sucesso!</b><br />A senha de acesso do seu usuário foi enviada por e-mail.');
     define("USER_CONFIRMATION_ERROR",'<b>ERRO: Não foi possível realizar a confirmação de conta.</b');
     define("VALMSG_G_EMPTY","Campo obrigatório. Não pode ficar em branco.");
     define("VALMSG_LOGIN","Digite um email válido.");
@@ -103,7 +104,6 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
     define("NEWPASS_INVALID_PASSWORD",'Senha inválida');
     define("NEWPASS_DOMAIN_NOT_PERMITTED",'Ação não permitida para este usuário. Entre em contato com o departamento de suporte da sua instituição.');
     define("NEWPASS_PASSWORD_SENT",'Uma nova senha foi enviada para o seu email.');
-    define("SECURITY_PASSWORD_SENT",'<b>Usuário criado com sucesso!</b><br />Por questões de segurança, enviamos uma nova senha para o seu email.');
     define("NOTICE",'Mensagem ao usuário');
     define("NOTICE_MESSAGE",'
 <h4>Seu login SciELO agora será o Passaporte das Redes BVS e SciELO</h4>
@@ -298,7 +298,8 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
     define("USER_UPDATED",'Usuario actualizado con succeso.');
     define("USER_PASSWORD_UPDATE",'¡Contraseña actualizada con succeso!');
     define("USER_UPDATE_ERROR",'<b>Problemas en la actualización</b><br />El sistema no logro actualizar los datos del usuário. Tente mas tardera.');
-    define("USER_CONFIRMED",'<b>Su cuenta ha sido confirmada con éxito!</b><br />Por favor, acceda a su perfil en Mi BVS y complete su registro');
+    define("USER_CONFIRMED",'<b>Su cuenta ha sido confirmada con éxito!</b><br />La contraseña de acceso de su usuario ha sido enviada por e-mail.<br />Por favor, acceda a su perfil en Mi BVS y complete su registro.');
+    define("USER_ADD_CONFIRMED",'<b>¡Usuário añadido con succeso!</b><br />La contraseña de acceso de su usuario ha sido enviada por e-mail.');
     define("USER_CONFIRMATION_ERROR",'<b>ERROR: No fue posible confirmar la cuenta.</b>');
     define("VALMSG_G_EMPTY","Campo obligatório. Não puede quedarse en blanco.");
     define("VALMSG_LOGIN","Digite un email válido.");
@@ -307,7 +308,6 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
     define("NEWPASS_INVALID_PASSWORD",'Contraseña incorrecta');
     define("NEWPASS_DOMAIN_NOT_PERMITTED",'Acción no permitida para el usuário. Contacte el departamiento de soporte de su institución.');
     define("NEWPASS_PASSWORD_SENT",'Una nueva contraseña fue enviada para su email.');
-    define("SECURITY_PASSWORD_SENT",'<b>¡Usuário añadido con succeso!</b><br />Por razones de seguridad, enviamos una nueva contraseña para su email.');
     define("NOTICE",'Mensaje al usuário');
     define("NOTICE_MESSAGE",'
 <h4>Su login SciELO ahora será el Pasaporte de las Redes BVS y SciELO</h4>
@@ -502,7 +502,8 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
     define("USER_UPDATED",'User updated successful!');
     define("USER_PASSWORD_UPDATE",'Password updated successful!');
     define("USER_UPDATE_ERROR",'<b>Problems updating user data</b><br />The applications doesn\'t success to update the user data. Try again later.');
-    define("USER_CONFIRMED",'<b>Your account has been confirmed successfully!</b><br />Please, access your profile in My VHL and complete your registration');
+    define("USER_CONFIRMED",'<b>Your account has been confirmed successfully!</b><br />Your user\'s password was sent by email.<br />Please, access your profile in My VHL and complete your registration.');
+    define("USER_ADD_CONFIRMED",'<b>User registration successful!</b><br />Your user\'s password was sent by email.');
     define("USER_CONFIRMATION_ERROR",'<b>ERROR: Account verification failed.</b>');
     define("VALMSG_G_EMPTY","Mandatory field.");
     define("VALMSG_LOGIN","Type a valid mail.");
@@ -511,7 +512,6 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
     define("NEWPASS_INVALID_PASSWORD",'Invalid password');
     define("NEWPASS_DOMAIN_NOT_PERMITTED",'Action not allowed for this User. Please contact the support department of your institution.');    
     define("NEWPASS_PASSWORD_SENT",'A new password was sent to your email.');
-    define("SECURITY_PASSWORD_SENT",'<b>User registration successful!</b><br />For security reasons, we will send you a new password for your email.');
     define("NOTICE",'Notice to the users');
     define("NOTICE_MESSAGE",'
 <h4>Now your SciELO Login will be the Passaport to BVS and SciELO network.</h4>

@@ -32,7 +32,6 @@ $lastName = !empty($_REQUEST['lastName']) ? $_REQUEST['lastName'] : false;
 $gender = !empty($_REQUEST['gender']) ? $_REQUEST['gender'] : false;
 $email = !empty($_REQUEST['email']) ? $_REQUEST['email'] : false;
 $login = !empty($_REQUEST['login']) ? $_REQUEST['login'] : false;
-$password = !empty($_REQUEST['password']) ? $_REQUEST['password'] : false;
 $profilesTexts = !empty($_REQUEST['profiletext']) ? $_REQUEST['profiletext'] : false;
 $profilesNames = !empty($_REQUEST['profilename']) ? $_REQUEST['profilename'] : false;
 $profilesIDs = !empty($_REQUEST['profileid']) ? $_REQUEST['profileid'] : false;
@@ -64,7 +63,6 @@ switch($acao){
         $usr->setLastName($lastName);
         $usr->setGender($gender);
         $usr->setID($login);
-        $usr->setPassword($password);
         $usr->setEmail($login);
         $usr->setAffiliation($afiliacao);
         $usr->setCountry($country);
@@ -88,12 +86,12 @@ switch($acao){
 
             if ($migrationResult["error"] === "userexists")
                 $response["msg"] = USER_ADD_SUCCESS;
-            elseif ($migrationResult["error"] === "sendnewpass")
-                $response["msg"] = SECURITY_PASSWORD_SENT;
+            elseif ($migrationResult["error"] === "userconfirmed")
+                $response["msg"] = USER_ADD_CONFIRMED;
             else
                 $response["msg"] = USER_SEND_CONFIRMATION;
 
-            $orcidData = UserDAO::fillOrcidData($usr->getID(), $usr->getOrcid());
+            $retValue = UserDAO::fillOrcidData($usr->getID(), $usr->getOrcid());
         }elseif (($migrationResult["status"] === false) &&
                 ($migrationResult["error"] === "userexists")){
             $response["msg"] = USER_EXISTS;
@@ -111,7 +109,6 @@ switch($acao){
         $usr->setFirstName($firstName);
         $usr->setLastName($lastName);
         $usr->setGender($gender);
-        //$usr->setEmail($email);
         $usr->setDegree($grauDeFormacao);
         $usr->setAffiliation($afiliacao);
         $usr->setCountry($country);
@@ -132,7 +129,7 @@ switch($acao){
         if($result === true){
             $response["msg"] = USER_UPDATED;
             $response["status"] = true;
-            $orcidData = UserDAO::fillOrcidData($usr->getID(), $usr->getOrcid());
+            $retValue = UserDAO::fillOrcidData($usr->getID(), $usr->getOrcid());
         }else{
             $response["msg"] = USER_UPDATE_ERROR;
             $response["status"] = false;
@@ -144,15 +141,13 @@ switch($acao){
 
         if($result === true){
             $usr = UserDAO::getUser(trim($email));
-            $pass = explode(CRYPT_SEPARATOR,Crypt::decrypt($usr->getPassword(),CRYPT_PUBKEY));
-            $usr->setPassword($pass[1]);
             $addUser = UserDAO::addUser($usr, 1);
 
-            if($addUser === true) {
+            if( $addUser ) {
                 $response["msg"] = USER_CONFIRMED;
                 $response["status"] = true;
-                $clearPass = UserDAO::clearPassword($usr->getID());
-                $orcidData = UserDAO::fillOrcidData($usr->getID(), $usr->getOrcid());
+                $retValue = UserDAO::createNewPassword($usr->getID());
+                $retValue = UserDAO::fillOrcidData($usr->getID(), $usr->getOrcid());
             }
         }else{
             $response["msg"] = USER_CONFIRMATION_ERROR;
@@ -303,20 +298,6 @@ $DocTitle = $isUser?UPDATE_USER_TITLE:REGISTER_NEW_USER_TITLE;
                           </label>
                           <div class="col-md-6 col-sm-6 col-xs-12">
                             <input type="email" id="confirmLogin" name="confirmLogin" data-validate-linked="login" required="required" class="form-control col-md-7 col-xs-12">
-                          </div>
-                        </div>
-                        <div class="item field form-group">
-                          <label for="password" class="control-label col-md-3"><?=FIELD_PASSWORD?> <span class="required">*</span>
-                          </label>
-                          <div class="col-md-6 col-sm-6 col-xs-12">
-                            <input id="password" type="password" name="password" data-validate-length-range="8,40" class="form-control col-md-7 col-xs-12" required="required">
-                          </div>
-                        </div>
-                        <div class="item field form-group">
-                          <label for="confirmPassword" class="control-label col-md-3 col-sm-3 col-xs-12"><?=FIELD_PASSWORD_CONFIRMATION?> <span class="required">*</span>
-                          </label>
-                          <div class="col-md-6 col-sm-6 col-xs-12">
-                            <input id="confirmPassword" type="password" name="confirmPassword" data-validate-linked="password" class="form-control col-md-7 col-xs-12" required="required">
                           </div>
                         </div>
                       <?php else : ?>

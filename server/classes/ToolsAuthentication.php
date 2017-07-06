@@ -214,11 +214,13 @@ class ToolsRegister {
                 if ( $isInServPlat ) {
                     $retValue = UserDAO::updateUser($objUserArg);
                     
-                    if ( $is_active ) {
-                        $retValue = UserDAO::addUser($objUserArg, 1);
-                        $retValue = UserDAO::createNewPassword($mailUserID);
-                    } else {
-                        $retValue = UserDAO::sendUserConfirm($objUserArg);
+                    if ( $retValue ) {
+                        if ( $is_active ) {
+                            $retValue = UserDAO::addUser($objUserArg, 1);
+                            $retValue = UserDAO::createNewPassword($mailUserID);
+                        } else {
+                            $retValue = UserDAO::sendUserConfirm($objUserArg);
+                        }
                     }
                 } else {
                     $retValue = UserDAO::addUser($objUserArg);
@@ -229,7 +231,7 @@ class ToolsRegister {
                     $result["status"] = true;
 
                     if ( $isInServPlat && $is_active )
-                        $result["error"] = "sendnewpass";
+                        $result["error"] = "userconfirmed";
                 }else{
                     $result["status"] = false;
                 }
