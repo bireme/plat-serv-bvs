@@ -63,6 +63,7 @@ if (isset($accessToken)) {
             $_SESSION["userLastName"] = $result["userLastName"];
             $_SESSION["userMail"] = $result["userMail"];
             $_SESSION["source"] = $result["source"];
+            $_SESSION["visited"] = $result["visited"];
             $_SESSION["iahx"] = base64_decode($iahx);
             //$response["status"] = true;
             //$response["values"] = $result;
