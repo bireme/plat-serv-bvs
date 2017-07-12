@@ -46,6 +46,12 @@
                       <li><a id="step19" href="<?=RELATIVE_PATH?>/controller/orcidworks/control/business"><?=$trans->getTrans('menu','ORCID_WORKS')?></a></li>
                     </ul>
                   </li>
+                  <li class="hide"><a href="<?php echo $_SERVER['SCRIPT_NAME']; ?>/authentication"><i class="fa fa-home"></i> <?=$trans->getTrans('menu','HOME')?></span></a>
+                  <li class="hide"><a href="<?=RELATIVE_PATH?>/controller/mydocuments/control/business"><i class="fa fa-file"></i> <?=$trans->getTrans('menu','MY_SHELF')?></a></li>
+                  <li class="hide"><a href="<?=RELATIVE_PATH?>/controller/myprofiledocuments/control/business"><i class="fa fa-folder-open"></i> <?=$trans->getTrans('menu','MY_PROFILE_DOCUMENTS')?></a></li>
+                  <li class="hide"><a href="<?=RELATIVE_PATH?>/controller/mysearches/control/business"><i class="fa fa-search"></i> <?=$trans->getTrans('menu','MY_SEARCHES')?></a></li>
+                  <li class="hide"><a href="<?=RELATIVE_PATH?>/controller/mylinks/control/business"><i class="fa fa-link"></i> <?=$trans->getTrans('menu','MY_LINKS')?></a></li>
+                  <li class="hide"><a href="<?=RELATIVE_PATH?>/controller/orcidworks/control/business"><i class="fa fa-file-text"></i> <?=$trans->getTrans('menu','ORCID_WORKS')?></a></li>
                 </ul>
               </div>
             </div>

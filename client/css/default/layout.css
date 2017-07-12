@@ -326,6 +326,14 @@ select.bulkactions {
     margin-top: 10px;
 }
 
+.nav-sm ul.side-menu li {
+    display: block !important;
+}
+
+.nav-sm ul.side-menu li:first-child {
+    display: none !important;
+}
+
 @media only screen 
 and (max-device-width : 414px) {
     .folder-data {
