@@ -117,7 +117,7 @@
                 </div>
             </div> 
             <div class="row omb_row-sm-offset-3">
-                <div class="col-xs-12 col-sm-3">
+                <div class="col-xs-12 col-sm-6">
                     <p class="omb_registry">
                         <span><?=$trans->getTrans($_REQUEST["action"],'NOTICE')?></span>
                         <a target="_parent" class="decor" href="<?=SERVICES_PLATFORM_DOMAIN.'/pub/userData.php?c='.$b64HttpHost ?>"><?=$trans->getTrans($_REQUEST["action"],'REGISTRY')?></a>

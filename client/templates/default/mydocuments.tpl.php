@@ -73,7 +73,7 @@
                                         <small style="display: block;"><?php echo $register["authors"]; ?></small>
                                     </div>
                                     <?if ($register["dirID"] == null){ $dirID = 0; }?>
-                                    <div>
+                                    <div class="doc-actions">
                                         <a class="label label-danger remove" href="<?=RELATIVE_PATH?>/controller/mydocuments/control/business/task/removedoc/document/<?=$register["docID"]?>/directory/<?=$register["dirID"]?>"><?php echo $trans->getTrans($_REQUEST["action"],'REMOVE_FROM_COLLECTION'); ?></a>
                                         <a class="label label-info move" href="javascript: void(0);" onclick="window.open('<?=RELATIVE_PATH?>/controller/directories/control/business/task/movedoc/document/<?=$register["docID"]?>/directory/<?=$register["dirID"]?>','','resizable=no,width=420,height=270')"><?php echo $trans->getTrans($_REQUEST["action"],'MOVE_TO'); ?></a>
                                         <a class="label label-primary related-docs" href="javascript:;"><?php echo $trans->getTrans('suggesteddocs','RELATED_DOCS'); ?></a>

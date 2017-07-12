@@ -86,14 +86,14 @@ $DocTitle = CHANGE_PASSWORD;
                     <form method="post" name="cadastro" class="form-horizontal form-label-left" novalidate>
                       <span class="section"><?=CHANGE_PASSWORD?></span>
                       <div class="item field form-group">
-                        <label for="oldPassword" class="control-label col-md-3"><?=FIELD_OLD_PASSWORD?> <span class="required">*</span>
+                        <label for="oldPassword" class="control-label col-md-3 col-sm-3 col-xs-12"><?=FIELD_OLD_PASSWORD?> <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
                           <input id="oldPassword" type="password" name="oldPassword" data-validate-length-range="8,40" class="form-control col-md-7 col-xs-12" required="required">
                         </div>
                       </div>
                       <div class="item field form-group">
-                        <label for="newPassword" class="control-label col-md-3"><?=FIELD_NEW_PASSWORD?> <span class="required">*</span>
+                        <label for="newPassword" class="control-label col-md-3 col-sm-3 col-xs-12"><?=FIELD_NEW_PASSWORD?> <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
                           <input id="newPassword" type="password" name="newPassword" data-validate-length-range="8,40" class="form-control col-md-7 col-xs-12" required="required">
@@ -108,7 +108,7 @@ $DocTitle = CHANGE_PASSWORD;
                       </div>
                       <div class="ln_solid"></div>
                       <div class="form-group">
-                        <div class="col-md-6 col-md-offset-3" style="text-align: center;">
+                        <div class="col-md-6 col-sm-6 col-md-offset-3 col-sm-offset-3" style="text-align: center;">
                           <?php if($callerURL) : ?>
                             <input type="button" value="<?=BUTTON_CANCEL?>" class="btn btn-primary cancel" onclick="javascript:window.location='<?=$callerURL?>'; return false;" />
                           <?php endif; ?>

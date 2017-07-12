@@ -307,31 +307,22 @@ $( document ).ready(
 
             });
         });
-/*
-        $(this).on('click', function(e){
-            if ( ! $(e.target).is('.combine, .search') ) {
-                $('button.combine, button.search').popover('hide');
-            } else {
-                var id;
 
-                if ( e.target.nodeName == 'BUTTON' ) {
-                  id = $(e.target).attr('id');
-                  $(e.target).popover('toggle');
-                }
-                else {
-                  id = $(e.target).parent().attr('id');
-                  $(e.target).parent().popover('toggle');
-                }
+        var setContentHeight = function () {
+            // reset height
+            $RIGHT_COL.css('min-height', $(window).height());
 
-                if ( $(e.target).is('.combine') ) {
-                  $('button.combine:not(#'+id+'), button.search').popover('hide');
-                }
+            var bodyHeight = $BODY.outerHeight(),
+                footerHeight = $BODY.hasClass('footer_fixed') ? 0 : $FOOTER.outerHeight(),
+                leftColHeight = $LEFT_COL.eq(1).height() + $SIDEBAR_FOOTER.height(),
+                contentHeight = bodyHeight < leftColHeight ? leftColHeight : bodyHeight;
 
-                if ( $(e.target).is('.search') ) {
-                  $('button.combine, button.search:not(#'+id+')').popover('hide');
-                }
-            }
-        });
-*/
+            // normalize content
+            contentHeight -= footerHeight + 2;
+
+            $RIGHT_COL.css('min-height', contentHeight);
+        };
+
+        setContentHeight();
     }
 );

@@ -92,10 +92,10 @@ define("TRIGRAMAS_SIMILARS_STRING","http://trigramas.bireme.br/cgi-bin/mx/cgi=@1
 define('DEFAULT_TRIGRAMAS_MODE','LILACS.orgiahx'); /* LILACS.orgiahx|SciELO.orgiahx */
 
 /* SimilarDocs service */
-define("SIMDOCS_ADD_PROFILE", "http://serverofi5.bireme.br:8080/SDService/SDService?psId=#PSID#&addProfile=#PROFILE#&sentence=");
-define("SIMDOCS_DELETE_PROFILE", "http://serverofi5.bireme.br:8080/SDService/SDService?psId=#PSID#&deleteProfile=#PROFILE#");
-define("SIMDOCS_GET_PROFILES", "http://serverofi5.bireme.br:8080/SDService/SDService?psId=#PSID#&showProfiles=");
-define("SIMDOCS_SIMILARS_STRING", "http://serverofi5.bireme.br:8080/SDService/SDService?psId=#PSID#&getSimDocs=#PROFILE#");
+define("SIMDOCS_ADD_PROFILE", "http://serverofi5.bireme.br:8180/SDService/SDService?psId=#PSID#&addProfile=#PROFILE#&sentence=");
+define("SIMDOCS_DELETE_PROFILE", "http://serverofi5.bireme.br:8180/SDService/SDService?psId=#PSID#&deleteProfile=#PROFILE#");
+define("SIMDOCS_GET_PROFILES", "http://serverofi5.bireme.br:8180/SDService/SDService?psId=#PSID#&showProfiles=");
+define("SIMDOCS_SIMILARS_STRING", "http://serverofi5.bireme.br:8180/SDService/SDService?psId=#PSID#&getSimDocs=#PROFILE#");
 
 /* log configuration */
 $_conf = array('mode' => 0600, 'timeFormat' => '%X %x');

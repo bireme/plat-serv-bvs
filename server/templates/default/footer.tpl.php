@@ -25,7 +25,7 @@
     <script src="<?=RELATIVE_PATH?>/vendors/moment/moment.min.js"></script>
     <script src="<?=RELATIVE_PATH?>/vendors/datepicker/daterangepicker.js"></script>
     <!-- Custom Theme Scripts -->
-    <script src="<?=RELATIVE_PATH?>/build/js/custom.min.js"></script>
+    <script src="<?=RELATIVE_PATH?>/build/js/custom.js"></script>
     <!-- Translations Scripts -->
     <script src="<?=RELATIVE_PATH?>/js/texts.js"></script>
     <!-- Theme Scripts -->

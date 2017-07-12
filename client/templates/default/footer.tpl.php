@@ -18,7 +18,7 @@
     <!-- FastClick -->
     <script type="text/javascript" src="<?=RELATIVE_PATH?>/vendors/fastclick/lib/fastclick.js"></script>
     <!-- Custom Theme Scripts -->
-    <script type="text/javascript" src="<?=RELATIVE_PATH?>/build/js/custom.min.js"></script>
+    <script type="text/javascript" src="<?=RELATIVE_PATH?>/build/js/custom.js"></script>
     <!-- Translations Scripts -->
     <script type="text/javascript" src="<?=RELATIVE_PATH?>/js/texts.js"></script>
     <!-- Theme Scripts -->

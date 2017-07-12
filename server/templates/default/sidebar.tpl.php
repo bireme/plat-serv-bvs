@@ -81,43 +81,45 @@
                 </div>
               </form>
 
-              <ul class="nav navbar-nav navbar-right profile_menu language_switcher">
-                <li>
-                  <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false" style="padding-bottom: 21px;">
-                    <i class="fa fa-flag"></i> <?php echo $languages[$_SESSION['lang']]; ?>
-                    <span class=" fa fa-angle-down"></span>
-                  </a>
-                  <ul class="dropdown-menu dropdown-usermenu pull-right">
-                    <?php foreach ($languages as $key => $value) : ?>
-                      <?php if ( $key == $_SESSION['lang'] ) continue; ?>
-                      <li><a href="<?php echo $path.'lang='.$key; ?>"><?php echo $value; ?></a></li>
-                    <?php endforeach; ?>
-                  </ul>
-                </li>
-              </ul>
+              <div class="top_menu">
+                <ul class="nav navbar-nav navbar-right profile_menu language_switcher">
+                  <li>
+                    <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false" style="padding-bottom: 21px;">
+                      <i class="fa fa-flag"></i> <?php echo $languages[$_SESSION['lang']]; ?>
+                      <span class=" fa fa-angle-down"></span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-usermenu pull-right">
+                      <?php foreach ($languages as $key => $value) : ?>
+                        <?php if ( $key == $_SESSION['lang'] ) continue; ?>
+                        <li><a href="<?php echo $path.'lang='.$key; ?>"><?php echo $value; ?></a></li>
+                      <?php endforeach; ?>
+                    </ul>
+                  </li>
+                </ul>
 
-              <ul class="nav navbar-nav navbar-right profile_menu">
-                <li>
-                  <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false" style="padding-bottom: 21px;">
-                    <?php if ( $_SESSION['fb_data']['picture']['data']['url'] ) : ?>
-                    <img src="<?php echo $_SESSION['fb_data']['picture']['data']['url']; ?>" alt="avatar"><?=$_SESSION["userFirstName"]?>
-                    <?php elseif ( $_SESSION['google_data']['picture'] ) : ?>
-                    <img src="<?php echo $_SESSION['google_data']['picture']; ?>" alt="avatar"><?=$_SESSION["userFirstName"]?>
-                    <?php else : ?>
-                    <img src="<?=RELATIVE_PATH?>/images/<?=$_SESSION["skin"]?>/logged.png" alt="avatar"><?=$_SESSION["userFirstName"]?>
-                    <?php endif; ?>
-                    <span class=" fa fa-angle-down"></span>
-                  </a>
-                  <ul class="dropdown-menu dropdown-usermenu pull-right" style="width: 100%;">
-                    <li><a href="<?=SERVICES_PLATFORM_DOMAIN?>/pub/userData.php?userTK=<?=urlencode($_SESSION["userTK"])?>&c=<?=$b64HttpHost?>"><?=MY_DATA?></a></li>
-                    <?php if ( empty($_SESSION["source"]) || 'ldap' == $_SESSION["source"] ) : ?>
-                    <li><a href="<?=SERVICES_PLATFORM_DOMAIN?>/pub/changePassword.php?userTK=<?=urlencode($_SESSION["userTK"])?>&c=<?=$b64HttpHost?>"><?=CHANGE_PASSWORD?></a></li>
-                    <?php endif; ?>
-                    <li><a href="<?=RELATIVE_PATH?>/controller/authentication/?tour=true"><i class="fa pull-right"></i><?=START_TOUR?></a></li>
-                    <li><a href="<?=RELATIVE_PATH?>/controller/logout/control/business"><i class="fa fa-sign-out pull-right"></i><?=LOGOFF?></a></li>
-                  </ul>
-                </li>
-              </ul>
+                <ul class="nav navbar-nav navbar-right profile_menu">
+                  <li>
+                    <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false" style="padding-bottom: 21px;">
+                      <?php if ( $_SESSION['fb_data']['picture']['data']['url'] ) : ?>
+                      <img src="<?php echo $_SESSION['fb_data']['picture']['data']['url']; ?>" alt="avatar"><?=$_SESSION["userFirstName"]?>
+                      <?php elseif ( $_SESSION['google_data']['picture'] ) : ?>
+                      <img src="<?php echo $_SESSION['google_data']['picture']; ?>" alt="avatar"><?=$_SESSION["userFirstName"]?>
+                      <?php else : ?>
+                      <img src="<?=RELATIVE_PATH?>/images/<?=$_SESSION["skin"]?>/logged.png" alt="avatar"><?=$_SESSION["userFirstName"]?>
+                      <?php endif; ?>
+                      <span class=" fa fa-angle-down"></span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-usermenu pull-right" style="width: 100%;">
+                      <li><a href="<?=SERVICES_PLATFORM_DOMAIN?>/pub/userData.php?userTK=<?=urlencode($_SESSION["userTK"])?>&c=<?=$b64HttpHost?>"><?=MY_DATA?></a></li>
+                      <?php if ( empty($_SESSION["source"]) || 'ldap' == $_SESSION["source"] ) : ?>
+                      <li><a href="<?=SERVICES_PLATFORM_DOMAIN?>/pub/changePassword.php?userTK=<?=urlencode($_SESSION["userTK"])?>&c=<?=$b64HttpHost?>"><?=CHANGE_PASSWORD?></a></li>
+                      <?php endif; ?>
+                      <li><a href="<?=RELATIVE_PATH?>/controller/authentication/?tour=true"><i class="fa pull-right"></i><?=START_TOUR?></a></li>
+                      <li><a href="<?=RELATIVE_PATH?>/controller/logout/control/business"><i class="fa fa-sign-out pull-right"></i><?=LOGOFF?></a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
             </nav>
           </div>
         </div>

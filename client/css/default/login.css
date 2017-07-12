@@ -4,12 +4,6 @@
     For .omb_spanOr use @body-bg instead of white.
 */
 
-@media (min-width: 768px) {
-    .omb_row-sm-offset-3 div:first-child[class*="col-"] {
-        margin-left: 25%;
-    }
-}
-
 .omb_login .omb_authTitle {
     text-align: center;
     line-height: 300%;
@@ -30,7 +24,7 @@
 }
 */
 .omb_login .omb_socialButtons a {
-    color: white; // In yourUse @body-bg 
+    color: white;
     opacity:0.9;
 }
 
@@ -126,10 +120,40 @@
     border-radius: 6px;
 }
 
+@media (min-width: 1200px) {
+    body.main_page .container {
+        width: 1170px;
+    }
+}
+
 @media (min-width: 768px) {
+    .omb_row-sm-offset-3 div:first-child[class*="col-"] {
+        margin-left: 25%;
+    }
+
     .omb_login .omb_forgotPwd,
     .omb_login .omb_registry {
         text-align: left;
         margin-top: 10px;
+    }
+}
+
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 568px) {
+    .omb_login h1.omb_authTitle {
+        font-size: 28px;
+    }
+}
+
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) {
+    .omb_row-sm-offset-3.omb_recover div:first-child[class*="col-"] {
+        margin-left: 15%;
+    }
+
+    .omb_row-sm-offset-3.omb_recover div.col-sm-3 {
+        width: 35%;
     }
 }

@@ -1,3 +1,5 @@
+html, body, .container, .main_container { height: 100%; }
+
 body.main_page {
     background: #FFFFFF;
     color: #333333;
@@ -300,7 +302,7 @@ select.bulkactions {
 }
 
 #loading, .related-loading {
-    background:url(../../images/default/loading.gif) no-repeat center center;
+    background: url(../../images/default/loading.gif) no-repeat center center;
     height: 60px;
     text-align: center;
     margin-top: 25px;
@@ -315,8 +317,99 @@ select.bulkactions {
     margin-top: 50px !important;
 }
 
-@media (min-width: 1200px) {
-    body.main_page .container {
-        width: 1170px;
+.top_menu {
+    display: flex;
+    float: right;
+}
+
+.nav-sm .navbar.nav_title {
+    margin-top: 10px;
+}
+
+@media only screen 
+and (max-device-width : 414px) {
+    .folder-data {
+        display: block;
+        margin-bottom: 20px;
+    }
+
+    .doc-actions {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .doc-actions a.label {
+        margin: 2px 0;
+    }
+
+    .related_docs ol {
+        padding-left: 12px;
+    }
+
+    .dataTables_paginate {
+        float: none !important;
+        text-align: center !important;
+    }
+}
+
+@media only screen 
+and (min-device-width : 768px) {
+    .nav-md footer {
+        margin-left: 0 !important;
+    }
+
+    .nav.toggle {
+        position: relative;
+    }
+}
+
+@media only screen 
+and (min-device-width : 1024px) {
+    .nav-md footer {
+        margin-left: 230px !important;
+    }
+}
+
+@media only screen 
+and (max-device-width : 320px) {
+    .nav-sm #menu_toggle {
+        padding: 15px 5px 0;
+    }
+}
+
+@media only screen 
+and (max-device-width : 736px) {
+    .nav-sm footer {
+        margin-left: 0 !important;
+    }
+
+    .nav_menu {
+        margin-bottom: 60px !important;
+    }
+
+    .nav_menu nav {
+        display: block !important;
+    }
+
+    .nav_menu nav form {
+        position: absolute;
+        margin-top: 70px;
+    }
+
+    .search_bar{
+        display: flex;
+        justify-content: center;
+    }
+
+    .nav-sm .tile_count .tile_stats_count {
+        text-overflow: ellipsis !important;
+    }
+
+    .item.bad .alert {
+        margin: 20px;
+    }
+
+    .x_title h2 {
+        width: auto !important;
     }
 }
