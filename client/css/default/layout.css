@@ -382,11 +382,6 @@ and (min-device-width : 1024px) {
         margin-left: 230px !important;
     }
 
-    .nav-md #menu_toggle .fa-bars,
-    .nav-md #menu_toggle .fa-chevron-circle-right {
-        display: none;
-    }
-
     #menu_toggle .fa-bars {
         display: none;
     }
@@ -409,10 +404,6 @@ and (max-device-width : 320px) {
 
 @media only screen 
 and (max-device-width : 736px) {
-    .nav-sm footer {
-        margin-left: 0 !important;
-    }
-
     .nav_menu {
         margin-bottom: 60px !important;
     }
