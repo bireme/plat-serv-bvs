@@ -63,7 +63,11 @@
           <div class="nav_menu">
             <nav role="navigation" style="display: flex;">
               <div class="nav toggle">
-                <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+                <a id="menu_toggle">
+                  <i class="fa fa-bars"></i>
+                  <i class="fa fa-chevron-circle-left"></i>
+                  <i class="fa fa-chevron-circle-right"></i>
+                </a>
               </div>
 
               <?php if ( 'portal' == $_SESSION['iahx'] ) : ?>

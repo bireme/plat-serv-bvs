@@ -334,6 +334,11 @@ select.bulkactions {
     display: none !important;
 }
 
+#menu_toggle .fa-chevron-circle-left,
+#menu_toggle .fa-chevron-circle-right {
+    display: none;
+}
+
 @media only screen 
 and (max-device-width : 414px) {
     .folder-data {
@@ -375,6 +380,23 @@ and (min-device-width : 768px) {
 and (min-device-width : 1024px) {
     .nav-md footer {
         margin-left: 230px !important;
+    }
+
+    .nav-md #menu_toggle .fa-bars,
+    .nav-md #menu_toggle .fa-chevron-circle-right {
+        display: none;
+    }
+
+    #menu_toggle .fa-bars {
+        display: none;
+    }
+
+    .nav-md #menu_toggle .fa-chevron-circle-left {
+        display: inline;
+    }
+
+    .nav-sm #menu_toggle .fa-chevron-circle-right {
+        display: inline;
     }
 }
 

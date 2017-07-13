@@ -49,6 +49,12 @@
                       <li><a href="<?=RELATIVE_PATH?>/controller/orcidworks/control/business"><?=ORCID_WORKS?></a></li>
                     </ul>
                   </li>
+                  <li class="hide"><a href="<?php echo $_SERVER['SCRIPT_NAME']; ?>/authentication"><i class="fa fa-home"></i> <?=HOMEPAGE?></span></a>
+                  <li class="hide"><a href="<?=RELATIVE_PATH?>/controller/mydocuments/control/business"><i class="fa fa-file"></i> <?=MY_SHELF?></a></li>
+                  <li class="hide"><a href="<?=RELATIVE_PATH?>/controller/myprofiledocuments/control/business"><i class="fa fa-folder-open"></i> <?=MY_PROFILE_DOCUMENTS?></a></li>
+                  <li class="hide"><a href="<?=RELATIVE_PATH?>/controller/mysearches/control/business"><i class="fa fa-search"></i> <?=MY_SEARCHES?></a></li>
+                  <li class="hide"><a href="<?=RELATIVE_PATH?>/controller/mylinks/control/business"><i class="fa fa-link"></i> <?=MY_LINKS?></a></li>
+                  <li class="hide"><a href="<?=RELATIVE_PATH?>/controller/orcidworks/control/business"><i class="fa fa-file-text"></i> <?=ORCID_WORKS?></a></li>
                 </ul>
               </div>
             </div>
@@ -60,7 +66,11 @@
           <div class="nav_menu">
             <nav class="" role="navigation" style="display: flex;">
               <div class="nav toggle">
-                <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+                <a id="menu_toggle">
+                  <i class="fa fa-bars"></i>
+                  <i class="fa fa-chevron-circle-left"></i>
+                  <i class="fa fa-chevron-circle-right"></i>
+                </a>
               </div>
 
               <?php if ( 'portal' == $_SESSION['iahx'] ) : ?>
