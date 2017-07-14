@@ -17,6 +17,11 @@
     <script type="text/javascript" src="<?=RELATIVE_PATH?>/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
     <!-- FastClick -->
     <script type="text/javascript" src="<?=RELATIVE_PATH?>/vendors/fastclick/lib/fastclick.js"></script>
+    <!-- Datatables -->
+    <script type="text/javascript" src="<?=RELATIVE_PATH?>/vendors/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="<?=RELATIVE_PATH?>/vendors/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+    <script type="text/javascript" src="<?=RELATIVE_PATH?>/vendors/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+    <script type="text/javascript" src="<?=RELATIVE_PATH?>/vendors/datatables.net-responsive-bs/js/responsive.bootstrap.js"></script>
     <!-- Custom Theme Scripts -->
     <script type="text/javascript" src="<?=RELATIVE_PATH?>/build/js/custom.js"></script>
     <!-- Translations Scripts -->

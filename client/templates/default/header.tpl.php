@@ -15,12 +15,17 @@
 
     <title><?=$trans->getTrans('authentication','MY_VHL')?></title>
 
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="favicon.ico"/>
     <!-- Bootstrap -->
     <link href="<?=RELATIVE_PATH?>/vendors/bootstrap/dist/css/bootstrap.min.css" type="text/css" rel="stylesheet">
     <!-- Font Awesome -->
     <link href="<?=RELATIVE_PATH?>/vendors/font-awesome/css/font-awesome.min.css" type="text/css" rel="stylesheet">
     <!-- Intro.js -->
     <link href="<?=RELATIVE_PATH?>/vendors/introjs/introjs.css" type="text/css" rel="stylesheet">
+    <!-- Datatables -->
+    <link href="<?=RELATIVE_PATH?>/vendors/datatables.net-bs/css/dataTables.bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link href="<?=RELATIVE_PATH?>/vendors/datatables.net-responsive-bs/css/responsive.bootstrap.min.css" type="text/css" rel="stylesheet">
     <!-- Theme Login Style -->
     <link href="<?=RELATIVE_PATH?>/css/<?=$_SESSION["skin"]?>/login.css" type="text/css" rel="stylesheet" />
     <!-- Theme Layout Style -->

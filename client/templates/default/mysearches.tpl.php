@@ -8,7 +8,7 @@
             <div class="clearfix"></div>
 
             <div class="row">
-              <div class="col-md-12">
+              <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                   <div class="x_title">
                     <h2><?=$trans->getTrans($_REQUEST["action"],'MY_SEARCHES')?></h2>
@@ -18,12 +18,12 @@
                     <?php if ( $response["values"] != false ) : ?>
                         <?php //echo $objPaginator->render($trans->getTrans($_REQUEST["action"],'NEXT'), $trans->getTrans($_REQUEST["action"],'PREVIOUS')); ?>
                         <!-- start project list -->
-                        <table class="table table-striped table-list">
+                        <table id="datatable-search" class="table table-striped table-list">
                           <thead>
                             <tr>
-                              <th style="width: 10%">#</th>
-                              <th style="width: 35%"><?=$trans->getTrans($_REQUEST["action"],'QUERY')?></th>
-                              <th style="width: 35%"><?=$trans->getTrans($_REQUEST["action"],'FILTERS')?></th>
+                              <th style="width: 10%" class="all">#</th>
+                              <th style="width: 35%" class="all query"><?=$trans->getTrans($_REQUEST["action"],'QUERY')?></th>
+                              <th style="width: 35%" class="filter"><?=$trans->getTrans($_REQUEST["action"],'FILTERS')?></th>
                               <th style="width: 20%"><?=$trans->getTrans($_REQUEST["action"],'ACTIONS')?></th>
                             </tr>
                           </thead>
@@ -36,18 +36,20 @@
                               <td class="filter"><?php echo $register['filter']; ?></td>
                               <td>
                                 <?php if ( 'portal' == $_SESSION['iahx'] ) : ?>
-                                <button id="v<?php echo $count; ?>" class="btn btn-primary btn-xs portal" value="portal"><i class="fa fa-search"></i> <?=$trans->getTrans($_REQUEST["action"],'VIEW')?></button>
+                                <button id="v<?php echo $count; ?>" class="btn btn-primary btn-xs portal" value="portal" data-query="<?php echo $register['query']; ?>" data-filter="<?php echo $register['filter']; ?>"><i class="fa fa-search"></i> <?=$trans->getTrans($_REQUEST["action"],'VIEW')?></button>
                                 <?php else : ?>
-                                <button id="v<?php echo $count; ?>" class="btn btn-primary btn-xs search" value="<?php echo $_SESSION['iahx']; ?>" data-label="<?php echo $label; ?>"><i class="fa fa-search search"></i> <?=$trans->getTrans($_REQUEST["action"],'VIEW')?></button>
+                                <button id="v<?php echo $count; ?>" class="btn btn-primary btn-xs search" value="<?php echo $_SESSION['iahx']; ?>" data-label="<?php echo $label; ?>" data-query="<?php echo $register['query']; ?>" data-filter="<?php echo $register['filter']; ?>"><i class="fa fa-search search"></i> <?=$trans->getTrans($_REQUEST["action"],'VIEW')?></button>
                                 <?php endif; ?>
-                                <button id="c<?php echo $count; ?>" class="btn btn-info btn-xs combine"><i class="fa fa-compress combine"></i> <?=$trans->getTrans($_REQUEST["action"],'COMBINE')?></button>
+                                <button id="c<?php echo $count; ?>" class="btn btn-info btn-xs combine" data-query="<?php echo $register['query']; ?>" data-filter="<?php echo $register['filter']; ?>"><i class="fa fa-compress combine"></i> <?=$trans->getTrans($_REQUEST["action"],'COMBINE')?></button>
                               </td>
                             </tr>
                             <?php endforeach; ?>
                           </tbody>
                         </table>
                         <!-- end project list -->
-                        <?php echo $objPaginator->render($trans->getTrans($_REQUEST["action"],'NEXT'), $trans->getTrans($_REQUEST["action"],'PREVIOUS')); ?>
+                        <div class="datatable-search-pagination">
+                          <?php echo $objPaginator->render($trans->getTrans($_REQUEST["action"],'NEXT'), $trans->getTrans($_REQUEST["action"],'PREVIOUS')); ?>
+                        </div>
                     <?php else : ?>
                         <p class="none-docs"><?=$trans->getTrans($_REQUEST["action"],'MY_SEARCHES_NO_REGISTERS_FOUND')?></p>
                     <?php endif; ?>

@@ -339,6 +339,46 @@ select.bulkactions {
     display: none;
 }
 
+.nav-sm #datatable-search {
+    table-layout: fixed;
+    width: 100% !important;
+}
+
+.nav-sm #datatable-search th.query {
+    width: auto !important;
+}
+
+.nav-sm #datatable-search td.query {
+    word-wrap: break-word;
+}
+
+#datatable-search.collapsed > tbody > tr > td:first-child:before,
+#datatable-search.collapsed > tbody > tr > th:first-child:before {
+    top: auto;
+}
+
+#datatable-search.collapsed > tbody > tr.child span.dtr-title {
+    display: block;
+}
+
+#datatable-search.collapsed > tbody > tr.child span.dtr-data {
+    display: flex;
+    flex-direction: column;
+    word-wrap: break-word;
+}
+
+#datatable-search.collapsed > tbody > tr.child ul {
+    width: 100%;
+}
+
+#datatable-search_wrapper div.row div.col-sm-12 {
+    width: 100%;
+}
+
+.datatable-search-pagination .dataTables_paginate {
+    margin: 0;
+}
+
 @media only screen 
 and (max-device-width : 414px) {
     .folder-data {
@@ -353,6 +393,7 @@ and (max-device-width : 414px) {
 
     .doc-actions a.label {
         margin: 2px 0;
+        padding: 5px;
     }
 
     .related_docs ol {
@@ -362,6 +403,15 @@ and (max-device-width : 414px) {
     .dataTables_paginate {
         float: none !important;
         text-align: center !important;
+        margin-bottom: 20px;
+    }
+
+    select.bulkactions {
+        margin-top: 10px;
+    }
+
+    .x_title h2 {
+        white-space: normal !important;
     }
 }
 

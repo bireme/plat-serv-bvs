@@ -247,46 +247,11 @@ $( document ).ready(
             }
         });
 
-        $('button.portal').on('click', function(e){
-            var portal = "http://pesquisa.bvsalud.org/portal";
-            var query  = encodeURIComponent($(this).parent().siblings('.query').text());
-            var filter = encodeURIComponent($(this).parent().siblings('.filter').text());
-            var expr = ( filter != '*' && filter != '' ) ? '?q='+query+' AND '+filter : '?q='+query;
-
-            window.open(portal+expr, '_blank');
-        });
-
-        $('button.search').popover({
-            html : true,
-            placement : 'bottom',
-            title: labels[LANG]['VIEW_ON'],
-            // trigger: 'manual',
-            content: function() {
-                var query  = encodeURIComponent($(this).parent().siblings('.query').text());
-                var filter = encodeURIComponent($(this).parent().siblings('.filter').text());
-                var origin = $(this).val();
-                var portal = "http://pesquisa.bvsalud.org/portal";
-                var label  = $(this).attr('data-label');
-                var expr   = ( filter != '*' && filter != '' ) ? '?q=' + query + ' AND ' + filter : '?q=' + query;
-                var html   = '<a href="' + origin + expr + '" target="_blank">' + label + '</a><br /><a href="' + portal + expr + '" target="_blank">' + labels[LANG]['VHL_PORTAL'] + '</a>';
-
-                return html;
-            }
-        });
-
-        $('button.combine').popover({
-            html : true,
-            placement : 'bottom',
-            title: labels[LANG]['OPERATOR'],
-            // trigger: 'manual',
-            content : '<a class="operator">AND</a> | <a class="operator">OR</a> | <a class="operator">AND NOT</a>'
-        });
-
         $(this).on('click', 'a.operator',
             function(){
                 var operator = $(this).text();
-                var query    = $(this).parents().siblings('.query').text();
-                var filter   = $(this).parents().siblings('.filter').text();
+                var query    = $(this).parents().siblings('.combine').data('query');
+                var filter   = $(this).parents().siblings('.combine').data('filter');
                 var search   = $("input[name='q']").val();
 
                 filter = ( filter !== '' && filter !== '*' ) ? ' AND ' + filter : '';
@@ -298,6 +263,10 @@ $( document ).ready(
         );
 
         $(document).on('click', function (e) {
+            portalPopover();
+            searchPopover();
+            combinePopover();
+
             $('[data-toggle="popover"],[data-original-title]').each(function () {
                 //the 'is' for buttons that trigger popups
                 //the 'has' for icons within a button that triggers a popup
@@ -307,6 +276,61 @@ $( document ).ready(
 
             });
         });
+
+        $('#datatable-search').DataTable( {
+            paging: false,
+            ordering: false,
+            info: false,
+            searching: false,
+            responsive: true
+        } );
+
+        var portalPopover = function () {
+            $('button.portal').on('click', function(e){
+                var portal = "http://pesquisa.bvsalud.org/portal";
+                var query  = encodeURIComponent($(this).data('query'));
+                var filter = encodeURIComponent($(this).data('filter'));
+                var expr = ( filter != '*' && filter != '' ) ? '?q='+query+' AND '+filter : '?q='+query;
+
+                window.open(portal+expr, '_blank');
+            });
+        };
+
+        portalPopover();
+
+        var searchPopover = function () {
+            $('button.search').popover({
+                html : true,
+                placement : 'bottom',
+                title: labels[LANG]['VIEW_ON'],
+                // trigger: 'manual',
+                content: function() {
+                    var query  = encodeURIComponent($(this).parent().siblings('.search').data('query'));
+                    var filter = encodeURIComponent($(this).parent().siblings('.search').data('filter'));
+                    var origin = $(this).val();
+                    var portal = "http://pesquisa.bvsalud.org/portal";
+                    var label  = $(this).attr('data-label');
+                    var expr   = ( filter != '*' && filter != '' ) ? '?q=' + query + ' AND ' + filter : '?q=' + query;
+                    var html   = '<a href="' + origin + expr + '" target="_blank">' + label + '</a><br /><a href="' + portal + expr + '" target="_blank">' + labels[LANG]['VHL_PORTAL'] + '</a>';
+
+                    return html;
+                }
+            });
+        };
+
+        searchPopover();
+
+        var combinePopover = function () {
+            $('button.combine').popover({
+                html : true,
+                placement : 'bottom',
+                title: labels[LANG]['OPERATOR'],
+                // trigger: 'manual',
+                content : '<a class="operator">AND</a> | <a class="operator">OR</a> | <a class="operator">AND NOT</a>'
+            });
+        };
+
+        combinePopover();
 
         var setContentHeight = function () {
             // reset height
