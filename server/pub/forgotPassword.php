@@ -85,7 +85,7 @@ $DocTitle = FORGOT_PASSWORD;
                       </div>
                       <div class="ln_solid"></div>
                       <div class="form-group">
-                        <div class="col-md-6 col-md-offset-3" style="text-align: center;">
+                        <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3 col-sm-offset-3" style="text-align: center;">
                           <?php if($callerURL) : ?>
                               <input type="button" value="<?=BUTTON_CANCEL?>" class="btn btn-primary cancel" onclick="javascript:window.location='<?=$callerURL?>'; return false;" />
                           <?php endif; ?>

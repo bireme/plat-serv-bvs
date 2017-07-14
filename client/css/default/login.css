@@ -4,18 +4,52 @@
     For .omb_spanOr use @body-bg instead of white.
 */
 
+.main_page .omb_login { 
+    margin: 0px auto;
+    background: #ebebec url(../../images/default/banner_top.jpg) top no-repeat;
+}
+
 .omb_login .omb_authTitle {
-    text-align: center;
+    text-align: left;
     line-height: 300%;
+    font-size: 25px;
+    font-size: 25px;
+    font-family: Verdana, Geneva, sans-serif;
+    color: #fff;
+
+}
+
+.omb_description .col-xs-12 {
+    background: #fff;
+}
+
+.omb_login .omb_authTitle h1 {
+    padding-left: 20px;
 }
 
 .omb_login .omb_authTitle img.logo {
-    padding-right: 20px;
+    float: left;
+    margin-right: 10px;
+}
+
+.omb_description{
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 12px;
+    color: #1f76a9;
 }
 
 .omb_login .omb_description {
     margin-bottom: 2em;
     text-align: justify;
+	margin-top: 33px;
+	margin-left: 0px;
+    margin-right: 0px;
+	margin-left: 0px;
+	background: #e9f5f9;
+}
+
+.omb_description p {
+	padding-top:10px;
 }
 /*
 .omb_login .omb_socialButtons {
@@ -60,11 +94,11 @@
     left: 50%;
     top: -0.6em;
     margin-left: -1.5em;
-    background-color: white;
+    background-color: #ebebec;
     width: 3em;
     text-align: center;
 }           
-
+ 
 .omb_login .omb_loginForm {
     margin-bottom: 10px;
 }
@@ -93,7 +127,7 @@
 }
 
 .omb_login .omb_recover div.recover {
-    background: #eee;
+    background: #fff;
     padding: 20px;
     margin-bottom: 20px;
 }
@@ -111,7 +145,7 @@
     left: 50%;
     top: 1.2em;
     margin-left: -4em;
-    background-color: white;
+    background-color: #F7F7F7;
     width: 8em;
     text-align: center;
 }
@@ -120,9 +154,78 @@
     border-radius: 6px;
 }
 
+body {
+    background: #5481c0 !important;
+}
+
+.left_col {
+    background: #5481c0 !important;
+}
+
+.nav.side-menu > li.active > a {
+    background: #1ABB9C !important;
+}
+
+.x_panel{
+    background: #F7F7F7 !important;
+}
+
+body .container.body .right_col {
+    background: #fff !important;
+}
+
+.nav_title {
+    width: 230px;
+    float: left;
+    background: #5d7ba5 !important;
+    border-radius: 0;
+    height: 67px !important;
+}
+
+.nav_menu {
+    background: #e9f5f9 !important;  
+}
+
+.nav li.current-page {
+    background: #8cb2d9!important;
+}
+
+#step3 .x_title {
+    background: url(../../images/default/020-folder.png) left no-repeat; height: 54px;
+}
+
+#step4 .x_title {
+    background: url(../../images/default/022-contact-book.png) left no-repeat; height: 54px;
+}
+
+#step5 .x_title {
+    background: url(../../images/default/012-bookmark.png) left no-repeat; height: 54px;
+}
+
+#step6 .x_title {
+    background: url(../../images/default/023-tasks.png) left no-repeat; height: 54px;
+}
+
+#step7 .x_title {
+    background: url(../../images/default/005-search.png) left no-repeat; height: 54px;
+}
+
+#step3 .x_title h2 {
+    margin-left: 30px;
+}
+
+.x_title h2 {
+    margin: 15px 0px 0px 56px !important;
+}
+
 @media (min-width: 1200px) {
     body.main_page .container {
         width: 1170px;
+    }
+
+    body.main_page .container.body {
+        display: flex;
+        justify-content: center;
     }
 }
 
@@ -135,6 +238,23 @@
     .omb_login .omb_registry {
         text-align: left;
         margin-top: 10px;
+    }
+}
+
+@media (max-width : 736px) {
+    body.main_page .container {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    body.main_page.modal-open .modal {
+        display: table;
+        padding-top: 20px;
+    }
+
+    body.main_page .omb_row-sm-offset-3 div[class*="col-"] {
+        padding-left: 30px;
+        padding-right: 30px;
     }
 }
 
