@@ -1,5 +1,9 @@
 html, body, .container, .main_container { height: 100%; }
 
+body {
+    background: #5481c0 !important;
+}
+
 body.main_page {
     background: #FFFFFF;
     color: #333333;
@@ -17,6 +21,38 @@ body.main_page.modal-open h4 {
 body.main_page .container {
     padding-right: 15px;
     padding-left: 15px;
+}
+
+body .container.body .right_col {
+    background: #fff !important;
+}
+
+.left_col {
+    background: #5481c0 !important;
+}
+
+.nav.side-menu > li.active > a {
+    background: #1ABB9C !important;
+}
+
+.x_panel {
+    background: #F7F7F7 !important;
+}
+
+.nav_title {
+    width: 230px;
+    float: left;
+    background: #5d7ba5 !important;
+    border-radius: 0;
+    height: 67px !important;
+}
+
+.nav_menu {
+    background: #e9f5f9 !important;  
+}
+
+.nav li.current-page {
+    background: #8cb2d9 !important;
 }
 
 .middle {
@@ -179,6 +215,10 @@ a.operator {
 .tile_count .tile_stats_count {
     text-overflow: clip !important;
     /*overflow: visible !important;*/
+}
+
+.x_title h2 {
+    margin: 15px 0px 0px 55px !important;
 }
 
 .x_title h2 small {
@@ -371,6 +411,26 @@ select.bulkactions {
 
 .datatable-search-pagination .dataTables_paginate {
     margin: 0;
+}
+
+.fav-docs .x_title {
+    background: url(../../images/default/020-folder.png) left no-repeat; height: 54px;
+}
+
+.themes .x_title {
+    background: url(../../images/default/022-contact-book.png) left no-repeat; height: 54px;
+}
+
+.fav-links .x_title {
+    background: url(../../images/default/012-bookmark.png) left no-repeat; height: 54px;
+}
+
+.tasks .x_title {
+    background: url(../../images/default/023-tasks.png) left no-repeat; height: 54px;
+}
+
+.vhl-search .x_title {
+    background: url(../../images/default/005-search.png) left no-repeat; height: 54px;
 }
 
 @media only screen 

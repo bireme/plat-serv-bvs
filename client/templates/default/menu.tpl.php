@@ -50,7 +50,7 @@
                 </div>
               </div> -->
 
-              <div id="step3" class="col-md-4 col-xs-12">
+              <div id="step3" class="col-md-4 col-xs-12 fav-docs">
                 <div class="x_panel">
                   <div class="x_title">
                     <h2><?=$trans->getTrans('menu','SHELF_WIDGET')?><small></small></h2>
@@ -73,7 +73,7 @@
                 </div>
               </div>
 
-              <div id="step4" class="col-md-4 col-xs-12">
+              <div id="step4" class="col-md-4 col-xs-12 themes">
                 <div class="x_panel">
                   <div class="x_title">
                     <h2><?=$trans->getTrans('menu','PROFILE_WIDGET')?><small></small></h2>
@@ -97,7 +97,7 @@
                 </div>
               </div>
 
-              <div id="step5" class="col-md-4 col-xs-12">
+              <div id="step5" class="col-md-4 col-xs-12 fav-links">
                 <div class="x_panel">
                   <div class="x_title">
                     <h2><?=$trans->getTrans('menu','MY_LINKS')?><small></small></h2>
@@ -123,7 +123,7 @@
             </div>
 
             <div class="row">
-              <div id="step6" class="col-md-4 col-xs-12">
+              <div id="step6" class="col-md-4 col-xs-12 tasks">
                 <div class="x_panel">
                   <div class="x_title">
                     <h2><?=$trans->getTrans('menu','RECENT_ACTIVITIES')?><small></small></h2>
@@ -158,7 +158,7 @@
                 </div>
               </div>
 
-              <div id="step7" class="col-md-4 col-xs-12">
+              <div id="step7" class="col-md-4 col-xs-12 vhl-search">
                 <div class="x_panel">
                   <div class="x_title">
                     <h2><?=$trans->getTrans('menu','SEARCH_WIDGET')?></h2>
