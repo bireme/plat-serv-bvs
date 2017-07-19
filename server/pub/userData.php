@@ -180,7 +180,7 @@ $DocTitle = $isUser?UPDATE_USER_TITLE:REGISTER_NEW_USER_TITLE;
                 <div class="col-md-3 left_col">
                   <div class="left_col scroll-view">
                     <div class="navbar nav_title" style="border: 0;">
-                      <a href="<?php echo $_SERVER['SCRIPT_NAME']; ?>/authentication" class="site_title logo-md"><img src="<?=RELATIVE_PATH?>/images/<?=$_SESSION["skin"]?>/logo-md-<?=$_SESSION["lang"]?>.png" alt="VHL Logo"> <span><?=MY_VHL?></span></a>
+                      <a href="<?=RELATIVE_PATH?>/controller/authentication" class="site_title logo-md"><img src="<?=RELATIVE_PATH?>/images/<?=$_SESSION["skin"]?>/logo-md-<?=$_SESSION["lang"]?>.png" alt="VHL Logo"> <span><?=MY_VHL?></span></a>
                     </div>
                     <div class="clearfix"></div>
                   </div>
