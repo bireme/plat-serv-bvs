@@ -25,7 +25,7 @@
                 <?php else : ?>
                 <img src="<?=RELATIVE_PATH?>/images/<?=$_SESSION["skin"]?>/logged.png" alt="avatar" class="img-circle profile_img">
                 <?php endif; ?>
-                </div>
+              </div>
               <div class="profile_info">
                 <span><?=WELCOME?>,</span>
                 <h2><?=$_SESSION["userFirstName"]?></h2>

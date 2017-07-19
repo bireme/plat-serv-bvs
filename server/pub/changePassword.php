@@ -49,17 +49,6 @@ $DocTitle = CHANGE_PASSWORD;
         <?php require_once(dirname(__FILE__)."/../templates/".DEFAULT_SKIN."/header.tpl.php"); ?>
         <?php require_once(dirname(__FILE__)."/../templates/".DEFAULT_SKIN."/sidebar.tpl.php"); ?>
 
-        <div class="col-md-3 left_col">
-          <div class="left_col scroll-view">
-            <div class="navbar nav_title" style="border: 0;">
-                <div class="site_title">
-                    <img src="<?=RELATIVE_PATH?>/images/<?=$_SESSION["skin"]?>/bvs_icon-<?=$_SESSION["lang"]?>.jpg" alt="VHL icon"> <span><?=MY_VHL?></span>
-                </div>
-            </div>
-            <div class="clearfix"></div>
-          </div>
-        </div>
-
         <!-- page content -->
         <div class="right_col" role="main">
           <div>

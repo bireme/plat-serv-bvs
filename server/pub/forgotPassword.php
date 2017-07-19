@@ -38,9 +38,7 @@ $DocTitle = FORGOT_PASSWORD;
         <div class="col-md-3 left_col">
           <div class="left_col scroll-view">
             <div class="navbar nav_title" style="border: 0;">
-                <div class="site_title">
-                    <img src="<?=RELATIVE_PATH?>/images/<?=$_SESSION["skin"]?>/bvs_icon-<?=$_SESSION["lang"]?>.jpg" alt="VHL icon"> <span><?=MY_VHL?></span>
-                </div>
+              <a href="<?php echo $_SERVER['SCRIPT_NAME']; ?>/authentication" class="site_title logo-md"><img src="<?=RELATIVE_PATH?>/images/<?=$_SESSION["skin"]?>/logo-md-<?=$_SESSION["lang"]?>.png" alt="VHL Logo"> <span><?=MY_VHL?></span></a>
             </div>
             <div class="clearfix"></div>
           </div>
