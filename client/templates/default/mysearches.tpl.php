@@ -1,3 +1,5 @@
+        <?php parse_str($_SERVER['QUERY_STRING'], $output); ?>
+
         <?require_once(dirname(__FILE__)."/header.tpl.php");?>
         <?require_once(dirname(__FILE__)."/sidebar.tpl.php");?>
 
@@ -11,10 +13,15 @@
               <div class="col-md-12 col-sm-12 col-xs-12 vhl-search">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2><?=$trans->getTrans($_REQUEST["action"],'MY_SEARCHES')?></h2>
+                    <h2>
+                      <?=$trans->getTrans($_REQUEST["action"],'MY_SEARCHES')?>
+                      <?php if ( !$response["values"] && isset($output['multipage']) ) : ?>
+                        <small class="example"><?=$trans->getTrans('tour','TOUR_EXAMPLE')?></small>
+                      <?php endif; ?>
+                    </h2>
                     <div class="clearfix"></div>
                   </div>
-                  <div class="x_content">
+                  <div id="step25" class="x_content">
                     <?php if ( $response["values"] != false ) : ?>
                         <?php //echo $objPaginator->render($trans->getTrans($_REQUEST["action"],'NEXT'), $trans->getTrans($_REQUEST["action"],'PREVIOUS')); ?>
                         <!-- start project list -->
@@ -32,9 +39,9 @@
                             <?php foreach ( $response["values"] as $register) : $count++; ?>
                             <tr>
                               <td id="s<?php echo $count; ?>"><?php echo $count; ?></td>
-                              <td class="query"><?php echo $register['query']; ?></td>
-                              <td class="filter"><?php echo $register['filter']; ?></td>
-                              <td>
+                              <td class="query step26"><?php echo $register['query']; ?></td>
+                              <td class="filter step27"><?php echo $register['filter']; ?></td>
+                              <td class="step28">
                                 <?php if ( 'portal' == $_SESSION['iahx'] ) : ?>
                                 <button id="v<?php echo $count; ?>" class="btn btn-primary btn-xs portal" value="portal" data-query="<?php echo $register['query']; ?>" data-filter="<?php echo $register['filter']; ?>"><i class="fa fa-search"></i> <?=$trans->getTrans($_REQUEST["action"],'VIEW')?></button>
                                 <?php else : ?>
@@ -51,7 +58,61 @@
                           <?php echo $objPaginator->render($trans->getTrans($_REQUEST["action"],'NEXT'), $trans->getTrans($_REQUEST["action"],'PREVIOUS')); ?>
                         </div>
                     <?php else : ?>
-                        <p class="none-docs"><?=$trans->getTrans($_REQUEST["action"],'MY_SEARCHES_NO_REGISTERS_FOUND')?></p>
+                        <?php if ( isset($output['multipage']) ) : ?>
+                          <table id="datatable-search" class="table table-striped table-list">
+                            <thead>
+                              <tr>
+                                <th style="width: 10%" class="all">#</th>
+                                <th style="width: 35%" class="all query"><?=$trans->getTrans($_REQUEST["action"],'QUERY')?></th>
+                                <th style="width: 35%" class="filter"><?=$trans->getTrans($_REQUEST["action"],'FILTERS')?></th>
+                                <th style="width: 20%"><?=$trans->getTrans($_REQUEST["action"],'ACTIONS')?></th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td id="s1">1</td>
+                                <td class="query step26">health</td>
+                                <td class="filter step27"></td>
+                                <td class="step28">
+                                  <?php if ( 'portal' == $_SESSION['iahx'] ) : ?>
+                                  <button id="v1" class="btn btn-primary btn-xs portal" value="portal" data-query="health" data-filter=""><i class="fa fa-search"></i> <?=$trans->getTrans($_REQUEST["action"],'VIEW')?></button>
+                                  <?php else : ?>
+                                  <button id="v1" class="btn btn-primary btn-xs search" value="<?php echo $_SESSION['iahx']; ?>" data-label="<?php echo $label; ?>" data-query="health" data-filter=""><i class="fa fa-search search"></i> <?=$trans->getTrans($_REQUEST["action"],'VIEW')?></button>
+                                  <?php endif; ?>
+                                  <button id="c1" class="btn btn-info btn-xs combine" data-query="health" data-filter=""><i class="fa fa-compress combine"></i> <?=$trans->getTrans($_REQUEST["action"],'COMBINE')?></button>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td id="s2">2</td>
+                                <td class="query step26">salud</td>
+                                <td class="filter step27">db:("LILACS")</td>
+                                <td class="step28">
+                                  <?php if ( 'portal' == $_SESSION['iahx'] ) : ?>
+                                  <button id="v2" class="btn btn-primary btn-xs portal" value="portal" data-query="salud" data-filter="db:('LILACS')"><i class="fa fa-search"></i> <?=$trans->getTrans($_REQUEST["action"],'VIEW')?></button>
+                                  <?php else : ?>
+                                  <button id="v2" class="btn btn-primary btn-xs search" value="<?php echo $_SESSION['iahx']; ?>" data-label="<?php echo $label; ?>" data-query="salud" data-filter="db:('LILACS')"><i class="fa fa-search search"></i> <?=$trans->getTrans($_REQUEST["action"],'VIEW')?></button>
+                                  <?php endif; ?>
+                                  <button id="c2" class="btn btn-info btn-xs combine" data-query="salud" data-filter="db:('LILACS')"><i class="fa fa-compress combine"></i> <?=$trans->getTrans($_REQUEST["action"],'COMBINE')?></button>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td id="s3">3</td>
+                                <td class="query step26">saúde</td>
+                                <td class="filter step27">db:("BDENF")</td>
+                                <td class="step28">
+                                  <?php if ( 'portal' == $_SESSION['iahx'] ) : ?>
+                                  <button id="v3" class="btn btn-primary btn-xs portal" value="portal" data-query="saúde" data-filter="db:('BDENF')"><i class="fa fa-search"></i> <?=$trans->getTrans($_REQUEST["action"],'VIEW')?></button>
+                                  <?php else : ?>
+                                  <button id="v3" class="btn btn-primary btn-xs search" value="<?php echo $_SESSION['iahx']; ?>" data-label="<?php echo $label; ?>" data-query="saúde" data-filter="db:('BDENF')"><i class="fa fa-search search"></i> <?=$trans->getTrans($_REQUEST["action"],'VIEW')?></button>
+                                  <?php endif; ?>
+                                  <button id="c3" class="btn btn-info btn-xs combine" data-query="saúde" data-filter="db:('BDENF')"><i class="fa fa-compress combine"></i> <?=$trans->getTrans($_REQUEST["action"],'COMBINE')?></button>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        <?php else : ?>
+                          <p class="none-docs"><?=$trans->getTrans($_REQUEST["action"],'MY_SEARCHES_NO_REGISTERS_FOUND')?></p>
+                        <?php endif; ?>
                     <?php endif; ?>
                   </div>
                 </div>
@@ -73,12 +134,29 @@
                   exitOnOverlayClick: false,
                   steps: [
                     {
-                      element: '#step15',
-                      intro: "Histórico de Buscas na BVS",
+                      element: '#step24',
+                      intro: "<?=$trans->getTrans('tour','STEP_24')?>",
                       position: 'right'
                     },
                     {
-                      intro: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi mattis libero ut condimentum commodo. Pellentesque pellentesque lorem pellentesque, lobortis turpis sed, interdum velit. Integer ac massa sed nulla accumsan interdum."
+                      element: '#step25',
+                      intro: "<?=$trans->getTrans('tour','STEP_25')?>",
+                      position: 'left'
+                    },
+                    {
+                      element: '.step26',
+                      intro: "<?=$trans->getTrans('tour','STEP_26')?>",
+                      position: 'bottom'
+                    },
+                    {
+                      element: '.step27',
+                      intro: "<?=$trans->getTrans('tour','STEP_27')?>",
+                      position: 'bottom'
+                    },
+                    {
+                      element: '.step28',
+                      intro: "<?=$trans->getTrans('tour','STEP_28')?>",
+                      position: 'left'
                     }
                   ]
                 });

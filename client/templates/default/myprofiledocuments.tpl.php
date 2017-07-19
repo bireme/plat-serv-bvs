@@ -30,7 +30,7 @@
                           <a class="remove" href="<?=RELATIVE_PATH?>/controller/myprofiledocuments/control/business/task/delete/profile/<?=$registerProfile["profileID"]?>"><span class="label label-danger"><?=$trans->getTrans($_REQUEST["action"],'REMOVE_PROFILE')?></span></a>
                       </div>
                       <div class="keywords"><small><?=$trans->getTrans($_REQUEST["action"],'PROFILE_KEYWORDS')?>: <?=$registerProfile["profileText"]?></small></div>
-                      <div class="col-md-9 col-sm-9 col-xs-12">
+                      <div id="step21" class="col-md-9 col-sm-9 col-xs-12">
                           <?php if ( 'on' == $responseSimilarDocs["values"]['status'] ) : ?>
                               <?php //echo $objPaginator->render($trans->getTrans($_REQUEST["action"],'NEXT'), $trans->getTrans($_REQUEST["action"],'PREVIOUS')); ?>
                               <!-- start project list -->
@@ -83,12 +83,12 @@
                           <?php endif; ?>
                       </div>
                     <?php else : ?>
-                      <div class="col-md-9 col-sm-9 col-xs-12">
+                      <div id="step21" class="col-md-9 col-sm-9 col-xs-12">
                           <p class="none-docs"><?=$trans->getTrans($_REQUEST["action"],'MY_PROFILES_NO_REGISTERS_FOUND')?></p>
                       </div>
                     <?php endif; ?>
                     <div class="col-md-3 col-sm-3 col-xs-12">
-                        <section id="step13" class="panel panel-folder">
+                        <section id="step22" class="panel panel-folder">
                             <div class="panel-body">
                                 <h5><?=$trans->getTrans($_REQUEST["action"],'TOOLS')?></h5>
                                 <ul class="list-docs-unstyled project_files">
@@ -96,7 +96,7 @@
                                 </ul>
                             </div>
                         </section>
-                        <section id="step14" class="panel panel-folder">
+                        <section id="step23" class="panel panel-folder">
                             <div class="panel-body">
                                 <h5><?=$trans->getTrans($_REQUEST["action"],'PROFILES')?></h5>
                                 <?php if ($response["values"] != false ) : ?>
@@ -139,18 +139,23 @@
                   exitOnOverlayClick: false,
                   steps: [
                     {
-                      element: '#step12',
-                      intro: "Temas de Interesse",
+                      element: '#step20',
+                      intro: "<?=$trans->getTrans('tour','STEP_20')?>",
                       position: 'right'
                     },
                     {
-                      element: '#step13',
-                      intro: "Ferramentas",
+                      element: '#step21',
+                      intro: "<?=$trans->getTrans('tour','STEP_21')?>",
+                      position: 'right'
+                    },
+                    {
+                      element: '#step22',
+                      intro: "<?=$trans->getTrans('tour','STEP_22')?>",
                       position: 'left'
                     },
                     {
-                      element: '#step14',
-                      intro: "Temas",
+                      element: '#step23',
+                      intro: "<?=$trans->getTrans('tour','STEP_23')?>",
                       position: 'left'
                     }
                   ]

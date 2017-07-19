@@ -22,6 +22,20 @@ $response["status"] = false;
 $params["sort"] = $_REQUEST["sort"];
 $origin = ( $_REQUEST["origin"] ) ? $_REQUEST["origin"] : '';
 $iahx = ( $_REQUEST['iahx'] ) ? $_REQUEST['iahx'] : base64_encode('portal');
+$label = $trans->getTrans("mysearches", 'ORIGIN_SITE');
+
+if ( strpos(base64_decode($iahx), VHL_SEARCH_PORTAL_DOMAIN) !== false ) {
+    $chunks = explode('/', base64_decode($iahx));
+    $chunks = array_values(array_filter($chunks));
+
+    if ( count($chunks) > 2 && !empty($chunks[2]) ) {
+        $label = strtoupper($chunks[2]);
+        $label = $trans->getTrans("mysearches", $label);
+
+        if ( strpos($label, 'translate_') !== false )
+            $label = $trans->getTrans("mysearches", 'ORIGIN_SITE');
+    }
+}
 
 switch($_REQUEST["task"]){
     case "authenticate":

@@ -6,13 +6,14 @@
         <div class="col-md-3 left_col">
           <div class="left_col scroll-view">
             <div class="navbar nav_title" style="border: 0;">
-              <a href="<?php echo $_SERVER['SCRIPT_NAME']; ?>/authentication" class="site_title"><img src="<?=RELATIVE_PATH?>/images/<?=$_SESSION["skin"]?>/bvs_icon-<?=$_SESSION["lang"]?>.jpg" alt="VHL icon"> <span><?=$trans->getTrans('menu','MY_VHL')?></span></a>
+              <a href="<?php echo $_SERVER['SCRIPT_NAME']; ?>/authentication" class="site_title logo-md"><img src="<?=RELATIVE_PATH?>/images/<?=$_SESSION["skin"]?>/logo-md-<?=$_SESSION["lang"]?>.png" alt="VHL Logo"> <span><?=$trans->getTrans('menu','MY_VHL')?></span></a>
+              <a href="<?php echo $_SERVER['SCRIPT_NAME']; ?>/authentication" class="site_title logo-sm" style="display: none;"><img src="<?=RELATIVE_PATH?>/images/<?=$_SESSION["skin"]?>/logo-sm-<?=$_SESSION["lang"]?>.png" alt="VHL Logo"></a>
             </div>
 
             <div class="clearfix"></div>
 
             <!-- menu profile quick info -->
-            <div class="profile">
+            <div id="step1" class="profile">
               <div class="profile_pic">
                 <?php if ( $_SESSION['fb_data']['picture']['data']['url'] ) : ?>
                 <img src="<?php echo $_SESSION['fb_data']['picture']['data']['url']; ?>" alt="avatar" class="img-circle profile_img">
@@ -35,15 +36,15 @@
             <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
               <div class="menu_section">
                 <ul class="nav side-menu">
-                  <li class="active"><a><i class="fa fa-dashboard"></i> <?=$trans->getTrans('menu','DASHBOARD')?> <span class="fa fa-chevron-down"></span></a>
+                  <li id="step2" class="active"><a><i class="fa fa-dashboard"></i> <?=$trans->getTrans('menu','DASHBOARD')?> <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu" style="display: block;">
-                      <li><a id="step1" href="<?php echo $_SERVER['SCRIPT_NAME']; ?>/authentication"><?=$trans->getTrans('menu','HOME')?></a></li>
-                      <li><a id="step8" href="<?=RELATIVE_PATH?>/controller/mydocuments/control/business"><?=$trans->getTrans('menu','MY_SHELF')?></a></li>
-                      <li><a id="step12" href="<?=RELATIVE_PATH?>/controller/myprofiledocuments/control/business"><?=$trans->getTrans('menu','MY_PROFILE_DOCUMENTS')?></a></li>
+                      <li id="step3"><a href="<?php echo $_SERVER['SCRIPT_NAME']; ?>/authentication"><?=$trans->getTrans('menu','HOME')?></a></li>
+                      <li id="step15"><a href="<?=RELATIVE_PATH?>/controller/mydocuments/control/business"><?=$trans->getTrans('menu','MY_SHELF')?></a></li>
+                      <li id="step20"><a href="<?=RELATIVE_PATH?>/controller/myprofiledocuments/control/business"><?=$trans->getTrans('menu','MY_PROFILE_DOCUMENTS')?></a></li>
                       <!-- <li><a href="<?=RELATIVE_PATH?>/controller/suggesteddocs/control/business"><?=$trans->getTrans('menu','SUGGESTED_DOCS')?></a></li> -->
-                      <li><a id="step15" href="<?=RELATIVE_PATH?>/controller/mysearches/control/business"><?=$trans->getTrans('menu','MY_SEARCHES')?></a></li>
-                      <li><a id="step16" href="<?=RELATIVE_PATH?>/controller/mylinks/control/business"><?=$trans->getTrans('menu','MY_LINKS')?></a></li>
-                      <li><a id="step19" href="<?=RELATIVE_PATH?>/controller/orcidworks/control/business"><?=$trans->getTrans('menu','ORCID_WORKS')?></a></li>
+                      <li id="step24"><a href="<?=RELATIVE_PATH?>/controller/mysearches/control/business"><?=$trans->getTrans('menu','MY_SEARCHES')?></a></li>
+                      <li id="step29"><a href="<?=RELATIVE_PATH?>/controller/mylinks/control/business"><?=$trans->getTrans('menu','MY_LINKS')?></a></li>
+                      <li id="step33"><a href="<?=RELATIVE_PATH?>/controller/orcidworks/control/business"><?=$trans->getTrans('menu','ORCID_WORKS')?></a></li>
                     </ul>
                   </li>
                   <li class="hide"><a href="<?php echo $_SERVER['SCRIPT_NAME']; ?>/authentication"><i class="fa fa-home"></i> <?=$trans->getTrans('menu','HOME')?></span></a>
@@ -71,9 +72,9 @@
               </div>
 
               <?php if ( 'portal' == $_SESSION['iahx'] ) : ?>
-              <form action="<?php echo VHL_SEARCH_PORTAL_DOMAIN.'/portal/'; ?>" method="get" target="_blank" style="width: 100%; margin-bottom: 0;">
+              <form id="step4" action="<?php echo VHL_SEARCH_PORTAL_DOMAIN.'/portal/'; ?>" method="get" target="_blank" style="width: 100%; margin-bottom: 0;">
               <?php else : ?>
-              <form action="<?php echo $_SESSION['iahx']; ?>" method="get" target="_blank" style="width: 100%; margin-bottom: 0;">
+              <form id="step4" action="<?php echo $_SESSION['iahx']; ?>" method="get" target="_blank" style="width: 100%; margin-bottom: 0;">
               <?php endif; ?>
                 <div class="search_bar">
                   <div class="col-xs-11 form-group pull-right top_search">
@@ -89,7 +90,7 @@
               </form>
 
               <div class="top_menu">
-                <ul class="nav navbar-nav navbar-right profile_menu language_switcher">
+                <ul id="step5" class="nav navbar-nav navbar-right profile_menu language_switcher">
                   <li>
                     <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false" style="padding-bottom: 21px;">
                       <i class="fa fa-flag"></i> <?php echo $languages[$_SESSION['lang']]; ?>
@@ -104,7 +105,7 @@
                   </li>
                 </ul>
 
-                <ul class="nav navbar-nav navbar-right profile_menu">
+                <ul id="step6" class="nav navbar-nav navbar-right profile_menu">
                   <li>
                     <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false" style="padding-bottom: 21px;">
                       <?php if ( $_SESSION['fb_data']['picture']['data']['url'] ) : ?>

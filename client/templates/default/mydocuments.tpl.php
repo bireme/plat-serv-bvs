@@ -28,13 +28,13 @@
                             <a href="javascript: void(0);" onclick="window.open('<?=RELATIVE_PATH?>/controller/directories/control/business/task/edit/directory/<?=$_REQUEST["directory"]?>','','resizable=no,scrollbars=1,width=420,height=250')"><span class="label label-info"><?=$trans->getTrans($_REQUEST["action"],'EDIT_FOLDER')?></span></a>
                             <a href="javascript: void(0);" onclick="window.open('<?=RELATIVE_PATH?>/controller/directories/control/business/task/delete/directory/<?=$_REQUEST["directory"]?>','','resizable=no,scrollbars=1,width=420,height=295')"><span class="label label-danger"><?=$trans->getTrans($_REQUEST["action"],'REMOVE_FOLDER')?></span></a>
                         <?}?>
-                        <select id="step9" class="bulkactions">
+                        <select id="step17" class="bulkactions">
                             <option><?=$trans->getTrans($_REQUEST["action"],'BULK_ACTIONS')?></option>
                             <option class="bulkremovedoc" value="<?=RELATIVE_PATH?>/controller/mydocuments/control/business/task/removedoc/directory/<?=$directory?>"><?=$trans->getTrans($_REQUEST["action"],'BULK_REMOVE_DOCS')?></option>
                             <option class="bulkmovedoc" value="<?=RELATIVE_PATH?>/controller/directories/control/business/task/movedoc/directory/<?=$directory?>"><?=$trans->getTrans($_REQUEST["action"],'BULK_MOVE_DOCS')?></option>
                         </select>
                     </div>
-                    <div class="col-md-9 col-sm-9 col-xs-12">
+                    <div id="step16" class="col-md-9 col-sm-9 col-xs-12">
                         <?php if ( $response["values"] != false ) : ?>
                             <?php //echo $objPaginator->render($trans->getTrans($_REQUEST["action"],'NEXT'), $trans->getTrans($_REQUEST["action"],'PREVIOUS')); ?>
                             <!-- start project list -->
@@ -105,7 +105,7 @@
                         <?php endif; ?>
                     </div>
                     <div class="col-md-3 col-sm-3 col-xs-12">
-                        <section id="step10" class="panel panel-folder">
+                        <section id="step18" class="panel panel-folder">
                             <div class="panel-body">
                                 <h5><?=$trans->getTrans($_REQUEST["action"],'MY_FOLDERS')?></h5>
                                 <ul class="list-docs-unstyled project_files">
@@ -119,7 +119,7 @@
                                 </ul>
                             </div>
                         </section>
-                        <section id="step11" class="panel panel-folder">
+                        <section id="step19" class="panel panel-folder">
                             <div class="panel-body">
                                 <h5><?=$trans->getTrans($_REQUEST["action"],'SHOW_BY')?></h5>
                                 <ul class="list-docs-unstyled project_files">
@@ -149,23 +149,28 @@
                   exitOnOverlayClick: false,
                   steps: [
                     {
-                      element: '#step8',
-                      intro: "Documentos Favoritos",
+                      element: '#step15',
+                      intro: "<?=$trans->getTrans('tour','STEP_15')?>",
                       position: 'right'
                     },
                     {
-                      element: '#step9',
-                      intro: "Ações em massa",
+                      element: '#step16',
+                      intro: "<?=$trans->getTrans('tour','STEP_16')?>",
+                      position: 'top'
+                    },
+                    {
+                      element: '#step17',
+                      intro: "<?=$trans->getTrans('tour','STEP_17')?>",
                       position: 'left'
                     },
                     {
-                      element: '#step10',
-                      intro: "Minhas Coleções",
+                      element: '#step18',
+                      intro: "<?=$trans->getTrans('tour','STEP_18')?>",
                       position: 'left'
                     },
                     {
-                      element: '#step11',
-                      intro: "Visualizar Lista por",
+                      element: '#step19',
+                      intro: "<?=$trans->getTrans('tour','STEP_19')?>",
                       position: 'left'
                     }
                   ]

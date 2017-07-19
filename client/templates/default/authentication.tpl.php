@@ -8,7 +8,11 @@
         <div class="omb_login">
             <div class="row omb_row-sm-offset-3">
                 <div class="col-xs-12 col-sm-6">
-                    <h1 class="omb_authTitle"><img src="<?=RELATIVE_PATH?>/images/<?=$_SESSION["skin"]?>/logo-<?=$_SESSION["lang"]?>.png" alt="logo" class="logo"><?=$trans->getTrans($_REQUEST["action"],'MY_VHL')?></h1>
+                    <h1 class="omb_authTitle">
+                        <img src="<?=RELATIVE_PATH?>/images/<?=$_SESSION["skin"]?>/logo-md-<?=$_SESSION["lang"]?>.png" alt="VHL Logo" class="logo">
+                        <img src="<?=RELATIVE_PATH?>/images/<?=$_SESSION["skin"]?>/logo-bireme-md-<?=$_SESSION["lang"]?>.png" alt="VHL Logo BIREME" class="logo-bireme">
+                        <span><?=$trans->getTrans($_REQUEST["action"],'MY_VHL')?></span>
+                    </h1>
                 </div>
             </div>
             <div class="row omb_row-sm-offset-3 omb_description">

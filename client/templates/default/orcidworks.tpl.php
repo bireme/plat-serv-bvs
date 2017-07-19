@@ -8,13 +8,13 @@
             <div class="clearfix"></div>
 
             <div class="row">
-              <div class="col-md-12 col-sm-12 col-xs-12">
+              <div class="col-md-12 col-sm-12 col-xs-12 orcid">
                 <div class="x_panel">
                   <div class="x_title">
                     <h2><?=$trans->getTrans($_REQUEST["action"],'ORCID_WORKS')?></h2>
                     <div class="clearfix"></div>
                   </div>
-                  <div class="x_content">
+                  <div id="step34" class="x_content">
                     <?php if ( $response["values"] != false ) : ?>
                         <?php //echo $objPaginator->render($trans->getTrans($_REQUEST["action"],'NEXT'), $trans->getTrans($_REQUEST["action"],'PREVIOUS')); ?>
                         <!-- start project list -->
@@ -78,15 +78,17 @@
                   exitOnOverlayClick: false,
                   steps: [
                     {
-                      element: '#step19',
-                      intro: "ORCID - Minhas Publicações",
+                      element: '#step33',
+                      intro: "<?=$trans->getTrans('tour','STEP_33')?>",
                       position: 'right'
                     },
                     {
-                      intro: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi mattis libero ut condimentum commodo. Pellentesque pellentesque lorem pellentesque, lobortis turpis sed, interdum velit. Integer ac massa sed nulla accumsan interdum."
+                      element: '#step34',
+                      intro: "<?=$trans->getTrans('tour','STEP_34')?>",
+                      position: 'left'
                     },
                     {
-                      intro: "FIM"
+                      intro: "<div style=\"text-align: center;\"><?=$trans->getTrans('tour','LAST')?></div>"
                     }
                   ]
                 });

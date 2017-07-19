@@ -335,6 +335,49 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
         self::$trans["mig_id_confirmation"]["LOGIN"] = 'Login';
         self::$trans["mig_id_confirmation"]["CONFIRM"] = 'Confirmar';
         self::$trans["mig_id_confirmation"]["ALERT"] = 'Después de la confirmación, utilice esta cuenta de email para acceder al portal SciELO y otras aplicaciones de la red.';
+
+    // Terms of step-by-step guide
+        self::$trans["tour"]["TOUR_EXAMPLE"] = '(Exemplo exclusivo do tour)';
+        self::$trans["tour"]["FIRST"] = 'A <b>Minha BVS</b> registra as informações dos usuários e as preferências de pesquisas realizadas nas bases de dados da Rede BVS';
+        self::$trans["tour"]["STEP_1"] = 'Foto do usuário quando logado pelas Redes Sociais';
+        self::$trans["tour"]["STEP_2"] = 'Seus conteúdos são organizados por este Menu';
+        self::$trans["tour"]["STEP_3"] = '<b>Visão Geral</b><br />Apresenta a Home do serviço com um resumo de suas ações realizadas';
+        self::$trans["tour"]["STEP_4"] = 'Realize suas pesquisas no Portal Regional da BVS ou na BVS onde foi feito o login';
+        self::$trans["tour"]["STEP_5"] = 'Mude o idioma da interface';
+        self::$trans["tour"]["STEP_6"] = 'Atualize o seu Perfil';
+        self::$trans["tour"]["STEP_7"] = 'Acesse a lista dos documentos salvos como seus favoritos';
+        self::$trans["tour"]["STEP_8"] = 'Acesse a lista dos seus links favoritos';
+        self::$trans["tour"]["STEP_9"] = 'Acesse a lista dos seus temas de interesse';
+        self::$trans["tour"]["STEP_10"] = 'Lista de seus documentos favoritos adicionados por meio das pesquisas realizadas na BVS';
+        self::$trans["tour"]["STEP_11"] = 'Clique no tema para visualizar os documentos que foram carregados automaticamente a partir das palavras chaves';
+        self::$trans["tour"]["STEP_12"] = 'Acesso direto aos seus links favoritos';
+        self::$trans["tour"]["STEP_13"] = 'Histórico de suas últimas atividades realizadas';
+        self::$trans["tour"]["STEP_14"] = 'Histórico das buscas realizadas na BVS com link para o resultado';
+
+        self::$trans["tour"]["STEP_15"] = '<b>Documentos Favoritos</b><br/>Armazena os documentos que foram salvos a partir das pesquisas realizadas na BVS';
+        self::$trans["tour"]["STEP_16"] = 'Lista dos documentos adicionados à sua Biblioteca. Você pode: excluir, mover para outra coleção ou ver documentos relacionados.';
+        self::$trans["tour"]["STEP_17"] = 'Use este recurso para excluir ou mover múltiplos documentos para outra coleção';
+        self::$trans["tour"]["STEP_18"] = 'Organize seus documentos favoritos em coleções';
+        self::$trans["tour"]["STEP_19"] = 'Os documentos podem ser listados por ordem de data ou pelo ranking atribuído por você a cada documento';
+
+        self::$trans["tour"]["STEP_20"] = '<b>Temas de Interesse</b><br />Seus temas de interesse com palavras-chave para pesquisar e recuperar novos documentos da BVS relacionados a cada tema';
+        self::$trans["tour"]["STEP_21"] = 'Lista dos últimos documentos recuperados da BVS para o respectivo tema de interesse. Você pode: editar ou excluir o tema, adicionar documentos aos favoritos ou ver documentos relacionados.';
+        self::$trans["tour"]["STEP_22"] = 'Crie temas e defina palavras-chave para receber documentos relacionados da BVS';
+        self::$trans["tour"]["STEP_23"] = 'Clique nos seus temas de interesse para visualizar documentos recuperados da BVS';
+
+        self::$trans["tour"]["STEP_24"] = '<b>Histórico de busca na BVS</b><br />Armazena suas buscas realizadas na BVS sempre que estiver logado na Minha BVS';
+        self::$trans["tour"]["STEP_25"] = 'Lista das últimas expressões de buscas realizadas na BVS';
+        self::$trans["tour"]["STEP_26"] = 'Termos que foram utilizados na busca';
+        self::$trans["tour"]["STEP_27"] = 'Filtros que foram aplicados na busca';
+
+        self::$trans["tour"]["STEP_28"] = 'Você pode exibir o resultado de cada busca na BVS ou combinar as buscas indicando o operador de combinação';
+        self::$trans["tour"]["STEP_29"] = '<b>Links Favoritos</b><br />Organiza e facilita o acesso direto a seus Links Favoritos';
+        self::$trans["tour"]["STEP_30"] = 'Lista dos seus Links Favoritos, com opções para remover ou editar cada link';
+        self::$trans["tour"]["STEP_31"] = 'Adicione novo Link Favorito e crie sua própria biblioteca de links';
+        self::$trans["tour"]["STEP_32"] = 'Ordene seus links por data ou pelo ranking de avaliação atribuído por você a cada link';
+        self::$trans["tour"]["STEP_33"] = '<b>Minhas Publicações</b><br />Visualize suas publicações a partir do ORCID ID informado no seu Perfil';
+        self::$trans["tour"]["STEP_34"] = 'Lista das publicações recuperadas a partir do seu ORCID ID. Você pode acessar cada documento no Google Scholar e saber quantas vezes sua publicação foi citada. Veja também documentos da BVS relacionados a sua publicação.';
+        self::$trans["tour"]["LAST"] = 'Fim do tour.<br />Obrigado pela atenção!';
     }
 
 /**

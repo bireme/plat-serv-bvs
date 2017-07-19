@@ -20,7 +20,7 @@
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content">
-                    <div class="col-md-9 col-sm-9 col-xs-12">
+                    <div id="step30" class="col-md-9 col-sm-9 col-xs-12">
                         <?php if ( $response["values"] != false ) : ?>
                             <?php //echo $objPaginator->render($trans->getTrans($_REQUEST["action"],'NEXT'), $trans->getTrans($_REQUEST["action"],'PREVIOUS')); ?>
                             <!-- start project list -->
@@ -70,7 +70,7 @@
                         <?php endif; ?>
                     </div>
                     <div class="col-md-3 col-sm-3 col-xs-12">
-                        <section id="step17" class="panel panel-folder">
+                        <section id="step31" class="panel panel-folder">
                             <div class="panel-body">
                                 <h5><?=$trans->getTrans($_REQUEST["action"],'TOOLS')?></h5>
                                 <ul class="list-docs-unstyled project_files">
@@ -78,7 +78,7 @@
                                 </ul>
                             </div>
                         </section>
-                        <section id="step18" class="panel panel-folder">
+                        <section id="step32" class="panel panel-folder">
                             <div class="panel-body">
                                 <h5><?=$trans->getTrans($_REQUEST["action"],'SHOW_BY')?></h5>
                                 <ul class="list-docs-unstyled project_files">
@@ -108,18 +108,23 @@
                   exitOnOverlayClick: false,
                   steps: [
                     {
-                      element: '#step16',
-                      intro: "Links Favoritos",
+                      element: '#step29',
+                      intro: "<?=$trans->getTrans('tour','STEP_29')?>",
                       position: 'right'
                     },
                     {
-                      element: '#step17',
-                      intro: "Ferramentas",
+                      element: '#step30',
+                      intro: "<?=$trans->getTrans('tour','STEP_30')?>",
                       position: 'left'
                     },
                     {
-                      element: '#step18',
-                      intro: "Visualizar Lista por",
+                      element: '#step31',
+                      intro: "<?=$trans->getTrans('tour','STEP_31')?>",
+                      position: 'left'
+                    },
+                    {
+                      element: '#step32',
+                      intro: "<?=$trans->getTrans('tour','STEP_32')?>",
                       position: 'left'
                     }
                   ]

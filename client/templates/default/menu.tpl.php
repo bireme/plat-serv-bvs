@@ -6,18 +6,18 @@
         <!-- page content -->
         <div class="right_col" role="main">
             <!-- top tiles -->
-            <div id="step2" class="row tile_count">
-              <div class="col-md-3 col-sm-4 col-xs-6 tile_stats_count">
+            <div class="row tile_count">
+              <div id="step7" class="col-md-3 col-sm-4 col-xs-6 tile_stats_count">
                 <span class="count_top"><i class="fa fa-file-o"></i> <?=$trans->getTrans('menu','MY_SHELF')?></span>
                 <div class="count"><?php echo $totalCollections; ?></div>
                 <span class="count_bottom"><a href="<?=RELATIVE_PATH?>/controller/mydocuments/control/business"><?=$trans->getTrans('menu','SEE_ALL_DOCS')?></a></span>
               </div>
-              <div class="col-md-3 col-sm-4 col-xs-6 tile_stats_count">
+              <div id="step8" class="col-md-3 col-sm-4 col-xs-6 tile_stats_count">
                 <span class="count_top"><i class="fa fa-external-link"></i> <?=$trans->getTrans('menu','MY_LINKS')?></span>
                 <div class="count green"><?php echo $totalLinks; ?></div>
                 <span class="count_bottom"><a href="<?=RELATIVE_PATH?>/controller/mylinks/control/business"><?=$trans->getTrans('menu','SEE_ALL_LINKS')?></a></span>
               </div>
-              <div class="col-md-3 col-sm-4 col-xs-6 tile_stats_count">
+              <div id="step9" class="col-md-3 col-sm-4 col-xs-6 tile_stats_count">
                 <span class="count_top"><i class="fa fa-folder-open-o"></i> <?=$trans->getTrans('menu','MY_PROFILE_DOCUMENTS')?></span>
                 <div class="count"><?php echo $totalProfiles; ?></div>
                 <span class="count_bottom"><a href="<?=RELATIVE_PATH?>/controller/myprofiledocuments/control/business"><?=$trans->getTrans('menu','SEE_ALL_PROFILES')?></a></span>
@@ -50,7 +50,7 @@
                 </div>
               </div> -->
 
-              <div id="step3" class="col-md-4 col-xs-12 fav-docs">
+              <div id="step10" class="col-md-4 col-xs-12 fav-docs">
                 <div class="x_panel">
                   <div class="x_title">
                     <h2><?=$trans->getTrans('menu','SHELF_WIDGET')?><small></small></h2>
@@ -73,7 +73,7 @@
                 </div>
               </div>
 
-              <div id="step4" class="col-md-4 col-xs-12 themes">
+              <div id="step11" class="col-md-4 col-xs-12 themes">
                 <div class="x_panel">
                   <div class="x_title">
                     <h2><?=$trans->getTrans('menu','PROFILE_WIDGET')?><small></small></h2>
@@ -97,7 +97,7 @@
                 </div>
               </div>
 
-              <div id="step5" class="col-md-4 col-xs-12 fav-links">
+              <div id="step12" class="col-md-4 col-xs-12 fav-links">
                 <div class="x_panel">
                   <div class="x_title">
                     <h2><?=$trans->getTrans('menu','MY_LINKS')?><small></small></h2>
@@ -123,7 +123,7 @@
             </div>
 
             <div class="row">
-              <div id="step6" class="col-md-4 col-xs-12 tasks">
+              <div id="step13" class="col-md-4 col-xs-12 tasks">
                 <div class="x_panel">
                   <div class="x_title">
                     <h2><?=$trans->getTrans('menu','RECENT_ACTIVITIES')?><small></small></h2>
@@ -158,7 +158,7 @@
                 </div>
               </div>
 
-              <div id="step7" class="col-md-4 col-xs-12 vhl-search">
+              <div id="step14" class="col-md-4 col-xs-12 vhl-search">
                 <div class="x_panel">
                   <div class="x_title">
                     <h2><?=$trans->getTrans('menu','SEARCH_WIDGET')?></h2>
@@ -182,9 +182,9 @@
                               <td class="query"><?php echo $search['query']; ?></td>
                               <td style="text-align: right;">
                                 <?php if ( 'portal' == $_SESSION['iahx'] ) : ?>
-                                <button id="v<?php echo $count; ?>" class="btn btn-primary btn-xs portal" value="portal"><i class="fa fa-search"></i> <?=$trans->getTrans('menu','VIEW')?></button>
+                                <button id="v<?php echo $count; ?>" class="btn btn-primary btn-xs portal" value="portal" data-query="<?php echo $search['query']; ?>" data-filter="<?php echo $search['filter']; ?>"><i class="fa fa-search"></i> <?=$trans->getTrans('menu','VIEW')?></button>
                                 <?php else : ?>
-                                <button id="v<?php echo $count; ?>" class="btn btn-primary btn-xs search" value="<?php echo $_SESSION['iahx']; ?>" data-original-title="" title=""><i class="fa fa-search search"></i> <?=$trans->getTrans('menu','VIEW')?></button>
+                                <button id="v<?php echo $count; ?>" class="btn btn-primary btn-xs search" value="<?php echo $_SESSION['iahx']; ?>" data-label="<?php echo $label; ?>" data-query="<?php echo $search['query']; ?>" data-filter="<?php echo $search['filter']; ?>"><i class="fa fa-search search"></i> <?=$trans->getTrans('menu','VIEW')?></button>
                                 <?php endif; ?>
                               </td>
                             </tr>
@@ -278,43 +278,78 @@
                 exitOnOverlayClick: false,
                 steps: [
                   { 
-                    intro: "Minha BVS"
+                    intro: "<?=$trans->getTrans('tour','FIRST')?>"
                   },
                   {
                     element: '#step1',
-                    intro: "Visão Geral",
+                    intro: "<?=$trans->getTrans('tour','STEP_1')?>",
                     position: 'right'
                   },
                   {
                     element: '#step2',
-                    intro: "Total de Documentos/Links/Temas",
-                    position: 'bottom'
+                    intro: "<?=$trans->getTrans('tour','STEP_2')?>",
+                    position: 'right'
                   },
                   {
                     element: '#step3',
-                    intro: "Widget - Documentos Favoritos",
+                    intro: "<?=$trans->getTrans('tour','STEP_3')?>",
                     position: 'right'
                   },
                   {
                     element: '#step4',
-                    intro: "Widget - Temas de Interesse",
+                    intro: "<?=$trans->getTrans('tour','STEP_4')?>",
                     position: 'bottom'
                   },
                   {
                     element: '#step5',
-                    intro: "Widget - Links Favoritos",
+                    intro: "<?=$trans->getTrans('tour','STEP_5')?>",
                     position: 'left'
                   },
                   {
                     element: '#step6',
-                    intro: "Widget - Atividades Recentes",
-                    position: 'right'
+                    intro: "<?=$trans->getTrans('tour','STEP_6')?>",
+                    position: 'left'
                   },
                   {
                     element: '#step7',
-                    intro: "Widget - Buscas na BVS",
+                    intro: "<?=$trans->getTrans('tour','STEP_7')?>",
+                    position: 'bottom'
+                  },
+                  {
+                    element: '#step8',
+                    intro: "<?=$trans->getTrans('tour','STEP_8')?>",
+                    position: 'bottom'
+                  },
+                  {
+                    element: '#step9',
+                    intro: "<?=$trans->getTrans('tour','STEP_9')?>",
+                    position: 'bottom'
+                  },
+                  {
+                    element: '#step10',
+                    intro: "<?=$trans->getTrans('tour','STEP_10')?>",
                     position: 'right'
-                  }
+                  },
+                  {
+                    element: '#step11',
+                    intro: "<?=$trans->getTrans('tour','STEP_11')?>",
+                    position: 'right'
+                  },
+                  {
+                    element: '#step12',
+                    intro: "<?=$trans->getTrans('tour','STEP_12')?>",
+                    position: 'left'
+                  },
+                  {
+                    element: '#step13',
+                    intro: "<?=$trans->getTrans('tour','STEP_13')?>",
+                    position: 'right'
+                  },
+                  {
+                    element: '#step14',
+                    intro: "<?=$trans->getTrans('tour','STEP_14')?>",
+                    position: 'right'
+                  },
                 ]
               });
               
