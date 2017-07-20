@@ -50,7 +50,7 @@
         })(window,document,'script','//www.google-analytics.com/analytics.js','__gaTracker');
 
         __gaTracker('create', '<?php echo GOOGLE_ANALYTICS; ?>', 'auto');
-        __gaTracker('send','pageview');
+        __gaTracker('send', 'pageview');
     </script>
     <?php endif; ?>
 

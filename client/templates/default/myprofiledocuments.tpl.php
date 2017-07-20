@@ -26,8 +26,8 @@
                       <?php $registerProfile = $responseProfile["values"][0]; ?>
                       <div class="folder-data">
                           <h4><i class="fa fa-folder-o"></i> <?=$registerProfile["profileName"]?></h4>
-                          <a class="edit" href="javascript: void(0);" onClick="window.open('<?=RELATIVE_PATH?>/controller/myprofiledocuments/control/business/task/edit/profile/<?=$registerProfile["profileID"]?>','','resizable=no,scrollbars=1,width=420,height=385')"><span class="label label-info"><?=$trans->getTrans($_REQUEST["action"],'EDIT_PROFILE')?></span></a>
-                          <a class="remove" href="<?=RELATIVE_PATH?>/controller/myprofiledocuments/control/business/task/delete/profile/<?=$registerProfile["profileID"]?>"><span class="label label-danger"><?=$trans->getTrans($_REQUEST["action"],'REMOVE_PROFILE')?></span></a>
+                          <a class="edit" href="javascript: void(0);" onclick="__gaTracker('send','event','Interest Topics','Edit Topic','<?php echo $registerProfile["profileName"]; ?>'); window.open('<?=RELATIVE_PATH?>/controller/myprofiledocuments/control/business/task/edit/profile/<?=$registerProfile["profileID"]?>','','resizable=no,scrollbars=1,width=420,height=385')"><span class="label label-info"><?=$trans->getTrans($_REQUEST["action"],'EDIT_PROFILE')?></span></a>
+                          <a class="remove" href="<?=RELATIVE_PATH?>/controller/myprofiledocuments/control/business/task/delete/profile/<?=$registerProfile["profileID"]?>" onclick="__gaTracker('send','event','Interest Topics','Remove Topic','<?php echo $registerProfile["profileName"]; ?>');"><span class="label label-danger"><?=$trans->getTrans($_REQUEST["action"],'REMOVE_PROFILE')?></span></a>
                       </div>
                       <div class="keywords"><small><?=$trans->getTrans($_REQUEST["action"],'PROFILE_KEYWORDS')?>: <?=$registerProfile["profileText"]?></small></div>
                       <div id="step21" class="col-md-9 col-sm-9 col-xs-12">
@@ -49,8 +49,8 @@
                                           <small style="display: block;"><?php echo $similar["authors"]; ?></small>
                                       </div>
                                       <div class="doc-actions">
-                                          <a class="label label-success add-collection" value="<?php echo $similar["docID"]; ?>"><?=$trans->getTrans($_REQUEST["action"],'ADD_COLLECTION')?></a>
-                                          <a class="label label-primary related-docs" href="javascript:;"><?php echo $trans->getTrans('suggesteddocs','RELATED_DOCS'); ?></a>
+                                          <a class="label label-success add-collection" value="<?php echo $similar["docID"]; ?>" onclick="__gaTracker('send','event','Interest Topics','Favorite Documents','<?php echo $similar["title"]; ?>');"><?=$trans->getTrans($_REQUEST["action"],'ADD_COLLECTION')?></a>
+                                          <a class="label label-primary related-docs" href="javascript:;" onclick="__gaTracker('send','event','Interest Topics','Related Documents','<?php echo $similar["title"]; ?>');"><?php echo $trans->getTrans('suggesteddocs','RELATED_DOCS'); ?></a>
                                       </div>
                                       <!--div>
                                         <span class="label label-default">Default</span>

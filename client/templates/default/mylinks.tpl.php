@@ -47,8 +47,8 @@
                                         <small style="display: block;"><?php echo $register["description"]; ?></small>
                                     </div>
                                     <div>
-                                        <a class="remove" href="<?=RELATIVE_PATH?>/controller/mylinks/control/business/task/delete/link/<?=$register["linkID"]?>"><span class="label label-danger"><?=$trans->getTrans($_REQUEST["action"],'REMOVE_LINK')?></span></a>
-                                        <a class="edit" href="javascript: void(0);" onClick="window.open('<?=RELATIVE_PATH?>/controller/mylinks/control/business/task/edit/link/<?=$register["linkID"]?>','','resizable=no,scrollbars=1,width=420,height=385')"><span class="label label-info"><?=$trans->getTrans($_REQUEST["action"],'EDIT_LINK')?></span></a>
+                                        <a class="remove" href="<?=RELATIVE_PATH?>/controller/mylinks/control/business/task/delete/link/<?=$register["linkID"]?>" onclick="__gaTracker('send','event','Favorite Links','Remove Link','<?php echo $register["url"]; ?>');"><span class="label label-danger"><?=$trans->getTrans($_REQUEST["action"],'REMOVE_LINK')?></span></a>
+                                        <a class="edit" href="javascript: void(0);" onclick="__gaTracker('send','event','Favorite Links','Edit Link','<?php echo $register["url"]; ?>'); window.open('<?=RELATIVE_PATH?>/controller/mylinks/control/business/task/edit/link/<?=$register["linkID"]?>','','resizable=no,scrollbars=1,width=420,height=385')"><span class="label label-info"><?=$trans->getTrans($_REQUEST["action"],'EDIT_LINK')?></span></a>
                                     </div>
                                     <!--div>
                                       <span class="label label-default">Default</span>

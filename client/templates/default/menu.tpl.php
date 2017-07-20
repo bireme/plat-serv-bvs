@@ -10,17 +10,17 @@
               <div id="step7" class="col-md-3 col-sm-4 col-xs-6 tile_stats_count">
                 <span class="count_top"><i class="fa fa-file-o"></i> <?=$trans->getTrans('menu','MY_SHELF')?></span>
                 <div class="count"><?php echo $totalCollections; ?></div>
-                <span class="count_bottom"><a href="<?=RELATIVE_PATH?>/controller/mydocuments/control/business"><?=$trans->getTrans('menu','SEE_ALL_DOCS')?></a></span>
+                <span class="count_bottom"><a href="<?=RELATIVE_PATH?>/controller/mydocuments/control/business" onclick="__gaTracker('send','event','Overview','Favorite Documents','See All');"><?=$trans->getTrans('menu','SEE_ALL_DOCS')?></a></span>
               </div>
               <div id="step8" class="col-md-3 col-sm-4 col-xs-6 tile_stats_count">
                 <span class="count_top"><i class="fa fa-external-link"></i> <?=$trans->getTrans('menu','MY_LINKS')?></span>
                 <div class="count green"><?php echo $totalLinks; ?></div>
-                <span class="count_bottom"><a href="<?=RELATIVE_PATH?>/controller/mylinks/control/business"><?=$trans->getTrans('menu','SEE_ALL_LINKS')?></a></span>
+                <span class="count_bottom"><a href="<?=RELATIVE_PATH?>/controller/mylinks/control/business" onclick="__gaTracker('send','event','Overview','Favorite Links','See All');"><?=$trans->getTrans('menu','SEE_ALL_LINKS')?></a></span>
               </div>
               <div id="step9" class="col-md-3 col-sm-4 col-xs-6 tile_stats_count">
                 <span class="count_top"><i class="fa fa-folder-open-o"></i> <?=$trans->getTrans('menu','MY_PROFILE_DOCUMENTS')?></span>
                 <div class="count"><?php echo $totalProfiles; ?></div>
-                <span class="count_bottom"><a href="<?=RELATIVE_PATH?>/controller/myprofiledocuments/control/business"><?=$trans->getTrans('menu','SEE_ALL_PROFILES')?></a></span>
+                <span class="count_bottom"><a href="<?=RELATIVE_PATH?>/controller/myprofiledocuments/control/business" onclick="__gaTracker('send','event','Overview','Interest Topics','See All');"><?=$trans->getTrans('menu','SEE_ALL_PROFILES')?></a></span>
               </div>
             </div>
             <!-- /top tiles -->
@@ -64,7 +64,7 @@
                       <?php foreach ( $collections as $col ) : ?>
                         <article class="media event">
                           <div class="media-body">
-                            <a class="title" href="<?php echo $col['docURL'] ?>" target="_blank"><i class="fa fa-file-o" aria-hidden="true"></i><?php echo $col['title'] ?></a>
+                            <a class="title" href="<?php echo $col['docURL'] ?>" target="_blank" onclick="__gaTracker('send','event','Overview','Favorite Documents','<?php echo $col['title'] ?>');"><i class="fa fa-file-o" aria-hidden="true"></i><?php echo $col['title'] ?></a>
                           </div>
                         </article>
                       <?php endforeach; ?>
@@ -87,7 +87,7 @@
                       <?php foreach ( $profiles as $profile ) : ?>
                         <article class="media event">
                           <div class="media-body">
-                            <a class="title" href="<?php echo RELATIVE_PATH.'/controller/myprofiledocuments/control/business/profile/'.$profile["profileID"]; ?>"><i class="fa fa-folder-open-o" aria-hidden="true"></i><?php echo $profile['profileName']; ?></a>
+                            <a class="title" href="<?php echo RELATIVE_PATH.'/controller/myprofiledocuments/control/business/profile/'.$profile["profileID"]; ?>" onclick="__gaTracker('send','event','Overview','Interest Topics','<?php echo $profile['profileName'] ?>');"><i class="fa fa-folder-open-o" aria-hidden="true"></i><?php echo $profile['profileName']; ?></a>
                             <p><span><?=$trans->getTrans('menu','KEYWORDS')?>: </span><?php echo $profile['profileText']; ?></p>
                           </div>
                         </article>
@@ -111,7 +111,7 @@
                       <?php foreach ( $links as $link ) : ?>
                         <article class="media event">
                           <div class="media-body">
-                            <a class="title" href="<?php echo $link['url']; ?>" target="_blank"><i class="fa fa-external-link" aria-hidden="true"></i><?php echo $link['name']; ?></a>
+                            <a class="title" href="<?php echo $link['url']; ?>" target="_blank" onclick="__gaTracker('send','event','Overview','Favorite Links','<?php echo $link['url'] ?>');"><i class="fa fa-external-link" aria-hidden="true"></i><?php echo $link['name']; ?></a>
                             <p><?php echo $link['description']; ?></p>
                           </div>
                         </article>
@@ -182,9 +182,9 @@
                               <td class="query"><?php echo $search['query']; ?></td>
                               <td style="text-align: right;">
                                 <?php if ( 'portal' == $_SESSION['iahx'] ) : ?>
-                                <button id="v<?php echo $count; ?>" class="btn btn-primary btn-xs portal" value="portal" data-query="<?php echo $search['query']; ?>" data-filter="<?php echo $search['filter']; ?>"><i class="fa fa-search"></i> <?=$trans->getTrans('menu','VIEW')?></button>
+                                <button id="v<?php echo $count; ?>" class="btn btn-primary btn-xs portal" value="portal" data-query="<?php echo $search['query']; ?>" data-filter="<?php echo $search['filter']; ?>" onclick="__gaTracker('send','event','Overview','VHL Search History','<?php echo $search['query'] ?>');"><i class="fa fa-search"></i> <?=$trans->getTrans('menu','VIEW')?></button>
                                 <?php else : ?>
-                                <button id="v<?php echo $count; ?>" class="btn btn-primary btn-xs search" value="<?php echo $_SESSION['iahx']; ?>" data-label="<?php echo $label; ?>" data-query="<?php echo $search['query']; ?>" data-filter="<?php echo $search['filter']; ?>"><i class="fa fa-search search"></i> <?=$trans->getTrans('menu','VIEW')?></button>
+                                <button id="v<?php echo $count; ?>" class="btn btn-primary btn-xs search" value="<?php echo $_SESSION['iahx']; ?>" data-label="<?php echo $label; ?>" data-query="<?php echo $search['query']; ?>" data-filter="<?php echo $search['filter']; ?>" onclick="__gaTracker('send','event','Overview','VHL Search History','<?php echo $search['query'] ?>');"><i class="fa fa-search search"></i> <?=$trans->getTrans('menu','VIEW')?></button>
                                 <?php endif; ?>
                               </td>
                             </tr>
