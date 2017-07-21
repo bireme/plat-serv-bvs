@@ -30,7 +30,7 @@ define("BIR_ACCOUNTS_DB_PASSWORD","");
 define("BIR_ACCOUNTS_DB_DBNAME","");
 
 /* Site configuration */
-define("SITENAME","Plataforma de Serviços da BVS");
+define("SITENAME","Minha BVS");
 
 define("APP_BASEDIR",dirname(__FILE__)); /* app base dir ex. /home/servplat/htdocs */
 define("DEFAULT_SKIN","default");
@@ -105,11 +105,10 @@ define('LOG_FILE_MAIL',APP_BASEDIR.'/mail.log');
 /* EMAIL configuration */
 define("EMAIL_HOST",'pombo.bireme.br');
 define("EMAIL_FROM",'appservplat@bireme.org');
-define("EMAIL_FROMNAME",'BVS Network');
 define("EMAIL_USERNAME",'');
 define("EMAIL_PASSWORD",'');
-define("EMAIL_NEWPASSWORD_TEMPLATE",APP_BASEDIR.'/templates/mail/sendNewEMail.tpl');
-define("EMAIL_CONFIRMATION_TEMPLATE",APP_BASEDIR.'/templates/mail/confirmEMail.tpl');
+define("EMAIL_NEWPASSWORD_TEMPLATE",APP_BASEDIR.'/templates/mail/sendNewEMail.#LANG#.tpl');
+define("EMAIL_CONFIRMATION_TEMPLATE",APP_BASEDIR.'/templates/mail/confirmEMail.#LANG#.tpl');
 
 /* WWW Public files */
 define("ERROR_REPORTING",0); // 0 || E_ALL

@@ -26,7 +26,7 @@ define('ENABLE_SSO_LOGIN',true);
 
 define("RELATIVE_PATH",""); /*if the app isnt installed at the root directory */
 
-define("SITENAME","Plataforma de Serviços da BVS");
+define("SITENAME","Minha BVS");
 define("SITE_IDENTITY","ASK_YOURS_FOR_BIREME"); /*Bireme will give a SITE_IDENTITY 
     * to be configured in this attribute*/
 

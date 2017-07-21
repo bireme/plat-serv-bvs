@@ -15,6 +15,8 @@
 
 /* configuration file */
 require_once(dirname(__FILE__)."/../config.php");
+/* session handle file */
+require_once(dirname(__FILE__)."/../pub/include/sessionHandler.php");
 /* log API  */
 require_once(dirname(__FILE__)."/../lib/libLog/Log.php");
 /* DB class */

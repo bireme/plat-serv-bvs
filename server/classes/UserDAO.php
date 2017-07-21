@@ -477,16 +477,17 @@ class UserDAO {
 
         if($addConfirm !== false){
             $to = array($email);
+            $tpl = str_replace('#LANG#', $_SESSION['lang'], EMAIL_CONFIRMATION_TEMPLATE);
             $home = $_SERVER['HTTP_HOST'] . RELATIVE_PATH . '/controller/authentication';
             $body = str_replace('#SITE#',
                 $_SERVER['HTTP_HOST'],
-                file_get_contents(EMAIL_CONFIRMATION_TEMPLATE));
+                file_get_contents($tpl));
             $body = str_replace('#USERNAME#', $objUser->getFirstName(), $body);
             $body = str_replace('#HOME#', base64_encode($home), $body);
             $body = str_replace('#EMAIL#', $email, $body);
             $body = str_replace('#KEY#', $key, $body);
             $sendMail = Mailer::sendMail($body,
-                "New Services Platform User: ".$objUser->getFirstName(),$to);
+                CONFIRM_USER_EMAIL_SUBJECT.$objUser->getFirstName(),$to);
 
             $retValue = true;
         }
@@ -631,11 +632,11 @@ class UserDAO {
 
                 if($retStats !== false){
                     $to = array($userID);
+                    $tpl = str_replace('#LANG#', $_SESSION['lang'], EMAIL_NEWPASSWORD_TEMPLATE);
                     $body = str_replace('[PASSWORD]',
                         $userAttributes['userPassword'],
-                        file_get_contents(EMAIL_NEWPASSWORD_TEMPLATE));
-                    $retValue = Mailer::sendMail($body,
-                        "New BVS network password",$to);
+                        file_get_contents($tpl));
+                    $retValue = Mailer::sendMail($body,NEW_PASSWORD_EMAIL_SUBJECT,$to);
                 }
             }
         }else{
