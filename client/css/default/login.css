@@ -6,7 +6,7 @@
 
 .main_page .omb_login { 
     margin: 0px auto;
-    background: #ebebec url(../../images/default/banner_top.jpg) top no-repeat;
+    background: #ebebec url(../../images/default/banner_top.png) top no-repeat;
 }
 
 .omb_login .omb_authTitle {
@@ -16,7 +16,15 @@
     font-size: 25px;
     font-family: Verdana, Geneva, sans-serif;
     color: #fff;
+}
 
+.omb_login .omb_authTitle span{
+	display:none !important;
+}
+
+.omb_login .omb_authTitle .logo-bireme {
+    float: right;
+    margin-top: 30px;
 }
 
 .omb_description .col-xs-12 {
@@ -48,6 +56,7 @@
 	background: #e9f5f9;
 }
 
+
 .omb_description p {
 	padding-top:10px;
 }
@@ -67,9 +76,17 @@
     opacity:1;      
 }
 
-.omb_login .omb_socialButtons .omb_btn-facebook {background: #3b5998;}
-.omb_login .omb_socialButtons .omb_btn-linkedin {background: #00aced;}
-.omb_login .omb_socialButtons .omb_btn-google {background: #c32f10;}
+.omb_login .omb_socialButtons .omb_btn-facebook {
+    background: #3b5998;
+}
+
+.omb_login .omb_socialButtons .omb_btn-linkedin {
+    background: #00aced;
+}
+
+.omb_login .omb_socialButtons .omb_btn-google {
+    background: #c32f10;
+}
 
 .omb_login .omb_loginOr {
     position: relative;
