@@ -1,7 +1,7 @@
 html, body, .container, .main_container { height: 100%; }
 
 body {
-    background: #5481c0 !important;
+    background: #fff !important;
 }
 
 body.main_page {
@@ -28,7 +28,7 @@ body .container.body .right_col {
 }
 
 .left_col {
-    background: #5481c0 !important;
+    background: #5a78a2 !important;
 }
 
 .nav.side-menu > li.active > a {
@@ -39,12 +39,20 @@ body .container.body .right_col {
     background: #F7F7F7 !important;
 }
 
+.nav-md, .nav-sm {
+    background: #5a78a2 !important;
+}
+
+.main_page {
+    background: #fff !important;
+}
+
 .nav_title {
     width: 230px;
     float: left;
     background: #5d7ba5 !important;
     border-radius: 0;
-    height: 67px !important;
+    height: 130px !important;
 }
 
 .nav_menu {
@@ -55,9 +63,25 @@ body .container.body .right_col {
     background: #8cb2d9 !important;
 }
 
+.site_title {
+    height: 140px !important;
+}
+
+.tile_count .tile_stats_count .count {
+    color:#1ABB9C !important;
+}
+
+.profile_info {
+    padding: 25px -1px !important;
+}
+
+.nav_title span {
+    display:none;
+}
+
 .middle {
     float: left;
-    width: 60%;
+    width: 60%; 
     clear: both;
 }
 
@@ -362,6 +386,11 @@ select.bulkactions {
     float: right;
 }
 
+
+.nav-sm .logo-md{display:none !important;}
+
+.nav-sm .logo-sm{display:block !important;}
+
 .nav-sm .navbar.nav_title {
     margin-top: 10px;
 }
@@ -414,11 +443,16 @@ select.bulkactions {
 }
 
 .fav-docs .x_title {
-    background: url(../../images/default/020-folder.png) left no-repeat; height: 54px;
+    background: url(../../images/default/document.png) left no-repeat; height: 54px;
 }
 
 .themes .x_title {
-    background: url(../../images/default/022-contact-book.png) left no-repeat; height: 54px;
+    
+	background: url(../../images/default/020-folder.png) left no-repeat; height: 54px;
+}
+
+.orcid .x_title{
+    background: url(../../images/default/orcid.png) left no-repeat; height: 54px;
 }
 
 .fav-links .x_title {
@@ -431,6 +465,75 @@ select.bulkactions {
 
 .vhl-search .x_title {
     background: url(../../images/default/005-search.png) left no-repeat; height: 54px;
+}
+
+.label-danger {
+    background: url(../../images/default/remove.png) left no-repeat;
+    height: 16px;
+    background-color: transparent !important;
+}
+
+.label-info {
+    background: url(../../images/default/edit.png) left no-repeat;
+    height: 16px;
+    background-color: transparent !important;
+}
+
+.label-success {
+    background: url(../../images/default/see.png) left no-repeat;
+    height: 16px;
+    background-color: transparent !important;
+}
+
+.add-collection {
+    background: url(../../images/default/star.png) left no-repeat;
+    height: 16px;
+    background-color: transparent !important;
+}
+
+.related-docs {
+    background: url(../../images/default/similar.png) left no-repeat;
+    height: 16px;
+}
+
+.move {
+    background: url(../../images/default/move.png) left no-repeat;
+    height: 16px;
+}
+
+.record {
+    margin-bottom: 10px !important;
+}
+
+.label-primary {
+    background-color: transparent !important;
+}
+
+.fav-docs .x_content .title {
+    font-weight: normal !important;
+}
+
+.label {
+    padding-left: 18px !important;
+    color: #666 !important;
+}
+
+.timeline .block {
+    padding: 0px 15px !important;
+}
+	
+ul.messages li, .tasks li {
+    padding: 0px !important;
+}
+
+.doc-actions a:hover {
+    text-decoration: underline !important;
+    color: #7397ba !important;
+}
+
+.x_title h2 small.example {
+    display: inline;
+    margin-left: 10px !important;
 }
 
 @media only screen 
