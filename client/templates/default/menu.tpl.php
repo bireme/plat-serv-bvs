@@ -9,17 +9,17 @@
             <div class="row tile_count">
               <div id="step7" class="col-md-3 col-sm-4 col-xs-6 tile_stats_count">
                 <span class="count_top"><i class="fa fa-file-o"></i> <?=$trans->getTrans('menu','MY_SHELF')?></span>
-                <div class="count"><?php echo $totalCollections; ?></div>
+                <div class="count"><a href="<?=RELATIVE_PATH?>/controller/mydocuments/control/business" onclick="__gaTracker('send','event','Overview','Favorite Documents','See All');"><?php echo $totalCollections; ?></a></div>
                 <span class="count_bottom"><a href="<?=RELATIVE_PATH?>/controller/mydocuments/control/business" onclick="__gaTracker('send','event','Overview','Favorite Documents','See All');"><?=$trans->getTrans('menu','SEE_ALL_DOCS')?></a></span>
               </div>
               <div id="step8" class="col-md-3 col-sm-4 col-xs-6 tile_stats_count">
                 <span class="count_top"><i class="fa fa-external-link"></i> <?=$trans->getTrans('menu','MY_LINKS')?></span>
-                <div class="count green"><?php echo $totalLinks; ?></div>
+                <div class="count green"><a href="<?=RELATIVE_PATH?>/controller/mylinks/control/business" onclick="__gaTracker('send','event','Overview','Favorite Links','See All');"><?php echo $totalLinks; ?></a></div>
                 <span class="count_bottom"><a href="<?=RELATIVE_PATH?>/controller/mylinks/control/business" onclick="__gaTracker('send','event','Overview','Favorite Links','See All');"><?=$trans->getTrans('menu','SEE_ALL_LINKS')?></a></span>
               </div>
               <div id="step9" class="col-md-3 col-sm-4 col-xs-6 tile_stats_count">
                 <span class="count_top"><i class="fa fa-folder-open-o"></i> <?=$trans->getTrans('menu','MY_PROFILE_DOCUMENTS')?></span>
-                <div class="count"><?php echo $totalProfiles; ?></div>
+                <div class="count"><a href="<?=RELATIVE_PATH?>/controller/myprofiledocuments/control/business" onclick="__gaTracker('send','event','Overview','Interest Topics','See All');"><?php echo $totalProfiles; ?></a></div>
                 <span class="count_bottom"><a href="<?=RELATIVE_PATH?>/controller/myprofiledocuments/control/business" onclick="__gaTracker('send','event','Overview','Interest Topics','See All');"><?=$trans->getTrans('menu','SEE_ALL_PROFILES')?></a></span>
               </div>
             </div>

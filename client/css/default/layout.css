@@ -67,8 +67,8 @@ body .container.body .right_col {
     height: 140px !important;
 }
 
-.tile_count .tile_stats_count .count {
-    color:#1ABB9C !important;
+.tile_count .tile_stats_count .count a {
+    color: #1ABB9C !important;
 }
 
 .profile_info {
