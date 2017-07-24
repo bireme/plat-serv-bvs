@@ -156,12 +156,12 @@ body .container.body .right_col {
     text-align: right;
 }
 
-.folderTools li{
+.folderTools li {
     display: inline;
     margin: 0px;
 }
 
-.folderTools ul{
+.folderTools ul {
     margin: 0px;
 }
 
@@ -238,7 +238,6 @@ a.operator {
 
 .tile_count .tile_stats_count {
     text-overflow: clip !important;
-    /*overflow: visible !important;*/
 }
 
 .x_title h2 {
@@ -290,10 +289,6 @@ a.operator {
 
 .help {
     margin-bottom: 20px;
-}
-
-.panel-folder {
-    /*border-bottom: 1px solid #ddd;*/
 }
 
 .profile_menu {
@@ -373,7 +368,15 @@ select.bulkactions {
     display: none;
 }
 
-#sidebar-menu .introjs-showElement {
+#sidebar-menu .introjs-showElement ul li a {
+    color: #000;
+}
+
+#sidebar-menu ul.child_menu li.introjs-showElement a {
+    color: #000;
+}
+
+.introjs-showElement .profile_info * {
     color: #000;
 }
 
@@ -386,10 +389,13 @@ select.bulkactions {
     float: right;
 }
 
+.nav-sm .logo-md {
+    display:none !important;
+}
 
-.nav-sm .logo-md{display:none !important;}
-
-.nav-sm .logo-sm{display:block !important;}
+.nav-sm .logo-sm {
+    display:block !important;
+}
 
 .nav-sm .navbar.nav_title {
     margin-top: 10px;
@@ -534,6 +540,10 @@ ul.messages li, .tasks li {
 .x_title h2 small.example {
     display: inline;
     margin-left: 10px !important;
+}
+
+.edit-profile .x_title h2 {
+    margin: 5px 0px 6px !important;
 }
 
 @media only screen 

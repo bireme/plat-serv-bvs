@@ -50,7 +50,7 @@ if($lang == 'pt'){
 <p>Minha BVS é um serviço gratuito disponível para qualquer usuário por meio de sua conta Facebook, Google, BIREME Account ou do próprio serviço Minha BVS.</p>
 <p>O usuário que preferir usar o serviço Minha BVS com sua conta Facebook ou Google NÃO precisa criar nova conta de usuário na Minha BVS.</p>
 <p>BIREME Account é um sistema de gestão de usuários dos cooperantes da Rede BIREME. Estes usuários NÃO precisam criar nova conta de usuário na Minha BVS.<p/>
-<p>Para criar uma nova conta de usuário Minha BVS é necessário preencher o formulário abaixo com dados pessoais e concordar com os termos e condições do serviço. <a href="javascript:;" class="decor" data-toggle="modal" data-target=".bs-modal-lg" style="text-decoration: underline;">Saiba mais</a><p>
+<p>Para criar uma nova conta de usuário Minha BVS é necessário preencher o formulário abaixo com dados pessoais e concordar com os termos e condições do serviço. <a href="javascript:;" class="decor" data-toggle="modal" data-target=".bs-modal-lg" style="text-decoration: underline;">Saiba mais</a></p>
 ');
     define("MY_VHL_DESCRIPTION",'
 <p>Minha BVS é um serviço gratuito que guarda informações e preferências do
@@ -242,7 +242,7 @@ if($lang == 'es'){
 <p>Minha BVS é um serviço gratuito disponível para qualquer usuário por meio de sua conta Facebook, Google, BIREME Account ou do próprio serviço Minha BVS.</p>
 <p>O usuário que preferir usar o serviço Minha BVS com sua conta Facebook ou Google NÃO precisa criar nova conta de usuário na Minha BVS.</p>
 <p>BIREME Account é um sistema de gestão de usuários dos cooperantes da Rede BIREME. Estes usuários NÃO precisam criar nova conta de usuário na Minha BVS.<p/>
-<p>Para criar uma nova conta de usuário Minha BVS é necessário preencher o formulário abaixo com dados pessoais e concordar com os termos e condições do serviço. <a href="javascript:;" class="decor" data-toggle="modal" data-target=".bs-modal-lg" style="text-decoration: underline;">Saiba mais</a><p>
+<p>Para criar uma nova conta de usuário Minha BVS é necessário preencher o formulário abaixo com dados pessoais e concordar com os termos e condições do serviço. <a href="javascript:;" class="decor" data-toggle="modal" data-target=".bs-modal-lg" style="text-decoration: underline;">Saiba mais</a></p>
 ');
     define("MY_VHL_DESCRIPTION",'
 <p>Minha BVS é um serviço gratuito que guarda informações e preferências do
@@ -434,7 +434,7 @@ if($lang == 'en'){
 <p>Minha BVS é um serviço gratuito disponível para qualquer usuário por meio de sua conta Facebook, Google, BIREME Account ou do próprio serviço Minha BVS.</p>
 <p>O usuário que preferir usar o serviço Minha BVS com sua conta Facebook ou Google NÃO precisa criar nova conta de usuário na Minha BVS.</p>
 <p>BIREME Account é um sistema de gestão de usuários dos cooperantes da Rede BIREME. Estes usuários NÃO precisam criar nova conta de usuário na Minha BVS.<p/>
-<p>Para criar uma nova conta de usuário Minha BVS é necessário preencher o formulário abaixo com dados pessoais e concordar com os termos e condições do serviço. <a href="javascript:;" class="decor" data-toggle="modal" data-target=".bs-modal-lg" style="text-decoration: underline;">Saiba mais</a><p>
+<p>Para criar uma nova conta de usuário Minha BVS é necessário preencher o formulário abaixo com dados pessoais e concordar com os termos e condições do serviço. <a href="javascript:;" class="decor" data-toggle="modal" data-target=".bs-modal-lg" style="text-decoration: underline;">Saiba mais</a></p>
 ');
     define("MY_VHL_DESCRIPTION",'
 <p>Minha BVS é um serviço gratuito que guarda informações e preferências do
@@ -466,7 +466,7 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
     define("UPDATE_USER_TITLE","Update user");
     define("USER_ADDED",'User added successfully');
     define("USER_EXISTS","<b>User already exists</b><br />Try to login with this user, if you have no success trying to authenticate with this user and don't remember the password,<br />use the link <b>\"forgot my password\"</b> in the user login box.");
-    define("USER_ADD_ERROR","<b>Registry error</b><br />Your mail is a Bireme mail. In this case your user already have on login to access the BVS aplications, just use you network login and password to have access to this application.");
+    define("USER_ADD_ERROR","<b>Registry error</b>");
     define("USER_ADD_SUCCESS","<b>User registration successful!</b>");
     define("USER_SEND_CONFIRMATION","<b>User registration successful!</b><br />We sent a confirmation link to your account for your email.<br />Please click on the link sent to activate your account in My VHL.");
     define("USER_UPDATED",'User updated successful!');

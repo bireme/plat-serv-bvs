@@ -191,7 +191,7 @@ $DocTitle = $isUser?UPDATE_USER_TITLE:REGISTER_NEW_USER_TITLE;
         <div class="right_col" role="main">
           <div>
             <div class="clearfix"></div>
-            <div class="row">
+            <div class="row edit-profile">
               <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                   <?php
@@ -207,10 +207,10 @@ $DocTitle = $isUser?UPDATE_USER_TITLE:REGISTER_NEW_USER_TITLE;
                       }
                   ?>
                   <?php if($isUser) : ?>
-                      <div class="x_title">
-                        <h2><?=MY_DATA?><small></small></h2>
-                        <div class="clearfix"></div>
-                      </div>
+                  <div class="x_title">
+                      <h2><?=MY_DATA?><small></small></h2>
+                      <div class="clearfix"></div>
+                  </div>
                   <?php endif; ?>
                   <div class="x_content">
                     <?php if ($response["status"] === true) : ?>

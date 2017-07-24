@@ -22,7 +22,7 @@ class Translations {
     <li>Acessar suas publicações por meio do ORCID</li>
     <li>Ter um espaço próprio/dashboard para salvar todas as suas preferências de pesquisa</li>
 </ul>
-<p>Tenha acesso gratuito aos produtos e serviços de informação da Minha BVS. <a href="javascript:;" class="decor" data-toggle="modal" data-target=".bs-modal-lg">Saiba mais</a><p>';
+<p>Tenha acesso gratuito aos produtos e serviços de informação da Minha BVS. <a href="javascript:;" class="decor" data-toggle="modal" data-target=".bs-modal-lg">Saiba mais</a></p>';
         self::$trans["authentication"]["MY_VHL_DESCRIPTION"] = '
 <h4>Visão Geral da Minha BVS</h4>
 <p>O serviço Minha BVS registra as informações dos usuários e as preferências de pesquisa nas bases de dados da Rede BVS, fornecendo serviços personalizados aos usuários da BVS.</p>
@@ -131,7 +131,7 @@ class Translations {
         self::$trans["menu"]["PROFILE_WIDGET"] = 'Temas de Interesse';
         self::$trans["menu"]["SHELF_WIDGET"] = 'Documentos Favoritos';
         self::$trans["menu"]["START_TOUR"] = 'Iniciar Tour';
-        self::$trans["menu"]["NEXT_PAGE"] = 'Próxima página';
+        self::$trans["menu"]["NEXT_PAGE"] = 'Próxima funcionalidade';
         self::$trans["menu"]["BACK"] = '&larr; Voltar';
         self::$trans["menu"]["NEXT"] = 'Avançar &rarr;';
         self::$trans["menu"]["SKIP"] = 'Pular';

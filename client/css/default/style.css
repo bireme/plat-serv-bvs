@@ -1,21 +1,21 @@
 .media-body .fa-external-link,
-.media-body .fa-folder-open-o {
-  padding-right: 5px;
-}
+.media-body .fa-folder-open-o,
 .media-body .fa-file-o {
-  padding-right: 10px;
-  font-size: 3em;
-  float: left;
+    padding-right: 5px;
 }
+
 .panel_toolbox {
-  min-width: 0;
+    min-width: 0;
 }
+
 .profile_info {
-  float: none;
-  width: 100%;
+    float: none;
+    width: 100%;
+    padding: 25px 10px;
 }
+
 p.excerpt span {
-  color: #23527c;
+    color: #23527c;
 }
 
 #squareSpaceModal.modal {

@@ -20,7 +20,7 @@ class Translations {
     <li>Lista de links favoritos</li>
 </ul>
 <p>Minha BVS está disponível para qualquer usuário por meio de sua conta
-Facebook, Google, BIREME Account ou do próprio serviço Minha BVS. <a href="javascript:;" class="decor" data-toggle="modal" data-target=".bs-modal-lg">Saiba mais</a><p>
+Facebook, Google, BIREME Account ou do próprio serviço Minha BVS. <a href="javascript:;" class="decor" data-toggle="modal" data-target=".bs-modal-lg">Saiba mais</a></p>
 ';
         self::$trans["authentication"]["MY_VHL_DESCRIPTION"] = '
 <p>Minha BVS é um serviço gratuito que guarda informações e preferências do
@@ -130,7 +130,7 @@ usuário para oferecer serviços personalizados e facilidades tais como:</p>
         self::$trans["menu"]["PROFILE_WIDGET"] = 'Temas de Interesse';
         self::$trans["menu"]["SHELF_WIDGET"] = 'Documentos Favoritos';
         self::$trans["menu"]["START_TOUR"] = 'Iniciar Tour';
-        self::$trans["menu"]["NEXT_PAGE"] = 'Próxima página';
+        self::$trans["menu"]["NEXT_PAGE"] = 'Próxima funcionalidade';
         self::$trans["menu"]["BACK"] = '&larr; Voltar';
         self::$trans["menu"]["NEXT"] = 'Avançar &rarr;';
         self::$trans["menu"]["SKIP"] = 'Pular';

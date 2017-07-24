@@ -4,13 +4,33 @@
     For .omb_spanOr use @body-bg instead of white.
 */
 
-
-
-
 .main_page .omb_login { 
     margin: 0px auto;
     background: #fff  url(../../images/default/banner_top.png) top no-repeat;
 	box-shadow: 0px 0px 6px 6px #E6E6E6;
+}
+
+.login-area {
+	display: flex;
+}
+
+.login-area .login-box .btn {
+	font-size: 14px;
+}
+
+.login-area .omb_description, .login-area .login-box {
+	width: 50%;
+	margin-top: 6em !important;
+	margin-bottom: 3em;
+}
+
+.login-area .omb_description .col-xs-12 {
+	padding: 2em 4em;
+}
+
+.omb_login .login-area .omb_description {
+	background: #ebebec;
+	padding: 1em;
 }
 
 .omb_login .omb_authTitle {
@@ -22,7 +42,7 @@
     color: #fff;
 }
 
-.omb_login .omb_authTitle span{
+.omb_login .omb_authTitle span {
 	display:none !important;
 }
 
@@ -44,7 +64,7 @@
     margin-right: 10px;
 }
 
-.omb_description{
+.omb_description {
     font-family: Verdana, Geneva, sans-serif;
     font-size: 12px;
     color: #1f76a9;
@@ -57,19 +77,19 @@
 	margin-left: 0px;
     margin-right: 0px;
 	margin-left: 0px;
-	background: #e9f5f9;
 }
 
+.omb_login .login-area .omb_description {
+    background: none !important;
+	padding: 0px !important; 
+    border: 1px solid #c0dbef;
+    margin-right: 18px;
+}
 
 .omb_description p {
-	padding-top:10px;
+	padding-top: 10px;
 }
-/*
-.omb_login .omb_socialButtons {
-    display: flex;
-    justify-content: center;
-}
-*/
+
 .omb_login .omb_socialButtons a {
     color: white;
     opacity:0.9;
@@ -115,15 +135,11 @@
     left: 50%;
     top: -0.6em;
     margin-left: -1.5em;
-    background-color: #ebebec;
+    background-color: #fff;
     width: 3em;
     text-align: center;
-}           
- 
- 
-.omb_login .trangolango .omb_description{ background: #e9f5f9 !important ; margin-right: 10px !important;} 
- 
- 
+}            
+
 .omb_login .omb_loginForm {
     margin-bottom: 10px;
 }
@@ -155,6 +171,7 @@
     background: #fff;
     padding: 20px;
     margin-bottom: 20px;
+    border: 1px solid #c0dbef
 }
 
 .form-group.omb_login .omb_loginOr {
