@@ -4,9 +4,13 @@
     For .omb_spanOr use @body-bg instead of white.
 */
 
+
+
+
 .main_page .omb_login { 
     margin: 0px auto;
-    background: #ebebec url(../../images/default/banner_top.png) top no-repeat;
+    background: #fff  url(../../images/default/banner_top.png) top no-repeat;
+	box-shadow: 0px 0px 6px 6px #E6E6E6;
 }
 
 .omb_login .omb_authTitle {
@@ -116,6 +120,10 @@
     text-align: center;
 }           
  
+ 
+.omb_login .trangolango .omb_description{ background: #e9f5f9 !important ; margin-right: 10px !important;} 
+ 
+ 
 .omb_login .omb_loginForm {
     margin-bottom: 10px;
 }
@@ -173,7 +181,7 @@
 
 @media (min-width: 1200px) {
     body.main_page .container {
-        width: 1170px;
+        width: 1162px;
     }
 
     body.main_page .container.body {
