@@ -11,68 +11,68 @@ class Translations {
     // Terms of authentication pages
         self::$trans["authentication"]["MY_VHL"] = 'Minha BVS';
         self::$trans["authentication"]["MY_VHL_SUMMARY"] = '
-<p>O serviço Minha BVS registra as informações dos usuários e as preferências de pesquisa nas bases de dados da Rede BVS, fornecendo serviços personalizados aos usuários da BVS.</p>
-<p>Isto significa que você poderá:</p>
+<p>Minha BVS é um serviço gratuito que guarda informações e preferências do usuário para oferecer serviços personalizados tais como: </p>
 <ul>
-    <li>Selecionar documentos de interesse</li>
-    <li>Criar sua própria coleção</li>
-    <li>Acessar documentos relacionados aos temas de seu interesse</li>
-    <li>Guardar o histórico de buscas realizadas na BVS</li>
-    <li>Organizar os links dos seus sites favoritos</li>
-    <li>Acessar suas publicações por meio do ORCID</li>
-    <li>Ter um espaço próprio/dashboard para salvar todas as suas preferências de pesquisa</li>
+    <li>Criação de coleções de documentos selecionados da BVS</li>
+    <li>Definição de temas de interesse</li>
+    <li>Publicações do usuário recuperadas por ORCID </li>
+    <li>Histórico de buscas realizadas na BVS</li>
+    <li>Lista de links favoritos</li>
 </ul>
-<p>Tenha acesso gratuito aos produtos e serviços de informação da Minha BVS. <a href="javascript:;" class="decor" data-toggle="modal" data-target=".bs-modal-lg">Saiba mais</a><p>';
+<p>Minha BVS está disponível para qualquer usuário por meio de sua conta
+Facebook, Google, BIREME Account ou do próprio serviço Minha BVS. <a href="javascript:;" class="decor" data-toggle="modal" data-target=".bs-modal-lg">Saiba mais</a><p>
+';
         self::$trans["authentication"]["MY_VHL_DESCRIPTION"] = '
-<h4>Visão Geral da Minha BVS</h4>
-<p>O serviço Minha BVS registra as informações dos usuários e as preferências de pesquisa nas bases de dados da Rede BVS, fornecendo serviços personalizados aos usuários da BVS.</p>
-<p>Isto significa que você poderá:</p>
+<p>Minha BVS é um serviço gratuito que guarda informações e preferências do
+usuário para oferecer serviços personalizados e facilidades tais como:</p>
 <ul>
-    <li>Selecionar documentos de interesse</li>
-    <li>Criar sua própria coleção</li>
-    <li>Acessar documentos relacionados aos temas de seu interesse</li>
-    <li>Guardar o histórico de buscas realizadas na BVS</li>
-    <li>Organizar os links dos seus sites favoritos</li>
-    <li>Acessar suas publicações por meio do ORCID</li>
-    <li>Ter um espaço próprio/dashboard para salvar todas as suas preferências de pesquisa</li>
-</ul>';
+    <li>Criação de coleções de documentos a partir de resultado de buscas processadas nas bases de dados da BVS.</li>
+    <li>Documentos encontrados nas bases de dados da BVS a partir das palavras-chaves indicadas para Temas de Interesse.</li>
+    <li>Publicações de autoria do usuário recuperadas em várias fontes considerando o número ORCID informado no Perfil do Usuário.</li>
+    <li>Histórico de buscas realizadas na BVS sempre que o usuário estiver logado no serviço.</li>
+    <li>Lista de links favoritos indicados pelo usuário permitindo acesso rápido e direto a sites de seu interesse.</li>
+</ul>
+<p>Minha BVS está disponível para qualquer usuário por meio de sua conta Facebook, Google, BIREME Account ou do próprio serviço Minha BVS.</p>
+<p>BIREME Account é um sistema de gestão de contas de usuários dos Centros Cooperantes da Rede BIREME que acessam o sistema FI-Admin, dentre outros sistemas. Esta mesma conta de usuário está habilitada para o serviço Minha BVS.</p>
+<p>Se o usuário prefere uma conta própria para o serviço Minha BVS, é necessário fazer seu registro gratuitamente como usuário, além de aceitar os termos de uso e política de privacidade.</p>
+';
         self::$trans["authentication"]["NOTICE"] = 'É novo por aqui?';
         self::$trans["authentication"]["BUTTON_CLOSE"] = 'Fechar';
-        self::$trans["authentication"]["RECOVER_ACCOUNTS"] = 'Se você faz parte da Rede BVS como um Centro Cooperante e já está cadastrado no BIREME Accounts como um usuário do Sistema de Administração de Fontes de Informação FI-Admin, clique no link abaixo e recupere sua senha.';
-        self::$trans["authentication"]["RECOVER_ACCOUNTS_LINK"] = 'Redefinir a senha do usuário FI-ADMIN';
-        self::$trans["authentication"]["RECOVER_PASSWORD"] = 'Se você é um usuário comum e deseja utilizar o serviço Minha BVS e esqueceu sua senha, clique no link abaixo para redefiní-la.';
-        self::$trans["authentication"]["RECOVER_PASSWORD_LINK"] = 'Redefinir sua senha';
+        self::$trans["authentication"]["RECOVER_ACCOUNTS"] = 'Se você é um Centro Cooperante da Rede BIREME, tem conta no BIREME Accounts, mas esqueceu sua senha...';
+        self::$trans["authentication"]["RECOVER_ACCOUNTS_LINK"] = 'Redefinir minha senha';
+        self::$trans["authentication"]["RECOVER_PASSWORD"] = 'Se você é um usuário já registrado no serviço Minha BVS, mas esqueceu sua senha...';
+        self::$trans["authentication"]["RECOVER_PASSWORD_LINK"] = 'Redefinir minha senha';
         self::$trans["authentication"]["TITLE"] = 'Autenticação de Usuários';
         self::$trans["authentication"]["NOREGISTRY"] = 'Registro de novos usuários indisponível temporariamente';
         self::$trans["authentication"]["HOME"] = 'home';
         self::$trans["authentication"]["EMAIL"] = 'e-mail ou';
-        self::$trans["authentication"]["LOGIN_FIELD"] = 'e-mail ou login';
-        self::$trans["authentication"]["LOGIN"] = 'login';
-        self::$trans["authentication"]["PASSWORD"] = 'password';
+        self::$trans["authentication"]["LOGIN_FIELD"] = 'e-mail ou usuário';
+        self::$trans["authentication"]["LOGIN"] = 'Entrar';
+        self::$trans["authentication"]["USER"] = 'usuário';
+        self::$trans["authentication"]["PASSWORD"] = 'senha';
         self::$trans["authentication"]["PRESS_HERE"] = 'clique aqui';
-        self::$trans["authentication"]["INVALID_LOGIN"] = 'usuario ou senha inválidos';
+        self::$trans["authentication"]["INVALID_LOGIN"] = 'usuário ou senha inválidos';
         self::$trans["authentication"]["INVALID_LOGIN_MAIL"] = '
 <div>Falha de autenticação</div>
 <ol>
-<li>Tente se autenticar com seu "SciELO login"</li>
 <li>Use a função "esqueci minha senha"</li>
-<li>Crie uma nova conta</li>
-<li>Peça por ajuda, HELP_FORM</li>
+<li>Crie uma nova conta de usuário</li>
+<li>Preciso de ajuda, HELP_FORM</li>
 </ol>
 ';
         self::$trans["authentication"]["INVALID_LOGIN_UNAME"] = '
 <div>Falha de autenticação</div>
 <ol>
-<li>Tente se autenticar com sua conta de e-mail</li>
+<li>Tente entrar com seu e-mail</li>
 <li>Use a função "esqueci minha senha"</li>
-<li>Crie uma nova conta</li>
-<li>Peça por ajuda, HELP_FORM</li>
+<li>Crie uma nova conta de usuário</li>
+<li>Preciso de ajuda, HELP_FORM</li>
 </ol>
 ';
         self::$trans["authentication"]["BIREME_LOGIN_LDAP"] = 'utilize seu usuário e senha da rede BIREME';
-        self::$trans["authentication"]["FORGOT_MY_PASSWORD"] = 'Esqueceu sua senha?';
+        self::$trans["authentication"]["FORGOT_MY_PASSWORD"] = 'Esqueci minha senha';
         self::$trans["authentication"]["REGISTRY"] = 'Registre-se';
-        self::$trans["authentication"]["HELPLOGINMESSAGE"] = 'A partir de agora, os serviços personalizados estão integrados por meio do passaporte de acesso das redes BVS e SciELO. O login SciELO é válido para essa autenticação.';
+        self::$trans["authentication"]["HELPLOGINMESSAGE"] = '';
         self::$trans["authentication"]["KNOWMORE"] = ' saiba mais';
         self::$trans["authentication"]["ACCESS_DENIED"] = 'acesso negado';
         self::$trans["authentication"]["OR"] = 'ou';
@@ -84,7 +84,7 @@ class Translations {
 
     // Terms of the new password page
         self::$trans["new_pass"]["TITLE"] = 'Enviar senha por email';
-        self::$trans["new_pass"]["LOGIN"] = 'login';
+        self::$trans["new_pass"]["LOGIN"] = 'usuário';
         self::$trans["new_pass"]["SUBMIT"] = 'enviar';
         self::$trans["new_pass"]["CANCEL"] = 'cancelar';
 
@@ -101,32 +101,32 @@ class Translations {
         self::$trans["menu"]["MY_SHELF"] = 'Documentos Favoritos';
         self::$trans["menu"]["MY_LINKS"] = 'Links Favoritos';
         self::$trans["menu"]["MY_NEWS"] = 'Minhas Notícias';
-        self::$trans["menu"]["FORGOT_MY_PASSWORD"] = 'esqueci minha senha';
-        self::$trans["menu"]["CHANGE_PASSWORD"] = 'Alterar Senha';
-        self::$trans["menu"]["MY_DATA"] = 'Editar Perfil';
+        self::$trans["menu"]["FORGOT_MY_PASSWORD"] = 'Esqueci minha senha';
+        self::$trans["menu"]["CHANGE_PASSWORD"] = 'Alterar minha senha';
+        self::$trans["menu"]["MY_DATA"] = 'Editar meu Perfil';
         self::$trans["menu"]["MY_ALERTS"] = 'Meus Alertas';
         self::$trans["menu"]["SEARCH"] = 'Pesquisar';
-        self::$trans["menu"]["SEARCH_FOR"] = 'Pesquisar por...';
+        self::$trans["menu"]["SEARCH_FOR"] = 'Pesquisar na BVS por...';
         self::$trans["menu"]["MY_SEARCHES"] = 'Histórico de Buscas na BVS';
         self::$trans["menu"]["KEYWORDS"] = 'Palavras-chave';
-        self::$trans["menu"]["SUGGESTED_DOCS"] = 'Documentos Relacionados';
-        self::$trans["menu"]["ORCID_WORKS"] = 'ORCID - Minhas Publicações';
+        self::$trans["menu"]["SUGGESTED_DOCS"] = 'Similares';
+        self::$trans["menu"]["ORCID_WORKS"] = 'Minhas Publicações';
         self::$trans["menu"]["RECENT_ACTIVITIES"] = 'Atividades Recentes';
         self::$trans["menu"]["SEE_ALL_DOCS"] = 'Ver todos os documentos';
         self::$trans["menu"]["SEE_ALL_LINKS"] = 'Ver todos os links';
         self::$trans["menu"]["SEE_ALL_PROFILES"] = 'Ver todos os temas';
         self::$trans["menu"]["ADD_COLLECTION"] = 'Coleção adicionada';
         self::$trans["menu"]["UPDATE_COLLECTION"] = 'Coleção atualizada';
-        self::$trans["menu"]["REMOVE_COLLECTION"] = 'Coleção removida';
+        self::$trans["menu"]["REMOVE_COLLECTION"] = 'Coleção excluída';
         self::$trans["menu"]["ADD_PROFILE"] = 'Tema adicionado';
         self::$trans["menu"]["UPDATE_PROFILE"] = 'Tema atualizado';
-        self::$trans["menu"]["REMOVE_PROFILE"] = 'Tema removido';
+        self::$trans["menu"]["REMOVE_PROFILE"] = 'Tema excluído';
         self::$trans["menu"]["ADD_LINK"] = 'Link adicionado';
         self::$trans["menu"]["UPDATE_LINK"] = 'Link atualizado';
-        self::$trans["menu"]["REMOVE_LINK"] = 'Link removido';
-        self::$trans["menu"]["QUERY"] = 'Query';
-        self::$trans["menu"]["VIEW"] = 'Exibir';
-        self::$trans["menu"]["SEARCH_WIDGET"] = 'Buscas na BVS';
+        self::$trans["menu"]["REMOVE_LINK"] = 'Link excluído';
+        self::$trans["menu"]["QUERY"] = 'Expressão de busca';
+        self::$trans["menu"]["VIEW"] = 'Buscar';
+        self::$trans["menu"]["SEARCH_WIDGET"] = 'Minhas Buscas na BVS';
         self::$trans["menu"]["PROFILE_WIDGET"] = 'Temas de Interesse';
         self::$trans["menu"]["SHELF_WIDGET"] = 'Documentos Favoritos';
         self::$trans["menu"]["START_TOUR"] = 'Iniciar Tour';
@@ -150,23 +150,23 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
         self::$trans["mysearches"]["MY_SEARCHES_NO_REGISTERS_FOUND"] = 'Nenhum registro encontrado';
         self::$trans["mysearches"]["NEXT"] = 'Próximo';
         self::$trans["mysearches"]["PREVIOUS"] = 'Anterior';
-        self::$trans["mysearches"]["QUERY"] = 'Query';
+        self::$trans["mysearches"]["QUERY"] = 'Expressão de busca';
         self::$trans["mysearches"]["FILTERS"] = 'Filtros';
         self::$trans["mysearches"]["ACTIONS"] = 'Ações';
         self::$trans["mysearches"]["VIEW"] = 'Exibir';
         self::$trans["mysearches"]["COMBINE"] = 'Combinar';
-        self::$trans["mysearches"]["ORIGIN_SITE"] = 'Site de origem';
-        self::$trans["mysearches"]["BRASIL"] = 'BVS Brasil';
+        self::$trans["mysearches"]["ORIGIN_SITE"] = 'BVS de origem';
+        self::$trans["mysearches"]["BRASIL"] = 'Brasil';
 
     // Terms of suggesteddocs pages
         self::$trans["suggesteddocs"]["PAGE"] = 'Página';
         self::$trans["suggesteddocs"]["NEXT"] = 'Próximo';
         self::$trans["suggesteddocs"]["PREVIOUS"] = 'Anterior';
-        self::$trans["suggesteddocs"]["SUGGESTED_DOCS"] = 'Documentos Relacionados';
+        self::$trans["suggesteddocs"]["SUGGESTED_DOCS"] = 'Similares';
         self::$trans["suggesteddocs"]["SUGGESTED_DOCS_NO_REGISTERS_FOUND"] = 'Nenhuma sugestão de documentos';
         self::$trans["suggesteddocs"]["REFERENCE"] = 'Escolha os documentos de referência para sugestões:';
         self::$trans["suggesteddocs"]["NO_REFERENCES"] = 'Nenhum documento encontrado com essa referência';
-        self::$trans["suggesteddocs"]["ADD_COLLECTION"] = 'adicionar aos favoritos';
+        self::$trans["suggesteddocs"]["ADD_COLLECTION"] = 'Adicionar aos favoritos';
         self::$trans["suggesteddocs"]["CONFIG"] = 'Configurações';
         self::$trans["suggesteddocs"]["DOCS"] = 'Documentos';
         self::$trans["suggesteddocs"]["DOCS_SOURCE"] = 'Origem dos documentos';
@@ -179,15 +179,15 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
         self::$trans["suggesteddocs"]["LOADING"] = 'Carregando...';
         self::$trans["suggesteddocs"]["SELECTED_DOCS"] = 'documentos selecionados';
         self::$trans["suggesteddocs"]["SEND"] = 'Enviar';
-        self::$trans["suggesteddocs"]["RELATED_DOCS"] = 'documentos relacionados';
-        self::$trans["suggesteddocs"]["RELATED_DOCS_ALERT"] = 'Nenhum documento relacionado';
+        self::$trans["suggesteddocs"]["RELATED_DOCS"] = 'Similares';
+        self::$trans["suggesteddocs"]["RELATED_DOCS_ALERT"] = 'Nenhum documento similar';
 
     // Terms of orcidworks pages
         self::$trans["orcidworks"]["PAGE"] = 'Página';
         self::$trans["orcidworks"]["NEXT"] = 'Próximo';
         self::$trans["orcidworks"]["PREVIOUS"] = 'Anterior';
-        self::$trans["orcidworks"]["ORCID_WORKS"] = 'ORCID - Minhas Publicações';
-        self::$trans["orcidworks"]["ORCID_WORKS_NO_REGISTERS_FOUND"] = 'Nenhuma publicação encontrada. Para visualizar suas publicações, favor informar o ORCID ID no seu cadastro.';
+        self::$trans["orcidworks"]["ORCID_WORKS"] = 'Minhas Publicações';
+        self::$trans["orcidworks"]["ORCID_WORKS_NO_REGISTERS_FOUND"] = 'Nenhuma publicação encontrada. Suas publicações são buscadas a partir do ORCID ID indicado no seu Perfil.';
         self::$trans["orcidworks"]["GOOGLE_SCHOLAR"] = 'ver no Google Scholar';
 
     // General Terms
@@ -198,61 +198,61 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
         self::$trans["mydocuments"]["MY_COLLECTION"] = 'Documentos Favoritos';
         self::$trans["mydocuments"]["BY_DATE"] = 'por Data';
         self::$trans["mydocuments"]["INCOMING_FOLDER"] = 'Caixa de Entrada';
-        self::$trans["mydocuments"]["ADD_FOLDER"] = 'Adicionar Coleção';
+        self::$trans["mydocuments"]["ADD_FOLDER"] = 'Adicionar';
         self::$trans["mydocuments"]["MY_FOLDERS"] = 'Minhas Coleções';
-        self::$trans["mydocuments"]["SHOW_BY"] = 'Visualizar Lista por:';
+        self::$trans["mydocuments"]["SHOW_BY"] = 'Ordenar lista por:';
         self::$trans["mydocuments"]["DATE"] = 'Data';
         self::$trans["mydocuments"]["MY_RANK"] = 'Meu ranking';
         self::$trans["mydocuments"]["MOVE"] = 'mover';
-        self::$trans["mydocuments"]["MOVE_TO"] = 'mover para';
-        self::$trans["mydocuments"]["MOVE_DOCUMENT_TO"] = 'mover para';
-        self::$trans["mydocuments"]["FULL_TEXT"] = 'exibir documento';
-        self::$trans["mydocuments"]["REMOVE_FROM_COLLECTION"] = 'remover da coleção';
-        self::$trans["mydocuments"]["MONITOR_CITATION"] = 'citações monitoradas';
-        self::$trans["mydocuments"]["MONITOR_ACCESS"] = 'acesso monitorado';
+        self::$trans["mydocuments"]["MOVE_TO"] = 'mover';
+        self::$trans["mydocuments"]["MOVE_DOCUMENT_TO"] = 'mover';
+        self::$trans["mydocuments"]["FULL_TEXT"] = 'mostrar';
+        self::$trans["mydocuments"]["REMOVE_FROM_COLLECTION"] = 'excluir';
+        self::$trans["mydocuments"]["MONITOR_CITATION"] = '';
+        self::$trans["mydocuments"]["MONITOR_ACCESS"] = '';
         self::$trans["mydocuments"]["ACCESS_LIST_NO_REGISTERS_FOUND"] = 'Nenhum registro encontrado';
-        self::$trans["mydocuments"]["EDIT_FOLDER"] = 'editar coleção';
-        self::$trans["mydocuments"]["REMOVE_FOLDER"] = 'remover coleção';
-        self::$trans["mydocuments"]["PUBLISH_FOLDER"] = 'Tornar público';
-        self::$trans["mydocuments"]["MAKE_FOLDER_PRIVATE"] = 'Tornar privado';
+        self::$trans["mydocuments"]["EDIT_FOLDER"] = 'editar';
+        self::$trans["mydocuments"]["REMOVE_FOLDER"] = 'excluir';
+        self::$trans["mydocuments"]["PUBLISH_FOLDER"] = '';
+        self::$trans["mydocuments"]["MAKE_FOLDER_PRIVATE"] = '';
         self::$trans["mydocuments"]["PAGE"] = 'Página';
         self::$trans["mydocuments"]["NEXT"] = 'Próximo';
         self::$trans["mydocuments"]["PREVIOUS"] = 'Anterior';
         self::$trans["mydocuments"]["BULK_ACTIONS"] = 'Ações em massa';
-        self::$trans["mydocuments"]["BULK_REMOVE_DOCS"] = 'Remover documentos';
-        self::$trans["mydocuments"]["BULK_MOVE_DOCS"] = 'Mover documentos';
+        self::$trans["mydocuments"]["BULK_REMOVE_DOCS"] = 'Excluir';
+        self::$trans["mydocuments"]["BULK_MOVE_DOCS"] = 'Mover';
 
     // Tems of directories pages
         self::$trans["directories"]["FOLDER_NAME"] = 'Nome da coleção';
-        self::$trans["directories"]["ADD_FOLDER"] = 'adicionar coleção';
-        self::$trans["directories"]["EDIT_FOLDER"] = 'editar coleção';
+        self::$trans["directories"]["ADD_FOLDER"] = 'adicionar';
+        self::$trans["directories"]["EDIT_FOLDER"] = 'editar';
         self::$trans["directories"]["SAVE"] = 'salvar';
         self::$trans["directories"]["CANCEL"] = 'cancelar';
-        self::$trans["directories"]["REMOVE"] = 'remover';
-        self::$trans["directories"]["REMOVE_FOLDER"] = 'remover coleção';
-        self::$trans["directories"]["REMOVE_CONTENT"] = 'Remover conteúdo';
+        self::$trans["directories"]["REMOVE"] = 'excluir';
+        self::$trans["directories"]["REMOVE_FOLDER"] = 'excluir';
+        self::$trans["directories"]["REMOVE_CONTENT"] = 'excluir';
         self::$trans["directories"]["MOVE"] = 'mover';
-        self::$trans["directories"]["MOVE_TO"] = 'mover para';
-        self::$trans["directories"]["MOVE_DOCUMENT_TO"] = 'mover para';
-        self::$trans["directories"]["MOVE_CONTENT_TO_OTHER_FOLDER"] = 'Mover conteúdo para outra coleção';
+        self::$trans["directories"]["MOVE_TO"] = 'mover';
+        self::$trans["directories"]["MOVE_DOCUMENT_TO"] = 'mover';
+        self::$trans["directories"]["MOVE_CONTENT_TO_OTHER_FOLDER"] = 'Mover para outra coleção';
         self::$trans["directories"]["INCOMING_FOLDER"] = 'Caixa de Entrada';
         self::$trans["directories"]["ADD_DIR_SUCESS"] = 'Operação realizada com sucesso.';
         self::$trans["directories"]["REMOVE_DIR_SUCESS"] = 'Operação realizada com sucesso.';
         self::$trans["directories"]["MOVE_DOC_SUCESS"] = 'Operação realizada com sucesso.';        
         self::$trans["directories"]["ADD_DIR_ERROR"] = 'Erro ao adicionar coleção';
-        self::$trans["directories"]["REMOVE_DIR_ERROR"] = 'Erro ao remover coleção';
+        self::$trans["directories"]["REMOVE_DIR_ERROR"] = 'Erro ao excluir coleção';
         self::$trans["directories"]["MOVE_DOC_ERROR"] = 'Erro ao mover coleção';
 
     // Tems of mylinks pages
         self::$trans["mylinks"]["SHOW_BY"] = 'Visualizar Lista por';
         self::$trans["mylinks"]["DATE"] = 'Data';
         self::$trans["mylinks"]["MY_RANK"] = 'Meu ranking';
-        self::$trans["mylinks"]["TOOLS"] = 'Ferramentas';
-        self::$trans["mylinks"]["ADD_LINK"] = 'adicionar link';
+        self::$trans["mylinks"]["TOOLS"] = 'Meus Links';
+        self::$trans["mylinks"]["ADD_LINK"] = 'adicionar';
         self::$trans["mylinks"]["MY_LINKS"] = 'Links Favoritos';
-        self::$trans["mylinks"]["REMOVE_LINK"] = 'remover link';
-        self::$trans["mylinks"]["EDIT_LINK"] = 'editar link';
-        self::$trans["mylinks"]["HIDE_FROM_HOME"] = 'remover da home page';
+        self::$trans["mylinks"]["REMOVE_LINK"] = 'excluir';
+        self::$trans["mylinks"]["EDIT_LINK"] = 'editar';
+        self::$trans["mylinks"]["HIDE_FROM_HOME"] = 'excluir da home page';
         self::$trans["mylinks"]["SHOW_IN_HOME"] = 'publicar na home page';
         self::$trans["mylinks"]["LINK_TITLE"] = 'Título';
         self::$trans["mylinks"]["LINK_URL"] = 'URL';
@@ -267,16 +267,16 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
         self::$trans["mylinks"]["NEXT"] = 'Próximo';
         self::$trans["mylinks"]["PREVIOUS"] = 'Anterior';
 
-    // Tems of mylinks pages
-        self::$trans["mynews"]["SHOW_BY"] = 'Visualizar Lista por';
+    // Tems of mynews pages
+        self::$trans["mynews"]["SHOW_BY"] = 'Ordenar por';
         self::$trans["mynews"]["DATE"] = 'Data';
         self::$trans["mynews"]["MY_RANK"] = 'Meu ranking';
         self::$trans["mynews"]["TOOLS"] = 'Ferramentas';
         self::$trans["mynews"]["ADD_NEWS"] = 'Adicionar RSS Feed';
         self::$trans["mynews"]["MY_NEWS"] = 'Minhas Notícias';
-        self::$trans["mynews"]["REMOVE_NEWS"] = 'remover rss feed';
-        self::$trans["mynews"]["EDIT_NEWS"] = 'editar rss feed';
-        self::$trans["mynews"]["HIDE_FROM_HOME"] = 'remover da home page';
+        self::$trans["mynews"]["REMOVE_NEWS"] = 'excluir';
+        self::$trans["mynews"]["EDIT_NEWS"] = 'editar';
+        self::$trans["mynews"]["HIDE_FROM_HOME"] = 'excluir da home page';
         self::$trans["mynews"]["SHOW_IN_HOME"] = 'publicar na home page';
         self::$trans["mynews"]["NEWS_TITLE"] = 'Título';
         self::$trans["mynews"]["NEWS_URL"] = 'URL';
@@ -293,7 +293,7 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
         self::$trans["myalerts"]["MY_ALERTS"] = 'Meus Alertas';
         self::$trans["myalerts"]["ACCESS_LIST"] = 'Estatísticas de Acesso';
         self::$trans["myalerts"]["CITED_LIST"] = 'Citações';
-        self::$trans["myalerts"]["REMOVE_ALERT"] = 'remover alerta';
+        self::$trans["myalerts"]["REMOVE_ALERT"] = 'excluir';
         self::$trans["myalerts"]["FULL_TEXT"] = 'texto completo';
         self::$trans["myalerts"]["SHOW_ACCESS_LIST"] = 'Mostrar Estatísticas de Acesso';
         self::$trans["myalerts"]["SHOW_CITED_LIST"] = 'Mostrar Citações';
@@ -302,27 +302,27 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
         self::$trans["myalerts"]["CITED_LIST_NO_REGISTERS_FOUND"] = 'Nenhum registro encontrado';
 
     // Terms of myprofiledocuments pages
-        self::$trans["myprofiledocuments"]["LILACS.orgiahx"] = 'Base de dados LILACS';
-        self::$trans["myprofiledocuments"]["SciELO.orgiahx"] = 'Rede SciELO';
+        self::$trans["myprofiledocuments"]["LILACS.orgiahx"] = '';
+        self::$trans["myprofiledocuments"]["SciELO.orgiahx"] = '';
         self::$trans["myprofiledocuments"]["MY_PROFILES"] = 'Temas de Interesse';
         self::$trans["myprofiledocuments"]["VIEW_RESULTS_IN"] = 'ver resultados em';
-        self::$trans["myprofiledocuments"]["REMOVE_PROFIVE"] = 'remover tema';
-        self::$trans["myprofiledocuments"]["EDIT_PROFILE"] = 'editar tema';
-        self::$trans["myprofiledocuments"]["ADD_PROFILE"] = 'adicionar tema';
-        self::$trans["myprofiledocuments"]["TOOLS"] = 'Ferramentas';
-        self::$trans["myprofiledocuments"]["SIMILARS_IN"] = 'Similares em';
-        self::$trans["myprofiledocuments"]["PROFILE_KEYWORDS"] = 'Palavras-chave do tema';
+        self::$trans["myprofiledocuments"]["REMOVE_PROFIVE"] = 'excluir';
+        self::$trans["myprofiledocuments"]["EDIT_PROFILE"] = 'editar';
+        self::$trans["myprofiledocuments"]["ADD_PROFILE"] = 'adicionar';
+        self::$trans["myprofiledocuments"]["TOOLS"] = 'Meus temas';
+        self::$trans["myprofiledocuments"]["SIMILARS_IN"] = 'Similares';
+        self::$trans["myprofiledocuments"]["PROFILE_KEYWORDS"] = 'Palavras-chave';
         self::$trans["myprofiledocuments"]["PROFILES"] = 'Temas';
-        self::$trans["myprofiledocuments"]["REMOVE_PROFILE"] = 'remover tema';
+        self::$trans["myprofiledocuments"]["REMOVE_PROFILE"] = 'excluir tema';
         self::$trans["myprofiledocuments"]["PROFILE_NAME"] = 'Nome do tema';
         self::$trans["myprofiledocuments"]["PROFILE_TEXT"] = 'Palavras-chave';
-        self::$trans["myprofiledocuments"]["PROFILE_TEXT_HELP"] = 'Os termos devem ser separados por vírgula.';
+        self::$trans["myprofiledocuments"]["PROFILE_TEXT_HELP"] = 'Separe as palavras-chave por vírgula.';
         self::$trans["myprofiledocuments"]["PROFILE_DEFAULT"] = 'Definir como padrão';
         self::$trans["myprofiledocuments"]["SAVE"] = 'salvar';
         self::$trans["myprofiledocuments"]["CANCEL"] = 'cancelar';
         self::$trans["myprofiledocuments"]["MY_PROFILES_NO_REGISTERS_FOUND"] = 'Nenhum registro encontrado';
         self::$trans["myprofiledocuments"]["MY_PROFILES_NO_SUGGESTIONS_FOUND"] = 'Nenhum documento encontrado. Tente atualizar o tema em <code>editar tema > salvar</code> ou altere as palavras-chave.';
-        self::$trans["myprofiledocuments"]["SERVICE_TEMPORARY_UNAVAILABLE"] = 'Serviço temporariamente indisponível';
+        self::$trans["myprofiledocuments"]["SERVICE_TEMPORARY_UNAVAILABLE"] = 'Serviço temporariamente indisponível. Tente atualizar esse tema mais tarde.';
         self::$trans["myprofiledocuments"]["ADD_PROFILE_SUCESS"] = 'Operação realizada com sucesso.';
         self::$trans["myprofiledocuments"]["ADD_PROFILE_ERROR"] = 'Erro ao adicionar tema';
         self::$trans["myprofiledocuments"]["PAGE"] = 'Página';
@@ -332,18 +332,19 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
         self::$trans["myprofiledocuments"]["INCOMING_FOLDER"] = 'Caixa de Entrada';
 
     // Terms of mig_id_confirmation pages
-        self::$trans["mig_id_confirmation"]["TITLE"] = 'Confirmação de Login';
-        self::$trans["mig_id_confirmation"]["LOGIN"] = 'Login';
+        self::$trans["mig_id_confirmation"]["TITLE"] = 'Confirmação de Usuário';
+        self::$trans["mig_id_confirmation"]["LOGIN"] = 'Usuário';
         self::$trans["mig_id_confirmation"]["CONFIRM"] = 'Confirmar';
-        self::$trans["mig_id_confirmation"]["ALERT"] = 'Após a confirmação, este email será o seu login para acessar o portal SciELO e as demais aplicações da Rede BVS.';
+        self::$trans["mig_id_confirmation"]["ALERT"] = 'Após a confirmação, este email será o seu usuário de acesso ao serviço.';
 
     // Terms of step-by-step guide
         self::$trans["tour"]["TOUR_EXAMPLE"] = '(Exemplo exclusivo do tour)';
+        self::$trans["tour"]["INTRO"] = 'Bem-vindo ao Tour da <b>Minha BVS</b>. Conheça as funcionalidades deste serviço personalizado navegando pelos botões de Avançar e Voltar. A qualquer momento você poderá sair do Tour e, se desejar, reiniciá-lo por meio menu do seu perfil.';
         self::$trans["tour"]["FIRST"] = 'A <b>Minha BVS</b> registra as informações dos usuários e as preferências de pesquisas realizadas nas bases de dados da Rede BVS';
         self::$trans["tour"]["STEP_1"] = 'Foto do usuário quando logado pelas Redes Sociais';
         self::$trans["tour"]["STEP_2"] = 'Seus conteúdos são organizados por este Menu';
         self::$trans["tour"]["STEP_3"] = '<b>Visão Geral</b><br />Apresenta a Home do serviço com um resumo de suas ações realizadas';
-        self::$trans["tour"]["STEP_4"] = 'Realize suas pesquisas no Portal Regional da BVS ou na BVS onde foi feito o login';
+        self::$trans["tour"]["STEP_4"] = 'Realize suas pesquisas no Portal Regional da BVS';
         self::$trans["tour"]["STEP_5"] = 'Mude o idioma da interface';
         self::$trans["tour"]["STEP_6"] = 'Atualize o seu Perfil';
         self::$trans["tour"]["STEP_7"] = 'Acesse a lista dos documentos salvos como seus favoritos';
@@ -378,7 +379,7 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
         self::$trans["tour"]["STEP_32"] = 'Ordene seus links por data ou pelo ranking de avaliação atribuído por você a cada link';
         self::$trans["tour"]["STEP_33"] = '<b>Minhas Publicações</b><br />Visualize suas publicações a partir do ORCID ID informado no seu Perfil';
         self::$trans["tour"]["STEP_34"] = 'Lista das publicações recuperadas a partir do seu ORCID ID. Você pode acessar cada documento no Google Scholar e saber quantas vezes sua publicação foi citada. Veja também documentos da BVS relacionados a sua publicação.';
-        self::$trans["tour"]["LAST"] = 'Fim do tour.<br />Obrigado pela atenção!';
+        self::$trans["tour"]["LAST"] = 'Parabéns! Você concluiu o Tour e já sabe como funciona os serviços personalizados da <b>Minha BVS</b>. Use e divulgue este serviço. Envie suas dúvidas e sugestões para o <a style="text-decoration: underline;" href="http://feedback.bireme.org/feedback/?application=my-vhl&version=1.0&lang='.$_SESSION['lang'].'">Serviço de Feedback</a>';
     }
 
 /**
@@ -395,4 +396,3 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
 }
 
 ?>
-

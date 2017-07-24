@@ -74,6 +74,7 @@ $DocTitle = FORGOT_PASSWORD;
 
                     <form method="post" name="cadastro" class="form-horizontal form-label-left" novalidate>
                       <span class="section"><?=RECOVER_PASSWORD?></span>
+                      <?=FORGOT_PASSWORD_MESSAGE?>
                       <div class="item field form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="login"><?=FIELD_LOGIN?> <span class="required">*</span>
                         </label>

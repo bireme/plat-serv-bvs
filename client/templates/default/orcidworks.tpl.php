@@ -88,7 +88,7 @@
                       position: 'left'
                     },
                     {
-                      intro: "<div style=\"text-align: center;\"><?=$trans->getTrans('tour','LAST')?></div>"
+                      intro: '<?=$trans->getTrans('tour','LAST')?>'
                     }
                   ]
                 });

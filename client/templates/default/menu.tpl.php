@@ -278,6 +278,9 @@
                 exitOnOverlayClick: false,
                 steps: [
                   { 
+                    intro: "<?=$trans->getTrans('tour','INTRO')?>"
+                  },
+                  { 
                     intro: "<?=$trans->getTrans('tour','FIRST')?>"
                   },
                   {

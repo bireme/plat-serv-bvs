@@ -47,7 +47,8 @@ class Translations {
         self::$trans["authentication"]["EMAIL"] = 'e-mail';
         self::$trans["authentication"]["HOME"] = 'home';
         self::$trans["authentication"]["LOGIN_FIELD"] = 'e-mail or login';
-        self::$trans["authentication"]["LOGIN"] = 'login';
+        self::$trans["authentication"]["LOGIN"] = 'Sign in';
+        self::$trans["authentication"]["USER"] = 'user';
         self::$trans["authentication"]["PASSWORD"] = 'password';
         self::$trans["authentication"]["PRESS_HERE"] = 'click here';
         self::$trans["authentication"]["INVALID_LOGIN"] = 'password/user not valid';
@@ -338,11 +339,12 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
 
     // Terms of step-by-step guide
         self::$trans["tour"]["TOUR_EXAMPLE"] = '(Exemplo exclusivo do tour)';
+        self::$trans["tour"]["INTRO"] = 'Bem-vindo ao Tour da <b>Minha BVS</b>. Conheça as funcionalidades deste serviço personalizado navegando pelos botões de Avançar e Voltar. A qualquer momento você poderá sair do Tour e, se desejar, reiniciá-lo por meio menu do seu perfil.';
         self::$trans["tour"]["FIRST"] = 'A <b>Minha BVS</b> registra as informações dos usuários e as preferências de pesquisas realizadas nas bases de dados da Rede BVS';
         self::$trans["tour"]["STEP_1"] = 'Foto do usuário quando logado pelas Redes Sociais';
         self::$trans["tour"]["STEP_2"] = 'Seus conteúdos são organizados por este Menu';
         self::$trans["tour"]["STEP_3"] = '<b>Visão Geral</b><br />Apresenta a Home do serviço com um resumo de suas ações realizadas';
-        self::$trans["tour"]["STEP_4"] = 'Realize suas pesquisas no Portal Regional da BVS ou na BVS onde foi feito o login';
+        self::$trans["tour"]["STEP_4"] = 'Realize suas pesquisas no Portal Regional da BVS';
         self::$trans["tour"]["STEP_5"] = 'Mude o idioma da interface';
         self::$trans["tour"]["STEP_6"] = 'Atualize o seu Perfil';
         self::$trans["tour"]["STEP_7"] = 'Acesse a lista dos documentos salvos como seus favoritos';
@@ -377,7 +379,7 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
         self::$trans["tour"]["STEP_32"] = 'Ordene seus links por data ou pelo ranking de avaliação atribuído por você a cada link';
         self::$trans["tour"]["STEP_33"] = '<b>Minhas Publicações</b><br />Visualize suas publicações a partir do ORCID ID informado no seu Perfil';
         self::$trans["tour"]["STEP_34"] = 'Lista das publicações recuperadas a partir do seu ORCID ID. Você pode acessar cada documento no Google Scholar e saber quantas vezes sua publicação foi citada. Veja também documentos da BVS relacionados a sua publicação.';
-        self::$trans["tour"]["LAST"] = 'Fim do tour.<br />Obrigado pela atenção!';
+        self::$trans["tour"]["LAST"] = 'Parabéns! Você concluiu o Tour e já sabe como funciona os serviços personalizados da <b>Minha BVS</b>. Use e divulgue este serviço. Envie suas dúvidas e sugestões para o <a style="text-decoration: underline;" href="http://feedback.bireme.org/feedback/?application=my-vhl&version=1.0&lang='.$_SESSION['lang'].'">Serviço de Feedback</a>';
     }
 
 

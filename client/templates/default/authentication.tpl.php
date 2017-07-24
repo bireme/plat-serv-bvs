@@ -84,7 +84,7 @@
                         <input type="submit" style="display:none" />
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                            <input type="text" class="form-control" name="userID" maxlenght="50" placeholder="<?=$trans->getTrans($_REQUEST['action'],'LOGIN')?>">
+                            <input type="text" class="form-control" name="userID" maxlenght="50" placeholder="<?=$trans->getTrans($_REQUEST['action'],'USER')?>">
                         </div>
                         <span class="help-block"></span>
                         <div class="input-group">
@@ -112,7 +112,7 @@
                     </p>
                 </div>
                 <div class="col-xs-12 col-sm-2">
-                    <button class="btn btn-lg btn-primary btn-block" type="submit" onclick="document.forms[0].submit();">Login</button>
+                    <button class="btn btn-lg btn-primary btn-block" type="submit" onclick="document.forms[0].submit();"><?=$trans->getTrans($_REQUEST["action"],'LOGIN')?></button>
                 </div>
             </div>
             <div class="row omb_row-sm-offset-3 omb_spacer">
