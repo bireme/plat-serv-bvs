@@ -39,7 +39,7 @@
                             <?php foreach ( $response["values"] as $register) : $count++; ?>
                             <tr>
                               <td id="s<?php echo $count; ?>"><?php echo $count; ?></td>
-                              <td class="query step26"><?php echo $register['query']; ?></td>
+                              <td class="query step26"><a href="<?php echo VHL_SEARCH_PORTAL_DOMAIN.'/portal/?q='.$register['query']; ?>" target="_blank"><?php echo $register['query']; ?></a></td>
                               <td class="filter step27"><?php echo $register['filter']; ?></td>
                               <td class="step28">
                                 <?php if ( 'portal' == $_SESSION['iahx'] ) : ?>
