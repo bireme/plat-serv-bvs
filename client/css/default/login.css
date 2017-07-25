@@ -196,6 +196,16 @@
     border-radius: 6px;
 }
 
+.omb_spanLogin {
+    margin-left: -6.5em !important;
+    width: 13em !important;
+}
+
+.omb_spanLoginWith {
+    margin-left: -3em !important;
+    width: 6em !important;
+}
+
 @media (min-width: 1200px) {
     body.main_page .container {
         width: 1162px;

@@ -77,6 +77,9 @@ class Translations {
         self::$trans["authentication"]["KNOWMORE"] = 'Learn more';
         self::$trans["authentication"]["ACCESS_DENIED"] = 'access denied';
         self::$trans["authentication"]["OR"] = 'or';
+        self::$trans["authentication"]["LOGIN_WITH"] = 'entrar com';
+        self::$trans["authentication"]["LOGIN_MESSAGE"] = 'Faça o login na Minha BVS';
+        self::$trans["authentication"]["LOGIN_ACCESS_MESSAGE"] = 'Acesse diretamente na Minha BVS';
 
     // Terms of the Request Authentication Page
         self::$trans["requestauth"]["LOGIN"] = 'login';

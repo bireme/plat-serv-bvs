@@ -76,6 +76,9 @@ usuário para oferecer serviços personalizados e facilidades tais como:</p>
         self::$trans["authentication"]["KNOWMORE"] = ' saiba mais';
         self::$trans["authentication"]["ACCESS_DENIED"] = 'acesso negado';
         self::$trans["authentication"]["OR"] = 'ou';
+        self::$trans["authentication"]["LOGIN_WITH"] = 'entrar com';
+        self::$trans["authentication"]["LOGIN_MESSAGE"] = 'Faça o login na Minha BVS';
+        self::$trans["authentication"]["LOGIN_ACCESS_MESSAGE"] = 'Acesse diretamente na Minha BVS';
 
     // Terms of the Request Authentication Page
         self::$trans["requestauth"]["LOGIN"] = 'login';

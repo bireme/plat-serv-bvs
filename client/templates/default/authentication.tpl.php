@@ -55,6 +55,17 @@
             <?php else : ?>
             <div class="login-area">
                 <div class="login-box">
+                    <div class="row omb_row-sm-offset-3 omb_loginOr">
+                        <div class="col-xs-12 col-sm-6">
+                            <span class="omb_spanOr omb_spanLogin"><?=$trans->getTrans($_REQUEST["action"],'LOGIN_MESSAGE')?></span>
+                        </div>
+                    </div>
+                    <div class="row omb_row-sm-offset-3 omb_loginOr">
+                        <div class="col-xs-12 col-sm-6">
+                            <hr class="omb_hrOr" />
+                            <span class="omb_spanOr omb_spanLoginWith"><?=$trans->getTrans($_REQUEST["action"],'LOGIN_WITH')?></span>
+                        </div>
+                    </div>
                     <div class="row omb_row-sm-offset-3 omb_socialButtons">
                         <div class="col-xs-6 col-sm-3">
                             <a href="/connector/facebook/<?php echo $build_query; ?>" class="btn btn-lg btn-block omb_btn-facebook">
