@@ -137,6 +137,7 @@
                   nextLabel: "<?=$trans->getTrans('menu','NEXT')?>",
                   skipLabel: "<?=$trans->getTrans('menu','SKIP')?>",
                   exitOnOverlayClick: false,
+                  showStepNumbers: false,
                   steps: [
                     {
                       element: '#step20',
