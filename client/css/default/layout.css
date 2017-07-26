@@ -525,7 +525,11 @@ select.bulkactions {
 }
 
 .timeline .block {
-    padding: 0px 15px !important;
+    padding: 1px 15px !important;
+}
+
+.timeline .block .block_content {
+    padding-top: 10px;
 }
 	
 ul.messages li, .tasks li {

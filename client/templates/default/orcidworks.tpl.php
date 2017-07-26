@@ -54,7 +54,11 @@
                           </tbody>
                         </table>
                         <!-- end project list -->
-                        <?php echo $objPaginator->render($trans->getTrans($_REQUEST["action"],'NEXT'), $trans->getTrans($_REQUEST["action"],'PREVIOUS')); ?>
+                        <?php
+                            if ( $objPaginator->totalPages > 1 ) {
+                                echo $objPaginator->render($trans->getTrans($_REQUEST["action"],'NEXT'), $trans->getTrans($_REQUEST["action"],'PREVIOUS'));
+                            }
+                        ?>
                     <?php else : ?>
                         <p class="none-docs"><?=$trans->getTrans($_REQUEST["action"],'ORCID_WORKS_NO_REGISTERS_FOUND')?></p>
                     <?php endif; ?>

@@ -54,9 +54,11 @@
                           </tbody>
                         </table>
                         <!-- end project list -->
+                        <?php if ( $objPaginator->totalPages > 1 ) : ?>
                         <div class="datatable-search-pagination">
                           <?php echo $objPaginator->render($trans->getTrans($_REQUEST["action"],'NEXT'), $trans->getTrans($_REQUEST["action"],'PREVIOUS')); ?>
                         </div>
+                        <?php endif; ?>
                     <?php else : ?>
                         <?php if ( isset($output['multipage']) ) : ?>
                           <table id="datatable-search" class="table table-striped table-list">
