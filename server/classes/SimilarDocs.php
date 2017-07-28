@@ -191,9 +191,16 @@ class SimilarDocs {
 
         $context = stream_context_create($opts);
         
-        $xml = utf8_encode(file_get_contents($similar.urlencode($string),false,$context));
+        $xml = utf8_encode(@file_get_contents($similar.urlencode($string),false,$context));
         $xml = simplexml_load_string($xml,'SimpleXMLElement',LIBXML_NOCDATA);
         $xml = (string)$xml;
+
+        // Logging class initialization
+        $log = new Logging();
+        // Log filename
+        $logFile = '../../logs/SimilarDocs/'.date('Ymd').'+servplat.log';
+        // Run logging
+        $log->lrun($userID, $logFile, __METHOD__);
 
         if(!$skip){
             if($xml){
@@ -252,9 +259,16 @@ class SimilarDocs {
 
         $context = stream_context_create($opts);
         
-        $xml = utf8_encode(file_get_contents($similar,false,$context));
+        $xml = utf8_encode(@file_get_contents($similar,false,$context));
         $xml = simplexml_load_string($xml,'SimpleXMLElement',LIBXML_NOCDATA);
         $xml = (string)$xml;
+
+        // Logging class initialization
+        $log = new Logging();
+        // Log filename
+        $logFile = '../../logs/SimilarDocs/'.date('Ymd').'+servplat.log';
+        // Run logging
+        $log->lrun($userID, $logFile, __METHOD__);
 
         if(!$skip){
             if($xml){
@@ -285,7 +299,14 @@ class SimilarDocs {
         );
 
         $context = stream_context_create($opts);        
-        $content = utf8_encode(file_get_contents($profiles,false,$context));
+        $content = utf8_encode(@file_get_contents($profiles,false,$context));
+
+        // Logging class initialization
+        $log = new Logging();
+        // Log filename
+        $logFile = '../../logs/SimilarDocs/'.date('Ymd').'+servplat.log';
+        // Run logging
+        $log->lrun($userID, $logFile, __METHOD__);
 
         if($content){
             $result = self::xmlToArray($content);
@@ -327,7 +348,14 @@ class SimilarDocs {
         );
 
         $context = stream_context_create($opts);
-        $content = utf8_encode(file_get_contents($similar,false,$context));
+        $content = utf8_encode(@file_get_contents($similar,false,$context));
+
+        // Logging class initialization
+        $log = new Logging();
+        // Log filename
+        $logFile = '../../logs/SimilarDocs/'.date('Ymd').'+servplat.log';
+        // Run logging
+        $log->lrun($userID, $logFile, __METHOD__);
 
         if($content){
             $result = self::xmlToArray($content);
