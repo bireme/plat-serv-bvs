@@ -428,64 +428,63 @@ if($lang == 'en'){
     define('FIELD_GENDER_MALE','Male');
     define('FIELD_GENDER_FEMALE','Female');
     define('FIELD_BIRTHDAY','Date of birth');
-    define("FIELD_DEGREE","Ensino_Fundamental|Basic Education,Ensino_Medio|High School,Ensino_Tecnico|Technical Studies,Graduacao|Graduate Study,Especializacao|Specialization,Mestrado_Profissionalizante|Professional Master's Degree,Mestrado|Master's Degree,Doutorado|Doctorate,MBA|MBA,Pos_Doutorado|Post Doctorate,PHD|PHD");
+    define("FIELD_DEGREE","Ensino_Fundamental|Basic Education,Ensino_Medio|High School,Ensino_Tecnico|Technical Studies,Graduacao|Undergraduate Education,Especializacao|Specialization,Mestrado_Profissionalizante|Professional Master's Degree,Mestrado|Master's Degree,Doutorado|Doctorate,MBA|MBA,Pos_Doutorado|Post Doctorate,PhD|PhD");
     define("FREE_REGISTRY","Register for free!");
     define("FREE_REGISTRY_MESSAGE",'
-<p>Minha BVS é um serviço gratuito disponível para qualquer usuário por meio de sua conta Facebook, Google, BIREME Account ou do próprio serviço Minha BVS.</p>
-<p>O usuário que preferir usar o serviço Minha BVS com sua conta Facebook ou Google NÃO precisa criar nova conta de usuário na Minha BVS.</p>
-<p>BIREME Account é um sistema de gestão de usuários dos cooperantes da Rede BIREME. Estes usuários NÃO precisam criar nova conta de usuário na Minha BVS.<p/>
-<p>Para criar uma nova conta de usuário Minha BVS é necessário preencher o formulário abaixo com dados pessoais e concordar com os termos e condições do serviço. <a href="javascript:;" class="decor" data-toggle="modal" data-target=".bs-modal-lg" style="text-decoration: underline;">Saiba mais</a></p>
+<p>My VHL is a free service available to any user through their Facebook, Google, BIREME Account or the My VHL service itself.</p>
+<p>Users who prefer to use the My VHL service with their Facebook or Google account do NOT need to create a new user account in My VHL.</p>
+<p>BIREME Account is a user management system for BIREME Network members. These users do NOT need to create a new user account in My VHL.<p/>
+<p>To create a new My VHL user account, you must complete with personal data and agree to the terms and conditions of the service. <a href="javascript:;" class="decor" data-toggle="modal" data-target=".bs-modal-lg" style="text-decoration: underline;">Learn more</a></p>
 ');
     define("MY_VHL_DESCRIPTION",'
-<p>Minha BVS é um serviço gratuito que guarda informações e preferências do
-usuário para oferecer serviços personalizados e facilidades tais como:</p>
+<p>My VHL is a free service that stores information and user preferences to offer customized services and facilities such as:</p>
 <ul>
-    <li>Criação de coleções de documentos a partir de resultado de buscas processadas nas bases de dados da BVS.</li>
-    <li>Documentos encontrados nas bases de dados da BVS a partir das palavras-chaves indicadas para Temas de Interesse.</li>
-    <li>Publicações de autoria do usuário recuperadas em várias fontes considerando o número ORCID informado no Perfil do Usuário.</li>
-    <li>Histórico de buscas realizadas na BVS sempre que o usuário estiver logado no serviço.</li>
-    <li>Lista de links favoritos indicados pelo usuário permitindo acesso rápido e direto a sites de seu interesse.</li>
+    <li>Creation of collections of documents from the results of searches processed in the VHL databases.</li>
+    <li>Documents found in the VHL databases from the keywords indicated for Topics of Interest.</li>
+    <li>User-authored publications retrieved from multiple sources by considering the ORCID number entered in the User Profile.</li>
+    <li>History of searches performed on the VHL whenever the user is logged into the service.</li>
+    <li>List of favorite links indicated by the user allowing quick and direct access to sites of interest.</li>
 </ul>
-<p>Minha BVS está disponível para qualquer usuário por meio de sua conta Facebook, Google, BIREME Account ou do próprio serviço Minha BVS.</p>
-<p>BIREME Account é um sistema de gestão de contas de usuários dos Centros Cooperantes da Rede BIREME que acessam o sistema FI-Admin, dentre outros sistemas. Esta mesma conta de usuário está habilitada para o serviço Minha BVS.</p>
-<p>Se o usuário prefere uma conta própria para o serviço Minha BVS, é necessário fazer seu registro gratuitamente como usuário, além de aceitar os termos de uso e política de privacidade.</p>
+<p>My VHL is available to any user through their Facebook, Google, BIREME Account or the My VHL service itself.</p>
+<p>BIREME Account is a system of account management of users of BIREME Network Cooperating Centers that access the FI-Admin system, among other systems. This same user account is enabled for the My VHL service.</p>
+<p>If you prefer a separate account for the My VHL service, you must make your free registration as a user, and accept the terms of use and privacy policy.</p>
 ');
-    define('MY_VHL_ENTRY','Já está registrado na Minha BVS?');
-    define('ENTER','Entrar');
+    define('MY_VHL_ENTRY','Already registered in My VHL?');
+    define('ENTER','Log in');
     define("FOOTER_MESSAGE",'<p><strong>BIREME - PAHO - WHO</strong><br/>
 Latin American and Caribbean Center on Health Sciences Information<br />
 Knowledge Management, Bioethics and Research Area - KBR<br />
-Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 | Fax: (55 11) 5575-8868<br />
+Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Phone: (55 11) 5576-9800 | Fax: (55 11) 5575-8868<br />
 <a href="http://new.paho.org/bireme" title="My VHL">http://www.paho.org/bireme</a><br /></p>');
-    define('LEARN_MORE','learn more');
+    define('LEARN_MORE','Learn more');
     define('PERSONAL_DATA','Personal Data');
     define('REGISTER_NEW_USER_TITLE','Subscription Form');
-    define('REQUIRED_FIELD_TEXT','required fields');
-    define('OPTIONAL_FIELD_TEXT','optional fields');
-    define("TIP_LOGIN","The access login needs to be the user mail, eg: user@bireme.org");
+    define('REQUIRED_FIELD_TEXT','Required fields');
+    define('OPTIONAL_FIELD_TEXT','Optional fields');
+    define("TIP_LOGIN","The access login needs to be the user e-mail, eg: user@bireme.org");
     define("UPDATE_USER_TITLE","Update user");
     define("USER_ADDED",'User added successfully');
-    define("USER_EXISTS","<b>User already exists</b><br />Try to login with this user, if you have no success trying to authenticate with this user and don't remember the password,<br />use the link <b>\"forgot my password\"</b> in the user login box.");
+    define("USER_EXISTS","<b>User already exists</b><br />Try to log in with this user, if you have no success trying to authenticate with this user and don\'t remember the password,<br />use the link <b>\"forgot my password\"</b> in the user login box.");
     define("USER_ADD_ERROR","<b>Registry error</b>");
     define("USER_ADD_SUCCESS","<b>User registration successful!</b>");
-    define("USER_SEND_CONFIRMATION","<b>User registration successful!</b><br />We sent a confirmation link to your account for your email.<br />Please click on the link sent to activate your account in My VHL.");
-    define("USER_UPDATED",'User updated successful!');
-    define("USER_PASSWORD_UPDATE",'Password updated successful!');
-    define("USER_UPDATE_ERROR",'<b>Problems updating user data</b><br />The applications doesn\'t success to update the user data. Try again later.');
-    define("USER_CONFIRMED",'<b>Your account has been confirmed successfully!</b><br />Your user\'s password was sent by email.<br />Please, access your profile in My VHL and complete your registration.');
-    define("USER_ADD_CONFIRMED",'<b>User registration successful!</b><br />Your user\'s password was sent by email.');
+    define("USER_SEND_CONFIRMATION","<b>User registration successful!</b><br />We sent a confirmation link to your account for your e-mail.<br />Please click on the link sent to activate your account in My VHL.");
+    define("USER_UPDATED",'User successfully updated!');
+    define("USER_PASSWORD_UPDATE",'Password successfully updated!');
+    define("USER_UPDATE_ERROR",'<b>Problems updating user data</b><br />The applications could not update the user data. Please try again later.');
+    define("USER_CONFIRMED",'<b>Your account has been successfully confirmed!</b><br />Your user password was sent by e-mail.<br />Please access your profile in My VHL and complete your registration.');
+    define("USER_ADD_CONFIRMED",'<b>User registration was successful!</b><br />Your user password was sent by e-mail.');
     define("USER_CONFIRMATION_ERROR",'<b>ERROR: Account verification failed.</b>');
     define("VALMSG_G_EMPTY","Mandatory field.");
-    define("VALMSG_LOGIN","Type a valid mail.");
-    define("VALMSG_EMAIL","Type a valid mail.");
+    define("VALMSG_LOGIN","Type a valid e-mail.");
+    define("VALMSG_EMAIL","Type a valid e-mail.");
 
     define("NEWPASS_INVALID_PASSWORD",'Invalid password');
     define("NEWPASS_DOMAIN_NOT_PERMITTED",'Action not allowed for this User. Please contact the support department of your institution.');    
-    define("NEWPASS_PASSWORD_SENT",'A new password was sent to your email.');
+    define("NEWPASS_PASSWORD_SENT",'A new password was sent to your e-mail.');
     define("NOTICE",'Notice to the users');
     define("NOTICE_MESSAGE",'');
     define("UPDATE_INFO",'<b>Please review your data in the form below to continue using the My VHL.</b>');
-    define("ACCEPT_MAIL",'Gostaria de receber e-mails com informações da Minha BVS');
+    define("ACCEPT_MAIL",'I would like to receive e-mails with information from My VHL.');
     define("TERMS",'Terms of use');
     define("TERMS_AGREEMENT_MESSAGE",'I agree to the <a data-toggle="modal" data-target=".bs-terms-modal-lg" style="cursor: pointer; text-decoration: underline;">Terms</a> and have read the <a data-toggle="modal" data-target=".bs-policy-modal-lg" style="cursor: pointer; text-decoration: underline;">Data Policy</a> of My VHL');
     define("TERMS_MESSAGE",'
@@ -544,9 +543,9 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
     define("FORGOT_PASSWORD",'Forgot your password?');
     define("FORGOT_MY_PASSWORD",'forgot my password');
     define("FORGOT_PASSWORD_MESSAGE",'
-<p>Minha BVS está disponível gratuitamente para qualquer usuário por meio de sua conta Facebook, Google, BIREME Account ou do próprio serviço Minha BVS.</p>
-<p>Este formulário é exclusivo para recuperar senha de usuário registrado do serviço Minha BVS.</p>
-<p>Informe seu e-mail ou Usuário do serviço Minha BVS para receber uma mensagem de correio eletrônico com a sua senha.</p>
+<p>My VHL is freely available to any user through their Facebook, Google, BIREME Account or the My VHL service itself.</p>
+<p>This form is unique for recovering registered user password from the My VHL service.</p>
+<p>Enter your e-mail or My VHL Service User to receive an e-mail with your password.</p>
 ');
     define("CHANGE_PASSWORD",'Change Password');
     define("RECOVER_PASSWORD",'Recover Password');
@@ -564,7 +563,7 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
     define("SEE_ALL_PROFILES",'See all topics');
     define("ADD_COLLECTION",'Collection added');
     define("UPDATE_COLLECTION",'Collection updated');
-    define("REMOVE_COLLECTION",'Coleção deleted');
+    define("REMOVE_COLLECTION",'Collection deleted');
     define("ADD_PROFILE",'Topic added');
     define("UPDATE_PROFILE",'Topic updated');
     define("REMOVE_PROFILE",'Topic deleted');
