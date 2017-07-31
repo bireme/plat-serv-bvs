@@ -13,7 +13,11 @@
     <meta name="MSSmartTagsPreventParsing" content="true" />
     <meta name="generator" content="BVSServices <?=VERSION?>" />
 
-    <title><?=$trans->getTrans('authentication','MY_VHL')?></title>
+    <?php if ( 'authentication' != $_REQUEST['action'] ) : ?>
+    <title><?php echo $trans->getTrans('authentication','MY_VHL').' - '.$trans->getTrans($_REQUEST['action'],'FEATURE'); ?></title>
+    <?php else : ?>
+    <title><?php echo $trans->getTrans('authentication','MY_VHL'); ?></title>
+    <?php endif; ?>
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="favicon.ico"/>
@@ -59,3 +63,5 @@
   <body class="nav-md <?php echo $body_class; ?>">
     <div class="container body">
       <div class="main_container">
+        <?php //echo "<pre>"; print_r($_SESSION); echo "</pre>"; ?>
+        <?php //echo "<pre>"; print_r($_REQUEST); echo "</pre>"; ?>

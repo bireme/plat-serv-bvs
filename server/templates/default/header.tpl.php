@@ -13,7 +13,7 @@
     <meta name="MSSmartTagsPreventParsing" content="true" />
     <meta name="generator" content="BVSServices <?=VERSION?>" />
 
-    <title><?=$DocTitle?></title>
+    <title><?php echo MY_VHL.' - '.$DocTitle; ?></title>
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="favicon.ico"/>

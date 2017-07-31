@@ -92,6 +92,7 @@ usuário para oferecer serviços personalizados e facilidades tais como:</p>
         self::$trans["new_pass"]["CANCEL"] = 'cancelar';
 
     // Terms of the menu pages
+        self::$trans["menu"]["FEATURE"] = 'Visão Geral';
         self::$trans["menu"]["MY_VHL"] = 'Minha BVS';
         self::$trans["menu"]["SERVPLAT"] = 'Plataforma de Serviços';
         self::$trans["menu"]["DASHBOARD"] = 'Meus Conteúdos';
@@ -148,6 +149,7 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
 ';
 
     // Terms of mysearches pages
+        self::$trans["mysearches"]["FEATURE"] = 'Histórico de Buscas na BVS';
         self::$trans["mysearches"]["MY_SEARCHES"] = 'Histórico de Buscas na BVS';
         self::$trans["mysearches"]["PAGE"] = 'Página';
         self::$trans["mysearches"]["MY_SEARCHES_NO_REGISTERS_FOUND"] = 'Nenhum registro encontrado';
@@ -162,6 +164,7 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
         self::$trans["mysearches"]["BRASIL"] = 'Brasil';
 
     // Terms of suggesteddocs pages
+        self::$trans["suggesteddocs"]["FEATURE"] = 'Similares';
         self::$trans["suggesteddocs"]["PAGE"] = 'Página';
         self::$trans["suggesteddocs"]["NEXT"] = 'Próximo';
         self::$trans["suggesteddocs"]["PREVIOUS"] = 'Anterior';
@@ -186,6 +189,7 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
         self::$trans["suggesteddocs"]["RELATED_DOCS_ALERT"] = 'Nenhum documento similar';
 
     // Terms of orcidworks pages
+        self::$trans["orcidworks"]["FEATURE"] = 'Minhas Publicações';
         self::$trans["orcidworks"]["PAGE"] = 'Página';
         self::$trans["orcidworks"]["NEXT"] = 'Próximo';
         self::$trans["orcidworks"]["PREVIOUS"] = 'Anterior';
@@ -198,6 +202,7 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
         self::$trans["general"]["LOGO"] = 'pt/logobvs.gif';
 
     // Tems of mydocuments pages
+        self::$trans["mydocuments"]["FEATURE"] = 'Documentos Favoritos';
         self::$trans["mydocuments"]["MY_COLLECTION"] = 'Documentos Favoritos';
         self::$trans["mydocuments"]["BY_DATE"] = 'por Data';
         self::$trans["mydocuments"]["INCOMING_FOLDER"] = 'Caixa de Entrada';
@@ -226,6 +231,7 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
         self::$trans["mydocuments"]["BULK_MOVE_DOCS"] = 'Mover';
 
     // Tems of directories pages
+        self::$trans["directories"]["FEATURE"] = 'Documentos Favoritos';
         self::$trans["directories"]["FOLDER_NAME"] = 'Nome da coleção';
         self::$trans["directories"]["ADD_FOLDER"] = 'adicionar';
         self::$trans["directories"]["EDIT_FOLDER"] = 'editar';
@@ -247,6 +253,7 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
         self::$trans["directories"]["MOVE_DOC_ERROR"] = 'Erro ao mover coleção';
 
     // Tems of mylinks pages
+        self::$trans["mylinks"]["FEATURE"] = 'Links Favoritos';
         self::$trans["mylinks"]["SHOW_BY"] = 'Visualizar Lista por';
         self::$trans["mylinks"]["DATE"] = 'Data';
         self::$trans["mylinks"]["MY_RANK"] = 'Meu ranking';
@@ -305,6 +312,7 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
         self::$trans["myalerts"]["CITED_LIST_NO_REGISTERS_FOUND"] = 'Nenhum registro encontrado';
 
     // Terms of myprofiledocuments pages
+        self::$trans["myprofiledocuments"]["FEATURE"] = 'Temas de Interesse';
         self::$trans["myprofiledocuments"]["LILACS.orgiahx"] = '';
         self::$trans["myprofiledocuments"]["SciELO.orgiahx"] = '';
         self::$trans["myprofiledocuments"]["MY_PROFILES"] = 'Temas de Interesse';
