@@ -63,5 +63,3 @@
   <body class="nav-md <?php echo $body_class; ?>">
     <div class="container body">
       <div class="main_container">
-        <?php //echo "<pre>"; print_r($_SESSION); echo "</pre>"; ?>
-        <?php //echo "<pre>"; print_r($_REQUEST); echo "</pre>"; ?>
