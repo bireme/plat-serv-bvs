@@ -619,7 +619,7 @@ class UserDAO {
                 $connConfig = ToolsAuthentication::configLDAPConnection($userID);
 
                 /* generating a new password */
-                $userAttributes['userPassword'] = substr(md5(mt_rand()),0,7);
+                $userAttributes['userPassword'] = substr(md5(mt_rand()),0,8);
                 $userAttributes['cn'] = $userID; /* mandatory */
 
                 try{
