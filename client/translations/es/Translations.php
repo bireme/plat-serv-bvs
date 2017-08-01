@@ -9,39 +9,37 @@ class Translations {
 
     public function translations(){
     // Terms of authentication pages
-        self::$trans["authentication"]["MY_VHL"] = 'Minha BVS';
+        self::$trans["authentication"]["MY_VHL"] = 'Mi BVS';
         self::$trans["authentication"]["MY_VHL_SUMMARY"] = '
-<p>O serviço Minha BVS registra as informações dos usuários e as preferências de pesquisa nas bases de dados da Rede BVS, fornecendo serviços personalizados aos usuários da BVS.</p>
-<p>Isto significa que você poderá:</p>
+<p>Mi BVS es un servicio gratuito que guarda informaciones y preferencias del usuario para ofrecer servicios personalizados tales como:</p>
 <ul>
-    <li>Selecionar documentos de interesse</li>
-    <li>Criar sua própria coleção</li>
-    <li>Acessar documentos relacionados aos temas de seu interesse</li>
-    <li>Guardar o histórico de buscas realizadas na BVS</li>
-    <li>Organizar os links dos seus sites favoritos</li>
-    <li>Acessar suas publicações por meio do ORCID</li>
-    <li>Ter um espaço próprio/dashboard para salvar todas as suas preferências de pesquisa</li>
+    <li>Creación de colecciones de documentos seleccionados de la BVS</li>
+    <li>Definición de temas de interés para recibir alertas de nuevos documentos</li>
+    <li>Publicaciones del usuario recuperadas por ORCID</li>
+    <li>Histórico de búsquedas realizadas en la BVS</li>
+    <li>Lista de links favoritos</li>
 </ul>
-<p>Tenha acesso gratuito aos produtos e serviços de informação da Minha BVS. <a href="javascript:;" class="decor" data-toggle="modal" data-target=".bs-modal-lg">Saiba mais</a></p>';
+<p>Mi BVS está disponible a cualquier usuario a través de su cuenta Facebook, Google, BIREME Account o del propio servicio Mi BVS. <a href="javascript:;" class="decor" data-toggle="modal" data-target=".bs-modal-lg">¡Sepa más!</a></p>
+';
         self::$trans["authentication"]["MY_VHL_DESCRIPTION"] = '
-<h4>Visão Geral da Minha BVS</h4>
-<p>O serviço Minha BVS registra as informações dos usuários e as preferências de pesquisa nas bases de dados da Rede BVS, fornecendo serviços personalizados aos usuários da BVS.</p>
-<p>Isto significa que você poderá:</p>
+<p>Mi BVS es un servicio gratuito que guarda informaciones y preferencias del usuario para ofrecer servicios personalizados y facilidades tales como:</p>
 <ul>
-    <li>Selecionar documentos de interesse</li>
-    <li>Criar sua própria coleção</li>
-    <li>Acessar documentos relacionados aos temas de seu interesse</li>
-    <li>Guardar o histórico de buscas realizadas na BVS</li>
-    <li>Organizar os links dos seus sites favoritos</li>
-    <li>Acessar suas publicações por meio do ORCID</li>
-    <li>Ter um espaço próprio/dashboard para salvar todas as suas preferências de pesquisa</li>
-</ul>';
-        self::$trans["authentication"]["NOTICE"] = 'É novo por aqui?';
-        self::$trans["authentication"]["BUTTON_CLOSE"] = 'Fechar';
-        self::$trans["authentication"]["RECOVER_ACCOUNTS"] = 'Se você faz parte da Rede BVS como um Centro Cooperante e já está cadastrado no BIREME Accounts como um usuário do Sistema de Administração de Fontes de Informação FI-Admin, clique no link abaixo e recupere sua senha.';
-        self::$trans["authentication"]["RECOVER_ACCOUNTS_LINK"] = 'Redefinir a senha do usuário FI-ADMIN';
-        self::$trans["authentication"]["RECOVER_PASSWORD"] = 'Se você é um usuário comum e deseja utilizar o serviço Minha BVS e esqueceu sua senha, clique no link abaixo para redefiní-la.';
-        self::$trans["authentication"]["RECOVER_PASSWORD_LINK"] = 'Redefinir sua senha';
+    <li>Creación de colecciones de documentos a partir del resultado de búsquedas procesadas en las bases de datos de la BVS.</li>
+    <li>Envio de alertas de nuevos documentos recuperados en las bases de datos de la BVS a partir de palabras-claves indicadas en los Temas de Interés.</li>
+    <li>Publicaciones de autoria del usuario recuperadas en varias fuentes considerando el número ORCID informado en el Perfil del usuario.</li>
+    <li>Histórico de búsquedas realizadas en la BVS a partir y encuanto el usuario estuviera logado en el servicio.</li>
+    <li>Lista de links favoritos indicados por el usuario que posibilita el acceso rápido y directo a sitios de su interés.</li>
+</ul>
+<p>Mi BVS está disponible a cualquier usuario a través de su cuenta Facebook, Google, BIREME Account o del propio servicio Mi BVS.</p>
+<p>BIREME Account es un sistema de gestión de cuentas de usuarios de los centros cooperantes de la Red BIREME que acceden al sistema FI-Admin y otros. Esta misma cuenta de usuario está habilitada para el servicio Mi BVS.</p>
+<p>Si el usuario prefiere una cuenta propia para el Servicio Mi BVS es necesario hacer su registro gratuitamente como usuario, y además aceptar a los términos y condiciones del servicio.</p>
+';
+        self::$trans["authentication"]["NOTICE"] = '¿Es nuevo por aquí?';
+        self::$trans["authentication"]["BUTTON_CLOSE"] = 'Cerrar';
+        self::$trans["authentication"]["RECOVER_ACCOUNTS"] = 'Si Usted es un Centro Cooperante de la Red BIREME y tiene cuenta BIREME Accounts, pero se olvidó su contraseña...';
+        self::$trans["authentication"]["RECOVER_ACCOUNTS_LINK"] = 'Recuperar su contraseña';
+        self::$trans["authentication"]["RECOVER_PASSWORD"] = 'Si Usted es un usuario ya registrado del servicio Mi BVS pero se olvidó su contraseña...';
+        self::$trans["authentication"]["RECOVER_PASSWORD_LINK"] = 'Recuperar su contraseña';
         self::$trans["authentication"]["TITLE"] = 'Autenticación de Usuários';
         self::$trans["authentication"]["NOREGISTRY"] = 'Registro de nuevos usuarios temporariamente no disponible';
         self::$trans["authentication"]["EMAIL"] = 'e-mail';
@@ -50,8 +48,8 @@ class Translations {
         self::$trans["authentication"]["LOGIN"] = 'Entrar';
         self::$trans["authentication"]["USER"] = 'usuario';
         self::$trans["authentication"]["PASSWORD"] = 'contraseña';
-        self::$trans["authentication"]["PRESS_HERE"] = 'clique aqui';
-        self::$trans["authentication"]["INVALID_LOGIN"] = 'usuário ou contraseña inválidos';
+        self::$trans["authentication"]["PRESS_HERE"] = 'clic aquí';
+        self::$trans["authentication"]["INVALID_LOGIN"] = 'usuário o contraseña inválidos';
         self::$trans["authentication"]["INVALID_LOGIN_MAIL"] = '
 <div>Error en la autenticación</div>
 <ol>
@@ -70,16 +68,16 @@ class Translations {
 <li>Pida por ayuda, HELP_FORM</li>
 </ol>
 ';
-        self::$trans["authentication"]["BIREME_LOGIN_LDAP"] = 'utilize el usuário y contaseña de la red BIREME';
+        self::$trans["authentication"]["BIREME_LOGIN_LDAP"] = 'utilize el usuário y contraseña de la red BIREME';
         self::$trans["authentication"]["FORGOT_MY_PASSWORD"] = '¿Olvidé la contraseña?';
         self::$trans["authentication"]["REGISTRY"] = 'Registrarse';
-        self::$trans["authentication"]["HELPLOGINMESSAGE"] = 'A partir de agora, os serviços personalizados estão integrados por meio do passaporte de acesso das redes BVS e SciELO. O login SciELO é válido para essa autenticação. Saiba mais.';
-        self::$trans["authentication"]["KNOWMORE"] = ' saiba mais';
+        self::$trans["authentication"]["HELPLOGINMESSAGE"] = '';
+        self::$trans["authentication"]["KNOWMORE"] = 'sepa más';
         self::$trans["authentication"]["ACCESS_DENIED"] = 'acceso denegado';
         self::$trans["authentication"]["OR"] = 'o';
-        self::$trans["authentication"]["LOGIN_WITH"] = 'entrar com';
-        self::$trans["authentication"]["LOGIN_MESSAGE"] = 'Faça o login na Minha BVS';
-        self::$trans["authentication"]["LOGIN_ACCESS_MESSAGE"] = 'Acesse diretamente na Minha BVS';
+        self::$trans["authentication"]["LOGIN_WITH"] = 'entrar con';
+        self::$trans["authentication"]["LOGIN_MESSAGE"] = 'Iniciar sesión en Mi BVS';
+        self::$trans["authentication"]["LOGIN_ACCESS_MESSAGE"] = 'Acceda directamente a Mi BVS';
 
     // Terms of the Request Authentication Page
         self::$trans["requestauth"]["LOGIN"] = 'login';

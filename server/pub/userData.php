@@ -492,7 +492,7 @@ $DocTitle = $isUser?UPDATE_USER_TITLE:REGISTER_NEW_USER_TITLE;
                           <div class="omb_loginOr">
                               <div>
                                   <hr class="ln_solid" />
-                                  <span class="omb_spanOr">ou entre com</span>
+                                  <span class="omb_spanOr"><?=OR_ENTER_WITH?></span>
                               </div>
                           </div>
                           <?php $build_query = '?origin=&iahx='.base64_encode('portal'); ?>

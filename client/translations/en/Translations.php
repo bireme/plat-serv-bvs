@@ -11,37 +11,35 @@ class Translations {
     // Terms of authentication pages
         self::$trans["authentication"]["MY_VHL"] = 'My VHL';
         self::$trans["authentication"]["MY_VHL_SUMMARY"] = '
-<p>The My VHL service records users\' information and search preferences in the VHL Network databases, providing personalized services to VHL users.</p>
-<p>This means you can:</p>
+<p>My VHL is a free service that stores information and user preferences to offer customized services such as:</p>
 <ul>
-    <li>Select documents of interest</li>
-    <li>Create your own collection</li>
-    <li>Access documents related to topics of your interest</li>
-    <li>Save the history of searches performed in the VHL</li>
-    <li>Organize links to your favorite sites</li>
-    <li>Access your publications through ORCID</li>
-    <li>Have your own space/dashboard to save all your search preferences</li>
+    <li>Creation of collections of documents selected from the VHL</li>
+    <li>Definition of topics of interest to receive alerts of new documents</li>
+    <li>User publications retrieved through ORCID</li>
+    <li>VHL search history</li>
+    <li>List of favorite links</li>
 </ul>
-<p>Have free access to My VHL\'s information products and services. <a href="javascript:;" class="decor" data-toggle="modal" data-target=".bs-modal-lg">Read more</a></p>';
+<p>My VHL is available to any user through their Facebook, Google, BIREME Account or through the My VHL service itself. <a href="javascript:;" class="decor" data-toggle="modal" data-target=".bs-modal-lg">Know more</a></p>
+';
         self::$trans["authentication"]["MY_VHL_DESCRIPTION"] = '
-<h4>Overview of My VHL</h4>
-<p>The My VHL service records users\' information and search preferences in the VHL Network databases, providing personalized services to VHL users.</p>
-<p>This means you can:</p>
+<p>My VHL is a free service that stores information and user preferences to offer customized services and facilities such as:</p>
 <ul>
-    <li>Select documents of interest</li>
-    <li>Create your own collection</li>
-    <li>Access documents related to topics of your interest</li>
-    <li>Save the history of searches performed in the VHL</li>
-    <li>Organize links to your favorite sites</li>
-    <li>Access your publications through ORCID</li>
-    <li>Have your own space/dashboard to save all your search preferences</li>
-</ul>';
+    <li>Creation of collections of documents from the results of searches processed in the VHL databases.</li>
+    <li>Documents found in the VHL databases from the keywords indicated for Topics of Interest.</li>
+    <li>User-authored publications retrieved from multiple sources by considering the ORCID number entered in the User Profile.</li>
+    <li>History of searches performed on the VHL whenever the user is logged into the service.</li>
+    <li>List of favorite links indicated by the user allowing quick and direct access to sites of interest.</li>
+</ul>
+<p>My VHL is available to any user through their Facebook, Google, BIREME Account or the My VHL service itself.</p>
+<p>BIREME Account is a system of account management of users of BIREME Network Cooperating Centers that access the FI-Admin system, among other systems. This same user account is enabled for the My VHL service.</p>
+<p>If you prefer a separate account for the My VHL service, you must make your free registration as a user, and accept the terms of use and privacy policy.</p>
+';
         self::$trans["authentication"]["NOTICE"] = 'Are you new here?';
         self::$trans["authentication"]["BUTTON_CLOSE"] = 'Close';
-        self::$trans["authentication"]["RECOVER_ACCOUNTS"] = 'If you are part of the BVS Network as a Cooperating Center and are already registered with BIREME Accounts as a user of the FI-Admin Information Sources Administration System, click on the link below and recover your password.';
-        self::$trans["authentication"]["RECOVER_ACCOUNTS_LINK"] = 'Reset the FI-ADMIN user password';
-        self::$trans["authentication"]["RECOVER_PASSWORD"] = 'If you are a regular user and want to use the My VHL service and forgot your password, click the link below to redefine it.';
-        self::$trans["authentication"]["RECOVER_PASSWORD_LINK"] = 'Reset your password';
+        self::$trans["authentication"]["RECOVER_ACCOUNTS"] = 'If you are a cooperating center of the BIREME Network, have an account with BIREME Accounts, but forgot your password...';
+        self::$trans["authentication"]["RECOVER_ACCOUNTS_LINK"] = 'Recover your password';
+        self::$trans["authentication"]["RECOVER_PASSWORD"] = 'If you are a user already registered in the My VHL service but have forgotten your password...';
+        self::$trans["authentication"]["RECOVER_PASSWORD_LINK"] = 'Recover your password';
         self::$trans["authentication"]["TITLE"] = 'User Authentication';
         self::$trans["authentication"]["NOREGISTRY"] = 'New users registration temporarily unavailable';
         self::$trans["authentication"]["EMAIL"] = 'e-mail';
@@ -73,7 +71,7 @@ class Translations {
         self::$trans["authentication"]["BIREME_LOGIN_LDAP"] = 'Use the user and password from BIREME network';
         self::$trans["authentication"]["FORGOT_MY_PASSWORD"] = 'Forgot password?';
         self::$trans["authentication"]["REGISTRY"] = 'Register yourself';
-        self::$trans["authentication"]["HELPLOGINMESSAGE"] = 'From now on, personalized services are integrated through the password to access the VHL and SciELO network. The SciELO login is valid for this authentication.';
+        self::$trans["authentication"]["HELPLOGINMESSAGE"] = '';
         self::$trans["authentication"]["KNOWMORE"] = 'Learn more';
         self::$trans["authentication"]["ACCESS_DENIED"] = 'Access denied';
         self::$trans["authentication"]["OR"] = 'or';

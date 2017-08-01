@@ -11,11 +11,11 @@ class Translations {
     // Terms of authentication pages
         self::$trans["authentication"]["MY_VHL"] = 'Minha BVS';
         self::$trans["authentication"]["MY_VHL_SUMMARY"] = '
-<p>Minha BVS é um serviço gratuito que guarda informações e preferências do usuário para oferecer serviços personalizados tais como: </p>
+<p>Minha BVS é um serviço gratuito que guarda informações e preferências do usuário para oferecer serviços personalizados tais como:</p>
 <ul>
     <li>Criação de coleções de documentos selecionados da BVS</li>
     <li>Definição de temas de interesse</li>
-    <li>Publicações do usuário recuperadas por ORCID </li>
+    <li>Publicações do usuário recuperadas por ORCID</li>
     <li>Histórico de buscas realizadas na BVS</li>
     <li>Lista de links favoritos</li>
 </ul>
@@ -73,7 +73,7 @@ usuário para oferecer serviços personalizados e facilidades tais como:</p>
         self::$trans["authentication"]["FORGOT_MY_PASSWORD"] = 'Esqueci minha senha';
         self::$trans["authentication"]["REGISTRY"] = 'Registre-se';
         self::$trans["authentication"]["HELPLOGINMESSAGE"] = '';
-        self::$trans["authentication"]["KNOWMORE"] = ' saiba mais';
+        self::$trans["authentication"]["KNOWMORE"] = 'saiba mais';
         self::$trans["authentication"]["ACCESS_DENIED"] = 'acesso negado';
         self::$trans["authentication"]["OR"] = 'ou';
         self::$trans["authentication"]["LOGIN_WITH"] = 'entrar com';
