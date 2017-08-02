@@ -145,7 +145,7 @@ class ToolsAuthentication {
      * @param string $userID User mail "accepts only email"
      */
     public static function configLDAPConnection($userID){
-       $retValue = false;
+        $retValue = false;
 
         global $LDAPSERVERS;
 
@@ -179,62 +179,45 @@ class ToolsRegister {
      *
      */
     public static function authenticateRegisteringUser($objUserArg){
-        if (LDAPAuthenticator::authenticateUser($objUserArg->getID(),
-            $objUserArg->getPassword()) === true){
-            $result["source"] = "ldap";
-            $result["userID"] = $objUserArg->getID();
+        $retValue = false;
 
-            /* if the user exists in ldap, but does not exist in SP database */
-            if(!UserDAO::isUser($objUserArg->getID())){
-                $retValue = UserDAO::addUser($objUserArg, 1);
+        $mailUserID = $objUserArg->getID();
+        $isInLDAP = LDAP::isUser($mailUserID);
+        $isInServPlat = UserDAO::isUser($mailUserID);
+        $is_active = UserDAO::isActive($mailUserID);
 
-                if($retValue === true) {
-                    $result["status"] = true;
-                    $result["error"] = "userexists";
+        if ( $isInLDAP && $isInServPlat ){
+            // User already exists in LDAP and SP, can be logged in.
+            $result["status"] = false;
+            $result["error"] = "userexists";
+        } else { /* add user */
+            $objUserArg->setID($mailUserID);
+
+            if ( $isInServPlat ) {
+                if ( $is_active ) {
+                    $retValue = UserDAO::addUser($objUserArg, 1);
+                    $retValue = UserDAO::createNewPassword($mailUserID);
                 } else {
-                    $result["status"] = false;
+                    $retValue = UserDAO::updateUser($objUserArg);
+                    $retValue = UserDAO::sendUserConfirm($objUserArg);
                 }
+            } elseif ( $isInLDAP ) {
+                //$result["source"] = "ldap";
+                //$result["userID"] = $mailUserID;
+                $result["status"] = false;
+                $result["error"] = "userexists";
+            } else {
+                $retValue = UserDAO::addUser($objUserArg);
+            }
+
+            if($retValue === true){
+                $result["userID"] = $mailUserID;
+                $result["status"] = true;
+
+                if ( $isInServPlat && $is_active )
+                    $result["error"] = "userconfirmed";
             }else{
                 $result["status"] = false;
-                $result["error"] = "userexists";
-            }
-        }else{
-            $mailUserID = $objUserArg->getID();
-            $isInLDAP = LDAP::isUser($mailUserID);
-            $isInServPlat = UserDAO::isUser($mailUserID);
-            $is_active = UserDAO::isActive($mailUserID);
-
-            if($isInLDAP && $isInServPlat){
-                // User already exists in LDAP and SP, can be logged in.
-                $result["status"] = false;
-                $result["error"] = "userexists";
-            }else{ /* add user */
-                $objUserArg->setID($mailUserID);
-
-                if ( $isInServPlat ) {
-                    $retValue = UserDAO::updateUser($objUserArg);
-                    
-                    if ( $retValue ) {
-                        if ( $is_active ) {
-                            $retValue = UserDAO::addUser($objUserArg, 1);
-                            $retValue = UserDAO::createNewPassword($mailUserID);
-                        } else {
-                            $retValue = UserDAO::sendUserConfirm($objUserArg);
-                        }
-                    }
-                } else {
-                    $retValue = UserDAO::addUser($objUserArg);
-                }
-
-                if($retValue === true){
-                    $result["userID"] = $objUserArg->getID();
-                    $result["status"] = true;
-
-                    if ( $isInServPlat && $is_active )
-                        $result["error"] = "userconfirmed";
-                }else{
-                    $result["status"] = false;
-                }
             }
         }
 
