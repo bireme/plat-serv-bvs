@@ -38,7 +38,7 @@ class Translations {
         self::$trans["authentication"]["BUTTON_CLOSE"] = 'Close';
         self::$trans["authentication"]["RECOVER_ACCOUNTS"] = 'If you are a cooperating center of the BIREME Network, have an account with BIREME Accounts, but forgot your password...';
         self::$trans["authentication"]["RECOVER_ACCOUNTS_LINK"] = 'Recover your password';
-        self::$trans["authentication"]["RECOVER_PASSWORD"] = 'If you are a user already registered in the My VHL service but have forgotten your password...';
+        self::$trans["authentication"]["RECOVER_PASSWORD"] = 'If you are a user already registered in the My VHL service, but have forgotten your password...';
         self::$trans["authentication"]["RECOVER_PASSWORD_LINK"] = 'Recover your password';
         self::$trans["authentication"]["TITLE"] = 'User Authentication';
         self::$trans["authentication"]["NOREGISTRY"] = 'New users registration temporarily unavailable';
@@ -293,7 +293,7 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Phone: (55 11) 5576-980
         self::$trans["mynews"]["SAVE"] = 'Save';
         self::$trans["mynews"]["CANCEL"] = 'Cancel';
         self::$trans["mynews"]["MY_NEWS_NO_REGISTERS_FOUND"] = 'No registers found';
-        self::$trans["mynews"]["ADD_news_SUCESS"] = 'Operation succeeded';
+        self::$trans["mynews"]["ADD_NEWS_SUCESS"] = 'Operation succeeded';
         self::$trans["mynews"]["PAGE"] = 'Page';
 
     // Tems of myalerts pages
@@ -315,14 +315,13 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Phone: (55 11) 5576-980
         self::$trans["myprofiledocuments"]["SciELO.orgiahx"] = 'SciELO Network';
         self::$trans["myprofiledocuments"]["MY_PROFILES"] = 'Topics of Interest';
         self::$trans["myprofiledocuments"]["VIEW_RESULTS_IN"] = 'View results in';
-        self::$trans["myprofiledocuments"]["REMOVE_PROFIVE"] = 'Remove topic';
+        self::$trans["myprofiledocuments"]["REMOVE_PROFILE"] = 'Remove topic';
         self::$trans["myprofiledocuments"]["EDIT_PROFILE"] = 'Edit topic';
         self::$trans["myprofiledocuments"]["ADD_PROFILE"] = 'Add topic';
         self::$trans["myprofiledocuments"]["TOOLS"] = 'Tools';
         self::$trans["myprofiledocuments"]["SIMILARS_IN"] = 'Similars in';
         self::$trans["myprofiledocuments"]["PROFILE_KEYWORDS"] = 'Topics keywords';
         self::$trans["myprofiledocuments"]["PROFILES"] = 'Topics';
-        self::$trans["myprofiledocuments"]["REMOVE_PROFILE"] = 'Remove topic';
         self::$trans["myprofiledocuments"]["PROFILE_NAME"] = 'Topic Name';
         self::$trans["myprofiledocuments"]["PROFILE_TEXT"] = 'Keywords';
         self::$trans["myprofiledocuments"]["PROFILE_TEXT_HELP"] = 'The terms must be separated by commas.';
@@ -331,7 +330,7 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Phone: (55 11) 5576-980
         self::$trans["myprofiledocuments"]["CANCEL"] = 'Cancel';
         self::$trans["myprofiledocuments"]["MY_PROFILES_NO_REGISTERS_FOUND"] = 'No registers found';
         self::$trans["myprofiledocuments"]["MY_PROFILES_NO_SUGGESTIONS_FOUND"] = 'No documents found. Try updating topic by <code>edit topic > save</code> or change your keywords.';
-        self::$trans["myprofiledocuments"]["SERVICE_TEMPORARY_UNAVAILABLE"] = 'Service temporarily unavailable';
+        self::$trans["myprofiledocuments"]["SERVICE_TEMPORARY_UNAVAILABLE"] = 'Service temporarily unavailable. Try updating this topic later.';
         self::$trans["myprofiledocuments"]["ADD_PROFILE_SUCESS"] = 'Operation succeeded';
         self::$trans["myprofiledocuments"]["ADD_PROFILE_ERROR"] = 'There was an error adding the topic';
         self::$trans["myprofiledocuments"]["PAGE"] = 'Page';
@@ -344,7 +343,7 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Phone: (55 11) 5576-980
         self::$trans["mig_id_confirmation"]["TITLE"] = 'Login Confirmation';
         self::$trans["mig_id_confirmation"]["LOGIN"] = 'Login';
         self::$trans["mig_id_confirmation"]["CONFIRM"] = 'Confirm';
-        self::$trans["mig_id_confirmation"]["ALERT"] = 'After confirmation, use this e-mail account to access the SciELO portal and other applications of the Network.';
+        self::$trans["mig_id_confirmation"]["ALERT"] = 'After confirmation, this email will be your user to access the service.';
 
     // Terms of step-by-step guide
         self::$trans["tour"]["TOUR_EXAMPLE"] = '(Exclusive tour example)';

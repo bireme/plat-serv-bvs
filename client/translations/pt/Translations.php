@@ -295,7 +295,7 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
         self::$trans["mynews"]["SAVE"] = 'salvar';
         self::$trans["mynews"]["CANCEL"] = 'cancelar';
         self::$trans["mynews"]["MY_NEWS_NO_REGISTERS_FOUND"] = 'Nenhum registro encontrado';
-        self::$trans["mynews"]["ADD_news_SUCESS"] = 'Operação realizada com sucesso.';
+        self::$trans["mynews"]["ADD_NEWS_SUCESS"] = 'Operação realizada com sucesso.';
         self::$trans["mynews"]["PAGE"] = 'Página';
 
     // Tems of myalerts pages
@@ -317,14 +317,13 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
         self::$trans["myprofiledocuments"]["SciELO.orgiahx"] = '';
         self::$trans["myprofiledocuments"]["MY_PROFILES"] = 'Temas de Interesse';
         self::$trans["myprofiledocuments"]["VIEW_RESULTS_IN"] = 'ver resultados em';
-        self::$trans["myprofiledocuments"]["REMOVE_PROFIVE"] = 'excluir';
+        self::$trans["myprofiledocuments"]["REMOVE_PROFILE"] = 'excluir tema';
         self::$trans["myprofiledocuments"]["EDIT_PROFILE"] = 'editar';
         self::$trans["myprofiledocuments"]["ADD_PROFILE"] = 'adicionar';
         self::$trans["myprofiledocuments"]["TOOLS"] = 'Meus temas';
         self::$trans["myprofiledocuments"]["SIMILARS_IN"] = 'Similares';
         self::$trans["myprofiledocuments"]["PROFILE_KEYWORDS"] = 'Palavras-chave';
         self::$trans["myprofiledocuments"]["PROFILES"] = 'Temas';
-        self::$trans["myprofiledocuments"]["REMOVE_PROFILE"] = 'excluir tema';
         self::$trans["myprofiledocuments"]["PROFILE_NAME"] = 'Nome do tema';
         self::$trans["myprofiledocuments"]["PROFILE_TEXT"] = 'Palavras-chave';
         self::$trans["myprofiledocuments"]["PROFILE_TEXT_HELP"] = 'Separe as palavras-chave por vírgula.';
@@ -346,7 +345,7 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
         self::$trans["mig_id_confirmation"]["TITLE"] = 'Confirmação de Usuário';
         self::$trans["mig_id_confirmation"]["LOGIN"] = 'Usuário';
         self::$trans["mig_id_confirmation"]["CONFIRM"] = 'Confirmar';
-        self::$trans["mig_id_confirmation"]["ALERT"] = 'Após a confirmação, este email será o seu usuário de acesso ao serviço.';
+        self::$trans["mig_id_confirmation"]["ALERT"] = 'Após a confirmação, este e-mail será o seu usuário de acesso ao serviço.';
 
     // Terms of step-by-step guide
         self::$trans["tour"]["TOUR_EXAMPLE"] = '(Exemplo exclusivo do tour)';

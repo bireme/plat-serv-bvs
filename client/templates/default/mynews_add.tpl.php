@@ -46,7 +46,7 @@
             opener.location.reload(true);
             window.close();
         </script>
-        <div class="alert"><?=$trans->getTrans($_REQUEST["action"],'ADD_news_SUCESS')?></div>
+        <div class="alert"><?=$trans->getTrans($_REQUEST["action"],'ADD_NEWS_SUCESS')?></div>
     <?}?>
 </body>
 <?require_once(dirname(__FILE__)."/footer.tpl.php");?>

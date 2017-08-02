@@ -114,7 +114,7 @@ class Translations {
     // Terms of myprofiledocuments pages
         self::$trans["myprofiledocuments"]["MY_PROFILES"] = 'Meus Perfis';
         self::$trans["myprofiledocuments"]["VIEW_RESULTS_IN"] = 'ver resultados em';
-        self::$trans["myprofiledocuments"]["REMOVE_PROFIVE"] = 'remover perfil';
+        self::$trans["myprofiledocuments"]["REMOVE_PROFILE"] = 'remover perfil';
         self::$trans["myprofiledocuments"]["EDIT_PROFILE"] = 'editar perfil';
         self::$trans["myprofiledocuments"]["ADD_PROFILE"] = 'Adicionar perfil';
         self::$trans["myalerts"]["MY_PROFILES_NO_REGISTERS_FOUND"] = 'Nenhum registro encontrado';
