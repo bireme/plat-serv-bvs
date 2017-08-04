@@ -17,6 +17,7 @@ if($lang == 'pt'){
     define('BVS','Passaporte BVS e SciELO');
     define('CONTACT_FORM','Formulário de contato');
     define('CHOOSE_DEGREE','selecionar');
+    define('CHOOSE_PROFESSIONAL_AREA','selecionar');
     define('CHOOSE_COUNTRY','selecionar');
     define('DEGREE','Nível acadêmico');
     define('PROFESSIONAL_AREA','Área de atuação profissional');
@@ -44,13 +45,12 @@ if($lang == 'pt'){
     define('FIELD_GENDER_MALE','Masculino');
     define('FIELD_GENDER_FEMALE','Feminino');
     define('FIELD_BIRTHDAY','Data de nascimento');
-    define("FIELD_DEGREE","Ensino_Fundamental|Ensino Fundamental (1º Grau),Ensino_Medio|Ensino Médio (2º Grau),Ensino_Tecnico|Ensino Profissional De Nível Técnico,Graduacao|Graduação,Especializacao|Especialização,Mestrado_Profissionalizante|Mestrado Profissionalizante,Mestrado|Mestrado,Doutorado|Doutorado,MBA|MBA,Pos_Doutorado|Pós Doutorado,PHD|PHD");
     define("FREE_REGISTRY","Registre-se agora!");
     define("FREE_REGISTRY_MESSAGE",'
 <p>Minha BVS é um serviço gratuito disponível para qualquer usuário por meio de sua conta Facebook, Google, BIREME Account ou do próprio serviço Minha BVS.</p>
 <p>O usuário que preferir usar o serviço Minha BVS com sua conta Facebook ou Google NÃO precisa criar nova conta de usuário na Minha BVS.</p>
 <p>BIREME Account é um sistema de gestão de usuários dos Centros Cooperantes da Rede BIREME. Estes usuários NÃO precisam criar nova conta de usuário na Minha BVS.</p>
-<p>Para criar uma nova conta de usuário Minha BVS é necessário preencher o formulário abaixo com dados pessoais e concordar com os termos e condições do serviço. <a href="javascript:;" class="decor" data-toggle="modal" data-target=".bs-modal-lg" style="text-decoration: underline;">Saiba mais</a></p>
+<p>Para criar uma nova conta de usuário Minha BVS é necessário preencher o formulário abaixo com dados pessoais e concordar com os termos de uso e política de privacidade. <a href="javascript:;" class="decor" data-toggle="modal" data-target=".bs-modal-lg" style="text-decoration: underline;">Saiba mais</a></p>
 ');
     define("MY_VHL_DESCRIPTION",'
 <p>Minha BVS é um serviço gratuito que guarda informações e preferências do
@@ -104,7 +104,7 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
     define("UPDATE_INFO",'<b>Por favor, revise seus dados no formulário abaixo para continuar utilizando a Minha BVS.</b>');
     define("ACCEPT_MAIL",'Quero receber por email novidades sobre o serviço Minha BVS');
     define("TERMS",'Termos de uso');
-    define("TERMS_AGREEMENT_MESSAGE",'Eu concordo com os <a data-toggle="modal" data-target=".bs-terms-modal-lg" style="cursor: pointer; text-decoration: underline;">Termos</a> e confirmo que li a <a data-toggle="modal" data-target=".bs-policy-modal-lg" style="cursor: pointer; text-decoration: underline;">Política de Dados</a> da Minha BVS');
+    define("TERMS_AGREEMENT_MESSAGE",'Eu concordo com os <a data-toggle="modal" data-target=".bs-terms-modal-lg" style="cursor: pointer; text-decoration: underline;">Termos de Uso</a> e confirmo que li a <a data-toggle="modal" data-target=".bs-policy-modal-lg" style="cursor: pointer; text-decoration: underline;">Política de Privacidade</a> da Minha BVS');
     define("TERMS_MESSAGE",'
 <div class="terms">
 <h3>Terms and Conditions</h3>
@@ -210,6 +210,7 @@ if($lang == 'es'){
     define('BVS','Pasaporte BVS y SciELO');
     define('CONTACT_FORM','Formulario para contacto');
     define('CHOOSE_DEGREE','elijir');
+    define('CHOOSE_PROFESSIONAL_AREA','elejir');
     define('CHOOSE_COUNTRY','elijir');
     define('DEGREE','Nível académico');
     define('PROFESSIONAL_AREA','Área de actuación profesional');
@@ -237,13 +238,12 @@ if($lang == 'es'){
     define('FIELD_GENDER_MALE','Masculino');
     define('FIELD_GENDER_FEMALE','Feminino');
     define('FIELD_BIRTHDAY','Fecha de nacimiento');
-    define("FIELD_DEGREE","Ensino_Fundamental|Enseñanza o Educación Básica,Ensino_Medio|Enseñanza o Educación Media,Ensino_Tecnico|Enseñanza o Educación Técnico-Profesional,Graduacao|Superior Universitario de Grado,Especializacao|Especialización,Mestrado_Profissionalizante|Maestría Profisionalizante,Mestrado|Maestría,Doutorado|Doctorado,MBA|MBA,Pos_Doutorado|Pos Doctorado,PHD|PHD");
     define("FREE_REGISTRY","¡Registrate ahora!");
     define("FREE_REGISTRY_MESSAGE",'
 <p>Mi BVS es un servicio gratuito disponible a cualquier usuario a través de su cuenta Facebook, Google, BIREME Account o del propio servicio Mi BVS.</p>
 <p>El usuario que prefiere usar el servicio Mi BVS con su cuenta Facebook o Google NO requiere crear una nueva cuenta de usuario en Mi BVS.</p>
 <p>BIREME Account es un sistema de gestión de usuarios de los Centros Cooperantes de la Red BIREME. Estos usuarios NO requieren crear una nueva cuenta de usuario en Mi BVS.</p>
-<p>Para crear una nueva cuenta de usuario Mi BVS es necesario llenar el formulario abajo con datos personales y concordar con los términos y condiciones del servicio. <a href="javascript:;" class="decor" data-toggle="modal" data-target=".bs-modal-lg" style="text-decoration: underline;">¡Conozca más!</a></p>
+<p>Para crear una nueva cuenta de usuario Mi BVS es necesario llenar el formulario abajo con datos personales y concordar con los términos de uso y política de privacidad. <a href="javascript:;" class="decor" data-toggle="modal" data-target=".bs-modal-lg" style="text-decoration: underline;">¡Conozca más!</a></p>
 ');
     define("MY_VHL_DESCRIPTION",'
 <p>Mi BVS es un servicio gratuito que guarda informaciones y preferencias del usuario para ofrecer servicios personalizados y facilidades tales como:</p>
@@ -256,7 +256,7 @@ if($lang == 'es'){
 </ul>
 <p>Mi BVS está disponible a cualquier usuario a través de su cuenta Facebook, Google, BIREME Account o del propio servicio Mi BVS.</p>
 <p>BIREME Account es un sistema de gestión de cuentas de usuarios de los centros cooperantes de la Red BIREME que acceden al sistema FI-Admin y otros. Esta misma cuenta de usuario está habilitada para el servicio Mi BVS.</p>
-<p>Si el usuario prefiere una cuenta propia para el Servicio Mi BVS es necesario hacer su registro gratuitamente como usuario, y además aceptar a los términos y condiciones del servicio.</p>
+<p>Si el usuario prefiere una cuenta propia para el Servicio Mi BVS es necesario hacer su registro gratuitamente como usuario, y además aceptar a los términos de uso y política de privacidad.</p>
 ');
     define('MY_VHL_ENTRY','¿Es usuario de Mi BVS?');
     define('OR_ENTER_WITH','o entre con');
@@ -296,7 +296,7 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
     define("UPDATE_INFO",'<b>Por favor, revise sus datos en el formulario para seguir utilizando el servicio Mi BVS.</b>');
     define("ACCEPT_MAIL",'Me gustaría recibir actualizaciones acerca el servicio Mi BVS');
     define("TERMS",'Condiciones de uso');
-    define("TERMS_AGREEMENT_MESSAGE",'Estoy de acuerdo con las <a data-toggle="modal" data-target=".bs-terms-modal-lg" style="cursor: pointer; text-decoration: underline;">Condiciones</a> y confirmo que leí la <a data-toggle="modal" data-target=".bs-policy-modal-lg" style="cursor: pointer; text-decoration: underline;">Política de Datos</a> de Mi BVS');
+    define("TERMS_AGREEMENT_MESSAGE",'Estoy de acuerdo con los <a data-toggle="modal" data-target=".bs-terms-modal-lg" style="cursor: pointer; text-decoration: underline;">Términos de Uso</a> y confirmo que leí la <a data-toggle="modal" data-target=".bs-policy-modal-lg" style="cursor: pointer; text-decoration: underline;">Política de Privacidad</a> de Mi BVS');
     define("TERMS_MESSAGE",'
 <div class="terms">
 <h3>Terms and Conditions</h3>
@@ -402,6 +402,7 @@ if($lang == 'en'){
     define('BVS','VHL and SciELO Passport');
     define('CONTACT_FORM','Contact form');
     define('CHOOSE_DEGREE','choose');
+    define('CHOOSE_PROFESSIONAL_AREA','choose');
     define('CHOOSE_COUNTRY','choose');
     define('DEGREE','Degree');
     define('EMAIL_SENT','E-mail sent.');
@@ -429,13 +430,12 @@ if($lang == 'en'){
     define('FIELD_GENDER_MALE','Male');
     define('FIELD_GENDER_FEMALE','Female');
     define('FIELD_BIRTHDAY','Date of birth');
-    define("FIELD_DEGREE","Ensino_Fundamental|Basic Education,Ensino_Medio|High School,Ensino_Tecnico|Technical Studies,Graduacao|Undergraduate Education,Especializacao|Specialization,Mestrado_Profissionalizante|Professional Master's Degree,Mestrado|Master's Degree,Doutorado|Doctorate,MBA|MBA,Pos_Doutorado|Post Doctorate,PhD|PhD");
     define("FREE_REGISTRY","Register for free!");
     define("FREE_REGISTRY_MESSAGE",'
 <p>My VHL is a free service available to any user through their Facebook, Google, BIREME Account or the My VHL service itself.</p>
 <p>Users who prefer to use the My VHL service with their Facebook or Google account do NOT need to create a new user account in My VHL.</p>
 <p>BIREME Account is a system of account management of users of BIREME Network Cooperating Centers. These users do NOT need to create a new user account in My VHL.<p/>
-<p>To create a new My VHL user account, you must complete with personal data and agree to the terms and conditions of the service. <a href="javascript:;" class="decor" data-toggle="modal" data-target=".bs-modal-lg" style="text-decoration: underline;">Know more</a></p>
+<p>To create a new My VHL user account, you must complete with personal data and agree to the terms of use and privacy policy. <a href="javascript:;" class="decor" data-toggle="modal" data-target=".bs-modal-lg" style="text-decoration: underline;">Know more</a></p>
 ');
     define("MY_VHL_DESCRIPTION",'
 <p>My VHL is a free service that stores information and user preferences to offer customized services and facilities such as:</p>
@@ -488,7 +488,7 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Phone: (55 11) 5576-980
     define("UPDATE_INFO",'<b>Please review your data in the form below to continue using the My VHL.</b>');
     define("ACCEPT_MAIL",'I would like to receive e-mails with information from My VHL.');
     define("TERMS",'Terms of use');
-    define("TERMS_AGREEMENT_MESSAGE",'I agree to the <a data-toggle="modal" data-target=".bs-terms-modal-lg" style="cursor: pointer; text-decoration: underline;">Terms</a> and have read the <a data-toggle="modal" data-target=".bs-policy-modal-lg" style="cursor: pointer; text-decoration: underline;">Data Policy</a> of My VHL');
+    define("TERMS_AGREEMENT_MESSAGE",'I agree to the <a data-toggle="modal" data-target=".bs-terms-modal-lg" style="cursor: pointer; text-decoration: underline;">Terms of Use</a> and have read the <a data-toggle="modal" data-target=".bs-policy-modal-lg" style="cursor: pointer; text-decoration: underline;">Privacy Policy</a> of My VHL');
     define("TERMS_MESSAGE",'
 <div class="terms">
 <h3>Terms and Conditions</h3>

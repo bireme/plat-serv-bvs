@@ -22,6 +22,7 @@ class User {
 	private $_password;
 	private $_profiles = array();
 	private $_degree;
+    private $_professionalArea;
 	private $_affiliation;
     private $_sguID;
     private $_country;
@@ -145,6 +146,24 @@ class User {
     public function getDegree(){
 		return (trim($this->_degree));
 	}
+
+    /**
+     * Set user professional area
+     *
+     * @param string $professionalArea
+     */
+    public function setProfessionalArea($professionalArea){
+        $this->_professionalArea = $professionalArea;
+    }
+
+    /**
+     * Get user professional area
+     *
+     * @return string
+     */
+    public function getProfessionalArea(){
+        return (trim($this->_professionalArea));
+    }
 
     /**
      * Set user affiliation

@@ -2,6 +2,8 @@
 ob_start("ob_gzhandler");
 session_start();
 require_once(dirname(__FILE__)."/include/includes.php");
+require_once(dirname(__FILE__)."/include/degreeLibrary.php");
+require_once(dirname(__FILE__)."/include/professionalAreaLibrary.php");
 require_once(dirname(__FILE__)."/include/countriesLibrary.php");
 require_once(dirname(__FILE__)."/translations.php");
 require_once(dirname(__FILE__)."/../classes/User.php");
@@ -25,7 +27,7 @@ if(!empty($_GET['userTK'])){
 $callerURL = !empty($_REQUEST['c'])?base64_decode($_REQUEST['c']):false;
 
 /* variaveis do formulario */
-$userID = isset($arrUserData)?$arrUserData['userID']:false;
+$userID = isset($arrUserData) ? $arrUserData['userID'] : '';
 
 $firstName = !empty($_REQUEST['firstName']) ? $_REQUEST['firstName'] : false;
 $lastName = !empty($_REQUEST['lastName']) ? $_REQUEST['lastName'] : false;
@@ -35,7 +37,9 @@ $login = !empty($_REQUEST['login']) ? $_REQUEST['login'] : false;
 $profilesTexts = !empty($_REQUEST['profiletext']) ? $_REQUEST['profiletext'] : false;
 $profilesNames = !empty($_REQUEST['profilename']) ? $_REQUEST['profilename'] : false;
 $profilesIDs = !empty($_REQUEST['profileid']) ? $_REQUEST['profileid'] : false;
-$grauDeFormacao = !empty($_REQUEST['degree']) ? $_REQUEST['degree'] : false;
+$grauFormacao = !empty($_REQUEST['degree']) ? $_REQUEST['degree'] : false;
+$areaAtuacao = !empty($_REQUEST['profArea']) ? $_REQUEST['profArea'] : false;
+$area = !empty($_REQUEST['degree']) ? $_REQUEST['degree'] : false;
 $afiliacao = !empty($_REQUEST['afiliacao']) ? $_REQUEST['afiliacao'] : false;
 $country = !empty($_REQUEST['country']) ? $_REQUEST['country'] : false;
 $source = !empty($_REQUEST['source']) ? $_REQUEST['source'] : $src;
@@ -67,7 +71,8 @@ switch($acao){
         $usr->setAffiliation($afiliacao);
         $usr->setCountry($country);
         $usr->setSource($source);
-        $usr->setDegree($grauDeFormacao);
+        $usr->setDegree($grauFormacao);
+        $usr->setProfessionalArea($areaAtuacao);
         $usr->setLinkedin($linkedin);
         $usr->setResearchGate($researchGate);
         $usr->setOrcid($orcid);
@@ -109,7 +114,8 @@ switch($acao){
         $usr->setFirstName($firstName);
         $usr->setLastName($lastName);
         $usr->setGender($gender);
-        $usr->setDegree($grauDeFormacao);
+        $usr->setDegree($grauFormacao);
+        $usr->setProfessionalArea($areaAtuacao);
         $usr->setAffiliation($afiliacao);
         $usr->setCountry($country);
         $usr->setSource($source);
@@ -157,7 +163,7 @@ switch($acao){
         break;
 }
 
-if(isset($userID)){
+if(!empty($userID)){
     $isUser = UserDAO::isUser($userID);
     if($isUser){
         $usr = UserDAO::getUser($userID);
@@ -367,15 +373,29 @@ $DocTitle = $isUser?UPDATE_USER_TITLE:REGISTER_NEW_USER_TITLE;
                               <select id="degree" name="degree" class="form-control" required="required">
                                 <option value=""><?=CHOOSE_DEGREE?></option>
                                 <?php
-                                    $arr = explode(",",FIELD_DEGREE);
-
-                                    foreach($arr as $item){
-                                        $arr2 = explode("|",$item);
-
-                                        if($arr2[0] == $usr->getDegree()){
-                                            echo '<option selected value="'.$arr2[0].'">'.$arr2[1].'</option>'."\n";
+                                    foreach ( $degrees[$_SESSION['lang']] as $key => $value ) {
+                                        if ( $key == $usr->getDegree() ){
+                                            echo '<option selected value="'.$key.'">'.$value.'</option>'."\n";
                                         }else{
-                                            echo '<option value="'.$arr2[0].'">'.$arr2[1].'</option>'."\n";
+                                            echo '<option value="'.$key.'">'.$value.'</option>'."\n";
+                                        }
+                                    }
+                                ?>
+                              </select>
+                            </div>
+                          </div>
+                          <div class="item field form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="profArea"><?=PROFESSIONAL_AREA?> <span class="required">*</span>
+                            </label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                              <select id="profArea" name="profArea" class="form-control" required="required">
+                                <option value=""><?=CHOOSE_PROFESSIONAL_AREA?></option>
+                                <?php
+                                    foreach ( $professionalArea[$_SESSION['lang']] as $key => $value ) {
+                                        if ( $key == $usr->getProfessionalArea() ){
+                                            echo '<option selected value="'.$key.'">'.$value.'</option>'."\n";
+                                        }else{
+                                            echo '<option value="'.$key.'">'.$value.'</option>'."\n";
                                         }
                                     }
                                 ?>

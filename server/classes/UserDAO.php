@@ -104,6 +104,7 @@ class UserDAO {
             $objUser->setCountry($res[0]['userCountry']);
             $objUser->setSource($res[0]['userSource']);
             $objUser->setDegree($res[0]['userDegree']);
+            $objUser->setProfessionalArea($res[0]['professionalArea']);
             $objUser->setLinkedin($res[0]['linkedin']);
             $objUser->setResearchGate($res[0]['researchGate']);
             $objUser->setOrcid($res[0]['orcid']);
@@ -171,6 +172,7 @@ class UserDAO {
                                                  userCountry,
                                                  userSource,
                                                  userDegree,
+                                                 professionalArea,
                                                  userEmail,
                                                  linkedin,
                                                  researchGate,
@@ -191,6 +193,7 @@ class UserDAO {
                                                 $objUser->getCountry()."','".
                                                 $objUser->getSource()."','".
                                                 $objUser->getDegree()."','".
+                                                $objUser->getProfessionalArea()."','".
                                                 $objUser->getEmail()."','".
                                                 $objUser->getLinkedin()."','".
                                                 $objUser->getResearchGate()."','".
@@ -248,6 +251,7 @@ class UserDAO {
                             userCountry ='".$objUser->getCountry()."',
                             userSource ='".$objUser->getSource()."',
                             userDegree ='".$objUser->getDegree()."',
+                            professionalArea ='".$objUser->getProfessionalArea()."',
                             linkedin ='".$objUser->getLinkedin()."',
                             researchGate ='".$objUser->getResearchGate()."',
                             orcid ='".$objUser->getOrcid()."',
