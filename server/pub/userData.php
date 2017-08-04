@@ -25,7 +25,7 @@ if(!empty($_GET['userTK'])){
 $callerURL = !empty($_REQUEST['c'])?base64_decode($_REQUEST['c']):false;
 
 /* variaveis do formulario */
-$userID = isset($arrUserData)?$arrUserData['userID']:$_REQUEST['userID'];
+$userID = isset($arrUserData)?$arrUserData['userID']:false;
 
 $firstName = !empty($_REQUEST['firstName']) ? $_REQUEST['firstName'] : false;
 $lastName = !empty($_REQUEST['lastName']) ? $_REQUEST['lastName'] : false;
@@ -219,300 +219,299 @@ $DocTitle = $isUser?UPDATE_USER_TITLE:REGISTER_NEW_USER_TITLE;
                         </button>
                         <strong><?=$response["msg"];?></strong>
                     </div>
-                    <?php endif; ?>
-                    <?php if ($response["status"] === false) : ?>
-                    <div class="alert alert-danger alert-dismissible fade in" role="alert">
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
-                        </button>
-                        <strong><?=$response["msg"];?></strong>
-                    </div>
-                    <?php endif; ?>
-                    <?php if( $isUser && !$usr->getAgreementDate() ) : ?>
-                    <div class="alert alert-info alert-dismissible fade in" role="alert">
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
-                        </button>
-                        <strong><?=UPDATE_INFO?></strong>
-                    </div>
-                    <?php endif; ?>
+                    <?php else : ?>
+                        <?php if ($response["status"] === false) : ?>
+                        <div class="alert alert-danger alert-dismissible fade in" role="alert">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
+                            </button>
+                            <strong><?=$response["msg"];?></strong>
+                        </div>
+                        <?php elseif( $isUser && !$usr->getAgreementDate() ) : ?>
+                        <div class="alert alert-info alert-dismissible fade in" role="alert">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
+                            </button>
+                            <strong><?=UPDATE_INFO?></strong>
+                        </div>
+                        <?php endif; ?>
 
-                    <?php if ($act == "registry") : ?>
-                    <div class="help">
-                      <h2><?=FREE_REGISTRY?></h2>
-                      <?=FREE_REGISTRY_MESSAGE?>
+                        <?php if ($act == "registry") : ?>
+                        <div class="help">
+                          <h2><?=FREE_REGISTRY?></h2>
+                          <?=FREE_REGISTRY_MESSAGE?>
 
-                      <div class="modal fade bs-modal-lg" tabindex="-1" role="dialog" aria-hidden="true" style="z-index: 9999; color: #73879C;">
-                        <div class="modal-dialog modal-lg">
-                          <div class="modal-content">
-                            <div class="modal-header">
-                              <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span>
-                              </button>
-                              <h2 class="modal-title"><?=MY_VHL?></h2>
+                          <div class="modal fade bs-modal-lg" tabindex="-1" role="dialog" aria-hidden="true" style="z-index: 9999; color: #73879C;">
+                            <div class="modal-dialog modal-lg">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span>
+                                  </button>
+                                  <h2 class="modal-title"><?=MY_VHL?></h2>
+                                </div>
+                                <div class="modal-body">
+                                  <?=MY_VHL_DESCRIPTION?>
+                                </div>
+                                <div class="modal-footer">
+                                  <button type="button" class="btn btn-default" data-dismiss="modal"><?=BUTTON_CLOSE?></button>
+                                </div>
+                              </div>
                             </div>
-                            <div class="modal-body">
-                              <?=MY_VHL_DESCRIPTION?>
-                            </div>
-                            <div class="modal-footer">
-                              <button type="button" class="btn btn-default" data-dismiss="modal"><?=BUTTON_CLOSE?></button>
-                            </div>
                           </div>
                         </div>
-                      </div>
-                    </div>
-                    <?php endif; ?>
+                        <?php endif; ?>
 
-                    <form method="post" name="cadastro" class="form-horizontal form-label-left" novalidate>
+                        <form method="post" name="cadastro" class="form-horizontal form-label-left" novalidate>
 
-                      <input type="hidden" name="postback" value="1" />
-                      <input type="hidden" name="userID" value="<?=trim($usr->getID())?> " />
-                      <input type="hidden" name="source" value="<?=trim($usr->getSource())?>" />
-                      <input type="hidden" name="autoconn" value="" />
+                          <input type="hidden" name="postback" value="1" />
+                          <input type="hidden" name="source" value="<?=trim($usr->getSource())?>" />
+                          <input type="hidden" name="autoconn" value="" />
 
-                      <span class="section"><?=PERSONAL_DATA?></span>
+                          <span class="section"><?=PERSONAL_DATA?></span>
 
-                      <div class="item field form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="firstName"><?=FIELD_FIRST_NAME?> <span class="required">*</span>
-                        </label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input id="firstName" class="form-control col-md-7 col-xs-12" data-validate-length-range="0,150" name="firstName" required="required" type="text" value="<?=trim($usr->getFirstName())?>">
-                        </div>
-                      </div>
-                      <div class="item field form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="lastName"><?=FIELD_LAST_NAME?> <span class="required">*</span>
-                        </label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input id="lastName" class="form-control col-md-7 col-xs-12" data-validate-length-range="0,150" name="lastName" required="required" type="text" value="<?=trim($usr->getLastName())?>">
-                        </div>
-                      </div>
-                      <?php if($showLoginField) : ?>
-                        <div class="item field form-group">
-                          <label class="control-label col-md-3 col-sm-3 col-xs-12" for="login"><?=FIELD_LOGIN?> <span class="required">*</span>
-                          </label>
-                          <div class="col-md-6 col-sm-6 col-xs-12">
-                            <input type="email" id="login" name="login" required="required" class="form-control col-md-7 col-xs-12" data-validate-length-range="0,50" value="<?=trim($usr->getID())?>">
-                          </div>
-                        </div>
-                        <div class="item field form-group">
-                          <label class="control-label col-md-3 col-sm-3 col-xs-12" for="confirmLogin"><?=FIELD_LOGIN_CONFIRMATION?> <span class="required">*</span>
-                          </label>
-                          <div class="col-md-6 col-sm-6 col-xs-12">
-                            <input type="email" id="confirmLogin" name="confirmLogin" data-validate-linked="login" required="required" class="form-control col-md-7 col-xs-12">
-                          </div>
-                        </div>
-                      <?php else : ?>
-                        <div class="item field form-group">
-                          <label class="control-label col-md-3 col-sm-3 col-xs-12" for="login"><?=FIELD_LOGIN?></label>
-                          <div class="col-md-6 col-sm-6 col-xs-12">
-                            <input type="email" id="login" name="login" class="form-control col-md-7 col-xs-12" value="<?=trim($usr->getID())?>" disabled>
-                          </div>
-                        </div>
-                      <?php endif; ?>
-                      <div class="item field form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="afiliacao"><?=FIELD_AFILIATION?></label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input id="afiliacao" type="text" name="afiliacao" class="optional form-control col-md-7 col-xs-12" value="<?=$usr->getAffiliation()?>">
-                        </div>
-                      </div>
-                      <?php if ( $isUser ) : ?>
-                        <div class="item field form-group">
-                          <label class="control-label col-md-3 col-sm-3 col-xs-12" for="lattes"><?=FIELD_LATTES?></label>
-                          <div class="col-md-6 col-sm-6 col-xs-12">
-                            <input type="url" id="lattes" name="lattes" class="form-control col-md-7 col-xs-12" value="<?=$usr->getLattes()?>">
-                          </div>
-                        </div>
-                        <div class="item field form-group">
-                          <label class="control-label col-md-3 col-sm-3 col-xs-12" for="linkedin"><?=FIELD_LINKEDIN?></label>
-                          <div class="col-md-6 col-sm-6 col-xs-12">
-                            <input type="url" id="linkedin" name="linkedin" class="form-control col-md-7 col-xs-12" value="<?=$usr->getLinkedin()?>">
-                          </div>
-                        </div>
-                        <div class="item field form-group">
-                          <label class="control-label col-md-3 col-sm-3 col-xs-12" for="researchGate"><?=FIELD_RESEARCHGATE?></label>
-                          <div class="col-md-6 col-sm-6 col-xs-12">
-                            <input type="url" id="researchGate" name="researchGate" class="form-control col-md-7 col-xs-12" value="<?=$usr->getResearchGate()?>">
-                          </div>
-                        </div>
-                        <div class="item field form-group">
-                          <label class="control-label col-md-3 col-sm-3 col-xs-12" for="orcid"><?=FIELD_ORCID?></label>
-                          <div class="col-md-6 col-sm-6 col-xs-12">
-                            <input id="orcid" type="text" name="orcid" class="optional form-control col-md-7 col-xs-12" value="<?=$usr->getOrcid()?>">
-                          </div>
-                        </div>
-                        <div class="item field form-group">
-                          <label class="control-label col-md-3 col-sm-3 col-xs-12" for="researcherID"><?=FIELD_RESEARCHERID?></label>
-                          <div class="col-md-6 col-sm-6 col-xs-12">
-                            <input id="researcherID" type="text" name="researcherID" class="optional form-control col-md-7 col-xs-12" value="<?=$usr->getResearcherID()?>">
-                          </div>
-                        </div>
-                      <?php endif; ?>
-                      <div class="item field form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12"><?=FIELD_COUNTRY?> <span class="required">*</span>
-                        </label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                          <select class="form-control" name="country" required="required">
-                            <?php
-                                foreach ($countries as $key => $value)
-                                    $languageCountries[$key] = $value[$lang];
-
-                                asort($languageCountries,SORT_STRING);
-                            ?>
-                            <option value=""><?=CHOOSE_COUNTRY?></option>
-                            <?php foreach ($languageCountries as $key => $value) : ?>
-                            <option value="<?php echo $key; ?>" <?php if ( $usr->getCountry() == $key ) echo 'selected'; ?>><?php echo $value; ?></option>
-                            <?php endforeach; ?>
-                          </select>
-                        </div>
-                      </div>
-                      <div class="item field form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="degree"><?=DEGREE?> <span class="required">*</span>
-                        </label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                          <select id="degree" name="degree" class="form-control" required="required">
-                            <option value=""><?=CHOOSE_DEGREE?></option>
-                            <?php
-                                $arr = explode(",",FIELD_DEGREE);
-
-                                foreach($arr as $item){
-                                    $arr2 = explode("|",$item);
-
-                                    if($arr2[0] == $usr->getDegree()){
-                                        echo '<option selected value="'.$arr2[0].'">'.$arr2[1].'</option>'."\n";
-                                    }else{
-                                        echo '<option value="'.$arr2[0].'">'.$arr2[1].'</option>'."\n";
-                                    }
-                                }
-                            ?>
-                          </select>
-                        </div>
-                      </div>
-                      <div class="item field form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="gender"><?=FIELD_GENDER?> <span class="required">*</span>
-                        </label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                          <div id="gender" class="btn-group" data-toggle="buttons">
-                            <label class="btn btn-default <?php if ($usr->getGender() == "M") echo "active"; ?>" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
-                              <input type="radio" name="gender" value="M" data-parsley-multiple="gender" <?php if ($usr->getGender() == "M") echo "checked"; ?> required> <?=FIELD_GENDER_MALE?>
+                          <div class="item field form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="firstName"><?=FIELD_FIRST_NAME?> <span class="required">*</span>
                             </label>
-                            <label class="btn btn-default <?php if ($usr->getGender() == "F") echo "active"; ?>" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
-                              <input type="radio" name="gender" value="F" data-parsley-multiple="gender" <?php if ($usr->getGender() == "F") echo "checked"; ?>> <?=FIELD_GENDER_FEMALE?>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                              <input id="firstName" class="form-control col-md-7 col-xs-12" data-validate-length-range="0,150" name="firstName" required="required" type="text" value="<?=trim($usr->getFirstName())?>">
+                            </div>
+                          </div>
+                          <div class="item field form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="lastName"><?=FIELD_LAST_NAME?> <span class="required">*</span>
                             </label>
-                          </div>
-                          <!--p>
-                            Masculino: <input type="radio" class="flat" name="gender" id="genderM" value="M" />
-                            Feminino: <input type="radio" class="flat" name="gender" id="genderF" value="F" />
-                          </p-->
-                        </div>
-                      </div>
-                      <?php $birth = ( $usr->getBirthday() ) ? date("d/m/Y", strtotime($usr->getBirthday())) : ''; ?>
-                      <div class="item field form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="birthday"><?=FIELD_BIRTHDAY?> <span class="required">*</span>
-                        </label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input id="birthday" name="birthday" class="date-picker form-control col-md-7 col-xs-12" required="required" type="text" value="<?=$birth?>">
-                        </div>
-                      </div>
-                      <div class="item field form-group">
-                        <div class="col-md-3 col-sm-3 col-xs-12"></div>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                          <div class="checkbox">
-                              <input id="accept_mail" name="accept_mail" type="checkbox" class="flat" value="1" <?php if ( $usr->getAcceptMail() ) echo "checked"; ?>>
-                              <span class="accept-mail"><?=ACCEPT_MAIL?></span>
-                          </div>
-                        </div>
-                      </div>
-                      <?php if( !$usr->getAgreementDate() ) : ?>
-                      <div class="ln_solid"></div>
-                      <div class="item field form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="terms"><?=TERMS?> <span class="required">*</span>
-                        </label>
-                        <div class="col-md-6 col-sm-6 col-xs-12" style="padding-bottom: 20px;">
-                          <div class="checkbox">
-                              <input id="terms" name="terms" type="checkbox" class="flat" value="<?php echo date('Y-m-d'); ?>" required="required">
-                              <span class="terms-agreement"><?=TERMS_AGREEMENT_MESSAGE?></span>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div class="modal fade bs-terms-modal-lg" tabindex="-1" role="dialog" aria-hidden="true" style="z-index: 9999;">
-                        <div class="modal-dialog modal-lg">
-                          <div class="modal-content">
-                            <div class="modal-header">
-                              <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span>
-                              </button>
-                              <h2 class="modal-title"><?=MY_VHL?></h2>
-                            </div>
-                            <div class="modal-body">
-                              <?=TERMS_MESSAGE?>
-                            </div>
-                            <div class="modal-footer">
-                              <button type="button" class="btn btn-default" data-dismiss="modal"><?=BUTTON_CLOSE?></button>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                              <input id="lastName" class="form-control col-md-7 col-xs-12" data-validate-length-range="0,150" name="lastName" required="required" type="text" value="<?=trim($usr->getLastName())?>">
                             </div>
                           </div>
-                        </div>
-                      </div>
-
-                      <div class="modal fade bs-policy-modal-lg" tabindex="-1" role="dialog" aria-hidden="true" style="z-index: 9999;">
-                        <div class="modal-dialog modal-lg">
-                          <div class="modal-content">
-                            <div class="modal-header">
-                              <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span>
-                              </button>
-                              <h2 class="modal-title"><?=MY_VHL?></h2>
+                          <?php if($showLoginField) : ?>
+                            <div class="item field form-group">
+                              <label class="control-label col-md-3 col-sm-3 col-xs-12" for="login"><?=FIELD_LOGIN?> <span class="required">*</span>
+                              </label>
+                              <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input type="email" id="login" name="login" required="required" class="form-control col-md-7 col-xs-12" data-validate-length-range="0,50" value="<?=trim($usr->getID())?>">
+                              </div>
                             </div>
-                            <div class="modal-body">
-                              <?=DATA_POLICY_MESSAGE?>
+                            <div class="item field form-group">
+                              <label class="control-label col-md-3 col-sm-3 col-xs-12" for="confirmLogin"><?=FIELD_LOGIN_CONFIRMATION?> <span class="required">*</span>
+                              </label>
+                              <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input type="email" id="confirmLogin" name="confirmLogin" data-validate-linked="login" required="required" class="form-control col-md-7 col-xs-12">
+                              </div>
                             </div>
-                            <div class="modal-footer">
-                              <button type="button" class="btn btn-default" data-dismiss="modal"><?=BUTTON_CLOSE?></button>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <?php else : ?>
-                      <input type="hidden" name="terms" value="<?=$usr->getAgreementDate()?>" />
-                      <?php endif; ?>
-                      <div class="ln_solid"></div>
-                      <div class="form-group">
-                        <div class="col-xs-12 col-md-6 col-md-offset-3" style="text-align: center;">
-                          <?php if($callerURL) : ?>
-                              <input type="button" value="<?=BUTTON_CANCEL?>" class="btn btn-primary cancel" onclick="javascript:window.location='<?=$callerURL?>'; return false;" />
-                          <?php endif; ?>
-                          <?php if($isUser) : ?>
-                              <input type="hidden" value="atualizar" name="acao" />
-                              <input id="send" type="submit" value="<?=BUTTON_UPDATE_USER?>" class="btn btn-success submit" />
                           <?php else : ?>
-                              <input type="hidden" value="gravar" name="acao" />
-                              <input id="send" type="submit" value="<?=BUTTON_NEW_USER?>" class="btn btn-success submit" />
+                            <div class="item field form-group">
+                              <label class="control-label col-md-3 col-sm-3 col-xs-12" for="login"><?=FIELD_LOGIN?></label>
+                              <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input type="email" id="login" name="login" class="form-control col-md-7 col-xs-12" value="<?=trim($usr->getID())?>" disabled>
+                              </div>
+                            </div>
                           <?php endif; ?>
-                        </div>
-                      </div>
-                      <?php if(!$isUser) : ?>
-                      <div class="ln_solid"></div>
-                      <div style="text-align: center; font-size: 14px;"><?=MY_VHL_ENTRY?> <a href="<?=RELATIVE_PATH?>/controller/authentication" style="text-decoration: underline;"><?=ENTER?></a></div>
-                      <div class="form-group omb_login">
-                          <div class="omb_loginOr">
-                              <div>
-                                  <hr class="ln_solid" />
-                                  <span class="omb_spanOr"><?=OR_ENTER_WITH?></span>
+                          <div class="item field form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="afiliacao"><?=FIELD_AFILIATION?></label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                              <input id="afiliacao" type="text" name="afiliacao" class="optional form-control col-md-7 col-xs-12" value="<?=$usr->getAffiliation()?>">
+                            </div>
+                          </div>
+                          <?php if ( $isUser ) : ?>
+                            <div class="item field form-group">
+                              <label class="control-label col-md-3 col-sm-3 col-xs-12" for="lattes"><?=FIELD_LATTES?></label>
+                              <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input type="url" id="lattes" name="lattes" class="form-control col-md-7 col-xs-12" value="<?=$usr->getLattes()?>">
+                              </div>
+                            </div>
+                            <div class="item field form-group">
+                              <label class="control-label col-md-3 col-sm-3 col-xs-12" for="linkedin"><?=FIELD_LINKEDIN?></label>
+                              <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input type="url" id="linkedin" name="linkedin" class="form-control col-md-7 col-xs-12" value="<?=$usr->getLinkedin()?>">
+                              </div>
+                            </div>
+                            <div class="item field form-group">
+                              <label class="control-label col-md-3 col-sm-3 col-xs-12" for="researchGate"><?=FIELD_RESEARCHGATE?></label>
+                              <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input type="url" id="researchGate" name="researchGate" class="form-control col-md-7 col-xs-12" value="<?=$usr->getResearchGate()?>">
+                              </div>
+                            </div>
+                            <div class="item field form-group">
+                              <label class="control-label col-md-3 col-sm-3 col-xs-12" for="orcid"><?=FIELD_ORCID?></label>
+                              <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input id="orcid" type="text" name="orcid" class="optional form-control col-md-7 col-xs-12" value="<?=$usr->getOrcid()?>">
+                              </div>
+                            </div>
+                            <div class="item field form-group">
+                              <label class="control-label col-md-3 col-sm-3 col-xs-12" for="researcherID"><?=FIELD_RESEARCHERID?></label>
+                              <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input id="researcherID" type="text" name="researcherID" class="optional form-control col-md-7 col-xs-12" value="<?=$usr->getResearcherID()?>">
+                              </div>
+                            </div>
+                          <?php endif; ?>
+                          <div class="item field form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12"><?=FIELD_COUNTRY?> <span class="required">*</span>
+                            </label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                              <select class="form-control" name="country" required="required">
+                                <?php
+                                    foreach ($countries as $key => $value)
+                                        $languageCountries[$key] = $value[$lang];
+
+                                    asort($languageCountries,SORT_STRING);
+                                ?>
+                                <option value=""><?=CHOOSE_COUNTRY?></option>
+                                <?php foreach ($languageCountries as $key => $value) : ?>
+                                <option value="<?php echo $key; ?>" <?php if ( $usr->getCountry() == $key ) echo 'selected'; ?>><?php echo $value; ?></option>
+                                <?php endforeach; ?>
+                              </select>
+                            </div>
+                          </div>
+                          <div class="item field form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="degree"><?=DEGREE?> <span class="required">*</span>
+                            </label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                              <select id="degree" name="degree" class="form-control" required="required">
+                                <option value=""><?=CHOOSE_DEGREE?></option>
+                                <?php
+                                    $arr = explode(",",FIELD_DEGREE);
+
+                                    foreach($arr as $item){
+                                        $arr2 = explode("|",$item);
+
+                                        if($arr2[0] == $usr->getDegree()){
+                                            echo '<option selected value="'.$arr2[0].'">'.$arr2[1].'</option>'."\n";
+                                        }else{
+                                            echo '<option value="'.$arr2[0].'">'.$arr2[1].'</option>'."\n";
+                                        }
+                                    }
+                                ?>
+                              </select>
+                            </div>
+                          </div>
+                          <div class="item field form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="gender"><?=FIELD_GENDER?> <span class="required">*</span>
+                            </label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                              <div id="gender" class="btn-group" data-toggle="buttons">
+                                <label class="btn btn-default <?php if ($usr->getGender() == "M") echo "active"; ?>" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
+                                  <input type="radio" name="gender" value="M" data-parsley-multiple="gender" <?php if ($usr->getGender() == "M") echo "checked"; ?> required> <?=FIELD_GENDER_MALE?>
+                                </label>
+                                <label class="btn btn-default <?php if ($usr->getGender() == "F") echo "active"; ?>" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
+                                  <input type="radio" name="gender" value="F" data-parsley-multiple="gender" <?php if ($usr->getGender() == "F") echo "checked"; ?>> <?=FIELD_GENDER_FEMALE?>
+                                </label>
+                              </div>
+                              <!--p>
+                                Masculino: <input type="radio" class="flat" name="gender" id="genderM" value="M" />
+                                Feminino: <input type="radio" class="flat" name="gender" id="genderF" value="F" />
+                              </p-->
+                            </div>
+                          </div>
+                          <?php $birth = ( $usr->getBirthday() ) ? date("d/m/Y", strtotime($usr->getBirthday())) : ''; ?>
+                          <div class="item field form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="birthday"><?=FIELD_BIRTHDAY?> <span class="required">*</span>
+                            </label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                              <input id="birthday" name="birthday" class="date-picker form-control col-md-7 col-xs-12" required="required" type="text" value="<?=$birth?>">
+                            </div>
+                          </div>
+                          <div class="item field form-group">
+                            <div class="col-md-3 col-sm-3 col-xs-12"></div>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                              <div class="checkbox">
+                                  <input id="accept_mail" name="accept_mail" type="checkbox" class="flat" value="1" <?php if ( $usr->getAcceptMail() ) echo "checked"; ?>>
+                                  <span class="accept-mail"><?=ACCEPT_MAIL?></span>
+                              </div>
+                            </div>
+                          </div>
+                          <?php if( !$usr->getAgreementDate() ) : ?>
+                          <div class="ln_solid"></div>
+                          <div class="item field form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="terms"><?=TERMS?> <span class="required">*</span>
+                            </label>
+                            <div class="col-md-6 col-sm-6 col-xs-12" style="padding-bottom: 20px;">
+                              <div class="checkbox">
+                                  <input id="terms" name="terms" type="checkbox" class="flat" value="<?php echo date('Y-m-d'); ?>" required="required">
+                                  <span class="terms-agreement"><?=TERMS_AGREEMENT_MESSAGE?></span>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="modal fade bs-terms-modal-lg" tabindex="-1" role="dialog" aria-hidden="true" style="z-index: 9999;">
+                            <div class="modal-dialog modal-lg">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span>
+                                  </button>
+                                  <h2 class="modal-title"><?=MY_VHL?></h2>
+                                </div>
+                                <div class="modal-body">
+                                  <?=TERMS_MESSAGE?>
+                                </div>
+                                <div class="modal-footer">
+                                  <button type="button" class="btn btn-default" data-dismiss="modal"><?=BUTTON_CLOSE?></button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="modal fade bs-policy-modal-lg" tabindex="-1" role="dialog" aria-hidden="true" style="z-index: 9999;">
+                            <div class="modal-dialog modal-lg">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span>
+                                  </button>
+                                  <h2 class="modal-title"><?=MY_VHL?></h2>
+                                </div>
+                                <div class="modal-body">
+                                  <?=DATA_POLICY_MESSAGE?>
+                                </div>
+                                <div class="modal-footer">
+                                  <button type="button" class="btn btn-default" data-dismiss="modal"><?=BUTTON_CLOSE?></button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <?php else : ?>
+                          <input type="hidden" name="terms" value="<?=$usr->getAgreementDate()?>" />
+                          <?php endif; ?>
+                          <div class="ln_solid"></div>
+                          <div class="form-group">
+                            <div class="col-xs-12 col-md-6 col-md-offset-3" style="text-align: center;">
+                              <?php if($callerURL) : ?>
+                                  <input type="button" value="<?=BUTTON_CANCEL?>" class="btn btn-primary cancel" onclick="javascript:window.location='<?=$callerURL?>'; return false;" />
+                              <?php endif; ?>
+                              <?php if($isUser) : ?>
+                                  <input type="hidden" value="atualizar" name="acao" />
+                                  <input id="send" type="submit" value="<?=BUTTON_UPDATE_USER?>" class="btn btn-success submit" />
+                              <?php else : ?>
+                                  <input type="hidden" value="gravar" name="acao" />
+                                  <input id="send" type="submit" value="<?=BUTTON_NEW_USER?>" class="btn btn-success submit" />
+                              <?php endif; ?>
+                            </div>
+                          </div>
+                          <?php if(!$isUser) : ?>
+                          <div class="ln_solid"></div>
+                          <div style="text-align: center; font-size: 14px;"><?=MY_VHL_ENTRY?> <a href="<?=RELATIVE_PATH?>/controller/authentication" style="text-decoration: underline;"><?=ENTER?></a></div>
+                          <div class="form-group omb_login">
+                              <div class="omb_loginOr">
+                                  <div>
+                                      <hr class="ln_solid" />
+                                      <span class="omb_spanOr"><?=OR_ENTER_WITH?></span>
+                                  </div>
+                              </div>
+                              <?php $build_query = '?origin=&iahx='.base64_encode('portal'); ?>
+                              <div class="row omb_row-sm-offset-3 omb_socialButtons">
+                                  <div class="col-xs-6 col-sm-3">
+                                      <a href="/connector/facebook/<?php echo $build_query; ?>" class="btn btn-lg btn-block omb_btn-facebook">
+                                          <i class="fa fa-facebook visible-xs"></i>
+                                          <span class="hidden-xs">Facebook</span>
+                                      </a>
+                                  </div>
+                                  <div class="col-xs-6 col-sm-3">
+                                      <a href="/connector/google/<?php echo $build_query; ?>" class="btn btn-lg btn-block omb_btn-google">
+                                          <i class="fa fa-google visible-xs"></i>
+                                          <span class="hidden-xs">Google</span>
+                                      </a>
+                                  </div>
                               </div>
                           </div>
-                          <?php $build_query = '?origin=&iahx='.base64_encode('portal'); ?>
-                          <div class="row omb_row-sm-offset-3 omb_socialButtons">
-                              <div class="col-xs-6 col-sm-3">
-                                  <a href="/connector/facebook/<?php echo $build_query; ?>" class="btn btn-lg btn-block omb_btn-facebook">
-                                      <i class="fa fa-facebook visible-xs"></i>
-                                      <span class="hidden-xs">Facebook</span>
-                                  </a>
-                              </div>
-                              <div class="col-xs-6 col-sm-3">
-                                  <a href="/connector/google/<?php echo $build_query; ?>" class="btn btn-lg btn-block omb_btn-google">
-                                      <i class="fa fa-google visible-xs"></i>
-                                      <span class="hidden-xs">Google</span>
-                                  </a>
-                              </div>
-                          </div>
-                      </div>
-                      <?php endif; ?>
-                    </form>
+                          <?php endif; ?>
+                        </form>
+                    <?php endif; ?>
                   </div>
                 </div>
               </div>

@@ -63,49 +63,50 @@ $DocTitle = CHANGE_PASSWORD;
                         </button>
                         <strong><?=$sysMsg?></strong>
                     </div>
-                    <?php endif; ?>
-                    <?php if ( $retValue === false || 'DomainNotPermitted' === $retValue || 'invalidpass' === $retValue ) : ?>
-                    <div class="alert alert-danger alert-dismissible fade in" role="alert">
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
-                        </button>
-                        <strong><?=$sysMsg?></strong>
-                    </div>
-                    <?php endif; ?>
+                    <?php else : ?>
+                        <?php if ( $retValue === false || 'DomainNotPermitted' === $retValue || 'invalidpass' === $retValue ) : ?>
+                        <div class="alert alert-danger alert-dismissible fade in" role="alert">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
+                            </button>
+                            <strong><?=$sysMsg?></strong>
+                        </div>
+                        <?php endif; ?>
 
-                    <form method="post" name="cadastro" class="form-horizontal form-label-left" novalidate>
-                      <span class="section"><?=CHANGE_PASSWORD?></span>
-                      <div class="item field form-group">
-                        <label for="oldPassword" class="control-label col-md-3 col-sm-3 col-xs-12"><?=FIELD_OLD_PASSWORD?> <span class="required">*</span>
-                        </label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input id="oldPassword" type="password" name="oldPassword" data-validate-length-range="8,40" class="form-control col-md-7 col-xs-12" required="required">
-                        </div>
-                      </div>
-                      <div class="item field form-group">
-                        <label for="newPassword" class="control-label col-md-3 col-sm-3 col-xs-12"><?=FIELD_NEW_PASSWORD?> <span class="required">*</span>
-                        </label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input id="newPassword" type="password" name="newPassword" data-validate-length-range="8,40" class="form-control col-md-7 col-xs-12" required="required">
-                        </div>
-                      </div>
-                      <div class="item field form-group">
-                        <label for="confirmPassword" class="control-label col-md-3 col-sm-3 col-xs-12"><?=FIELD_NEW_PASSWORD_CONFIRM?> <span class="required">*</span>
-                        </label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input id="confirmPassword" type="password" name="confirmPassword" data-validate-linked="newPassword" class="form-control col-md-7 col-xs-12" required="required">
-                        </div>
-                      </div>
-                      <div class="ln_solid"></div>
-                      <div class="form-group">
-                        <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3 col-sm-offset-3" style="text-align: center;">
-                          <?php if($callerURL) : ?>
-                            <input type="button" value="<?=BUTTON_CANCEL?>" class="btn btn-primary cancel" onclick="javascript:window.location='<?=$callerURL?>'; return false;" />
-                          <?php endif; ?>
-                          <input type="hidden" value="atualizar" name="acao" />
-                          <input id="send" type="submit" value="<?=BUTTON_UPDATE_USER?>" class="btn btn-success submit" />
-                        </div>
-                      </div>
-                    </form>
+                        <form method="post" name="cadastro" class="form-horizontal form-label-left" novalidate>
+                          <span class="section"><?=CHANGE_PASSWORD?></span>
+                          <div class="item field form-group">
+                            <label for="oldPassword" class="control-label col-md-3 col-sm-3 col-xs-12"><?=FIELD_OLD_PASSWORD?> <span class="required">*</span>
+                            </label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                              <input id="oldPassword" type="password" name="oldPassword" data-validate-length-range="8,40" class="form-control col-md-7 col-xs-12" required="required">
+                            </div>
+                          </div>
+                          <div class="item field form-group">
+                            <label for="newPassword" class="control-label col-md-3 col-sm-3 col-xs-12"><?=FIELD_NEW_PASSWORD?> <span class="required">*</span>
+                            </label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                              <input id="newPassword" type="password" name="newPassword" data-validate-length-range="8,40" class="form-control col-md-7 col-xs-12" required="required">
+                            </div>
+                          </div>
+                          <div class="item field form-group">
+                            <label for="confirmPassword" class="control-label col-md-3 col-sm-3 col-xs-12"><?=FIELD_NEW_PASSWORD_CONFIRM?> <span class="required">*</span>
+                            </label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                              <input id="confirmPassword" type="password" name="confirmPassword" data-validate-linked="newPassword" class="form-control col-md-7 col-xs-12" required="required">
+                            </div>
+                          </div>
+                          <div class="ln_solid"></div>
+                          <div class="form-group">
+                            <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3 col-sm-offset-3" style="text-align: center;">
+                              <?php if($callerURL) : ?>
+                                <input type="button" value="<?=BUTTON_CANCEL?>" class="btn btn-primary cancel" onclick="javascript:window.location='<?=$callerURL?>'; return false;" />
+                              <?php endif; ?>
+                              <input type="hidden" value="atualizar" name="acao" />
+                              <input id="send" type="submit" value="<?=BUTTON_UPDATE_USER?>" class="btn btn-success submit" />
+                            </div>
+                          </div>
+                        </form>
+                    <?php endif; ?>
                   </div>
                 </div>
               </div>

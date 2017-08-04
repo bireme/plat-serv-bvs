@@ -63,36 +63,37 @@ $DocTitle = FORGOT_PASSWORD;
                         </button>
                         <strong><?=$sysMsg?></strong>
                     </div>
-                    <?php endif; ?>
-                    <?php if ( $retValue === false || 'DomainNotPermitted' === $retValue ) : ?>
-                    <div class="alert alert-danger alert-dismissible fade in" role="alert">
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
-                        </button>
-                        <strong><?=$sysMsg?></strong>
-                    </div>
-                    <?php endif; ?>
+                    <?php else : ?>
+                        <?php if ( $retValue === false || 'DomainNotPermitted' === $retValue ) : ?>
+                        <div class="alert alert-danger alert-dismissible fade in" role="alert">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
+                            </button>
+                            <strong><?=$sysMsg?></strong>
+                        </div>
+                        <?php endif; ?>
 
-                    <form method="post" name="cadastro" class="form-horizontal form-label-left" novalidate>
-                      <span class="section"><?=RECOVER_PASSWORD?></span>
-                      <?=FORGOT_PASSWORD_MESSAGE?>
-                      <div class="item field form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="login"><?=FIELD_LOGIN?> <span class="required">*</span>
-                        </label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="email" id="login" name="login" required="required" class="form-control col-md-7 col-xs-12" data-validate-length-range="0,50">
-                        </div>
-                      </div>
-                      <div class="ln_solid"></div>
-                      <div class="form-group">
-                        <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3 col-sm-offset-3" style="text-align: center;">
-                          <?php if($callerURL) : ?>
-                              <input type="button" value="<?=BUTTON_CANCEL?>" class="btn btn-primary cancel" onclick="javascript:window.location='<?=$callerURL?>'; return false;" />
-                          <?php endif; ?>
-                          <input type="hidden" value="enviar" name="acao" />
-                          <input id="send" type="submit" value="<?=BUTTON_SEND?>" class="btn btn-success submit" />
-                        </div>
-                      </div>
-                    </form>
+                        <form method="post" name="cadastro" class="form-horizontal form-label-left" novalidate>
+                          <span class="section"><?=RECOVER_PASSWORD?></span>
+                          <?=FORGOT_PASSWORD_MESSAGE?>
+                          <div class="item field form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="login"><?=FIELD_LOGIN?> <span class="required">*</span>
+                            </label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                              <input type="email" id="login" name="login" required="required" class="form-control col-md-7 col-xs-12" data-validate-length-range="0,50">
+                            </div>
+                          </div>
+                          <div class="ln_solid"></div>
+                          <div class="form-group">
+                            <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3 col-sm-offset-3" style="text-align: center;">
+                              <?php if($callerURL) : ?>
+                                  <input type="button" value="<?=BUTTON_CANCEL?>" class="btn btn-primary cancel" onclick="javascript:window.location='<?=$callerURL?>'; return false;" />
+                              <?php endif; ?>
+                              <input type="hidden" value="enviar" name="acao" />
+                              <input id="send" type="submit" value="<?=BUTTON_SEND?>" class="btn btn-success submit" />
+                            </div>
+                          </div>
+                        </form>
+                    <?php endif; ?>
                   </div>
                 </div>
               </div>
