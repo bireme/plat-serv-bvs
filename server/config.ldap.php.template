@@ -3,8 +3,8 @@
 /*bireme.org*/
 $LDAPSERVERS["bireme.org"]["SERVER_LDAP"] = "perola.bireme.br";
 $LDAPSERVERS["bireme.org"]["DOMAIN_LDAP"] = "bvs.bireme.local";
-$LDAPSERVERS["bireme.org"]["BINDID_LDAP"] = "appplatserv";
-$LDAPSERVERS["bireme.org"]["BINDPW_LDAP"] = "qwpo%&vb";
+$LDAPSERVERS["bireme.org"]["BINDID_LDAP"] = "";
+$LDAPSERVERS["bireme.org"]["BINDPW_LDAP"] = "";
 $LDAPSERVERS["bireme.org"]["BASEDN_LDAP"] = "CN=Users,DC=bvs,DC=bireme,DC=local";
 $LDAPSERVERS["bireme.org"]["SERVER_PORT"] = 389;
 $LDAPSERVERS["bireme.org"]["USERID_FULL"] = false;
@@ -12,8 +12,8 @@ $LDAPSERVERS["bireme.org"]["USERID_FULL"] = false;
 /*public is the default LDAP could not be removed from this file*/
 $LDAPSERVERS["public"]["SERVER_LDAP"]     = "ldaps://pr14dx.bireme.br";
 $LDAPSERVERS["public"]["DOMAIN_LDAP"]     = "pr14dx.bir-virtual.local";
-$LDAPSERVERS["public"]["BINDID_LDAP"]     = "appplatserv";
-$LDAPSERVERS["public"]["BINDPW_LDAP"]     = "qwpo%&vb";
+$LDAPSERVERS["public"]["BINDID_LDAP"]     = "";
+$LDAPSERVERS["public"]["BINDPW_LDAP"]     = "";
 $LDAPSERVERS["public"]["BASEDN_LDAP"]     = "ou=platserv,dc=pr14dx,dc=bir-virtual,dc=local";
 $LDAPSERVERS["public"]["SERVER_PORT"]     = 636;
 $LDAPSERVERS["public"]["OBJECT_CLASS"]    = array("top",
