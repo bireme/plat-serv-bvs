@@ -268,6 +268,105 @@
 
         <?php if ( !$_SESSION['visited'] || isset($output['tour']) ) : $_SESSION['visited'] = true; ?>
         <script type="text/javascript">
+          var steps = [
+            { 
+              intro: "<?=$trans->getTrans('tour','INTRO')?>"
+            },
+            { 
+              intro: "<?=$trans->getTrans('tour','FIRST')?>"
+            },
+            {
+              element: '#step1',
+              intro: "<?=$trans->getTrans('tour','STEP_1')?>",
+              position: 'right'
+            },
+            {
+              element: 'li.step2',
+              intro: "<?=$trans->getTrans('tour','STEP_2')?>",
+              position: 'right'
+            },
+            {
+              element: 'li.child.step3',
+              intro: "<?=$trans->getTrans('tour','STEP_3')?>",
+              position: 'right'
+            },
+            {
+              element: 'ul.step2',
+              intro: "<?=$trans->getTrans('tour','STEP_2')?>",
+              position: 'right'
+            },
+            {
+              element: 'li.side.step3',
+              intro: "<?=$trans->getTrans('tour','STEP_3')?>",
+              position: 'right'
+            },
+            {
+              element: '#step4',
+              intro: "<?=$trans->getTrans('tour','STEP_4')?>",
+              position: 'bottom'
+            },
+            {
+              element: '#step5',
+              intro: "<?=$trans->getTrans('tour','STEP_5')?>",
+              position: 'left'
+            },
+            {
+              element: '#step6',
+              intro: "<?=$trans->getTrans('tour','STEP_6')?>",
+              position: 'left'
+            },
+            {
+              element: '#step7',
+              intro: "<?=$trans->getTrans('tour','STEP_7')?>",
+              position: 'bottom'
+            },
+            {
+              element: '#step8',
+              intro: "<?=$trans->getTrans('tour','STEP_8')?>",
+              position: 'bottom'
+            },
+            {
+              element: '#step9',
+              intro: "<?=$trans->getTrans('tour','STEP_9')?>",
+              position: 'bottom'
+            },
+            {
+              element: '#step10',
+              intro: "<?=$trans->getTrans('tour','STEP_10')?>",
+              position: 'right'
+            },
+            {
+              element: '#step11',
+              intro: "<?=$trans->getTrans('tour','STEP_11')?>",
+              position: 'right'
+            },
+            {
+              element: '#step12',
+              intro: "<?=$trans->getTrans('tour','STEP_12')?>",
+              position: 'left'
+            },
+            {
+              element: '#step13',
+              intro: "<?=$trans->getTrans('tour','STEP_13')?>",
+              position: 'right'
+            },
+            {
+              element: '#step14',
+              intro: "<?=$trans->getTrans('tour','STEP_14')?>",
+              position: 'right'
+            }
+          ];
+
+          var sw = screen.width;
+          var tooltipClass = '';
+
+          if ( sw > 768 ) {
+              steps.splice(5,2);
+          } else {
+              tooltipClass = 'mobile';
+              steps.splice(2,3);
+          }
+
           function startIntro(){
             var intro = introJs();
               intro.setOptions({
@@ -277,92 +376,38 @@
                 skipLabel: "<?=$trans->getTrans('menu','SKIP')?>",
                 exitOnOverlayClick: false,
                 showStepNumbers: false,
-                steps: [
-                  { 
-                    intro: "<?=$trans->getTrans('tour','INTRO')?>"
-                  },
-                  { 
-                    intro: "<?=$trans->getTrans('tour','FIRST')?>"
-                  },
-                  {
-                    element: '#step1',
-                    intro: "<?=$trans->getTrans('tour','STEP_1')?>",
-                    position: 'right'
-                  },
-                  {
-                    element: '#step2',
-                    intro: "<?=$trans->getTrans('tour','STEP_2')?>",
-                    position: 'right'
-                  },
-                  {
-                    element: '#step3',
-                    intro: "<?=$trans->getTrans('tour','STEP_3')?>",
-                    position: 'right'
-                  },
-                  {
-                    element: '#step4',
-                    intro: "<?=$trans->getTrans('tour','STEP_4')?>",
-                    position: 'bottom'
-                  },
-                  {
-                    element: '#step5',
-                    intro: "<?=$trans->getTrans('tour','STEP_5')?>",
-                    position: 'left'
-                  },
-                  {
-                    element: '#step6',
-                    intro: "<?=$trans->getTrans('tour','STEP_6')?>",
-                    position: 'left'
-                  },
-                  {
-                    element: '#step7',
-                    intro: "<?=$trans->getTrans('tour','STEP_7')?>",
-                    position: 'bottom'
-                  },
-                  {
-                    element: '#step8',
-                    intro: "<?=$trans->getTrans('tour','STEP_8')?>",
-                    position: 'bottom'
-                  },
-                  {
-                    element: '#step9',
-                    intro: "<?=$trans->getTrans('tour','STEP_9')?>",
-                    position: 'bottom'
-                  },
-                  {
-                    element: '#step10',
-                    intro: "<?=$trans->getTrans('tour','STEP_10')?>",
-                    position: 'right'
-                  },
-                  {
-                    element: '#step11',
-                    intro: "<?=$trans->getTrans('tour','STEP_11')?>",
-                    position: 'right'
-                  },
-                  {
-                    element: '#step12',
-                    intro: "<?=$trans->getTrans('tour','STEP_12')?>",
-                    position: 'left'
-                  },
-                  {
-                    element: '#step13',
-                    intro: "<?=$trans->getTrans('tour','STEP_13')?>",
-                    position: 'right'
-                  },
-                  {
-                    element: '#step14',
-                    intro: "<?=$trans->getTrans('tour','STEP_14')?>",
-                    position: 'right'
-                  },
-                ]
+                showBullets: false,
+                tooltipClass: tooltipClass,
+                steps: steps
               });
-              
+
+              intro.onchange(function(targetElement) {
+                  switch (targetElement.id) { 
+                      case 'step4':
+                          document.getElementById("body").className = "nav-md";
+                      break;
+                  }
+
+                  switch (this._currentStep) { 
+                      case 0:
+                      case 1:
+                      case 2:
+                      case 3:
+                          if ( sw <= 768 ) {
+                              document.getElementById("body").className = "nav-sm";
+                          }
+                      break;
+                  }
+              });
+
               intro.start().oncomplete(function() {
                 window.location.href = '<?php echo RELATIVE_PATH."/controller/mydocuments/control/business/?multipage=true"; ?>';
               });
           }
 
-          startIntro();
+          window.addEventListener('load', function() {
+              startIntro();
+          });
         </script>
         <?php endif; ?>
 

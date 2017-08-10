@@ -6,8 +6,8 @@
 
     <div class="container">
         <div class="omb_login">
-            <div class="row omb_row-sm-offset-3">
-                <div class="col-xs-12 col-sm-6">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12">
                     <h1 class="omb_authTitle">
                         <img src="<?=RELATIVE_PATH?>/images/<?=$_SESSION["skin"]?>/logo-md-<?=$_SESSION["lang"]?>.png" alt="VHL Logo" class="logo">
                         <img src="<?=RELATIVE_PATH?>/images/<?=$_SESSION["skin"]?>/logo-bireme-md-<?=$_SESSION["lang"]?>.png" alt="VHL Logo BIREME" class="logo-bireme">
@@ -55,13 +55,13 @@
             <?php else : ?>
             <div class="login-area">
                 <div class="login-box">
-                    <div class="row omb_row-sm-offset-3 omb_loginOr">
-                        <div class="col-xs-12 col-sm-6">
+                    <div class="row omb_loginOr">
+                        <div class="col-xs-12 col-sm-12">
                             <span class="omb_spanOr omb_spanLogin"><?=$trans->getTrans($_REQUEST["action"],'LOGIN_MESSAGE')?></span>
                         </div>
                     </div>
-                    <div class="row omb_row-sm-offset-3 omb_loginOr">
-                        <div class="col-xs-12 col-sm-6">
+                    <div class="row omb_loginOr">
+                        <div class="col-xs-12 col-sm-12">
                             <hr class="omb_hrOr" />
                             <span class="omb_spanOr omb_spanLoginWith"><?=$trans->getTrans($_REQUEST["action"],'LOGIN_WITH')?></span>
                         </div>
@@ -80,14 +80,14 @@
                             </a>
                         </div>
                     </div>
-                    <div class="row omb_row-sm-offset-3 omb_loginOr">
-                        <div class="col-xs-12 col-sm-6">
+                    <div class="row omb_loginOr">
+                        <div class="col-xs-12 col-sm-12">
                             <hr class="omb_hrOr" />
                             <span class="omb_spanOr"><?=$trans->getTrans($_REQUEST["action"],'OR')?></span>
                         </div>
                     </div>
-                    <div class="row omb_row-sm-offset-3">
-                        <div class="col-xs-12 col-sm-6">    
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12">
                             <form class="omb_loginForm" action="<?=RELATIVE_PATH?>/controller/authentication" autocomplete="off" method="POST">
                                 <input type="hidden" name="origin" value="<?php echo $origin; ?>" />
                                 <input type="hidden" name="control" value="business" />
@@ -128,13 +128,13 @@
                             <button class="btn btn-lg btn-primary btn-block" type="submit" onclick="document.forms[0].submit();"><?=$trans->getTrans($_REQUEST["action"],'LOGIN')?></button>
                         </div>
                     </div>
-                    <div class="row omb_row-sm-offset-3 omb_spacer">
-                        <div class="col-xs-12 col-sm-6">
+                    <div class="row omb_spacer">
+                        <div class="col-xs-12 col-sm-12">
                             <hr />
                         </div>
                     </div> 
-                    <div class="row omb_row-sm-offset-3">
-                        <div class="col-xs-12 col-sm-6">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12">
                             <p class="omb_registry">
                                 <span><?=$trans->getTrans($_REQUEST["action"],'NOTICE')?></span>
                                 <a target="_parent" class="decor" href="<?=SERVICES_PLATFORM_DOMAIN.'/pub/userData.php?c='.$b64HttpHost ?>"><?=$trans->getTrans($_REQUEST["action"],'REGISTRY')?></a>

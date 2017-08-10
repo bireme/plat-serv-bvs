@@ -377,8 +377,20 @@ select.bulkactions {
     color: #000;
 }
 
+#sidebar-menu ul.introjs-showElement li a {
+    color: #000;
+}
+
+#sidebar-menu ul.side-menu li.introjs-showElement a {
+    color: #000;
+}
+
 .introjs-showElement .profile_info * {
     color: #000;
+}
+
+.vhl-search .x_content {
+    padding: 0 0 6px;
 }
 
 .tile_count {
@@ -551,13 +563,35 @@ ul.messages li, .tasks li {
     margin: 5px 0px 6px !important;
 }
 
-.submitFalse {background: #b80909 !important; color: #fff;}
+.submitFalse {
+    background: #b80909 !important; color: #fff;
+}
 
-.submitTrue {background: #00a360!important; color: #fff;}
+.submitTrue {
+    background: #00a360!important; color: #fff;
+}
 
-.table-striped>tbody>tr:nth-of-type(odd) {background-color: #f4f7fd !important;}
+.table-striped>tbody>tr:nth-of-type(odd) {
+    background-color: #f4f7fd !important;
+}
 
-.byline {color: #636363 !important;}
+.byline {
+    color: #636363 !important;
+}
+
+@media only screen
+and (max-device-width : 360px) {
+    .introjs-tooltip .introjs-tooltipbuttons {
+        padding-right: 1.5em;
+    }
+}
+
+@media only screen
+and (max-device-width : 412px) {
+    .introjs-tooltip .introjs-tooltipbuttons {
+        padding-right: 1em;
+    }
+}
 
 @media only screen 
 and (max-device-width : 414px) {
@@ -593,9 +627,11 @@ and (max-device-width : 414px) {
         flex-direction: column;
         word-wrap: break-word;
     }
+
+    .introjs-tooltip .introjs-tooltipbuttons {
+        padding-right: 1.5em;
+    }
 }
-
-
 
 @media only screen 
 and (min-device-width : 768px) {
@@ -605,6 +641,28 @@ and (min-device-width : 768px) {
 
     .nav.toggle {
         position: relative;
+    }
+}
+
+@media only screen
+and (max-device-width : 768px) {
+    .introjs-tooltip {
+        margin-left: 0 !important;
+        min-height: 8em;
+    }
+
+    .introjs-tooltip .introjs-tooltipbuttons {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .introjs-tooltip .introjs-skipbutton {
+        margin-right: 0;
+    }
+
+    .introjs-tooltip .introjs-skipbutton span {
+        display: block;
+        text-align: center;
     }
 }
 
@@ -631,6 +689,10 @@ and (min-device-width : 1024px) {
 and (max-device-width : 320px) {
     .nav-sm #menu_toggle {
         padding: 15px 5px 0;
+    }
+
+    .introjs-tooltip .introjs-tooltipbuttons {
+        padding-right: 4.5em;
     }
 }
 

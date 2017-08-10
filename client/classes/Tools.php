@@ -44,7 +44,7 @@ class Paginator {
      */
     function show($label){
         $cleanURL = preg_replace('/\/page.*$/', '',
-            'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']);
+            'http://' . $_SERVER['HTTP_HOST'] . rtrim($_SERVER['PHP_SELF'], '/'));
         $page = $this->currentPage;
 
         $strPaginator = '<div id="paginator">';
@@ -71,7 +71,7 @@ class Paginator {
      */
     function render($next, $previous){
         $cleanURL = preg_replace('/\/page.*$/', '',
-            'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']);
+            'http://' . $_SERVER['HTTP_HOST'] . rtrim($_SERVER['PHP_SELF'], '/'));
         $page = $this->currentPage;
 
         $strPaginator = '<div class="row">';

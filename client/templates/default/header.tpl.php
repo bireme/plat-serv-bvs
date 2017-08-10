@@ -27,6 +27,7 @@
     <link href="<?=RELATIVE_PATH?>/vendors/font-awesome/css/font-awesome.min.css" type="text/css" rel="stylesheet">
     <!-- Intro.js -->
     <link href="<?=RELATIVE_PATH?>/vendors/introjs/introjs.css" type="text/css" rel="stylesheet">
+    <!--link href="<?=RELATIVE_PATH?>/vendors/introjs/themes/introjs-royal.css" type="text/css" rel="stylesheet"-->
     <!-- Datatables -->
     <link href="<?=RELATIVE_PATH?>/vendors/datatables.net-bs/css/dataTables.bootstrap.min.css" type="text/css" rel="stylesheet">
     <link href="<?=RELATIVE_PATH?>/vendors/datatables.net-responsive-bs/css/responsive.bootstrap.min.css" type="text/css" rel="stylesheet">
@@ -38,6 +39,8 @@
     <link href="<?=RELATIVE_PATH?>/build/css/custom.min.css" type="text/css" rel="stylesheet">
     <!-- Theme Style -->
     <link href="<?=RELATIVE_PATH?>/css/<?=$_SESSION["skin"]?>/style.css" type="text/css" rel="stylesheet" />
+
+    <style type="text/css">@import url('<?=RELATIVE_PATH?>/vendors/introjs/themes/introjs-royal.css') (max-width: 768px);</style>
 
     <!-- Intro.js -->
     <script type="text/javascript" src="<?=RELATIVE_PATH?>/vendors/introjs/intro.js"></script>
@@ -60,6 +63,6 @@
 
     <?php $body_class = ( !$_SESSION['userTK'] ) ? 'main_page' : ''; ?>
   </head>
-  <body class="nav-md <?php echo $body_class; ?>">
+  <body id="body" class="nav-md <?php echo $body_class; ?>">
     <div class="container body">
       <div class="main_container">

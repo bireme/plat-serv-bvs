@@ -30,7 +30,7 @@
                             <tr>
                               <th style="width: 10%" class="all">#</th>
                               <th style="width: 35%" class="all query"><?=$trans->getTrans($_REQUEST["action"],'QUERY')?></th>
-                              <th style="width: 35%" class="filter"><?=$trans->getTrans($_REQUEST["action"],'FILTERS')?></th>
+                              <th style="width: 35%" class="min-tablet-l filter"><?=$trans->getTrans($_REQUEST["action"],'FILTERS')?></th>
                               <th style="width: 20%"><?=$trans->getTrans($_REQUEST["action"],'ACTIONS')?></th>
                             </tr>
                           </thead>
@@ -126,6 +126,56 @@
 
         <script type="text/javascript">
           if (RegExp('multipage', 'gi').test(window.location.search)) {
+            var steps = [
+              {
+                element: 'li.side.step24',
+                intro: "<?=$trans->getTrans('tour','STEP_24')?>",
+                position: 'right'
+              },
+              {
+                element: 'li.child.step20',
+                intro: "<?=$trans->getTrans('tour','STEP_24')?>",
+                position: 'right'
+              },
+              {
+                element: '#step25',
+                intro: "<?=$trans->getTrans('tour','STEP_25')?>",
+                position: 'left'
+              },
+              {
+                element: '.step26',
+                intro: "<?=$trans->getTrans('tour','STEP_26')?>",
+                position: 'bottom'
+              },
+              {
+                element: '.step27',
+                intro: "<?=$trans->getTrans('tour','STEP_27')?>",
+                position: 'bottom'
+              },
+              {
+                element: '.step28',
+                intro: "<?=$trans->getTrans('tour','STEP_28')?>",
+                position: 'left'
+              },
+              {
+                element: '#s1',
+                intro: "<?=$trans->getTrans('tour','STEP_S1')?>",
+                position: 'bottom'
+              }
+            ];
+
+            var sw = screen.width;
+            var tooltipClass = '';
+
+            if ( sw > 768 ) {
+                steps.splice(0,1);
+                steps.splice(-1,1);
+            } else {
+                tooltipClass = 'mobile';
+                steps.splice(1,1);
+                steps.splice(3,2);
+            }
+
             function startIntro(){
               var intro = introJs();
                 intro.setOptions({
@@ -135,33 +185,28 @@
                   skipLabel: "<?=$trans->getTrans('menu','SKIP')?>",
                   exitOnOverlayClick: false,
                   showStepNumbers: false,
-                  steps: [
-                    {
-                      element: '#step24',
-                      intro: "<?=$trans->getTrans('tour','STEP_24')?>",
-                      position: 'right'
-                    },
-                    {
-                      element: '#step25',
-                      intro: "<?=$trans->getTrans('tour','STEP_25')?>",
-                      position: 'left'
-                    },
-                    {
-                      element: '.step26',
-                      intro: "<?=$trans->getTrans('tour','STEP_26')?>",
-                      position: 'bottom'
-                    },
-                    {
-                      element: '.step27',
-                      intro: "<?=$trans->getTrans('tour','STEP_27')?>",
-                      position: 'bottom'
-                    },
-                    {
-                      element: '.step28',
-                      intro: "<?=$trans->getTrans('tour','STEP_28')?>",
-                      position: 'left'
+                  showBullets: false,
+                  tooltipClass: tooltipClass,
+                  steps: steps
+                });
+
+                intro.onchange(function(targetElement) {
+                    switch (targetElement.id) { 
+                        case 'step25':
+                            document.getElementById("body").className = "nav-md";
+                        break;
                     }
-                  ]
+
+                    switch (this._currentStep) { 
+                        case 0:
+                            if ( sw <= 768 ) {
+                                document.getElementById("body").className = "nav-sm";
+                            }
+                        break;
+                        case 3:
+                            document.getElementById('s1').click();
+                        break;
+                    }
                 });
 
                 intro.start().oncomplete(function() {
@@ -169,7 +214,9 @@
                 });
             }
             
-            startIntro();
+            window.addEventListener('load', function() {
+                startIntro();
+            });
           }
         </script>
 

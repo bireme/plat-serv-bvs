@@ -134,7 +134,7 @@ usuário para oferecer serviços personalizados e facilidades tais como:</p>
         self::$trans["menu"]["PROFILE_WIDGET"] = 'Temas de Interesse';
         self::$trans["menu"]["SHELF_WIDGET"] = 'Documentos Favoritos';
         self::$trans["menu"]["START_TOUR"] = 'Iniciar Tour';
-        self::$trans["menu"]["NEXT_PAGE"] = 'Próxima funcionalidade';
+        self::$trans["menu"]["NEXT_PAGE"] = '<span>Próxima</span> <span>funcionalidade</span>';
         self::$trans["menu"]["BACK"] = '&larr; Voltar';
         self::$trans["menu"]["NEXT"] = 'Avançar &rarr;';
         self::$trans["menu"]["SKIP"] = 'Pular';
@@ -381,12 +381,14 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
         self::$trans["tour"]["STEP_25"] = 'Lista das últimas expressões de buscas realizadas na BVS';
         self::$trans["tour"]["STEP_26"] = 'Termos que foram utilizados na busca';
         self::$trans["tour"]["STEP_27"] = 'Filtros que foram aplicados na busca';
-
         self::$trans["tour"]["STEP_28"] = 'Você pode exibir o resultado de cada busca na BVS ou combinar as buscas indicando o operador de combinação';
+        self::$trans["tour"]["STEP_S1"] = 'Clique nesse botão para visualizar os filtros que foram aplicados na busca. Aqui você também poderá exibir o resultado de cada busca na BVS (botão Exibir) ou combinar as buscas indicando o operador de combinação (botão Combinar).';
+
         self::$trans["tour"]["STEP_29"] = '<b>Links Favoritos</b><br />Organiza e facilita o acesso direto a seus Links Favoritos';
         self::$trans["tour"]["STEP_30"] = 'Lista dos seus Links Favoritos, com opções para remover ou editar cada link';
         self::$trans["tour"]["STEP_31"] = 'Adicione novo Link Favorito e crie sua própria biblioteca de links';
         self::$trans["tour"]["STEP_32"] = 'Ordene seus links por data ou pelo ranking de avaliação atribuído por você a cada link';
+        
         self::$trans["tour"]["STEP_33"] = '<b>Minhas Publicações</b><br />Visualize suas publicações a partir do ORCID ID informado no seu Perfil';
         self::$trans["tour"]["STEP_34"] = 'Lista das publicações recuperadas a partir do seu ORCID ID. Você pode acessar cada documento no Google Scholar e saber quantas vezes sua publicação foi citada. Veja também documentos da BVS relacionados a sua publicação.';
         self::$trans["tour"]["LAST"] = 'Parabéns! Você concluiu o Tour e já sabe como funciona os serviços personalizados da <b>Minha BVS</b>. Use e divulgue este serviço. Envie suas dúvidas e sugestões para o <a style="text-decoration: underline;" href="http://feedback.bireme.org/feedback/?application=my-vhl&version=1.0&lang='.$_SESSION['lang'].'">Serviço de Feedback</a>';

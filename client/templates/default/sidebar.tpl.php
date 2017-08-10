@@ -35,24 +35,24 @@
             <!-- sidebar menu -->
             <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
               <div class="menu_section">
-                <ul class="nav side-menu">
-                  <li id="step2" class="active"><a><i class="fa fa-dashboard"></i> <?=$trans->getTrans('menu','DASHBOARD')?> <span class="fa fa-chevron-down"></span></a>
+                <ul class="nav side-menu step2">
+                  <li class="active step2"><a><i class="fa fa-dashboard"></i> <?=$trans->getTrans('menu','DASHBOARD')?> <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu" style="display: block;">
-                      <li id="step3"><a href="<?php echo $_SERVER['SCRIPT_NAME']; ?>/authentication"><?=$trans->getTrans('menu','HOME')?></a></li>
-                      <li id="step15"><a href="<?=RELATIVE_PATH?>/controller/mydocuments/control/business"><?=$trans->getTrans('menu','MY_SHELF')?></a></li>
-                      <li id="step20"><a href="<?=RELATIVE_PATH?>/controller/myprofiledocuments/control/business"><?=$trans->getTrans('menu','MY_PROFILE_DOCUMENTS')?></a></li>
+                      <li class="child step3"><a href="<?php echo $_SERVER['SCRIPT_NAME']; ?>/authentication"><?=$trans->getTrans('menu','HOME')?></a></li>
+                      <li class="child step15"><a href="<?=RELATIVE_PATH?>/controller/mydocuments/control/business"><?=$trans->getTrans('menu','MY_SHELF')?></a></li>
+                      <li class="child step20"><a href="<?=RELATIVE_PATH?>/controller/myprofiledocuments/control/business"><?=$trans->getTrans('menu','MY_PROFILE_DOCUMENTS')?></a></li>
                       <!-- <li><a href="<?=RELATIVE_PATH?>/controller/suggesteddocs/control/business"><?=$trans->getTrans('menu','SUGGESTED_DOCS')?></a></li> -->
-                      <li id="step24"><a href="<?=RELATIVE_PATH?>/controller/mysearches/control/business"><?=$trans->getTrans('menu','MY_SEARCHES')?></a></li>
-                      <li id="step29"><a href="<?=RELATIVE_PATH?>/controller/mylinks/control/business"><?=$trans->getTrans('menu','MY_LINKS')?></a></li>
-                      <li id="step33"><a href="<?=RELATIVE_PATH?>/controller/orcidworks/control/business"><?=$trans->getTrans('menu','ORCID_WORKS')?></a></li>
+                      <li class="child step24"><a href="<?=RELATIVE_PATH?>/controller/mysearches/control/business"><?=$trans->getTrans('menu','MY_SEARCHES')?></a></li>
+                      <li class="child step29"><a href="<?=RELATIVE_PATH?>/controller/mylinks/control/business"><?=$trans->getTrans('menu','MY_LINKS')?></a></li>
+                      <li class="child step33"><a href="<?=RELATIVE_PATH?>/controller/orcidworks/control/business"><?=$trans->getTrans('menu','ORCID_WORKS')?></a></li>
                     </ul>
                   </li>
-                  <li class="hide"><a href="<?php echo $_SERVER['SCRIPT_NAME']; ?>/authentication"><i class="fa fa-home"></i> <?=$trans->getTrans('menu','HOME')?></span></a>
-                  <li class="hide"><a href="<?=RELATIVE_PATH?>/controller/mydocuments/control/business"><i class="fa fa-file"></i> <?=$trans->getTrans('menu','MY_SHELF')?></a></li>
-                  <li class="hide"><a href="<?=RELATIVE_PATH?>/controller/myprofiledocuments/control/business"><i class="fa fa-folder-open"></i> <?=$trans->getTrans('menu','MY_PROFILE_DOCUMENTS')?></a></li>
-                  <li class="hide"><a href="<?=RELATIVE_PATH?>/controller/mysearches/control/business"><i class="fa fa-search"></i> <?=$trans->getTrans('menu','MY_SEARCHES')?></a></li>
-                  <li class="hide"><a href="<?=RELATIVE_PATH?>/controller/mylinks/control/business"><i class="fa fa-link"></i> <?=$trans->getTrans('menu','MY_LINKS')?></a></li>
-                  <li class="hide"><a href="<?=RELATIVE_PATH?>/controller/orcidworks/control/business"><i class="fa fa-file-text"></i> <?=$trans->getTrans('menu','ORCID_WORKS')?></a></li>
+                  <li class="hide side step3"><a href="<?php echo $_SERVER['SCRIPT_NAME']; ?>/authentication"><i class="fa fa-home"></i> <?=$trans->getTrans('menu','HOME')?></span></a>
+                  <li class="hide side step15"><a href="<?=RELATIVE_PATH?>/controller/mydocuments/control/business"><i class="fa fa-file"></i> <?=$trans->getTrans('menu','MY_SHELF')?></a></li>
+                  <li class="hide side step20"><a href="<?=RELATIVE_PATH?>/controller/myprofiledocuments/control/business"><i class="fa fa-folder-open"></i> <?=$trans->getTrans('menu','MY_PROFILE_DOCUMENTS')?></a></li>
+                  <li class="hide side step24"><a href="<?=RELATIVE_PATH?>/controller/mysearches/control/business"><i class="fa fa-search"></i> <?=$trans->getTrans('menu','MY_SEARCHES')?></a></li>
+                  <li class="hide side step29"><a href="<?=RELATIVE_PATH?>/controller/mylinks/control/business"><i class="fa fa-link"></i> <?=$trans->getTrans('menu','MY_LINKS')?></a></li>
+                  <li class="hide side step33"><a href="<?=RELATIVE_PATH?>/controller/orcidworks/control/business"><i class="fa fa-file-text"></i> <?=$trans->getTrans('menu','ORCID_WORKS')?></a></li>
                 </ul>
               </div>
             </div>

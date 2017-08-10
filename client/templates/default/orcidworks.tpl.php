@@ -72,6 +72,37 @@
 
         <script type="text/javascript">
           if (RegExp('multipage', 'gi').test(window.location.search)) {
+            var steps = [
+              {
+                element: 'li.side.step33',
+                intro: "<?=$trans->getTrans('tour','STEP_33')?>",
+                position: 'right'
+              },
+              {
+                element: 'li.child.step33',
+                intro: "<?=$trans->getTrans('tour','STEP_33')?>",
+                position: 'right'
+              },
+              {
+                element: '#step34',
+                intro: "<?=$trans->getTrans('tour','STEP_34')?>",
+                position: 'left'
+              },
+              {
+                intro: '<?=$trans->getTrans('tour','LAST')?>'
+              }
+            ];
+
+            var sw = screen.width;
+            var tooltipClass = '';
+
+            if ( sw > 768 ) {
+                steps.splice(0,1);
+            } else {
+                tooltipClass = 'mobile';
+                steps.splice(1,1);
+            }
+
             function startIntro(){
               var intro = introJs();
                 intro.setOptions({
@@ -81,27 +112,33 @@
                   skipLabel: "<?=$trans->getTrans('menu','SKIP')?>",
                   exitOnOverlayClick: false,
                   showStepNumbers: false,
-                  steps: [
-                    {
-                      element: '#step33',
-                      intro: "<?=$trans->getTrans('tour','STEP_33')?>",
-                      position: 'right'
-                    },
-                    {
-                      element: '#step34',
-                      intro: "<?=$trans->getTrans('tour','STEP_34')?>",
-                      position: 'left'
-                    },
-                    {
-                      intro: '<?=$trans->getTrans('tour','LAST')?>'
+                  showBullets: false,
+                  tooltipClass: tooltipClass,
+                  steps: steps
+                });
+
+                intro.onchange(function(targetElement) {
+                    switch (targetElement.id) { 
+                        case 'step34':
+                            document.getElementById("body").className = "nav-md";
+                        break;
                     }
-                  ]
+
+                    switch (this._currentStep) { 
+                        case 0:
+                            if ( sw <= 768 ) {
+                                document.getElementById("body").className = "nav-sm";
+                            }
+                        break;
+                    }
                 });
 
                 intro.start();
             }
             
-            startIntro();
+            window.addEventListener('load', function() {
+                startIntro();
+            });
           }
         </script>
 

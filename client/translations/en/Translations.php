@@ -133,7 +133,7 @@ class Translations {
         self::$trans["menu"]["PROFILE_WIDGET"] = 'Topics of Interest';
         self::$trans["menu"]["SHELF_WIDGET"] = 'Favorite Documents';
         self::$trans["menu"]["START_TOUR"] = 'Start Tour';
-        self::$trans["menu"]["NEXT_PAGE"] = 'Next feature';
+        self::$trans["menu"]["NEXT_PAGE"] = '<span>Next</span> <span>feature</span>';
         self::$trans["menu"]["BACK"] = '&larr; Back';
         self::$trans["menu"]["NEXT"] = 'Next &rarr;';
         self::$trans["menu"]["SKIP"] = 'Skip';
@@ -255,7 +255,7 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Phone: (55 11) 5576-980
         self::$trans["mylinks"]["SHOW_BY"] = 'View List by';
         self::$trans["mylinks"]["DATE"] = 'Date';
         self::$trans["mylinks"]["MY_RANK"] = 'My ranking';
-        self::$trans["mylinks"]["TOOLS"] = 'Tools';
+        self::$trans["mylinks"]["TOOLS"] = 'My Links';
         self::$trans["mylinks"]["ADD_LINK"] = 'Add Link';
         self::$trans["mylinks"]["MY_LINKS"] = 'My Links';
         self::$trans["mylinks"]["REMOVE_LINK"] = 'Remove link';
@@ -318,7 +318,7 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Phone: (55 11) 5576-980
         self::$trans["myprofiledocuments"]["REMOVE_PROFILE"] = 'Remove topic';
         self::$trans["myprofiledocuments"]["EDIT_PROFILE"] = 'Edit topic';
         self::$trans["myprofiledocuments"]["ADD_PROFILE"] = 'Add topic';
-        self::$trans["myprofiledocuments"]["TOOLS"] = 'Tools';
+        self::$trans["myprofiledocuments"]["TOOLS"] = 'My Topics';
         self::$trans["myprofiledocuments"]["SIMILARS_IN"] = 'Similars in';
         self::$trans["myprofiledocuments"]["PROFILE_KEYWORDS"] = 'Topics keywords';
         self::$trans["myprofiledocuments"]["PROFILES"] = 'Topics';
@@ -379,12 +379,14 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Phone: (55 11) 5576-980
         self::$trans["tour"]["STEP_25"] = 'List of the last search queries carried out in the VHL.';
         self::$trans["tour"]["STEP_26"] = 'Terms that were used in the search.';
         self::$trans["tour"]["STEP_27"] = 'Filters that were applied in the search.';
-
         self::$trans["tour"]["STEP_28"] = 'You can display the result of each search in the VHL or combine the search by indicating the combination operator.';
+        self::$trans["tour"]["STEP_S1"] = 'Click this button to view the filters that were applied in the search. Here you can also display the result of each search in the VHL (View button) or combine the searches indicating the combination operator (Combine button).';
+
         self::$trans["tour"]["STEP_29"] = '<b>Favorite Links</b><br />Organizes and facilitates direct access to your Favorite Links.';
         self::$trans["tour"]["STEP_30"] = 'List your Favorite Links, with options to remove or edit each link.';
         self::$trans["tour"]["STEP_31"] = 'Add new Favorite Link and create your own link library.';
         self::$trans["tour"]["STEP_32"] = 'Order your links by date or by the ranking assigned by you to each link.';
+
         self::$trans["tour"]["STEP_33"] = '<b>My Publications</b><br />View your publications from the ORCID ID you entered in your Profile.';
         self::$trans["tour"]["STEP_34"] = 'List of publications retrieved from your ORCID ID. You can access each document in Google Scholar and know how many times your publication was cited. See also VHL documents related to your publication.';
         self::$trans["tour"]["LAST"] = 'Congratulations! You have completed the Tour and already know how <b>My VHL</b> custom services work. Use and disseminate this service. Send your questions and suggestions to the <a style="text-decoration: underline;" href="http://feedback.bireme.org/feedback/?application=my-vhl&version=1.0&lang='.$_SESSION['lang'].'">Feedback Service</a>';

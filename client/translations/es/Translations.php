@@ -133,7 +133,7 @@ class Translations {
         self::$trans["menu"]["PROFILE_WIDGET"] = 'Temas de Interés';
         self::$trans["menu"]["SHELF_WIDGET"] = 'Documentos Favoritos';
         self::$trans["menu"]["START_TOUR"] = 'Iniciar Tour';
-        self::$trans["menu"]["NEXT_PAGE"] = 'Siguiente funcionalidad';
+        self::$trans["menu"]["NEXT_PAGE"] = '<span>Siguiente</span> <span>funcionalidad</span>';
         self::$trans["menu"]["BACK"] = '&larr; Volver';
         self::$trans["menu"]["NEXT"] = 'Siguiente &rarr;';
         self::$trans["menu"]["SKIP"] = 'Omitir';
@@ -251,11 +251,11 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
         self::$trans["directories"]["MOVE_DOC_ERROR"] = 'Error al mover colección';
 
     // Tems of mylinks pages
-        self::$trans["mylinks"]["FEATURE"] = 'Mis Enlaces';
+        self::$trans["mylinks"]["FEATURE"] = 'Mis Enlaces Favoritos';
         self::$trans["mylinks"]["SHOW_BY"] = 'Ver la Lista por';
         self::$trans["mylinks"]["DATE"] = 'Fecha';
         self::$trans["mylinks"]["MY_RANK"] = 'Mi clasificación';
-        self::$trans["mylinks"]["TOOLS"] = 'Herramientas';
+        self::$trans["mylinks"]["TOOLS"] = 'Mis Enlaces';
         self::$trans["mylinks"]["ADD_LINK"] = 'Añadir Enlace';
         self::$trans["mylinks"]["MY_LINKS"] = 'Mis Enlaces';
         self::$trans["mylinks"]["REMOVE_LINK"] = 'remover enlace';
@@ -318,7 +318,7 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
         self::$trans["myprofiledocuments"]["REMOVE_PROFILE"] = 'remover tema';
         self::$trans["myprofiledocuments"]["EDIT_PROFILE"] = 'editar tema';
         self::$trans["myprofiledocuments"]["ADD_PROFILE"] = 'añadir tema';
-        self::$trans["myprofiledocuments"]["TOOLS"] = 'Herramientas';
+        self::$trans["myprofiledocuments"]["TOOLS"] = 'Mis Temas';
         self::$trans["myprofiledocuments"]["SIMILARS_IN"] = 'Similares en';
         self::$trans["myprofiledocuments"]["PROFILE_KEYWORDS"] = 'Palabras-clave del tema';
         self::$trans["myprofiledocuments"]["PROFILES"] = 'Temas';
@@ -363,24 +363,30 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
         self::$trans["tour"]["STEP_12"] = 'Acceso directo a sus enlaces favoritos';
         self::$trans["tour"]["STEP_13"] = 'Historial de sus últimas actividades realizadas';
         self::$trans["tour"]["STEP_14"] = 'Historial de las búsquedas realizadas en la BVS con enlace al resultado';
+
         self::$trans["tour"]["STEP_15"] = '<b>Documentos Favoritos</b><br/>Almacena los documentos que se han guardado a partir de las búsquedas realizadas en la BVS';
         self::$trans["tour"]["STEP_16"] = 'Lista de los documentos añadidos a su biblioteca. Usted puede: eliminar, mover a otra colección o ver documentos relacionados.';
         self::$trans["tour"]["STEP_17"] = 'Utilice esta función para eliminar o mover varios documentos a otra colección';
         self::$trans["tour"]["STEP_18"] = 'Organiza tus documentos favoritos en colecciones';
         self::$trans["tour"]["STEP_19"] = 'Los documentos se pueden enumerar por orden de fecha o por el ranking asignado por usted a cada documento';
+
         self::$trans["tour"]["STEP_20"] = '<b>Temas de Interés</b><br />Sus temas de interés con palabras clave para buscar y recuperar nuevos documentos de la BVS relacionados con cada tema';
         self::$trans["tour"]["STEP_21"] = 'Lista de los últimos documentos recuperados de la BVS para el respectivo tema de interés. Usted puede: editar o eliminar el tema, agregar documentos a favoritos o ver documentos relacionados.';
         self::$trans["tour"]["STEP_22"] = 'Cree temas y defina palabras clave para recibir documentos relacionados de la BVS';
         self::$trans["tour"]["STEP_23"] = 'Haga clic en sus temas de interés para visualizar documentos recuperados de la BVS';
+
         self::$trans["tour"]["STEP_24"] = '<b>Historial de búsqueda en la BVS</b><br />Almacena sus búsquedas realizadas en la BVS siempre que esté conectado a Mi BVS';
         self::$trans["tour"]["STEP_25"] = 'Lista de las últimas expresiones de búsqueda realizadas en la BVS';
         self::$trans["tour"]["STEP_26"] = 'Términos que se utilizaron en la búsqueda';
         self::$trans["tour"]["STEP_27"] = 'Filtros que se aplicaron en la búsqueda';
         self::$trans["tour"]["STEP_28"] = 'Puede visualizar el resultado de cada búsqueda en la BVS o combinar las búsquedas indicando el operador de combinación';
+        self::$trans["tour"]["STEP_S1"] = 'Haga clic en este botón para ver los filtros que se han aplicado en la búsqueda. Aquí también puede mostrar el resultado de cada búsqueda en la BVS (botón Mostrar) o combinar las búsquedas indicando el operador de combinación (botón Combinar).';
+
         self::$trans["tour"]["STEP_29"] = '<b>Enlaces Favoritos</b><br />Organiza y facilita el acceso directo a tus Enlaces Favoritos';
         self::$trans["tour"]["STEP_30"] = 'Lista de sus Enlaces Favoritos, con opciones para eliminar o editar cada enlace';
         self::$trans["tour"]["STEP_31"] = 'Añada nuevo enlace Favorito y cree su propia biblioteca de enlaces';
         self::$trans["tour"]["STEP_32"] = 'Ordene sus enlaces por fecha o por el ranking de evaluación asignado por usted a cada enlace';
+
         self::$trans["tour"]["STEP_33"] = '<b>Mi Publicaciones</b><br />Visualiza tus publicaciones desde el ORCID ID en tu perfil';
         self::$trans["tour"]["STEP_34"] = 'Lista de las publicaciones recuperadas de su ORCID ID. Usted puede acceder a cada documento en Google Académico y saber cuántas veces su publicación ha sido citada. Véase también documentos de la BVS relacionados con su publicación.';
         self::$trans["tour"]["LAST"] = 'Felicitaciones! Usted ha completado el Tour y ya sabe cómo funciona los servicios personalizados de <b>Mi BVS</b>. Utilice y divulgue este servicio. Envíe sus dudas y sugerencias para el <a style="text-decoration: underline;" href="http://feedback.bireme.org/feedback/?application=my-vhl&version=1.0&lang='.$_SESSION['lang'].'">Servicio de Feedback</a>';
