@@ -36,7 +36,7 @@ body .container.body .right_col {
 }
 
 .x_panel {
-    background: #F7F7F7 !important;
+    background: #f4f7fd !important;
 }
 
 .nav-md, .nav-sm {
@@ -242,6 +242,7 @@ a.operator {
 
 .x_title h2 {
     margin: 15px 0px 0px 55px !important;
+	color: #3c5c88 !important;
 }
 
 .x_title h2 small {
@@ -550,6 +551,14 @@ ul.messages li, .tasks li {
     margin: 5px 0px 6px !important;
 }
 
+.submitFalse {background: #b80909 !important; color: #fff;}
+
+.submitTrue {background: #00a360!important; color: #fff;}
+
+.table-striped>tbody>tr:nth-of-type(odd) {background-color: #f4f7fd !important;}
+
+.byline {color: #636363 !important;}
+
 @media only screen 
 and (max-device-width : 414px) {
     .folder-data {
@@ -585,6 +594,8 @@ and (max-device-width : 414px) {
         word-wrap: break-word;
     }
 }
+
+
 
 @media only screen 
 and (min-device-width : 768px) {
