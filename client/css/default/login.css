@@ -218,6 +218,16 @@
     text-align: center;
 }
 
+.omb_login .languages {
+    text-align: right;
+    word-spacing: 5px;
+    padding-right: 10px;
+}
+
+.omb_login .languages span a {
+    color: #fff;
+}
+
 @media (min-width: 1200px) {
     body.main_page .container {
         width: 1162px;

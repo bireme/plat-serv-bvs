@@ -1,11 +1,21 @@
-<?php require_once(dirname(__FILE__)."/header.tpl.php"); ?>
-
-<?php $b64HttpHost = base64_encode(RELATIVE_PATH.'/controller/authentication'); ?>
-
-<?php $build_query = '?origin='.$origin.'&iahx='.$iahx; ?>
+<?php
+    require_once(dirname(__FILE__)."/header.tpl.php");
+    
+    $path = rtrim($_SERVER['PHP_SELF'], '/') . '/';
+    $b64HttpHost = base64_encode(RELATIVE_PATH.'/controller/authentication');
+    $build_query = '?origin='.$origin.'&iahx='.$iahx;
+?>
 
     <div class="container">
         <div class="omb_login">
+            <div class="languages">
+                <div class="col-xs-12 col-sm-12">
+                    <?php foreach ($languages as $key => $value) : ?>
+                        <?php if ( $key == $_SESSION['lang'] ) continue; ?>
+                        <span><a href="<?php echo $path.'?lang='.$key; ?>"><?php echo $value; ?></a></span>
+                    <?php endforeach; ?>
+                </div>
+            </div>
             <div class="row">
                 <div class="col-xs-12 col-sm-12">
                     <h1 class="omb_authTitle">
