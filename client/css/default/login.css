@@ -9,6 +9,10 @@
     background: #fff  url(../../images/default/banner_top.png) top no-repeat;
 	box-shadow: 0px 0px 6px 6px #E6E6E6;
 }
+.languages {text-align:right;}
+
+.languages a {
+	color:#fff !important; }
 
 .login-area {
 	display: flex;
@@ -45,7 +49,9 @@
 	display: flex;
     align-items: flex-start;
     justify-content: center;
+	    margin-top: -10px;
 }
+
 
 .omb_login .omb_authTitle span {
 	display:none !important;
@@ -57,6 +63,7 @@
 	margin-left:3%;
 }
 
+
 .omb_description .col-xs-12 {
     background: #fdfbfb;
 }
@@ -67,6 +74,7 @@
 
 .omb_login .omb_authTitle img.logo {
     float: left;
+
 }
 
 .omb_description {
@@ -87,6 +95,7 @@
 .omb_login .login-area .omb_description {
     background: none !important;
 	padding: 0px !important; 
+  
     margin-right: 18px;
 }
 
@@ -210,23 +219,9 @@
     width: 6em !important;
 }
 
-.login-box .row {
-    padding: 3px 43px;
-}
+.login-box .row{padding: 3px 31px;}
 
-.login-box .row:last-child .omb_registry {
-    text-align: center;
-}
-
-.omb_login .languages {
-    text-align: right;
-    word-spacing: 5px;
-    padding-right: 10px;
-}
-
-.omb_login .languages span a {
-    color: #fff;
-}
+.login-box .row:last-child .omb_registry{ text-align: center;}
 
 @media (min-width: 1200px) {
     body.main_page .container {
@@ -274,33 +269,12 @@ and (max-device-width : 568px) {
     .omb_login h1.omb_authTitle {
         font-size: 28px;
     }
-
-	.login-area {
-        display: block;
-    }
-	
-    .omb_login .omb_authTitle {
-        display:block !important;
-    }
-
-	.omb_login .omb_authTitle img.logo {
-        margin-left: 40px;
-    }
-
-	.omb_login .omb_authTitle .logo-bireme {
-        display:none;
-    }
-
-	.omb_login h1.omb_authTitle {
-        background: url(../../images/default/bireme_vert.png) right no-repeat;
-        height: 180px;
-        margin-top:0px;
-    }
-
-	.login-area .login-box, .login-area .omb_description {
-        width:auto !important;
-        margin-left:10px;
-    }
+	.login-area {display: block;}
+	.omb_login .omb_authTitle{ display:block !important;}
+	.omb_login .omb_authTitle img.logo {margin-left: 40px;}
+	.omb_login .omb_authTitle .logo-bireme {display:none;}
+	.omb_login h1.omb_authTitle { background: url(../../images/default/bireme_vert.png) right no-repeat; height: 180px; margin-top:-16px;} 
+	.login-area .login-box, .login-area .omb_description {width:auto !important; margin-left:10px;}
 }
 
 @media only screen 
@@ -313,30 +287,10 @@ and (max-device-width : 1024px) {
     .omb_row-sm-offset-3.omb_recover div.col-sm-3 {
         width: 35%;
     }
-
-	.login-area {
-        display: block;
-    }
-	
-    .omb_login .omb_authTitle {
-        display:block !important;
-    }
-
-	.omb_login .omb_authTitle img.logo {
-        margin-left: 40px;
-    }
-
-	.omb_login .omb_authTitle .logo-bireme {
-        max-width: 508px;
-        margin-right: 30px;
-    }
-
-	.omb_login h1.omb_authTitle {
-        height: 168px;
-    }
-
-	.login-area .login-box, .login-area .omb_description {
-        width:auto !important;
-        margin-left:10px;
-    }
+	.login-area {display: block;}
+	.omb_login .omb_authTitle{ display:block !important;}
+	.omb_login .omb_authTitle img.logo {margin-left: 40px;}
+	.omb_login .omb_authTitle .logo-bireme { max-width: 508px; margin-right: 30px;}
+	.omb_login h1.omb_authTitle { height: 168px;}
+	.login-area .login-box, .login-area .omb_description {width:auto !important; margin-left:10px;}
 }
