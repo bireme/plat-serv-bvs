@@ -564,11 +564,11 @@ ul.messages li, .tasks li {
 }
 
 .submitFalse {
-    background: #b80909 !important; color: #fff;
+    background: rgba(169, 68, 66, 0.78) !important; color: #fff;
 }
 
 .submitTrue {
-    background: #00a360!important; color: #fff;
+    background: rgba(0, 163, 54, 0.64)!important; color: #fff;
 }
 
 .table-striped>tbody>tr:nth-of-type(odd) {
@@ -694,6 +694,8 @@ and (max-device-width : 320px) {
     .introjs-tooltip .introjs-tooltipbuttons {
         padding-right: 4.5em;
     }
+	.mobile .introjs-button{text-shadow: none !important; box-shadow:none !important;}
+	
 }
 
 @media only screen 
@@ -710,6 +712,7 @@ and (max-device-width : 736px) {
         position: absolute;
         margin-top: 70px;
     }
+	.mobile .introjs-button{text-shadow: none !important; box-shadow:none !important;}
 
     .search_bar{
         display: flex;
