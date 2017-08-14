@@ -20,7 +20,7 @@ $tmpskin = $_SESSION['skin'];
 session_destroy();
 $_SESSION = array();
 setcookie('userTK','',time() -3600,'/',COOKIE_DOMAIN_SCOPE);
-UserData::sendCookie();
+//UserData::sendCookie();
 
 session_start();
 $_SESSION['lang'] = $tmplang;

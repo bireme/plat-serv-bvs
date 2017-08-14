@@ -263,6 +263,54 @@ class SocialNetwork {
     }
 }
 
+class UserData {
+
+    public static function sendCookie($userTK,$return=false){
+        $userData = '';
+
+        if ( isset($userTK) && !empty($userTK) ) {
+            $source = ( $_SESSION['source'] ) ? $_SESSION['source'] : '';
+
+            if ( 'bireme_accounts' == $source )
+                $data = Token::unmakeUserTK($userTK, true);
+            else
+                $data = Token::unmakeUserTK($userTK);
+
+            if ( $data ) {
+                unset($userData);
+                $userData = array();
+                $userData['userTK'] = $userTK;
+                $userData['firstName'] = $_SESSION["userFirstName"];
+                $userData['lastName'] = $_SESSION["userLastName"];
+                $userData['email'] = $_SESSION["userMail"];
+                $userData['source'] = $_SESSION["source"];
+
+                // Facebook data
+                if ( isset($_SESSION["fb_data"]) && !empty($_SESSION["fb_data"]) )
+                    $userData['fb_data'] = $_SESSION["fb_data"];
+
+                // Google data
+                if ( isset($_SESSION["google_data"]) && !empty($_SESSION["google_data"]) )
+                    $userData['google_data'] = $_SESSION["google_data"];
+
+                $userData = base64_encode(json_encode($userData));
+            }
+        }
+
+        $src = BVS_COOKIE_DOMAIN.'/cookies.php?userData='.$userData;
+
+        ?>
+        <script type="text/javascript">
+            var element = document.createElement("img");
+            element.setAttribute('src', "<?php echo $src; ?>");
+        </script>
+        <?php
+
+        if ( $return ) return $userData;
+    }
+
+}
+
 /** 
  * Logging class:
  * - contains lfile, lwrite and lclose public methods

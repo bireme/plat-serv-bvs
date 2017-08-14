@@ -68,7 +68,7 @@ if (isset($accessToken)) {
             //$response["status"] = true;
             //$response["values"] = $result;
             setcookie("userTK", $result["userTK"], 0, '/', COOKIE_DOMAIN_SCOPE);
-            UserData::sendCookie($result["userTK"]);
+            //UserData::sendCookie($result["userTK"]);
         }
     }
 
