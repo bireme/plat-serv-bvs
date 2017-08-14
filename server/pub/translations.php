@@ -296,7 +296,7 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
     define("NOTICE",'Mensaje al usuário');
     define("NOTICE_MESSAGE",'');
     define("UPDATE_INFO",'<b>Por favor, revise sus datos en el formulario para seguir utilizando el servicio Mi BVS.</b>');
-    define("ACCEPT_MAIL",'Me gustaría recibir actualizaciones acerca el servicio Mi BVS');
+    define("ACCEPT_MAIL",'Me gustaría recibir actualizaciones acerca del servicio Mi BVS');
     define("TERMS",'Condiciones de uso');
     define("TERMS_AGREEMENT_MESSAGE",'Estoy de acuerdo con los <a data-toggle="modal" data-target=".bs-terms-modal-lg" style="cursor: pointer; text-decoration: underline;">Términos de Uso</a> y confirmo que leí la <a data-toggle="modal" data-target=".bs-policy-modal-lg" style="cursor: pointer; text-decoration: underline;">Política de Privacidad</a> de Mi BVS');
     define("TERMS_MESSAGE",'
