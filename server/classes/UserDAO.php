@@ -591,7 +591,11 @@ class UserDAO {
                         throw $e;
                     }
 
-                    if ( $retStats !== false ) $retValue = true;
+                    if ( $retStats !== false ) {
+                        $retValue = true;
+                        $newToken = Token::makeUserTK($userID,$newPassword,'ldap');
+                        $_SESSION['userTK'] = $newToken;
+                    }
                 } else {
                     $retValue = 'invalidpass';
                 }

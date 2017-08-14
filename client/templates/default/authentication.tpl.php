@@ -98,7 +98,7 @@
                     </div>
                     <div class="row">
                         <div class="col-xs-12 col-sm-12">
-                            <form class="omb_loginForm" action="<?=RELATIVE_PATH?>/controller/authentication" autocomplete="off" method="POST">
+                            <form class="omb_loginForm" action="<?=RELATIVE_PATH?>/controller/authentication" method="POST">
                                 <input type="hidden" name="origin" value="<?php echo $origin; ?>" />
                                 <input type="hidden" name="control" value="business" />
                                 <input type="hidden" name="action" value="authentication" />

@@ -62,7 +62,8 @@
     <?php endif; ?>
 
     <?php $body_class = ( !$_SESSION['userTK'] ) ? 'main_page' : ''; ?>
+    <?php $lang_class = ( $_SESSION['lang'] ) ? 'body_'.$_SESSION['lang'] : 'body_pt'; ?>
   </head>
-  <body id="body" class="nav-md <?php echo $body_class; ?>">
+  <body id="body" class="nav-md <?php echo $lang_class; ?> <?php echo $body_class; ?>">
     <div class="container body">
       <div class="main_container">

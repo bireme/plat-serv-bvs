@@ -47,7 +47,9 @@
         __gaTracker('send','pageview');
     </script>
     <?php endif; ?>
+
+    <?php $lang_class = ( $_SESSION['lang'] ) ? 'body_'.$_SESSION['lang'] : 'body_pt'; ?>
   </head>
-  <body class="nav-md">
+  <body class="nav-md <?php echo $lang_class; ?>">
     <div class="container body">
       <div class="main_container">
