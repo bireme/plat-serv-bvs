@@ -52,9 +52,6 @@ class MySearches {
         $listCollections = $db->listCollections();
         //$iterator = iterator_to_array($listCollections);
 
-        $collection = $db->logs;
-        $collection->drop();
-/*
         foreach ($listCollections as $collectionInfo) {
             if ( 'logs' == $collectionInfo->getName() ) {
                 if ( $collectionInfo->isCapped() ) {
@@ -81,7 +78,6 @@ class MySearches {
                 )
             );
         }
-*/
     }
 
     /**
