@@ -26,7 +26,7 @@ class MySearches {
             $this->_data = $token;
         }
 
-        self::setCappedCollection('logs');
+        //self::setCappedCollection('logs');
     }
 
     /**
