@@ -26,7 +26,7 @@ class MySearches {
             $this->_data = $token;
         }
 
-        //self::setCappedCollection('logs');
+        self::setCappedCollection('logs');
     }
 
     /**
@@ -52,6 +52,9 @@ class MySearches {
         $listCollections = $db->listCollections();
         //$iterator = iterator_to_array($listCollections);
 
+        $collection = $db->logs;
+        $collection->drop();
+/*
         foreach ($listCollections as $collectionInfo) {
             if ( 'logs' == $collectionInfo->getName() ) {
                 if ( $collectionInfo->isCapped() ) {
@@ -74,12 +77,11 @@ class MySearches {
                 $name,
                 array(
                     'capped' => true, // Define tamanho fixo da coleção
-                    'size' => 1024*1024*1024 // Tamanho da coleção em bytes
+                    'size' => 3*1024*1024*1024 // Tamanho da coleção em bytes
                 )
             );
         }
-
-        $listCollections->rewind();
+*/
     }
 
     /**
