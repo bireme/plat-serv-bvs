@@ -7,7 +7,7 @@
 ob_start("ob_gzhandler");
 session_start();
 require_once(dirname(__FILE__)."/include/includes.php");
-require_once(dirname(__FILE__)."/translations.php");
+require_once(dirname(__FILE__)."/../include/translations.php");
 require_once(dirname(__FILE__)."/../classes/UserDAO.php");
 require_once(dirname(__FILE__)."/../classes/ToolsAuthentication.php");
 

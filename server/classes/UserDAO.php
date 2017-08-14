@@ -20,6 +20,7 @@ require_once(dirname(__FILE__)."/LDAP.php");
 require_once(dirname(__FILE__)."/LDAPAuthenticator.php");
 require_once(dirname(__FILE__)."/ToolsAuthentication.php");
 require_once(dirname(__FILE__)."/Tools.php");
+require_once(dirname(__FILE__).'/../include/translations.php');
 
 class UserDAO {
 
@@ -490,8 +491,8 @@ class UserDAO {
             $body = str_replace('#HOME#', base64_encode($home), $body);
             $body = str_replace('#EMAIL#', $email, $body);
             $body = str_replace('#KEY#', $key, $body);
-            $sendMail = Mailer::sendMail($body,
-                CONFIRM_USER_EMAIL_SUBJECT.$objUser->getFirstName(),$to);
+            $body = str_replace('#LANG#', $_SESSION['lang'], $body);
+            $sendMail = Mailer::sendMail($body, CONFIRM_USER_EMAIL_SUBJECT.$objUser->getFirstName(), $to);
 
             $retValue = true;
         }
@@ -641,12 +642,15 @@ class UserDAO {
                 }
 
                 if($retStats !== false){
+                    $objUser = self::getUser($userID);
                     $to = array($userID);
                     $tpl = str_replace('#LANG#', $_SESSION['lang'], EMAIL_NEWPASSWORD_TEMPLATE);
                     $body = str_replace('[PASSWORD]',
                         $userAttributes['userPassword'],
                         file_get_contents($tpl));
-                    $retValue = Mailer::sendMail($body,NEW_PASSWORD_EMAIL_SUBJECT,$to);
+                    $body = str_replace('[USERNAME]', $objUser->getFirstName(), $body);
+                    $body = str_replace('[LANG]', $_SESSION['lang'], $body);
+                    $retValue = Mailer::sendMail($body, NEW_PASSWORD_EMAIL_SUBJECT, $to);
                 }
             }
         }else{

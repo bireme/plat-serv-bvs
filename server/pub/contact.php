@@ -4,7 +4,7 @@ session_start();
 
 require_once(dirname(__FILE__)."/../config.php");
 require_once(dirname(__FILE__)."/include/includes.php");
-require_once(dirname(__FILE__)."/translations.php");
+require_once(dirname(__FILE__)."/../include/translations.php");
 require_once(dirname(__FILE__)."/../classes/Tools.php");
 
 $callerURL = !empty($_REQUEST['c'])?base64_decode($_REQUEST['c']):false;

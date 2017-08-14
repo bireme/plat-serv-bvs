@@ -27,6 +27,7 @@ require_once(dirname(__FILE__)."/User.php");
 require_once(dirname(__FILE__)."/UserDAO.php");
 require_once(dirname(__FILE__)."/Tools.php");
 require_once(dirname(__FILE__).'/../include/DAO.inc.php');
+require_once(dirname(__FILE__).'/../include/translations.php');
 
 /**
  * This class is responsible to give resources to implement the authentication

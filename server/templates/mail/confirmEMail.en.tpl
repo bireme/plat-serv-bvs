@@ -1,9 +1,13 @@
-Dear #USERNAME#,
+<p>Dear #USERNAME#,</p>
 
-You have registered with the My VHL custom service.
+<p> The BIREME/PAHO/WHO welcomes you to My VHL Personalized Services.</p>
 
-Click the link below to verify your account.
+<p><a href="http://#SITE#/server/pub/userData.php?c=#HOME#&email=#EMAIL#&key=#KEY#&action=confirmar&lang=#LANG#">Click here to confirm your registration.</a></p>
 
-http://#SITE#/server/pub/userData.php?c=#HOME#&email=#EMAIL#&key=#KEY#&acao=confirmar&lang=en
+<p>By accessing My VHL, you will have the opportunity to know the functionalities of this service through a virtual tour. Any questions or problems, <a href="http://feedback.bireme.org/feedback/?application=wp-bvs-plugin&version=2.10-77&site=servplat&lang=#LANG#">contact us.</a></p>
 
-Thank you!
+<p>If you did not register for My VHL, please <a href="http://feedback.bireme.org/feedback/wp-bvs-plugin?version=2.10-77&error=1&site=servplat&lang=#LANG#">click here.</a></p>
+
+<p>Best regards,</p>
+
+<p>BIREME/PAHO/WHO Team</p>

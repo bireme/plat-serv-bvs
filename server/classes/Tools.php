@@ -96,6 +96,7 @@ class Mailer {
         global $_conf;
         
         $objMailer = new PHPMailer();
+        $objMailer->CharSet = CHARSET;
         $objMailer->Host = EMAIL_HOST;
         $objMailer->From = $fromMail;
         $objMailer->FromName = $fromName;
@@ -104,12 +105,12 @@ class Mailer {
         $objMailer->IsSMTP();
         $objMailer->SMTPAuth = true;
 
-        $objMailer->IsHTML(false);
+        $objMailer->IsHTML(true);
         $objMailer->ClearAddresses();
         foreach ($to as $user){
             $objMailer->AddAddress($user);
         }
-        $objMailer->Subject = $subject;
+        $objMailer->Subject = mb_encode_mimeheader($subject, CHARSET);
         $objMailer->Body = $body;
 
         if(!$objMailer->Send()){

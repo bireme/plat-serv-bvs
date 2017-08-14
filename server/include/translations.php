@@ -23,8 +23,8 @@ if($lang == 'pt'){
     define('PROFESSIONAL_AREA','Área de atuação profissional');
     define('EMAIL_SENT','E-mail enviado.');
     define("EMAIL_FROMNAME",'Minha BVS');
-    define("NEW_PASSWORD_EMAIL_SUBJECT",'Nova Senha');
-    define("CONFIRM_USER_EMAIL_SUBJECT",'Confirmação de Registro: ');
+    define("NEW_PASSWORD_EMAIL_SUBJECT",'Serviços Personalizados Minha BVS: Senha');
+    define("CONFIRM_USER_EMAIL_SUBJECT",'Serviços Personalizados Minha BVS: Confirmação de Registro - ');
     define('FIELD_CONTACT_NAME','nome');
     define('FIELD_CONTACT_EMAIL','e-mail');
     define('FIELD_CONTACT_DESCRIPTION','descrição');
@@ -218,8 +218,8 @@ if($lang == 'es'){
     define('PROFESSIONAL_AREA','Área de actuación profesional');
     define('EMAIL_SENT','E-mail enviado.');
     define("EMAIL_FROMNAME",'Mi BVS');
-    define("NEW_PASSWORD_EMAIL_SUBJECT",'Nueva Contraseña');
-    define("CONFIRM_USER_EMAIL_SUBJECT",'Confirmación de Registro: ');
+    define("NEW_PASSWORD_EMAIL_SUBJECT",'Servicios Personalizados Mi BVS: Contraseña');
+    define("CONFIRM_USER_EMAIL_SUBJECT",'Servicios Personalizados Mi BVS: Confirmación de Registro - ');
     define('FIELD_CONTACT_NAME','nombre');
     define('FIELD_CONTACT_EMAIL','e-mail');
     define('FIELD_CONTACT_DESCRIPTION','descripción');
@@ -411,8 +411,8 @@ if($lang == 'en'){
     define('DEGREE','Degree');
     define('EMAIL_SENT','E-mail sent.');
     define("EMAIL_FROMNAME",'My VHL');
-    define("NEW_PASSWORD_EMAIL_SUBJECT",'New Password');
-    define("CONFIRM_USER_EMAIL_SUBJECT",'Register Confirmation: ');
+    define("NEW_PASSWORD_EMAIL_SUBJECT",'Custom Services My VHL: Password');
+    define("CONFIRM_USER_EMAIL_SUBJECT",'Custom Services My VHL: Register Confirmation - ');
     define('PROFESSIONAL_AREA','Professional area');
     define('FIELD_CONTACT_NAME','name');
     define('FIELD_CONTACT_EMAIL','e-mail');
