@@ -138,6 +138,8 @@ class Translations {
         self::$trans["menu"]["NEXT"] = 'Siguiente &rarr;';
         self::$trans["menu"]["SKIP"] = 'Omitir';
         self::$trans["menu"]["DONE"] = 'Concluir';
+        self::$trans["menu"]["LEAVE_COMMENT"] = 'Enviar Comentario';
+        self::$trans["menu"]["REPORT_ERROR"] = 'Informar Error';
         self::$trans["menu"]["FOOTER_MESSAGE"] = '
 <p><strong>BIREME - OPS - OMS</strong><br/>
 Centro Latinoamericano y del Caribe de Información en Ciencias de la Salud<br />
