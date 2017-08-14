@@ -25,6 +25,8 @@ class MySearches {
             $token = Token::unmakeUserTK($userTK);
             $this->_data = $token;
         }
+
+        self::setCappedCollection('logs');
     }
 
     /**
@@ -34,6 +36,50 @@ class MySearches {
     */
     public function getParams(){
         return $this->_data;
+    }
+
+    /**
+    * Create a new capped collection explicitly
+    *
+    * @param string $name collection name
+    * @return object
+    */
+    public function setCappedCollection($name){
+        $capped = false;
+
+        $client = new MongoDB\Client(MONGODB_SERVER);
+        $db = $client->servicesplatform;
+        $listCollections = $db->listCollections();
+        //$iterator = iterator_to_array($listCollections);
+
+        foreach ($listCollections as $collectionInfo) {
+            if ( 'logs' == $collectionInfo->getName() ) {
+                if ( $collectionInfo->isCapped() ) {
+                    $capped = true;
+                } else {
+                    $capped = false;
+
+                    $collection = $db->logs;
+                    $collection->drop();
+                }
+
+                break;
+            } else {
+                $capped = false;
+            }
+        }
+
+        if ( !$capped ) {
+            $collection = $db->createCollection(
+                $name,
+                array(
+                    'capped' => true, // Define tamanho fixo da coleção
+                    'size' => 1024*1024*1024 // Tamanho da coleção em bytes
+                )
+            );
+        }
+
+        $listCollections->rewind();
     }
 
     /**
