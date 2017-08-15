@@ -107,40 +107,145 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
     define("TERMS_AGREEMENT_MESSAGE",'Eu concordo com os <a data-toggle="modal" data-target=".bs-terms-modal-lg" style="cursor: pointer; text-decoration: underline;">Termos de Uso</a> e confirmo que li a <a data-toggle="modal" data-target=".bs-policy-modal-lg" style="cursor: pointer; text-decoration: underline;">Política de Privacidade</a> da Minha BVS');
     define("TERMS_MESSAGE",'
 <div class="terms">
-<h3>Terms and Conditions</h3>
 
-<h4>General</h4>
+    <h3>TÉRMINOS Y CONDICIONES DE USO DE LOS SITIOS Y SISTEMAS WEB DE BIREME/OPS</h3>
 
-<p>Servicing servicing resistor <strong>video computer</strong> element transponder prototype analog solution mainframe network. Solution video debugged feedback sampling extended, infrared, generator generator. </p>
+    <p>La utilización de los productos, servicios y/o herramientas que pone a disposición El Centro Latinoamericano y del Caribe de Información en Ciencias de la Salud (BIREME), Centro Especializado de la Organización Panamericana de la Salud, Oficina Regional para las Américas de la Organización Mundial de la Salud, en adelante BIREME/OPS, a disposición de los usuarios constituye aceptación de los siguientes Términos y Condiciones. En caso de discrepancia entre el texto en español y cualquier otro idioma de estos Términos y Condiciones, prevalecerá el documento en español.</p>
 
-<ul>
-<li>list item number one</li>
-<li>list item number two</li>
-<li>list item number three</li>
-</ul>
+    <p>BIREME/OPS se reserva el derecho a accionar legalmente para frenar cualquier infracción o incumplimiento de los presentes Términos y Condiciones. BIREME/OPS podrá modificar estos Términos y Condiciones a su entera discreción y publicará estas modificaciones en el presente sitio. Usar este sitio, los productos, servicios y/o herramientas luego de efectuados éstos cambios constituye aceptación por parte del usuario de los nuevos Términos y Condiciones. La OPS se reserva el derecho exclusivo de cancelar el acceso de cualquier usuario por infracción de derechos o incumplimiento de los presentes Términos y Condiciones.</p>
 
-<p>Harmonic gigabyte generator in <strong>sequential interface</strong>. Services, integer device read-only supporting cascading cache capacitance. Proxy boolean solution or data overflow element overflow processor arrray video, reflective extended. Gigabyte debugged distributed, reflective controller disk encapsulated phase network arrray feedback element cache high silicon. Sampling backbone analog remote adaptive extended bridgeware n-tier integer audio femtosecond. </p>
+    <h4>Uso del nombre de BIREME y/o la OPS</h4>
 
-<h4>Important Stuff</h4>
+    <p>El nombre, acrónimo y/o logo de BIREME y la OPS, están protegidos por el derecho internacional. Excepto para propósitos de atribución autoral éstos no pueden ser utilizados sin autorización previa expresa y por escrito de BIREME/OPS. El nombre, acrónimo, logo BIREME/ OPS tampoco pueden ser utilizados con fines promocionales o en ninguna forma que indique, sugiera o pueda interpretarse como asociación, afiliación, patrocinio o respaldo de BIREME/OPS.</p>
 
-<p>Interface broadband <strong>developer backbone fragmentation</strong> messaging software transmission, sampling cascading element high silicon backbone. Reflective servicing coordinated boolean connectivity extended inversion sequential for. Data distributed backbone bridgeware connectivity logarithmic, sampling ethernet for. Extended logarithmic log video echo gigabyte. Or procedural phaselock sequential port extended deviation sequential, disk recognition gigabyte phaselock proxy messaging arrray. Encapsulated echo deviation boolean system ethernet reducer, pc. </p>
+    <h4>Limitación de Responsabilidad</h4>
 
-<p><strong>Backbone frequency echo ethernet</strong> patch femtosecond sampling, integer digital floating-point n-tier dithering disk. Processor reflective boolean includes phase deviation, with log, integral logistically femtosecond, in, integral infrared phaselock. Element developer pc harmonic, plasma with, integral floating-point. Reflective feedback infrared, echo anomoly integral generator reflective led, high overflow servicing gigabyte. Extended integral data, infrared frequency disk broadband transistorized processor disk anomoly, sampling potentiometer kilohertz. Bus overflow, bridgeware fragmentation bypass prototype, interface, for internet pc generator integral, bypass disk, frequency. </p>
+    <p>Los productos, servicios y/o herramientas que BIREME/OPS pone a disposición de los usuarios se proporcionan sin ningún tipo de garantía, explícita o implícita. BIREME/OPS no ofrece garantías ni responderá por la exactitud o veracidad de la información, productos, servicios y/o herramientas proporcionados. BIREME/ OPS podrá modificar éstos periódicamente sin previo aviso. Bajo ninguna circunstancia BIREME/OPS será responsable de las pérdidas, daños y/o perjuicios que puedan presuntamente derivarse de su utilización o su no disponibilidad. Los usuarios deben utilizar estos productos, servicios y/o herramientas por su propia cuenta y riesgo. En ningún caso BIREME/OPS será responsable por daños y/o perjuicios aún cuando éstos pudieran haber sido advertidos y/o prevenidos.</p>
 
-<h4>Fees</h4>
+    <p>BIREME/OPS se reserva el derecho de modificar o descontinuar cualquier información, productos, servicios y/o herramientas que ponga a disposición de sus miembros y/o usuarios a través de este sitio, con o sin previo aviso.</p>
 
-<p>Sequential <strong>encapsulated resistor</strong> element converter pc harmonic. Feedback cache hyperlinked debugged generator infrared device network, fragmentation connectivity, debugged. For, dithering interface debugged sequential recognition bypass bridgeware processor backbone sampling logarithmic software. Anomoly infrared logarithmic logarithmic procedural plasma resistor integral silicon deviation. Computer broadband plasma, encapsulated cable kilohertz scan. With logarithmic bridgeware indeterminate sampling, port. Development procedural hyperlinked mainframe, encapsulated boolean software processor transistorized cable with backbone. </p>
+    <p>La utilización de designaciones de países o territorios no deberán considerarse como indicativo de la posición por parte de BIREME/OPS con relación a la situación jurídica de ningún país o territorio, de sus autoridades e instituciones ni el reconocimiento de ninguna frontera.</p>
 
-<p>Reflective backbone log transmission cable logarithmic mainframe. Messaging backbone debugged feedback development phaselock metafile n-tier coordinated, cable coordinated coordinated in. <strong>Analog device</strong> transistorized, sequential transistorized with scalar normalizing. Mainframe phase cache anomoly feedback servicing harmonic. Services software pc, femtosecond bypass scalar data element extended cascading capacitance harmonic. Adaptive plasma bypass supporting cascading deviation system pulse broadband bridgeware. </p>
+    <p>BIREME/OPS no será responsable de ningún daño o pérdida que pueda derivarse o relacionarse con el uso o falla del sitio, información, productos, servicios y/o herramientas aquí contenidos, incluso en los casos derivados de uso inapropiado, impropio o fraudulento. Tampoco será responsable de la precisión, disponibilidad o veracidad de la información aquí contenida.</p>
 
-<h4>Agreement</h4>
+    <p>BIREME/OPS no ofrece garantías de ningún tipo respecto de los materiales, información, productos, servicios y/o herramientas disponibles en el sitio y no será responsable por cualquier infección con virus informático o cualquier otro programa que pueda afectar el funcionamiento de computadoras o sistemas.</p>
 
-<p>Servicing hyperlinked analog encapsulated disk cable with, capacitance element partitioned potentiometer read-only dithering. <strong>Normalizing kilohertz</strong> network solution logarithmic device bus connectivity system mainframe prototype phaselock phase cache. </p>
+    <p>Algunos materiales, información, productos, servicios y/o herramientas a los cuales los usuarios podrán acceder a través de este sitio podrían ser de titularidad de terceros, la BIREME/OPS no garantiza la titularidad de éstos y no será responsable ante los usuarios o terceros por cualquier reclamo derivado de su uso. Es posible que en el sitio, materiales, información, productos, servicios y/o herramientas se incluyan enlaces a sitios externos no manejados por la BIREME/OPS. Estos enlaces se incluyen a modo de referencia y su incorporación no implica aprobación o endoso por parte de BIREME/OPS. BIREME/OPS no asume responsabilidad respecto de la información contenida en estos sitios.</p>
 
-<p>Coordinated transmission overflow floating-point distributed supporting scan converter. <strong>Bridgeware backbone</strong> coordinated sampling overflow broadband normalizing connectivity or, internet transmission, bus, encapsulated. Extended element element echo messaging scan, cache video deviation debugged broadband. Pc, supporting hyperlinked coordinated patch, bridgeware transistorized, led frequency scalar. Servicing, plasma recursive boolean includes, computer, femtosecond inversion. Services integer harmonic mainframe scalar prototype broadband n-tier. Echo software application indeterminate dithering bypass plasma bus harmonic patch. Digital, mainframe scalar anomoly bypass, bus potentiometer phaselock plasma, phaselock prompt data disk inversion. </p>
+    <p>La utilización de este sitio por los usuarios implica la aceptación de la obligación de defender, mantener a salvo e indemnizar a BIREME/OPS y a sus afiliados por cualquier acción, reclamo daño, pérdida y/o gasto (incluidos los honorarios de abogados) que se deriven de dicha utilización.</p>
+
+    <p>BIREME/OPS se reserva el derecho de utilizar o divulgar información sobre sus usuarios. Asimismo se reserva el derecho de editar, no publicar o remover cualquier producto, servicios, herramienta o información o material en parte o en su totalidad a su entera discreción.</p>
+
+    <h4>Usos no permitidos</h4>
+
+    <p>Los usuarios garantizan que el uso de del sitio, información, productos, servicios y/o herramientas aquí contenidos, no serán utilizados con propósitos que sean contrarios a las leyes o que contravengan los presentes términos y condiciones. Los usuarios no utilizaran el sitio, información, productos, servicios y/o herramientas de manera que pueda perjudicar, inhabilitar, sobrecargar o deteriorar el sitio, información, productos, servicios y/o herramientas o su uso por parte de terceros. Los usuarios no intentarán obtener ninguna información, productos, servicios y/o herramientas por medios no intencionalmente disponibles o habilitados en este sitio.</p>
+
+    <p>Asimismo los usuarios se comprometen a respetar los derechos de terceros así como las leyes de propiedad intelectual durante cualquier uso de del sitio, información, productos, servicios y/o herramientas aquí contenidos.</p>
+
+    <h4>Privilegios e Inmunidades</h4>
+
+    <p>Nada de lo aquí expuesto constituirá o podrá ser interpretado como renuncia, expresa o tácita, de los privilegios, inmunidades, y exoneraciones de que goza, la OPS, de conformidad con el Derecho Internacional, tratados o convenios internacionales, o la legislación de sus Países Miembros.</p>
+
+    <h4>Espacios de diálogo</h4>
+
+    <p>BIREME/OPS podrá ofrecer espacios de diálogo u otros instrumentos de comunicación. Los usuarios al hacer uso de estos instrumentos se comprometen a abstenerse de:</p>
+
+    <ul style="list-style-type: lower-alpha;">
+        <li>Difamar, injuriar, acosar, amenazar o asumir cualquier otro tipo de conducta que vulnere los derechos de otros;</li>
+        <li>Difundir, publicar, distribuir o divulgar informaciones o materiales difamatorios, obscenos, indecentes, ilícitos o inmorales;</li>
+        <li>Cargar en el sitio o enviar como anexos de un mensaje archivos que contengan programas informáticos u otros materiales amparados por las leyes de propiedad intelectual (o por el derecho a la intimidad y la publicidad), sin contar con la autorización correspondiente;</li>
+        <li>No incluir la referencia del autor o notificaciones legales, mentir acerca del origen o presentar como propio programas informáticos u otros materiales contenidos en un archivo que se cargue en el sitio;</li>
+        <li>Anunciar o poner a la venta bienes o servicios, o realizar o promover encuestas, concursos o cadenas de cartas, o descargar de un foro un archivo enviado por otro usuario que el usuario sepa, o razonablemente deba saber, que no se puede distribuir lícitamente de esa manera.</li>
+    </ul>
+
+    <p>Los usuarios reconocen que todos los espacios de diálogo constituyen un medio de comunicación pública y no privada. Asimismo, reconocen que los diálogos y el material publicado en el sitio no cuentan con el respaldo de BIREME/OPS y no se considerarán como revisados, examinados ni aprobados por BIREME/OPS.</p>
+
+    <h4>Reclamaciones por posibles infracciones</h4>
+
+    <p>BIREME/OPS se esforzará por impedir en su sitio actividades ilícitas y contrarias a los Términos y Condiciones aquí contenidos. No obstante, si usted creyera que alguna información contenida en el sitio o sus materiales pudiera estar infringiendo sus derechos o de terceros, incluyendo, sin limitación, derechos de propiedad intelectual, deberá ponerse en contacto con la BIREME/OPS enviando una descripción detallada de la violación alegada a la siguiente dirección: online@bireme.org</p>
+
+    <h4>Resolución de controversias</h4>
+
+    <p>Cualquier disputa, controversia o reclamo que surja o se derive del uso del sitio o su información, productos, servicios y/o herramientas será resuelta en forma amistosa entre BIREME/OPS y usuario. A menos que las disputas o controversias se solucionen en forma amistosa dentro de los sesenta (60) días posteriores a la recepción por una de las partes de la solicitud de la otra de intentar una resolución amistosa, dicha disputa, controversia, o reclamo será remitida por cualquiera de las partes a arbitraje de conformidad con las Reglas de Arbitraje de la Comisión de las Naciones Unidas para el Derecho Mercantil Internacional (CNUDMI) vigentes. El tribunal arbitral no estará autorizado a imponer daños punitivos. Cualquier laudo arbitral emitido en virtud del arbitraje referido se considerará como la adjudicación definitiva a la disputa, controversia o reclamo y tendrá carácter vinculante para las partes.</p>
+
+    <p><strong>SI NO ESTUVIERA CONFORME CON ALGUNO DE LOS TÉRMINOS Y CONDICIONES AQUÍ CONTENIDOS DEBERÁ ABSTENERSE DE UTILIZAR EL SITIO Y CUALQUIER MATERIAL AQUÍ CONTENIDO.</strong></p>
+    
 </div>
 ');
-    define('DATA_POLICY_MESSAGE',TERMS_MESSAGE);
+    define('DATA_POLICY_MESSAGE','
+<div class="terms">
+
+    <h2>POLÍTICA DE PRIVACIDAD DE LOS SITIOS Y SISTEMAS WEB DE BIREME/OPS</h2>
+
+    <p>La utilización de los productos, servicios y/o herramientas que pone a disposición El Centro Latinoamericano y del Caribe de Información en Ciencias de la Salud (BIREME), Centro Especializado de la Organización Panamericana de la Salud, Oficina Regional para las Américas de la Organización Mundial de la Salud, en adelante BIREME/OPS, a disposición de los usuarios constituye aceptación de la siguiente Política de Privacidad. En caso de discrepancia entre el texto en español y cualquier otro idioma de esta Política de Privacidad, prevalecerá el documento en español.</p>
+
+    <p>Esta Política de Privacidad es complementaria a la Política General de Privacidad de la OPS, disponible en <a href="http://www.paho.org/hq/index.php?option=com_content&view=article&id=3201%3Apah o-website-privacy-policy&catid=6822%3Acorporate-pages&Itemid=2410&lang=pt" target="_blank">http://www.paho.org/hq/index.php?option=com_content&view=article&id=3201%3Apah o-website-privacy-policy&catid=6822%3Acorporate-pages&Itemid=2410&lang=pt</a></p>
+
+    <h3>PRIVACIDAD</h3>
+
+    <p>Su privacidad en la Internet es de suma importancia para la BIREME/OPS. En esta declaración de privacidad se describe la política de BIREME/OPS en cuanto a la recopilación y el intercambio de información de las personas que utilizan el presente sitio de BIREME/OPS.</p>
+
+    <h4>¿Qué tipo de información recopila BIREME/OPS?</h4>
+
+    <p style="text-decoration: underline;">Uso normal de sitios web</p>
+
+    <p>En general, usted puede consultar los sitios de BIREME/OPS sin decirnos quién es ni revelar ningún tipo de información personal. La única información que recopilamos durante una consulta general proviene de los registros ordinarios del servidor e incluye su dirección de IP (protocolo de internet), el nombre del dominio, el tipo de navegador, el sistema operativo e información como el sitio web a través del cual llegó a nosotros, los archivos que descargó, los sitios que consultó y la fecha y hora de esas consultas.</p>
+
+    <p style="text-decoration: underline;">Recopilación de información que permite identificar a la persona</p>
+
+    <p>Si usted se registra para acceder a algún sitio, producto o servicio de BIREME/OPS, como los Servicios Personalizados Mi BVS y el FI-Admin, se le pedirá que suministre información personal como su nombre, dirección de correo electrónico, institución a la cual pertenece, país de origen, nivel académico, área de actuación profesional, sexo, fecha de nacimiento e datos de sus redes sociales. Esta información se recopila solo con su conocimiento y permiso, y se mantiene en las bases de datos de BIREME/OPS y listas de direcciones.</p>
+
+    <p>Para ciertos sitios de BIREME/OPS, registrarse o proporcionar cierta información personal hace que se instale una cookie* en su computadora, que permitirá que BIREME/OPS recuerde su información la próxima vez que usted consulte el sitio, de  manera que no tenga que volver a ingresar sus datos, lo que nos ayuda a brindarle un servicio mejor.</p>
+
+    <p>Si se incorpora a un grupo de debate electrónico puede que otros participantes del grupo (incluidos funcionarios que no pertenecen a la OPS) vean la información personal que usted haya proporcionado. En el caso de los grupos de debate abiertos, esta información será pública.</p>
+
+    <h4>¿Qué hace BIREME/OPS con la información que recopila?</h4>
+
+    <p>La información recopilada durante una consulta general se usa para analizar tendencias y uso de los sitios de BIREME/OPS, y para mejorar la utilidad de estos sitios. No está conectada con ningún tipo de datos personales.</p>
+
+    <p style="text-decoration: underline;">Información que permite identificar a la persona</p>
+
+    <p>BIREME/OPS puede usar la información personal que usted proporciona para:</p>
+
+    <ul>
+        <li>ponerse en contacto con usted: ya sea para responder a una consulta o sugerencia, o para enviarle boletines informativos, documentos, publicaciones, etc.;</li>
+        <li>confirmar su información de registro en el sitio;</li>
+        <li>"recordar" su perfil y preferencias en línea;</li>
+        <li>ayudarlo a encontrar rápidamente información útil según sus intereses y ayudarnos a crear un contenido que le resulte más provechoso;</li>
+        <li>realizar un análisis estadístico.</li>
+    </ul>
+
+    <h4>¿Qué sucede si no quiero suministrar información personal?</h4>
+
+    <p>Suministrar información personal en los sitios de BIREME/OPS es optativo. Si decide no suministrar información personal, puede de todas formas consultar y usar los sitios de BIREME/OPS, pero no podrá utilizar ciertas opciones como acceder a los Servicios Personalizados Mi BVS o hacer gestión de las fuentes de información de la BVS a través del sistema web FI-Admin.</p>
+
+    <p style="text-decoration: underline;">Opción de modificar la información o solicitar que sea eliminada</p>
+
+    <p>En cualquier momento, usted puede modificar su información o solicitar que sea eliminada: para ello debe ingresar nuevamente al sitio donde ingresó la información por primera vez y comunicarse con el punto focal de ese sitio. Si no se proporcionan datos de contacto en el sitio, puede contactar a online@bireme.org.</p>
+
+    <h3>SEGURIDAD</h3>
+
+    <p>No vendemos ni intercambiamos ningún tipo de información personal proporcionada voluntariamente en los sitios de BIREME/OPS a terceros. Toda información suministrada a BIREME/OPS por los usuarios de los sitios de BIREME/OPS se guarda con gran  cuidado y seguridad, y no se usará de manera distinta de las establecidas en esta política de privacidad, en cualquier política propia del sitio, o de las que usted ha autorizado explícitamente. BIREME/OPS emplea una variedad de tecnologías y medidas de seguridad para proteger la información que se encuentra en nuestros sistemas a fin de evitar pérdidas, uso indebido, acceso no autorizado o divulgación, modificación o destrucción.</p>
+
+    <p>Todos nuestros empleados que tienen acceso a los datos personales y están asociados con su procesamiento están obligados a respetar la confidencialidad de los asuntos oficiales, incluidos los datos personales.</p>
+
+    <p>Los sitios de BIREME/OPS contienen enlaces a sitios externos. BIREME/OPS no es responsable de las prácticas de privacidad ni del contenido de tales sitios.</p>
+
+    <h4>Notificación de cambios</h4>
+
+    <p>BIREME/OPS podrá modificar esta Política de Privacidad a su entera discreción y publicará estas modificaciones en el presente sitio.</p>
+
+    <h4>Contacto</h4>
+
+    <p>Para preguntas o consultas con respecto a esta política de privacidad, sírvase comunicarse con nosotros en online@bireme.org</p>
+
+    <p style="margin-bottom: 0;">* Cookie</p>
+    <p>Una cookie es un pequeño conjunto de datos que se envía de un servidor de la web a su navegador. Se usa normalmente para asignar una identificación única a su computadora y almacenar de manera segura información como el ID del usuario, contraseñas, preferencias y perfiles electrónicos. Se almacena en el disco duro de su computadora. Usted tiene la opción de no permitir que se instalen cookies de la OPS/OMS si cambia la configuración de su navegador. Distintos sitios web pueden enviar sus propias cookies a su computadora. Para proteger su privacidad, el navegador solo permite que un sitio web obtenga acceso a sus propias cookies y no permite el acceso a las instaladas por otros sitios.</p>
+
+    <p><strong>SI NO ESTUVIERA CONFORME CON ALGUNO DE LOS TÉRMINOS Y CONDICIONES DE ESTA POLÍTICA DE PRIVACIDAD DEBERÁ ABSTENERSE DE UTILIZAR EL SITIO Y CUALQUIER MATERIAL AQUÍ CONTENIDO.</strong></p>
+
+</div>
+');
     define('FIELD_LINKEDIN','LinkedIn (URL)');
     define('FIELD_RESEARCHGATE','ResearchGate (URL)');
     define('FIELD_ORCID','ORCID');
@@ -301,40 +406,145 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
     define("TERMS_AGREEMENT_MESSAGE",'Estoy de acuerdo con los <a data-toggle="modal" data-target=".bs-terms-modal-lg" style="cursor: pointer; text-decoration: underline;">Términos de Uso</a> y confirmo que leí la <a data-toggle="modal" data-target=".bs-policy-modal-lg" style="cursor: pointer; text-decoration: underline;">Política de Privacidad</a> de Mi BVS');
     define("TERMS_MESSAGE",'
 <div class="terms">
-<h3>Terms and Conditions</h3>
 
-<h4>General</h4>
+    <h3>TÉRMINOS Y CONDICIONES DE USO DE LOS SITIOS Y SISTEMAS WEB DE BIREME/OPS</h3>
 
-<p>Servicing servicing resistor <strong>video computer</strong> element transponder prototype analog solution mainframe network. Solution video debugged feedback sampling extended, infrared, generator generator. </p>
+    <p>La utilización de los productos, servicios y/o herramientas que pone a disposición El Centro Latinoamericano y del Caribe de Información en Ciencias de la Salud (BIREME), Centro Especializado de la Organización Panamericana de la Salud, Oficina Regional para las Américas de la Organización Mundial de la Salud, en adelante BIREME/OPS, a disposición de los usuarios constituye aceptación de los siguientes Términos y Condiciones. En caso de discrepancia entre el texto en español y cualquier otro idioma de estos Términos y Condiciones, prevalecerá el documento en español.</p>
 
-<ul>
-<li>list item number one</li>
-<li>list item number two</li>
-<li>list item number three</li>
-</ul>
+    <p>BIREME/OPS se reserva el derecho a accionar legalmente para frenar cualquier infracción o incumplimiento de los presentes Términos y Condiciones. BIREME/OPS podrá modificar estos Términos y Condiciones a su entera discreción y publicará estas modificaciones en el presente sitio. Usar este sitio, los productos, servicios y/o herramientas luego de efectuados éstos cambios constituye aceptación por parte del usuario de los nuevos Términos y Condiciones. La OPS se reserva el derecho exclusivo de cancelar el acceso de cualquier usuario por infracción de derechos o incumplimiento de los presentes Términos y Condiciones.</p>
 
-<p>Harmonic gigabyte generator in <strong>sequential interface</strong>. Services, integer device read-only supporting cascading cache capacitance. Proxy boolean solution or data overflow element overflow processor arrray video, reflective extended. Gigabyte debugged distributed, reflective controller disk encapsulated phase network arrray feedback element cache high silicon. Sampling backbone analog remote adaptive extended bridgeware n-tier integer audio femtosecond. </p>
+    <h4>Uso del nombre de BIREME y/o la OPS</h4>
 
-<h4>Important Stuff</h4>
+    <p>El nombre, acrónimo y/o logo de BIREME y la OPS, están protegidos por el derecho internacional. Excepto para propósitos de atribución autoral éstos no pueden ser utilizados sin autorización previa expresa y por escrito de BIREME/OPS. El nombre, acrónimo, logo BIREME/ OPS tampoco pueden ser utilizados con fines promocionales o en ninguna forma que indique, sugiera o pueda interpretarse como asociación, afiliación, patrocinio o respaldo de BIREME/OPS.</p>
 
-<p>Interface broadband <strong>developer backbone fragmentation</strong> messaging software transmission, sampling cascading element high silicon backbone. Reflective servicing coordinated boolean connectivity extended inversion sequential for. Data distributed backbone bridgeware connectivity logarithmic, sampling ethernet for. Extended logarithmic log video echo gigabyte. Or procedural phaselock sequential port extended deviation sequential, disk recognition gigabyte phaselock proxy messaging arrray. Encapsulated echo deviation boolean system ethernet reducer, pc. </p>
+    <h4>Limitación de Responsabilidad</h4>
 
-<p><strong>Backbone frequency echo ethernet</strong> patch femtosecond sampling, integer digital floating-point n-tier dithering disk. Processor reflective boolean includes phase deviation, with log, integral logistically femtosecond, in, integral infrared phaselock. Element developer pc harmonic, plasma with, integral floating-point. Reflective feedback infrared, echo anomoly integral generator reflective led, high overflow servicing gigabyte. Extended integral data, infrared frequency disk broadband transistorized processor disk anomoly, sampling potentiometer kilohertz. Bus overflow, bridgeware fragmentation bypass prototype, interface, for internet pc generator integral, bypass disk, frequency. </p>
+    <p>Los productos, servicios y/o herramientas que BIREME/OPS pone a disposición de los usuarios se proporcionan sin ningún tipo de garantía, explícita o implícita. BIREME/OPS no ofrece garantías ni responderá por la exactitud o veracidad de la información, productos, servicios y/o herramientas proporcionados. BIREME/ OPS podrá modificar éstos periódicamente sin previo aviso. Bajo ninguna circunstancia BIREME/OPS será responsable de las pérdidas, daños y/o perjuicios que puedan presuntamente derivarse de su utilización o su no disponibilidad. Los usuarios deben utilizar estos productos, servicios y/o herramientas por su propia cuenta y riesgo. En ningún caso BIREME/OPS será responsable por daños y/o perjuicios aún cuando éstos pudieran haber sido advertidos y/o prevenidos.</p>
 
-<h4>Fees</h4>
+    <p>BIREME/OPS se reserva el derecho de modificar o descontinuar cualquier información, productos, servicios y/o herramientas que ponga a disposición de sus miembros y/o usuarios a través de este sitio, con o sin previo aviso.</p>
 
-<p>Sequential <strong>encapsulated resistor</strong> element converter pc harmonic. Feedback cache hyperlinked debugged generator infrared device network, fragmentation connectivity, debugged. For, dithering interface debugged sequential recognition bypass bridgeware processor backbone sampling logarithmic software. Anomoly infrared logarithmic logarithmic procedural plasma resistor integral silicon deviation. Computer broadband plasma, encapsulated cable kilohertz scan. With logarithmic bridgeware indeterminate sampling, port. Development procedural hyperlinked mainframe, encapsulated boolean software processor transistorized cable with backbone. </p>
+    <p>La utilización de designaciones de países o territorios no deberán considerarse como indicativo de la posición por parte de BIREME/OPS con relación a la situación jurídica de ningún país o territorio, de sus autoridades e instituciones ni el reconocimiento de ninguna frontera.</p>
 
-<p>Reflective backbone log transmission cable logarithmic mainframe. Messaging backbone debugged feedback development phaselock metafile n-tier coordinated, cable coordinated coordinated in. <strong>Analog device</strong> transistorized, sequential transistorized with scalar normalizing. Mainframe phase cache anomoly feedback servicing harmonic. Services software pc, femtosecond bypass scalar data element extended cascading capacitance harmonic. Adaptive plasma bypass supporting cascading deviation system pulse broadband bridgeware. </p>
+    <p>BIREME/OPS no será responsable de ningún daño o pérdida que pueda derivarse o relacionarse con el uso o falla del sitio, información, productos, servicios y/o herramientas aquí contenidos, incluso en los casos derivados de uso inapropiado, impropio o fraudulento. Tampoco será responsable de la precisión, disponibilidad o veracidad de la información aquí contenida.</p>
 
-<h4>Agreement</h4>
+    <p>BIREME/OPS no ofrece garantías de ningún tipo respecto de los materiales, información, productos, servicios y/o herramientas disponibles en el sitio y no será responsable por cualquier infección con virus informático o cualquier otro programa que pueda afectar el funcionamiento de computadoras o sistemas.</p>
 
-<p>Servicing hyperlinked analog encapsulated disk cable with, capacitance element partitioned potentiometer read-only dithering. <strong>Normalizing kilohertz</strong> network solution logarithmic device bus connectivity system mainframe prototype phaselock phase cache. </p>
+    <p>Algunos materiales, información, productos, servicios y/o herramientas a los cuales los usuarios podrán acceder a través de este sitio podrían ser de titularidad de terceros, la BIREME/OPS no garantiza la titularidad de éstos y no será responsable ante los usuarios o terceros por cualquier reclamo derivado de su uso. Es posible que en el sitio, materiales, información, productos, servicios y/o herramientas se incluyan enlaces a sitios externos no manejados por la BIREME/OPS. Estos enlaces se incluyen a modo de referencia y su incorporación no implica aprobación o endoso por parte de BIREME/OPS. BIREME/OPS no asume responsabilidad respecto de la información contenida en estos sitios.</p>
 
-<p>Coordinated transmission overflow floating-point distributed supporting scan converter. <strong>Bridgeware backbone</strong> coordinated sampling overflow broadband normalizing connectivity or, internet transmission, bus, encapsulated. Extended element element echo messaging scan, cache video deviation debugged broadband. Pc, supporting hyperlinked coordinated patch, bridgeware transistorized, led frequency scalar. Servicing, plasma recursive boolean includes, computer, femtosecond inversion. Services integer harmonic mainframe scalar prototype broadband n-tier. Echo software application indeterminate dithering bypass plasma bus harmonic patch. Digital, mainframe scalar anomoly bypass, bus potentiometer phaselock plasma, phaselock prompt data disk inversion. </p>
+    <p>La utilización de este sitio por los usuarios implica la aceptación de la obligación de defender, mantener a salvo e indemnizar a BIREME/OPS y a sus afiliados por cualquier acción, reclamo daño, pérdida y/o gasto (incluidos los honorarios de abogados) que se deriven de dicha utilización.</p>
+
+    <p>BIREME/OPS se reserva el derecho de utilizar o divulgar información sobre sus usuarios. Asimismo se reserva el derecho de editar, no publicar o remover cualquier producto, servicios, herramienta o información o material en parte o en su totalidad a su entera discreción.</p>
+
+    <h4>Usos no permitidos</h4>
+
+    <p>Los usuarios garantizan que el uso de del sitio, información, productos, servicios y/o herramientas aquí contenidos, no serán utilizados con propósitos que sean contrarios a las leyes o que contravengan los presentes términos y condiciones. Los usuarios no utilizaran el sitio, información, productos, servicios y/o herramientas de manera que pueda perjudicar, inhabilitar, sobrecargar o deteriorar el sitio, información, productos, servicios y/o herramientas o su uso por parte de terceros. Los usuarios no intentarán obtener ninguna información, productos, servicios y/o herramientas por medios no intencionalmente disponibles o habilitados en este sitio.</p>
+
+    <p>Asimismo los usuarios se comprometen a respetar los derechos de terceros así como las leyes de propiedad intelectual durante cualquier uso de del sitio, información, productos, servicios y/o herramientas aquí contenidos.</p>
+
+    <h4>Privilegios e Inmunidades</h4>
+
+    <p>Nada de lo aquí expuesto constituirá o podrá ser interpretado como renuncia, expresa o tácita, de los privilegios, inmunidades, y exoneraciones de que goza, la OPS, de conformidad con el Derecho Internacional, tratados o convenios internacionales, o la legislación de sus Países Miembros.</p>
+
+    <h4>Espacios de diálogo</h4>
+
+    <p>BIREME/OPS podrá ofrecer espacios de diálogo u otros instrumentos de comunicación. Los usuarios al hacer uso de estos instrumentos se comprometen a abstenerse de:</p>
+
+    <ul style="list-style-type: lower-alpha;">
+        <li>Difamar, injuriar, acosar, amenazar o asumir cualquier otro tipo de conducta que vulnere los derechos de otros;</li>
+        <li>Difundir, publicar, distribuir o divulgar informaciones o materiales difamatorios, obscenos, indecentes, ilícitos o inmorales;</li>
+        <li>Cargar en el sitio o enviar como anexos de un mensaje archivos que contengan programas informáticos u otros materiales amparados por las leyes de propiedad intelectual (o por el derecho a la intimidad y la publicidad), sin contar con la autorización correspondiente;</li>
+        <li>No incluir la referencia del autor o notificaciones legales, mentir acerca del origen o presentar como propio programas informáticos u otros materiales contenidos en un archivo que se cargue en el sitio;</li>
+        <li>Anunciar o poner a la venta bienes o servicios, o realizar o promover encuestas, concursos o cadenas de cartas, o descargar de un foro un archivo enviado por otro usuario que el usuario sepa, o razonablemente deba saber, que no se puede distribuir lícitamente de esa manera.</li>
+    </ul>
+
+    <p>Los usuarios reconocen que todos los espacios de diálogo constituyen un medio de comunicación pública y no privada. Asimismo, reconocen que los diálogos y el material publicado en el sitio no cuentan con el respaldo de BIREME/OPS y no se considerarán como revisados, examinados ni aprobados por BIREME/OPS.</p>
+
+    <h4>Reclamaciones por posibles infracciones</h4>
+
+    <p>BIREME/OPS se esforzará por impedir en su sitio actividades ilícitas y contrarias a los Términos y Condiciones aquí contenidos. No obstante, si usted creyera que alguna información contenida en el sitio o sus materiales pudiera estar infringiendo sus derechos o de terceros, incluyendo, sin limitación, derechos de propiedad intelectual, deberá ponerse en contacto con la BIREME/OPS enviando una descripción detallada de la violación alegada a la siguiente dirección: online@bireme.org</p>
+
+    <h4>Resolución de controversias</h4>
+
+    <p>Cualquier disputa, controversia o reclamo que surja o se derive del uso del sitio o su información, productos, servicios y/o herramientas será resuelta en forma amistosa entre BIREME/OPS y usuario. A menos que las disputas o controversias se solucionen en forma amistosa dentro de los sesenta (60) días posteriores a la recepción por una de las partes de la solicitud de la otra de intentar una resolución amistosa, dicha disputa, controversia, o reclamo será remitida por cualquiera de las partes a arbitraje de conformidad con las Reglas de Arbitraje de la Comisión de las Naciones Unidas para el Derecho Mercantil Internacional (CNUDMI) vigentes. El tribunal arbitral no estará autorizado a imponer daños punitivos. Cualquier laudo arbitral emitido en virtud del arbitraje referido se considerará como la adjudicación definitiva a la disputa, controversia o reclamo y tendrá carácter vinculante para las partes.</p>
+
+    <p><strong>SI NO ESTUVIERA CONFORME CON ALGUNO DE LOS TÉRMINOS Y CONDICIONES AQUÍ CONTENIDOS DEBERÁ ABSTENERSE DE UTILIZAR EL SITIO Y CUALQUIER MATERIAL AQUÍ CONTENIDO.</strong></p>
+    
 </div>
 ');
-    define('DATA_POLICY_MESSAGE',TERMS_MESSAGE);
+    define('DATA_POLICY_MESSAGE','
+<div class="terms">
+
+    <h2>POLÍTICA DE PRIVACIDAD DE LOS SITIOS Y SISTEMAS WEB DE BIREME/OPS</h2>
+
+    <p>La utilización de los productos, servicios y/o herramientas que pone a disposición El Centro Latinoamericano y del Caribe de Información en Ciencias de la Salud (BIREME), Centro Especializado de la Organización Panamericana de la Salud, Oficina Regional para las Américas de la Organización Mundial de la Salud, en adelante BIREME/OPS, a disposición de los usuarios constituye aceptación de la siguiente Política de Privacidad. En caso de discrepancia entre el texto en español y cualquier otro idioma de esta Política de Privacidad, prevalecerá el documento en español.</p>
+
+    <p>Esta Política de Privacidad es complementaria a la Política General de Privacidad de la OPS, disponible en <a href="http://www.paho.org/hq/index.php?option=com_content&view=article&id=3201%3Apah o-website-privacy-policy&catid=6822%3Acorporate-pages&Itemid=2410&lang=es" target="_blank">http://www.paho.org/hq/index.php?option=com_content&view=article&id=3201%3Apah o-website-privacy-policy&catid=6822%3Acorporate-pages&Itemid=2410&lang=es</a></p>
+
+    <h3>PRIVACIDAD</h3>
+
+    <p>Su privacidad en la Internet es de suma importancia para la BIREME/OPS. En esta declaración de privacidad se describe la política de BIREME/OPS en cuanto a la recopilación y el intercambio de información de las personas que utilizan el presente sitio de BIREME/OPS.</p>
+
+    <h4>¿Qué tipo de información recopila BIREME/OPS?</h4>
+
+    <p style="text-decoration: underline;">Uso normal de sitios web</p>
+
+    <p>En general, usted puede consultar los sitios de BIREME/OPS sin decirnos quién es ni revelar ningún tipo de información personal. La única información que recopilamos durante una consulta general proviene de los registros ordinarios del servidor e incluye su dirección de IP (protocolo de internet), el nombre del dominio, el tipo de navegador, el sistema operativo e información como el sitio web a través del cual llegó a nosotros, los archivos que descargó, los sitios que consultó y la fecha y hora de esas consultas.</p>
+
+    <p style="text-decoration: underline;">Recopilación de información que permite identificar a la persona</p>
+
+    <p>Si usted se registra para acceder a algún sitio, producto o servicio de BIREME/OPS, como los Servicios Personalizados Mi BVS y el FI-Admin, se le pedirá que suministre información personal como su nombre, dirección de correo electrónico, institución a la cual pertenece, país de origen, nivel académico, área de actuación profesional, sexo, fecha de nacimiento e datos de sus redes sociales. Esta información se recopila solo con su conocimiento y permiso, y se mantiene en las bases de datos de BIREME/OPS y listas de direcciones.</p>
+
+    <p>Para ciertos sitios de BIREME/OPS, registrarse o proporcionar cierta información personal hace que se instale una cookie* en su computadora, que permitirá que BIREME/OPS recuerde su información la próxima vez que usted consulte el sitio, de  manera que no tenga que volver a ingresar sus datos, lo que nos ayuda a brindarle un servicio mejor.</p>
+
+    <p>Si se incorpora a un grupo de debate electrónico puede que otros participantes del grupo (incluidos funcionarios que no pertenecen a la OPS) vean la información personal que usted haya proporcionado. En el caso de los grupos de debate abiertos, esta información será pública.</p>
+
+    <h4>¿Qué hace BIREME/OPS con la información que recopila?</h4>
+
+    <p>La información recopilada durante una consulta general se usa para analizar tendencias y uso de los sitios de BIREME/OPS, y para mejorar la utilidad de estos sitios. No está conectada con ningún tipo de datos personales.</p>
+
+    <p style="text-decoration: underline;">Información que permite identificar a la persona</p>
+
+    <p>BIREME/OPS puede usar la información personal que usted proporciona para:</p>
+
+    <ul>
+        <li>ponerse en contacto con usted: ya sea para responder a una consulta o sugerencia, o para enviarle boletines informativos, documentos, publicaciones, etc.;</li>
+        <li>confirmar su información de registro en el sitio;</li>
+        <li>"recordar" su perfil y preferencias en línea;</li>
+        <li>ayudarlo a encontrar rápidamente información útil según sus intereses y ayudarnos a crear un contenido que le resulte más provechoso;</li>
+        <li>realizar un análisis estadístico.</li>
+    </ul>
+
+    <h4>¿Qué sucede si no quiero suministrar información personal?</h4>
+
+    <p>Suministrar información personal en los sitios de BIREME/OPS es optativo. Si decide no suministrar información personal, puede de todas formas consultar y usar los sitios de BIREME/OPS, pero no podrá utilizar ciertas opciones como acceder a los Servicios Personalizados Mi BVS o hacer gestión de las fuentes de información de la BVS a través del sistema web FI-Admin.</p>
+
+    <p style="text-decoration: underline;">Opción de modificar la información o solicitar que sea eliminada</p>
+
+    <p>En cualquier momento, usted puede modificar su información o solicitar que sea eliminada: para ello debe ingresar nuevamente al sitio donde ingresó la información por primera vez y comunicarse con el punto focal de ese sitio. Si no se proporcionan datos de contacto en el sitio, puede contactar a online@bireme.org.</p>
+
+    <h3>SEGURIDAD</h3>
+
+    <p>No vendemos ni intercambiamos ningún tipo de información personal proporcionada voluntariamente en los sitios de BIREME/OPS a terceros. Toda información suministrada a BIREME/OPS por los usuarios de los sitios de BIREME/OPS se guarda con gran  cuidado y seguridad, y no se usará de manera distinta de las establecidas en esta política de privacidad, en cualquier política propia del sitio, o de las que usted ha autorizado explícitamente. BIREME/OPS emplea una variedad de tecnologías y medidas de seguridad para proteger la información que se encuentra en nuestros sistemas a fin de evitar pérdidas, uso indebido, acceso no autorizado o divulgación, modificación o destrucción.</p>
+
+    <p>Todos nuestros empleados que tienen acceso a los datos personales y están asociados con su procesamiento están obligados a respetar la confidencialidad de los asuntos oficiales, incluidos los datos personales.</p>
+
+    <p>Los sitios de BIREME/OPS contienen enlaces a sitios externos. BIREME/OPS no es responsable de las prácticas de privacidad ni del contenido de tales sitios.</p>
+
+    <h4>Notificación de cambios</h4>
+
+    <p>BIREME/OPS podrá modificar esta Política de Privacidad a su entera discreción y publicará estas modificaciones en el presente sitio.</p>
+
+    <h4>Contacto</h4>
+
+    <p>Para preguntas o consultas con respecto a esta política de privacidad, sírvase comunicarse con nosotros en online@bireme.org</p>
+
+    <p style="margin-bottom: 0;">* Cookie</p>
+    <p>Una cookie es un pequeño conjunto de datos que se envía de un servidor de la web a su navegador. Se usa normalmente para asignar una identificación única a su computadora y almacenar de manera segura información como el ID del usuario, contraseñas, preferencias y perfiles electrónicos. Se almacena en el disco duro de su computadora. Usted tiene la opción de no permitir que se instalen cookies de la OPS/OMS si cambia la configuración de su navegador. Distintos sitios web pueden enviar sus propias cookies a su computadora. Para proteger su privacidad, el navegador solo permite que un sitio web obtenga acceso a sus propias cookies y no permite el acceso a las instaladas por otros sitios.</p>
+
+    <p><strong>SI NO ESTUVIERA CONFORME CON ALGUNO DE LOS TÉRMINOS Y CONDICIONES DE ESTA POLÍTICA DE PRIVACIDAD DEBERÁ ABSTENERSE DE UTILIZAR EL SITIO Y CUALQUIER MATERIAL AQUÍ CONTENIDO.</strong></p>
+
+</div>
+');
     define('FIELD_LINKEDIN','LinkedIn (URL)');
     define('FIELD_RESEARCHGATE','ResearchGate (URL)');
     define('FIELD_ORCID','ORCID');
@@ -495,40 +705,145 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Phone: (55 11) 5576-980
     define("TERMS_AGREEMENT_MESSAGE",'I agree to the <a data-toggle="modal" data-target=".bs-terms-modal-lg" style="cursor: pointer; text-decoration: underline;">Terms of Use</a> and have read the <a data-toggle="modal" data-target=".bs-policy-modal-lg" style="cursor: pointer; text-decoration: underline;">Privacy Policy</a> of My VHL');
     define("TERMS_MESSAGE",'
 <div class="terms">
-<h3>Terms and Conditions</h3>
 
-<h4>General</h4>
+    <h3>TÉRMINOS Y CONDICIONES DE USO DE LOS SITIOS Y SISTEMAS WEB DE BIREME/OPS</h3>
 
-<p>Servicing servicing resistor <strong>video computer</strong> element transponder prototype analog solution mainframe network. Solution video debugged feedback sampling extended, infrared, generator generator. </p>
+    <p>La utilización de los productos, servicios y/o herramientas que pone a disposición El Centro Latinoamericano y del Caribe de Información en Ciencias de la Salud (BIREME), Centro Especializado de la Organización Panamericana de la Salud, Oficina Regional para las Américas de la Organización Mundial de la Salud, en adelante BIREME/OPS, a disposición de los usuarios constituye aceptación de los siguientes Términos y Condiciones. En caso de discrepancia entre el texto en español y cualquier otro idioma de estos Términos y Condiciones, prevalecerá el documento en español.</p>
 
-<ul>
-<li>list item number one</li>
-<li>list item number two</li>
-<li>list item number three</li>
-</ul>
+    <p>BIREME/OPS se reserva el derecho a accionar legalmente para frenar cualquier infracción o incumplimiento de los presentes Términos y Condiciones. BIREME/OPS podrá modificar estos Términos y Condiciones a su entera discreción y publicará estas modificaciones en el presente sitio. Usar este sitio, los productos, servicios y/o herramientas luego de efectuados éstos cambios constituye aceptación por parte del usuario de los nuevos Términos y Condiciones. La OPS se reserva el derecho exclusivo de cancelar el acceso de cualquier usuario por infracción de derechos o incumplimiento de los presentes Términos y Condiciones.</p>
 
-<p>Harmonic gigabyte generator in <strong>sequential interface</strong>. Services, integer device read-only supporting cascading cache capacitance. Proxy boolean solution or data overflow element overflow processor arrray video, reflective extended. Gigabyte debugged distributed, reflective controller disk encapsulated phase network arrray feedback element cache high silicon. Sampling backbone analog remote adaptive extended bridgeware n-tier integer audio femtosecond. </p>
+    <h4>Uso del nombre de BIREME y/o la OPS</h4>
 
-<h4>Important Stuff</h4>
+    <p>El nombre, acrónimo y/o logo de BIREME y la OPS, están protegidos por el derecho internacional. Excepto para propósitos de atribución autoral éstos no pueden ser utilizados sin autorización previa expresa y por escrito de BIREME/OPS. El nombre, acrónimo, logo BIREME/ OPS tampoco pueden ser utilizados con fines promocionales o en ninguna forma que indique, sugiera o pueda interpretarse como asociación, afiliación, patrocinio o respaldo de BIREME/OPS.</p>
 
-<p>Interface broadband <strong>developer backbone fragmentation</strong> messaging software transmission, sampling cascading element high silicon backbone. Reflective servicing coordinated boolean connectivity extended inversion sequential for. Data distributed backbone bridgeware connectivity logarithmic, sampling ethernet for. Extended logarithmic log video echo gigabyte. Or procedural phaselock sequential port extended deviation sequential, disk recognition gigabyte phaselock proxy messaging arrray. Encapsulated echo deviation boolean system ethernet reducer, pc. </p>
+    <h4>Limitación de Responsabilidad</h4>
 
-<p><strong>Backbone frequency echo ethernet</strong> patch femtosecond sampling, integer digital floating-point n-tier dithering disk. Processor reflective boolean includes phase deviation, with log, integral logistically femtosecond, in, integral infrared phaselock. Element developer pc harmonic, plasma with, integral floating-point. Reflective feedback infrared, echo anomoly integral generator reflective led, high overflow servicing gigabyte. Extended integral data, infrared frequency disk broadband transistorized processor disk anomoly, sampling potentiometer kilohertz. Bus overflow, bridgeware fragmentation bypass prototype, interface, for internet pc generator integral, bypass disk, frequency. </p>
+    <p>Los productos, servicios y/o herramientas que BIREME/OPS pone a disposición de los usuarios se proporcionan sin ningún tipo de garantía, explícita o implícita. BIREME/OPS no ofrece garantías ni responderá por la exactitud o veracidad de la información, productos, servicios y/o herramientas proporcionados. BIREME/ OPS podrá modificar éstos periódicamente sin previo aviso. Bajo ninguna circunstancia BIREME/OPS será responsable de las pérdidas, daños y/o perjuicios que puedan presuntamente derivarse de su utilización o su no disponibilidad. Los usuarios deben utilizar estos productos, servicios y/o herramientas por su propia cuenta y riesgo. En ningún caso BIREME/OPS será responsable por daños y/o perjuicios aún cuando éstos pudieran haber sido advertidos y/o prevenidos.</p>
 
-<h4>Fees</h4>
+    <p>BIREME/OPS se reserva el derecho de modificar o descontinuar cualquier información, productos, servicios y/o herramientas que ponga a disposición de sus miembros y/o usuarios a través de este sitio, con o sin previo aviso.</p>
 
-<p>Sequential <strong>encapsulated resistor</strong> element converter pc harmonic. Feedback cache hyperlinked debugged generator infrared device network, fragmentation connectivity, debugged. For, dithering interface debugged sequential recognition bypass bridgeware processor backbone sampling logarithmic software. Anomoly infrared logarithmic logarithmic procedural plasma resistor integral silicon deviation. Computer broadband plasma, encapsulated cable kilohertz scan. With logarithmic bridgeware indeterminate sampling, port. Development procedural hyperlinked mainframe, encapsulated boolean software processor transistorized cable with backbone. </p>
+    <p>La utilización de designaciones de países o territorios no deberán considerarse como indicativo de la posición por parte de BIREME/OPS con relación a la situación jurídica de ningún país o territorio, de sus autoridades e instituciones ni el reconocimiento de ninguna frontera.</p>
 
-<p>Reflective backbone log transmission cable logarithmic mainframe. Messaging backbone debugged feedback development phaselock metafile n-tier coordinated, cable coordinated coordinated in. <strong>Analog device</strong> transistorized, sequential transistorized with scalar normalizing. Mainframe phase cache anomoly feedback servicing harmonic. Services software pc, femtosecond bypass scalar data element extended cascading capacitance harmonic. Adaptive plasma bypass supporting cascading deviation system pulse broadband bridgeware. </p>
+    <p>BIREME/OPS no será responsable de ningún daño o pérdida que pueda derivarse o relacionarse con el uso o falla del sitio, información, productos, servicios y/o herramientas aquí contenidos, incluso en los casos derivados de uso inapropiado, impropio o fraudulento. Tampoco será responsable de la precisión, disponibilidad o veracidad de la información aquí contenida.</p>
 
-<h4>Agreement</h4>
+    <p>BIREME/OPS no ofrece garantías de ningún tipo respecto de los materiales, información, productos, servicios y/o herramientas disponibles en el sitio y no será responsable por cualquier infección con virus informático o cualquier otro programa que pueda afectar el funcionamiento de computadoras o sistemas.</p>
 
-<p>Servicing hyperlinked analog encapsulated disk cable with, capacitance element partitioned potentiometer read-only dithering. <strong>Normalizing kilohertz</strong> network solution logarithmic device bus connectivity system mainframe prototype phaselock phase cache. </p>
+    <p>Algunos materiales, información, productos, servicios y/o herramientas a los cuales los usuarios podrán acceder a través de este sitio podrían ser de titularidad de terceros, la BIREME/OPS no garantiza la titularidad de éstos y no será responsable ante los usuarios o terceros por cualquier reclamo derivado de su uso. Es posible que en el sitio, materiales, información, productos, servicios y/o herramientas se incluyan enlaces a sitios externos no manejados por la BIREME/OPS. Estos enlaces se incluyen a modo de referencia y su incorporación no implica aprobación o endoso por parte de BIREME/OPS. BIREME/OPS no asume responsabilidad respecto de la información contenida en estos sitios.</p>
 
-<p>Coordinated transmission overflow floating-point distributed supporting scan converter. <strong>Bridgeware backbone</strong> coordinated sampling overflow broadband normalizing connectivity or, internet transmission, bus, encapsulated. Extended element element echo messaging scan, cache video deviation debugged broadband. Pc, supporting hyperlinked coordinated patch, bridgeware transistorized, led frequency scalar. Servicing, plasma recursive boolean includes, computer, femtosecond inversion. Services integer harmonic mainframe scalar prototype broadband n-tier. Echo software application indeterminate dithering bypass plasma bus harmonic patch. Digital, mainframe scalar anomoly bypass, bus potentiometer phaselock plasma, phaselock prompt data disk inversion. </p>
+    <p>La utilización de este sitio por los usuarios implica la aceptación de la obligación de defender, mantener a salvo e indemnizar a BIREME/OPS y a sus afiliados por cualquier acción, reclamo daño, pérdida y/o gasto (incluidos los honorarios de abogados) que se deriven de dicha utilización.</p>
+
+    <p>BIREME/OPS se reserva el derecho de utilizar o divulgar información sobre sus usuarios. Asimismo se reserva el derecho de editar, no publicar o remover cualquier producto, servicios, herramienta o información o material en parte o en su totalidad a su entera discreción.</p>
+
+    <h4>Usos no permitidos</h4>
+
+    <p>Los usuarios garantizan que el uso de del sitio, información, productos, servicios y/o herramientas aquí contenidos, no serán utilizados con propósitos que sean contrarios a las leyes o que contravengan los presentes términos y condiciones. Los usuarios no utilizaran el sitio, información, productos, servicios y/o herramientas de manera que pueda perjudicar, inhabilitar, sobrecargar o deteriorar el sitio, información, productos, servicios y/o herramientas o su uso por parte de terceros. Los usuarios no intentarán obtener ninguna información, productos, servicios y/o herramientas por medios no intencionalmente disponibles o habilitados en este sitio.</p>
+
+    <p>Asimismo los usuarios se comprometen a respetar los derechos de terceros así como las leyes de propiedad intelectual durante cualquier uso de del sitio, información, productos, servicios y/o herramientas aquí contenidos.</p>
+
+    <h4>Privilegios e Inmunidades</h4>
+
+    <p>Nada de lo aquí expuesto constituirá o podrá ser interpretado como renuncia, expresa o tácita, de los privilegios, inmunidades, y exoneraciones de que goza, la OPS, de conformidad con el Derecho Internacional, tratados o convenios internacionales, o la legislación de sus Países Miembros.</p>
+
+    <h4>Espacios de diálogo</h4>
+
+    <p>BIREME/OPS podrá ofrecer espacios de diálogo u otros instrumentos de comunicación. Los usuarios al hacer uso de estos instrumentos se comprometen a abstenerse de:</p>
+
+    <ul style="list-style-type: lower-alpha;">
+        <li>Difamar, injuriar, acosar, amenazar o asumir cualquier otro tipo de conducta que vulnere los derechos de otros;</li>
+        <li>Difundir, publicar, distribuir o divulgar informaciones o materiales difamatorios, obscenos, indecentes, ilícitos o inmorales;</li>
+        <li>Cargar en el sitio o enviar como anexos de un mensaje archivos que contengan programas informáticos u otros materiales amparados por las leyes de propiedad intelectual (o por el derecho a la intimidad y la publicidad), sin contar con la autorización correspondiente;</li>
+        <li>No incluir la referencia del autor o notificaciones legales, mentir acerca del origen o presentar como propio programas informáticos u otros materiales contenidos en un archivo que se cargue en el sitio;</li>
+        <li>Anunciar o poner a la venta bienes o servicios, o realizar o promover encuestas, concursos o cadenas de cartas, o descargar de un foro un archivo enviado por otro usuario que el usuario sepa, o razonablemente deba saber, que no se puede distribuir lícitamente de esa manera.</li>
+    </ul>
+
+    <p>Los usuarios reconocen que todos los espacios de diálogo constituyen un medio de comunicación pública y no privada. Asimismo, reconocen que los diálogos y el material publicado en el sitio no cuentan con el respaldo de BIREME/OPS y no se considerarán como revisados, examinados ni aprobados por BIREME/OPS.</p>
+
+    <h4>Reclamaciones por posibles infracciones</h4>
+
+    <p>BIREME/OPS se esforzará por impedir en su sitio actividades ilícitas y contrarias a los Términos y Condiciones aquí contenidos. No obstante, si usted creyera que alguna información contenida en el sitio o sus materiales pudiera estar infringiendo sus derechos o de terceros, incluyendo, sin limitación, derechos de propiedad intelectual, deberá ponerse en contacto con la BIREME/OPS enviando una descripción detallada de la violación alegada a la siguiente dirección: online@bireme.org</p>
+
+    <h4>Resolución de controversias</h4>
+
+    <p>Cualquier disputa, controversia o reclamo que surja o se derive del uso del sitio o su información, productos, servicios y/o herramientas será resuelta en forma amistosa entre BIREME/OPS y usuario. A menos que las disputas o controversias se solucionen en forma amistosa dentro de los sesenta (60) días posteriores a la recepción por una de las partes de la solicitud de la otra de intentar una resolución amistosa, dicha disputa, controversia, o reclamo será remitida por cualquiera de las partes a arbitraje de conformidad con las Reglas de Arbitraje de la Comisión de las Naciones Unidas para el Derecho Mercantil Internacional (CNUDMI) vigentes. El tribunal arbitral no estará autorizado a imponer daños punitivos. Cualquier laudo arbitral emitido en virtud del arbitraje referido se considerará como la adjudicación definitiva a la disputa, controversia o reclamo y tendrá carácter vinculante para las partes.</p>
+
+    <p><strong>SI NO ESTUVIERA CONFORME CON ALGUNO DE LOS TÉRMINOS Y CONDICIONES AQUÍ CONTENIDOS DEBERÁ ABSTENERSE DE UTILIZAR EL SITIO Y CUALQUIER MATERIAL AQUÍ CONTENIDO.</strong></p>
+    
 </div>
 ');
-    define('DATA_POLICY_MESSAGE',TERMS_MESSAGE);
+    define('DATA_POLICY_MESSAGE','
+<div class="terms">
+
+    <h2>POLÍTICA DE PRIVACIDAD DE LOS SITIOS Y SISTEMAS WEB DE BIREME/OPS</h2>
+
+    <p>La utilización de los productos, servicios y/o herramientas que pone a disposición El Centro Latinoamericano y del Caribe de Información en Ciencias de la Salud (BIREME), Centro Especializado de la Organización Panamericana de la Salud, Oficina Regional para las Américas de la Organización Mundial de la Salud, en adelante BIREME/OPS, a disposición de los usuarios constituye aceptación de la siguiente Política de Privacidad. En caso de discrepancia entre el texto en español y cualquier otro idioma de esta Política de Privacidad, prevalecerá el documento en español.</p>
+
+    <p>Esta Política de Privacidad es complementaria a la Política General de Privacidad de la OPS, disponible en <a href="http://www.paho.org/hq/index.php?option=com_content&view=article&id=3201%3Apah o-website-privacy-policy&catid=6822%3Acorporate-pages&Itemid=2410&lang=en" target="_blank">http://www.paho.org/hq/index.php?option=com_content&view=article&id=3201%3Apah o-website-privacy-policy&catid=6822%3Acorporate-pages&Itemid=2410&lang=en</a></p>
+
+    <h3>PRIVACIDAD</h3>
+
+    <p>Su privacidad en la Internet es de suma importancia para la BIREME/OPS. En esta declaración de privacidad se describe la política de BIREME/OPS en cuanto a la recopilación y el intercambio de información de las personas que utilizan el presente sitio de BIREME/OPS.</p>
+
+    <h4>¿Qué tipo de información recopila BIREME/OPS?</h4>
+
+    <p style="text-decoration: underline;">Uso normal de sitios web</p>
+
+    <p>En general, usted puede consultar los sitios de BIREME/OPS sin decirnos quién es ni revelar ningún tipo de información personal. La única información que recopilamos durante una consulta general proviene de los registros ordinarios del servidor e incluye su dirección de IP (protocolo de internet), el nombre del dominio, el tipo de navegador, el sistema operativo e información como el sitio web a través del cual llegó a nosotros, los archivos que descargó, los sitios que consultó y la fecha y hora de esas consultas.</p>
+
+    <p style="text-decoration: underline;">Recopilación de información que permite identificar a la persona</p>
+
+    <p>Si usted se registra para acceder a algún sitio, producto o servicio de BIREME/OPS, como los Servicios Personalizados Mi BVS y el FI-Admin, se le pedirá que suministre información personal como su nombre, dirección de correo electrónico, institución a la cual pertenece, país de origen, nivel académico, área de actuación profesional, sexo, fecha de nacimiento e datos de sus redes sociales. Esta información se recopila solo con su conocimiento y permiso, y se mantiene en las bases de datos de BIREME/OPS y listas de direcciones.</p>
+
+    <p>Para ciertos sitios de BIREME/OPS, registrarse o proporcionar cierta información personal hace que se instale una cookie* en su computadora, que permitirá que BIREME/OPS recuerde su información la próxima vez que usted consulte el sitio, de  manera que no tenga que volver a ingresar sus datos, lo que nos ayuda a brindarle un servicio mejor.</p>
+
+    <p>Si se incorpora a un grupo de debate electrónico puede que otros participantes del grupo (incluidos funcionarios que no pertenecen a la OPS) vean la información personal que usted haya proporcionado. En el caso de los grupos de debate abiertos, esta información será pública.</p>
+
+    <h4>¿Qué hace BIREME/OPS con la información que recopila?</h4>
+
+    <p>La información recopilada durante una consulta general se usa para analizar tendencias y uso de los sitios de BIREME/OPS, y para mejorar la utilidad de estos sitios. No está conectada con ningún tipo de datos personales.</p>
+
+    <p style="text-decoration: underline;">Información que permite identificar a la persona</p>
+
+    <p>BIREME/OPS puede usar la información personal que usted proporciona para:</p>
+
+    <ul>
+        <li>ponerse en contacto con usted: ya sea para responder a una consulta o sugerencia, o para enviarle boletines informativos, documentos, publicaciones, etc.;</li>
+        <li>confirmar su información de registro en el sitio;</li>
+        <li>"recordar" su perfil y preferencias en línea;</li>
+        <li>ayudarlo a encontrar rápidamente información útil según sus intereses y ayudarnos a crear un contenido que le resulte más provechoso;</li>
+        <li>realizar un análisis estadístico.</li>
+    </ul>
+
+    <h4>¿Qué sucede si no quiero suministrar información personal?</h4>
+
+    <p>Suministrar información personal en los sitios de BIREME/OPS es optativo. Si decide no suministrar información personal, puede de todas formas consultar y usar los sitios de BIREME/OPS, pero no podrá utilizar ciertas opciones como acceder a los Servicios Personalizados Mi BVS o hacer gestión de las fuentes de información de la BVS a través del sistema web FI-Admin.</p>
+
+    <p style="text-decoration: underline;">Opción de modificar la información o solicitar que sea eliminada</p>
+
+    <p>En cualquier momento, usted puede modificar su información o solicitar que sea eliminada: para ello debe ingresar nuevamente al sitio donde ingresó la información por primera vez y comunicarse con el punto focal de ese sitio. Si no se proporcionan datos de contacto en el sitio, puede contactar a online@bireme.org.</p>
+
+    <h3>SEGURIDAD</h3>
+
+    <p>No vendemos ni intercambiamos ningún tipo de información personal proporcionada voluntariamente en los sitios de BIREME/OPS a terceros. Toda información suministrada a BIREME/OPS por los usuarios de los sitios de BIREME/OPS se guarda con gran  cuidado y seguridad, y no se usará de manera distinta de las establecidas en esta política de privacidad, en cualquier política propia del sitio, o de las que usted ha autorizado explícitamente. BIREME/OPS emplea una variedad de tecnologías y medidas de seguridad para proteger la información que se encuentra en nuestros sistemas a fin de evitar pérdidas, uso indebido, acceso no autorizado o divulgación, modificación o destrucción.</p>
+
+    <p>Todos nuestros empleados que tienen acceso a los datos personales y están asociados con su procesamiento están obligados a respetar la confidencialidad de los asuntos oficiales, incluidos los datos personales.</p>
+
+    <p>Los sitios de BIREME/OPS contienen enlaces a sitios externos. BIREME/OPS no es responsable de las prácticas de privacidad ni del contenido de tales sitios.</p>
+
+    <h4>Notificación de cambios</h4>
+
+    <p>BIREME/OPS podrá modificar esta Política de Privacidad a su entera discreción y publicará estas modificaciones en el presente sitio.</p>
+
+    <h4>Contacto</h4>
+
+    <p>Para preguntas o consultas con respecto a esta política de privacidad, sírvase comunicarse con nosotros en online@bireme.org</p>
+
+    <p style="margin-bottom: 0;">* Cookie</p>
+    <p>Una cookie es un pequeño conjunto de datos que se envía de un servidor de la web a su navegador. Se usa normalmente para asignar una identificación única a su computadora y almacenar de manera segura información como el ID del usuario, contraseñas, preferencias y perfiles electrónicos. Se almacena en el disco duro de su computadora. Usted tiene la opción de no permitir que se instalen cookies de la OPS/OMS si cambia la configuración de su navegador. Distintos sitios web pueden enviar sus propias cookies a su computadora. Para proteger su privacidad, el navegador solo permite que un sitio web obtenga acceso a sus propias cookies y no permite el acceso a las instaladas por otros sitios.</p>
+
+    <p><strong>SI NO ESTUVIERA CONFORME CON ALGUNO DE LOS TÉRMINOS Y CONDICIONES DE ESTA POLÍTICA DE PRIVACIDAD DEBERÁ ABSTENERSE DE UTILIZAR EL SITIO Y CUALQUIER MATERIAL AQUÍ CONTENIDO.</strong></p>
+
+</div>
+');
     define('FIELD_LINKEDIN','LinkedIn (URL)');
     define('FIELD_RESEARCHGATE','ResearchGate (URL)');
     define('FIELD_ORCID','ORCID');
