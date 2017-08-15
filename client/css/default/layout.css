@@ -576,8 +576,27 @@ ul.messages li, .tasks li {
 }
 
 .byline {
-    color: #636363 !important;
+    color: #636363 !important; 
 }
+
+.body_pt footer{
+	 background: #FFF url(../../images/default/bireme_azul_pt_horizontal_full.png) top no-repeat !important;             
+	}
+.body_es footer{
+	 background: #FFF url(../../images/default/bireme_azul_es_horizontal_full.png) top no-repeat !important;             
+	}
+.body_en footer{
+	 background: #FFF url(../../images/default/bireme_azul_en_horizontal_full.png) top no-repeat !important;             
+	}
+.nav-md footer p{
+	text-align:center;     
+	margin-top: 83px;
+	}
+.nav-sm footer p{
+	text-align:center;     
+	margin-top: 83px;
+	}
+
 
 @media only screen
 and (max-device-width : 360px) {
@@ -664,6 +683,17 @@ and (max-device-width : 768px) {
         display: block;
         text-align: center;
     }
+	.body_pt footer{
+	 background: #FFF url(../../images/default/bireme_azul_pt_horizontal.jpg) top no-repeat !important;             
+	}
+	.body_es footer{
+		 background: #FFF url(../../images/default/bireme_azul_es_horizontal.jpg) top no-repeat !important;             
+		}
+	.body_en footer{
+		 background: #FFF url(../../images/default/bireme_azul_en_horizontal.jpg ) top no-repeat !important;             
+		}
+	.nav-md footer p { margin-top: 45px;}
+	.nav-sm footer p { margin-top: 45px;}
 }
 
 @media only screen 
