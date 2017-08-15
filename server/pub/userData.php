@@ -5,7 +5,7 @@ require_once(dirname(__FILE__)."/include/includes.php");
 require_once(dirname(__FILE__)."/include/degreeLibrary.php");
 require_once(dirname(__FILE__)."/include/professionalAreaLibrary.php");
 require_once(dirname(__FILE__)."/include/countriesLibrary.php");
-require_once(dirname(__FILE__)."/../include/translations.php");
+require_once(dirname(__FILE__)."/translations.php");
 require_once(dirname(__FILE__)."/../classes/User.php");
 require_once(dirname(__FILE__)."/../classes/UserDAO.php");
 require_once(dirname(__FILE__)."/../classes/Tools.php");

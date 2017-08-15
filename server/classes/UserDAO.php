@@ -20,7 +20,6 @@ require_once(dirname(__FILE__)."/LDAP.php");
 require_once(dirname(__FILE__)."/LDAPAuthenticator.php");
 require_once(dirname(__FILE__)."/ToolsAuthentication.php");
 require_once(dirname(__FILE__)."/Tools.php");
-require_once(dirname(__FILE__).'/../include/translations.php');
 
 class UserDAO {
 

@@ -2,7 +2,7 @@
 ob_start("ob_gzhandler");
 session_start();
 require_once(dirname(__FILE__)."/include/includes.php");
-require_once(dirname(__FILE__)."/../include/translations.php");
+require_once(dirname(__FILE__)."/translations.php");
 
 $acao = isset($_REQUEST['acao'])?$_REQUEST['acao']:'default';
 
