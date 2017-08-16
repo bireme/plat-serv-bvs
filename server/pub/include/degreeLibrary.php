@@ -12,8 +12,8 @@
         "Mestrado" => "Mestrado",
         "Doutorado" => "Doutorado",
         "MBA" => "MBA",
-        "Pos_Doutorado" => "Pós Doutorado",
-        "PHD" => "PHD"
+        "Pos_Doutorado" => "Pós-Doutorado",
+        "PHD" => "PhD"
     );
 
     $degrees['es'] = array(
@@ -26,8 +26,8 @@
         "Mestrado" => "Maestría",
         "Doutorado" => "Doctorado",
         "MBA" => "MBA",
-        "Pos_Doutorado" => "Pos Doctorado",
-        "PHD" => "PHD"
+        "Pos_Doutorado" => "Posdoctoral",
+        "PHD" => "PhD"
     );
 
     $degrees['en'] = array(
@@ -40,7 +40,7 @@
         "Mestrado" => "Master's Degree",
         "Doutorado" => "Doctorate",
         "MBA" => "MBA",
-        "Pos_Doutorado" => "Post Doctorate",
+        "Pos_Doutorado" => "Postdoctoral",
         "PhD" => "PhD"
     );
 
