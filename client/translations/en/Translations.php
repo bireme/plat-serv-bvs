@@ -194,7 +194,7 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Phone: (55 11) 5576-980
         self::$trans["orcidworks"]["NEXT"] = 'Next';
         self::$trans["orcidworks"]["PREVIOUS"] = 'Previous';
         self::$trans["orcidworks"]["ORCID_WORKS"] = 'My Publications';
-        self::$trans["orcidworks"]["ORCID_WORKS_NO_REGISTERS_FOUND"] = 'No publication found. To view your publications, please inform the ORCID ID in your registration.';
+        self::$trans["orcidworks"]["ORCID_WORKS_NO_REGISTERS_FOUND"] = 'No publication found. To view your publications, please inform the ORCID ID in your Profile.';
         self::$trans["orcidworks"]["GOOGLE_SCHOLAR"] = 'View on Google Scholar';
 
     // General Terms
