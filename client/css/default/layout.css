@@ -571,7 +571,7 @@ ul.messages li, .tasks li {
     background: rgba(0, 163, 54, 0.64)!important; color: #fff;
 }
 
-.table-striped>tbody>tr:nth-of-type(odd) {
+.table-striped > tbody > tr:nth-of-type(odd) {
     background-color: #f4f7fd !important;
 }
 
@@ -579,24 +579,27 @@ ul.messages li, .tasks li {
     color: #636363 !important; 
 }
 
-.body_pt footer{
+.body_pt footer {
 	 background: #FFF url(../../images/default/bireme_azul_pt_horizontal_full.png) top no-repeat !important;             
-	}
-.body_es footer{
-	 background: #FFF url(../../images/default/bireme_azul_es_horizontal_full.png) top no-repeat !important;             
-	}
-.body_en footer{
-	 background: #FFF url(../../images/default/bireme_azul_en_horizontal_full.png) top no-repeat !important;             
-	}
-.nav-md footer p{
-	text-align:center;     
-	margin-top: 83px;
-	}
-.nav-sm footer p{
-	text-align:center;     
-	margin-top: 83px;
-	}
+}
 
+.body_es footer {
+	 background: #FFF url(../../images/default/bireme_azul_es_horizontal_full.png) top no-repeat !important;             
+}
+
+.body_en footer {
+	 background: #FFF url(../../images/default/bireme_azul_en_horizontal_full.png) top no-repeat !important;             
+}
+
+.nav-md footer p {
+	text-align: center;     
+	margin-top: 83px;
+}
+
+.nav-sm footer p {
+	text-align: center;     
+	margin-top: 83px;
+}
 
 @media only screen
 and (max-device-width : 360px) {
@@ -683,17 +686,26 @@ and (max-device-width : 768px) {
         display: block;
         text-align: center;
     }
-	.body_pt footer{
+
+	.body_pt footer {
 	 background: #FFF url(../../images/default/bireme_azul_pt_horizontal.jpg) top no-repeat !important;             
 	}
-	.body_es footer{
+
+	.body_es footer {
 		 background: #FFF url(../../images/default/bireme_azul_es_horizontal.jpg) top no-repeat !important;             
-		}
-	.body_en footer{
+	}
+
+	.body_en footer {
 		 background: #FFF url(../../images/default/bireme_azul_en_horizontal.jpg ) top no-repeat !important;             
-		}
-	.nav-md footer p { margin-top: 45px;}
-	.nav-sm footer p { margin-top: 45px;}
+	}
+
+	.nav-md footer p {
+        margin-top: 45px;
+    }
+
+	.nav-sm footer p {
+        margin-top: 45px;
+    }
 }
 
 @media only screen 
@@ -724,7 +736,11 @@ and (max-device-width : 320px) {
     .introjs-tooltip .introjs-tooltipbuttons {
         padding-right: 4.5em;
     }
-	.mobile .introjs-button{text-shadow: none !important; box-shadow:none !important;}
+
+	.mobile .introjs-button {
+        text-shadow: none !important;
+        box-shadow: none !important;
+    }
 	
 }
 
@@ -742,7 +758,11 @@ and (max-device-width : 736px) {
         position: absolute;
         margin-top: 70px;
     }
-	.mobile .introjs-button{text-shadow: none !important; box-shadow:none !important;}
+
+	.mobile .introjs-button {
+        text-shadow: none !important;
+        box-shadow:none !important;
+    }
 
     .search_bar{
         display: flex;

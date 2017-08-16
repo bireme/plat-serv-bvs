@@ -135,7 +135,7 @@
                             </p>
                         </div>
                         <div class="col-xs-12 col-sm-2">
-                            <button class="btn btn-lg btn-primary btn-block" type="submit" onclick="document.forms[0].submit();"><?=$trans->getTrans($_REQUEST["action"],'LOGIN')?></button>
+                            <button class="btn btn-lg btn-primary btn-block btn-login" type="submit" onclick="document.forms[0].submit();"><?=$trans->getTrans($_REQUEST["action"],'LOGIN')?></button>
                         </div>
                     </div>
                     <div class="row omb_spacer">

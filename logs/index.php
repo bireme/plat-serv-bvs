@@ -74,7 +74,7 @@ if ( $userTK ) {
 
     foreach ($result as $entry) {
         //$data[] = $entry;
-        echo "<pre>";
+        echo "<pre>" . PHP_EOL;
         foreach ($entry as $key => $value) {
             echo $key . ': ' . $value . PHP_EOL;
         }
