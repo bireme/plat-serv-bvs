@@ -133,7 +133,7 @@
                 position: 'right'
               },
               {
-                element: 'li.child.step20',
+                element: 'li.child.step24',
                 intro: "<?=$trans->getTrans('tour','STEP_24')?>",
                 position: 'right'
               },
