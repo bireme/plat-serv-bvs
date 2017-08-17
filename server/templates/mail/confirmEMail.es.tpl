@@ -6,7 +6,7 @@
 
 <p>Al acceder a Mi BVS, usted tendrá la oportunidad de conocer las funcionalidades de este servicio a través de un tour virtual. Cualquier duda o problema, <a href="http://feedback.bireme.org/feedback/?application=wp-bvs-plugin&version=2.10-77&site=servplat&lang=#LANG#">entre en contacto con nosotros.</a></p>
 
-<p>Si usted no solicitó el registro en Mi BVS, por favor <a href="http://feedback.bireme.org/feedback/wp-bvs-plugin?version=2.10-77&error=1&site=servplat&lang=#LANG#">haga clic aquí.</a></p>
+<p>Si usted no solicitó el registro en Mi BVS, por favor desconsidere este mensaje.</a></p>
 
 <p>Saludos cordiales,</p>
 

@@ -89,8 +89,8 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
     define("USER_UPDATED",'Usuário atualizado com sucesso.');
     define("USER_PASSWORD_UPDATE",'Senha atualizada com sucesso!');
     define("USER_UPDATE_ERROR",'<b>Problemas durante atualização</b><br />Não foi possível atualizar os dados. Tente mais tarde.');
-    define("USER_CONFIRMED",'<b>Usuário registrado com sucesso!</b><br />Sua senha foi enviada por e-mail.<br />Por favor, complete ou atualize seus dados e preferências no Meu Perfil.');
-    define("USER_ADD_CONFIRMED",'<b>Usuário registrado com sucesso!</b><br />Sua senha foi enviada por e-mail.');
+    define("USER_CONFIRMED",'<b>Usuário registrado com sucesso!</b><br />Por favor, complete ou atualize seus dados e preferências no seu Perfil.<br />Em breve, você receberá um e-mail com o link de confirmação de seu registro.<br />Se demorar para chegar, confira sua caixa de SPAM e lixo eletrônico.');
+    define("USER_ADD_CONFIRMED",'<b>Usuário registrado com sucesso!</b><br />Sua senha foi enviada por e-mail.<br />Se demorar para chegar, confira sua caixa de SPAM e lixo eletrônico.');
     define("USER_CONFIRMATION_ERROR",'<b>ERRO: Não foi possível realizar a confirmação de Usuário.</b>');
     define("VALMSG_G_EMPTY","Campo obrigatório. Não pode ficar em branco.");
     define("VALMSG_LOGIN","Digite um email válido.");
@@ -99,7 +99,7 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
     define("NEWPASS_CHANGE_ERROR",'<b>ERRO: Não foi possível alterar sua senha.</b>');
     define("NEWPASS_INVALID_PASSWORD",'Senha inválida');
     define("NEWPASS_DOMAIN_NOT_PERMITTED",'Ação não permitida para este usuário.');
-    define("NEWPASS_PASSWORD_SENT",'Uma nova senha foi enviada para o seu email.');
+    define("NEWPASS_PASSWORD_SENT",'Uma nova senha foi enviada para o seu email.<br />Se demorar para chegar, confira sua caixa de SPAM e lixo eletrônico.');
     define("NOTICE",'Mensagem ao usuário');
     define("NOTICE_MESSAGE",'');
     define("UPDATE_INFO",'<b>Por favor, revise seus dados no formulário abaixo para continuar utilizando a Minha BVS.</b>');
@@ -389,8 +389,8 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
     define("USER_UPDATED",'Usuario actualizado con succeso.');
     define("USER_PASSWORD_UPDATE",'¡Contraseña actualizada con succeso!');
     define("USER_UPDATE_ERROR",'<b>Problemas en la actualización</b><br />El sistema no logro actualizar los datos del usuário. Tente mas tardera.');
-    define("USER_CONFIRMED",'<b>Su cuenta ha sido confirmada con éxito!</b><br />La contraseña de acceso de su usuario ha sido enviada por e-mail.<br />Por favor, acceda a su perfil en Mi BVS y complete su registro.');
-    define("USER_ADD_CONFIRMED",'<b>¡Usuário añadido con succeso!</b><br />La contraseña de acceso de su usuario ha sido enviada por e-mail.');
+    define("USER_CONFIRMED",'<b>Su cuenta ha sido confirmada con éxito!</b><br />Por favor, acceda a su perfil en Mi BVS y complete su registro.<br />En breve, usted recibirá un e-mail con el enlace de confirmación de su registro.<br />Si tarda en llegar, compruebe su caja de SPAM y basura electrónica.');
+    define("USER_ADD_CONFIRMED",'<b>¡Usuário añadido con succeso!</b><br />La contraseña de acceso de su usuario ha sido enviada por e-mail.<br />Si tarda en llegar, compruebe su caja de SPAM y basura electrónica.');
     define("USER_CONFIRMATION_ERROR",'<b>ERROR: No fue posible confirmar el Usuario.</b>');
     define("VALMSG_G_EMPTY","Campo obligatório. No puede quedarse en blanco.");
     define("VALMSG_LOGIN","Informe un email válido.");
@@ -399,7 +399,7 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
     define("NEWPASS_CHANGE_ERROR",'<b>ERROR: No se pudo cambiar su contraseña.</b>');
     define("NEWPASS_INVALID_PASSWORD",'Contraseña incorrecta');
     define("NEWPASS_DOMAIN_NOT_PERMITTED",'Acción no permitida para este usuario.');
-    define("NEWPASS_PASSWORD_SENT",'Una nueva contraseña fue enviada para su correo electrónico.');
+    define("NEWPASS_PASSWORD_SENT",'Una nueva contraseña fue enviada para su correo electrónico.<br />Si tarda en llegar, compruebe su caja de SPAM y basura electrónica.');
     define("NOTICE",'Mensaje al usuário');
     define("NOTICE_MESSAGE",'');
     define("UPDATE_INFO",'<b>Por favor, revise sus datos en el formulario para seguir utilizando el servicio Mi BVS.</b>');
@@ -689,8 +689,8 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Phone: (55 11) 5576-980
     define("USER_UPDATED",'User successfully updated!');
     define("USER_PASSWORD_UPDATE",'Password successfully updated!');
     define("USER_UPDATE_ERROR",'<b>Problems updating user data</b><br />The applications could not update the user data. Please try again later.');
-    define("USER_CONFIRMED",'<b>Your account has been successfully confirmed!</b><br />Your user password was sent by e-mail.<br />Please access your profile in My VHL and complete your registration.');
-    define("USER_ADD_CONFIRMED",'<b>User registration was successful!</b><br />Your user password was sent by e-mail.');
+    define("USER_CONFIRMED",'<b>Your account has been successfully confirmed!</b><br />Please access your profile in My VHL and complete your registration.<br />Soon, you will receive an email with confirmation of your registration link.<br />If it takes too long to get there, check out your SPAM box and junk mail.');
+    define("USER_ADD_CONFIRMED",'<b>User registration was successful!</b><br />Your user password was sent by e-mail.<br />If it takes too long to get there, check out your SPAM box and junk mail.');
     define("USER_CONFIRMATION_ERROR",'<b>ERROR: Account verification failed.</b>');
     define("VALMSG_G_EMPTY","Mandatory field.");
     define("VALMSG_LOGIN","Type a valid e-mail.");
@@ -699,7 +699,7 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Phone: (55 11) 5576-980
     define("NEWPASS_CHANGE_ERROR",'<b>ERROR: Could not be changed your password.</b>');
     define("NEWPASS_INVALID_PASSWORD",'Invalid password');
     define("NEWPASS_DOMAIN_NOT_PERMITTED",'Action not allowed for this user.');    
-    define("NEWPASS_PASSWORD_SENT",'A new password was sent to your e-mail.');
+    define("NEWPASS_PASSWORD_SENT",'A new password was sent to your e-mail.<br />If it takes too long to get there, check out your SPAM box and junk mail.');
     define("NOTICE",'Notice to the users');
     define("NOTICE_MESSAGE",'');
     define("UPDATE_INFO",'<b>Please review your data in the form below to continue using the My VHL.</b>');
