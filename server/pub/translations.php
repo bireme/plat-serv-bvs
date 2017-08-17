@@ -91,13 +91,14 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
     define("USER_UPDATE_ERROR",'<b>Problemas durante atualização</b><br />Não foi possível atualizar os dados. Tente mais tarde.');
     define("USER_CONFIRMED",'<b>Usuário registrado com sucesso!</b><br />Sua senha foi enviada por e-mail.<br />Por favor, complete ou atualize seus dados e preferências no Meu Perfil.');
     define("USER_ADD_CONFIRMED",'<b>Usuário registrado com sucesso!</b><br />Sua senha foi enviada por e-mail.');
-    define("USER_CONFIRMATION_ERROR",'<b>ERRO: Não foi possível realizar a confirmação de Usuário.</b');
+    define("USER_CONFIRMATION_ERROR",'<b>ERRO: Não foi possível realizar a confirmação de Usuário.</b>');
     define("VALMSG_G_EMPTY","Campo obrigatório. Não pode ficar em branco.");
     define("VALMSG_LOGIN","Digite um email válido.");
     define("VALMSG_EMAIL","Digite um email válido.");
-    
+    define("NEWPASS_CREATE_ERROR",'<b>ERRO: Não foi possível gerar uma nova senha.</b>');
+    define("NEWPASS_CHANGE_ERROR",'<b>ERRO: Não foi possível alterar sua senha.</b>');
     define("NEWPASS_INVALID_PASSWORD",'Senha inválida');
-    define("NEWPASS_DOMAIN_NOT_PERMITTED",'Ação não permitida para este usuário. Entre em contato com o departamento de suporte da sua instituição.');
+    define("NEWPASS_DOMAIN_NOT_PERMITTED",'Ação não permitida para este usuário.');
     define("NEWPASS_PASSWORD_SENT",'Uma nova senha foi enviada para o seu email.');
     define("NOTICE",'Mensagem ao usuário');
     define("NOTICE_MESSAGE",'');
@@ -394,9 +395,10 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
     define("VALMSG_G_EMPTY","Campo obligatório. No puede quedarse en blanco.");
     define("VALMSG_LOGIN","Informe un email válido.");
     define("VALMSG_EMAIL","Informe un email válido.");
-
+    define("NEWPASS_CREATE_ERROR",'<b>ERROR: No se pudo generar una nueva contraseña.</b>');
+    define("NEWPASS_CHANGE_ERROR",'<b>ERROR: No se pudo cambiar su contraseña.</b>');
     define("NEWPASS_INVALID_PASSWORD",'Contraseña incorrecta');
-    define("NEWPASS_DOMAIN_NOT_PERMITTED",'Acción no permitida. Contacte el departamiento de soporte de su institución.');
+    define("NEWPASS_DOMAIN_NOT_PERMITTED",'Acción no permitida para este usuario.');
     define("NEWPASS_PASSWORD_SENT",'Una nueva contraseña fue enviada para su correo electrónico.');
     define("NOTICE",'Mensaje al usuário');
     define("NOTICE_MESSAGE",'');
@@ -693,9 +695,10 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Phone: (55 11) 5576-980
     define("VALMSG_G_EMPTY","Mandatory field.");
     define("VALMSG_LOGIN","Type a valid e-mail.");
     define("VALMSG_EMAIL","Type a valid e-mail.");
-
+    define("NEWPASS_CREATE_ERROR",'<b>ERROR: Could not generate a new password.</b>');
+    define("NEWPASS_CHANGE_ERROR",'<b>ERROR: Could not be changed your password.</b>');
     define("NEWPASS_INVALID_PASSWORD",'Invalid password');
-    define("NEWPASS_DOMAIN_NOT_PERMITTED",'Action not allowed for this User. Please contact the support department of your institution.');    
+    define("NEWPASS_DOMAIN_NOT_PERMITTED",'Action not allowed for this user.');    
     define("NEWPASS_PASSWORD_SENT",'A new password was sent to your e-mail.');
     define("NOTICE",'Notice to the users');
     define("NOTICE_MESSAGE",'');

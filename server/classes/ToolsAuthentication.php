@@ -179,6 +179,7 @@ class ToolsRegister {
      *
      */
     public static function authenticateRegisteringUser($objUserArg){
+        $result = array();
         $retValue = false;
 
         $mailUserID = $objUserArg->getID();

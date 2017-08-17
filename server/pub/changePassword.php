@@ -32,14 +32,16 @@ if ( 'atualizar' == $acao && $oldPassword && $newPassword && $userID ) {
     if( $userID && filter_var($userID, FILTER_VALIDATE_EMAIL) ) {
         $retValue = UserDAO::changePassword($userID, $oldPassword, $newPassword);
  
-        if( $retValue === false || 'DomainNotPermitted' === $retValue )
+        if( $retValue === false )
+            $sysMsg = NEWPASS_CHANGE_ERROR;
+        elseif( 'DomainNotPermitted' === $retValue )
             $sysMsg = NEWPASS_DOMAIN_NOT_PERMITTED;
         elseif( 'invalidpass' === $retValue )
             $sysMsg = NEWPASS_INVALID_PASSWORD;
         else
             $sysMsg = USER_PASSWORD_UPDATE;
     } else {
-        $sysMsg = NEWPASS_DOMAIN_NOT_PERMITTED;
+        $sysMsg = NEWPASS_CHANGE_ERROR;
     }
 }
 

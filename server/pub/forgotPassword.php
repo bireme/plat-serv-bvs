@@ -20,13 +20,14 @@ if ( 'enviar' == $acao ) {
     if( filter_var($_REQUEST['login'], FILTER_VALIDATE_EMAIL) ) {
         $retValue = UserDAO::createNewPassword($_REQUEST['login']);
  
-        if( $retValue === false || 'DomainNotPermitted' === $retValue ){
+        if( $retValue === false )
+            $sysMsg = NEWPASS_CREATE_ERROR;
+        elseif( 'DomainNotPermitted' === $retValue )
             $sysMsg = NEWPASS_DOMAIN_NOT_PERMITTED;
-        }else{            
+        else
             $sysMsg = NEWPASS_PASSWORD_SENT;
-        }
     } else {
-        $sysMsg = NEWPASS_DOMAIN_NOT_PERMITTED;
+        $sysMsg = NEWPASS_CREATE_ERROR;
     }
 }
 
