@@ -270,14 +270,30 @@
         padding-right: 0 !important;
     }
 
-    body.main_page.modal-open .modal {
-        display: table;
-        padding-top: 20px;
-    }
-
     body.main_page .omb_row-sm-offset-3 div[class*="col-"] {
         padding-left: 30px;
         padding-right: 30px;
+    }
+
+    .omb_login .row {
+        margin-right: 0 !important;
+        margin-left: 0 !important;
+    }
+}
+
+@media only screen 
+and (max-device-width : 320px) {
+    .omb_login .omb_authTitle img.logo {
+        margin-left: 20px !important;
+        margin-top: 10px;
+    }
+
+    .omb_login h1.omb_authTitle {
+        background-position: 110px !important;
+    }
+
+    .omb_login .login-area .omb_description ul {
+        padding-left: 1.5em;
     }
 }
 
@@ -307,7 +323,7 @@ and (max-device-width : 568px) {
     .omb_login h1.omb_authTitle {
         background: url(../../images/default/bireme_vert.png) right no-repeat;
         height: 180px;
-        margin-top: -16px;
+        margin-top: -15px;
     }
 
 	.login-area .login-box,
@@ -330,10 +346,6 @@ and (max-device-width : 1024px) {
 
 	.login-area {
         display: block;
-    }
-
-	.omb_login .omb_authTitle {
-        display: block !important;
     }
 
 	.omb_login .omb_authTitle img.logo {
