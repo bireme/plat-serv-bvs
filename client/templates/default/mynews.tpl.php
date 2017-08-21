@@ -1,7 +1,7 @@
 <?require_once(dirname(__FILE__)."/header.tpl.php");?>
 <?require_once(dirname(__FILE__)."/top.tpl.php");?>
 <div class="breadCrumb">
-    <a href="<?php echo $_SERVER['SCRIPT_NAME']; ?>/authentication"><?=$trans->getTrans($_REQUEST["action"],'HOME')?></a>&gt; <?=$trans->getTrans($_REQUEST["action"],'MY_NEWS')?>
+    <a href="<?=RELATIVE_PATH?>/controller/authentication"><?=$trans->getTrans($_REQUEST["action"],'HOME')?></a>&gt; <?=$trans->getTrans($_REQUEST["action"],'MY_NEWS')?>
 </div>
 <div class="middle">
     <div class="content">

@@ -482,7 +482,7 @@ class UserDAO {
         if($addConfirm !== false){
             $to = array($email);
             $tpl = str_replace('#LANG#', $_SESSION['lang'], EMAIL_CONFIRMATION_TEMPLATE);
-            $home = $_SERVER['HTTP_HOST'] . RELATIVE_PATH . '/controller/authentication';
+            $home = $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . RELATIVE_PATH . '/controller/authentication';
             $body = str_replace('#SITE#',
                 $_SERVER['HTTP_HOST'],
                 file_get_contents($tpl));

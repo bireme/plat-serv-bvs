@@ -6,8 +6,8 @@
         <div class="col-md-3 left_col">
           <div class="left_col scroll-view">
             <div class="navbar nav_title" style="border: 0;">
-              <a href="<?php echo $_SERVER['SCRIPT_NAME']; ?>/authentication" class="site_title logo-md"><img src="<?=RELATIVE_PATH?>/images/<?=$_SESSION["skin"]?>/logo-md-<?=$_SESSION["lang"]?>.png" alt="VHL Logo"> <span><?=$trans->getTrans('menu','MY_VHL')?></span></a>
-              <a href="<?php echo $_SERVER['SCRIPT_NAME']; ?>/authentication" class="site_title logo-sm" style="display: none;"><img src="<?=RELATIVE_PATH?>/images/<?=$_SESSION["skin"]?>/logo-sm-<?=$_SESSION["lang"]?>.png" alt="VHL Logo"></a>
+              <a href="<?=RELATIVE_PATH?>/controller/authentication" class="site_title logo-md"><img src="<?=RELATIVE_PATH?>/images/<?=$_SESSION["skin"]?>/logo-md-<?=$_SESSION["lang"]?>.png" alt="VHL Logo"> <span><?=$trans->getTrans('menu','MY_VHL')?></span></a>
+              <a href="<?=RELATIVE_PATH?>/controller/authentication" class="site_title logo-sm" style="display: none;"><img src="<?=RELATIVE_PATH?>/images/<?=$_SESSION["skin"]?>/logo-sm-<?=$_SESSION["lang"]?>.png" alt="VHL Logo"></a>
             </div>
 
             <div class="clearfix"></div>
@@ -38,7 +38,7 @@
                 <ul class="nav side-menu step2">
                   <li class="active step2"><a><i class="fa fa-dashboard"></i> <?=$trans->getTrans('menu','DASHBOARD')?> <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu" style="display: block;">
-                      <li class="child step3"><a href="<?php echo $_SERVER['SCRIPT_NAME']; ?>/authentication"><?=$trans->getTrans('menu','HOME')?></a></li>
+                      <li class="child step3"><a href="<?=RELATIVE_PATH?>/controller/authentication"><?=$trans->getTrans('menu','HOME')?></a></li>
                       <li class="child step15"><a href="<?=RELATIVE_PATH?>/controller/mydocuments/control/business"><?=$trans->getTrans('menu','MY_SHELF')?></a></li>
                       <li class="child step20"><a href="<?=RELATIVE_PATH?>/controller/myprofiledocuments/control/business"><?=$trans->getTrans('menu','MY_PROFILE_DOCUMENTS')?></a></li>
                       <!-- <li><a href="<?=RELATIVE_PATH?>/controller/suggesteddocs/control/business"><?=$trans->getTrans('menu','SUGGESTED_DOCS')?></a></li> -->
@@ -47,7 +47,7 @@
                       <li class="child step33"><a href="<?=RELATIVE_PATH?>/controller/orcidworks/control/business"><?=$trans->getTrans('menu','ORCID_WORKS')?></a></li>
                     </ul>
                   </li>
-                  <li class="hide side step3"><a href="<?php echo $_SERVER['SCRIPT_NAME']; ?>/authentication"><i class="fa fa-home"></i> <?=$trans->getTrans('menu','HOME')?></span></a>
+                  <li class="hide side step3"><a href="<?=RELATIVE_PATH?>/controller/authentication"><i class="fa fa-home"></i> <?=$trans->getTrans('menu','HOME')?></span></a>
                   <li class="hide side step15"><a href="<?=RELATIVE_PATH?>/controller/mydocuments/control/business"><i class="fa fa-file"></i> <?=$trans->getTrans('menu','MY_SHELF')?></a></li>
                   <li class="hide side step20"><a href="<?=RELATIVE_PATH?>/controller/myprofiledocuments/control/business"><i class="fa fa-folder-open"></i> <?=$trans->getTrans('menu','MY_PROFILE_DOCUMENTS')?></a></li>
                   <li class="hide side step24"><a href="<?=RELATIVE_PATH?>/controller/mysearches/control/business"><i class="fa fa-search"></i> <?=$trans->getTrans('menu','MY_SEARCHES')?></a></li>
