@@ -74,14 +74,14 @@
                               <tr>
                                 <td id="s1">1</td>
                                 <td class="query step26">health</td>
-                                <td class="filter step27"></td>
+                                <td class="filter step27">db:("MEDLINE")</td>
                                 <td class="step28">
                                   <?php if ( 'portal' == $_SESSION['iahx'] ) : ?>
-                                  <button id="v1" class="btn btn-primary btn-xs portal" value="portal" data-query="health" data-filter=""><i class="fa fa-search"></i> <?=$trans->getTrans($_REQUEST["action"],'VIEW')?></button>
+                                  <button id="v1" class="btn btn-primary btn-xs portal" value="portal" data-query="health" data-filter="db:('MEDLINE')"><i class="fa fa-search"></i> <?=$trans->getTrans($_REQUEST["action"],'VIEW')?></button>
                                   <?php else : ?>
-                                  <button id="v1" class="btn btn-primary btn-xs search" value="<?php echo $_SESSION['iahx']; ?>" data-label="<?php echo $label; ?>" data-query="health" data-filter=""><i class="fa fa-search search"></i> <?=$trans->getTrans($_REQUEST["action"],'VIEW')?></button>
+                                  <button id="v1" class="btn btn-primary btn-xs search" value="<?php echo $_SESSION['iahx']; ?>" data-label="<?php echo $label; ?>" data-query="health" data-filter="db:('MEDLINE')"><i class="fa fa-search search"></i> <?=$trans->getTrans($_REQUEST["action"],'VIEW')?></button>
                                   <?php endif; ?>
-                                  <button id="c1" class="btn btn-info btn-xs combine" data-query="health" data-filter=""><i class="fa fa-compress combine"></i> <?=$trans->getTrans($_REQUEST["action"],'COMBINE')?></button>
+                                  <button id="c1" class="btn btn-info btn-xs combine" data-query="health" data-filter="db:('MEDLINE')"><i class="fa fa-compress combine"></i> <?=$trans->getTrans($_REQUEST["action"],'COMBINE')?></button>
                                 </td>
                               </tr>
                               <tr>
