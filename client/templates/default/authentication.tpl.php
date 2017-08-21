@@ -21,6 +21,7 @@
                     <h1 class="omb_authTitle">
                         <img src="<?=RELATIVE_PATH?>/images/<?=$_SESSION["skin"]?>/logo-md-<?=$_SESSION["lang"]?>.png" alt="VHL Logo" class="logo">
                         <img src="<?=RELATIVE_PATH?>/images/<?=$_SESSION["skin"]?>/logo-bireme-md-<?=$_SESSION["lang"]?>.png" alt="VHL Logo BIREME" class="logo-bireme">
+                        <img src="<?=RELATIVE_PATH?>/images/<?=$_SESSION["skin"]?>/bireme_vert_<?=$_SESSION["lang"]?>.png" alt="VHL Logo BIREME" class="logo-bireme-vert">
                         <span><?=$trans->getTrans($_REQUEST["action"],'MY_VHL')?></span>
                     </h1>
                 </div>

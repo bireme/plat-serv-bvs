@@ -241,6 +241,10 @@
     padding: 10px 0;
 }
 
+.omb_login .omb_authTitle .logo-bireme-vert {
+    display: none;
+}
+
 @media (min-width: 1200px) {
     body.main_page .container {
         width: 1162px;
@@ -284,7 +288,6 @@
 @media only screen 
 and (max-device-width : 320px) {
     .omb_login .omb_authTitle img.logo {
-        margin-left: 20px !important;
         margin-top: 10px;
     }
 
@@ -299,7 +302,7 @@ and (max-device-width : 320px) {
 
 @media only screen 
 and (min-device-width : 320px) 
-and (max-device-width : 568px) {
+and (max-device-width : 736px) {
     .omb_login h1.omb_authTitle {
         font-size: 28px;
     }
@@ -308,22 +311,22 @@ and (max-device-width : 568px) {
         display: block;
     }
 
-	.omb_login .omb_authTitle {
-        display:block !important;
-    }
-
 	.omb_login .omb_authTitle img.logo {
-        margin-left: 40px;
+        position: relative;
+        left: 30px;
     }
 
 	.omb_login .omb_authTitle .logo-bireme {
-        display:none;
+        display: none;
     }
 	
     .omb_login h1.omb_authTitle {
-        background: url(../../images/default/bireme_vert.png) right no-repeat;
         height: 180px;
         margin-top: -15px;
+    }
+
+    .omb_login .omb_authTitle .logo-bireme-vert {
+        display: block;
     }
 
 	.login-area .login-box,
