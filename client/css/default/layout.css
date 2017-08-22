@@ -221,7 +221,7 @@ body .container.body .right_col {
 
 .toggle {
     position: absolute;
-    z-index: 1;
+    /*z-index: 1;*/
 }
 
 a.operator {
@@ -427,16 +427,16 @@ select.bulkactions {
     display: none;
 }
 
-.nav-sm #datatable-search {
+#datatable-search {
     table-layout: fixed;
     width: 100% !important;
 }
 
-.nav-sm #datatable-search th.query {
+#datatable-search th.query {
     width: auto !important;
 }
 
-.nav-sm #datatable-search td.query {
+#datatable-search td.query {
     word-wrap: break-word;
 }
 
@@ -602,13 +602,6 @@ ul.messages li, .tasks li {
 }
 
 @media only screen
-and (max-device-width : 360px) {
-    .introjs-tooltip .introjs-tooltipbuttons {
-        padding-right: 1.5em;
-    }
-}
-
-@media only screen
 and (max-device-width : 412px) {
     .introjs-tooltip .introjs-tooltipbuttons {
         padding-right: 1em;
@@ -622,7 +615,11 @@ and (max-device-width : 414px) {
         margin-bottom: 20px;
     }
 
-    .doc-actions {
+    .nav-md .doc-actions {
+        display: flex;
+    }
+
+    .nav-sm .doc-actions {
         display: flex;
         flex-direction: column;
     }
@@ -630,6 +627,10 @@ and (max-device-width : 414px) {
     .doc-actions a.label {
         margin: 2px 0;
         padding: 5px;
+    }
+
+    .nav-sm .doc-actions a.label {
+        text-align: left;
     }
 
     .related_docs ol {
@@ -699,11 +700,11 @@ and (max-device-width : 768px) {
 		 background: #FFF url(../../images/default/bireme_azul_en_horizontal.jpg ) top no-repeat !important;             
 	}
 
-	.nav-md footer p {
+    .nav-sm footer p {
         margin-top: 45px;
     }
 
-	.nav-sm footer p {
+	.nav-md footer p {
         margin-top: 45px;
     }
 }
@@ -731,6 +732,14 @@ and (min-device-width : 1024px) {
 and (max-device-width : 320px) {
     .nav-sm #menu_toggle {
         padding: 15px 5px 0;
+    }
+
+    .nav-sm #menu_toggle i.fa-bars {
+        font-size: 20px
+    }
+
+    .nav-sm .nav.toggle {
+        padding-top: 18px;
     }
 
     .introjs-tooltip .introjs-tooltipbuttons {
@@ -776,7 +785,17 @@ and (max-device-width : 736px) {
         margin: 20px;
     }
 
-    .x_title h2 {
+    .nav-sm .x_title {
+        display: flex;
+    }
+
+    .nav-sm .x_title h2 {
+        float: none;
+        width: auto !important;
+        white-space: nowrap !important;
+    }
+
+    .nav-sm .nav_menu nav form {
         width: auto !important;
     }
 
@@ -784,5 +803,16 @@ and (max-device-width : 736px) {
         float: none !important;
         text-align: center !important;
         margin-bottom: 20px;
+    }
+}
+
+@media only screen
+and (max-device-width : 360px) {
+    .introjs-tooltip .introjs-tooltipbuttons {
+        padding-right: 1.5em;
+    }
+
+    .nav-sm footer {
+        background-size: contain !important;
     }
 }

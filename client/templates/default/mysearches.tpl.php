@@ -31,7 +31,7 @@
                               <th style="width: 10%" class="all">#</th>
                               <th style="width: 35%" class="all query"><?=$trans->getTrans($_REQUEST["action"],'QUERY')?></th>
                               <th style="width: 35%" class="min-tablet-l filter"><?=$trans->getTrans($_REQUEST["action"],'FILTERS')?></th>
-                              <th style="width: 20%"><?=$trans->getTrans($_REQUEST["action"],'ACTIONS')?></th>
+                              <th style="width: 20%" class="min-tablet"><?=$trans->getTrans($_REQUEST["action"],'ACTIONS')?></th>
                             </tr>
                           </thead>
                           <tbody>
