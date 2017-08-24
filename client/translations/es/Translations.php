@@ -109,11 +109,11 @@ class Translations {
         self::$trans["menu"]["MY_DATA"] = 'Editar Perfil';
         self::$trans["menu"]["MY_ALERTS"] = 'Mis Alertas';
         self::$trans["menu"]["SEARCH"] = 'Buscar';
-        self::$trans["menu"]["SEARCH_FOR"] = 'Buscar por...';
+        self::$trans["menu"]["SEARCH_FOR"] = 'Buscar en la BVS por...';
         self::$trans["menu"]["MY_SEARCHES"] = 'Historial de Búsquedas en BVS';
         self::$trans["menu"]["KEYWORDS"] = 'Palabras clave';
-        self::$trans["menu"]["SUGGESTED_DOCS"] = 'Documentos Relacionados';
-        self::$trans["menu"]["ORCID_WORKS"] = 'ORCID - Mis publicaciones';
+        self::$trans["menu"]["SUGGESTED_DOCS"] = 'Similares';
+        self::$trans["menu"]["ORCID_WORKS"] = 'Mis Publicaciones';
         self::$trans["menu"]["RECENT_ACTIVITIES"] = 'Actividades Recientes';
         self::$trans["menu"]["SEE_ALL_DOCS"] = 'Ver todos los documentos';
         self::$trans["menu"]["SEE_ALL_LINKS"] = 'Ver todos los enlaces';
@@ -168,7 +168,7 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
         self::$trans["suggesteddocs"]["PAGE"] = 'Página';
         self::$trans["suggesteddocs"]["NEXT"] = 'Siguiente';
         self::$trans["suggesteddocs"]["PREVIOUS"] = 'Anterior';
-        self::$trans["suggesteddocs"]["SUGGESTED_DOCS"] = 'Documentos Relacionados';
+        self::$trans["suggesteddocs"]["SUGGESTED_DOCS"] = 'Similares';
         self::$trans["suggesteddocs"]["SUGGESTED_DOCS_NO_REGISTERS_FOUND"] = 'Ninguna sugerencia de documentos';
         self::$trans["suggesteddocs"]["REFERENCE"] = 'Seleccione los documentos de referencia para sugerencias:';
         self::$trans["suggesteddocs"]["NO_REFERENCES"] = 'Ningún documento encontrado con esta referencia';
@@ -176,7 +176,7 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
         self::$trans["suggesteddocs"]["CONFIG"] = 'Configuraciones';
         self::$trans["suggesteddocs"]["DOCS"] = 'Documentos';
         self::$trans["suggesteddocs"]["DOCS_SOURCE"] = 'Origen de los documentos';
-        self::$trans["suggesteddocs"]["ORCID"] = 'ORCID - Mis Publicaciones';
+        self::$trans["suggesteddocs"]["ORCID"] = 'Mis Publicaciones';
         self::$trans["suggesteddocs"]["COLLECTIONS"] = 'Documentos Favoritos';
         self::$trans["suggesteddocs"]["PROFILES"] = 'Temas de Interés';
         self::$trans["suggesteddocs"]["INCOMING_FOLDER"] = 'Bandeja de Entrada';
@@ -185,7 +185,7 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
         self::$trans["suggesteddocs"]["LOADING"] = 'Cargando...';
         self::$trans["suggesteddocs"]["SELECTED_DOCS"] = 'Documentos seleccionados';
         self::$trans["suggesteddocs"]["SEND"] = 'Enviar';
-        self::$trans["suggesteddocs"]["RELATED_DOCS"] = 'Documentos relacionados';
+        self::$trans["suggesteddocs"]["RELATED_DOCS"] = 'similares';
         self::$trans["suggesteddocs"]["RELATED_DOCS_ALERT"] = 'Ningún documento relacionado';
 
     // Terms of orcidworks pages
@@ -193,9 +193,9 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
         self::$trans["orcidworks"]["PAGE"] = 'Página';
         self::$trans["orcidworks"]["NEXT"] = 'Siguiente';
         self::$trans["orcidworks"]["PREVIOUS"] = 'Anterior';
-        self::$trans["orcidworks"]["ORCID_WORKS"] = 'ORCID - Mis Publicaciones';
+        self::$trans["orcidworks"]["ORCID_WORKS"] = 'Mis Publicaciones';
         self::$trans["orcidworks"]["ORCID_WORKS_NO_REGISTERS_FOUND"] = 'No se ha encontrado ninguna publicación. Para ver sus publicaciones, por favor informe el ORCID ID en su Perfil.';
-        self::$trans["orcidworks"]["GOOGLE_SCHOLAR"] = 'Ver en Google Scholar';
+        self::$trans["orcidworks"]["GOOGLE_SCHOLAR"] = 'ver en Google Scholar';
 
     // General Terms
         self::$trans["general"]["IDENTIFICATION"] = 'Biblioteca Virtual en Salud';
@@ -219,16 +219,16 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
         self::$trans["mydocuments"]["MONITOR_CITATION"] = 'citaciones monitoradas';
         self::$trans["mydocuments"]["MONITOR_ACCESS"] = 'acceso monitorado';
         self::$trans["mydocuments"]["ACCESS_LIST_NO_REGISTERS_FOUND"] = 'Ningún registro localizado';
-        self::$trans["mydocuments"]["EDIT_FOLDER"] = 'Editar Coleccións';
-        self::$trans["mydocuments"]["REMOVE_FOLDER"] = 'Apagar Colección';
+        self::$trans["mydocuments"]["EDIT_FOLDER"] = 'editar colección';
+        self::$trans["mydocuments"]["REMOVE_FOLDER"] = 'borrar colección';
         self::$trans["mydocuments"]["PUBLISH_FOLDER"] = 'Hacer público';
         self::$trans["mydocuments"]["MAKE_FOLDER_PRIVATE"] = 'Hacer privado';
         self::$trans["mydocuments"]["PAGE"] = 'Pagina';
         self::$trans["mydocuments"]["NEXT"] = 'Siguiente';
         self::$trans["mydocuments"]["PREVIOUS"] = 'Anterior';
         self::$trans["mydocuments"]["BULK_ACTIONS"] = 'Acciones en lote';
-        self::$trans["mydocuments"]["BULK_REMOVE_DOCS"] = 'Eliminar documentos';
-        self::$trans["mydocuments"]["BULK_MOVE_DOCS"] = 'Mover documentos';
+        self::$trans["mydocuments"]["BULK_REMOVE_DOCS"] = 'Borrar';
+        self::$trans["mydocuments"]["BULK_MOVE_DOCS"] = 'Mover';
 
     // Tems of directories pages
         self::$trans["directories"]["FEATURE"] = 'Documentos Favoritos';
@@ -242,7 +242,7 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
         self::$trans["directories"]["REMOVE_CONTENT"] = 'Borrar contenído';
         self::$trans["directories"]["MOVE"] = 'mover';
         self::$trans["directories"]["MOVE_TO"] = 'mover para';
-        self::$trans["directories"]["MOVE_DOCUMENT_TO"] = 'mover para';
+        self::$trans["directories"]["MOVE_DOCUMENT_TO"] = 'mover para colección';
         self::$trans["directories"]["MOVE_CONTENT_TO_OTHER_FOLDER"] = 'Mover contenído para otra colección';
         self::$trans["directories"]["INCOMING_FOLDER"] = 'Caja de Entrada';
         self::$trans["directories"]["ADD_DIR_SUCESS"] = 'Operación realizada con succeso.';
@@ -258,9 +258,9 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
         self::$trans["mylinks"]["DATE"] = 'Fecha';
         self::$trans["mylinks"]["MY_RANK"] = 'Mi clasificación';
         self::$trans["mylinks"]["TOOLS"] = 'Mis Enlaces';
-        self::$trans["mylinks"]["ADD_LINK"] = 'Añadir Enlace';
-        self::$trans["mylinks"]["MY_LINKS"] = 'Mis Enlaces';
-        self::$trans["mylinks"]["REMOVE_LINK"] = 'remover enlace';
+        self::$trans["mylinks"]["ADD_LINK"] = 'añadir enlace';
+        self::$trans["mylinks"]["MY_LINKS"] = 'Enlaces Favoritos';
+        self::$trans["mylinks"]["REMOVE_LINK"] = 'borrar enlace';
         self::$trans["mylinks"]["EDIT_LINK"] = 'editar enlace';
         self::$trans["mylinks"]["HIDE_FROM_HOME"] = 'remover de la home';
         self::$trans["mylinks"]["SHOW_IN_HOME"] = 'publicar en la home';
@@ -317,7 +317,7 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
         self::$trans["myprofiledocuments"]["SciELO.orgiahx"] = 'Rede SciELO';
         self::$trans["myprofiledocuments"]["MY_PROFILES"] = 'Temas de Interés';
         self::$trans["myprofiledocuments"]["VIEW_RESULTS_IN"] = 'ver resultados em';
-        self::$trans["myprofiledocuments"]["REMOVE_PROFILE"] = 'remover tema';
+        self::$trans["myprofiledocuments"]["REMOVE_PROFILE"] = 'borrar tema';
         self::$trans["myprofiledocuments"]["EDIT_PROFILE"] = 'editar tema';
         self::$trans["myprofiledocuments"]["ADD_PROFILE"] = 'añadir tema';
         self::$trans["myprofiledocuments"]["TOOLS"] = 'Mis Temas';

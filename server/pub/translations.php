@@ -281,7 +281,7 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
     define("MY_SEARCHES",'Histórico de Buscas na BVS');
     define("KEYWORDS",'Palavras-chave');
     define("SUGGESTED_DOCS",'Similares');
-    define("ORCID_WORKS",'ORCID - Minhas Publicações');
+    define("ORCID_WORKS",'Minhas Publicações');
     define("RECENT_ACTIVITIES",'Atividades Recentes');
     define("SEE_ALL_DOCS",'Ver todos os documentos');
     define("SEE_ALL_LINKS",'Ver todos os links');
@@ -579,10 +579,10 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
     define("MY_ALERTS",'Mis Alertas');
     define("SEARCH",'Buscar');
     define("SEARCH_FOR",'Buscar en la BVS por...');
-    define("MY_SEARCHES",'Historial de Búsquedas en la BVS');
+    define("MY_SEARCHES",'Historial de Búsquedas en BVS');
     define("KEYWORDS",'Palabras-clave');
     define("SUGGESTED_DOCS",'Similares');
-    define("ORCID_WORKS",'ORCID - Mis Publicaciones');
+    define("ORCID_WORKS",'Mis Publicaciones');
     define("RECENT_ACTIVITIES",'Actividades Recientes');
     define("SEE_ALL_DOCS",'Ver todos los documentos');
     define("SEE_ALL_LINKS",'Ver todos los enlaces');
@@ -879,11 +879,11 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Phone: (55 11) 5576-980
     define("MY_DATA",'Edit Profile');
     define("MY_ALERTS",'My Alerts');
     define("SEARCH",'Search');
-    define("SEARCH_FOR",'Search for...');
+    define("SEARCH_FOR",'Search the VHL for...');
     define("MY_SEARCHES",'VHL Search History');
     define("KEYWORDS",'Keywords');
-    define("SUGGESTED_DOCS",'Related Documents');
-    define("ORCID_WORKS",'ORCID - My Publications');
+    define("SUGGESTED_DOCS",'Similars');
+    define("ORCID_WORKS",'My Publications');
     define("RECENT_ACTIVITIES",'Recent Activities');
     define("SEE_ALL_DOCS",'See all documents');
     define("SEE_ALL_LINKS",'See all links');

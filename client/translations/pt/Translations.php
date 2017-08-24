@@ -130,7 +130,7 @@ usuário para oferecer serviços personalizados e facilidades tais como:</p>
         self::$trans["menu"]["REMOVE_LINK"] = 'Link excluído';
         self::$trans["menu"]["QUERY"] = 'Expressão de busca';
         self::$trans["menu"]["VIEW"] = 'Buscar';
-        self::$trans["menu"]["SEARCH_WIDGET"] = 'Minhas Buscas na BVS';
+        self::$trans["menu"]["SEARCH_WIDGET"] = 'Buscas na BVS';
         self::$trans["menu"]["PROFILE_WIDGET"] = 'Temas de Interesse';
         self::$trans["menu"]["SHELF_WIDGET"] = 'Documentos Favoritos';
         self::$trans["menu"]["START_TOUR"] = 'Iniciar Tour';
@@ -177,7 +177,7 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
         self::$trans["suggesteddocs"]["CONFIG"] = 'Configurações';
         self::$trans["suggesteddocs"]["DOCS"] = 'Documentos';
         self::$trans["suggesteddocs"]["DOCS_SOURCE"] = 'Origem dos documentos';
-        self::$trans["suggesteddocs"]["ORCID"] = 'ORCID - Minhas Publicações';
+        self::$trans["suggesteddocs"]["ORCID"] = 'Minhas Publicações';
         self::$trans["suggesteddocs"]["COLLECTIONS"] = 'Documentos Favoritos';
         self::$trans["suggesteddocs"]["PROFILES"] = 'Temas de Interesse';
         self::$trans["suggesteddocs"]["INCOMING_FOLDER"] = 'Caixa de Entrada';
@@ -186,7 +186,7 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
         self::$trans["suggesteddocs"]["LOADING"] = 'Carregando...';
         self::$trans["suggesteddocs"]["SELECTED_DOCS"] = 'documentos selecionados';
         self::$trans["suggesteddocs"]["SEND"] = 'Enviar';
-        self::$trans["suggesteddocs"]["RELATED_DOCS"] = 'Similares';
+        self::$trans["suggesteddocs"]["RELATED_DOCS"] = 'similares';
         self::$trans["suggesteddocs"]["RELATED_DOCS_ALERT"] = 'Nenhum documento similar';
 
     // Terms of orcidworks pages
@@ -213,15 +213,15 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
         self::$trans["mydocuments"]["DATE"] = 'Data';
         self::$trans["mydocuments"]["MY_RANK"] = 'Meu ranking';
         self::$trans["mydocuments"]["MOVE"] = 'mover';
-        self::$trans["mydocuments"]["MOVE_TO"] = 'mover';
+        self::$trans["mydocuments"]["MOVE_TO"] = 'mover para';
         self::$trans["mydocuments"]["MOVE_DOCUMENT_TO"] = 'mover';
         self::$trans["mydocuments"]["FULL_TEXT"] = 'mostrar';
-        self::$trans["mydocuments"]["REMOVE_FROM_COLLECTION"] = 'excluir';
+        self::$trans["mydocuments"]["REMOVE_FROM_COLLECTION"] = 'excluir da coleção';
         self::$trans["mydocuments"]["MONITOR_CITATION"] = '';
         self::$trans["mydocuments"]["MONITOR_ACCESS"] = '';
         self::$trans["mydocuments"]["ACCESS_LIST_NO_REGISTERS_FOUND"] = 'Nenhum registro encontrado';
-        self::$trans["mydocuments"]["EDIT_FOLDER"] = 'editar';
-        self::$trans["mydocuments"]["REMOVE_FOLDER"] = 'excluir';
+        self::$trans["mydocuments"]["EDIT_FOLDER"] = 'editar coleção';
+        self::$trans["mydocuments"]["REMOVE_FOLDER"] = 'excluir coleção';
         self::$trans["mydocuments"]["PUBLISH_FOLDER"] = '';
         self::$trans["mydocuments"]["MAKE_FOLDER_PRIVATE"] = '';
         self::$trans["mydocuments"]["PAGE"] = 'Página';
@@ -234,16 +234,16 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
     // Tems of directories pages
         self::$trans["directories"]["FEATURE"] = 'Documentos Favoritos';
         self::$trans["directories"]["FOLDER_NAME"] = 'Nome da coleção';
-        self::$trans["directories"]["ADD_FOLDER"] = 'adicionar';
-        self::$trans["directories"]["EDIT_FOLDER"] = 'editar';
+        self::$trans["directories"]["ADD_FOLDER"] = 'adicionar coleção';
+        self::$trans["directories"]["EDIT_FOLDER"] = 'editar coleção';
         self::$trans["directories"]["SAVE"] = 'salvar';
         self::$trans["directories"]["CANCEL"] = 'cancelar';
         self::$trans["directories"]["REMOVE"] = 'excluir';
-        self::$trans["directories"]["REMOVE_FOLDER"] = 'excluir';
-        self::$trans["directories"]["REMOVE_CONTENT"] = 'excluir';
+        self::$trans["directories"]["REMOVE_FOLDER"] = 'excluir coleção';
+        self::$trans["directories"]["REMOVE_CONTENT"] = 'Apagar conteúdo';
         self::$trans["directories"]["MOVE"] = 'mover';
         self::$trans["directories"]["MOVE_TO"] = 'mover';
-        self::$trans["directories"]["MOVE_DOCUMENT_TO"] = 'mover';
+        self::$trans["directories"]["MOVE_DOCUMENT_TO"] = 'mover para coleção';
         self::$trans["directories"]["MOVE_CONTENT_TO_OTHER_FOLDER"] = 'Mover para outra coleção';
         self::$trans["directories"]["INCOMING_FOLDER"] = 'Caixa de Entrada';
         self::$trans["directories"]["ADD_DIR_SUCESS"] = 'Operação realizada com sucesso.';
@@ -259,10 +259,10 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
         self::$trans["mylinks"]["DATE"] = 'Data';
         self::$trans["mylinks"]["MY_RANK"] = 'Meu ranking';
         self::$trans["mylinks"]["TOOLS"] = 'Meus Links';
-        self::$trans["mylinks"]["ADD_LINK"] = 'adicionar';
+        self::$trans["mylinks"]["ADD_LINK"] = 'adicionar link';
         self::$trans["mylinks"]["MY_LINKS"] = 'Links Favoritos';
-        self::$trans["mylinks"]["REMOVE_LINK"] = 'excluir';
-        self::$trans["mylinks"]["EDIT_LINK"] = 'editar';
+        self::$trans["mylinks"]["REMOVE_LINK"] = 'excluir link';
+        self::$trans["mylinks"]["EDIT_LINK"] = 'editar link';
         self::$trans["mylinks"]["HIDE_FROM_HOME"] = 'excluir da home page';
         self::$trans["mylinks"]["SHOW_IN_HOME"] = 'publicar na home page';
         self::$trans["mylinks"]["LINK_TITLE"] = 'Título';
@@ -319,8 +319,8 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
         self::$trans["myprofiledocuments"]["MY_PROFILES"] = 'Temas de Interesse';
         self::$trans["myprofiledocuments"]["VIEW_RESULTS_IN"] = 'ver resultados em';
         self::$trans["myprofiledocuments"]["REMOVE_PROFILE"] = 'excluir tema';
-        self::$trans["myprofiledocuments"]["EDIT_PROFILE"] = 'editar';
-        self::$trans["myprofiledocuments"]["ADD_PROFILE"] = 'adicionar';
+        self::$trans["myprofiledocuments"]["EDIT_PROFILE"] = 'editar tema';
+        self::$trans["myprofiledocuments"]["ADD_PROFILE"] = 'adicionar tema';
         self::$trans["myprofiledocuments"]["TOOLS"] = 'Meus temas';
         self::$trans["myprofiledocuments"]["SIMILARS_IN"] = 'Similares';
         self::$trans["myprofiledocuments"]["PROFILE_KEYWORDS"] = 'Palavras-chave';

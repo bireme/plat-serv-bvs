@@ -100,7 +100,7 @@ class Translations {
         self::$trans["menu"]["USERS_SERVICES"] = 'Custom Services';
         self::$trans["menu"]["OLA"] = 'Hello';
         self::$trans["menu"]["LOGOUT"] = 'Sign out';
-        self::$trans["menu"]["MY_PROFILE_DOCUMENTS"] = 'Temas de Interesse';
+        self::$trans["menu"]["MY_PROFILE_DOCUMENTS"] = 'Interest Topics';
         self::$trans["menu"]["MY_SHELF"] = 'Favorite Documents';
         self::$trans["menu"]["MY_LINKS"] = 'Favorite Links';
         self::$trans["menu"]["MY_NEWS"] = 'My News';
@@ -109,11 +109,11 @@ class Translations {
         self::$trans["menu"]["MY_DATA"] = 'Edit Profile';
         self::$trans["menu"]["MY_ALERTS"] = 'My Alerts';
         self::$trans["menu"]["SEARCH"] = 'Search';
-        self::$trans["menu"]["SEARCH_FOR"] = 'Search for...';
+        self::$trans["menu"]["SEARCH_FOR"] = 'Search the VHL for...';
         self::$trans["menu"]["MY_SEARCHES"] = 'VHL Search History';
         self::$trans["menu"]["KEYWORDS"] = 'Keywords';
-        self::$trans["menu"]["SUGGESTED_DOCS"] = 'Related Documents';
-        self::$trans["menu"]["ORCID_WORKS"] = 'ORCID - My Publications';
+        self::$trans["menu"]["SUGGESTED_DOCS"] = 'Similars';
+        self::$trans["menu"]["ORCID_WORKS"] = 'My Publications';
         self::$trans["menu"]["RECENT_ACTIVITIES"] = 'Recent Activities';
         self::$trans["menu"]["SEE_ALL_DOCS"] = 'View all documents';
         self::$trans["menu"]["SEE_ALL_LINKS"] = 'View all links';
@@ -130,7 +130,7 @@ class Translations {
         self::$trans["menu"]["QUERY"] = 'Query';
         self::$trans["menu"]["VIEW"] = 'Display';
         self::$trans["menu"]["SEARCH_WIDGET"] = 'VHL Search';
-        self::$trans["menu"]["PROFILE_WIDGET"] = 'Topics of Interest';
+        self::$trans["menu"]["PROFILE_WIDGET"] = 'Interest Topics';
         self::$trans["menu"]["SHELF_WIDGET"] = 'Favorite Documents';
         self::$trans["menu"]["START_TOUR"] = 'Start Tour';
         self::$trans["menu"]["NEXT_PAGE"] = '<span>Next</span> <span>feature</span>';
@@ -168,7 +168,7 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Phone: (55 11) 5576-980
         self::$trans["suggesteddocs"]["PAGE"] = 'Page';
         self::$trans["suggesteddocs"]["NEXT"] = 'Next';
         self::$trans["suggesteddocs"]["PREVIOUS"] = 'Previous';
-        self::$trans["suggesteddocs"]["SUGGESTED_DOCS"] = 'Related Documents';
+        self::$trans["suggesteddocs"]["SUGGESTED_DOCS"] = 'Similars';
         self::$trans["suggesteddocs"]["SUGGESTED_DOCS_NO_REGISTERS_FOUND"] = 'No suggested documents';
         self::$trans["suggesteddocs"]["REFERENCE"] = 'Choose reference documents for suggestions:';
         self::$trans["suggesteddocs"]["NO_REFERENCES"] = 'No documents found with this reference';
@@ -176,7 +176,7 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Phone: (55 11) 5576-980
         self::$trans["suggesteddocs"]["CONFIG"] = 'Settings';
         self::$trans["suggesteddocs"]["DOCS"] = 'Documents';
         self::$trans["suggesteddocs"]["DOCS_SOURCE"] = 'Source of documents';
-        self::$trans["suggesteddocs"]["ORCID"] = 'ORCID - My Publications';
+        self::$trans["suggesteddocs"]["ORCID"] = 'My Publications';
         self::$trans["suggesteddocs"]["COLLECTIONS"] = 'Favorite Documents';
         self::$trans["suggesteddocs"]["PROFILES"] = 'Topics of Interest';
         self::$trans["suggesteddocs"]["INCOMING_FOLDER"] = 'Inbox';
@@ -185,8 +185,8 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Phone: (55 11) 5576-980
         self::$trans["suggesteddocs"]["LOADING"] = 'Loading...';
         self::$trans["suggesteddocs"]["SELECTED_DOCS"] = 'Selected documents';
         self::$trans["suggesteddocs"]["SEND"] = 'Enviar';
-        self::$trans["suggesteddocs"]["RELATED_DOCS"] = 'Related documents';
-        self::$trans["suggesteddocs"]["RELATED_DOCS_ALERT"] = 'No related documents';
+        self::$trans["suggesteddocs"]["RELATED_DOCS"] = 'similars';
+        self::$trans["suggesteddocs"]["RELATED_DOCS_ALERT"] = 'No similars';
 
     // Terms of orcidworks pages
         self::$trans["orcidworks"]["FEATURE"] = 'My Publications';
@@ -195,7 +195,7 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Phone: (55 11) 5576-980
         self::$trans["orcidworks"]["PREVIOUS"] = 'Previous';
         self::$trans["orcidworks"]["ORCID_WORKS"] = 'My Publications';
         self::$trans["orcidworks"]["ORCID_WORKS_NO_REGISTERS_FOUND"] = 'No publication found. To view your publications, please inform the ORCID ID in your Profile.';
-        self::$trans["orcidworks"]["GOOGLE_SCHOLAR"] = 'View on Google Scholar';
+        self::$trans["orcidworks"]["GOOGLE_SCHOLAR"] = 'view on Google Scholar';
 
     // General Terms
         self::$trans["general"]["IDENTIFICATION"] = 'Virtual Health Library';
@@ -219,30 +219,30 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Phone: (55 11) 5576-980
         self::$trans["mydocuments"]["MONITOR_CITATION"] = 'monitored citations';
         self::$trans["mydocuments"]["MONITOR_ACCESS"] = 'monitored access';
         self::$trans["mydocuments"]["ACCESS_LIST_NO_REGISTERS_FOUND"] = 'No registers found';
-        self::$trans["mydocuments"]["EDIT_FOLDER"] = 'Edit Collection';
-        self::$trans["mydocuments"]["REMOVE_FOLDER"] = 'Remove Collection';
+        self::$trans["mydocuments"]["EDIT_FOLDER"] = 'edit collection';
+        self::$trans["mydocuments"]["REMOVE_FOLDER"] = 'remove collection';
         self::$trans["mydocuments"]["PUBLISH_FOLDER"] = 'Make public';
         self::$trans["mydocuments"]["MAKE_FOLDER_PRIVATE"] = 'Make private';
         self::$trans["mydocuments"]["PAGE"] = 'Page';
         self::$trans["mydocuments"]["NEXT"] = 'Next';
         self::$trans["mydocuments"]["PREVIOUS"] = 'Previous';
         self::$trans["mydocuments"]["BULK_ACTIONS"] = 'Bulk actions';
-        self::$trans["mydocuments"]["BULK_REMOVE_DOCS"] = 'Remove documents';
-        self::$trans["mydocuments"]["BULK_MOVE_DOCS"] = 'Move documents';
+        self::$trans["mydocuments"]["BULK_REMOVE_DOCS"] = 'Remove';
+        self::$trans["mydocuments"]["BULK_MOVE_DOCS"] = 'Move';
 
     // Tems of directories pages
         self::$trans["directories"]["FEATURE"] = 'Favorite Documents';
         self::$trans["directories"]["FOLDER_NAME"] = 'Collection Name';
-        self::$trans["directories"]["ADD_FOLDER"] = 'Add collection';
-        self::$trans["directories"]["EDIT_FOLDER"] = 'Edit collection';
+        self::$trans["directories"]["ADD_FOLDER"] = 'add collection';
+        self::$trans["directories"]["EDIT_FOLDER"] = 'edit collection';
         self::$trans["directories"]["SAVE"] = 'Create';
         self::$trans["directories"]["CANCEL"] = 'Cancel';
         self::$trans["directories"]["REMOVE"] = 'Remove';
-        self::$trans["directories"]["REMOVE_FOLDER"] = 'Remove collection';
+        self::$trans["directories"]["REMOVE_FOLDER"] = 'remove collection';
         self::$trans["directories"]["REMOVE_CONTENT"] = 'Remove content';
         self::$trans["directories"]["MOVE"] = 'Move';
         self::$trans["directories"]["MOVE_TO"] = 'Move to';
-        self::$trans["directories"]["MOVE_DOCUMENT_TO"] = 'Move to';
+        self::$trans["directories"]["MOVE_DOCUMENT_TO"] = 'move to collection';
         self::$trans["directories"]["MOVE_CONTENT_TO_OTHER_FOLDER"] = 'Move content to another collection';
         self::$trans["directories"]["INCOMING_FOLDER"] = 'Inbox';
         self::$trans["directories"]["ADD_DIR_SUCESS"] = 'Operation succeeded';
@@ -253,15 +253,15 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Phone: (55 11) 5576-980
         self::$trans["directories"]["MOVE_DOC_ERROR"] = 'There was an error moving the collection';
 
     // Tems of mylinks pages
-        self::$trans["mylinks"]["FEATURE"] = 'My Links';
+        self::$trans["mylinks"]["FEATURE"] = 'Favorite Links';
         self::$trans["mylinks"]["SHOW_BY"] = 'View List by';
         self::$trans["mylinks"]["DATE"] = 'Date';
         self::$trans["mylinks"]["MY_RANK"] = 'My ranking';
         self::$trans["mylinks"]["TOOLS"] = 'My Links';
-        self::$trans["mylinks"]["ADD_LINK"] = 'Add Link';
-        self::$trans["mylinks"]["MY_LINKS"] = 'My Links';
-        self::$trans["mylinks"]["REMOVE_LINK"] = 'Remove link';
-        self::$trans["mylinks"]["EDIT_LINK"] = 'Edit link';
+        self::$trans["mylinks"]["ADD_LINK"] = 'add link';
+        self::$trans["mylinks"]["MY_LINKS"] = 'Favorite Links';
+        self::$trans["mylinks"]["REMOVE_LINK"] = 'remove link';
+        self::$trans["mylinks"]["EDIT_LINK"] = 'edit link';
         self::$trans["mylinks"]["HIDE_FROM_HOME"] = 'Remove from home';
         self::$trans["mylinks"]["SHOW_IN_HOME"] = 'Publish in home';
         self::$trans["mylinks"]["LINK_TITLE"] = 'Title';
@@ -315,11 +315,11 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Phone: (55 11) 5576-980
         self::$trans["myprofiledocuments"]["FEATURE"] = 'Interest Topics';
         self::$trans["myprofiledocuments"]["LILACS.orgiahx"] = 'LILACS Database';
         self::$trans["myprofiledocuments"]["SciELO.orgiahx"] = 'SciELO Network';
-        self::$trans["myprofiledocuments"]["MY_PROFILES"] = 'Topics of Interest';
+        self::$trans["myprofiledocuments"]["MY_PROFILES"] = 'Interest Topics';
         self::$trans["myprofiledocuments"]["VIEW_RESULTS_IN"] = 'View results in';
-        self::$trans["myprofiledocuments"]["REMOVE_PROFILE"] = 'Remove topic';
-        self::$trans["myprofiledocuments"]["EDIT_PROFILE"] = 'Edit topic';
-        self::$trans["myprofiledocuments"]["ADD_PROFILE"] = 'Add topic';
+        self::$trans["myprofiledocuments"]["REMOVE_PROFILE"] = 'remove topic';
+        self::$trans["myprofiledocuments"]["EDIT_PROFILE"] = 'edit topic';
+        self::$trans["myprofiledocuments"]["ADD_PROFILE"] = 'add topic';
         self::$trans["myprofiledocuments"]["TOOLS"] = 'My Topics';
         self::$trans["myprofiledocuments"]["SIMILARS_IN"] = 'Similars in';
         self::$trans["myprofiledocuments"]["PROFILE_KEYWORDS"] = 'Topics keywords';
@@ -338,7 +338,7 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Phone: (55 11) 5576-980
         self::$trans["myprofiledocuments"]["PAGE"] = 'Page';
         self::$trans["myprofiledocuments"]["NEXT"] = 'Next';
         self::$trans["myprofiledocuments"]["PREVIOUS"] = 'Previous';
-        self::$trans["myprofiledocuments"]["ADD_COLLECTION"] = 'Add to Favorites';
+        self::$trans["myprofiledocuments"]["ADD_COLLECTION"] = 'add to favorites';
         self::$trans["myprofiledocuments"]["INCOMING_FOLDER"] = 'Inbox';
 
     // Terms of mig_id_confirmation pages
