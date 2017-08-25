@@ -216,7 +216,7 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
         self::$trans["mydocuments"]["MOVE_TO"] = 'mover para';
         self::$trans["mydocuments"]["MOVE_DOCUMENT_TO"] = 'mover';
         self::$trans["mydocuments"]["FULL_TEXT"] = 'mostrar';
-        self::$trans["mydocuments"]["REMOVE_FROM_COLLECTION"] = 'excluir da coleção';
+        self::$trans["mydocuments"]["REMOVE_FROM_COLLECTION"] = 'excluir';
         self::$trans["mydocuments"]["MONITOR_CITATION"] = '';
         self::$trans["mydocuments"]["MONITOR_ACCESS"] = '';
         self::$trans["mydocuments"]["ACCESS_LIST_NO_REGISTERS_FOUND"] = 'Nenhum registro encontrado';
@@ -261,8 +261,9 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
         self::$trans["mylinks"]["TOOLS"] = 'Meus Links';
         self::$trans["mylinks"]["ADD_LINK"] = 'adicionar link';
         self::$trans["mylinks"]["MY_LINKS"] = 'Links Favoritos';
-        self::$trans["mylinks"]["REMOVE_LINK"] = 'excluir link';
-        self::$trans["mylinks"]["EDIT_LINK"] = 'editar link';
+        self::$trans["mylinks"]["REMOVE_LINK"] = 'excluir';
+        self::$trans["mylinks"]["EDIT_LINK"] = 'editar';
+        self::$trans["mylinks"]["EDIT_LINK_POPUP"] = 'editar link';
         self::$trans["mylinks"]["HIDE_FROM_HOME"] = 'excluir da home page';
         self::$trans["mylinks"]["SHOW_IN_HOME"] = 'publicar na home page';
         self::$trans["mylinks"]["LINK_TITLE"] = 'Título';
