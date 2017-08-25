@@ -311,6 +311,7 @@ a.operator {
     min-width: 125px;
 }
 
+ul.project_files.documents li,
 ul.project_files.profiles li {
     overflow: hidden;
     white-space: nowrap;

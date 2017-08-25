@@ -112,7 +112,7 @@
                         <section id="step18" class="panel panel-folder">
                             <div class="panel-body">
                                 <h5><?=$trans->getTrans($_REQUEST["action"],'MY_FOLDERS')?></h5>
-                                <ul class="list-docs-unstyled project_files">
+                                <ul class="list-docs-unstyled project_files documents">
                                     <li><a href="javascript: void(0);" onclick="window.open('<?=RELATIVE_PATH?>/controller/directories/control/view/task/add','','resizable=no,width=420,height=250')"><i class="fa fa-plus-circle"></i><?=$trans->getTrans($_REQUEST["action"],'ADD_FOLDER')?></a></li>
                                     <li><a href="<?=RELATIVE_PATH?>/controller/mydocuments/control/business/directory/0"><i class="fa fa-folder-open-o"></i><?=$trans->getTrans($_REQUEST["action"],'INCOMING_FOLDER')?></a></li>
                                     <?if ($responseListDirs["values"] != false ){?>
