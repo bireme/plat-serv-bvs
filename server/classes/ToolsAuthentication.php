@@ -104,6 +104,7 @@ class ToolsAuthentication {
                 $objUser->setEmail($userID);
                 $objUser->setFirstName($userID);
                 $objUser->setPassword($userPass);
+                $objUser->setSource('ldap');
 
                 $retValue = UserDAO::addUser($objUser, 1);
                 $result["userDataStatus"] = false; /* need to complete user data */

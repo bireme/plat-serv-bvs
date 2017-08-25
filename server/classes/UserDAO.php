@@ -135,6 +135,7 @@ class UserDAO {
         $canInsert = true;
 
         $source = $objUser->getSource() ? $objUser->getSource() : '';
+        
         if ( $active && ( empty($source) || 'ldap' == $source ) ) {
             /* add user to LDAP */
             $attrs = array('cn' => $objUser->getID(),

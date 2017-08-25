@@ -268,7 +268,7 @@ $DocTitle = $isUser?UPDATE_USER_TITLE:REGISTER_NEW_USER_TITLE;
                         <form method="post" name="cadastro" class="form-horizontal form-label-left" novalidate>
 
                           <input type="hidden" name="postback" value="1" />
-                          <input type="hidden" name="source" value="<?=trim($usr->getSource())?>" />
+                          <input type="hidden" name="source" value="<?php echo ($isUser) ? trim($usr->getSource()) : 'ldap'; ?>" />
                           <input type="hidden" name="autoconn" value="" />
 
                           <span class="section"><?=PERSONAL_DATA?></span>
