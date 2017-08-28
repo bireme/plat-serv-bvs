@@ -17,8 +17,8 @@
     );
 
     $degrees['es'] = array(
-        "Ensino_Fundamental" => "Enseñanza o Educación Básica",
-        "Ensino_Medio" => "Enseñanza o Educación Media",
+        "Ensino_Fundamental" => "Enseñanza o Educación Primaria",
+        "Ensino_Medio" => "Enseñanza o Educación Secundaria",
         "Ensino_Tecnico" => "Enseñanza o Educación Técnico-Profesional",
         "Graduacao" => "Superior Universitario de Grado",
         "Especializacao" => "Especialización",
