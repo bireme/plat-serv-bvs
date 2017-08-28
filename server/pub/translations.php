@@ -180,15 +180,15 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
 
     <p>A utilização dos produtos, serviços e/ou ferramentas que o Centro Latino-Americano e do Caribe de Informação em Ciências da Saúde (BIREME), Centro Especializado da Organização Pan-Americana da Saúde, Escritório Regional para as Américas da Organização Mundial da Saúde, doravante BIREME/OPAS, coloca à disposição dos usuários, constitui aceitação da seguinte Política de Privacidade. Em caso de discrepância entre o texto em espanhol e qualquer outro idioma desta Política de Privacidade, prevalecerá o documento em espanhol.</p>
 
-    <p>Esta Política de Privacidade complementa a Política Geral de Privacidade da OPAS, disponível em <a href="http://www.paho.org/hq/index.php?option=com_content&view=article&id=3201%3Apah o-website-privacy-policy&catid=6822%3Acorporate-pages&Itemid=2410&lang=pt" target="_blank">http://www.paho.org/hq/index.php?option=com_content&view=article&id=3201%3Apah o-website-privacy-policy&catid=6822%3Acorporate-pages&Itemid=2410&lang=pt</a></p>
+    <p>Esta Política de Privacidade é complementada pela Política Geral de Privacidade da OPAS, disponível em <a href="http://www.paho.org/hq/index.php?option=com_content&view=article&id=3201%3Apah o-website-privacy-policy&catid=6822%3Acorporate-pages&Itemid=2410&lang=es" target="_blank">http://www.paho.org/hq/index.php?option=com_content&view=article&id=3201%3Apah o-website-privacy-policy&catid=6822%3Acorporate-pages&Itemid=2410&lang=es</a></p>
 
     <h3>PRIVACIDADE</h3>
 
-    <p>Sua privacidade na Internet é de suma importância para a BIREME/OPAS. Nesta declaração de privacidade descreve-se a política da BIREME/OPAS no tocante à compilação e troca de informação das pessoas que utilizam o presente site da BIREME/OPAS.</p>
+    <p>Sua privacidade é de suma importância para a BIREME/OPAS. Nesta política de privacidade descrevem-se as práticas da BIREME/OPAS no tocante à compilação e troca de informação dos usuários do presente site da BIREME/OPAS.</p>
 
     <h4>Que tipo de informação é compilada pela BIREME/OPAS?</h4>
 
-    <p style="text-decoration: underline;">Uso normal dos sites</p>
+    <p style="text-decoration: underline;">Uso dos sites</p>
 
     <p>Em geral você pode consultar os sites da BIREME/OPAS sem dizer quem é nem revelar nenhum tipo de informação pessoal. A única informação que compilamos durante uma consulta geral provém dos registros ordinários do servidor e inclui seu endereço IP (protocolo da internet), o nome do domínio, o tipo de navegador, o sistema operacional e informação sobre como chegou a nós, os arquivos que baixou, os sites que consultou e a data e hora dessas consultas.</p>
 
@@ -198,7 +198,7 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
 
     <p>Para certos sites da BIREME/OPAS, o registro ou certas informações pessoais fazem com que seja instalado um cookie* em seu computador, que permitirá que a BIREME/OPAS lembre suas informações da próxima vez que consultar o site, para que não seja preciso colocar novamente seus dados, ajudando-nos a lhe oferecer um serviço melhor.</p>
 
-    <p>Se você se incorporar a um grupo de discussão eletrônica, outros participantes do grupo (inclusive funcionários que não pertencem à OPAS) poderão ver suas informações pessoais. No caso dos grupos de debate abertos, esta informação será pública.</p>
+    <p>Se você se incorporar a um grupo de discussão eletrônica, outros participantes do grupo (incluídas pessoas externas à OPAS) poderão ver suas informações pessoais. No caso dos grupos de debate abertos, esta informação será pública.</p>
 
     <h4>O que a BIREME/OPAS faz com a informação que compila?</h4>
 
@@ -206,7 +206,7 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
 
     <p style="text-decoration: underline;">Informação que permite identificar as pessoas</p>
 
-    <p>A BIREME/OPAS pode usar a informação pessoal proporcionada para:</p>
+    <p>A BIREME/OPAS pode usar a informação pessoal proporcionada, entre outros para:</p>
 
     <ul>
         <li>entrar em contato com você a fim de responder uma consulta ou sugestão, ou para lhe enviar boletins informativos, documentos, publicações etc.;</li>
@@ -218,7 +218,7 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
 
     <h4>Que acontece se não quiser oferecer informação pessoal?</h4>
 
-    <p>É opcional fornecer informação pessoal nos sites da BIREME/OPAS. Se optar por não fornecer esse tipo de informação, de qualquer forma pode consultar e usar os sites da BIREME/OPAS, porém não poderá utilizar certas opções, como acessar os Serviços Personalizados Mi BVS ou gerir fontes de informação da BVS através do sistema web FI-Admin.</p>
+    <p>É voluntário fornecer informação pessoal nos sites da BIREME/OPAS. Se optar por não fornecer esse tipo de informação, de qualquer forma pode consultar e usar os sites da BIREME/OPAS, porém não poderá utilizar certas opções, como acessar os Serviços Personalizados Mi BVS ou gerir fontes de informação da BVS através do sistema web FI-Admin.</p>
 
     <p style="text-decoration: underline;">Opção de modificar a informação ou solicitar que ela seja eliminada</p>
 
@@ -226,7 +226,7 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
 
     <h3>SEGURANÇA</h3>
 
-    <p>Não vendemos nem trocamos nenhum tipo de informação pessoal proporcionada voluntariamente nos sites da BIREME/OPAS a terceiros. Toda a informação fornecida à BIREME/OPAS pelos usuários dos sites da BIREME/OPAS é guardada com grande cuidado e segurança, e não se usará de maneira diferente das estabelecidas por essa política de privacidade, em qualquer política própria do site, ou das que você autorizou explicitamente. A BIREME/OPAS usa uma grande variedade de tecnologias e medidas de segurança para proteger a informação que se encontra nos nossos sistemas a fim de evitar perdas, uso indevido, acesso não autorizado ou divulgação, modificação ou destruição.</p>
+    <p>Não vendemos nem trocamos nenhum tipo de informação pessoal proporcionada voluntariamente nos sites da BIREME/OPAS a terceiros. Toda a informação fornecida à BIREME/OPAS pelos usuários dos sites da BIREME/OPAS é guardada com grande cuidado e segurança, e não se usará de maneira diferente das estabelecidas por essa política de privacidade, em qualquer política própria do site, ou das que você autorizou explicitamente. A BIREME/OPAS usa uma grande variedade de tecnologias e medidas  de segurança para proteger a informação que se encontra nos nossos sistemas a fim de minimizar as possibilidades de perdas, uso indevido, acesso não autorizado ou divulgação, modificação ou destruição.</p>
 
     <p>Todos os nossos funcionários que têm acesso aos dados pessoais e estão ligados ao seu processamento são obrigados a respeitar o sigilo dos assuntos oficiais, inclusive dos dados pessoais.</p>
 
@@ -244,7 +244,7 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
 
     <p>Um cookie é um pequeno conjunto de dados enviado de um servidor da web para seu navegador. É usado normalmente para atribuir uma identificação única ao seu computador e armazenar de forma segura informações como o ID do usuário, senhas, preferências e perfis eletrônicos. É armazenado no disco rígido de seu computador. Você tem a opção de não permitir a instalação de cookies da OPAS/OMS se isso mudar a configuração de seu navegador. Diversos sites podem enviar seus próprios cookies a seu computador. Para proteger sua privacidade, o navegador permite apenas que um site obtenha acesso a seus próprios cookies e não permite o acesso aos instalados por outros sites.</p>
 
-    <p><strong>SE NÃO ESTIVER CONFORME COM ALGUM DOS TERMOS E CONDIÇÕES DESTA POLÍTICA DE PRIVACIDADE DEVERÁ SE ABSTER DE UTILIZAR O SITE E QUALQUER MATERIAL NELE CONTIDO.</strong></p>
+    <p><strong>SE NÃO ESTIVER CONFORME COM ALGUM DOS TERMOS E CONDIÇÕES DESTA POLÍTICA DE PRIVACIDADE DEVERÁ SE ABSTER DE UTILIZAR O SITE E QUALQUER PRODUTO, SERVIÇO E/OU FERRAMENTA NELE CONTIDO.</strong></p>
 
 </div>
 ');
@@ -477,19 +477,19 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
     define('DATA_POLICY_MESSAGE','
 <div class="terms">
 
-    <h2>POLÍTICA DE PRIVACIDAD DE LOS SITIOS Y SISTEMAS WEB DE BIREME/OPS</h2>
+    <h3>POLÍTICA DE PRIVACIDAD DE LOS SITIOS Y SISTEMAS WEB DE BIREME/OPS</h3>
 
     <p>La utilización de los productos, servicios y/o herramientas que pone a disposición El Centro Latinoamericano y del Caribe de Información en Ciencias de la Salud (BIREME), Centro Especializado de la Organización Panamericana de la Salud, Oficina Regional para las Américas de la Organización Mundial de la Salud, en adelante BIREME/OPS, a disposición de los usuarios constituye aceptación de la siguiente Política de Privacidad. En caso de discrepancia entre el texto en español y cualquier otro idioma de esta Política de Privacidad, prevalecerá el documento en español.</p>
 
-    <p>Esta Política de Privacidad es complementaria a la Política General de Privacidad de la OPS, disponible en <a href="http://www.paho.org/hq/index.php?option=com_content&view=article&id=3201%3Apah o-website-privacy-policy&catid=6822%3Acorporate-pages&Itemid=2410&lang=es" target="_blank">http://www.paho.org/hq/index.php?option=com_content&view=article&id=3201%3Apah o-website-privacy-policy&catid=6822%3Acorporate-pages&Itemid=2410&lang=es</a></p>
+    <p>Esta Política de Privacidad es complementada por la Política General de Privacidad de la OPS, disponible en <a href="http://www.paho.org/hq/index.php?option=com_content&view=article&id=3201%3Apah o-website-privacy-policy&catid=6822%3Acorporate-pages&Itemid=2410&lang=es" target="_blank">http://www.paho.org/hq/index.php?option=com_content&view=article&id=3201%3Apah o-website-privacy-policy&catid=6822%3Acorporate-pages&Itemid=2410&lang=es</a></p>
 
     <h3>PRIVACIDAD</h3>
 
-    <p>Su privacidad en la Internet es de suma importancia para la BIREME/OPS. En esta declaración de privacidad se describe la política de BIREME/OPS en cuanto a la recopilación y el intercambio de información de las personas que utilizan el presente sitio de BIREME/OPS.</p>
+    <p>Su privacidad es de suma importancia para BIREME/OPS. En esta política de privacidad se describen las prácticas de BIREME/OPS en cuanto a la recopilación y el intercambio de información de los usuarios del presente sitio de BIREME/OPS.</p>
 
     <h4>¿Qué tipo de información recopila BIREME/OPS?</h4>
 
-    <p style="text-decoration: underline;">Uso normal de sitios web</p>
+    <p style="text-decoration: underline;">Uso de sitios web</p>
 
     <p>En general, usted puede consultar los sitios de BIREME/OPS sin decirnos quién es ni revelar ningún tipo de información personal. La única información que recopilamos durante una consulta general proviene de los registros ordinarios del servidor e incluye su dirección de IP (protocolo de internet), el nombre del dominio, el tipo de navegador, el sistema operativo e información como el sitio web a través del cual llegó a nosotros, los archivos que descargó, los sitios que consultó y la fecha y hora de esas consultas.</p>
 
@@ -497,9 +497,9 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
 
     <p>Si usted se registra para acceder a algún sitio, producto o servicio de BIREME/OPS, como los Servicios Personalizados Mi BVS y el FI-Admin, se le pedirá que suministre información personal como su nombre, dirección de correo electrónico, institución a la cual pertenece, país de origen, nivel académico, área de actuación profesional, sexo, fecha de nacimiento e datos de sus redes sociales. Esta información se recopila solo con su conocimiento y permiso, y se mantiene en las bases de datos de BIREME/OPS y listas de direcciones.</p>
 
-    <p>Para ciertos sitios de BIREME/OPS, registrarse o proporcionar cierta información personal hace que se instale una cookie* en su computadora, que permitirá que BIREME/OPS recuerde su información la próxima vez que usted consulte el sitio, de  manera que no tenga que volver a ingresar sus datos, lo que nos ayuda a brindarle un servicio mejor.</p>
+    <p>Para ciertos sitios de BIREME/OPS, registrarse o proporcionar cierta información personal hace que se instale una cookie* en su computadora, que permitirá que BIREME/OPS recuerde su información la próxima vez que usted consulte el sitio, de manera que no tenga que volver a ingresar sus datos, lo que nos ayuda a brindarle un  servicio mejor.</p>
 
-    <p>Si se incorpora a un grupo de debate electrónico puede que otros participantes del grupo (incluidos funcionarios que no pertenecen a la OPS) vean la información personal que usted haya proporcionado. En el caso de los grupos de debate abiertos, esta información será pública.</p>
+    <p>Si se incorpora a un grupo de debate electrónico puede que otros participantes del grupo (incluidas personas externas a la OPS) tengan acceso ala información personal que usted haya proporcionado. En el caso de los grupos de debate abiertos, esta información será pública.</p>
 
     <h4>¿Qué hace BIREME/OPS con la información que recopila?</h4>
 
@@ -507,7 +507,7 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
 
     <p style="text-decoration: underline;">Información que permite identificar a la persona</p>
 
-    <p>BIREME/OPS puede usar la información personal que usted proporciona para:</p>
+    <p>BIREME/OPS puede usar la información personal que usted proporciona, entre otros, para:</p>
 
     <ul>
         <li>ponerse en contacto con usted: ya sea para responder a una consulta o sugerencia, o para enviarle boletines informativos, documentos, publicaciones, etc.;</li>
@@ -519,7 +519,7 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
 
     <h4>¿Qué sucede si no quiero suministrar información personal?</h4>
 
-    <p>Suministrar información personal en los sitios de BIREME/OPS es optativo. Si decide no suministrar información personal, puede de todas formas consultar y usar los sitios de BIREME/OPS, pero no podrá utilizar ciertas opciones como acceder a los Servicios Personalizados Mi BVS o hacer gestión de las fuentes de información de la BVS a través del sistema web FI-Admin.</p>
+    <p>Suministrar información personal en los sitios de BIREME/OPS es voluntario. Si decide no suministrar información personal, puede de todas formas consultar y usar los sitios de BIREME/OPS, pero no podrá utilizar ciertas opciones como acceder a los Servicios Personalizados Mi BVS o hacer gestión de las fuentes de información de la BVS a través del sistema web FI-Admin.</p>
 
     <p style="text-decoration: underline;">Opción de modificar la información o solicitar que sea eliminada</p>
 
@@ -527,7 +527,7 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
 
     <h3>SEGURIDAD</h3>
 
-    <p>No vendemos ni intercambiamos ningún tipo de información personal proporcionada voluntariamente en los sitios de BIREME/OPS a terceros. Toda información suministrada a BIREME/OPS por los usuarios de los sitios de BIREME/OPS se guarda con gran  cuidado y seguridad, y no se usará de manera distinta de las establecidas en esta política de privacidad, en cualquier política propia del sitio, o de las que usted ha autorizado explícitamente. BIREME/OPS emplea una variedad de tecnologías y medidas de seguridad para proteger la información que se encuentra en nuestros sistemas a fin de evitar pérdidas, uso indebido, acceso no autorizado o divulgación, modificación o destrucción.</p>
+    <p>No vendemos ni intercambiamos ningún tipo de información personal proporcionada voluntariamente en los sitios de BIREME/OPS a terceros. Toda información suministrada a BIREME/OPS por los usuarios de los sitios de BIREME/OPS se guarda con gran  cuidado y seguridad, y no se usará de manera distinta de las establecida en esta política de privacidad, en cualquier política propia del sitio, o de las que usted ha autorizado explícitamente. BIREME/OPS emplea una variedad de tecnologías y medidas de seguridad para proteger la información que se encuentra en nuestros sistemas a fin de minimizar las posibilidades de pérdidas, uso indebido, acceso no autorizado o divulgación, modificación o destrucción.</p>
 
     <p>Todos nuestros empleados que tienen acceso a los datos personales y están asociados con su procesamiento están obligados a respetar la confidencialidad de los asuntos oficiales, incluidos los datos personales.</p>
 
@@ -537,7 +537,7 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
 
     <p>BIREME/OPS podrá modificar esta Política de Privacidad a su entera discreción y publicará estas modificaciones en el presente sitio.</p>
 
-    <h4>Contacto</h4>
+    <h3>Contacto</h3>
 
     <p>Para preguntas o consultas con respecto a esta política de privacidad, sírvase comunicarse con nosotros en online@bireme.org</p>
 
@@ -545,7 +545,7 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
 
     <p>Una cookie es un pequeño conjunto de datos que se envía de un servidor de la web a su navegador. Se usa normalmente para asignar una identificación única a su computadora y almacenar de manera segura información como el ID del usuario, contraseñas, preferencias y perfiles electrónicos. Se almacena en el disco duro de su computadora. Usted tiene la opción de no permitir que se instalen cookies de la OPS/OMS si cambia la configuración de su navegador. Distintos sitios web pueden enviar sus propias cookies a su computadora. Para proteger su privacidad, el navegador solo permite que un sitio web obtenga acceso a sus propias cookies y no permite el acceso a las instaladas por otros sitios.</p>
 
-    <p><strong>SI NO ESTUVIERA CONFORME CON ALGUNO DE LOS TÉRMINOS Y CONDICIONES DE ESTA POLÍTICA DE PRIVACIDAD DEBERÁ ABSTENERSE DE UTILIZAR EL SITIO Y CUALQUIER MATERIAL AQUÍ CONTENIDO.</strong></p>
+    <p><strong>SI NO ESTUVIERA CONFORME CON ALGUNO DE LOS TÉRMINOS Y CONDICIONES DE ESTA POLÍTICA DE PRIVACIDAD DEBERÁ ABSTENERSE DE UTILIZAR EL SITIO Y CUALQUIER PRODUCTO, SERVICIO Y/O HERRAMIENTA AQUÍ CONTENIDO.</strong></p>
 
 </div>
 ');
