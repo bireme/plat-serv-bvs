@@ -176,7 +176,7 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
     define('DATA_POLICY_MESSAGE','
 <div class="terms">
 
-    <h2>POLÍTICA DE PRIVACIDADE DOS SITES E SISTEMAS WEB DA BIREME/OPAS</h2>
+    <h3>POLÍTICA DE PRIVACIDADE DOS SITES E SISTEMAS WEB DA BIREME/OPAS</h3>
 
     <p>A utilização dos produtos, serviços e/ou ferramentas que o Centro Latino-Americano e do Caribe de Informação em Ciências da Saúde (BIREME), Centro Especializado da Organização Pan-Americana da Saúde, Escritório Regional para as Américas da Organização Mundial da Saúde, doravante BIREME/OPAS, coloca à disposição dos usuários, constitui aceitação da seguinte Política de Privacidade. Em caso de discrepância entre o texto em espanhol e qualquer outro idioma desta Política de Privacidade, prevalecerá o documento em espanhol.</p>
 
@@ -711,142 +711,140 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Phone: (55 11) 5576-980
     define("TERMS_MESSAGE",'
 <div class="terms">
 
-    <h3>TÉRMINOS Y CONDICIONES DE USO DE LOS SITIOS Y SISTEMAS WEB DE BIREME/OPS</h3>
+    <h3>BIREME/PAHO\'S TERMS AND CONDITIONS FOR THE USE OF ITS WEBSITES AND SYSTEMS</h3>
 
-    <p>La utilización de los productos, servicios y/o herramientas que pone a disposición El Centro Latinoamericano y del Caribe de Información en Ciencias de la Salud (BIREME), Centro Especializado de la Organización Panamericana de la Salud, Oficina Regional para las Américas de la Organización Mundial de la Salud, en adelante BIREME/OPS, a disposición de los usuarios constituye aceptación de los siguientes Términos y Condiciones. En caso de discrepancia entre el texto en español y cualquier otro idioma de estos Términos y Condiciones, prevalecerá el documento en español.</p>
+    <p>The use of products, services, and/or tools that the Centro Latinoamericano y del Caribe de Información en Ciencias de la Salud ("BIREME"), a specialized center of the Pan American Health Organization, Regional Office for the Americas of the World Health Organization (hereinafter referred to as "BIREME/PAHO"), makes available to users constitutes acceptance of the following Terms and Conditions. In case of conflict between the text of these Terms and Conditions and the text in the Spanish, the latter shall prevail.</p>
 
-    <p>BIREME/OPS se reserva el derecho a accionar legalmente para frenar cualquier infracción o incumplimiento de los presentes Términos y Condiciones. BIREME/OPS podrá modificar estos Términos y Condiciones a su entera discreción y publicará estas modificaciones en el presente sitio. Usar este sitio, los productos, servicios y/o herramientas luego de efectuados éstos cambios constituye aceptación por parte del usuario de los nuevos Términos y Condiciones. La OPS se reserva el derecho exclusivo de cancelar el acceso de cualquier usuario por infracción de derechos o incumplimiento de los presentes Términos y Condiciones.</p>
+    <p>BIREME/PAHO reserves the right to take legal actions to stop any infringement or breach of these Terms and Conditions. BIREME/PAHO may modify these Terms and Conditions at its sole discretion and will publish such modifications in this website. Using this website, its products, services and/or tools after such changes are made will constitute acceptance by the user of such amended Terms and Conditions. PAHO reserves the exclusive right to terminate user\'s access for any breach of rights or breach of these Terms and Conditions.</p>
 
-    <h4>Uso del nombre de BIREME y/o la OPS</h4>
+    <h4>Use of BIREME\'s and/or PAHO\'s Name</h4>
 
-    <p>El nombre, acrónimo y/o logo de BIREME y la OPS, están protegidos por el derecho internacional. Excepto para propósitos de atribución autoral éstos no pueden ser utilizados sin autorización previa expresa y por escrito de BIREME/OPS. El nombre, acrónimo, logo BIREME/ OPS tampoco pueden ser utilizados con fines promocionales o en ninguna forma que indique, sugiera o pueda interpretarse como asociación, afiliación, patrocinio o respaldo de BIREME/OPS.</p>
+    <p>BIREME\'s and PAHO\'s name, acronym and/or logo are protected by international law. Except for copyright attribution purposes, these may not be used without express prior written permission from BIREME/PAHO. The BIREME/PAHO name, acronym and logo may not be used for promotional purposes or in any other way that indicates, suggests or can be construed as an association, affiliation, sponsorship or endorsement of BIREME/PAHO.</p>
 
-    <h4>Limitación de Responsabilidad</h4>
+    <h4>Limitation of Liability</h4>
 
-    <p>Los productos, servicios y/o herramientas que BIREME/OPS pone a disposición de los usuarios se proporcionan sin ningún tipo de garantía, explícita o implícita. BIREME/OPS no ofrece garantías ni responderá por la exactitud o veracidad de la información, productos, servicios y/o herramientas proporcionados. BIREME/ OPS podrá modificar éstos periódicamente sin previo aviso. Bajo ninguna circunstancia BIREME/OPS será responsable de las pérdidas, daños y/o perjuicios que puedan presuntamente derivarse de su utilización o su no disponibilidad. Los usuarios deben utilizar estos productos, servicios y/o herramientas por su propia cuenta y riesgo. En ningún caso BIREME/OPS será responsable por daños y/o perjuicios aún cuando éstos pudieran haber sido advertidos y/o prevenidos.</p>
+    <p>The products, services and/or tools that BIREME/PAHO makes available to users are provided without any kind of guarantee, either explicit or implicit. BIREME/PAHO makes no warranties nor guarantees the accuracy or truthfulness of the information, products, services and/or tools provided. BIREME/PAHO may modify these periodically without prior notice. Under no circumstances will BIREME/PAHO be liable for losses and/or damages that may arise from its use or non-availability. Users must use these products, services and/or tools at their own risk. In no case will BIREME/PAHO be liable for damages, even if they may have been warned and/or prevented.</p>
 
-    <p>BIREME/OPS se reserva el derecho de modificar o descontinuar cualquier información, productos, servicios y/o herramientas que ponga a disposición de sus miembros y/o usuarios a través de este sitio, con o sin previo aviso.</p>
+    <p>BIREME/PAHO reserves the right to modify or discontinue any information, products, services and/or tools made available to its members and/or users through this website, with or without prior notice. The use of country or territory designations should not be considered as indicative of BIREME/PAHO\'s position regarding the legal status of any country or territory, its authorities and institutions, or recognition of borders.</p>
 
-    <p>La utilización de designaciones de países o territorios no deberán considerarse como indicativo de la posición por parte de BIREME/OPS con relación a la situación jurídica de ningún país o territorio, de sus autoridades e instituciones ni el reconocimiento de ninguna frontera.</p>
+    <p>BIREME/PAHO will not be liable for any damage or loss that may arise from, or relate to, the use or failure of the website, information, products, services and/or tools contained herein, even in cases arising from improper or fraudulent use. BIREME/ PAHO will not be responsible for the accuracy, availability or veracity of the information contained herein.</p>
 
-    <p>BIREME/OPS no será responsable de ningún daño o pérdida que pueda derivarse o relacionarse con el uso o falla del sitio, información, productos, servicios y/o herramientas aquí contenidos, incluso en los casos derivados de uso inapropiado, impropio o fraudulento. Tampoco será responsable de la precisión, disponibilidad o veracidad de la información aquí contenida.</p>
+    <p>BIREME/PAHO makes no warranties of any kind with respect to materials, information, products, services and/or tools available on the website and will not be responsible for any type of infection with computer viruses or any other program that may affect the operation of computers or systems.</p>
 
-    <p>BIREME/OPS no ofrece garantías de ningún tipo respecto de los materiales, información, productos, servicios y/o herramientas disponibles en el sitio y no será responsable por cualquier infección con virus informático o cualquier otro programa que pueda afectar el funcionamiento de computadoras o sistemas.</p>
+    <p>Some materials, information, products, services and/or tools to which users may access through this website could be owned by third parties. BIREME/PAHO does not guarantee their ownership, and will not be responsible to users or third parties for any claim derived from its use. The website, materials, information, products, services and/or tools may include links to external websites not managed by BIREME/PAHO. Such links are included for reference and their incorporation does not imply approval or endorsement by BIREME/PAHO. BIREME/PAHO does not assume any responsibility for the information contained in such websites.</p>
 
-    <p>Algunos materiales, información, productos, servicios y/o herramientas a los cuales los usuarios podrán acceder a través de este sitio podrían ser de titularidad de terceros, la BIREME/OPS no garantiza la titularidad de éstos y no será responsable ante los usuarios o terceros por cualquier reclamo derivado de su uso. Es posible que en el sitio, materiales, información, productos, servicios y/o herramientas se incluyan enlaces a sitios externos no manejados por la BIREME/OPS. Estos enlaces se incluyen a modo de referencia y su incorporación no implica aprobación o endoso por parte de BIREME/OPS. BIREME/OPS no asume responsabilidad respecto de la información contenida en estos sitios.</p>
+    <p>The use of this website by users implies the acceptance of the obligation to defend, hold harmless and indemnify BIREME/PAHO and its affiliates for any action, claim, damages, loss and/or expense (including attorneys\' fees) that is derived from such use.</p>
 
-    <p>La utilización de este sitio por los usuarios implica la aceptación de la obligación de defender, mantener a salvo e indemnizar a BIREME/OPS y a sus afiliados por cualquier acción, reclamo daño, pérdida y/o gasto (incluidos los honorarios de abogados) que se deriven de dicha utilización.</p>
+    <p>BIREME/PAHO reserves the right to use or disclose information about its users. It also reserves the right to edit, not publish or remove any product, services, tool or information or material in whole or in part at its sole discretion.</p>
 
-    <p>BIREME/OPS se reserva el derecho de utilizar o divulgar información sobre sus usuarios. Asimismo se reserva el derecho de editar, no publicar o remover cualquier producto, servicios, herramienta o información o material en parte o en su totalidad a su entera discreción.</p>
+    <h4>Unauthorized Uses</h4>
 
-    <h4>Usos no permitidos</h4>
+    <p>Users guarantee that their use of the website, information, products, services and/or tools contained herein will not be used for purposes that are contrary to the laws of any country or that contravene these terms and conditions. Users will not use the website, information, products, services and/or tools in a way that may damage, disable, overload or deteriorate the website, information, products, services and/or tools contained therein or its use by third parties. Users will not attempt to obtain any information, products, services and/or tools that are not intentionally available or enabled on the website.</p>
 
-    <p>Los usuarios garantizan que el uso de del sitio, información, productos, servicios y/o herramientas aquí contenidos, no serán utilizados con propósitos que sean contrarios a las leyes o que contravengan los presentes términos y condiciones. Los usuarios no utilizaran el sitio, información, productos, servicios y/o herramientas de manera que pueda perjudicar, inhabilitar, sobrecargar o deteriorar el sitio, información, productos, servicios y/o herramientas o su uso por parte de terceros. Los usuarios no intentarán obtener ninguna información, productos, servicios y/o herramientas por medios no intencionalmente disponibles o habilitados en este sitio.</p>
+    <p>Users also undertake to respect third parties\' rights as well as intellectual property laws during their use of the website, information, products, services and/or tools contained herein.</p>
 
-    <p>Asimismo los usuarios se comprometen a respetar los derechos de terceros así como las leyes de propiedad intelectual durante cualquier uso de del sitio, información, productos, servicios y/o herramientas aquí contenidos.</p>
+    <h4>Privileges and Immunities</h4>
 
-    <h4>Privilegios e Inmunidades</h4>
+    <p>Nothing contained herein shall constitute or may be construed as a waiver, express or implied, of the privileges, immunities and exemptions enjoyed by PAHO, in accordance  with international law, international treaties or conventions, or the laws of its Members States.</p>
 
-    <p>Nada de lo aquí expuesto constituirá o podrá ser interpretado como renuncia, expresa o tácita, de los privilegios, inmunidades, y exoneraciones de que goza, la OPS, de conformidad con el Derecho Internacional, tratados o convenios internacionales, o la legislación de sus Países Miembros.</p>
+    <h4>Forum or Chat Platforms</h4>
 
-    <h4>Espacios de diálogo</h4>
-
-    <p>BIREME/OPS podrá ofrecer espacios de diálogo u otros instrumentos de comunicación. Los usuarios al hacer uso de estos instrumentos se comprometen a abstenerse de:</p>
+    <p>BIREME/PAHO may offer dialogue platforms or other communication tools. While using such instruments, users undertake to refrain from:</p>
 
     <ul style="list-style-type: lower-alpha;">
-        <li>Difamar, injuriar, acosar, amenazar o asumir cualquier otro tipo de conducta que vulnere los derechos de otros;</li>
-        <li>Difundir, publicar, distribuir o divulgar informaciones o materiales difamatorios, obscenos, indecentes, ilícitos o inmorales;</li>
-        <li>Cargar en el sitio o enviar como anexos de un mensaje archivos que contengan programas informáticos u otros materiales amparados por las leyes de propiedad intelectual (o por el derecho a la intimidad y la publicidad), sin contar con la autorización correspondiente;</li>
-        <li>No incluir la referencia del autor o notificaciones legales, mentir acerca del origen o presentar como propio programas informáticos u otros materiales contenidos en un archivo que se cargue en el sitio;</li>
-        <li>Anunciar o poner a la venta bienes o servicios, o realizar o promover encuestas, concursos o cadenas de cartas, o descargar de un foro un archivo enviado por otro usuario que el usuario sepa, o razonablemente deba saber, que no se puede distribuir lícitamente de esa manera.</li>
+        <li>Defaming, insulting, harassing, threating or conducting any other type of conduct that violates other people\'s rights;</li>
+        <li>Disseminating, publishing, distributing or disclosing defamatory, obscene, indecent, illicit or immoral information or materials;</li>
+        <li>Uploading or posting as attachments files containing computer programs or other materials protected by intellectual property laws (or by privacy and publicity rights), without the corresponding authorization;</li>
+        <li>Not including author\'s names or legal notices, lying about the origin, or representing as own, computer programs or other materials contained in a file that is uploaded on the website;</li>
+        <li>Advertising or selling goods or services, or conducting or promoting surveys, contests or chain letters, or downloading from a forum a file sent by another user that the user knows, or reasonably should know, that cannot be legally distributed in such way.</li>
     </ul>
 
-    <p>Los usuarios reconocen que todos los espacios de diálogo constituyen un medio de comunicación pública y no privada. Asimismo, reconocen que los diálogos y el material publicado en el sitio no cuentan con el respaldo de BIREME/OPS y no se considerarán como revisados, examinados ni aprobados por BIREME/OPS.</p>
+    <p>Users recognize that all dialogue platforms constitute a public and not a private form of communication. They also acknowledge that dialogues and materials posted on the website are not endorsed by BIREME/PAHO and will not be considered as reviewed, examined or approved by BIREME/PAHO.</p>
 
-    <h4>Reclamaciones por posibles infracciones</h4>
+    <h4>Reporting Possible Infringements</h4>
 
-    <p>BIREME/OPS se esforzará por impedir en su sitio actividades ilícitas y contrarias a los Términos y Condiciones aquí contenidos. No obstante, si usted creyera que alguna información contenida en el sitio o sus materiales pudiera estar infringiendo sus derechos o de terceros, incluyendo, sin limitación, derechos de propiedad intelectual, deberá ponerse en contacto con la BIREME/OPS enviando una descripción detallada de la violación alegada a la siguiente dirección: online@bireme.org</p>
+    <p>BIREME/PAHO will endeavor to prevent in its website activities that are illegal or that contravene the Terms and Conditions contained herein. However, if you believe that any information contained in the website, or its materials, may be in violation of your rights or of third parties, including, without limitation, intellectual property rights, you should contact BIREME/PAHO by sending a detailed description of the alleged violation to the following address: online@bireme.org</p>
 
-    <h4>Resolución de controversias</h4>
+    <h4>Conflict Resolution</h4>
 
-    <p>Cualquier disputa, controversia o reclamo que surja o se derive del uso del sitio o su información, productos, servicios y/o herramientas será resuelta en forma amistosa entre BIREME/OPS y usuario. A menos que las disputas o controversias se solucionen en forma amistosa dentro de los sesenta (60) días posteriores a la recepción por una de las partes de la solicitud de la otra de intentar una resolución amistosa, dicha disputa, controversia, o reclamo será remitida por cualquiera de las partes a arbitraje de conformidad con las Reglas de Arbitraje de la Comisión de las Naciones Unidas para el Derecho Mercantil Internacional (CNUDMI) vigentes. El tribunal arbitral no estará autorizado a imponer daños punitivos. Cualquier laudo arbitral emitido en virtud del arbitraje referido se considerará como la adjudicación definitiva a la disputa, controversia o reclamo y tendrá carácter vinculante para las partes.</p>
+    <p>Any dispute, controversy or claim that arises or derives from the use of the website or information, products, services and/or tools contained therein will be settled amicably between the user and BIREME/PAHO. Unless disputes or controversies are not settled  amicably within sixty (60) days after receipt by one party of the other party\'s request to attempt an amicable settlement, such dispute, controversy or claim shall be referred by either party to arbitration in accordance with the Arbitration Rules of the United Nations Commission on International Trade Law (UNCITRAL). The arbitral tribunal shall have no authority to award punitive damages. Any arbitration award rendered as a result of such arbitration shall be considered to be the final adjudication of any such controversy, claim or dispute and shall bind the parties.</p>
 
-    <p><strong>SI NO ESTUVIERA CONFORME CON ALGUNO DE LOS TÉRMINOS Y CONDICIONES AQUÍ CONTENIDOS DEBERÁ ABSTENERSE DE UTILIZAR EL SITIO Y CUALQUIER MATERIAL AQUÍ CONTENIDO.</strong></p>
-    
+    <p><strong>IF YOU DO NOT AGREE WITH ANY OF THE TERMS AND CONDITIONS CONTAINED HEREIN YOU MUST REFRAIN FROM USING THE WEBSITE AND ANY OTHER MATERIAL CONTAINED HEREIN.</strong></p>
+
 </div>
 ');
     define('DATA_POLICY_MESSAGE','
 <div class="terms">
 
-    <h2>POLÍTICA DE PRIVACIDAD DE LOS SITIOS Y SISTEMAS WEB DE BIREME/OPS</h2>
+    <h3>BIREME/PAHO\'S WEBSITES AND SYSTEMS PRIVACY POLICY</h3>
 
-    <p>La utilización de los productos, servicios y/o herramientas que pone a disposición El Centro Latinoamericano y del Caribe de Información en Ciencias de la Salud (BIREME), Centro Especializado de la Organización Panamericana de la Salud, Oficina Regional para las Américas de la Organización Mundial de la Salud, en adelante BIREME/OPS, a disposición de los usuarios constituye aceptación de la siguiente Política de Privacidad. En caso de discrepancia entre el texto en español y cualquier otro idioma de esta Política de Privacidad, prevalecerá el documento en español.</p>
+    <p>The use of products, services and/or tools that the Centro Latinoamericano y del Caribe de Información en Ciencias de la Salud ("BIREME") a specialized center of the Pan American Health Organization, Regional Office for the Americas of the World Health Organization (hereinafter referred to as "BIREME/PAHO") makes available to users constitutes acceptance of the following Privacy Policy. In case of conflict between this text of the Privacy Policy and the text in Spanish, the latter shall prevail.</p>
 
-    <p>Esta Política de Privacidad es complementaria a la Política General de Privacidad de la OPS, disponible en <a href="http://www.paho.org/hq/index.php?option=com_content&view=article&id=3201%3Apah o-website-privacy-policy&catid=6822%3Acorporate-pages&Itemid=2410&lang=en" target="_blank">http://www.paho.org/hq/index.php?option=com_content&view=article&id=3201%3Apah o-website-privacy-policy&catid=6822%3Acorporate-pages&Itemid=2410&lang=en</a></p>
+    <p>This Privacy Policy is complemented by PAHO\'s Website Privacy Policy, available at: <a href="http://www.paho.org/hq/index.php?option=com_content&view=article&id=3201%3Apah o-website-privacy-policy&catid=6822%3Acorporate-pages&Itemid=2410&lang=en" target="_blank">http://www.paho.org/hq/index.php?option=com_content&view=article&id=3201%3Apah o-website-privacy-policy&catid=6822%3Acorporate-pages&Itemid=2410&lang=en</a></p>
 
-    <h3>PRIVACIDAD</h3>
+    <h3>PRIVACY</h3>
 
-    <p>Su privacidad en la Internet es de suma importancia para la BIREME/OPS. En esta declaración de privacidad se describe la política de BIREME/OPS en cuanto a la recopilación y el intercambio de información de las personas que utilizan el presente sitio de BIREME/OPS.</p>
+    <p>Your privacy is of the utmost importance to BIREME/PAHO. This Privacy Policy describes BIREME/PAHO\'s practice regarding the collection and exchange of user information while using BIREME/PAHO\'s websites.</p>
 
-    <h4>¿Qué tipo de información recopila BIREME/OPS?</h4>
+    <h4>What kind of information does BIREME/PAHO collect?</h4>
 
-    <p style="text-decoration: underline;">Uso normal de sitios web</p>
+    <p style="text-decoration: underline;">Use of Website</p>
 
-    <p>En general, usted puede consultar los sitios de BIREME/OPS sin decirnos quién es ni revelar ningún tipo de información personal. La única información que recopilamos durante una consulta general proviene de los registros ordinarios del servidor e incluye su dirección de IP (protocolo de internet), el nombre del dominio, el tipo de navegador, el sistema operativo e información como el sitio web a través del cual llegó a nosotros, los archivos que descargó, los sitios que consultó y la fecha y hora de esas consultas.</p>
+    <p>In general, you can access BIREME/PAHO\'s websites without disclosing who you are or revealing any personal information. The only information that we collect during your use of the website comes from ordinary server logs and includes your Internet Protocol (IP) address, domain name, browser type, operating system and information such as the website which referred you to our website, the files you downloaded, the sites you consulted and the date and time of those queries.</p>
 
-    <p style="text-decoration: underline;">Recopilación de información que permite identificar a la persona</p>
+    <p style="text-decoration: underline;">Collection of information that allows identifying a person</p>
 
-    <p>Si usted se registra para acceder a algún sitio, producto o servicio de BIREME/OPS, como los Servicios Personalizados Mi BVS y el FI-Admin, se le pedirá que suministre información personal como su nombre, dirección de correo electrónico, institución a la cual pertenece, país de origen, nivel académico, área de actuación profesional, sexo, fecha de nacimiento e datos de sus redes sociales. Esta información se recopila solo con su conocimiento y permiso, y se mantiene en las bases de datos de BIREME/OPS y listas de direcciones.</p>
+    <p>If you register to access a product or service, such as My VHL Personalized Services and FI-Admin, at a BIREME/PAHO website, you will be asked to provide personal information such as your name, email address, institution to which you belong, country of origin, academic level, work field, sex, date of birth and social network data. This information is collected only with your knowledge and permission, and is maintained in BIREME/PAHO databases and lists of addresses.</p>
 
-    <p>Para ciertos sitios de BIREME/OPS, registrarse o proporcionar cierta información personal hace que se instale una cookie* en su computadora, que permitirá que BIREME/OPS recuerde su información la próxima vez que usted consulte el sitio, de  manera que no tenga que volver a ingresar sus datos, lo que nos ayuda a brindarle un servicio mejor.</p>
+    <p>For certain BIREME/PAHO websites, registering or providing certain personal information causes a cookie* to be installed on your computer, which will allow BIREME/PAHO to remember your information the next time you access the website, so that you do not have to reenter it, and it helps us to provide you with a better service.</p>
 
-    <p>Si se incorpora a un grupo de debate electrónico puede que otros participantes del grupo (incluidos funcionarios que no pertenecen a la OPS) vean la información personal que usted haya proporcionado. En el caso de los grupos de debate abiertos, esta información será pública.</p>
+    <p>If you join an electronic discussion group, other participants in the group (including people outside PAHO) may have access to the personal information you have provided. In the case of open discussion groups, such information will be public.</p>
 
-    <h4>¿Qué hace BIREME/OPS con la información que recopila?</h4>
+    <h4>What does BIREME/PAHO do with the information it collects?</h4>
 
-    <p>La información recopilada durante una consulta general se usa para analizar tendencias y uso de los sitios de BIREME/OPS, y para mejorar la utilidad de estos sitios. No está conectada con ningún tipo de datos personales.</p>
+    <p>The information collected during general access to a BIREME/PAHO website is used to analyze trends and use of BIREME/PAHO\'s websites, and to improve the usefulness of these sites. It is not connected with any kind of personal data.</p>
 
-    <p style="text-decoration: underline;">Información que permite identificar a la persona</p>
+    <p style="text-decoration: underline;">Collection of information that allows identifying a person</p>
 
-    <p>BIREME/OPS puede usar la información personal que usted proporciona para:</p>
+    <p>BIREME/PAHO may use personal information provided by you, among others, to:</p>
 
     <ul>
-        <li>ponerse en contacto con usted: ya sea para responder a una consulta o sugerencia, o para enviarle boletines informativos, documentos, publicaciones, etc.;</li>
-        <li>confirmar su información de registro en el sitio;</li>
-        <li>"recordar" su perfil y preferencias en línea;</li>
-        <li>ayudarlo a encontrar rápidamente información útil según sus intereses y ayudarnos a crear un contenido que le resulte más provechoso;</li>
-        <li>realizar un análisis estadístico.</li>
+        <li>Contact you: either to respond a query or suggestion, or to send you information bulletins, documents, publications, etc.;</li>
+        <li>Confirm you registration information provided in the website;</li>
+        <li>"remember" your profile and online preferences;</li>
+        <li>Help you to find useful information quickly according to your interests and help us to create content that is more useful;</li>
+        <li>Perform statistical analyses.</li>
     </ul>
 
-    <h4>¿Qué sucede si no quiero suministrar información personal?</h4>
+    <h4>What happens if I do not want to provide personal information?</h4>
 
-    <p>Suministrar información personal en los sitios de BIREME/OPS es optativo. Si decide no suministrar información personal, puede de todas formas consultar y usar los sitios de BIREME/OPS, pero no podrá utilizar ciertas opciones como acceder a los Servicios Personalizados Mi BVS o hacer gestión de las fuentes de información de la BVS a través del sistema web FI-Admin.</p>
+    <p>Providing personal information on BIREME/PAHO websites is voluntary. If you choose not to provide personal information, you can still consult and use BIREME/PAHO\'s websites, but you will not be able to use certain options such as accessing the My VHL Personalized Services or managing BVS information sources through the Web FI-Admin system.</p>
 
-    <p style="text-decoration: underline;">Opción de modificar la información o solicitar que sea eliminada</p>
+    <p style="text-decoration: underline;">Option to modify information or request to have it deleted</p>
 
-    <p>En cualquier momento, usted puede modificar su información o solicitar que sea eliminada: para ello debe ingresar nuevamente al sitio donde ingresó la información por primera vez y comunicarse con el punto focal de ese sitio. Si no se proporcionan datos de contacto en el sitio, puede contactar a online@bireme.org.</p>
+    <p>At any time, you may modify your information or request its deletion: you must enter the site where you first provided the information and communicate with the focal point of that site. If no contact information is provided on the site, you can contact online@bireme.org</p>
 
-    <h3>SEGURIDAD</h3>
+    <h3>SECURITY</h3>
 
-    <p>No vendemos ni intercambiamos ningún tipo de información personal proporcionada voluntariamente en los sitios de BIREME/OPS a terceros. Toda información suministrada a BIREME/OPS por los usuarios de los sitios de BIREME/OPS se guarda con gran  cuidado y seguridad, y no se usará de manera distinta de las establecidas en esta política de privacidad, en cualquier política propia del sitio, o de las que usted ha autorizado explícitamente. BIREME/OPS emplea una variedad de tecnologías y medidas de seguridad para proteger la información que se encuentra en nuestros sistemas a fin de evitar pérdidas, uso indebido, acceso no autorizado o divulgación, modificación o destrucción.</p>
+    <p>We do not sell or exchange any personal information voluntarily provided on BIREME/PAHO\'s websites to third parties. All information provided to BIREME/PAHO by users of BIREME/PAHO\'s websites is stored carefully and securely, and will not be used in a different manner than that established in this Privacy Policy, in any of the websites specific policy, or to which you have explicitly authorized. BIREME/PAHO uses a variety of security technologies and measures to protect the information contained  in our systems in order to minimize the chances of loss, misuse, unauthorized access or disclosure, modification or destruction of information.</p>
 
-    <p>Todos nuestros empleados que tienen acceso a los datos personales y están asociados con su procesamiento están obligados a respetar la confidencialidad de los asuntos oficiales, incluidos los datos personales.</p>
+    <p>All our employees who have access to personal data and relate to handling such information are obliged to respect the confidentiality of official matters, including personal data.</p>
 
-    <p>Los sitios de BIREME/OPS contienen enlaces a sitios externos. BIREME/OPS no es responsable de las prácticas de privacidad ni del contenido de tales sitios.</p>
+    <p>BIREME/PAHO\'s websites contain links to external sites. BIREME/PAHO is not responsible for privacy practices or content in such websites.</p>
 
-    <h4>Notificación de cambios</h4>
+    <h4>Notification of modifications to the Privacy Policy</h4>
 
-    <p>BIREME/OPS podrá modificar esta Política de Privacidad a su entera discreción y publicará estas modificaciones en el presente sitio.</p>
+    <p>BIREME/PAHO may modify this Privacy Policy at its sole discretion and will publish such modifications in this website.</p>
 
-    <h4>Contacto</h4>
+    <h4>Contact</h4>
 
-    <p>Para preguntas o consultas con respecto a esta política de privacidad, sírvase comunicarse con nosotros en online@bireme.org</p>
+    <p>For questions or inquiries regarding this privacy policy, please contact us at online@bireme.org</p>
 
     <p style="margin-bottom: 0;">* Cookie</p>
-    
-    <p>Una cookie es un pequeño conjunto de datos que se envía de un servidor de la web a su navegador. Se usa normalmente para asignar una identificación única a su computadora y almacenar de manera segura información como el ID del usuario, contraseñas, preferencias y perfiles electrónicos. Se almacena en el disco duro de su computadora. Usted tiene la opción de no permitir que se instalen cookies de la OPS/OMS si cambia la configuración de su navegador. Distintos sitios web pueden enviar sus propias cookies a su computadora. Para proteger su privacidad, el navegador solo permite que un sitio web obtenga acceso a sus propias cookies y no permite el acceso a las instaladas por otros sitios.</p>
 
-    <p><strong>SI NO ESTUVIERA CONFORME CON ALGUNO DE LOS TÉRMINOS Y CONDICIONES DE ESTA POLÍTICA DE PRIVACIDAD DEBERÁ ABSTENERSE DE UTILIZAR EL SITIO Y CUALQUIER MATERIAL AQUÍ CONTENIDO.</strong></p>
+    <p>A cookie is a small set of data that is sent from a web server to your browser. It is commonly used to assign a unique identification to your computer and securely store information such as user ID, passwords, preferences and electronic profiles. It is stored on your computer\'s hard drive. You have the option of not allowing PAHO/WHO cookies to be installed if you change your browser settings. Different websites can send their own cookies to your computer. To protect your privacy, the browser only allows a website to gain access to its own cookies and does not allow access to those installed by other websites.</p>
+
+    <p><strong>IF YOU DO NOT AGREE WITH ANY OF THE TERMS AND CONDITIONS OF THIS PRIVACY POLICY YOU MUST REFRAIN FROM USING THE WEBSITE AND ANY PRODUCT, SERVICE AND/OR TOOL CONTAINED HEREIN.</strong></p>
 
 </div>
 ');
