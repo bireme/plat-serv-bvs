@@ -492,7 +492,8 @@ class UserDAO {
             $body = str_replace('#EMAIL#', $email, $body);
             $body = str_replace('#KEY#', $key, $body);
             $body = str_replace('#LANG#', $_SESSION['lang'], $body);
-            $sendMail = Mailer::sendMail($body, CONFIRM_USER_EMAIL_SUBJECT.$objUser->getFirstName(), $to);
+            $text = explode('[DELIMITER]', $body);
+            $sendMail = Mailer::sendMail($text[0], $text[1], CONFIRM_USER_EMAIL_SUBJECT.$objUser->getFirstName(), $to);
 
             $retValue = true;
         }
@@ -650,7 +651,8 @@ class UserDAO {
                         file_get_contents($tpl));
                     $body = str_replace('[USERNAME]', $objUser->getFirstName(), $body);
                     $body = str_replace('[LANG]', $_SESSION['lang'], $body);
-                    $retValue = Mailer::sendMail($body, NEW_PASSWORD_EMAIL_SUBJECT, $to);
+                    $text = explode('[DELIMITER]', $body);
+                    $retValue = Mailer::sendMail($text[0], $text[1], NEW_PASSWORD_EMAIL_SUBJECT, $to);
                 }
             }
         }else{

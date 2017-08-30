@@ -91,7 +91,7 @@ class Mailer {
      * @param string $subject email subject
      * @param string $to emails array
      */
-    public static function sendMail($body,$subject,$to,$fromMail=EMAIL_FROM,
+    public static function sendMail($body,$altbody,$subject,$to,$fromMail=EMAIL_FROM,
         $fromName=EMAIL_FROMNAME){
         global $_conf;
         
@@ -112,6 +112,7 @@ class Mailer {
         }
         $objMailer->Subject = mb_encode_mimeheader($subject, CHARSET);
         $objMailer->Body = $body;
+        $objMailer->AltBody = $altbody;
 
         if(!$objMailer->Send()){
             $retValue = false;
