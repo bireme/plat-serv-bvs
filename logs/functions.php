@@ -1,5 +1,7 @@
 <?php
-
+// ini_set('display_errors', 1);
+// ini_set('display_startup_errors', 1);
+// error_reporting(E_ALL);
 // Importação do autoload do composer
 require_once __DIR__.'/vendor/autoload.php';
 require_once __DIR__.'/../client/classes/Tools.php';
@@ -99,7 +101,10 @@ class MySearches {
         if($userID){
             $data = array();
             $client = new MongoDB\Client(MONGODB_SERVER);
-            $collection = $client->servicesplatform->logs;
+            $db = $client->servicesplatform;
+            $collection = $db->logs;
+            //$distinct = $collection->distinct('query');
+/*
             $result = $collection->find(
                 array(
                     'userID' => $userID,
@@ -115,9 +120,42 @@ class MySearches {
                     'sort' => array( 'date' => -1 )
                 )
             );
+*/
+            $result = $collection->aggregate([
+                [
+                    '$match' => [
+                        'query' => [
+                            '$ne' => '*',
+                            '$regex' => '^(?!id:)',
+                            '$options' => 'i'
+                        ]
+                    ]
+                ],
+                [
+                    '$group' => [
+                        '_id' => [
+                            'query' => '$query',
+                            'filter' => '$filter'
+                        ],
+                        'date' => [
+                            '$addToSet' => '$date'
+                        ]
+                    ]
+                ],
+                [ '$sort' => [ 'date' => -1 ] ],
+                [ '$skip' => $from ],
+                [ '$limit' => (int) $count ]
+            ]);
 
-            foreach ($result as $entry)
-                $data[] = $entry;
+            foreach ($result as $entry) {
+                $query = $entry->_id->query;
+                $filter = $entry->_id->filter;
+
+                $data[] = array(
+                    'query' => $query,
+                    'filter' => $filter
+                );
+            }
 
             if (count($data) !== 0 )
                 $retValue = $data;
@@ -139,6 +177,7 @@ class MySearches {
             $data = array();
             $client = new MongoDB\Client(MONGODB_SERVER);
             $collection = $client->servicesplatform->logs;
+/*
             $result = $collection->find(
                 array(
                     'userID' => $userID,
@@ -149,6 +188,26 @@ class MySearches {
                     )
                 )
             );
+*/
+            $result = $collection->aggregate([
+                [
+                    '$match' => [
+                        'query' => [
+                            '$ne' => '*',
+                            '$regex' => '^(?!id:)',
+                            '$options' => 'i'
+                        ]
+                    ]
+                ],
+                [
+                    '$group' => [
+                        '_id' => [
+                            'query' => '$query',
+                            'filter' => '$filter'
+                        ]
+                    ]
+                ]
+            ]);
 
             foreach ($result as $entry)
                 $data[] = $entry;
