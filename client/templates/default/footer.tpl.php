@@ -31,7 +31,7 @@
     <!-- Main Scripts -->
     <script type="text/javascript" src="<?=RELATIVE_PATH?>/js/scripts.js"></script>
 
-    <?php $actions = array( 'menu', 'mydocuments' ); ?>
+    <?php $actions = array( 'menu', 'mydocuments', 'mysearches' ); ?>
     <?php if ( $_SESSION['userTK'] && in_array($_REQUEST['action'], $actions) ) : ?>
     <script type="text/javascript">
         var start;
