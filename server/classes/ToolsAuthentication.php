@@ -201,7 +201,7 @@ class ToolsRegister {
                     $retValue = UserDAO::createNewPassword($mailUserID);
                 } else {
                     $retValue = UserDAO::updateUser($objUserArg);
-                    $retValue = UserDAO::sendUserConfirm($objUserArg);
+                    $retValue = UserDAO::sendUserConfirm($objUserArg, 'user');
                 }
             } elseif ( $isInLDAP ) {
                 //$result["source"] = "ldap";

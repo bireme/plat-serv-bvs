@@ -25,6 +25,7 @@ if($lang == 'pt'){
     define("EMAIL_FROMNAME",'Minha BVS');
     define("NEW_PASSWORD_EMAIL_SUBJECT",'Serviços Personalizados Minha BVS: Senha');
     define("CONFIRM_USER_EMAIL_SUBJECT",'Serviços Personalizados Minha BVS: Confirmação de Registro - ');
+    define("CONFIRM_NEW_PASS_SUBJECT",'Serviços Personalizados Minha BVS: Confirmação de Envio de Senha - ');
     define('FIELD_CONTACT_NAME','nome');
     define('FIELD_CONTACT_EMAIL','e-mail');
     define('FIELD_CONTACT_DESCRIPTION','descrição');
@@ -100,6 +101,7 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
     define("NEWPASS_INVALID_PASSWORD",'Senha inválida');
     define("NEWPASS_DOMAIN_NOT_PERMITTED",'Ação não permitida para este usuário.');
     define("NEWPASS_PASSWORD_SENT",'Uma nova senha foi enviada para o seu email.<br />Se demorar para chegar, confira sua caixa de SPAM e lixo eletrônico.');
+    define("NEWPASS_SEND_CONFIRMATION","Enviamos um e-mail com link para confirmação de envio de nova senha.<br />Se demorar para chegar, confira sua caixa de SPAM e lixo eletrônico.<br />Clique no link enviado para receber sua nova senha de usuário da Minha BVS.");
     define("NOTICE",'Mensagem ao usuário');
     define("NOTICE_MESSAGE",'');
     define("UPDATE_INFO",'<b>Por favor, revise seus dados no formulário abaixo para continuar utilizando a Minha BVS.</b>');
@@ -327,6 +329,7 @@ if($lang == 'es'){
     define("EMAIL_FROMNAME",'Mi BVS');
     define("NEW_PASSWORD_EMAIL_SUBJECT",'Servicios Personalizados Mi BVS: Contraseña');
     define("CONFIRM_USER_EMAIL_SUBJECT",'Servicios Personalizados Mi BVS: Confirmación de Registro - ');
+    define("CONFIRM_NEW_PASS_SUBJECT",'Servicios Personalizados Mi BVS: Confirmación de Envío de Contraseña - ');
     define('FIELD_CONTACT_NAME','nombre');
     define('FIELD_CONTACT_EMAIL','e-mail');
     define('FIELD_CONTACT_DESCRIPTION','descripción');
@@ -401,6 +404,7 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
     define("NEWPASS_INVALID_PASSWORD",'Contraseña incorrecta');
     define("NEWPASS_DOMAIN_NOT_PERMITTED",'Acción no permitida para este usuario.');
     define("NEWPASS_PASSWORD_SENT",'Una nueva contraseña fue enviada para su correo electrónico.<br />Si tarda en llegar, compruebe su caja de SPAM y basura electrónica.');
+    define("NEWPASS_SEND_CONFIRMATION","Hemos enviado un correo electrónico con un enlace para confirmar el envío de la nueva contraseña.<br />Si tarda en llegar, compruebe su caja de SPAM y basura electrónica.<br />Por favor haga clic en el enlace enviado para recibir su nueva contraseña de usuario de Mi BVS.");
     define("NOTICE",'Mensaje al usuário');
     define("NOTICE_MESSAGE",'');
     define("UPDATE_INFO",'<b>Por favor, revise sus datos en el formulario para seguir utilizando el servicio Mi BVS.</b>');
@@ -627,6 +631,7 @@ if($lang == 'en'){
     define("EMAIL_FROMNAME",'My VHL');
     define("NEW_PASSWORD_EMAIL_SUBJECT",'Custom Services My VHL: Password');
     define("CONFIRM_USER_EMAIL_SUBJECT",'Custom Services My VHL: Register Confirmation - ');
+    define("CONFIRM_NEW_PASS_SUBJECT",'Custom Services My VHL: Password Submit Confirmation - ');
     define('PROFESSIONAL_AREA','Professional area');
     define('FIELD_CONTACT_NAME','name');
     define('FIELD_CONTACT_EMAIL','e-mail');
@@ -702,6 +707,7 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Phone: (55 11) 5576-980
     define("NEWPASS_INVALID_PASSWORD",'Invalid password');
     define("NEWPASS_DOMAIN_NOT_PERMITTED",'Action not allowed for this user.');    
     define("NEWPASS_PASSWORD_SENT",'A new password was sent to your e-mail.<br />If it takes too long to get there, check out your SPAM box and junk mail.');
+    define("NEWPASS_SEND_CONFIRMATION","We send an email with a link to confirm the sending of a new password.<br />If it takes too long to get there, check out your SPAM box and junk mail.<br />Please click the link sent to receive your new My VHL user password.");
     define("NOTICE",'Notice to the users');
     define("NOTICE_MESSAGE",'');
     define("UPDATE_INFO",'<b>Please review your data in the form below to continue using the My VHL.</b>');

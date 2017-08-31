@@ -12,23 +12,43 @@ require_once(dirname(__FILE__)."/../classes/UserDAO.php");
 require_once(dirname(__FILE__)."/../classes/ToolsAuthentication.php");
 
 $acao = isset($_REQUEST['acao'])?$_REQUEST['acao']:'default';
+$email = !empty($_REQUEST['email']) ? trim($_REQUEST['email']) : false;
+$userKey = !empty($_REQUEST['key']) ? $_REQUEST['key'] : false;
 $callerURL = !empty($_REQUEST['c'])?base64_decode($_REQUEST['c']):false;
 
-if ( 'enviar' == $acao ) {
-    $retValue = false;
+switch($acao){
+    case "enviar":
+        $retValue = false;
 
-    if( filter_var($_REQUEST['login'], FILTER_VALIDATE_EMAIL) ) {
-        $retValue = UserDAO::createNewPassword($_REQUEST['login']);
- 
-        if( $retValue === false )
+        if( filter_var($_REQUEST['login'], FILTER_VALIDATE_EMAIL) ) {
+            $retValue = UserDAO::sendNewPassConfirm(trim($_REQUEST['login']), 'pass');
+     
+            if( $retValue === false )
+                $sysMsg = NEWPASS_CREATE_ERROR;
+            elseif( 'DomainNotPermitted' === $retValue )
+                $sysMsg = NEWPASS_DOMAIN_NOT_PERMITTED;
+            else
+                $sysMsg = NEWPASS_SEND_CONFIRMATION;
+        } else {
             $sysMsg = NEWPASS_CREATE_ERROR;
-        elseif( 'DomainNotPermitted' === $retValue )
-            $sysMsg = NEWPASS_DOMAIN_NOT_PERMITTED;
-        else
-            $sysMsg = NEWPASS_PASSWORD_SENT;
-    } else {
-        $sysMsg = NEWPASS_CREATE_ERROR;
-    }
+        }
+
+        break;
+    case "confirmar":
+        $result = UserDAO::userConfirm($email, $userKey, 'pass');
+
+        if($result === true){
+            $retValue = UserDAO::createNewPassword($email);
+
+            if( $retValue === false )
+                $sysMsg = NEWPASS_CREATE_ERROR;
+            elseif( 'DomainNotPermitted' === $retValue )
+                $sysMsg = NEWPASS_DOMAIN_NOT_PERMITTED;
+            else
+                $sysMsg = NEWPASS_PASSWORD_SENT;
+        }
+
+        break;
 }
 
 $DocTitle = FORGOT_PASSWORD;

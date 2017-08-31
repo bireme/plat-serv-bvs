@@ -143,7 +143,7 @@ switch($acao){
 
         break;
     case "confirmar":
-        $result = UserDAO::userConfirm($email, $userKey);
+        $result = UserDAO::userConfirm($email, $userKey, 'user');
 
         if($result === true){
             $usr = UserDAO::getUser(trim($email));

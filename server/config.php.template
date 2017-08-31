@@ -111,6 +111,7 @@ define("EMAIL_USERNAME",'');
 define("EMAIL_PASSWORD",'');
 define("EMAIL_NEWPASSWORD_TEMPLATE",APP_BASEDIR.'/templates/mail/sendNewEMail.#LANG#.tpl');
 define("EMAIL_CONFIRMATION_TEMPLATE",APP_BASEDIR.'/templates/mail/confirmEMail.#LANG#.tpl');
+define("NEW_PASS_CONFIRMATION_TEMPLATE",APP_BASEDIR.'/templates/mail/newPassEMail.#LANG#.tpl');
 
 /* WWW Public files */
 define("ERROR_REPORTING",0); // 0 || E_ALL

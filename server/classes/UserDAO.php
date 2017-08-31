@@ -221,7 +221,7 @@ class UserDAO {
                     $retValue = false;
                 } else {
                     if ( !$active ) {
-                        $res = UserDAO::sendUserConfirm($objUser);
+                        $res = UserDAO::sendUserConfirm($objUser, 'user');
                     }
                 }
             }else{
@@ -358,9 +358,10 @@ class UserDAO {
      *
      * @param string $userEmail user email
      * @param string $userKey user key
+     * @param string $action user action
      * @return boolean
      */
-    public static function userConfirm($userEmail, $userKey){
+    public static function userConfirm($userEmail, $userKey, $action){
         global $_conf;
         $retValue = false;
 
@@ -369,7 +370,8 @@ class UserDAO {
         if ( $sysUID ) {
             $strsql = "SELECT * FROM `userConfirm`
                         WHERE `sysUID` = '".$sysUID."'
-                        AND `key` = '".$userKey."'";
+                        AND `key` = '".$userKey."'
+                        AND `action` = '".$action."'";
 
             try{
                 $_db = new DBClass();
@@ -384,7 +386,8 @@ class UserDAO {
                         SET u.active = '1',
                         uc.confirmation_date = '".date('Y-m-d H:i:s')."'
                         WHERE u.sysUID = '".$sysUID."'
-                        AND uc.sysUID = '".$sysUID."'";
+                        AND uc.sysUID = '".$sysUID."'
+                        AND uc.action = '".$action."'";
 
                 try{
                     $_db = new DBClass();
@@ -407,17 +410,18 @@ class UserDAO {
      * @param string $email user email
      * @param string $key user key
      * @param string $date
+     * @param string $action user action
      * @return boolean
      */
-    public static function addUserConfirm($email, $key, $date){
+    public static function addUserConfirm($email, $key, $date, $action){
         global $_conf;
         $retValue = false;
 
         $sysUID = self::getSysUID($email);
 
         if ( $sysUID ) {
-            $strsql = "INSERT INTO `userConfirm` (`sysUID`,`key`,`email`,`creation_date`)
-                              VALUES ('$sysUID','$key','$email','$date')";
+            $strsql = "INSERT INTO `userConfirm` (`sysUID`,`key`,`email`,`creation_date`,`action`)
+                              VALUES ('$sysUID','$key','$email','$date','$action')";
 
             try{
                 $_db = new DBClass();
@@ -437,16 +441,19 @@ class UserDAO {
      * Delete user confirmation data
      *
      * @param string $email user email
+     * @param string $action user action
      * @return boolean
      */
-    public static function deleteUserConfirm($email){
+    public static function deleteUserConfirm($email, $action){
         global $_conf;
         $retValue = false;
 
         $sysUID = self::getSysUID($email);
 
         if ( $sysUID ) {
-            $strsql = "DELETE FROM `userConfirm` WHERE `sysUID` = '".$sysUID."'";
+            $strsql = "DELETE FROM `userConfirm`
+                WHERE `sysUID` = '".$sysUID."'
+                AND `action` = '".$action."'";
 
             try{
                 $_db = new DBClass();
@@ -466,9 +473,10 @@ class UserDAO {
      * Send user confirmation
      *
      * @param object $objUser User object
+     * @param string $action User action
      * @return boolean
      */
-    public static function sendUserConfirm($objUser){
+    public static function sendUserConfirm($objUser, $action){
         $retValue = false;
         $email = $objUser->getEmail();
         $date = date('Y-m-d H:i:s');
@@ -476,9 +484,9 @@ class UserDAO {
         //create a random key
         $key = md5(uniqid(mt_rand(), true));
 
-        $deleteConfirm = self::deleteUserConfirm($email);
+        $deleteConfirm = self::deleteUserConfirm($email,$action);
 
-        $addConfirm = self::addUserConfirm($email,$key,$date);
+        $addConfirm = self::addUserConfirm($email,$key,$date,$action);
 
         if($addConfirm !== false){
             $to = array($email);
@@ -496,6 +504,57 @@ class UserDAO {
             $sendMail = Mailer::sendMail($text[0], $text[1], CONFIRM_USER_EMAIL_SUBJECT.$objUser->getFirstName(), $to);
 
             $retValue = true;
+        }
+
+        return $retValue;
+    }
+
+    /**
+     * Send new pass confirmation
+     *
+     * @param string $userEmail User email
+     * @param string $action User action
+     * @return boolean
+     */
+    public static function sendNewPassConfirm($userEmail, $action){
+        $retValue = false;
+        $email = $userEmail;
+        $date = date('Y-m-d H:i:s');
+
+        /* Get the custom LDAP data, based on user's mail domain */
+        $userDomain = substr(stristr($email,'@'),1);
+
+        if ( ($userDomain != 'bireme.org') && ($userDomain != 'scielo.org') ) {
+            if(self::isActive($email)){
+                     
+                //create a random key
+                $key = md5(uniqid(mt_rand(), true));
+
+                $deleteConfirm = self::deleteUserConfirm($email,$action);
+
+                $addConfirm = self::addUserConfirm($email,$key,$date,$action);
+
+                if($addConfirm !== false){
+                    $objUser = self::getUser($email);
+                    $to = array($email);
+                    $tpl = str_replace('#LANG#', $_SESSION['lang'], NEW_PASS_CONFIRMATION_TEMPLATE);
+                    $home = $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . RELATIVE_PATH . '/controller/authentication';
+                    $body = str_replace('#SITE#',
+                        $_SERVER['HTTP_HOST'],
+                        file_get_contents($tpl));
+                    $body = str_replace('#USERNAME#', $objUser->getFirstName(), $body);
+                    $body = str_replace('#HOME#', base64_encode($home), $body);
+                    $body = str_replace('#EMAIL#', $email, $body);
+                    $body = str_replace('#KEY#', $key, $body);
+                    $body = str_replace('#LANG#', $_SESSION['lang'], $body);
+                    $text = explode('[DELIMITER]', $body);
+                    $sendMail = Mailer::sendMail($text[0], $text[1], CONFIRM_NEW_PASS_SUBJECT.$objUser->getFirstName(), $to);
+
+                    $retValue = true;
+                }
+            }
+        }else{
+            $retValue = 'DomainNotPermitted';
         }
 
         return $retValue;
