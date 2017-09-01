@@ -115,12 +115,13 @@ class ToolsAuthentication {
         }
 
         if ( $result["status"] ) { // Set user's last login
+            $setSource = UserDAO::setSource($userID, $result['source']);
+
             $gll = UserDAO::getLastLogin($userID);
+            $sll = UserDAO::setLastLogin($userID);
 
             if ( $gll )
                 $result["visited"] = true;
-
-            $sll = UserDAO::setLastLogin($userID);
         }
 
         return $result;

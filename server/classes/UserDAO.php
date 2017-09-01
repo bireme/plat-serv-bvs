@@ -561,7 +561,39 @@ class UserDAO {
     }
 
     /**
-     * Set user's last login
+     * Set user source
+     *
+     * @param string $userID User ID
+     * @param string $source User source
+     * @return boolean
+     */
+    public static function setSource($userID, $source){
+        global $_conf;
+        $retValue = false;
+
+        $sysUID = self::getSysUID($userID);
+
+        if ( $sysUID ) {
+            $strsql = "UPDATE users
+                    SET userSource = '".$source."'
+                    WHERE sysUID = '".$sysUID."'";
+
+            try{
+                $_db = new DBClass();
+                $result = $_db->databaseQuery($strsql);
+            }catch(DBClassException $e){
+                $logger = &Log::singleton('file', LOG_FILE, __CLASS__, $_conf);
+                $logger->log($e->getMessage(),PEAR_LOG_EMERG);
+            }
+
+            if ( $result !== false ) $retValue = true;
+        }
+
+        return $retValue;
+    }
+
+    /**
+     * Set user last login
      *
      * @param string $userID User ID
      * @return boolean
@@ -592,7 +624,7 @@ class UserDAO {
     }
 
     /**
-     * Get user's last login
+     * Get user last login
      *
      * @param string $userID user ID
      * @return string|boolean
