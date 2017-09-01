@@ -122,6 +122,7 @@ class MySearches {
             $result = $collection->aggregate([
                 [
                     '$match' => [
+                        'userID' => $userID,
                         'query' => [
                             '$ne' => '*',
                             '$regex' => '^(?!id:)',
@@ -190,6 +191,7 @@ class MySearches {
             $result = $collection->aggregate([
                 [
                     '$match' => [
+                        'userID' => $userID,
                         'query' => [
                             '$ne' => '*',
                             '$regex' => '^(?!id:)',
