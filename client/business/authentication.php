@@ -13,6 +13,7 @@
  * Edit this file in UTF-8 - Test String "áéíóú"
  */
 require_once(dirname(__FILE__)."/../classes/Authentication.php");
+require_once(dirname(__FILE__)."/../classes/DocsCollection.php");
 
 if ($_REQUEST["task"] === null){
     $_REQUEST["task"] = "authenticate";
@@ -79,7 +80,7 @@ switch($_REQUEST["task"]){
                 if(!empty($origin)){
                     $ssoParams = '/origin/'.$origin;
                 }
-                header('Location:'. RELATIVE_PATH .
+                header('Location: '. RELATIVE_PATH .
                     '/controller/mig_id_confirmation/userTK/'.
                     base64_encode($response['values']['tmpTK']).'/userID/'.
                     base64_encode($response['values']['userID']).$ssoParams);
@@ -121,6 +122,40 @@ if(!empty($_SESSION["userTK"])){
         $_SESSION["userLastName"] = $result["userLastName"];
         $_SESSION["userMail"] = $result["userMail"];
         $_SESSION["source"] = $result["source"];
+    }
+
+    if ( $_SESSION['data'] ) {
+        $data = (array) $_SESSION['data'];
+
+        extract($data);
+
+        $url = htmlspecialchars($url);
+        $source = htmlspecialchars($source);
+        $author = htmlspecialchars($author);
+        $title = htmlspecialchars($title);
+
+$xmlDoc=<<<XML
+<?xml version='1.0'?>
+<docs>
+    <doc>
+        <field name="doc_id">{$id}</field>
+        <field name="doc_url">{$url}</field>
+        <field name="src_id">{$source}</field>
+        <field name="au">{$author}</field>
+        <field name="title">{$title}</field>
+    </doc>
+</docs>
+XML;
+
+        $result = DocsCollection::addDoc($_SESSION["userTK"], $xmlDoc);
+
+        if ( $result ) {
+            unset($_SESSION['data']);
+            
+            if ( $_SESSION['visited'] ) {
+                header('Location: '.RELATIVE_PATH.'/controller/mydocuments/control/business');
+            }
+        }
     }
 }
 ?>

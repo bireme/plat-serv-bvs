@@ -15,6 +15,7 @@
 
 $tmplang = $_SESSION['lang'];
 $tmpskin = $_SESSION['skin'];
+$tmpdata = $_SESSION['data'];
 
 /* destroy session data */
 session_destroy();
@@ -25,4 +26,5 @@ setcookie('userTK','',time() -3600,'/',COOKIE_DOMAIN_SCOPE);
 session_start();
 $_SESSION['lang'] = $tmplang;
 $_SESSION['skin'] = $tmpskin;
+$_SESSION['data'] = $tmpdata;
 ?>

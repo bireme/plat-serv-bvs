@@ -4,6 +4,7 @@ header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Methods: GET, POST');
 
 require_once(dirname(__FILE__)."/../config.php");
+require_once(dirname(__FILE__)."/../classes/DocsCollection.php");
 
 if ($_REQUEST["task"] === null){
     $_REQUEST["task"] = "list";
@@ -15,10 +16,6 @@ if($userTK){
 
     switch($_REQUEST["task"]){
         case "addDoc":
-            /* necessita adicionar em arquivo de configuracao */
-            $objSoapClient = new SoapClient(null,array('location'=>SERVICES_PLATFORM_SERVER.'/DocsCollection.php',
-                                                       'uri'=>'http://test-uri/'));
-                                                       
             $url = htmlspecialchars($_REQUEST['url']);
             $source = htmlspecialchars($_REQUEST['source']);
             $author = htmlspecialchars($_REQUEST['author']);
@@ -37,7 +34,8 @@ $xmlDoc=<<<XML
 </docs>
 XML;
 
-            $retValue = $objSoapClient->addDoc($userTK,$xmlDoc);
+            $retValue = DocsCollection::addDoc($userTK,$xmlDoc);
+            
             die($retValue);
         break;
         default:

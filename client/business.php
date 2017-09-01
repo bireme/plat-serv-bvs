@@ -1,6 +1,18 @@
 <?php
 // BUSINESS controller
 
+if ( isset($_SESSION['userTK']) && !empty($_SESSION['userTK']) ) {
+    require_once(dirname(__FILE__)."/classes/Authentication.php");
+
+    $data = Authentication::getUserData($_SESSION["userTK"]);
+    
+    if ( !$data['agreement_date'] ) {
+        $b64HttpHost = base64_encode(RELATIVE_PATH.'/controller/authentication');
+        header('Location:'.SERVICES_PLATFORM_DOMAIN.'/pub/userData.php?userTK='.urlencode($_SESSION["userTK"]).'&c='.$b64HttpHost);
+        exit();
+    }
+}
+
 if ($_REQUEST["action"] != 'authentication' and (!isset($_SESSION['userTK']) || empty($_SESSION['userTK']))){
     if ( 'servicesplatform' != $_REQUEST["action"] ) $_REQUEST["action"] = 'logout';
 }
@@ -58,18 +70,6 @@ switch($_REQUEST["action"]){
     default:
         die("default");
     break;
-}
-
-if ( isset($_SESSION['userTK']) && !empty($_SESSION['userTK']) ) {
-    require_once(dirname(__FILE__)."/classes/Authentication.php");
-
-    $data = Authentication::getUserData($_SESSION["userTK"]);
-    
-    if ( !$data['agreement_date'] ) {
-        $b64HttpHost = base64_encode(RELATIVE_PATH.'/controller/authentication');
-        header('Location:'.SERVICES_PLATFORM_DOMAIN.'/pub/userData.php?userTK='.urlencode($_SESSION["userTK"]).'&c='.$b64HttpHost);
-        exit();
-    }
 }
 
 ?>

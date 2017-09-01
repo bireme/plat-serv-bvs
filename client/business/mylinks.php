@@ -33,7 +33,7 @@ switch($_REQUEST["task"]){
         $result = MyLinks::getLinkList($_SESSION["userTK"],$params);
         $response["values"] = $result;
 
-        $response["status"] = true;        
+        $response["status"] = true;
     break;
     case "add":
         $inHome = ($_REQUEST["linkInHome"]=="on")?"1":"0";
