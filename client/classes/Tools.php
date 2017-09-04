@@ -148,10 +148,10 @@ class CharTools {
      */
     public static function shortenedQueryString($query){
         $query =  htmlspecialchars_decode($query);
-        
-        if ( strlen($query) > 50 ) {
-            $start = substr($query, 0, 50);
-            $end = substr($query, 50);
+
+        if ( strlen($query) > 100 ) {
+            $start = substr($query, 0, 100);
+            $end = substr($query, 100);
 
             return $start.'<span class="show-all"> [...]</span><span class="short-query">'.$end.'</span>';
         }
