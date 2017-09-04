@@ -138,6 +138,29 @@ class Token {
 
 }
 
+class CharTools {
+
+    /**
+     * Equalize the input string charset
+     *
+     * @param string $string
+     * @return string
+     */
+    public static function shortenedQueryString($query){
+        $query =  htmlspecialchars_decode($query);
+        
+        if ( strlen($query) > 50 ) {
+            $start = substr($query, 0, 50);
+            $end = substr($query, 50);
+
+            return $start.'<span class="show-all"> [...]</span><span class="short-query">'.$end.'</span>';
+        }
+
+        return $query;
+    }
+
+}
+
 class UserData {
 
     public static function sendCookie($userTK,$return=false){

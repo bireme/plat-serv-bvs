@@ -441,6 +441,20 @@ select.bulkactions {
     word-wrap: break-word;
 }
 
+#datatable-search td.query span.show-all,
+#datatable-search td.filter span.show-all {
+    line-height: 1;
+    color: #000fff;
+    font-size: 85%;
+    cursor: pointer;
+}
+
+#datatable-search td.query span.short-query,
+#datatable-search td.filter span.short-query {
+    line-height: 1;
+    display: none;
+}
+
 #datatable-search.collapsed > tbody > tr > td:first-child:before,
 #datatable-search.collapsed > tbody > tr > th:first-child:before {
     top: auto;

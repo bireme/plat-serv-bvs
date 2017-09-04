@@ -39,8 +39,8 @@
                             <?php foreach ( $response["values"] as $register) : $count++; ?>
                             <tr>
                               <td id="s<?php echo $count; ?>"><?php echo $count; ?></td>
-                              <td class="query step26"><a href="<?php echo VHL_SEARCH_PORTAL_DOMAIN.'/portal/?q='.$register['query']; ?>" target="_blank"><?php echo $register['query']; ?></a></td>
-                              <td class="filter step27"><?php echo $register['filter']; ?></td>
+                              <td class="query step26"><a href="<?php echo VHL_SEARCH_PORTAL_DOMAIN.'/portal/?q='.$register['query']; ?>" target="_blank"><?php echo CharTools::shortenedQueryString($register['query']); ?></a></td>
+                              <td class="filter step27"><?php echo CharTools::shortenedQueryString($register['filter']); ?></td>
                               <td class="step28">
                                 <?php if ( 'portal' == $_SESSION['iahx'] ) : ?>
                                 <button id="v<?php echo $count; ?>" class="btn btn-primary btn-xs portal" value="portal" data-query="<?php echo $register['query']; ?>" data-filter="<?php echo $register['filter']; ?>" onclick="__gaTracker('send','event','VHL Search History','Show Result','<?php echo htmlspecialchars($register["query"]); ?>');"><i class="fa fa-search"></i> <?=$trans->getTrans($_REQUEST["action"],'VIEW')?></button>

@@ -3,6 +3,8 @@ var docs = [];
 
 $( document ).ready(
     function(){
+
+        /********** Suggestions Scripts **********/
         $( "#reference" ).change(
             function(e){
                 e.preventDefault();
@@ -119,6 +121,7 @@ $( document ).ready(
             }
         )
 
+        /********** Interest Topics Scripts **********/
         $('a.add-collection').popover({
             html : true,
             placement : 'right',
@@ -179,6 +182,7 @@ $( document ).ready(
             });
         });
 
+        /********** Related Documents Scripts **********/
         $(this).on('click', 'a.related-docs',
             function(e){
                 e.preventDefault();
@@ -221,6 +225,7 @@ $( document ).ready(
             }
         );
 
+        /********** Bulk Actions Scripts **********/
         $( document ).on('change', '.bulkactions', function(e) {
             e.preventDefault();
 
@@ -247,23 +252,10 @@ $( document ).ready(
             }
         });
 
-        $(this).on('click', 'a.operator',
-            function(){
-                var operator = $(this).text();
-                var query    = $(this).parents().siblings('.combine').data('query');
-                var filter   = $(this).parents().siblings('.combine').data('filter');
-                var search   = $("input[name='q']").val();
-
-                filter = ( filter !== '' && filter !== '*' ) ? ' AND ' + filter : '';
-                search = ( search !== '' ) ? search + ' ' + operator + ' ' : '';
-
-                $("input[name='q']").val(search +  '(' + query + filter + ')');
-                $(this).parents().siblings('button.combine').click();
-            }
-        );
-
+        /********** VHL Search History Scripts **********/
         $(document).on('click', function (e) {
-            portalPopover();
+            operatorCombine();
+            portalPopup();
             searchPopover();
             combinePopover();
 
@@ -277,15 +269,24 @@ $( document ).ready(
             });
         });
 
-        $('#datatable-search').DataTable( {
-            paging: false,
-            ordering: false,
-            info: false,
-            searching: false,
-            responsive: true
-        } );
+        var operatorCombine = function () {
+            $(this).on('click', 'a.operator', function(){
+                var operator = $(this).text();
+                var query    = $(this).parents().siblings('.combine').data('query');
+                var filter   = $(this).parents().siblings('.combine').data('filter');
+                var search   = $("input[name='q']").val();
 
-        var portalPopover = function () {
+                filter = ( filter !== '' && filter !== '*' ) ? ' AND ' + filter : '';
+                search = ( search !== '' ) ? search + ' ' + operator + ' ' : '';
+
+                $("input[name='q']").val(search +  '(' + query + filter + ')');
+                $(this).parents().siblings('button.combine').click();
+            });
+        };
+
+        operatorCombine();
+
+        var portalPopup = function () {
             $('button.portal').on('click', function(e){
                 var portal = "http://pesquisa.bvsalud.org/portal";
                 var query  = encodeURIComponent($(this).data('query'));
@@ -296,7 +297,7 @@ $( document ).ready(
             });
         };
 
-        portalPopover();
+        portalPopup();
 
         var searchPopover = function () {
             $('button.search').popover({
@@ -332,6 +333,21 @@ $( document ).ready(
 
         combinePopover();
 
+        $('#datatable-search').DataTable( {
+            paging: false,
+            ordering: false,
+            info: false,
+            searching: false,
+            responsive: true
+        } );
+
+        $('span.show-all').on('click', function(e){
+            e.preventDefault();
+            $(this).hide();
+            $(this).next().show();
+        });
+
+        /********** Miscellaneous Scripts **********/
         var setContentHeight = function () {
             // reset height
             $RIGHT_COL.css('min-height', $(window).height());
