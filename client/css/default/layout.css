@@ -441,17 +441,19 @@ select.bulkactions {
     word-wrap: break-word;
 }
 
+.vhl-search .servplat-widget td.query span.show-all,
 #datatable-search td.query span.show-all,
 #datatable-search td.filter span.show-all {
-    line-height: 1;
+    line-height: 1.42857143;
     color: #000fff;
     font-size: 85%;
     cursor: pointer;
 }
 
+.vhl-search .servplat-widget td.query span.short-query,
 #datatable-search td.query span.short-query,
 #datatable-search td.filter span.short-query {
-    line-height: 1;
+    line-height: 1.42857143;
     display: none;
 }
 

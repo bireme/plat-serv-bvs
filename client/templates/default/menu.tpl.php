@@ -179,7 +179,7 @@
                         <tbody style="word-break: break-word;">
                           <?php foreach ( $searches as $search ) : $count++ ?>
                             <tr>
-                              <td class="query"><?php echo $search['query']; ?></td>
+                              <td class="query"><?php echo CharTools::shortenedQueryString($search['query']); ?></td>
                               <td style="text-align: right;">
                                 <?php if ( 'portal' == $_SESSION['iahx'] ) : ?>
                                 <button id="v<?php echo $count; ?>" class="btn btn-primary btn-xs portal" value="portal" data-query="<?php echo $search['query']; ?>" data-filter="<?php echo $search['filter']; ?>" onclick="__gaTracker('send','event','Overview','VHL Search History','<?php echo htmlspecialchars($search['query']); ?>');"><i class="fa fa-search"></i> <?=$trans->getTrans('menu','VIEW')?></button>
