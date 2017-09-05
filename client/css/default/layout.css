@@ -618,6 +618,14 @@ ul.messages li, .tasks li {
 	margin-top: 83px;
 }
 
+a.no-url {
+    color: #73879C;
+}
+
+a.no-url:hover {
+    cursor: text;
+}
+
 @media only screen
 and (max-device-width : 412px) {
     .introjs-tooltip .introjs-tooltipbuttons {

@@ -155,7 +155,11 @@ $( document ).ready(
             obj.userTK = unescape(getCookie('userTK'));
 
             $.post( href, obj, function(data) {
-                response = $.parseJSON(data);
+                if (isJSON(data)){
+                    response = $.parseJSON(data);
+                }else{
+                    response = data;
+                }
 
                 if(data == true){
                     href = parts[0]+"/controller/directories/control/business/task/movedoc";
@@ -202,9 +206,13 @@ $( document ).ready(
                 content.find('.related-loading').show();
 
                 $.post( href, obj, function(data) {
-                    response = $.parseJSON(data);
+                    if (isJSON(data)){
+                        response = $.parseJSON(data);
+                    }else{
+                        response = data;
+                    }
 
-                    if(typeof response == 'object') {
+                    if (typeof response == 'object') {
                         var html;
                         var before = '<small><ol>';
                         var after = '</ol></small>';

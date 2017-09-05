@@ -33,7 +33,7 @@
                                   <?php if ( $register["docURL"] ) : ?>
                                     <a href="<?php echo $register["docURL"]; ?>" target="_blank"><?php echo $register["title"]; ?></a>
                                   <?php else : ?>
-                                    <?php echo $register["title"]; ?>
+                                    <a href="javascript:;" class="no-url"><?php echo $register["title"]; ?></a>
                                   <?php endif; ?>
                                   <small style="display: block;"><?php echo implode("; ", $register["authors"]); ?></small>
                                 </div>

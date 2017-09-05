@@ -578,8 +578,8 @@ class SimilarDocs {
             if ( 'none' != $similars ) {
                 $retValue = array();
 
-                foreach ($similars as $similar) {                    
-                    $title   = self::getSimilarDocTitle($similar);
+                foreach ($similars as $similar) {
+                    $title = self::getSimilarDocTitle($similar);
 
                     if ( strtolower(rtrim($title, '.')) == strtolower(rtrim($string, '.')) )
                         continue;

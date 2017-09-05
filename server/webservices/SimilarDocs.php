@@ -25,7 +25,7 @@ $objSoapServer->handle();
 /**
  * Add profile in SimilarDocs service
  *
- * @param string $userID User ID
+ * @param string $userTK User hash
  * @param string $profile Profile name
  * @param string $string
  * @return boolean
@@ -47,7 +47,7 @@ function addProfile($userTK,$profile,$string){
 /**
  * Delete profile in SimilarDocs service
  *
- * @param string $userID User ID
+ * @param string $userTK User hash
  * @param string $profile Profile name
  * @return boolean
  */
@@ -154,7 +154,7 @@ function getOrcidWorks($userTK,$args){
 /**
  * Get related documents
  *
- * @param string $userID User ID
+ * @param string $userTK User hash
  * @param string $string
  * @return boolean|array
  */
