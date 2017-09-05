@@ -190,6 +190,8 @@ $( document ).ready(
         $(this).on('click', 'a.related-docs',
             function(e){
                 e.preventDefault();
+                _this = $(this);
+                _this.prop('disabled', true);
 
                 path = window.location.pathname;
                 parts = path.split("/controller/");
@@ -229,6 +231,8 @@ $( document ).ready(
                         content.find('.related-loading').hide();
                         alert(content.find('.related-alert').text());
                     }
+
+                    _this.prop('disabled', false);
                 });
             }
         );
