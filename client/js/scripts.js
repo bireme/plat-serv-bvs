@@ -282,7 +282,7 @@ $( document ).ready(
         });
 
         var operatorCombine = function () {
-            $(this).on('click', 'a.operator', function(){
+            $('a.operator').on('click', function(){
                 var operator = $(this).text();
                 var query    = $(this).parents().siblings('.combine').data('query');
                 var filter   = $(this).parents().siblings('.combine').data('filter');
