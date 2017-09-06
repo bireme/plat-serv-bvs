@@ -468,8 +468,8 @@ class SimilarDocs {
                         $data = explode('$', $profile['name']);
                         $sentence = $profile['content'];
 
-                        // Update suggested documents if last modification date is older than 7 days 
-                        if(strtotime($data[1]) < strtotime('-1 week')){
+                        // Update suggested documents if last modification date is older than 1 day
+                        if(strtotime($data[1]) < strtotime('-1 day')){
                             $prefix = $prefix . $date . '$';
                             $profileName = $prefix . md5($sentence);
 
