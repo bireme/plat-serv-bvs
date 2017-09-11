@@ -68,6 +68,8 @@ class ToolsAuthentication {
 
                 $retValue = UserDAO::addUser($objUser, 1);
                 $result["userDataStatus"] = false; /* need to complete user data */
+            } else {
+                $active = UserDAO::setActive($userID, 1);
             }
 
         } elseif ( $user = UserDAO::getAccountsUser($userID, $userPass) ) { /* check users from BIREME Acccounts */

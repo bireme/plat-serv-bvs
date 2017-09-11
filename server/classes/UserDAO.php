@@ -217,13 +217,10 @@ class UserDAO {
                     $logger->log($e->getMessage(),PEAR_LOG_EMERG);
                 }
 
-                if ( $result === false ){
+                if ( $result === false )
                     $retValue = false;
-                } else {
-                    if ( !$active ) {
-                        $res = UserDAO::sendUserConfirm($objUser, 'user');
-                    }
-                }
+                elseif ( !$active )
+                    $res = UserDAO::sendUserConfirm($objUser, 'user');
             }else{
                 $retValue = false;
             }
@@ -350,6 +347,38 @@ class UserDAO {
         if($res[0]['count(userID)'] >= 1){
             $retValue = true;
         }
+        return $retValue;
+    }
+
+    /**
+     * Set active field data
+     *
+     * @param string $userID User ID
+     * @param string $active Active data
+     * @return boolean
+     */
+    public static function setActive($userID, $active){
+        global $_conf;
+        $retValue = false;
+
+        $sysUID = self::getSysUID($userID);
+
+        if ( $sysUID ) {
+            $strsql = "UPDATE users
+                    SET active = '".$active."'
+                    WHERE sysUID = '".$sysUID."'";
+
+            try{
+                $_db = new DBClass();
+                $result = $_db->databaseQuery($strsql);
+            }catch(DBClassException $e){
+                $logger = &Log::singleton('file', LOG_FILE, __CLASS__, $_conf);
+                $logger->log($e->getMessage(),PEAR_LOG_EMERG);
+            }
+
+            if ( $result !== false ) $retValue = true;
+        }
+
         return $retValue;
     }
 
