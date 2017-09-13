@@ -1,5 +1,4 @@
 <?php
-
 header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Methods: GET, POST');
 
@@ -13,10 +12,22 @@ if ( $userTK ) {
     $log = array();
     $data = array();
 
-    $userData = Token::unmakeUserTK($userTK, true);
+    $tz_variation = date('Z') * 1000;
+    $timestamp = new MongoDB\BSON\UTCDateTime(intval(microtime(true) * 1000 + $tz_variation));
 
+    $userData = Token::unmakeUserTK($userTK, true);
+/*
+    $tz = new DateTimeZone('America/Sao_Paulo'); // Change Timezone
+    //$date = date("Y-m-d h:i:sa"); // Current Date
+    //$utcdatetime = new MongoDB\BSON\UTCDateTime(strtotime($date)*1000);
+    $utcdatetime = new MongoDB\BSON\UTCDateTime(intval(microtime(true)*1000));
+    $datetime = $utcdatetime->toDateTime();
+    $datetime->setTimezone($tz); // Set Timezone
+    $timestamp = $datetime->format(DATE_ATOM); // (example: 2005-08-15T15:52:01+00:00)
+*/
     $log['userID'] = $userData['userID'];
     $log['date'] = date('Y-m-d H:i:s');
+    $log['timestamp'] = $timestamp;
     $log['ip'] = isset($_REQUEST['ip'])?$_REQUEST['ip']:'';
     $log['lang'] = isset($_REQUEST['lang'])?$_REQUEST['lang']:'';
     $log['col'] = isset($_REQUEST['col'])?$_REQUEST['col']:'';
