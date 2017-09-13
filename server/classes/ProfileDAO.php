@@ -72,7 +72,7 @@ class ProfileDAO {
 
         if ($result !== null){
             $sentence = $objProfile->getProfileName() . ' ' . $objProfile->getProfileText();
-            $addProfile = SimilarDocs::addProfile( $userID, $objProfile->getProfileName(), $sentence );
+            $addProfile = SimilarDocs::addProfile( $userID, $result, $objProfile->getProfileName(), $sentence );
             $trace = Tracking::addTrace( $userID, 'profile', 'add', $objProfile->getProfileName() );
             $retValue = $result;
         }
@@ -120,8 +120,8 @@ class ProfileDAO {
 
             if ($result !== 0){
                 $sentence = $profile->getProfileName() . ' ' . $profile->getProfileText();
-                $deleteProfile = SimilarDocs::deleteProfile( $userID, $getProfile[0]['profileName'] );
-                $addProfile = SimilarDocs::addProfile( $userID, $profile->getProfileName(), $sentence );
+                $deleteProfile = SimilarDocs::deleteProfile( $userID, $profileID, $getProfile[0]['profileName'] );
+                $addProfile = SimilarDocs::addProfile( $userID, $profileID, $profile->getProfileName(), $sentence );
                 $trace = Tracking::addTrace( $userID, 'profile', 'update', $profile->getProfileName() );
                 $retValue = true;
             }
@@ -276,7 +276,7 @@ class ProfileDAO {
         }
 
         if ($result !== 0){
-            $deleteProfile = SimilarDocs::deleteProfile( $userID, $profile[0]['profileName'] );
+            $deleteProfile = SimilarDocs::deleteProfile( $userID, $profileID, $profile[0]['profileName'] );
             $trace = Tracking::addTrace( $userID, 'profile', 'remove', $profile[0]['profileName'] );
             $retValue = true;
         }

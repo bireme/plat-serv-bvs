@@ -48,12 +48,12 @@ switch($_REQUEST["task"]){
         $responseProfile["values"] = $result;
         $responseProfile["status"] = true;
         
-        $paginationData['pages'] = SimilarDocs::getTotalSimilarsDocsPages($_SESSION["userTK"],$responseProfile["values"][0]["profileName"]);
+        $paginationData['pages'] = SimilarDocs::getTotalSimilarsDocsPages($_SESSION["userTK"],$responseProfile["values"][0]["profileID"]);
         $objPaginator = new Paginator($paginationData['pages'],
             !empty($_REQUEST['page']) ? $_REQUEST['page'] : 1);
         $params['page'] = $objPaginator->getCurrentPage();
 
-        $result = SimilarDocs::getSimilarsDocs($_SESSION["userTK"],$responseProfile["values"][0]["profileName"],$params);
+        $result = SimilarDocs::getSimilarsDocs($_SESSION["userTK"],$responseProfile["values"][0]["profileID"],$params);
         if ($result === false){
             $responseSimilarDocs["status"] = false;
         }else{

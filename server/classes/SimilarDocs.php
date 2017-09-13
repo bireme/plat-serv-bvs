@@ -25,11 +25,12 @@ class SimilarDocs {
      * Add documents from SimilarDocs service
      *
      * @param string $userID User ID
-     * @param string $profile Profile name
+     * @param int $profileID Profile ID
+     * @param string $profileName Profile name
      * @param array $similars
      * @return boolean
      */
-    public static function addProfileDocs($userID,$profile,$similars){
+    public static function addProfileDocs($userID,$profileID,$profileName,$similars){
         global $_conf;
         $result = null;
         $retValue = false;
@@ -43,6 +44,7 @@ class SimilarDocs {
                 $authors = self::getSimilarDocAuthors($similar['au']);
 
                 $strsql = "INSERT INTO suggestions(docID,
+                                            profileID,
                                             profile,
                                             authors,
                                             docURL,
@@ -50,7 +52,8 @@ class SimilarDocs {
                                             userID,
                                             creation_date)
                                     VALUES ('".$similar['id']."','".
-                                               $profile."','".
+                                               $profileID."','".
+                                               $profileName."','".
                                                $authors."','".
                                                $docURL."','".
                                                $title."','".
@@ -76,10 +79,11 @@ class SimilarDocs {
      * Delete documents from SimilarDocs service
      *
      * @param string $userID User ID
-     * @param string $profile Profile name
+     * @param int $profileID Profile ID
+     * @param string $profileName Profile name
      * @return boolean
      */
-    public static function deleteProfileDocs($userID,$profile){
+    public static function deleteProfileDocs($userID,$profileID,$profileName){
         global $_conf;
         $result = 0;
         $retValue = false;
@@ -88,7 +92,9 @@ class SimilarDocs {
 
         if($is_user){
             $strsql = "DELETE FROM suggestions
-                WHERE userID = '".$userID."' and profile = '".$profile."'";
+                WHERE userID = '".$userID."'
+                AND profileID = '".$profileID."'
+                AND profile = '".$profileName."'";
 
             try{
                 $_db = new DBClass();
@@ -108,11 +114,11 @@ class SimilarDocs {
      * List similar documents
      *
      * @param string $userID User ID
-     * @param string $profile Profile name
+     * @param int $profileID Profile ID
      * @param array $params
      * @return array
      */
-    public static function getSimilarsDocs($userID,$profile,$params){
+    public static function getSimilarsDocs($userID,$profileID,$params){
         global $_conf;
         $retValue = false;
         $count = ( $params["widget"] ) ? WIDGETS_ITEMS_LIMIT : DOCUMENTS_PER_PAGE;
@@ -122,7 +128,7 @@ class SimilarDocs {
 
         $strsql = "SELECT profileStatus FROM profiles
             WHERE sysUID = '".$sysUID."' and
-            profileName='".$profile."'";
+            profileID='".$profileID."'";
 
         try{
             $_db = new DBClass();
@@ -141,7 +147,7 @@ class SimilarDocs {
 
             if ( 'on' == $result[0]['profileStatus'] ) {
                 $strsql = "SELECT * FROM  suggestions
-                    WHERE userID = '".$userID."' and profile = '".$profile."'";
+                    WHERE userID = '".$userID."' and profileID = '".$profileID."'";
 
                 if($count > 0){
                     $strsql .= " LIMIT $from,$count";
@@ -168,17 +174,18 @@ class SimilarDocs {
      * Add profile in SimilarDocs service
      *
      * @param string $userID User ID
-     * @param string $profile Profile name
+     * @param int $profileID Profile ID
+     * @param string $profileName Profile name
      * @param string $string
      * @param boolean $skip
      * @return boolean
      */
-    public static function addProfile($userID,$profile,$string,$skip=false){
+    public static function addProfile($userID,$profileID,$profileName,$string,$skip=false){
         $result = false;
         $status = 'on';
 
         $similar = str_replace("#PSID#",$userID,SIMDOCS_ADD_PROFILE);
-        $similar = str_replace("#PROFILE#",urlencode($profile),$similar);
+        $similar = str_replace("#PROFILE#",urlencode($profileName),$similar);
 
         $opts = array(
             'http' => array(
@@ -204,13 +211,13 @@ class SimilarDocs {
 
         if(!$skip){
             if($xml){
-                $similars = self::getSimilars($userID,$profile);
+                $similars = self::getSimilars($userID,$profileName);
 
                 if ( $similars ) {
                     if ( 'none' == $similars )
                         $status = 'none';
                     else
-                        $result = self::addProfileDocs($userID,$profile,$similars);
+                        $result = self::addProfileDocs($userID,$profileID,$profileName,$similars);
                 } else {
                     $status = 'off';
                 }
@@ -220,7 +227,7 @@ class SimilarDocs {
 
             $sysUID = UserDAO::getSysUID($userID);
 
-            $strsql = "UPDATE profiles set profileStatus='".$status."' WHERE profileName='".$profile."' and sysUID='".$sysUID."'";
+            $strsql = "UPDATE profiles set profileStatus='".$status."' WHERE profileID='".$profileID."' and sysUID='".$sysUID."'";
 
             try{
                 $_db = new DBClass();
@@ -238,15 +245,16 @@ class SimilarDocs {
      * Delete profile in SimilarDocs service
      *
      * @param string $userID User ID
-     * @param string $profile Profile name
+     * @param int $profileID Profile ID
+     * @param string $profileName Profile name
      * @param boolean $skip
      * @return boolean
      */
-    public static function deleteProfile($userID,$profile,$skip=false){
+    public static function deleteProfile($userID,$profileID,$profileName,$skip=false){
         $result =  false;
 
         $similar = str_replace("#PSID#",$userID,SIMDOCS_DELETE_PROFILE);
-        $similar = str_replace("#PROFILE#",urlencode($profile),$similar);
+        $similar = str_replace("#PROFILE#",urlencode($profileName),$similar);
 
         $opts = array(
             'http' => array(
@@ -272,7 +280,7 @@ class SimilarDocs {
 
         if(!$skip){
             if($xml){
-                $result = self::deleteProfileDocs($userID,$profile);
+                $result = self::deleteProfileDocs($userID,$profileID,$profileName);
             }
         }
 
@@ -390,7 +398,7 @@ class SimilarDocs {
 
             foreach ($profiles as $profile) {
                 if ($prefix === substr($profile['name'], 0, 3)) {
-                    $deleteProfile = self::deleteProfile($userID,$profile['name'],true);
+                    $deleteProfile = self::deleteProfile($userID,0,$profile['name'],true);
                 }
             }
 
@@ -399,7 +407,7 @@ class SimilarDocs {
             foreach ($suggestions as $suggestion) {
                 $prefix = $prefix . $date . '$';
                 $profile = $prefix . md5($suggestion);
-                $addProfile = self::addProfile($userID,$profile,$suggestion);
+                $addProfile = self::addProfile($userID,0,$profile,$suggestion);
             }
 
             $retValue = true;
@@ -422,8 +430,11 @@ class SimilarDocs {
         $is_user = UserDAO::isUser($userID);
 
         if($is_user){
+            // $strsql = "DELETE FROM  suggestions
+            //     WHERE userID = '".$userID."' and profile LIKE BINARY 'SD$%'";
+
             $strsql = "DELETE FROM  suggestions
-                WHERE userID = '".$userID."' and profile LIKE BINARY 'SD$%'";
+                WHERE userID = '".$userID."' and profileID = 0";
 
             try{
                 $_db = new DBClass();
@@ -443,8 +454,8 @@ class SimilarDocs {
      * List suggested documents
      *
      * @param string $userID User ID
-     * @param string $profile Profile name
      * @param array $params
+     * @param boolean $update
      * @return array
      */
     public static function getSuggestedDocs($userID,$params,$update=false){
@@ -473,16 +484,19 @@ class SimilarDocs {
                             $prefix = $prefix . $date . '$';
                             $profileName = $prefix . md5($sentence);
 
-                            $deleteProfile = self::deleteProfile($userID,$profile['name']);
-                            $addProfile = self::addProfile($userID,$profileName,$sentence);
+                            $deleteProfile = self::deleteProfile($userID,0,$profile['name']);
+                            $addProfile = self::addProfile($userID,0,$profileName,$sentence);
                         }
                     }
                 }
             }
         }
 
+        // $strsql = "SELECT * FROM  suggestions
+        //     WHERE userID = '".$userID."' and profile LIKE BINARY 'SD$%'";
+
         $strsql = "SELECT * FROM  suggestions
-            WHERE userID = '".$userID."' and profile LIKE BINARY 'SD$%'";
+            WHERE userID = '".$userID."' and profileID = 0";
 
         if($count > 0){
             $strsql .= " LIMIT $from,$count";
@@ -606,15 +620,15 @@ class SimilarDocs {
      * Get the total number of similar documents
      *
      * @param string $userID User ID
-     * @param string $profile Profile name
+     * @param int $profileID Profile ID
      * @return boolean|int
      */
-    public static function getTotalSimilarsDocs($userID,$profile){
+    public static function getTotalSimilarsDocs($userID,$profileID){
         global $_conf;
         $retValue = false;
       
         $strsql = "SELECT count(*) as total FROM suggestions
-            WHERE userID = '".$userID."' and profile = '".$profile."'";
+            WHERE userID = '".$userID."' and profileID = '".$profileID."'";
 
         try{
             $_db = new DBClass();
@@ -636,12 +650,12 @@ class SimilarDocs {
      * registers per page is configured in the config.php file
      *
      * @param string $userID User ID
-     * @param string $profile Profile name
+     * @param int $profileID Profile ID
      * @param int $itensPerPage
      * @return int
      */
-    public static function getTotalSimilarsDocsPages($userID, $profile, $itensPerPage){
-        $total = self::getTotalSimilarsDocs($userID,$profile);
+    public static function getTotalSimilarsDocsPages($userID, $profileID, $itensPerPage){
+        $total = self::getTotalSimilarsDocs($userID,$profileID);
         return ceil($total/$itensPerPage);
     }
     

@@ -26,11 +26,12 @@ $objSoapServer->handle();
  * Add profile in SimilarDocs service
  *
  * @param string $userTK User hash
- * @param string $profile Profile name
+ * @param int $profileID Profile ID
+ * @param string $profileName Profile name
  * @param string $string
  * @return boolean
  */
-function addProfile($userTK,$profile,$string){
+function addProfile($userTK,$profileID,$profileName,$string){
     $result = false;
 
     /*  parameter validation */
@@ -39,7 +40,7 @@ function addProfile($userTK,$profile,$string){
 
     if($retVerifier = $objVerifier->canPass()){
         $retParams = $objVerifier->getParams();
-        $result = SimilarDocs::addProfile($retParams['userTK']['userID'],$profile,$string);
+        $result = SimilarDocs::addProfile($retParams['userTK']['userID'],$profileID,$profileName,$string);
     }
     return $result;
 }
@@ -48,10 +49,11 @@ function addProfile($userTK,$profile,$string){
  * Delete profile in SimilarDocs service
  *
  * @param string $userTK User hash
- * @param string $profile Profile name
+ * @param int $profileID Profile ID
+ * @param string $profileName Profile name
  * @return boolean
  */
-function deleteProfile($userTK,$profile){
+function deleteProfile($userTK,$profileID,$profileName){
     $result = false;
 
     /*  parameter validation */
@@ -60,7 +62,7 @@ function deleteProfile($userTK,$profile){
 
     if($retVerifier = $objVerifier->canPass()){
         $retParams = $objVerifier->getParams();
-        $result = SimilarDocs::deleteProfile($retParams['userTK']['userID'],$profile);
+        $result = SimilarDocs::deleteProfile($retParams['userTK']['userID'],$profileID,$profileName);
     }
     return $result;
 }
@@ -69,11 +71,11 @@ function deleteProfile($userTK,$profile){
  * List similars documents
  *
  * @param string $userTK User hash
- * @param string $profile Profile name
+ * @param int $profileID Profile ID
  * @param array $args
  * @return array
  */
-function getSimilarsDocs($userTK,$profile,$args){
+function getSimilarsDocs($userTK,$profileID,$args){
     $result = false;
 
     /*  parameter validation */
@@ -82,7 +84,7 @@ function getSimilarsDocs($userTK,$profile,$args){
 
     if($retVerifier = $objVerifier->canPass()){
         $retParams = $objVerifier->getParams();
-        $result = SimilarDocs::getSimilarsDocs($retParams['userTK']['userID'],$profile,$args);
+        $result = SimilarDocs::getSimilarsDocs($retParams['userTK']['userID'],$profileID,$args);
     }
     return $result;
 }
@@ -216,9 +218,10 @@ function getTotalOrcidWorksPages($userTK){
  * Return the total number of similars documents
  *
  * @param string $userTK user hash
+ * @param int $profileID Profile ID
  * @return int
  */
-function getTotalSimilarsDocs($userTK,$profile){
+function getTotalSimilarsDocs($userTK,$profileID){
     $result = false;
 
     /*  parameter validation */
@@ -227,7 +230,7 @@ function getTotalSimilarsDocs($userTK,$profile){
 
     if($retVerifier = $objVerifier->canPass()){
         $retParams = $objVerifier->getParams();        
-        $result = SimilarDocs::getTotalSimilarsDocs($retParams['userTK']['userID'],$profile);
+        $result = SimilarDocs::getTotalSimilarsDocs($retParams['userTK']['userID'],$profileID);
     }
     return $result;
 }
@@ -236,9 +239,10 @@ function getTotalSimilarsDocs($userTK,$profile){
  * Return the number of pages from similars documents.
  *
  * @param string $userTK user hash
+ * @param int $profileID Profile ID
  * @return int
  */
-function getTotalSimilarsDocsPages($userTK,$profile){
+function getTotalSimilarsDocsPages($userTK,$profileID){
     $result = false;
 
     /*  parameter validation */
@@ -247,7 +251,7 @@ function getTotalSimilarsDocsPages($userTK,$profile){
 
     if($retVerifier = $objVerifier->canPass()){
         $retParams = $objVerifier->getParams();        
-        $result = SimilarDocs::getTotalSimilarsDocsPages($retParams['userTK']['userID'],$profile,DOCUMENTS_PER_PAGE);
+        $result = SimilarDocs::getTotalSimilarsDocsPages($retParams['userTK']['userID'],$profileID,DOCUMENTS_PER_PAGE);
     }
     return $result;
 }

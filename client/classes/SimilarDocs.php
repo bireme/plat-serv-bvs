@@ -22,16 +22,17 @@ class SimilarDocs {
      * Add profile in SimilarDocs service
      *
      * @param string $userTK User hash
-     * @param string $profile Profile name
+     * @param int $profileID Profile ID
+     * @param string $profileName Profile name
      * @param string $string
      * @return boolean
      */
-    public static function addProfile($userTK,$profile,$string){
+    public static function addProfile($userTK,$profileID,$profileName,$string){
         $retValue = false;
 
         try{
             $objSoapClient = self::getSoapClient();
-            $retValue = $objSoapClient->addProfile($userTK,$profile,$string);
+            $retValue = $objSoapClient->addProfile($userTK,$profileID,$profileName,$string);
         }catch(Exception $e){
             $logger = &Log::singleton('file', LOG_FILE, __CLASS__, $_conf);
             $logger->log($e->getMessage(),PEAR_LOG_EMERG);
@@ -44,15 +45,16 @@ class SimilarDocs {
      * Delete profile in SimilarDocs service
      *
      * @param string $userTK User hash
-     * @param string $profile Profile name
+     * @param int $profileID Profile ID
+     * @param string $profileName Profile name
      * @return boolean
      */
-    public static function deleteProfile($userTK,$profile){
+    public static function deleteProfile($userTK,$profileID,$profileName){
         $retValue = false;
 
         try{
             $objSoapClient = self::getSoapClient();
-            $retValue = $objSoapClient->deleteProfile($userTK,$profile);
+            $retValue = $objSoapClient->deleteProfile($userTK,$profileID,$profileName);
         }catch(Exception $e){
             $logger = &Log::singleton('file', LOG_FILE, __CLASS__, $_conf);
             $logger->log($e->getMessage(),PEAR_LOG_EMERG);
@@ -65,15 +67,15 @@ class SimilarDocs {
      * List similars documents
      *
      * @param string $userTK User hash
-     * @param string $profile Profile name
+     * @param int $profileID Profile ID
      * @return array
      */
-    public static function getSimilarsDocs($userTK,$profile,$params){
+    public static function getSimilarsDocs($userTK,$profileID,$params){
         $retValue = false;
 
         try{
             $objSoapClient = self::getSoapClient();
-            $retValue = $objSoapClient->getSimilarsDocs($userTK,$profile,$params);
+            $retValue = $objSoapClient->getSimilarsDocs($userTK,$profileID,$params);
         }catch(Exception $e){
             $logger = &Log::singleton('file', LOG_FILE, __CLASS__, $_conf);
             $logger->log($e->getMessage(),PEAR_LOG_EMERG);
@@ -181,20 +183,6 @@ class SimilarDocs {
         return $retValue;
     }
 
-    public static function getTotalSimilarsDocs($userTK,$profile){
-        $retValue = false;
-
-        try{
-            $objSoapClient = self::getSoapClient();
-            $retValue = $objSoapClient->getTotalSimilarsDocs($userTK,$profile);
-        }catch(Exception $e){
-            $logger = &Log::singleton('file', LOG_FILE, __CLASS__, $_conf);
-            $logger->log($e->getMessage(),PEAR_LOG_EMERG);
-        }
-
-        return $retValue;
-    }
-
     public static function getTotalOrcidWorksPages($userTK){
         $retValue = false;
 
@@ -209,12 +197,26 @@ class SimilarDocs {
         return $retValue;
     }
 
-    public static function getTotalSimilarsDocsPages($userTK,$profile){
+    public static function getTotalSimilarsDocs($userTK,$profileID){
         $retValue = false;
 
         try{
             $objSoapClient = self::getSoapClient();
-            $retValue = $objSoapClient->getTotalSimilarsDocsPages($userTK,$profile);
+            $retValue = $objSoapClient->getTotalSimilarsDocs($userTK,$profileID);
+        }catch(Exception $e){
+            $logger = &Log::singleton('file', LOG_FILE, __CLASS__, $_conf);
+            $logger->log($e->getMessage(),PEAR_LOG_EMERG);
+        }
+
+        return $retValue;
+    }
+
+    public static function getTotalSimilarsDocsPages($userTK,$profileID){
+        $retValue = false;
+
+        try{
+            $objSoapClient = self::getSoapClient();
+            $retValue = $objSoapClient->getTotalSimilarsDocsPages($userTK,$profileID);
         }catch(Exception $e){
             $logger = &Log::singleton('file', LOG_FILE, __CLASS__, $_conf);
             $logger->log($e->getMessage(),PEAR_LOG_EMERG);
