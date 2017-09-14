@@ -19,6 +19,7 @@
                 <div class="x_panel">
                   <div class="x_title">
                     <h2><?=$trans->getTrans($_REQUEST["action"],'MY_PROFILES')?></h2>
+                    <small class="update-alert"><?=$trans->getTrans($_REQUEST["action"],'UPDATE_ALERT')?></small>
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content">

@@ -342,6 +342,7 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
         self::$trans["myprofiledocuments"]["PREVIOUS"] = 'Anterior';
         self::$trans["myprofiledocuments"]["ADD_COLLECTION"] = 'adicionar aos favoritos';
         self::$trans["myprofiledocuments"]["INCOMING_FOLDER"] = 'Caixa de Entrada';
+        self::$trans["myprofiledocuments"]["UPDATE_ALERT"] = '<p>Os documentos de interesse abaixo podem mudar conforme a atualização das fontes de informação da BVS.</p><p>Por tanto, se algum documento é de seu interesse, adicione-o aos favoritos.</p>';
 
     // Terms of mig_id_confirmation pages
         self::$trans["mig_id_confirmation"]["TITLE"] = 'Confirmação de Usuário';

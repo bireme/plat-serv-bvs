@@ -626,6 +626,15 @@ a.no-url:hover {
     cursor: text;
 }
 
+small.update-alert {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+small.update-alert p {
+    margin: 0
+}
+
 @media only screen
 and (max-device-width : 412px) {
     .introjs-tooltip .introjs-tooltipbuttons {

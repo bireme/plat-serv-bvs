@@ -347,6 +347,7 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Phone: (55 11) 5576-980
         self::$trans["mig_id_confirmation"]["LOGIN"] = 'Login';
         self::$trans["mig_id_confirmation"]["CONFIRM"] = 'Confirm';
         self::$trans["mig_id_confirmation"]["ALERT"] = 'After confirmation, this email will be your user to access the service.';
+        self::$trans["myprofiledocuments"]["UPDATE_ALERT"] = '<p>The interest documents below may change as the VHL information sources update.</p><p>So if any document is of interest to you, add it to your favorites.</p>';
 
     // Terms of step-by-step guide
         self::$trans["tour"]["TOUR_EXAMPLE"] = '(Exclusive tour example)';

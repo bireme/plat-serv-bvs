@@ -341,6 +341,7 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
         self::$trans["myprofiledocuments"]["PREVIOUS"] = 'Anterior';
         self::$trans["myprofiledocuments"]["ADD_COLLECTION"] = 'añadir a favoritos';
         self::$trans["myprofiledocuments"]["INCOMING_FOLDER"] = 'Caja de Entrada';
+        self::$trans["myprofiledocuments"]["UPDATE_ALERT"] = '<p>Los documentos de interés abajo pueden cambiar según la actualización de las fuentes de información de la BVS.</p><p>Por lo tanto, si algún documento es de su interés, añádalo a los favoritos.</p>';
 
     // Terms of mig_id_confirmation pages
         self::$trans["mig_id_confirmation"]["TITLE"] = 'Confirmación de Login';
