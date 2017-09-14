@@ -82,7 +82,7 @@ switch($_REQUEST["task"]){
         $suggestions = false;
 
         if ( $_REQUEST['suggestions'] ) {
-            $suggestions = SimilarDocs::addSuggestedDocsProfiles($_SESSION["userTK"],$_REQUEST['suggestions']);
+            $suggestions = SimilarDocs::addSuggestedDocs($_SESSION["userTK"],$_REQUEST['suggestions']);
         }
 
         die($suggestions);

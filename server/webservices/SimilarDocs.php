@@ -90,13 +90,13 @@ function getSimilarsDocs($userTK,$profileID,$args){
 }
 
 /**
- * Add suggested documents profiles
+ * Add suggested documents
  *
  * @param string $userTK User hash
  * @param array $suggestions
  * @return array
  */
-function addSuggestedDocsProfiles($userTK,$suggestions){
+function addSuggestedDocs($userTK,$suggestions){
     $result = false;
 
     /*  parameter validation */
@@ -105,7 +105,7 @@ function addSuggestedDocsProfiles($userTK,$suggestions){
 
     if($retVerifier = $objVerifier->canPass()){
         $retParams = $objVerifier->getParams();
-        $result = SimilarDocs::addSuggestedDocsProfiles($retParams['userTK']['userID'],$suggestions);
+        $result = SimilarDocs::addSuggestedDocs($retParams['userTK']['userID'],$suggestions);
     }
     return $result;
 }

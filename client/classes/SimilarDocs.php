@@ -85,18 +85,18 @@ class SimilarDocs {
     }
 
     /**
-     * Add suggested documents profiles
+     * Add suggested documents
      *
      * @param string $userTK User hash
      * @param array $suggestions
      * @return array
      */
-    public static function addSuggestedDocsProfiles($userTK,$suggestions){
+    public static function addSuggestedDocs($userTK,$suggestions){
         $retValue = false;
 
         try{
             $objSoapClient = self::getSoapClient();
-            $retValue = $objSoapClient->addSuggestedDocsProfiles($userTK,$suggestions);
+            $retValue = $objSoapClient->addSuggestedDocs($userTK,$suggestions);
         }catch(Exception $e){
             $logger = &Log::singleton('file', LOG_FILE, __CLASS__, $_conf);
             $logger->log($e->getMessage(),PEAR_LOG_EMERG);

@@ -382,13 +382,13 @@ class SimilarDocs {
     }
 
     /**
-     * Add suggested documents profiles
+     * Add suggested documents
      *
      * @param string $userID User ID
      * @param array $suggestions
      * @return array
      */
-    public static function addSuggestedDocsProfiles($userID,$suggestions){
+    public static function addSuggestedDocs($userID,$suggestions){
         $retValue = false;
 
         if ($suggestions && is_array($suggestions) && count($suggestions) > 0) {
@@ -585,7 +585,7 @@ class SimilarDocs {
         $retValue = false;
         $profile = md5('SIMILARS');
       
-        $addProfile = self::addProfile($userID,$profile,$string,true);
+        $addProfile = self::addProfile($userID,0,$profile,$string,true);
         $similars = self::getSimilars($userID,$profile);
 
         if ( $similars ) {
