@@ -10,6 +10,8 @@
               <a href="<?=RELATIVE_PATH?>/controller/authentication" class="site_title logo-sm" style="display: none;"><img src="<?=RELATIVE_PATH?>/images/<?=$_SESSION["skin"]?>/logo-sm-<?=$_SESSION["lang"]?>.png" alt="VHL Logo"></a>
             </div>
 
+            <div class="collapse-menu hide"><i class="fa fa-bars"></i> <?=$trans->getTrans('menu','COLLAPSE_MENU')?></div>
+
             <div class="clearfix"></div>
 
             <!-- menu profile quick info -->
@@ -47,7 +49,7 @@
                       <li class="child step33"><a href="<?=RELATIVE_PATH?>/controller/orcidworks/control/business"><?=$trans->getTrans('menu','ORCID_WORKS')?></a></li>
                     </ul>
                   </li>
-                  <li class="hide side step3"><a href="<?=RELATIVE_PATH?>/controller/authentication"><i class="fa fa-home"></i> <?=$trans->getTrans('menu','HOME')?></span></a>
+                  <li class="hide side step3"><a href="<?=RELATIVE_PATH?>/controller/authentication"><i class="fa fa-home"></i> <?=$trans->getTrans('menu','HOME')?></a></li>
                   <li class="hide side step15"><a href="<?=RELATIVE_PATH?>/controller/mydocuments/control/business"><i class="fa fa-file"></i> <?=$trans->getTrans('menu','MY_SHELF')?></a></li>
                   <li class="hide side step20"><a href="<?=RELATIVE_PATH?>/controller/myprofiledocuments/control/business"><i class="fa fa-folder-open"></i> <?=$trans->getTrans('menu','MY_PROFILE_DOCUMENTS')?></a></li>
                   <li class="hide side step24"><a href="<?=RELATIVE_PATH?>/controller/mysearches/control/business"><i class="fa fa-search"></i> <?=$trans->getTrans('menu','MY_SEARCHES')?></a></li>

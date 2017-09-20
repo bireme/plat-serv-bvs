@@ -95,6 +95,7 @@ usuário para oferecer serviços personalizados e facilidades tais como:</p>
         self::$trans["menu"]["FEATURE"] = 'Visão Geral';
         self::$trans["menu"]["MY_VHL"] = 'Minha BVS';
         self::$trans["menu"]["SERVPLAT"] = 'Plataforma de Serviços';
+        self::$trans["menu"]["COLLAPSE_MENU"] = 'Recolher Menu';
         self::$trans["menu"]["DASHBOARD"] = 'Meus Conteúdos';
         self::$trans["menu"]["HOME"] = 'Visão Geral';
         self::$trans["menu"]["WELCOME"] = 'Bem-vindo';

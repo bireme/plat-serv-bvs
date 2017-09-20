@@ -13,6 +13,8 @@
               <a href="<?=RELATIVE_PATH?>/controller/authentication" class="site_title logo-sm" style="display: none;"><img src="<?=RELATIVE_PATH?>/images/<?=$_SESSION["skin"]?>/logo-sm-<?=$_SESSION["lang"]?>.png" alt="VHL Logo"></a>
             </div>
 
+            <div class="collapse-menu hide"><i class="fa fa-bars"></i> <?=COLLAPSE_MENU?></div>
+
             <div class="clearfix"></div>
 
             <!-- menu profile quick info -->
@@ -50,7 +52,7 @@
                       <li><a href="<?=RELATIVE_PATH?>/controller/orcidworks/control/business"><?=ORCID_WORKS?></a></li>
                     </ul>
                   </li>
-                  <li class="hide"><a href="<?=RELATIVE_PATH?>/controller/authentication"><i class="fa fa-home"></i> <?=HOMEPAGE?></span></a>
+                  <li class="hide"><a href="<?=RELATIVE_PATH?>/controller/authentication"><i class="fa fa-home"></i> <?=HOMEPAGE?></a></li>
                   <li class="hide"><a href="<?=RELATIVE_PATH?>/controller/mydocuments/control/business"><i class="fa fa-file"></i> <?=MY_SHELF?></a></li>
                   <li class="hide"><a href="<?=RELATIVE_PATH?>/controller/myprofiledocuments/control/business"><i class="fa fa-folder-open"></i> <?=MY_PROFILE_DOCUMENTS?></a></li>
                   <li class="hide"><a href="<?=RELATIVE_PATH?>/controller/mysearches/control/business"><i class="fa fa-search"></i> <?=MY_SEARCHES?></a></li>

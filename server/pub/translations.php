@@ -305,6 +305,7 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
     define("START_TOUR",'Iniciar Tour');
     define("LEAVE_COMMENT",'Enviar Comentário');
     define("REPORT_ERROR",'Comunicar Erro');
+    define("COLLAPSE_MENU",'Recolher Menu');
 }
 
 if($lang == 'es'){
@@ -608,6 +609,7 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
     define("START_TOUR",'Empezar Tour');
     define("LEAVE_COMMENT",'Enviar Comentario');
     define("REPORT_ERROR",'Informar Error');
+    define("COLLAPSE_MENU",'Retraer Menú');
 }
 
 if($lang == 'en'){
@@ -909,5 +911,6 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Phone: (55 11) 5576-980
     define("START_TOUR",'Start Tour');
     define("LEAVE_COMMENT",'Leave Comment');
     define("REPORT_ERROR",'Report Error');
+    define("COLLAPSE_MENU",'Collapse Menu');
 }
 ?>

@@ -94,6 +94,7 @@ class Translations {
         self::$trans["menu"]["FEATURE"] = 'Visão Geral';
         self::$trans["menu"]["MY_VHL"] = 'Mi BVS';
         self::$trans["menu"]["SERVPLAT"] = 'Plataforma de Servicios';
+        self::$trans["menu"]["COLLAPSE_MENU"] = 'Retraer Menú';
         self::$trans["menu"]["DASHBOARD"] = 'Mis Contenidos';
         self::$trans["menu"]["HOME"] = 'Visión General';
         self::$trans["menu"]["WELCOME"] = 'Bienvenido';

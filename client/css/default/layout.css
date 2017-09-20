@@ -744,6 +744,19 @@ and (max-device-width : 768px) {
 }
 
 @media only screen 
+and (max-device-width : 1024px) {
+    .themes .x_title {
+        display: inline-table;
+        background: url(../../images/default/020-folder.png) top left no-repeat;
+    }
+
+    .themes .x_title small.update-alert {
+        margin-top: 5px;
+        margin-left: 55px;
+    }
+}
+
+@media only screen 
 and (min-device-width : 1024px) {
     .nav-md footer {
         margin-left: 230px !important;
@@ -754,7 +767,7 @@ and (min-device-width : 1024px) {
     }
 
     .nav-md #menu_toggle .fa-chevron-circle-left {
-        display: inline;
+        display: inline-block;
     }
 
     .nav-sm #menu_toggle .fa-chevron-circle-right {
@@ -764,16 +777,21 @@ and (min-device-width : 1024px) {
 
 @media only screen 
 and (max-device-width : 320px) {
-    .nav-sm #menu_toggle {
-        padding: 15px 5px 0;
-    }
-
-    .nav-sm #menu_toggle i.fa-bars {
-        font-size: 20px
-    }
-
     .nav-sm .nav.toggle {
-        padding-top: 18px;
+        display: none;
+    }
+
+    .nav-sm .collapse-menu {
+        display: inline-block !important;
+        color: #fff;
+        font-size: 10px;
+        text-align: center;
+        padding: 10px 5px;
+    }
+
+    .nav-sm .collapse-menu i {
+        font-size: 25px;
+        display: block;
     }
 
     .introjs-tooltip .introjs-tooltipbuttons {
@@ -827,6 +845,11 @@ and (max-device-width : 736px) {
         float: none;
         width: auto !important;
         white-space: nowrap !important;
+    }
+
+    .nav-sm .themes .x_title {
+        display: block;
+        height: auto;
     }
 
     .nav-sm .nav_menu nav form {

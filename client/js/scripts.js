@@ -375,6 +375,8 @@ $( document ).ready(
             $RIGHT_COL.css('min-height', contentHeight);
         };
 
+        $('.left_col .collapse-menu').on('click', function() { $MENU_TOGGLE.click(); });
+
         $MENU_TOGGLE.on('click', function() { setContentHeight(); });
 
         setContentHeight();
