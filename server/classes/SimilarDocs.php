@@ -38,19 +38,20 @@ class SimilarDocs {
         $is_user = UserDAO::isUser($userID);
 
         if($is_user){
-            foreach ($similars as $similar) {
+            foreach ($similars as $order => $similar) {
                 $title = self::getSimilarDocTitle($similar);
                 $docURL = self::generateSimilarDocURL($similar['id']);
                 $authors = self::getSimilarDocAuthors($similar['au']);
 
-                $strsql = "INSERT INTO suggestions(docID,
-                                            profileID,
-                                            profile,
-                                            authors,
-                                            docURL,
-                                            title,
-                                            userID,
-                                            creation_date)
+                $strsql = "INSERT INTO suggestions(`docID`,
+                                            `profileID`,
+                                            `profile`,
+                                            `authors`,
+                                            `docURL`,
+                                            `title`,
+                                            `userID`,
+                                            `order`,
+                                            `creation_date`)
                                     VALUES ('".$similar['id']."','".
                                                $profileID."','".
                                                $profileName."','".
@@ -58,6 +59,7 @@ class SimilarDocs {
                                                $docURL."','".
                                                $title."','".
                                                $userID."','".
+                                               $order."','".
                                                date("Ymd")."')";
 
                 try{
@@ -127,8 +129,8 @@ class SimilarDocs {
         $sysUID = UserDAO::getSysUID($userID);
 
         $strsql = "SELECT profileStatus FROM profiles
-            WHERE sysUID = '".$sysUID."' and
-            profileID='".$profileID."'";
+            WHERE sysUID = '".$sysUID."'
+            AND profileID='".$profileID."'";
 
         try{
             $_db = new DBClass();
@@ -147,10 +149,11 @@ class SimilarDocs {
 
             if ( 'on' == $result[0]['profileStatus'] ) {
                 $strsql = "SELECT * FROM  suggestions
-                    WHERE userID = '".$userID."' and profileID = '".$profileID."'";
+                    WHERE userID = '".$userID."'
+                    AND profileID = '".$profileID."'";
 
                 if($count > 0){
-                    $strsql .= " LIMIT $from,$count";
+                    $strsql .= " ORDER BY `order` LIMIT $from,$count";
                 }
 
                 try{
