@@ -789,7 +789,16 @@ class SimilarDocs {
         $key = '';
         $title = '';
 
-        if ( array_key_exists('ti', $similar) ) {
+        if ( array_key_exists('ti_'.$_SESSION['lang'], $similar) ) {
+            $key = 'ti_'.$_SESSION['lang'];
+            $title = $similar[$key];
+        } elseif ( array_key_exists('ti_en', $similar) ) {
+            $title = $similar['ti_en'];
+        } elseif ( array_key_exists('ti_es', $similar) ) {
+            $title = $similar['ti_es'];
+        } elseif ( array_key_exists('ti_pt', $similar) ) {
+            $title = $similar['ti_pt'];
+        } elseif ( array_key_exists('ti', $similar) ) {
             if ( is_array($similar['ti']) )
                 $title = $similar['ti'][0];
             else
@@ -804,16 +813,11 @@ class SimilarDocs {
         }
 
         if ( empty($title) ) {
-            if ( array_key_exists('ti_'.DEFAULT_LANG, $similar) ) {
-                $key = 'ti_'.DEFAULT_LANG;
-                $title = $similar[$key];
-            } else {
-                $similar = array_filter( $similar, function($key){
-                    return strpos($key, 'ti_') === 0;
-                }, ARRAY_FILTER_USE_KEY );
+            $similar = array_filter( $similar, function($key){
+                return strpos($key, 'ti_') === 0;
+            }, ARRAY_FILTER_USE_KEY );
 
-                if ( !empty($similar) ) $title = array_shift($similar);
-            }
+            if ( !empty($similar) ) $title = array_shift($similar);
         }
         
         return CharTools::mysql_escape_mimic($title);
