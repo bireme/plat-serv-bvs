@@ -24,6 +24,7 @@ class ProfileDAO {
     /**
      * Aadd a new profile
      *
+     * @param string $userID user id
      * @param object $objProfile Profile object
      * @return boolean
      */
@@ -83,7 +84,9 @@ class ProfileDAO {
     /**
      * update an existing profile
      *
-     * @param object $objProfile Profile object
+     * @param string $userID user id
+     * @param int $profileID profile id
+     * @param string $profile profile object
      * @return boolean
      */
 	public static function updateProfile($userID,$profileID,$profile){
@@ -133,6 +136,7 @@ class ProfileDAO {
      * get user's profiles
      *
      * @param string $userID user id
+     * @param array $params
      * @param int $from offset number
      * @param int $count limit number
      * @return array object Profile list
@@ -169,7 +173,7 @@ class ProfileDAO {
      * get one specified user profile
      *
      * @param string $userID user id
-     * @param string $profileID profile id
+     * @param int $profileID profile id
      * @param boolean $update update profile documents
      * @return array object Profile
      */
@@ -256,7 +260,7 @@ class ProfileDAO {
      * Remove an user profile
      *
      * @param string $userID user mail
-     * @param int $linkID
+     * @param int $profileID profile id
      * @return boolean
      */
     public static function removeProfile($userID,$profileID){
@@ -287,8 +291,8 @@ class ProfileDAO {
     /**
      * Check if the profile exists
      *
-     * @param integer $sysUID user ID
-     * @param integer $profileID profile ID
+     * @param int $sysUID user ID
+     * @param int $profileID profile ID
      * @param string $profileName profile name
      * @return boolean
      */
@@ -317,7 +321,7 @@ class ProfileDAO {
     /**
      * Get an array of document objects from an XML string
      *
-     * @param string $xmlDoc
+     * @param string $xmlProfile
      * @return mixed
      */
     public static function getProfileFromXML($xmlProfile){
