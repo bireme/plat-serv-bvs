@@ -42,7 +42,7 @@ $professionalArea['pt'] = array(
 
 $professionalArea['es'] = array(
     "bf" => "Biofisica",
-    "bio" => "Biología General",
+    "bi" => "Biología General",
     "bm" => "Biomedicina",
     "bq" => "Bioquímica",
     "bo" => "Botánica",
@@ -80,7 +80,7 @@ $professionalArea['es'] = array(
 
 $professionalArea['en'] = array(
     "bq" => "Biochemistry",
-    "bio" => "Biology General",
+    "bi" => "Biology General",
     "bm" => "Biomedicine",
     "bf" => "Biophysics",
     "bo" => "Botany",
