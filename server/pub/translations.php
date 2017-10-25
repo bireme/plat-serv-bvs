@@ -106,6 +106,8 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
     define("NOTICE_MESSAGE",'');
     define("UPDATE_INFO",'<b>Por favor, revise seus dados no formulário abaixo para continuar utilizando a Minha BVS.</b>');
     define("ACCEPT_MAIL",'Quero receber por email novidades sobre o serviço Minha BVS');
+    define("UNSUBSCRIBE_MAIL_SUCCESS",'Suas configurações de email foram atualizadas.');
+    define("UNSUBSCRIBE_MAIL_ERROR",'<b>ERRO: Não foi possível cancelar o envio de emails.</b>');
     define("TERMS",'Termos de uso');
     define("TERMS_AGREEMENT_MESSAGE",'Eu concordo com os <a data-toggle="modal" data-target=".bs-terms-modal-lg" style="cursor: pointer; text-decoration: underline;">Termos de Uso</a> e confirmo que li a <a data-toggle="modal" data-target=".bs-policy-modal-lg" style="cursor: pointer; text-decoration: underline;">Política de Privacidade</a> da Minha BVS');
     define("TERMS_MESSAGE",'
@@ -410,6 +412,8 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
     define("NOTICE_MESSAGE",'');
     define("UPDATE_INFO",'<b>Por favor, revise sus datos en el formulario para seguir utilizando el servicio Mi BVS.</b>');
     define("ACCEPT_MAIL",'Me gustaría recibir actualizaciones acerca del servicio Mi BVS');
+    define("UNSUBSCRIBE_MAIL_SUCCESS",'Su configuración de correo electrónico ha sido actualizada.');
+    define("UNSUBSCRIBE_MAIL_ERROR",'<b>ERROR: No se pudo cancelar el envío de correo electrónico.</b>');
     define("TERMS",'Condiciones de uso');
     define("TERMS_AGREEMENT_MESSAGE",'Estoy de acuerdo con los <a data-toggle="modal" data-target=".bs-terms-modal-lg" style="cursor: pointer; text-decoration: underline;">Términos de Uso</a> y confirmo que leí la <a data-toggle="modal" data-target=".bs-policy-modal-lg" style="cursor: pointer; text-decoration: underline;">Política de Privacidad</a> de Mi BVS');
     define("TERMS_MESSAGE",'
@@ -713,7 +717,9 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Phone: (55 11) 5576-980
     define("NOTICE",'Notice to the users');
     define("NOTICE_MESSAGE",'');
     define("UPDATE_INFO",'<b>Please review your data in the form below to continue using the My VHL.</b>');
-    define("ACCEPT_MAIL",'I would like to receive e-mails with information from My VHL.');
+    define("ACCEPT_MAIL",'I would like to receive emails with information from My VHL.');
+    define("UNSUBSCRIBE_MAIL_SUCCESS",'Your email settings have been updated.');
+    define("UNSUBSCRIBE_MAIL_ERROR",'<b>ERROR: Could not cancel email sending.</b>');
     define("TERMS",'Terms of use');
     define("TERMS_AGREEMENT_MESSAGE",'I agree to the <a data-toggle="modal" data-target=".bs-terms-modal-lg" style="cursor: pointer; text-decoration: underline;">Terms of Use</a> and have read the <a data-toggle="modal" data-target=".bs-policy-modal-lg" style="cursor: pointer; text-decoration: underline;">Privacy Policy</a> of My VHL');
     define("TERMS_MESSAGE",'

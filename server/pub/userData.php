@@ -52,6 +52,7 @@ $terms = !empty($_REQUEST['terms']) ? $_REQUEST['terms'] : false;
 $acceptMail = !empty($_REQUEST['accept_mail']) ? $_REQUEST['accept_mail'] : 0;
 $acao = !empty($_REQUEST['acao']) ? $_REQUEST['acao'] : 'default';
 $userKey = !empty($_REQUEST['key']) ? $_REQUEST['key'] : false;
+$ut = !empty($_REQUEST['ut']) ? $_REQUEST['ut'] : false;
 $msg = null; /* system messages */
 $birthday = false;
 
@@ -158,6 +159,21 @@ switch($acao){
         }else{
             $response["msg"] = USER_CONFIRMATION_ERROR;
             $response["status"] = false;
+        }
+
+        break;
+    case "alertas":
+        if ( $ut ) {
+            $data = Token::unmakeUserTK($ut, true);
+            $result = UserDAO::setAcceptMail($data['userID'], 0);
+
+            if($result === true){
+                $response["msg"] = UNSUBSCRIBE_MAIL_SUCCESS;
+                $response["status"] = true;
+            }else{
+                $response["msg"] = UNSUBSCRIBE_MAIL_ERROR;
+                $response["status"] = false;
+            }
         }
 
         break;

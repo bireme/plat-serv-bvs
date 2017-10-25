@@ -383,6 +383,38 @@ class UserDAO {
     }
 
     /**
+     * Set user accept mail
+     *
+     * @param string $userID User ID
+     * @param int $value Accept mail value
+     * @return boolean
+     */
+    public static function setAcceptMail($userID, $value){
+        global $_conf;
+        $retValue = false;
+
+        $sysUID = self::getSysUID($userID);
+
+        if ( $sysUID ) {
+            $strsql = "UPDATE users
+                    SET accept_mail = '".$value."'
+                    WHERE sysUID = '".$sysUID."'";
+
+            try{
+                $_db = new DBClass();
+                $result = $_db->databaseQuery($strsql);
+            }catch(DBClassException $e){
+                $logger = &Log::singleton('file', LOG_FILE, __CLASS__, $_conf);
+                $logger->log($e->getMessage(),PEAR_LOG_EMERG);
+            }
+
+            if ( $result !== false ) $retValue = true;
+        }
+
+        return $retValue;
+    }
+
+    /**
      * Check user confirmation
      *
      * @param string $userEmail user email
