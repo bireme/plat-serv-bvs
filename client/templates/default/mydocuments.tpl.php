@@ -1,9 +1,10 @@
 <?php
     if ( in_array( $_REQUEST["task"], array( 'rate', 'removedoc' ) ) )
         header("Location: " . $_SERVER['HTTP_REFERER']);
-?>
 
-<?php $directory = $_REQUEST["directory"] ? $_REQUEST["directory"] : 0; ?>
+    $directory = $_REQUEST["directory"] ? $_REQUEST["directory"] : 0;
+    $public_link = "http://".$_SERVER['HTTP_HOST']."/uid/".base64_encode($_SESSION['userID'])."/directory/".$directory;
+?>
 
         <?require_once(dirname(__FILE__)."/header.tpl.php");?>
         <?require_once(dirname(__FILE__)."/sidebar.tpl.php");?>
@@ -27,6 +28,7 @@
                         <?if ($_REQUEST["directory"] != 0){?>
                             <a href="javascript: void(0);" onclick="__gaTracker('send','event','Favorite Documents','Edit Collection','<?php echo htmlspecialchars($resultDirName); ?>'); window.open('<?=RELATIVE_PATH?>/controller/directories/control/business/task/edit/directory/<?=$_REQUEST["directory"]?>','','resizable=no,scrollbars=1,width=420,height=250');"><span class="label label-info"><?=$trans->getTrans($_REQUEST["action"],'EDIT_FOLDER')?></span></a>
                             <a href="javascript: void(0);" onclick="__gaTracker('send','event','Favorite Documents','Remove Collection','<?php echo htmlspecialchars($resultDirName); ?>'); window.open('<?=RELATIVE_PATH?>/controller/directories/control/business/task/delete/directory/<?=$_REQUEST["directory"]?>','','resizable=no,scrollbars=1,width=420,height=295')"><span class="label label-danger"><?=$trans->getTrans($_REQUEST["action"],'REMOVE_FOLDER')?></span></a>
+                            <a href="javascript:;" class="public-link" data-toggle="modal" data-target=".bs-public-modal-lg"><span class="label"><i class="fa fa-share"></i><?=$trans->getTrans($_REQUEST["action"],'SHARE_COLLECTION')?></span></a>
                         <?}?>
                         <select id="step17" class="bulkactions">
                             <option><?=$trans->getTrans($_REQUEST["action"],'BULK_ACTIONS')?></option>
@@ -140,6 +142,22 @@
           </div>
         </div>
         <!-- /page content -->
+
+        <div class="modal fade bs-public-modal-lg" tabindex="-1" role="dialog" aria-hidden="true" style="color: #73879C; z-index: 9999;">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span>
+                  </button>
+                  <h2 class="modal-title"><?=$trans->getTrans($_REQUEST["action"],'SHARE_COLLECTION')?></h2>
+                </div>
+                <div class="modal-body" style="text-align: center; background: #f4f7fd; overflow-wrap: break-word;">
+                    <?php echo $public_link; ?>
+                </div>
+                <div class="modal-footer"></div>
+              </div>
+            </div>
+        </div>
 
         <script type="text/javascript">
           if (RegExp('multipage', 'gi').test(window.location.search)) {

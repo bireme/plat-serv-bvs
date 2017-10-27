@@ -45,9 +45,11 @@ switch($_REQUEST["task"]){
         if ($result != false){
             $response["status"] = true;
         }
+
         if ($resultListDirs != false){
             $responseListDirs["status"] = true;
         }
+
         $response["values"] = $result;
         $directoryName = $result[0]["name"];
         $responseListDirs["values"] = $resultListDirs;   
@@ -62,14 +64,15 @@ switch($_REQUEST["task"]){
                     break;
                 }
             }
+
             if($shallBreak){
                 break;
             }
         }
+
         unset($shallBreak);
+
         $isCurrDirPublic = $responseListDirs['values'][$currDirIndex]['public'] != 0 ? true : false;
-//        var_dump($paginationData);
-//        echo 'Page: ' . (string)$_REQUEST['page'];
     break;
     case "removedoc":
         $response["status"] = false;
@@ -117,6 +120,62 @@ switch($_REQUEST["task"]){
 
         $response["values"] = $result;
         $response["status"] = true;
+    break;
+    case "public":
+        $response["status"] = false;
+        $responseListDirs["status"] = false;
+        
+        /* paginator */
+        $paginationData = DocsCollection::getTotalPublicDocs($_REQUEST["uid"],
+            $_REQUEST["directory"]);
+        $objPaginator = new Paginator($paginationData['pages'],
+            !empty($_REQUEST['page']) ? $_REQUEST['page'] : 1);
+
+        $params['page'] = $objPaginator->getCurrentPage();
+        $result = DocsCollection::listPublicDocs($_REQUEST["uid"],
+            $_REQUEST["directory"],$params);
+
+        $resultListDirs = DocsCollection::listPublicDirs($_REQUEST["uid"]);
+
+        if (($_REQUEST["directory"] != null) and ($_REQUEST["directory"] != 0)){
+            $resultDirName = DocsCollection::getPublicDirName($_REQUEST["uid"],
+                $_REQUEST["directory"]);
+        }
+
+        if ($result != false){
+            $response["status"] = true;
+        }
+
+        if ($resultListDirs != false){
+            $responseListDirs["status"] = true;
+        }
+
+        $response["values"] = $result;
+        $directoryName = $result[0]["name"];
+        $responseListDirs["values"] = $resultListDirs;   
+
+        /* is the current dir public? */
+        $shallBreak = false;
+        foreach($responseListDirs['values'] as $arrDirKey => $arrDirValue){            
+            foreach($arrDirValue as $dirAttKey => $dirAttValue){                
+                if(($dirAttKey == 'dirID') && ($dirAttValue == $_REQUEST["directory"])){
+                    $currDirIndex = (string)$arrDirKey;
+                    $shallBreak = true;
+                    break;
+                }
+            }
+            if($shallBreak){
+                break;
+            }
+        }
+
+        unset($shallBreak);
+
+        $isCurrDirPublic = $responseListDirs['values'][$currDirIndex]['public'] != 0 ? true : false;
+
+        if ( !$_REQUEST["uid"] || !$_REQUEST["directory"] || !$result ) {
+            header('Location: '.RELATIVE_PATH.'/controller/authentication');
+        }
     break;
     default:
         die("default");

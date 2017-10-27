@@ -12,6 +12,7 @@
 /*
  * Edit this file in UTF-8 - Test String "áéíóú"
  */
+require_once(dirname(__FILE__)."/../classes/UserDAO.php");
 require_once(dirname(__FILE__)."/../classes/UserDirectory.php");
 require_once(dirname(__FILE__)."/../classes/UserDirectoryDAO.php");
 require_once(dirname(__FILE__)."/../classes/Shelf.php");
@@ -55,6 +56,26 @@ function listDocs($userTK,$dirID=null,$filter=null){
     return $retValue;
 }
 
+function listPublicDocs($userID,$dirID=null,$filter=null){
+    $retValue = false;
+    $userID = base64_decode($userID);
+    $is_user = UserDAO::isUser($userID);
+    
+    if ( $is_user ) {        
+        $objShelf = new Shelf();
+
+        if ( isset($dirID) ) {
+            $objUserDirectory = UserDirectoryDAO::getDir($userID,$dirID);
+            $objShelf->setDir($objUserDirectory);
+        }
+
+        $objShelf->setUserID($userID);
+        $retValue = ShelfDAO::listDocs($objShelf,$filter);
+    }
+
+    return $retValue;
+}
+
 function getTotalDocs($userTK,$dirID=null,$widget=false){
     $retValue = false;
 
@@ -73,6 +94,20 @@ function getTotalDocs($userTK,$dirID=null,$widget=false){
         } else {
             $retValue = ShelfDAO::getTotalItens($retParams['userTK']['userID'], null);
         }
+    }
+
+    return $retValue;
+}
+
+function getTotalPublicDocs($userID,$dirID=null){
+    $retValue = false;
+    $dirID = empty($dirID) ? 0 : $dirID;
+    $userID = base64_decode($userID);
+    $is_user = UserDAO::isUser($userID);
+
+    if ( $is_user ) {
+        $retValue['items'] = ShelfDAO::getTotalItens($userID,$dirID);
+        $retValue['pages'] = ShelfDAO::getTotalPages($userID,$dirID);
     }
 
     return $retValue;
@@ -323,6 +358,20 @@ function listDirs($userTK){
     return $retValue;
 }
 
+function listPublicDirs($userID){
+    $retValue = false;
+    $userID = base64_decode($userID);
+    $is_user = UserDAO::isUser($userID);
+
+    if ( $is_user ) {    
+        $objUserDirectory = new UserDirectory();
+        $objUserDirectory->setUserID($userID);
+        $retValue = UserDirectoryDAO::listDirs($objUserDirectory);
+    }
+
+    return $retValue;
+}
+
 /**
  * Add new directory
  *
@@ -467,6 +516,22 @@ function getDirName($userTK,$dirID){
         $objUserDirectory->setDirID($retParams['dirID']);
         $retValue = UserDirectoryDAO::getDirName($objUserDirectory);
     }
+    return htmlspecialchars($retValue);
+}
+
+function getPublicDirName($userID,$dirID){
+    $retValue = false;
+    $userID = base64_decode($userID);
+    $is_user = UserDAO::isUser($userID);
+
+    if ( $is_user ) {
+        $objUserDirectory = new UserDirectory();
+        $objUserDirectory->setUserID($userID);
+        $objUserDirectory->setDirID($dirID);
+        
+        $retValue = UserDirectoryDAO::getDirName($objUserDirectory);
+    }
+
     return htmlspecialchars($retValue);
 }
 

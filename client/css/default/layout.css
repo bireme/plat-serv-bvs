@@ -265,8 +265,6 @@ a.operator {
 }
 
 .folder-data {
-    display: flex;
-    align-items: center;
     margin-bottom: 10px;
 }
 
@@ -356,10 +354,6 @@ div.related_docs .related-alert {
 div.related_docs p {
     margin-top: 10px;
     font-weight: bold;
-}
-
-select.bulkactions {
-    margin-left: auto;
 }
 
 #loading, .related-loading {
@@ -635,6 +629,14 @@ small.update-alert p {
     margin: 0
 }
 
+.public-link span {
+    padding-left: 0 !important;
+}
+
+.public-link span i {
+    padding-right: 3px;
+}
+
 @media only screen
 and (max-device-width : 412px) {
     .introjs-tooltip .introjs-tooltipbuttons {
@@ -645,8 +647,17 @@ and (max-device-width : 412px) {
 @media only screen 
 and (max-device-width : 414px) {
     .folder-data {
-        display: block;
         margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .folder-data h4 {
+        text-align: left;
+    }
+
+    .folder-data a {
+        display: inline-block;
+        margin-bottom: 10px;
     }
 
     .nav-md .doc-actions {
@@ -671,10 +682,6 @@ and (max-device-width : 414px) {
         padding-left: 12px;
     }
 
-    select.bulkactions {
-        margin-top: 10px;
-    }
-
     .x_title h2 {
         white-space: normal !important;
     }
@@ -688,6 +695,11 @@ and (max-device-width : 414px) {
     .introjs-tooltip .introjs-tooltipbuttons {
         padding-right: 1.5em;
     }
+
+    select.bulkactions {
+        display: block;
+        margin: 10px auto 0;
+    }
 }
 
 @media only screen 
@@ -698,6 +710,10 @@ and (min-device-width : 768px) {
 
     .nav.toggle {
         position: relative;
+    }
+
+    select.bulkactions {
+        float: right;
     }
 }
 
@@ -801,6 +817,10 @@ and (max-device-width : 320px) {
 	.mobile .introjs-button {
         text-shadow: none !important;
         box-shadow: none !important;
+    }
+
+    .folder-data h4 {
+        margin-bottom: 20px;
     }
 }
 

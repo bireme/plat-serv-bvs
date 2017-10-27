@@ -59,6 +59,7 @@ if (isset($accessToken)) {
             $_SESSION['fb_access_token'] = (string) $accessToken;
             $_SESSION['fb_data'] = $userData; // Storing Facebook User Data in Session
             $_SESSION["userTK"] = $result["userTK"];
+            $_SESSION["userID"] = $result["userID"];
             $_SESSION["userFirstName"] = $result["userFirstName"];
             $_SESSION["userLastName"] = $result["userLastName"];
             $_SESSION["userMail"] = $result["userMail"];

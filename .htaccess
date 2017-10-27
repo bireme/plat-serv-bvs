@@ -1,0 +1,6 @@
+RewriteEngine On
+
+RewriteBase /
+
+# Regra para manipular a URL pública das coleções
+RewriteRule ^uid\/([_0-9a-zA-Z-]+=)\/directory\/([0-9]+)?$ client/controller/mydocuments/control/business/task/public/uid/$1/directory/$2 [R=301,L]

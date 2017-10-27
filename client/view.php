@@ -34,7 +34,10 @@ switch($_REQUEST["action"]){
         }
     break;
     case "mydocuments":
-        require_once(dirname(__FILE__)."/templates/".$_SESSION["skin"]."/mydocuments.tpl.php");
+        if ( $public )
+            require_once(dirname(__FILE__)."/templates/".$_SESSION["skin"]."/mypublicdocuments.tpl.php");
+        else
+            require_once(dirname(__FILE__)."/templates/".$_SESSION["skin"]."/mydocuments.tpl.php");
     break;
     case "directories":
         if ($_REQUEST["task"] == "add"){

@@ -27,9 +27,15 @@ for ($i=0 ; $i<count($queryString) ; $i++){
     }
 }
 
-if (! isset($_REQUEST["control"])){
+if ( !isset($_REQUEST["control"]) ) {
     $control = "view";
-}else{
+} else {
     $control = $_REQUEST["control"];
+}
+
+if ( isset($_REQUEST["task"]) || 'public' == $_REQUEST["task"] ) {
+    $public = $_REQUEST["task"];
+} else {
+    $public = FALSE;
 }
 ?>

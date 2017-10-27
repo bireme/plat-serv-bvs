@@ -53,6 +53,7 @@ function loginUser($userID,$userPass,$socialMedia){
 
         if ($response["status"] === true){
             $objUser = UserDAO::getUser($response["userID"]);
+            $retValue['userID'] = $objUser->getID();
             $retValue['userFirstName'] = $objUser->getFirstName();
             $retValue['userLastName'] = $objUser->getLastName();              
             $retValue['userMail'] = $objUser->getEmail();

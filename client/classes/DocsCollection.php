@@ -28,12 +28,40 @@ class DocsCollection {
         return $retValue;
     }
 
+    public static function listPublicDocs($userID,$dirID=null,$params){
+        $retValue = false;
+
+        try{
+            $objSoapClient = self::getSoapClient();
+            $retValue = $objSoapClient->listPublicDocs($userID,$dirID,$params);
+        }catch(Exception $e){
+            $logger = &Log::singleton('file', LOG_FILE, __CLASS__, $_conf);
+            $logger->log($e->getMessage(),PEAR_LOG_EMERG);
+        }
+
+        return $retValue;
+    }
+
     public function getTotalDocs($userTK,$dirID=null,$widget=false){
         $retValue = false;
 
         try{
             $objSoapClient = self::getSoapClient();
             $retValue = $objSoapClient->getTotalDocs($userTK,$dirID,$widget);
+        }catch(Exception $e){
+            $logger = &Log::singleton('file', LOG_FILE, __CLASS__, $_conf);
+            $logger->log($e->getMessage(),PEAR_LOG_EMERG);
+        }
+
+        return $retValue;
+    }
+
+    public function getTotalPublicDocs($userID,$dirID=null){
+        $retValue = false;
+
+        try{
+            $objSoapClient = self::getSoapClient();
+            $retValue = $objSoapClient->getTotalPublicDocs($userID,$dirID);
         }catch(Exception $e){
             $logger = &Log::singleton('file', LOG_FILE, __CLASS__, $_conf);
             $logger->log($e->getMessage(),PEAR_LOG_EMERG);
@@ -210,6 +238,20 @@ class DocsCollection {
         return $retValue;
     }
 
+    public static function listPublicDirs($userID){
+        $retValue = false;
+
+        try{
+            $objSoapClient = self::getSoapClient();
+            $retValue = $objSoapClient->listPublicDirs($userID);
+        }catch(Exception $e){
+            $logger = &Log::singleton('file', LOG_FILE, __CLASS__, $_conf);
+            $logger->log($e->getMessage(),PEAR_LOG_EMERG);
+        }
+
+        return $retValue;
+    }
+
     public static function addDir($userTK,$dirName){
         $retValue = false;
 
@@ -287,6 +329,20 @@ class DocsCollection {
         try{
             $objSoapClient = self::getSoapClient();
             $retValue = $objSoapClient->getDirName($userTK,$dirID);
+        }catch(Exception $e){
+            $logger = &Log::singleton('file', LOG_FILE, __CLASS__, $_conf);
+            $logger->log($e->getMessage(),PEAR_LOG_EMERG);
+        }
+
+        return $retValue;
+    }
+
+    public static function getPublicDirName($userID,$dirID){
+        $retValue = false;
+
+        try{
+            $objSoapClient = self::getSoapClient();
+            $retValue = $objSoapClient->getPublicDirName($userID,$dirID);
         }catch(Exception $e){
             $logger = &Log::singleton('file', LOG_FILE, __CLASS__, $_conf);
             $logger->log($e->getMessage(),PEAR_LOG_EMERG);
