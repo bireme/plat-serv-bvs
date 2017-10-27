@@ -231,6 +231,8 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
         self::$trans["mydocuments"]["BULK_ACTIONS"] = 'Ações em massa';
         self::$trans["mydocuments"]["BULK_REMOVE_DOCS"] = 'Excluir';
         self::$trans["mydocuments"]["BULK_MOVE_DOCS"] = 'Mover';
+        self::$trans["mydocuments"]["SHARE_COLLECTION"] = 'compartilhar coleção';
+        self::$trans["mydocuments"]["BUTTON_CLOSE"] = 'Fechar';
 
     // Tems of directories pages
         self::$trans["directories"]["FEATURE"] = 'Documentos Favoritos';
