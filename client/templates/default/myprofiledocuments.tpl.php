@@ -51,7 +51,7 @@
                                       </div>
                                       <div class="doc-actions">
                                           <a class="label label-success add-collection" value="<?php echo $similar["docID"]; ?>" onclick="__gaTracker('send','event','Interest Topics','Favorite Documents','<?php echo htmlspecialchars($similar["title"]); ?>');"><?=$trans->getTrans($_REQUEST["action"],'ADD_COLLECTION')?></a>
-                                          <a class="label label-primary related-docs" href="javascript:;" onclick="__gaTracker('send','event','Interest Topics','Related Documents','<?php echo htmlspecialchars($similar["title"]); ?>');"><?php echo $trans->getTrans('suggesteddocs','RELATED_DOCS'); ?></a>
+                                          <a class="label label-primary related-docs" href="javascript: void(0);" onclick="__gaTracker('send','event','Interest Topics','Related Documents','<?php echo htmlspecialchars($similar["title"]); ?>');"><?php echo $trans->getTrans('suggesteddocs','RELATED_DOCS'); ?></a>
                                       </div>
                                       <!--div>
                                         <span class="label label-default">Default</span>

@@ -79,13 +79,13 @@ class Paginator {
         $strPaginator .= '<ul class="pagination" style="margin: 0;">';
 
         $disabled = ( $page == 0 ) ? 'disabled' : '';
-        $previousPage = ( empty($disabled) ) ? $cleanURL . '/page/' . $page : 'javascript:;';
+        $previousPage = ( empty($disabled) ) ? $cleanURL . '/page/' . $page : 'javascript: void(0);';
         $strPaginator .= '<li class="paginate_button previous ' . $disabled . '" id="datatable_previous"><a href="' . $previousPage . '" aria-controls="datatable" tabindex="0">' . $previous . '</a></li>';
 
         for($i = 1; $i <= $this->totalPages; $i++){
             if($page == ($i - 1)){
                 $strPaginator .= '<li class="paginate_button active">';
-                $url = 'javascript:;';
+                $url = 'javascript: void(0);';
             }else{
                 $strPaginator .= '<li class="paginate_button">';
                 $url = $cleanURL . '/page/' . $i;
@@ -95,7 +95,7 @@ class Paginator {
         }
         
         $disabled = ( $page + 1 == $this->totalPages ) ? 'disabled' : '';
-        $nextPage = ( empty($disabled) ) ? $cleanURL . '/page/' . ($page + 2) : 'javascript:;';
+        $nextPage = ( empty($disabled) ) ? $cleanURL . '/page/' . ($page + 2) : 'javascript: void(0);';
         $strPaginator .= '<li class="paginate_button next ' . $disabled . '" id="datatable_next"><a href="' . $nextPage . '" aria-controls="datatable" tabindex="0">' . $next . '</a></li>';
 
         $strPaginator .= '</ul>';

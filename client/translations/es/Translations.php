@@ -19,7 +19,7 @@ class Translations {
     <li>Histórico de búsquedas realizadas en la BVS</li>
     <li>Lista de links favoritos</li>
 </ul>
-<p>Mi BVS está disponible a cualquier usuario a través de su cuenta Facebook, Google, BIREME Account o del propio servicio Mi BVS. <a href="javascript:;" class="decor" data-toggle="modal" data-target=".bs-modal-lg">¡Conozca más!</a></p>
+<p>Mi BVS está disponible a cualquier usuario a través de su cuenta Facebook, Google, BIREME Account o del propio servicio Mi BVS. <a href="javascript: void(0);" class="decor" data-toggle="modal" data-target=".bs-modal-lg">¡Conozca más!</a></p>
 ';
         self::$trans["authentication"]["MY_VHL_DESCRIPTION"] = '
 <p>Mi BVS es un servicio gratuito que guarda informaciones y preferencias del usuario para ofrecer servicios personalizados y facilidades tales como:</p>
