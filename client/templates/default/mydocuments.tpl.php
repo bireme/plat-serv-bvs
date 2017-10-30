@@ -26,9 +26,9 @@
                     <div class="folder-data col-md-9 col-sm-9 col-xs-12">
                         <h4><i class="fa fa-folder-o"></i> <?if ($resultDirName === null){ echo $trans->getTrans($_REQUEST["action"],'INCOMING_FOLDER'); }?><?=$resultDirName?></h4>
                         <?if ($_REQUEST["directory"] != 0){?>
-                            <a href="javascript: void(0);" onclick="__gaTracker('send','event','Favorite Documents','Edit Collection','<?php echo htmlspecialchars($resultDirName); ?>'); window.open('<?=RELATIVE_PATH?>/controller/directories/control/business/task/edit/directory/<?=$_REQUEST["directory"]?>','','resizable=no,scrollbars=1,width=420,height=250');"><span class="label label-info"><?=$trans->getTrans($_REQUEST["action"],'EDIT_FOLDER')?></span></a>
-                            <a href="javascript: void(0);" onclick="__gaTracker('send','event','Favorite Documents','Remove Collection','<?php echo htmlspecialchars($resultDirName); ?>'); window.open('<?=RELATIVE_PATH?>/controller/directories/control/business/task/delete/directory/<?=$_REQUEST["directory"]?>','','resizable=no,scrollbars=1,width=420,height=295')"><span class="label label-danger"><?=$trans->getTrans($_REQUEST["action"],'REMOVE_FOLDER')?></span></a>
-                            <a href="javascript: void(0);" class="public-link" data-toggle="modal" data-target=".bs-public-modal-lg"><span class="label"><i class="fa fa-share"></i><?=$trans->getTrans($_REQUEST["action"],'SHARE_COLLECTION')?></span></a>
+                            <a href="javascript:;" onclick="__gaTracker('send','event','Favorite Documents','Edit Collection','<?php echo htmlspecialchars($resultDirName); ?>'); window.open('<?=RELATIVE_PATH?>/controller/directories/control/business/task/edit/directory/<?=$_REQUEST["directory"]?>','','resizable=no,scrollbars=1,width=420,height=250');"><span class="label label-info"><?=$trans->getTrans($_REQUEST["action"],'EDIT_FOLDER')?></span></a>
+                            <a href="javascript:;" onclick="__gaTracker('send','event','Favorite Documents','Remove Collection','<?php echo htmlspecialchars($resultDirName); ?>'); window.open('<?=RELATIVE_PATH?>/controller/directories/control/business/task/delete/directory/<?=$_REQUEST["directory"]?>','','resizable=no,scrollbars=1,width=420,height=295')"><span class="label label-danger"><?=$trans->getTrans($_REQUEST["action"],'REMOVE_FOLDER')?></span></a>
+                            <a href="javascript:;" class="public-link" data-toggle="modal" data-target=".bs-public-modal-lg"><span class="label"><i class="fa fa-share"></i><?=$trans->getTrans($_REQUEST["action"],'SHARE_COLLECTION')?></span></a>
                         <?}?>
                         <select id="step17" class="bulkactions">
                             <option><?=$trans->getTrans($_REQUEST["action"],'BULK_ACTIONS')?></option>
@@ -77,8 +77,8 @@
                                     <?if ($register["dirID"] == null){ $dirID = 0; }?>
                                     <div class="doc-actions">
                                         <a class="label label-danger remove" href="<?=RELATIVE_PATH?>/controller/mydocuments/control/business/task/removedoc/document/<?=$register["docID"]?>/directory/<?=$register["dirID"]?>" onclick="__gaTracker('send','event','Favorite Documents','Remove Document','<?php echo htmlspecialchars($register["title"]); ?>');"><?php echo $trans->getTrans($_REQUEST["action"],'REMOVE_FROM_COLLECTION'); ?></a>
-                                        <a class="label label-info move" href="javascript: void(0);" onclick="__gaTracker('send','event','Favorite Documents','Move Document','<?php echo htmlspecialchars($register["title"]); ?>'); window.open('<?=RELATIVE_PATH?>/controller/directories/control/business/task/movedoc/document/<?=$register["docID"]?>/directory/<?=$register["dirID"]?>','','resizable=no,width=420,height=270');"><?php echo $trans->getTrans($_REQUEST["action"],'MOVE_TO'); ?></a>
-                                        <a class="label label-primary related-docs" href="javascript: void(0);" onclick="__gaTracker('send','event','Favorite Documents','Related Documents','<?php echo htmlspecialchars($register["title"]); ?>');"><?php echo $trans->getTrans('suggesteddocs','RELATED_DOCS'); ?></a>
+                                        <a class="label label-info move" href="javascript:;" onclick="__gaTracker('send','event','Favorite Documents','Move Document','<?php echo htmlspecialchars($register["title"]); ?>'); window.open('<?=RELATIVE_PATH?>/controller/directories/control/business/task/movedoc/document/<?=$register["docID"]?>/directory/<?=$register["dirID"]?>','','resizable=no,width=420,height=270');"><?php echo $trans->getTrans($_REQUEST["action"],'MOVE_TO'); ?></a>
+                                        <a class="label label-primary related-docs" href="javascript:;" onclick="__gaTracker('send','event','Favorite Documents','Related Documents','<?php echo htmlspecialchars($register["title"]); ?>');"><?php echo $trans->getTrans('suggesteddocs','RELATED_DOCS'); ?></a>
                                     </div>
                                     <!--div>
                                       <span class="label label-default">Default</span>
@@ -115,7 +115,7 @@
                             <div class="panel-body">
                                 <h5><?=$trans->getTrans($_REQUEST["action"],'MY_FOLDERS')?></h5>
                                 <ul class="list-docs-unstyled project_files documents">
-                                    <li><a href="javascript: void(0);" onclick="window.open('<?=RELATIVE_PATH?>/controller/directories/control/view/task/add','','resizable=no,width=420,height=250')"><i class="fa fa-plus-circle"></i><?=$trans->getTrans($_REQUEST["action"],'ADD_FOLDER')?></a></li>
+                                    <li><a href="javascript:;" onclick="window.open('<?=RELATIVE_PATH?>/controller/directories/control/view/task/add','','resizable=no,width=420,height=250')"><i class="fa fa-plus-circle"></i><?=$trans->getTrans($_REQUEST["action"],'ADD_FOLDER')?></a></li>
                                     <li><a href="<?=RELATIVE_PATH?>/controller/mydocuments/control/business/directory/0"><i class="fa fa-folder-open-o"></i><?=$trans->getTrans($_REQUEST["action"],'INCOMING_FOLDER')?></a></li>
                                     <?if ($responseListDirs["values"] != false ){?>
                                         <?foreach ($responseListDirs["values"] as $listDirs){?>

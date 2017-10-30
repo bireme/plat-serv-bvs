@@ -20,7 +20,7 @@ class Translations {
     <li>Lista de links favoritos</li>
 </ul>
 <p>Minha BVS está disponível para qualquer usuário por meio de sua conta
-Facebook, Google, BIREME Account ou do próprio serviço Minha BVS. <a href="javascript: void(0);" class="decor" data-toggle="modal" data-target=".bs-modal-lg">Saiba mais</a></p>
+Facebook, Google, BIREME Account ou do próprio serviço Minha BVS. <a href="javascript:;" class="decor" data-toggle="modal" data-target=".bs-modal-lg">Saiba mais</a></p>
 ';
         self::$trans["authentication"]["MY_VHL_DESCRIPTION"] = '
 <p>Minha BVS é um serviço gratuito que guarda informações e preferências do

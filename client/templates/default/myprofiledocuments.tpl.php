@@ -27,7 +27,7 @@
                       <?php $registerProfile = $responseProfile["values"][0]; ?>
                       <div class="folder-data">
                           <h4><i class="fa fa-folder-o"></i> <?=$registerProfile["profileName"]?></h4>
-                          <a class="edit" href="javascript: void(0);" onclick="__gaTracker('send','event','Interest Topics','Edit Topic','<?php echo htmlspecialchars($registerProfile["profileName"]); ?>'); window.open('<?=RELATIVE_PATH?>/controller/myprofiledocuments/control/business/task/edit/profile/<?=$registerProfile["profileID"]?>','','resizable=no,scrollbars=1,width=420,height=385')"><span class="label label-info"><?=$trans->getTrans($_REQUEST["action"],'EDIT_PROFILE')?></span></a>
+                          <a class="edit" href="javascript:;" onclick="__gaTracker('send','event','Interest Topics','Edit Topic','<?php echo htmlspecialchars($registerProfile["profileName"]); ?>'); window.open('<?=RELATIVE_PATH?>/controller/myprofiledocuments/control/business/task/edit/profile/<?=$registerProfile["profileID"]?>','','resizable=no,scrollbars=1,width=420,height=385')"><span class="label label-info"><?=$trans->getTrans($_REQUEST["action"],'EDIT_PROFILE')?></span></a>
                           <a class="remove" href="<?=RELATIVE_PATH?>/controller/myprofiledocuments/control/business/task/delete/profile/<?=$registerProfile["profileID"]?>" onclick="__gaTracker('send','event','Interest Topics','Remove Topic','<?php echo htmlspecialchars($registerProfile["profileName"]); ?>');"><span class="label label-danger"><?=$trans->getTrans($_REQUEST["action"],'REMOVE_PROFILE')?></span></a>
                       </div>
                       <div class="keywords"><small><?=$trans->getTrans($_REQUEST["action"],'PROFILE_KEYWORDS')?>: <?=$registerProfile["profileText"]?></small></div>
@@ -51,7 +51,7 @@
                                       </div>
                                       <div class="doc-actions">
                                           <a class="label label-success add-collection" value="<?php echo $similar["docID"]; ?>" onclick="__gaTracker('send','event','Interest Topics','Favorite Documents','<?php echo htmlspecialchars($similar["title"]); ?>');"><?=$trans->getTrans($_REQUEST["action"],'ADD_COLLECTION')?></a>
-                                          <a class="label label-primary related-docs" href="javascript: void(0);" onclick="__gaTracker('send','event','Interest Topics','Related Documents','<?php echo htmlspecialchars($similar["title"]); ?>');"><?php echo $trans->getTrans('suggesteddocs','RELATED_DOCS'); ?></a>
+                                          <a class="label label-primary related-docs" href="javascript:;" onclick="__gaTracker('send','event','Interest Topics','Related Documents','<?php echo htmlspecialchars($similar["title"]); ?>');"><?php echo $trans->getTrans('suggesteddocs','RELATED_DOCS'); ?></a>
                                       </div>
                                       <!--div>
                                         <span class="label label-default">Default</span>
@@ -97,7 +97,7 @@
                             <div class="panel-body">
                                 <h5><?=$trans->getTrans($_REQUEST["action"],'TOOLS')?></h5>
                                 <ul class="list-docs-unstyled project_files">
-                                    <li><a href="javascript: void(0);" onclick="window.open('<?=RELATIVE_PATH?>/controller/myprofiledocuments/control/view/task/add','','resizable=no,width=420,height=385')"><i class="fa fa-plus-circle"></i><?=ucfirst($trans->getTrans($_REQUEST["action"],'ADD_PROFILE'))?></a></li>
+                                    <li><a href="javascript:;" onclick="window.open('<?=RELATIVE_PATH?>/controller/myprofiledocuments/control/view/task/add','','resizable=no,width=420,height=385')"><i class="fa fa-plus-circle"></i><?=ucfirst($trans->getTrans($_REQUEST["action"],'ADD_PROFILE'))?></a></li>
                                 </ul>
                             </div>
                         </section>

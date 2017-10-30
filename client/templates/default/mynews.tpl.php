@@ -26,7 +26,7 @@
                             <div class="description"><?=$register["description"]?></div>
                             <div class="actions">
                                 <a class="remove" href="<?=RELATIVE_PATH?>/controller/mynews/control/business/task/delete/news/<?=$register["newsID"]?>"><img src="<?=RELATIVE_PATH?>/images/<?=$_SESSION["skin"]?>/folder_delete.gif" border="0"/><?=$trans->getTrans($_REQUEST["action"],'REMOVE_NEWS')?></a> |
-                                <a class="edit" href="javascript: void(0);" onClick="window.open('<?=RELATIVE_PATH?>/controller/mynews/control/business/task/edit/news/<?=$register["newsID"]?>','','resizable=no,scrollbars=1,width=420,height=280')"><img src="<?=RELATIVE_PATH?>/images/<?=$_SESSION["skin"]?>/folder_edit.gif" border="0"/><?=$trans->getTrans($_REQUEST["action"],'EDIT_NEWS')?></a>
+                                <a class="edit" href="javascript:;" onClick="window.open('<?=RELATIVE_PATH?>/controller/mynews/control/business/task/edit/news/<?=$register["newsID"]?>','','resizable=no,scrollbars=1,width=420,height=280')"><img src="<?=RELATIVE_PATH?>/images/<?=$_SESSION["skin"]?>/folder_edit.gif" border="0"/><?=$trans->getTrans($_REQUEST["action"],'EDIT_NEWS')?></a>
                             </div>
                         </div>
                     </li>
@@ -45,7 +45,7 @@
         <h3><span><?=$trans->getTrans($_REQUEST["action"],'TOOLS')?></span></h3>
         <div id="rssFeeds">
             <ul>
-                <li><a href="javascript: void(0);" onclick="window.open('<?=RELATIVE_PATH?>/controller/mynews/control/view/task/add','','resizable=no,width=420,height=280')"><img src="<?=RELATIVE_PATH?>/images/<?=$_SESSION["skin"]?>/add-item-red.gif" border="0"/><?=$trans->getTrans($_REQUEST["action"],'ADD_NEWS')?></a></li>
+                <li><a href="javascript:;" onclick="window.open('<?=RELATIVE_PATH?>/controller/mynews/control/view/task/add','','resizable=no,width=420,height=280')"><img src="<?=RELATIVE_PATH?>/images/<?=$_SESSION["skin"]?>/add-item-red.gif" border="0"/><?=$trans->getTrans($_REQUEST["action"],'ADD_NEWS')?></a></li>
             </ul>
         </div>
     </div>

@@ -94,7 +94,7 @@
               <div class="top_menu">
                 <ul id="step5" class="nav navbar-nav navbar-right profile_menu language_switcher">
                   <li>
-                    <a href="javascript: void(0);" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false" style="padding-bottom: 21px;">
+                    <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false" style="padding-bottom: 21px;">
                       <i class="fa fa-flag"></i> <?php echo $languages[$_SESSION['lang']]; ?>
                       <span class=" fa fa-angle-down"></span>
                     </a>
@@ -109,7 +109,7 @@
 
                 <ul id="step6" class="nav navbar-nav navbar-right profile_menu">
                   <li>
-                    <a href="javascript: void(0);" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false" style="padding-bottom: 21px;">
+                    <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false" style="padding-bottom: 21px;">
                       <?php if ( $_SESSION['fb_data']['picture']['data']['url'] ) : ?>
                       <img src="<?php echo $_SESSION['fb_data']['picture']['data']['url']; ?>" alt="avatar"><?=$_SESSION["userFirstName"]?>
                       <?php elseif ( $_SESSION['google_data']['picture'] ) : ?>

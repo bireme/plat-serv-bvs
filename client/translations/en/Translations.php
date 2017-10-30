@@ -19,7 +19,7 @@ class Translations {
     <li>VHL search history</li>
     <li>List of favorite links</li>
 </ul>
-<p>My VHL is available to any user through their Facebook, Google, BIREME Account or through the My VHL service itself. <a href="javascript: void(0);" class="decor" data-toggle="modal" data-target=".bs-modal-lg">Know more</a></p>
+<p>My VHL is available to any user through their Facebook, Google, BIREME Account or through the My VHL service itself. <a href="javascript:;" class="decor" data-toggle="modal" data-target=".bs-modal-lg">Know more</a></p>
 ';
         self::$trans["authentication"]["MY_VHL_DESCRIPTION"] = '
 <p>My VHL is a free service that stores information and user preferences to offer customized services and facilities such as:</p>

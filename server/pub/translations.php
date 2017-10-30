@@ -52,7 +52,7 @@ if($lang == 'pt'){
 <p>Minha BVS é um serviço gratuito disponível para qualquer usuário por meio de sua conta Facebook, Google, BIREME Account ou do próprio serviço Minha BVS.</p>
 <p>O usuário que preferir usar o serviço Minha BVS com sua conta Facebook ou Google NÃO precisa criar nova conta de usuário na Minha BVS.</p>
 <p>BIREME Account é um sistema de gestão de usuários dos Centros Cooperantes da Rede BIREME. Estes usuários NÃO precisam criar nova conta de usuário na Minha BVS.</p>
-<p>Para criar uma nova conta de usuário Minha BVS é necessário preencher o formulário abaixo com dados pessoais e concordar com os termos de uso e política de privacidade. <a href="javascript: void(0);" class="decor" data-toggle="modal" data-target=".bs-modal-lg" style="text-decoration: underline;">Saiba mais</a></p>
+<p>Para criar uma nova conta de usuário Minha BVS é necessário preencher o formulário abaixo com dados pessoais e concordar com os termos de uso e política de privacidade. <a href="javascript:;" class="decor" data-toggle="modal" data-target=".bs-modal-lg" style="text-decoration: underline;">Saiba mais</a></p>
 ');
     define("MY_VHL_DESCRIPTION",'
 <p>Minha BVS é um serviço gratuito que guarda informações e preferências do
@@ -361,7 +361,7 @@ if($lang == 'es'){
 <p>Mi BVS es un servicio gratuito disponible a cualquier usuario a través de su cuenta Facebook, Google, BIREME Account o del propio servicio Mi BVS.</p>
 <p>El usuario que prefiere usar el servicio Mi BVS con su cuenta Facebook o Google NO requiere crear una nueva cuenta de usuario en Mi BVS.</p>
 <p>BIREME Account es un sistema de gestión de usuarios de los Centros Cooperantes de la Red BIREME. Estos usuarios NO requieren crear una nueva cuenta de usuario en Mi BVS.</p>
-<p>Para crear una nueva cuenta de usuario Mi BVS es necesario llenar el formulario abajo con datos personales y concordar con los términos de uso y política de privacidad. <a href="javascript: void(0);" class="decor" data-toggle="modal" data-target=".bs-modal-lg" style="text-decoration: underline;">¡Conozca más!</a></p>
+<p>Para crear una nueva cuenta de usuario Mi BVS es necesario llenar el formulario abajo con datos personales y concordar con los términos de uso y política de privacidad. <a href="javascript:;" class="decor" data-toggle="modal" data-target=".bs-modal-lg" style="text-decoration: underline;">¡Conozca más!</a></p>
 ');
     define("MY_VHL_DESCRIPTION",'
 <p>Mi BVS es un servicio gratuito que guarda informaciones y preferencias del usuario para ofrecer servicios personalizados y facilidades tales como:</p>
@@ -667,7 +667,7 @@ if($lang == 'en'){
 <p>My VHL is a free service available to any user through their Facebook, Google, BIREME Account or the My VHL service itself.</p>
 <p>Users who prefer to use the My VHL service with their Facebook or Google account do NOT need to create a new user account in My VHL.</p>
 <p>BIREME Account is a system of account management of users of BIREME Network Cooperating Centers. These users do NOT need to create a new user account in My VHL.<p/>
-<p>To create a new My VHL user account, you must complete with personal data and agree to the terms of use and privacy policy. <a href="javascript: void(0);" class="decor" data-toggle="modal" data-target=".bs-modal-lg" style="text-decoration: underline;">Know more</a></p>
+<p>To create a new My VHL user account, you must complete with personal data and agree to the terms of use and privacy policy. <a href="javascript:;" class="decor" data-toggle="modal" data-target=".bs-modal-lg" style="text-decoration: underline;">Know more</a></p>
 ');
     define("MY_VHL_DESCRIPTION",'
 <p>My VHL is a free service that stores information and user preferences to offer customized services and facilities such as:</p>
