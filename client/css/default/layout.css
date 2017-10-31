@@ -477,7 +477,6 @@ div.related_docs p {
 }
 
 .themes .x_title {
-    
 	background: url(../../images/default/020-folder.png) left no-repeat; height: 54px;
 }
 
@@ -637,6 +636,14 @@ small.update-alert p {
     padding-right: 3px;
 }
 
+.bs-public-modal-lg .addthis_toolbox {
+    margin-top: 10px;
+}
+
+body.at-expanded-menu-noscroll .bs-public-modal-lg {
+    display: none !important;
+}
+
 @media only screen
 and (max-device-width : 412px) {
     .introjs-tooltip .introjs-tooltipbuttons {
@@ -714,6 +721,11 @@ and (min-device-width : 768px) {
 
     select.bulkactions {
         float: right;
+    }
+
+    .themes .folder-data {
+        display: flex;
+        align-items: center;
     }
 }
 

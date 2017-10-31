@@ -3,7 +3,7 @@
         header("Location: " . $_SERVER['HTTP_REFERER']);
 
     $directory = $_REQUEST["directory"] ? $_REQUEST["directory"] : 0;
-    $public_link = "http://".$_SERVER['HTTP_HOST']."/uid/".base64_encode($_SESSION['userID'])."/directory/".$directory;
+    $public_link = "http://".$_SERVER['HTTP_HOST']."/".$_SESSION['lang']."/".base64_encode($_SESSION['userID'])."/".$directory;
 ?>
 
         <?require_once(dirname(__FILE__)."/header.tpl.php");?>
@@ -153,6 +153,23 @@
                 </div>
                 <div class="modal-body" style="text-align: center; background: #f4f7fd; overflow-wrap: break-word;">
                     <?php echo $public_link; ?>
+                    <script type="text/javascript">
+                      var addthis_config = addthis_config||{};
+
+                      var addthis_share = addthis_share||{};
+                          addthis_share.title = "<?php echo $resultDirName; ?>";
+                          addthis_share.url = "<?php echo $public_link; ?>";
+                    </script>
+                    <div class="addthis_toolbox addthis_32x32_style" addthis:url="<?php echo $public_link; ?>">
+                        <a class="addthis_button_facebook"></a>
+                        <a class="addthis_button_twitter"></a>
+                        <a class="addthis_button_linkedin"></a>
+                        <a class="addthis_button_email"></a>
+                        <a class="addthis_button_link"></a>
+                        <a class="addthis_button_whatsapp"></a>
+                        <!--a class="addthis_button_compact"></a-->
+                    </div>
+                    <script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#async=1"></script>
                 </div>
                 <div class="modal-footer"></div>
               </div>
