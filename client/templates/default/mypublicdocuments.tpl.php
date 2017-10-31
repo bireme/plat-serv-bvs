@@ -1,3 +1,7 @@
+<?php
+    $directory = $_REQUEST["directory"] ? $_REQUEST["directory"] : 0;
+    $public_link = "http://".$_SERVER['HTTP_HOST']."/".$_SESSION['lang']."/".$_REQUEST['uid']."/".$directory;
+?>
         <?php require_once(dirname(__FILE__)."/header.tpl.php"); ?>
 
         <div class="col-md-3 left_col">
@@ -23,6 +27,25 @@
                   <div class="x_content">
                     <div class="folder-data col-md-9 col-sm-9 col-xs-12">
                         <h4><i class="fa fa-folder-o"></i> <?if ($resultDirName === null){ echo $trans->getTrans($_REQUEST["action"],'INCOMING_FOLDER'); }?><?=$resultDirName?></h4>
+                        <div class="share-buttons">
+                            <script type="text/javascript">
+                              var addthis_config = addthis_config||{};
+
+                              var addthis_share = addthis_share||{};
+                                  addthis_share.title = "<?php echo $resultDirName; ?>";
+                                  addthis_share.url = "<?php echo $public_link; ?>";
+                            </script>
+                            <div class="addthis_toolbox addthis_32x32_style" addthis:url="<?php echo $public_link; ?>">
+                                <a class="addthis_button_facebook"></a>
+                                <a class="addthis_button_twitter"></a>
+                                <a class="addthis_button_linkedin"></a>
+                                <a class="addthis_button_email"></a>
+                                <a class="addthis_button_link"></a>
+                                <a class="addthis_button_whatsapp"></a>
+                                <!--a class="addthis_button_compact"></a-->
+                            </div>
+                            <script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#async=1"></script>
+                        </div>
                     </div>
                     <!--div class="col-md-9 col-sm-9 col-xs-12"-->
                     <div class="col-md-12 col-sm-12 col-xs-12">
