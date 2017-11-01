@@ -520,7 +520,8 @@ div.related_docs p {
     background-color: transparent !important;
 }
 
-.related-docs {
+.related-docs,
+.public-related-docs {
     background: url(../../images/default/similar.png) left no-repeat;
     height: 16px;
 }
