@@ -33,7 +33,7 @@ if ( !isset($_REQUEST["control"]) ) {
     $control = $_REQUEST["control"];
 }
 
-if ( isset($_REQUEST["task"]) || 'public' == $_REQUEST["task"] ) {
+if ( isset($_REQUEST["task"]) && 'public' == $_REQUEST["task"] ) {
     $public = $_REQUEST["task"];
 } else {
     $public = FALSE;

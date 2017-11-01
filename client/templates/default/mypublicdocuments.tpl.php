@@ -69,7 +69,7 @@
                                     </div>
                                     <?if ($register["dirID"] == null){ $dirID = 0; }?>
                                     <div class="doc-actions">
-                                        <a class="label label-primary related-docs" href="javascript:;" onclick="__gaTracker('send','event','Favorite Documents','Related Documents','<?php echo htmlspecialchars($register["title"]); ?>');"><?php echo $trans->getTrans('suggesteddocs','RELATED_DOCS'); ?></a>
+                                        <a class="label label-primary public-related-docs" href="javascript:;" onclick="__gaTracker('send','event','Favorite Documents','Related Documents','<?php echo htmlspecialchars($register["title"]); ?>');"><?php echo $trans->getTrans('suggesteddocs','RELATED_DOCS'); ?></a>
                                     </div>
                                     <div class="related_docs">
                                         <div class="related-loading"><?php echo $trans->getTrans('suggesteddocs','LOADING'); ?></div>

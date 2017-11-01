@@ -175,6 +175,17 @@ function getRelatedDocs($userTK,$string){
 }
 
 /**
+ * Get public related documents
+ *
+ * @param string $string
+ * @return boolean|array
+ */
+function getPublicRelatedDocs($string){
+    $result = SimilarDocs::getRelatedDocs($string);
+    return $result;
+}
+
+/**
  * Return the total number of ORCID works
  *
  * @param string $userTK user hash

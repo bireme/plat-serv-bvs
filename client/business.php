@@ -11,17 +11,13 @@ if ( isset($_SESSION['userTK']) && !empty($_SESSION['userTK']) ) {
         header('Location:'.SERVICES_PLATFORM_DOMAIN.'/pub/userData.php?userTK='.urlencode($_SESSION["userTK"]).'&c='.$b64HttpHost);
         exit();
     }
-}
-
-if ($_REQUEST["action"] != 'authentication' and (!isset($_SESSION['userTK']) || empty($_SESSION['userTK']))){
-    if ( 'servicesplatform' != $_REQUEST["action"] ) {
-        if ( 'mydocuments' == $_REQUEST["action"] ) {
-            if ( !$public ) {
-                $_REQUEST["action"] = 'logout';
-            }
-        } else {
-            $_REQUEST["action"] = 'logout';
-        }
+} else {
+    switch ( $_REQUEST['action'] ) {
+        case 'authentication': break;
+        case 'servicesplatform': break;
+        case 'mydocuments': if ( $public ) break;
+        case 'suggesteddocs': if ( $public ) break;
+        default: $_REQUEST["action"] = 'logout'; break;
     }
 }
 
@@ -41,7 +37,7 @@ switch($_REQUEST["action"]){
         require_once(dirname(__FILE__)."/business/mydocuments.php");
     break;
     case "directories":
-        if ($_REQUEST["task"] == "add" or $_REQUEST["task"] == "edit" or $_REQUEST["task"] == "delete" or $_REQUEST["task"] == "publish" or $_REQUEST["task"] == "movedoc"){
+        if ( in_array($_REQUEST['task'], array('add', 'edit', 'delete', 'publish', 'movedoc')) ) {
             require_once(dirname(__FILE__)."/business/directories.php");
         }
     break;

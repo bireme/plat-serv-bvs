@@ -187,15 +187,21 @@ $( document ).ready(
         });
 
         /********** Related Documents Scripts **********/
-        $(this).on('click', 'a.related-docs',
+        $(this).on('click', 'a.related-docs, a.public-related-docs',
             function(e){
                 e.preventDefault();
                 _this = $(this);
                 _this.prop('disabled', true);
 
+                if ( $(this).is(".related-docs") ) {
+                    task = 'related';
+                } else {
+                    task = 'public';
+                }
+
                 path = window.location.pathname;
                 parts = path.split("/controller/");
-                href = parts[0]+"/controller/suggesteddocs/control/business/task/related";
+                href = parts[0]+"/controller/suggesteddocs/control/business/task/"+task;
 
                 content = $(this).closest('td').find('div.related_docs');
                 title = $(this).closest('td').find('div.record a').text();

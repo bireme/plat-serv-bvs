@@ -91,6 +91,15 @@ switch($_REQUEST["task"]){
         $related = SimilarDocs::getRelatedDocs($_SESSION["userTK"],$_REQUEST['sentence']);
         die(json_encode($related));
     break;
+    case "public":
+        $public_related = SimilarDocs::getPublicRelatedDocs($_REQUEST['sentence']);
+        
+        if ( $public_related ) {
+            die(json_encode($public_related));
+        } else {
+            die("default");
+        }
+    break;
     default:
         die("default");
     break;
