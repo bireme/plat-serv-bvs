@@ -242,7 +242,8 @@ class UserDirectoryDAO {
         $sysUID = UserDAO::getSysUID($directory->getUserID());
 
         $strsql = "UPDATE directories set name='".$directory->getDirName()."',
-            sysUID='".$sysUID."'
+            sysUID='".$sysUID."',
+            last_modified='".date('Y-m-d H:i:s')."'
             WHERE dirID=".$directory->getdirID();
 
         try{
