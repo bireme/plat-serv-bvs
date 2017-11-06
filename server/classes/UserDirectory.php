@@ -87,6 +87,42 @@ class UserDirectory {
         return $this->_data['userID'];
     }
 
+    /*
+     * Set creation date
+     *
+     * @param string $value
+     */
+    public function setCreationDate($value){
+        $this->_data['creation_date'] = $value;
+    }
+
+    /*
+     * Get creation date
+     *
+     * @return string
+     */
+    public function getCreationDate(){
+        return $this->_data['creation_date'];
+    }
+
+    /*
+     * Set last modified date
+     *
+     * @param string $value
+     */
+    public function setLastModified($value){
+        $this->_data['last_modified'] = $value;
+    }
+
+    /*
+     * Get last modified date
+     *
+     * @return string
+     */
+    public function getLastModified(){
+        return $this->_data['last_modified'];
+    }
+
     /**
      * Set directory public status
      *

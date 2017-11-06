@@ -124,6 +124,8 @@ class UserDirectoryDAO {
                 $directory->setDirName($result[$i]['name']);
                 $directory->setOffline($result[$i]['offline']);
                 $directory->setUserID($result[$i]['userID']);
+                $directory->setCreationDate($result[$i]['creation_date']);
+                $directory->setLastModified($result[$i]['last_modified']);
                 $directory->setPublic($result[$i]['public']);
                 
                 array_push($directoryItem, $directory);
