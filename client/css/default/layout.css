@@ -656,6 +656,13 @@ body.at-expanded-menu-noscroll .bs-public-modal-lg {
     cursor: text;
 }
 
+.remove-account {
+    cursor: pointer;
+    text-decoration: underline !important;
+    display: block;
+    text-align: right;
+}
+
 @media only screen
 and (max-device-width : 412px) {
     .introjs-tooltip .introjs-tooltipbuttons {

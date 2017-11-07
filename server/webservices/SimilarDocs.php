@@ -168,8 +168,7 @@ function getRelatedDocs($userTK,$string){
     $objVerifier = new Verifier($params);
 
     if($retVerifier = $objVerifier->canPass()){
-        $retParams = $objVerifier->getParams();
-        $result = SimilarDocs::getRelatedDocs($retParams['userTK']['userID'],$string);
+        $result = SimilarDocs::getRelatedDocs($string);
     }
     return $result;
 }

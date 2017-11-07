@@ -294,7 +294,7 @@ class SimilarDocs {
      * Get profiles in SimilarDocs service
      *
      * @param string $userID User ID
-     * @return boolean
+     * @return boolean|array
      */
     public static function getProfiles($userID){
         $retValue = false;
@@ -580,16 +580,12 @@ class SimilarDocs {
     /**
      * Get related documents
      *
-     * @param string $userID User ID
      * @param string $string
      * @return boolean|array
      */
-    public static function getRelatedDocs($userID,$string){
+    public static function getRelatedDocs($string){
         $retValue = false;
-        $profile = md5('SIMILARS');
-      
-        $addProfile = self::addProfile($userID,0,$profile,$string,true);
-        $similars = self::getSimilars($userID,$profile);
+        $similars = self::adhocSimilarDocs($string);
 
         if ( $similars ) {
             if ( 'none' != $similars ) {
@@ -613,6 +609,53 @@ class SimilarDocs {
 
                     if ( count($retValue) == RELATED_DOCUMENTS_LIMIT ) break;
                 }                
+            }
+        }
+
+        return $retValue;
+    }
+
+    /**
+     * List related documents from SimilarDocs service
+     *
+     * @param string $string
+     * @return array
+     */
+    public static function adhocSimilarDocs($string){
+        $retValue = false;
+        $count = (int) DOCUMENTS_PER_PAGE;
+        $from = $count * $params["page"];
+        $request = SIMDOCS_GET_RELATED.urlencode($string);
+
+        $opts = array(
+            'http' => array(
+                'method' => "GET",
+                'header' => implode("\r\n", array(
+                                'Content-type: text/html,application/xhtml+xml,application/xml'
+                            ))
+            )
+        );
+
+        $context = stream_context_create($opts);
+        $content = utf8_encode(@file_get_contents($request,false,$context));
+
+        // Logging class initialization
+        $log = new Logging();
+        // Log filename
+        $logFile = '../../logs/SimilarDocs/'.date('Ymd').'+servplat.log';
+        // Run logging
+        $log->lrun($userID, $logFile, __METHOD__);
+
+        if($content){
+            $result = self::xmlToArray($content);
+
+            if( array_key_exists('document', $result) && count($result) > 0 ){
+                if( array_key_exists( 0, $result['document'] ) )
+                    $retValue = array_slice($result['document'], $from, $count);
+                else
+                    $retValue = array_values($result);
+            } else {
+                $retValue = 'none';
             }
         }
 
@@ -745,11 +788,7 @@ class SimilarDocs {
      */
     public static function xmlToArray($xmlProfile){
         /* load simpleXML object */
-        $xmlProfile = str_replace("&lt;","<",$xmlProfile);
-        $xmlProfile = str_replace("&gt;",">",$xmlProfile);
-        $xmlProfile = str_replace("&quot;","\"",$xmlProfile);
         $xmlProfile = utf8_decode($xmlProfile);
-
         $xml = simplexml_load_string($xmlProfile,'SimpleXMLElement',LIBXML_NOCDATA);
         $json = json_encode($xml);
         $result = json_decode($json,true);
