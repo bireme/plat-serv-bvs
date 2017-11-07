@@ -48,7 +48,7 @@ class ShelfDAO {
         
         if(!$in_shelf){
             if($shelf->getCitedStat()){
-			$citedStat = $shelf->getCitedStat();
+			    $citedStat = $shelf->getCitedStat();
             }else{
                 $citedStat = 0;
             }
@@ -82,6 +82,13 @@ class ShelfDAO {
             
             if(!is_array($insertID)){
                 $trace = Tracking::addTrace( $shelf->getUserID(), 'collection', 'add', $objDocument->getDocTitle() );
+
+                if ( $dirID > 0 ) {
+                    $objDir = UserDirectoryDAO::getDir($shelf->getUserID(), $dirID);
+                    $objDir[0]->setUserID($shelf->getUserID());
+                    $objDir = UserDirectoryDAO::editDir($objDir[0]);
+                }
+
                 $retValue = true;
             }
         }else{
@@ -210,6 +217,16 @@ class ShelfDAO {
 
                 if($res > 0){
                     $trace = Tracking::addTrace( $userID, 'collection', 'remove', $objDoc->getDocTitle() );
+
+                    $objDir = $shelf->getDir();
+                    $dirID = $objDir[0]->getDirID();
+
+                    if ( $dirID > 0 ) {
+                        $objDir = UserDirectoryDAO::getDir($userID, $dirID);
+                        $objDir[0]->setUserID($userID);
+                        $objDir = UserDirectoryDAO::editDir($objDir[0]);
+                    }
+
                     $retValue = true;
                 }
             }
@@ -258,7 +275,7 @@ class ShelfDAO {
             $document->setAuthors($result[0]['authors']);
             $document->setKeywords($result[0]['keywords']);
 
-            $objUserDirectoryDAO = UserDirectoryDAO::getDir($result[0]['sysUID'],
+            $objUserDirectoryDAO = UserDirectoryDAO::getDir($userID,
                 $result[0]['userDirID']);
 
             $shelf = new Shelf();
@@ -634,6 +651,7 @@ class ShelfDAO {
      * @return boolean
      */
     public static function moveAllToAnotherDirectory($shelf,$removeDir){
+        $result = false;
 
         $sysUID = UserDAO::getSysUID($shelf->getUserID());
 
@@ -648,11 +666,19 @@ class ShelfDAO {
             $logger->log($e->getMessage(),PEAR_LOG_EMERG);
         }
 
-        $userDirectoryDAO = new UserDirectoryDAO();
-        $directory = new UserDirectory();
-        $directory->setDirID($removeDir);
-        $directory->setUserID($shelf->getUserID());
-        $result = $userDirectoryDAO->remDir($directory);
+        if ( $result !== 0 ) {
+            $userDirectoryDAO = new UserDirectoryDAO();
+            $directory = new UserDirectory();
+            $directory->setDirID($removeDir);
+            $directory->setUserID($shelf->getUserID());
+            $result = $userDirectoryDAO->remDir($directory);
+
+            if ( $shelf->getDir() > 0 ) {
+                $objDir = UserDirectoryDAO::getDir($shelf->getUserID(), $shelf->getDir());
+                $objDir[0]->setUserID($shelf->getUserID());
+                $objDir = UserDirectoryDAO::editDir($objDir[0]);
+            }
+        }
 
         return $result;
     }
@@ -689,6 +715,18 @@ class ShelfDAO {
                 }
 
                 if ($result !== 0 ){
+                    if ( $toDirID > 0 ) {
+                        $objDir = UserDirectoryDAO::getDir($userID, $toDirID);
+                        $objDir[0]->setUserID($userID);
+                        $objDir = UserDirectoryDAO::editDir($objDir[0]);
+                    }
+
+                    if ( $fromDirID > 0 ) {
+                        $objDir = UserDirectoryDAO::getDir($userID, $fromDirID);
+                        $objDir[0]->setUserID($userID);
+                        $objDir = UserDirectoryDAO::editDir($objDir[0]);
+                    }
+
                     $retValue = true;
                 }
             }
@@ -710,6 +748,8 @@ class ShelfDAO {
          * reporter: Gustavo Fonseca (gustavo.fonseca@bireme.org)
          * date: 20090731
          */
+        $result = false;
+
         $sysUID = UserDAO::getSysUID($shelf->getUserID());
 
         $strsql = "DELETE FROM userShelf

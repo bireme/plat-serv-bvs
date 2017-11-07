@@ -123,7 +123,6 @@ class UserDirectoryDAO {
                 $directory->setDirID($result[$i]['dirID']);
                 $directory->setDirName($result[$i]['name']);
                 $directory->setOffline($result[$i]['offline']);
-                $directory->setUserID($result[$i]['userID']);
                 $directory->setCreationDate($result[$i]['creation_date']);
                 $directory->setLastModified($result[$i]['last_modified']);
                 $directory->setPublic($result[$i]['public']);

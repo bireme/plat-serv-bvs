@@ -519,20 +519,27 @@ function getDirName($userTK,$dirID){
     return htmlspecialchars($retValue);
 }
 
-function getPublicDirName($userID,$dirID){
+function getPublicUserDir($userID,$dirID){
     $retValue = false;
     $userID = base64_decode($userID);
     $is_user = UserDAO::isUser($userID);
 
     if ( $is_user ) {
-        $objUserDirectory = new UserDirectory();
-        $objUserDirectory->setUserID($userID);
-        $objUserDirectory->setDirID($dirID);
+        $retValue = array(); /* redeclare the variable */
+
+        $objUser = UserDAO::getUser($userID);
+
+        $retValue['userFirstName'] = $objUser->getFirstName();
+        $retValue['userLastName'] = $objUser->getLastName();
         
-        $retValue = UserDirectoryDAO::getDirName($objUserDirectory);
+        $objUserDirectory = UserDirectoryDAO::getDir($userID, $dirID);
+
+        $retValue['creation_date'] = $objUserDirectory[0]->getCreationDate();
+        $retValue['last_modified'] = $objUserDirectory[0]->getLastModified();
+        $retValue['dirName'] = htmlspecialchars($objUserDirectory[0]->getDirName());
     }
 
-    return htmlspecialchars($retValue);
+    return $retValue;
 }
 
 /**

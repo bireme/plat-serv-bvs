@@ -337,12 +337,12 @@ class DocsCollection {
         return $retValue;
     }
 
-    public static function getPublicDirName($userID,$dirID){
+    public static function getPublicUserDir($userID,$dirID){
         $retValue = false;
 
         try{
             $objSoapClient = self::getSoapClient();
-            $retValue = $objSoapClient->getPublicDirName($userID,$dirID);
+            $retValue = $objSoapClient->getPublicUserDir($userID,$dirID);
         }catch(Exception $e){
             $logger = &Log::singleton('file', LOG_FILE, __CLASS__, $_conf);
             $logger->log($e->getMessage(),PEAR_LOG_EMERG);

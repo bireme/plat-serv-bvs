@@ -138,7 +138,7 @@ switch($_REQUEST["task"]){
         $resultListDirs = DocsCollection::listPublicDirs($_REQUEST["uid"]);
 
         if (($_REQUEST["directory"] != null) and ($_REQUEST["directory"] != 0)){
-            $resultDirName = DocsCollection::getPublicDirName($_REQUEST["uid"],
+            $resultUserDir = DocsCollection::getPublicUserDir($_REQUEST["uid"],
                 $_REQUEST["directory"]);
         }
 

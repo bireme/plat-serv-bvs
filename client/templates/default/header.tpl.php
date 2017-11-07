@@ -14,15 +14,17 @@
     <meta name="generator" content="BVSServices <?=VERSION?>" />
 
     <?php if ( $public ) : ?>
-        <meta property="og:title" content="<?php echo $resultDirName; ?>" /> 
-        <meta property="og:description" content="" />
-        <meta property="og:image" content="<?=RELATIVE_PATH?>/images/default/logo-md-<?=$_SESSION["lang"]?>.png" />
+    <meta property="og:title" content="<?php echo $resultUserDir['dirName']; ?>" /> 
+    <meta property="og:description" content="" />
+    <meta property="og:image" content="<?=RELATIVE_PATH?>/images/default/logo-md-<?=$_SESSION["lang"]?>.png" />
     <?php endif; ?>
 
-    <?php if ( 'authentication' != $_REQUEST['action'] ) : ?>
-    <title><?php echo $trans->getTrans('authentication','MY_VHL').' - '.$trans->getTrans($_REQUEST['action'],'FEATURE'); ?></title>
-    <?php else : ?>
+    <?php if ( 'authentication' == $_REQUEST['action'] ) : ?>
     <title><?php echo $trans->getTrans('authentication','MY_VHL'); ?></title>
+    <?php elseif ( $public ) : ?>
+    <title><?php echo $trans->getTrans('authentication','MY_VHL').' - '.$resultUserDir['userFirstName'].' '.$resultUserDir['userLastName'].' - '.$resultUserDir['dirName'].' ('.$trans->getTrans($_REQUEST['action'],'SHARED_COLLECTION').')'; ?></title>
+    <?php else : ?>
+    <title><?php echo $trans->getTrans('authentication','MY_VHL').' - '.$trans->getTrans($_REQUEST['action'],'FEATURE'); ?></title>
     <?php endif; ?>
 
     <!-- Favicon -->

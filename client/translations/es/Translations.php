@@ -187,6 +187,7 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
         self::$trans["suggesteddocs"]["SELECTED_DOCS"] = 'Documentos seleccionados';
         self::$trans["suggesteddocs"]["SEND"] = 'Enviar';
         self::$trans["suggesteddocs"]["RELATED_DOCS"] = 'similares';
+        self::$trans["suggesteddocs"]["VHL_RELATED_DOCS"] = 'similares en la BVS';
         self::$trans["suggesteddocs"]["RELATED_DOCS_ALERT"] = 'Ningún documento relacionado';
 
     // Terms of orcidworks pages
@@ -231,7 +232,12 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
         self::$trans["mydocuments"]["BULK_REMOVE_DOCS"] = 'Borrar';
         self::$trans["mydocuments"]["BULK_MOVE_DOCS"] = 'Mover';
         self::$trans["mydocuments"]["SHARE_COLLECTION"] = 'compartir colección';
+        self::$trans["mydocuments"]["SHARED_COLLECTION"] = 'colección compartida';
         self::$trans["mydocuments"]["BUTTON_CLOSE"] = 'Cerrar';
+        self::$trans["mydocuments"]["CREATED_BY"] = 'Creado por:';
+        self::$trans["mydocuments"]["PUBLISHED_IN"] = 'Publicado en:';
+        self::$trans["mydocuments"]["UPDATED_IN"] = 'Actualizado en:';
+        self::$trans["mydocuments"]["TOTAL_DOCS"] = 'Total de documentos:';
 
     // Tems of directories pages
         self::$trans["directories"]["FEATURE"] = 'Documentos Favoritos';

@@ -9,7 +9,20 @@
             <div class="navbar nav_title" style="border: 0;">
               <a href="<?=RELATIVE_PATH?>/controller/authentication" class="site_title logo-md"><img src="<?=RELATIVE_PATH?>/images/<?=$_SESSION["skin"]?>/logo-md-<?=$_SESSION["lang"]?>.png" alt="VHL Logo"> <span><?=MY_VHL?></span></a>
             </div>
+
             <div class="clearfix"></div>
+
+            <div id="sidebar-menu" class="public_menu">
+              <div class="menu_section">
+                <h2>Coleção de documentos</h2>
+                <ul class="nav side-menu">
+                  <li><?=$trans->getTrans($_REQUEST["action"],'CREATED_BY')?> <?php echo $resultUserDir['userFirstName'].' '.$resultUserDir['userLastName']; ?></li>
+                  <li><?=$trans->getTrans($_REQUEST["action"],'PUBLISHED_IN')?> <?php echo date('d M Y', strtotime($resultUserDir['creation_date'])); ?></li>
+                  <li><?=$trans->getTrans($_REQUEST["action"],'UPDATED_IN')?> <?php echo date('d M Y', strtotime($resultUserDir['last_modified'])); ?></li>
+                  <li><?=$trans->getTrans($_REQUEST["action"],'TOTAL_DOCS')?> <?php echo $paginationData['items']; ?></li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -21,18 +34,18 @@
               <div class="col-md-12 col-sm-12 col-xs-12 fav-docs">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2><?=$trans->getTrans($_REQUEST["action"],'MY_COLLECTION')?></h2>
+                    <h2><?php if ($resultUserDir === null) { echo $trans->getTrans($_REQUEST["action"],'INCOMING_FOLDER'); } ?><?=$resultUserDir['dirName']?></h2>
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content">
                     <div class="folder-data col-md-9 col-sm-9 col-xs-12">
-                        <h4><i class="fa fa-folder-o"></i> <?if ($resultDirName === null){ echo $trans->getTrans($_REQUEST["action"],'INCOMING_FOLDER'); }?><?=$resultDirName?></h4>
+                      <!--h4><i class="fa fa-info-circle" aria-hidden="true"></i> info</h4-->
                         <div class="share-buttons">
                             <script type="text/javascript">
                               var addthis_config = addthis_config||{};
 
                               var addthis_share = addthis_share||{};
-                                  addthis_share.title = "<?php echo $resultDirName; ?>";
+                                  addthis_share.title = "<?php echo $resultUserDir['dirName']; ?>";
                                   addthis_share.url = "<?php echo $public_link; ?>";
                             </script>
                             <div class="addthis_toolbox addthis_32x32_style" addthis:url="<?php echo $public_link; ?>">
@@ -69,7 +82,7 @@
                                     </div>
                                     <?if ($register["dirID"] == null){ $dirID = 0; }?>
                                     <div class="doc-actions">
-                                        <a class="label label-primary public-related-docs" href="javascript:;" onclick="__gaTracker('send','event','Favorite Documents','Related Documents','<?php echo htmlspecialchars($register["title"]); ?>');"><?php echo $trans->getTrans('suggesteddocs','RELATED_DOCS'); ?></a>
+                                        <a class="label label-primary public-related-docs" href="javascript:;" onclick="__gaTracker('send','event','Favorite Documents','Related Documents','<?php echo htmlspecialchars($register["title"]); ?>');"><?php echo $trans->getTrans('suggesteddocs','VHL_RELATED_DOCS'); ?></a>
                                     </div>
                                     <div class="related_docs">
                                         <div class="related-loading"><?php echo $trans->getTrans('suggesteddocs','LOADING'); ?></div>
