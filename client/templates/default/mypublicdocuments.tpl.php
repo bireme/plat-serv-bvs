@@ -14,7 +14,7 @@
 
             <div id="sidebar-menu" class="public_menu">
               <div class="menu_section">
-                <h2>Coleção de documentos</h2>
+                <h2><?=$trans->getTrans($_REQUEST["action"],'COLLECTION_DOCS')?></h2>
                 <ul class="nav side-menu">
                   <li><?=$trans->getTrans($_REQUEST["action"],'CREATED_BY')?> <?php echo $resultUserDir['userFirstName'].' '.$resultUserDir['userLastName']; ?></li>
                   <li><?=$trans->getTrans($_REQUEST["action"],'PUBLISHED_IN')?> <?php echo date('d M Y', strtotime($resultUserDir['creation_date'])); ?></li>
