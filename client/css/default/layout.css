@@ -645,6 +645,17 @@ body.at-expanded-menu-noscroll .bs-public-modal-lg {
     display: none !important;
 }
 
+#sidebar-menu.public_menu {
+    color: #E7E7E7;
+    position: relative;
+    display: block;
+    padding: 13px 15px 12px;
+}
+
+#sidebar-menu.public_menu ul li {
+    cursor: text;
+}
+
 @media only screen
 and (max-device-width : 412px) {
     .introjs-tooltip .introjs-tooltipbuttons {
