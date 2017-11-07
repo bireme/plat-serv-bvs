@@ -193,8 +193,8 @@ class ShelfDAO {
      * @return boolean
      */
     public static function remDocFromShelf($userID,$docID){
+        $result = 0;
         $retValue = false;
-
         $sysUID = UserDAO::getSysUID($userID);
 
         if($sysUID){
@@ -215,7 +215,7 @@ class ShelfDAO {
                     $logger->log($e->getMessage(),PEAR_LOG_EMERG);
                 }
 
-                if($res > 0){
+                if($result > 0){
                     $trace = Tracking::addTrace( $userID, 'collection', 'remove', $objDoc->getDocTitle() );
 
                     $objDir = $shelf->getDir();
@@ -693,7 +693,6 @@ class ShelfDAO {
      * @return boolean
      */
     public static function moveDocToAnotherDirectory($userID,$fromDirID,$toDirID,$docID){
-
         $retValue = false;
 
         $sysUID = UserDAO::getSysUID($userID);
@@ -748,7 +747,7 @@ class ShelfDAO {
          * reporter: Gustavo Fonseca (gustavo.fonseca@bireme.org)
          * date: 20090731
          */
-        $result = false;
+        $result = 0;
 
         $sysUID = UserDAO::getSysUID($shelf->getUserID());
 
