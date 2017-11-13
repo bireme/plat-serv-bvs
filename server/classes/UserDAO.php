@@ -507,6 +507,7 @@ class UserDAO {
      */
     public static function deleteUserConfirm($email, $action){
         global $_conf;
+        $result = 0;
         $retValue = false;
 
         $sysUID = self::getSysUID($email);
@@ -518,13 +519,13 @@ class UserDAO {
 
             try{
                 $_db = new DBClass();
-                $result = $_db->databaseQuery($strsql);
+                $result = $_db->databaseExecUpdate($strsql);
             }catch(DBClassException $e){
                 $logger = &Log::singleton('file', LOG_FILE, __CLASS__, $_conf);
                 $logger->log($e->getMessage(),PEAR_LOG_EMERG);
             }
 
-            if ( $result ) $retValue = true;
+            $retValue = ($result !== 0) ? true : false;
         }
 
         return $retValue;
@@ -812,6 +813,67 @@ class UserDAO {
         }
 
         return $retValue;
+    }
+
+    public static function removeUser($userID, $reason, $details){
+        global $_conf;
+        $result = false;
+        $sysUID = self::getSysUID($userID);
+        $user   = self::getUser($userID);
+
+        if ( $sysUID ) {
+            $strsqlA = "DELETE FROM suggestions WHERE userID = '".$userID."'";
+            $strsqlB = "DELETE FROM dataHistory WHERE sysUID = '".$sysUID."'";
+            $strsqlC = "DELETE FROM directories WHERE sysUID = '".$sysUID."'";
+            $strsqlD = "DELETE FROM profiles    WHERE sysUID = '".$sysUID."'";
+            $strsqlE = "DELETE FROM userConfirm WHERE sysUID = '".$sysUID."'";
+            $strsqlF = "DELETE FROM userLinks   WHERE sysUID = '".$sysUID."'";
+            $strsqlG = "DELETE FROM userShelf   WHERE sysUID = '".$sysUID."'";
+            $strsqlH = "DELETE FROM users       WHERE sysUID = '".$sysUID."'";
+
+            try{
+                $_db = new DBClass();
+
+                $resultA = $_db->databaseExecUpdate($strsqlA);
+                $resultB = $_db->databaseExecUpdate($strsqlB);
+                $resultC = $_db->databaseExecUpdate($strsqlC);
+                $resultD = $_db->databaseExecUpdate($strsqlD);
+                $resultE = $_db->databaseExecUpdate($strsqlE);
+                $resultF = $_db->databaseExecUpdate($strsqlF);
+                $resultG = $_db->databaseExecUpdate($strsqlG);
+                $resultH = $_db->databaseExecUpdate($strsqlH);
+
+                $result = true;
+            }catch(DBClassException $e){
+                $logger = &Log::singleton('file', LOG_FILE, __CLASS__, $_conf);
+                $logger->log($e->getMessage(),PEAR_LOG_EMERG);
+            }
+        }
+
+        if ( $result ) {
+            $firstname = $user->getFirstName($res[0]['userFirstName']);
+            $lastname  = $user->getLastName($res[0]['userLastName']);
+            $email     = $user->getEmail($res[0]['userEmail']);
+            $gender    = $user->getGender($res[0]['userGender']);
+            $country   = $user->getCountry($res[0]['userCountry']);
+            $source    = $user->getSource($res[0]['userSource']);
+            $degree    = $user->getDegree($res[0]['userDegree']);
+            $prof_area = $user->getProfessionalArea($res[0]['professionalArea']);
+
+            $strsql = "
+                INSERT INTO `usersDeleted` (`firstname`,`lastname`,`email`,`gender`,`degree`,`professional_area`,`sysUID`,`userID`,`country`,`source`,`reason`,`details`)
+                VALUES ('$firstname','$lastname','$email','$gender','$degree','$prof_area','$sysUID','$userID','$country','$source','$reason','$details')";
+
+                try{
+                    $_db = new DBClass();
+                    $res = $_db->databaseExecInsert($strsql);
+                }catch(DBClassException $e){
+                    $logger = &Log::singleton('file', LOG_FILE, __CLASS__, $_conf);
+                    $logger->log($e->getMessage(),PEAR_LOG_EMERG);
+                }
+        }
+        
+        return $result;
     }
 
     public static function getSysUID($userID){

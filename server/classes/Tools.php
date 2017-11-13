@@ -178,6 +178,15 @@ class Token {
 
         return $retValue;
     }
+
+    public static function recaptcha_validator($g_recaptcha_response){
+        $api_key = "&secret=" . RECAPTCHA_SECRET_KEY;
+        $api_response = "&response=" . $g_recaptcha_response;
+        $url = RECAPTCHA_API_URL . $api_key . $api_response;
+        $response = json_decode(file_get_contents($url), true);
+
+        return $response['success'];
+    }
 }
 
 /**

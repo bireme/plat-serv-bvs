@@ -37,6 +37,14 @@
     <script src="<?=RELATIVE_PATH?>/js/functions.js"></script>
     <!-- Main Scripts -->
     <script src="<?=RELATIVE_PATH?>/js/scripts.js"></script>
+    <!-- reCAPTCHA -->
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+
+    <script type="text/javascript">
+        function recaptchaCallback() {
+            $('#recaptcha').removeAttr('disabled');
+        };
+    </script>
 
     <!-- bootstrap-daterangepicker -->
     <script type="text/javascript">
@@ -123,6 +131,27 @@
             console.log(validatorResult);
             return !!validatorResult.valid;
         };
+
+        document.forms['cadastro'].onsubmit = function(e){
+            var submit = true,
+                validatorResult = validator.checkAll(this);
+
+            console.log(validatorResult);
+            return !!validatorResult.valid;
+        };
+
+        $('#reason').on('click', function (e) {
+            var submit = true,
+                form = document.forms['cadastro'];
+                validatorResult = validator.checkAll(form);
+
+            if ( validatorResult.valid ) {
+                $('.bs-account-modal-lg').modal('show');
+            }
+
+            console.log(validatorResult);
+            return !!validatorResult.valid;
+        });
 
         // $('.multi.required').on('keyup blur', 'input', function(){
         //     var field = validator.checkField.call( validator, this).siblings('[required]')[0] );

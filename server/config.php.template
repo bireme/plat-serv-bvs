@@ -114,6 +114,11 @@ define("EMAIL_NEWPASSWORD_TEMPLATE",APP_BASEDIR.'/templates/mail/sendNewEMail.#L
 define("EMAIL_CONFIRMATION_TEMPLATE",APP_BASEDIR.'/templates/mail/confirmEMail.#LANG#.tpl');
 define("NEW_PASS_CONFIRMATION_TEMPLATE",APP_BASEDIR.'/templates/mail/newPassEMail.#LANG#.tpl');
 
+/* reCAPTCHA */
+define("RECAPTCHA_API_URL",'https://www.google.com/recaptcha/api/siteverify?');
+define("RECAPTCHA_SITE_KEY",'');
+define("RECAPTCHA_SECRET_KEY",'');
+
 /* WWW Public files */
 define("ERROR_REPORTING",0); // 0 || E_ALL
 

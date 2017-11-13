@@ -1,6 +1,9 @@
 <?php
+
 ob_start("ob_gzhandler");
+
 session_start();
+
 require_once(dirname(__FILE__)."/include/includes.php");
 require_once(dirname(__FILE__)."/include/degreeLibrary.php");
 require_once(dirname(__FILE__)."/include/professionalAreaLibrary.php");
@@ -191,6 +194,7 @@ if(!empty($userID)){
 }
 
 $DocTitle = $isUser?UPDATE_USER_TITLE:REGISTER_NEW_USER_TITLE;
+
 ?>
 
         <?php require_once(dirname(__FILE__)."/../templates/".DEFAULT_SKIN."/header.tpl.php"); ?>
@@ -544,6 +548,11 @@ $DocTitle = $isUser?UPDATE_USER_TITLE:REGISTER_NEW_USER_TITLE;
                                       </a>
                                   </div>
                               </div>
+                          </div>
+                          <?php else : ?>
+                          <div class="ln_solid"></div>
+                          <div class="form-group">
+                              <span><a href="<?=SERVICES_PLATFORM_DOMAIN?>/pub/removeAccount.php?userTK=<?=urlencode($_SESSION["userTK"])?>&c=<?=$b64HttpHost?>" class="remove-account"><?=DELETE_ACCOUNT_REQUEST?></a></span>
                           </div>
                           <?php endif; ?>
                         </form>

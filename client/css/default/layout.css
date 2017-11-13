@@ -656,6 +656,30 @@ body.at-expanded-menu-noscroll .bs-public-modal-lg {
     cursor: text;
 }
 
+.reason .radio span {
+    vertical-align: middle;
+}
+
+div.item.reason.bad {
+    display: flex;
+    align-items: center;
+}
+
+div.item.reason.bad > div:first-child {
+    border: 1px solid red;
+}
+
+div.item.reason > div:first-child {
+    padding-bottom: 20px;
+}
+
+.remove-account {
+    cursor: pointer;
+    text-decoration: underline !important;
+    display: block;
+    text-align: right;
+}
+
 @media only screen
 and (max-device-width : 412px) {
     .introjs-tooltip .introjs-tooltipbuttons {

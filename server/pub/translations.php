@@ -93,7 +93,7 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
     define("USER_UPDATE_ERROR",'<b>Problemas durante atualização</b><br />Não foi possível atualizar os dados. Tente mais tarde.');
     define("USER_CONFIRMED",'<b>Sua conta foi confirmada com sucesso!</b><br />Por favor, complete ou atualize seus dados e preferências no seu Perfil.<br />Em breve, você receberá um e-mail com sua senha de acesso da Minha BVS.<br />Se demorar para chegar, confira sua caixa de SPAM e lixo eletrônico.');
     define("USER_ADD_CONFIRMED",'<b>Usuário registrado com sucesso!</b><br />Sua senha foi enviada por e-mail.<br />Se demorar para chegar, confira sua caixa de SPAM e lixo eletrônico.');
-    define("USER_CONFIRMATION_ERROR",'<b>ERRO: Não foi possível realizar a confirmação de Usuário.</b>');
+    define("USER_CONFIRMATION_ERROR",'<b>ERRO: Não foi possível realizar a confirmação de usuário.</b>');
     define("VALMSG_G_EMPTY","Campo obrigatório. Não pode ficar em branco.");
     define("VALMSG_LOGIN","Digite um email válido.");
     define("VALMSG_EMAIL","Digite um email válido.");
@@ -309,8 +309,30 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
     define("LEAVE_COMMENT",'Enviar Comentário');
     define("REPORT_ERROR",'Comunicar Erro');
     define("COLLAPSE_MENU",'Recolher Menu');
-    define("REMOVE_ACCOUNT",'Minha BVS - Remover Conta');
-    define("REMOVE_ACCOUNT_DESCRIPTION",MY_VHL_DESCRIPTION);
+
+    define("REMOVE_ACCOUNT",'Remover Conta');
+    define("REMOVE_ACCOUNT_DESCRIPTION",'
+<p>Você solicitou a exclusão da sua conta nos Serviços Personalizados de Informação - Minha BVS. Ao excluí-la você perderá as informações relacionadas ao seu perfil, suas coleções de documentos, perfis de interesse e demais conteúdos da Minha BVS. Esta ação é irreversível.</p>
+<p>Se você tem certeza que quer excluir seu usuário, por favor conte-nos rapidamente o motivo de deixar de utilizar o Minha BVS.</p>'
+);
+    define("REMOVE_ACCOUNT_REASON",'<strong>Motivo da Exclusão (obrigatório)</strong>');
+    define("REMOVE_ACCOUNT_OPTION_A",'Eu não me sinto seguro no Minha BVS');
+    define("REMOVE_ACCOUNT_OPTION_B",'Eu não acho que o Minha BVS seja útil');
+    define("REMOVE_ACCOUNT_OPTION_C",'Minha conta foi invadida');
+    define("REMOVE_ACCOUNT_OPTION_D",'Não sei utilizar o Minha BVS');
+    define("REMOVE_ACCOUNT_OPTION_E",'Eu possuo outra conta no Minha BVS');
+    define("REMOVE_ACCOUNT_OPTION_F",'Recebo muitos e-mails do Minha BVS');
+    define("REMOVE_ACCOUNT_OPTION_G",'Tenho uma preocupação quanto à privacidade');
+    define("REMOVE_ACCOUNT_OPTION_H",'Outro');
+    define("REMOVE_ACCOUNT_DETAILS",'<p>Dê mais detalhes sobre o motivo da sua saída (opcional)</p>');
+    define("REMOVE_ACCOUNT_POPUP",'
+<p>Você está prestes a excluir permanentemente sua conta. Tem certeza?</p>
+<p>Em caso afirmativo, basta clicar na opção abaixo.</p>
+');
+    define('BUTTON_DELETE','Apagar Conta');
+    define("USER_REMOVE_ACCOUNT","<b>Sua conta foi removida.</b>");
+    define("USER_REMOVE_ACCOUNT_ERROR","<b>ERRO: Não foi possível remover sua conta.</b>");
+    define('DELETE_ACCOUNT_REQUEST', 'Solicitar exclusão da conta');
 }
 
 if($lang == 'es'){
@@ -617,6 +639,30 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
     define("LEAVE_COMMENT",'Enviar Comentario');
     define("REPORT_ERROR",'Informar Error');
     define("COLLAPSE_MENU",'Retraer Menú');
+
+    define("REMOVE_ACCOUNT", "Eliminar cuenta");
+    define("REMOVE_ACCOUNT_DESCRIPTION", '
+<p>Usted solicitó la exclusión de su cuenta en los Servicios Personalizados de Información - Mi BVS. Al excluirla usted perderá las informaciones relacionadas a su perfil, sus colecciones de documentos, perfiles de interés y demás contenidos de Mi BVS. Esta acción es irreversible.</p>
+<p>Si está seguro de que desea eliminar su usuario, por favor contáctenos rápidamente por el motivo de dejar de utilizar Mi BVS.</p>'
+);
+    define("REMOVE_ACCOUNT_REASON", '<strong>Motivo de la exclusión (obligatorio)</strong>');
+    define("REMOVE_ACCOUNT_OPTION_A", "No me siento seguro en Mi BVS");
+    define("REMOVE_ACCOUNT_OPTION_B", "No creo que Mi BVS sea útil");
+    define("REMOVE_ACCOUNT_OPTION_C", "Mi cuenta ha sido invadida");
+    define("REMOVE_ACCOUNT_OPTION_D", "No sé utilizar Mi BVS");
+    define("REMOVE_ACCOUNT_OPTION_E", "Tengo otra cuenta en Mi BVS");
+    define("REMOVE_ACCOUNT_OPTION_F", "Recibo muchos correos electrónicos de Mi BVS");
+    define("REMOVE_ACCOUNT_OPTION_G", "Tengo una preocupación por la privacidad");
+    define("REMOVE_ACCOUNT_OPTION_H", "Otro");
+    define("REMOVE_ACCOUNT_DETAILS", '<p>Dé más detalles sobre el motivo de su salida (opcional)</p>');
+    define("REMOVE_ACCOUNT_POPUP", '
+<p>Usted está a punto de eliminar permanentemente su cuenta. ¿Está seguro?</p>
+<p>En caso afirmativo, simplemente haga clic en la opción siguiente.</p>
+');
+    define('BUTTON_DELETE', 'Borrar Cuenta');
+    define("USER_REMOVE_ACCOUNT", "<b>Su cuenta se ha eliminado.</b>");
+    define("USER_REMOVE_ACCOUNT_ERROR", "<b>ERROR: No se pudo quitar su cuenta.</b>");
+    define('DELETE_ACCOUNT_REQUEST', 'Solicitar la eliminación de la cuenta');
 }
 
 if($lang == 'en'){
@@ -921,6 +967,30 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Phone: (55 11) 5576-980
     define("LEAVE_COMMENT",'Leave Comment');
     define("REPORT_ERROR",'Report Error');
     define("COLLAPSE_MENU",'Collapse Menu');
+
+    define("REMOVE_ACCOUNT", "Remove Account");
+    define("REMOVE_ACCOUNT_DESCRIPTION", '
+<p>You have requested the deletion of your account from the Custom Information Services - My VHL. By deleting it you will lose the information related to your profile, your documents collection, interest topics and other contents of My VHL. This action is irreversible.</p>
+<p>If you are sure you want to delete your user, please tell us quickly why you should stop using My VHL.</p>
+');
+    define("REMOVE_ACCOUNT_REASON", '<strong>Exclusion reason (required)</strong>');
+    define("REMOVE_ACCOUNT_OPTION_A", "I do not feel secure in My VHL");
+    define("REMOVE_ACCOUNT_OPTION_B", "I do not think My VHL is useful");
+    define("REMOVE_ACCOUNT_OPTION_C", "My account has been hacked");
+    define("REMOVE_ACCOUNT_OPTION_D", "I do not know how to use My VHL");
+    define("REMOVE_ACCOUNT_OPTION_E", "I have another account in My VHL");
+    define("REMOVE_ACCOUNT_OPTION_F", "I receive many emails from My VHL");
+    define("REMOVE_ACCOUNT_OPTION_G", "I have a privacy concern");
+    define("REMOVE_ACCOUNT_OPTION_H", "Other");
+    define("REMOVE_ACCOUNT_DETAILS", '<p>Give more details about the reason for your exit (optional)</p>');
+    define("REMOVE_ACCOUNT_POPUP", '
+<p>You are about to permanently delete your account. Are you sure?</p>
+<p>If yes, just click on the option below.</p>
+');
+    define('BUTTON_DELETE', 'Delete Account');
+    define("USER_REMOVE_ACCOUNT", "<b>Your account has been removed.</b>");
+    define("USER_REMOVE_ACCOUNT_ERROR", "<b>ERROR: Could not remove your account.</b>");
+    define('DELETE_ACCOUNT_REQUEST', 'Request account exclusion');
 }
 
 ?>
