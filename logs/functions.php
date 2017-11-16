@@ -164,6 +164,69 @@ class MySearches {
     }
 
     /**
+     * Delete searches metadata from a specific user
+     *
+     * @param string $userID user mail
+     * @return array result set from select query
+     *
+     */
+    public static function deleteSearches($userID){
+        $retValue = false;
+
+        if($userID){
+            $data = array();
+            $client = new MongoDB\Client(MONGODB_SERVER);
+            $db = $client->servicesplatform;
+            $collection = $db->logs;
+
+            $result = $collection->deleteMany(
+                array(
+                    'userID' => $userID
+                )
+            );
+
+            $retValue = $result->getDeletedCount();
+        }
+
+        return $retValue;
+    }
+
+    /**
+     * Delete query metadata from a specific user
+     *
+     * @param string $userID user mail
+     * @param string $query
+     * @param string $filter
+     * @return array result set from select query
+     *
+     */
+    public static function deleteQuery($userID, $query, $filter){
+        $retValue = false;
+
+        $query = htmlspecialchars($query, ENT_QUOTES);
+        $filter = htmlspecialchars($filter, ENT_QUOTES);
+
+        if($userID){
+            $data = array();
+            $client = new MongoDB\Client(MONGODB_SERVER);
+            $db = $client->servicesplatform;
+            $collection = $db->logs;
+
+            $result = $collection->deleteMany(
+                array(
+                    'userID' => $userID,
+                    'query'  => $query,
+                    'filter' => $filter
+                )
+            );
+
+            $retValue = $result->getDeletedCount();
+        }
+
+        return $retValue;
+    }
+
+    /**
      * Get the total number of searches from a specific user
      *
      * @param string $userID user mail

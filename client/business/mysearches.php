@@ -48,6 +48,17 @@ switch($_REQUEST["task"]){
         $response["values"] = $result;
         $response["status"] = true;        
     break;
+    case "delete":
+        $query = $_GET['query'] ? $_GET['query'] : '';
+        $filter = $_GET['filter'] ? $_GET['filter'] : '';
+
+        $obj = new MySearches($_SESSION["userTK"]);
+        $retParams = $obj->getParams();
+        $result = $obj->deleteQuery($retParams['userID'], $query, $filter);
+
+        $response["values"] = $result;
+        $response["status"] = true;
+    break;
     default:
         die("default");
     break;

@@ -1,3 +1,11 @@
+<?php
+    $location = RELATIVE_PATH.'/controller/mysearches/control/business';
+
+    if ( 'delete' == $_REQUEST["task"] ) {
+        header("Location: ".$location);
+    }
+?>
+
         <?php parse_str($_SERVER['QUERY_STRING'], $output); ?>
 
         <?require_once(dirname(__FILE__)."/header.tpl.php");?>
@@ -48,6 +56,7 @@
                                 <button id="v<?php echo $count; ?>" class="btn btn-primary btn-xs search" value="<?php echo $_SESSION['iahx']; ?>" data-label="<?php echo $label; ?>" data-query="<?php echo $register['query']; ?>" data-filter="<?php echo $register['filter']; ?>" onclick="__gaTracker('send','event','VHL Search History','Show Result','<?php echo htmlspecialchars($register["query"]); ?>');"><i class="fa fa-search search"></i> <?=$trans->getTrans($_REQUEST["action"],'VIEW')?></button>
                                 <?php endif; ?>
                                 <button id="c<?php echo $count; ?>" class="btn btn-info btn-xs combine" data-query="<?php echo $register['query']; ?>" data-filter="<?php echo $register['filter']; ?>" onclick="__gaTracker('send','event','VHL Search History','Combine Queries','<?php echo htmlspecialchars($register["query"]); ?>');"><i class="fa fa-compress combine"></i> <?=$trans->getTrans($_REQUEST["action"],'COMBINE')?></button>
+                                <a href="<?php echo $location.'/task/delete/?query='.$register['query'].'&filter='.$register['filter']; ?>" id="d<?php echo $count; ?>" class="btn btn-danger btn-xs" onclick="__gaTracker('send','event','VHL Search History','Delete Query','<?php echo htmlspecialchars($register["query"]); ?>');"><i class="fa fa-remove"></i> <?=$trans->getTrans($_REQUEST["action"],'REMOVE')?></a>
                               </td>
                             </tr>
                             <?php endforeach; ?>

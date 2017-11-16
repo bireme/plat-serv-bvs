@@ -159,8 +159,9 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Phone: (55 11) 5576-980
         self::$trans["mysearches"]["QUERY"] = 'Query';
         self::$trans["mysearches"]["FILTERS"] = 'Filters';
         self::$trans["mysearches"]["ACTIONS"] = 'Actions';
-        self::$trans["mysearches"]["VIEW"] = 'Display';
+        self::$trans["mysearches"]["VIEW"] = 'View';
         self::$trans["mysearches"]["COMBINE"] = 'Combine';
+        self::$trans["mysearches"]["REMOVE"] = 'Remove';
         self::$trans["mysearches"]["ORIGIN_SITE"] = 'Initial site';
         self::$trans["mysearches"]["BRASIL"] = 'VHL Brazil';
 

@@ -161,6 +161,7 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
         self::$trans["mysearches"]["ACTIONS"] = 'Acciones';
         self::$trans["mysearches"]["VIEW"] = 'Mostrar';
         self::$trans["mysearches"]["COMBINE"] = 'Combinar';
+        self::$trans["mysearches"]["REMOVE"] = 'Borrar';
         self::$trans["mysearches"]["ORIGIN_SITE"] = 'Sitio web de origen';
         self::$trans["mysearches"]["BRASIL"] = 'BVS Brasil';
 
