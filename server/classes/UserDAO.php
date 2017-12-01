@@ -114,6 +114,7 @@ class UserDAO {
             $objUser->setBirthday($res[0]['birthday']);
             $objUser->setAcceptMail($res[0]['accept_mail']);
             $objUser->setAgreementDate($res[0]['agreement_date']);
+            $objUser->setAvatar($res[0]['avatar']);
             $objUser->setProfile(ProfileDAO::getProfileList($objUser->getID()));
 
             $retValue = $objUser;
@@ -182,6 +183,7 @@ class UserDAO {
                                                  researcherID,
                                                  lattes,
                                                  birthday,
+                                                 avatar,
                                                  agreement_date,
                                                  accept_mail,
                                                  active,
@@ -203,6 +205,7 @@ class UserDAO {
                                                 $objUser->getResearcherID()."','".
                                                 $objUser->getLattes()."','".
                                                 $objUser->getBirthday()."','".
+                                                $objUser->getAvatar()."','".
                                                 $objUser->getAgreementDate()."','".
                                                 $objUser->getAcceptMail()."','".
                                                 $active."',''";
@@ -256,6 +259,7 @@ class UserDAO {
                             researcherID ='".$objUser->getResearcherID()."',
                             lattes ='".$objUser->getLattes()."',
                             birthday ='".$objUser->getBirthday()."',
+                            avatar ='".$objUser->getAvatar()."',
                             accept_mail ='".$objUser->getAcceptMail()."',
                             agreement_date ='".$objUser->getAgreementDate()."'";
 

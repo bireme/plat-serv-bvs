@@ -49,6 +49,7 @@ switch($_REQUEST["task"]){
                 $_SESSION["userLastName"] = $result["userLastName"];
                 $_SESSION["userMail"] = $result["userMail"];
                 $_SESSION["source"] = $result["source"];
+                $_SESSION["avatar"] = $result["avatar"];
                 $_SESSION["visited"] = $result["visited"];
                 $_SESSION["iahx"] = base64_decode($iahx);
                 $response["status"] = true;
@@ -123,6 +124,7 @@ if(!empty($_SESSION["userTK"])){
         $_SESSION["userLastName"] = $result["userLastName"];
         $_SESSION["userMail"] = $result["userMail"];
         $_SESSION["source"] = $result["source"];
+        $_SESSION["avatar"] = $result["avatar"];
     }
 
     if ( $_SESSION['data'] ) {

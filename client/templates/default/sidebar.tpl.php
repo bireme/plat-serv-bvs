@@ -21,6 +21,8 @@
                 <img src="<?php echo $_SESSION['fb_data']['picture']['data']['url']; ?>" alt="avatar" class="img-circle profile_img">
                 <?php elseif ( $_SESSION['google_data']['picture'] ) : ?>
                 <img src="<?php echo $_SESSION['google_data']['picture']; ?>" alt="avatar" class="img-circle profile_img">
+                <?php elseif ( $_SESSION['avatar'] && !in_array($_SESSION['source'], array('google','facebook')) ) : ?>
+                <img src="<?=RELATIVE_PATH?>/images/<?=$_SESSION["skin"]?>/uploads/<?=$_SESSION['avatar']?>" alt="avatar" class="img-circle profile_img">
                 <?php else : ?>
                 <img src="<?=RELATIVE_PATH?>/images/<?=$_SESSION["skin"]?>/logged.png" alt="avatar" class="img-circle profile_img">
                 <?php endif; ?>
@@ -114,6 +116,8 @@
                       <img src="<?php echo $_SESSION['fb_data']['picture']['data']['url']; ?>" alt="avatar"><?=$_SESSION["userFirstName"]?>
                       <?php elseif ( $_SESSION['google_data']['picture'] ) : ?>
                       <img src="<?php echo $_SESSION['google_data']['picture']; ?>" alt="avatar"><?=$_SESSION["userFirstName"]?>
+                      <?php elseif ( $_SESSION['avatar'] && !in_array($_SESSION['source'], array('google','facebook')) ) : ?>
+                      <img src="<?=RELATIVE_PATH?>/images/<?=$_SESSION["skin"]?>/uploads/<?=$_SESSION['avatar']?>" alt="avatar"><?=$_SESSION["userFirstName"]?>
                       <?php else : ?>
                       <img src="<?=RELATIVE_PATH?>/images/<?=$_SESSION["skin"]?>/logged.png" alt="avatar"><?=$_SESSION["userFirstName"]?>
                       <?php endif; ?>

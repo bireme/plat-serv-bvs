@@ -59,6 +59,12 @@ $ut = !empty($_REQUEST['ut']) ? $_REQUEST['ut'] : false;
 $msg = null; /* system messages */
 $birthday = false;
 
+$avatar = ( $_FILES['avatar']['name'] ) ? UserData::avatar_upload($userID, $_FILES['avatar']) : false;
+
+if ( $avatar ) {
+    $_SESSION['avatar'] = $avatar;
+}
+
 if ( !empty($_REQUEST['birthday']) ) {
     $birthday = str_replace('/', '-', $_REQUEST['birthday']);
     $birthday = date("Y-m-d", strtotime($birthday));
@@ -85,6 +91,10 @@ switch($acao){
         $usr->setBirthday($birthday);
         $usr->setAgreementDate($terms);
         $usr->setAcceptMail($acceptMail);
+
+        if ( $avatar ) {
+            $usr->setAvatar($avatar);
+        }
 
         if(Verifier::chkObjUser($usr)){
             $migrationResult = ToolsRegister::authenticateRegisteringUser($usr);
@@ -131,6 +141,10 @@ switch($acao){
         $usr->setBirthday(date("Y-m-d", strtotime($birthday)));
         $usr->setAgreementDate($terms);
         $usr->setAcceptMail($acceptMail);
+
+        if ( $avatar ) {
+            $usr->setAvatar($avatar);
+        }
 
         if(Verifier::chkObjUser($usr)){
             $result = UserDAO::updateUser($usr);
@@ -285,7 +299,7 @@ $DocTitle = $isUser?UPDATE_USER_TITLE:REGISTER_NEW_USER_TITLE;
                         </div>
                         <?php endif; ?>
 
-                        <form method="post" name="cadastro" class="form-horizontal form-label-left" novalidate>
+                        <form method="post" name="cadastro" class="form-horizontal form-label-left" enctype="multipart/form-data" novalidate>
 
                           <input type="hidden" name="postback" value="1" />
                           <input type="hidden" name="source" value="<?php echo ($isUser) ? trim($usr->getSource()) : 'ldap'; ?>" />
@@ -340,19 +354,19 @@ $DocTitle = $isUser?UPDATE_USER_TITLE:REGISTER_NEW_USER_TITLE;
                             <div class="item field form-group">
                               <label class="control-label col-md-3 col-sm-3 col-xs-12" for="lattes"><?=FIELD_LATTES?></label>
                               <div class="col-md-6 col-sm-6 col-xs-12">
-                                <input type="url" id="lattes" name="lattes" class="form-control col-md-7 col-xs-12" value="<?=$usr->getLattes()?>">
+                                <input type="url" id="lattes" name="lattes" class="optional form-control col-md-7 col-xs-12" value="<?=$usr->getLattes()?>">
                               </div>
                             </div>
                             <div class="item field form-group">
                               <label class="control-label col-md-3 col-sm-3 col-xs-12" for="linkedin"><?=FIELD_LINKEDIN?></label>
                               <div class="col-md-6 col-sm-6 col-xs-12">
-                                <input type="url" id="linkedin" name="linkedin" class="form-control col-md-7 col-xs-12" value="<?=$usr->getLinkedin()?>">
+                                <input type="url" id="linkedin" name="linkedin" class="optional form-control col-md-7 col-xs-12" value="<?=$usr->getLinkedin()?>">
                               </div>
                             </div>
                             <div class="item field form-group">
                               <label class="control-label col-md-3 col-sm-3 col-xs-12" for="researchGate"><?=FIELD_RESEARCHGATE?></label>
                               <div class="col-md-6 col-sm-6 col-xs-12">
-                                <input type="url" id="researchGate" name="researchGate" class="form-control col-md-7 col-xs-12" value="<?=$usr->getResearchGate()?>">
+                                <input type="url" id="researchGate" name="researchGate" class="optional form-control col-md-7 col-xs-12" value="<?=$usr->getResearchGate()?>">
                               </div>
                             </div>
                             <div class="item field form-group">
@@ -448,6 +462,14 @@ $DocTitle = $isUser?UPDATE_USER_TITLE:REGISTER_NEW_USER_TITLE;
                               <input id="birthday" name="birthday" class="date-picker form-control col-md-7 col-xs-12" required="required" type="text" value="<?=$birth?>">
                             </div>
                           </div>
+                          <?php if ( $isUser && !in_array($src, array('google', 'facebook')) ) : ?>
+                          <div class="item field form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="avatar"><?=FIELD_AVATAR?></label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                              <input id="avatar" name="avatar" class="form-control col-md-7 col-xs-12" type="file" accept="image/*">
+                            </div>
+                          </div>
+                          <?php endif; ?>
                           <div class="item field form-group">
                             <div class="col-md-3 col-sm-3 col-xs-12"></div>
                             <div class="col-md-6 col-sm-6 col-xs-12">

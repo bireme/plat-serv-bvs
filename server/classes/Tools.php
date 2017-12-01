@@ -320,6 +320,40 @@ class UserData {
         if ( $return ) return $userData;
     }
 
+    public static function avatar_upload($userID,$file){
+        $hash = md5($userID);
+        $filename = CharTools::mysql_escape_mimic($file['name']);
+        $filename = $hash.'_'.$filename;
+        $uploads_path = $_SERVER['DOCUMENT_ROOT'].RELATIVE_PATH.'/images/'.$_SESSION['skin'].'/uploads/';
+
+        //path were our avatar image will be stored
+        $avatar_path = $uploads_path.$filename;
+/*
+        // Check if file already exists
+        if (file_exists($avatar_path)) {
+            echo "Sorry, file already exists.";
+            return false;
+        }
+
+        // Check file size
+        if ($file["size"] > 500000) {
+            echo "Sorry, your file is too large.";
+            return false;
+        }
+*/
+        //make sure the file type is image
+        if (preg_match("!image!",$file['type']))
+        {
+            //copy image to uploads folder
+            if (move_uploaded_file($file['tmp_name'], $avatar_path)) 
+            {
+                return $filename;
+            }
+        }
+
+        return false;
+    }
+
 }
 
 /** 

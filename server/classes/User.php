@@ -35,6 +35,7 @@ class User {
     private $_lattes;
     private $_birthday;
     private $_agreementDate;
+    private $_avatar;
     private $_acceptMail = 0;
 
     public function __construct(){}
@@ -432,6 +433,24 @@ class User {
      */
     public function getAcceptMail(){
         return $this->_acceptMail;
+    }
+
+    /**
+     * Set user avatar
+     *
+     * @param string $avatar
+     */
+    public function setAvatar($avatar){
+        $this->_avatar = $avatar;
+    }
+
+    /**
+     * Get user avatar
+     *
+     * @return string
+     */
+    public function getAvatar(){
+        return $this->_avatar;
     }
 }
 ?>

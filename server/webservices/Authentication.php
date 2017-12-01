@@ -19,6 +19,7 @@ require_once(dirname(__FILE__)."/../classes/User.php");
 require_once(dirname(__FILE__)."/../classes/UserDAO.php");
 require_once(dirname(__FILE__)."/../classes/ToolsAuthentication.php");
 require_once(dirname(__FILE__)."/../classes/Verifier.php");
+
 /* 
  * 
  * Remove the line above after the user migration phase and uncomment the line
@@ -57,6 +58,7 @@ function loginUser($userID,$userPass,$socialMedia){
             $retValue['userFirstName'] = $objUser->getFirstName();
             $retValue['userLastName'] = $objUser->getLastName();              
             $retValue['userMail'] = $objUser->getEmail();
+            $retValue['avatar'] = $objUser->getAvatar();
             $retValue['source'] = $response["source"];
             $retValue['visited'] = $response["visited"];
             $retValue['userTK'] = Token::makeUserTK($objUser->getID(),$dUserPass,$response['source']);
@@ -112,6 +114,7 @@ function getUserData($userTK){
             $retValue['userLastName']=$objUser->getLastName();
             $retValue['userMail']=$objUser->getEmail();
             $retValue['source']=$objUser->getSource();
+            $retValue['avatar']=$objUser->getAvatar();
             $retValue['agreement_date']=$objUser->getAgreementDate();
         }
     }

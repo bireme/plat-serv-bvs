@@ -47,6 +47,7 @@ if($lang == 'pt'){
     define('FIELD_GENDER_MALE','Masculino');
     define('FIELD_GENDER_FEMALE','Feminino');
     define('FIELD_BIRTHDAY','Data de nascimento');
+    define('FIELD_AVATAR','Foto do perfil');
     define("FREE_REGISTRY","Registre-se agora!");
     define("FREE_REGISTRY_MESSAGE",'
 <p>Minha BVS é um serviço gratuito disponível para qualquer usuário por meio de sua conta Facebook, Google, BIREME Account ou do próprio serviço Minha BVS.</p>
@@ -378,6 +379,7 @@ if($lang == 'es'){
     define('FIELD_GENDER_MALE','Masculino');
     define('FIELD_GENDER_FEMALE','Feminino');
     define('FIELD_BIRTHDAY','Fecha de nacimiento');
+    define('FIELD_AVATAR','Foto del perfil');
     define("FREE_REGISTRY","¡Registrate ahora!");
     define("FREE_REGISTRY_MESSAGE",'
 <p>Mi BVS es un servicio gratuito disponible a cualquier usuario a través de su cuenta Facebook, Google, BIREME Account o del propio servicio Mi BVS.</p>
@@ -708,6 +710,7 @@ if($lang == 'en'){
     define('FIELD_GENDER_MALE','Male');
     define('FIELD_GENDER_FEMALE','Female');
     define('FIELD_BIRTHDAY','Date of birth');
+    define('FIELD_AVATAR','Profile picture');
     define("FREE_REGISTRY","Register for free!");
     define("FREE_REGISTRY_MESSAGE",'
 <p>My VHL is a free service available to any user through their Facebook, Google, BIREME Account or the My VHL service itself.</p>
