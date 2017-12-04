@@ -38,7 +38,7 @@
     <!-- Main Scripts -->
     <script src="<?=RELATIVE_PATH?>/js/scripts.js"></script>
     <!-- reCAPTCHA -->
-    <script src='https://www.google.com/recaptcha/api.js'></script>
+    <script src='https://www.google.com/recaptcha/api.js?hl=<?php echo $_SESSION['lang']; ?>'></script>
 
     <script type="text/javascript">
         function recaptchaCallback() {

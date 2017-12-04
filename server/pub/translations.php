@@ -11,6 +11,7 @@ if($lang == 'pt'){
     define('BIREME','BIREME | OPAS | OMS');
     define('BUTTON_NEW_USER','Enviar');
     define('BUTTON_CANCEL','Cancelar');
+    define('BUTTON_CONTINUE','Prosseguir');
     define('BUTTON_CLOSE','Fechar');
     define('BUTTON_SEND','Enviar');
     define("BUTTON_UPDATE_USER","Atualizar");
@@ -343,6 +344,7 @@ if($lang == 'es'){
     define('BIREME','BIREME | OPS | OMS');
     define('BUTTON_NEW_USER','Enviar');
     define('BUTTON_CANCEL','Cancelar');
+    define('BUTTON_CONTINUE','Proseguir');
     define('BUTTON_CLOSE','Cerrar');
     define('BUTTON_SEND','Enviar');
     define("BUTTON_UPDATE_USER","Actualizar");
@@ -674,6 +676,7 @@ if($lang == 'en'){
     define('BIREME','BIREME | PAHO | WHO');
     define('BUTTON_NEW_USER','Send');
     define('BUTTON_CANCEL','Cancel');
+    define('BUTTON_CONTINUE','Continue');
     define('BUTTON_CLOSE','Close');
     define('BUTTON_SEND','Send');
     define("BUTTON_UPDATE_USER","Update");

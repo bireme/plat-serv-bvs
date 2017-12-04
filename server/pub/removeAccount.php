@@ -175,7 +175,7 @@ $DocTitle = CHANGE_PASSWORD;
                                 <button type="button" class="btn btn-primary" onclick="javascript:window.location='<?=$callerURL?>'; return false;"><?=BUTTON_CANCEL?></button>
                               <?php endif; ?>
                               <input type="hidden" value="remover" name="acao" />
-                              <button id="reason" type="button" class="btn btn-success">Prosseguir</button>
+                              <button id="reason" type="button" class="btn btn-success"><?=BUTTON_CONTINUE?></button>
                             </div>
                           </div>
 
