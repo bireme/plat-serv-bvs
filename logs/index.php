@@ -42,7 +42,7 @@ if ( $userTK ) {
     $log['session'] = isset($_REQUEST['session'])?$_REQUEST['session']:'';
     $log['format'] = isset($_REQUEST['format'])?$_REQUEST['format']:'';
     $log['sort'] = isset($_REQUEST['sort'])?$_REQUEST['sort']:'';
-    $log['pub'] = true;
+    $log['pub'] = 1;
 
     // Conexão ao banco de dados, porta padrão 27017
     $client = new MongoDB\Client(MONGODB_SERVER);

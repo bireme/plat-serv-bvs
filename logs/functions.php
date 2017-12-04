@@ -129,7 +129,7 @@ class MySearches {
                             '$options' => 'i'
                         ],
                         'pub' => [
-                            '$ne' => false
+                            '$exists' => true
                         ]
                     ]
                 ],
@@ -192,7 +192,7 @@ class MySearches {
                         '$options' => 'i'
                     ),
                     'pub' => array(
-                        '$ne' => false
+                        '$exists' => true
                     )
                 )
             ),
@@ -363,8 +363,8 @@ class MySearches {
                     'filter' => $filter
                 ),
                 array(
-                    '$set' => array(
-                        'pub' => false
+                    '$rename' => array(
+                        'pub' => 'pvt'
                     )
                 )
             );
@@ -412,7 +412,7 @@ class MySearches {
                             '$options' => 'i'
                         ],
                         'pub' => [
-                            '$ne' => false
+                            '$exists' => true
                         ]
                     ]
                 ],
