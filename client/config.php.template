@@ -33,6 +33,7 @@ define("SITE_IDENTITY","ASK_YOURS_FOR_BIREME"); /*Bireme will give a SITE_IDENTI
 define("HOME","/users/loginLDAP.php");
 define("MAIN_PAGE","requestauth");
 define("LOGOUT","");
+
 $EscapeRedirectToHome = array(substr(HOME,(strrpos(HOME,'/'))+1),
                                 'userData.php',
                                 'userProfile.php',
@@ -40,6 +41,7 @@ $EscapeRedirectToHome = array(substr(HOME,(strrpos(HOME,'/'))+1),
 
 define("DOCUMENTS_PER_PAGE","200"); /* pagination */
 define("WIDGETS_ITEMS_LIMIT","5"); /* itens limit in widgets */
+define("MY_SEARCHES_LIMIT","50"); /* itens limit in MongoDB (per user) */
 
 define("BIR_ACCOUNTS_DOMAIN","http://accounts.bireme.org"); /* BIREME Accounts configuration */
 define("VHL_SEARCH_PORTAL_DOMAIN","http://pesquisa.bvsalud.org");

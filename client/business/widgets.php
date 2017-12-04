@@ -19,6 +19,7 @@ require_once(dirname(__FILE__)."/../classes/Tracking.php");
 require_once(dirname(__FILE__)."/../../logs/functions.php");
 
 $params["widget"] = true;
+$params["count"]  = WIDGETS_ITEMS_LIMIT;
 
 // My Collections widget
 $collections = DocsCollection::listDocs( $_SESSION['userTK'], null, $params );

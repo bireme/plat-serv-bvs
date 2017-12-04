@@ -54,7 +54,7 @@ switch($_REQUEST["task"]){
 
         $obj = new MySearches($_SESSION["userTK"]);
         $retParams = $obj->getParams();
-        $result = $obj->deleteQuery($retParams['userID'], $query, $filter);
+        $result = $obj->disableQuery($retParams['userID'], $query, $filter);
 
         $response["values"] = $result;
         $response["status"] = true;
