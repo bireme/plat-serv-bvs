@@ -205,13 +205,6 @@ class SimilarDocs {
         $xml = simplexml_load_string($xml,'SimpleXMLElement',LIBXML_NOCDATA);
         $xml = (string)$xml;
 
-        // Logging class initialization
-        $log = new Logging();
-        // Log filename
-        $logFile = '../../logs/SimilarDocs/'.date('Ymd').'+servplat.log';
-        // Run logging
-        $log->lrun($userID, $logFile, __METHOD__);
-
         if(!$skip){
             if($xml){
                 $similars = self::getSimilars($userID,$profileName);
@@ -239,6 +232,15 @@ class SimilarDocs {
                 $logger = &Log::singleton('file', LOG_FILE, __CLASS__, $_conf);
                 $logger->log($e->getMessage(),PEAR_LOG_EMERG);
             }
+        }
+
+        if ( 'off' == $status ) {
+            // Logging class initialization
+            $log = new Logging();
+            // Log filename
+            $logFile = '../../logs/SimilarDocs/'.date('Ymd').'+servplat.log';
+            // Run logging
+            $log->lrun($userID, $logFile, __METHOD__);
         }
 
         return $result;
@@ -274,17 +276,17 @@ class SimilarDocs {
         $xml = simplexml_load_string($xml,'SimpleXMLElement',LIBXML_NOCDATA);
         $xml = (string)$xml;
 
-        // Logging class initialization
-        $log = new Logging();
-        // Log filename
-        $logFile = '../../logs/SimilarDocs/'.date('Ymd').'+servplat.log';
-        // Run logging
-        $log->lrun($userID, $logFile, __METHOD__);
-
-        if(!$skip){
-            if($xml){
+        if($xml){
+            if(!$skip){
                 $result = self::deleteProfileDocs($userID,$profileID,$profileName);
             }
+        } else {
+            // Logging class initialization
+            $log = new Logging();
+            // Log filename
+            $logFile = '../../logs/SimilarDocs/'.date('Ymd').'+servplat.log';
+            // Run logging
+            $log->lrun($userID, $logFile, __METHOD__);
         }
 
         return $result;
@@ -312,13 +314,6 @@ class SimilarDocs {
         $context = stream_context_create($opts);        
         $content = utf8_encode(@file_get_contents($profiles,false,$context));
 
-        // Logging class initialization
-        $log = new Logging();
-        // Log filename
-        $logFile = '../../logs/SimilarDocs/'.date('Ymd').'+servplat.log';
-        // Run logging
-        $log->lrun($userID, $logFile, __METHOD__);
-
         if($content){
             $result = self::xmlToArray($content);
 
@@ -328,6 +323,13 @@ class SimilarDocs {
                 else
                     $retValue = array_values($result);
             }
+        } else {
+            // Logging class initialization
+            $log = new Logging();
+            // Log filename
+            $logFile = '../../logs/SimilarDocs/'.date('Ymd').'+servplat.log';
+            // Run logging
+            $log->lrun($userID, $logFile, __METHOD__);
         }
 
         return $retValue;
@@ -361,13 +363,6 @@ class SimilarDocs {
         $context = stream_context_create($opts);
         $content = utf8_encode(@file_get_contents($similar,false,$context));
 
-        // Logging class initialization
-        $log = new Logging();
-        // Log filename
-        $logFile = '../../logs/SimilarDocs/'.date('Ymd').'+servplat.log';
-        // Run logging
-        $log->lrun($userID, $logFile, __METHOD__);
-
         if($content){
             $result = self::xmlToArray($content);
 
@@ -379,6 +374,13 @@ class SimilarDocs {
             } else {
                 $retValue = 'none';
             }
+        } else {
+            // Logging class initialization
+            $log = new Logging();
+            // Log filename
+            $logFile = '../../logs/SimilarDocs/'.date('Ymd').'+servplat.log';
+            // Run logging
+            $log->lrun($userID, $logFile, __METHOD__);
         }
 
         return $retValue;
@@ -639,13 +641,6 @@ class SimilarDocs {
         $context = stream_context_create($opts);
         $content = utf8_encode(@file_get_contents($request,false,$context));
 
-        // Logging class initialization
-        $log = new Logging();
-        // Log filename
-        $logFile = '../../logs/SimilarDocs/'.date('Ymd').'+servplat.log';
-        // Run logging
-        $log->lrun($userID, $logFile, __METHOD__);
-
         if($content){
             $result = self::xmlToArray($content);
 
@@ -657,6 +652,13 @@ class SimilarDocs {
             } else {
                 $retValue = 'none';
             }
+        } else {
+            // Logging class initialization
+            $log = new Logging();
+            // Log filename
+            $logFile = '../../logs/SimilarDocs/'.date('Ymd').'+servplat.log';
+            // Run logging
+            $log->lrun($userID, $logFile, __METHOD__);
         }
 
         return $retValue;
