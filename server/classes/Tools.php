@@ -320,7 +320,7 @@ class UserData {
         if ( $return ) return $userData;
     }
 
-    public static function avatar_upload($userID,$file){
+    public static function avatar_upload($userID, $file){
         $hash = md5($userID);
         $filename = CharTools::mysql_escape_mimic($file['name']);
         $filename = $hash.'_'.$filename;
@@ -345,7 +345,7 @@ class UserData {
         if (preg_match("!image!",$file['type']))
         {
             //copy image to uploads folder
-            if (move_uploaded_file($file['tmp_name'], $avatar_path)) 
+            if (copy($file['tmp_name'], $avatar_path)) 
             {
                 return $filename;
             }
@@ -413,29 +413,19 @@ class Logging {
     }
 
     public function lrun($userID, $file='', $method='') {
-        $exec = false;
-        $egl  = error_get_last();
+        $args = array();
+        $args['method'] = $method;
+        $args['userID'] = $userID;
+        $args['message'] = 'SimilarDocs unavailable or under maintenance.';
+        
+        $msg = implode(' - ', array_filter($args));
 
-        if ( preg_match('/refused$/', $egl['message']) ) $exec = true;
-        if ( preg_match('/timed out$/', $egl['message']) ) $exec = true;
-
-        if ( $exec || $egl['type'] === 1 ) {
-            $args = array();
-            $args[] = $method;
-            $args[] = $userID;
-            $args[] = $egl['message'];
-            
-            $msg = implode(' - ', array_filter($args));
-
-            // set path and name of log file (optional)
-            $this->lfile($file);
-             
-            // write message to the log file
-            $this->lwrite($msg);
-             
-            // close log file
-            $this->lclose();
-        }
+        // set path and name of log file (optional)
+        $this->lfile($file);
+        // write message to the log file
+        $this->lwrite($msg);
+        // close log file
+        $this->lclose();
     }
 }
 ?>
