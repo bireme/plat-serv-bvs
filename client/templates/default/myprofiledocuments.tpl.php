@@ -42,7 +42,7 @@
                                   </tr>
                                 </thead-->
                                 <tbody>
-                                  <?php foreach ( $responseSimilarDocs["values"]['similars'] as $similar) : ?>
+                                  <?php foreach ( $responseSimilarDocs["values"]['similars'] as $similar ) : ?>
                                   <tr>
                                     <td>
                                       <div class="record">

@@ -130,6 +130,7 @@ class Translations {
         self::$trans["menu"]["REMOVE_LINK"] = 'Enlace removido';
         self::$trans["menu"]["QUERY"] = 'Consulta';
         self::$trans["menu"]["VIEW"] = 'Mostrar';
+        self::$trans["menu"]["RSS"] = 'RSS';
         self::$trans["menu"]["SEARCH_WIDGET"] = 'Búsquedas en la BVS';
         self::$trans["menu"]["PROFILE_WIDGET"] = 'Temas de Interés';
         self::$trans["menu"]["SHELF_WIDGET"] = 'Documentos Favoritos';
@@ -148,6 +149,25 @@ Area de Gestión del Conocimiento, Bioética e Investigación - KBR<br />
 Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 | Fax: (55 11) 5575-8868<br />
 <a href="http://new.paho.org/bireme" title="Mi BVS">http://www.paho.org/bireme</a><br /></p>
 ';
+
+    // Terms of searchresults pages
+        self::$trans["searchresults"]["FEATURE"] = 'RSS';
+        self::$trans["searchresults"]["RSS"] = 'RSS';
+        self::$trans["searchresults"]["ADD_RSS"] = 'añadir RSS';
+        self::$trans["searchresults"]["EDIT_RSS"] = 'editar RSS';
+        self::$trans["searchresults"]["REMOVE_RSS"] = 'borrar RSS';
+        self::$trans["searchresults"]["PREVIOUS"] = 'Anterior';
+        self::$trans["searchresults"]["NEXT"] = 'Siguiente';
+        self::$trans["searchresults"]["ADD_RSS_SUCCESS"] = 'Operación realizada con succeso.';
+        self::$trans["searchresults"]["ADD_RSS_ERROR"] = 'Error al añadir RSS';
+        self::$trans["searchresults"]["RSS_NOT_FOUND"] = 'Ninguna RSS localizado';
+        self::$trans["searchresults"]["RSS_NO_REGISTERS_FOUND"] = 'Ningún registro localizado';
+        self::$trans["searchresults"]["INCOMING_FOLDER"] = 'Caja de Entrada';
+        self::$trans["searchresults"]["ADD_COLLECTION"] = 'añadir a favoritos';
+        self::$trans["searchresults"]["TITLE"] = 'Título';
+        self::$trans["searchresults"]["URL"] = 'URL';
+        self::$trans["searchresults"]["SAVE"] = 'guardar';
+        self::$trans["searchresults"]["CANCEL"] = 'cancelar';
 
     // Terms of mysearches pages
         self::$trans["mysearches"]["FEATURE"] = 'Histórico de Buscas na BVS';

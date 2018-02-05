@@ -116,6 +116,7 @@ class Profile{
     /*
      * set creation date
      *
+     * @param string $date
      * @return void
      */
      function setCreationDate($date){

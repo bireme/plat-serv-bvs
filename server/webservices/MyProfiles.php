@@ -147,9 +147,9 @@ function getProfileList($userTK, $args, $from=0, $count=-1){
   * @return boolean
   */
 function updateProfile($userTK,$profileID,$profileXML){
-    $retObjLink = false;
+    $retObjProfile = false;
+
     /*  parameter validation */
-    //return $userTK;
     $params = array('userTK' => $userTK,
                     'profileID' => $profileID,
                     'profileXML' => $profileXML);
@@ -157,9 +157,9 @@ function updateProfile($userTK,$profileID,$profileXML){
 
     if($retVerifier = $objVerifier->canPass()){
         $retParams = $objVerifier->getParams();
-
-        /* get an array of links objects */
+        
         $arrObjProfile = ProfileDAO::getProfileFromXML($retParams['profileXML']);
+
         foreach($arrObjProfile as $objProfile){
             /* add each document */
             $retObjProfile = ProfileDAO::updateProfile($retParams['userTK']['userID'],$retParams['profileID'],$objProfile);

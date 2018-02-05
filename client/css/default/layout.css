@@ -496,6 +496,38 @@ div.related_docs p {
     background: url(../../images/default/005-search.png) left no-repeat; height: 54px;
 }
 
+.rss .tile-stats {
+    padding: 10px;
+    min-height: 100px;
+}
+
+.rss .tile-stats .fa {
+    font-size: 24px;
+    float: left;
+    margin-right: 5px;
+    color: #BAB8B8;
+}
+
+.rss .tile-stats h3 {
+    margin-left: 0;
+    overflow: hidden;
+}
+
+.rss .tile-stats img {
+    float: left;
+    width: 48px;
+    margin-right: 5px
+}
+
+.x_rss {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.btn-rss {
+    float: right;
+}
+
 .label-danger {
     background: url(../../images/default/remove.png) left no-repeat;
     height: 16px;

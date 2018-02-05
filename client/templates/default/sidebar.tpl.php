@@ -49,6 +49,7 @@
                       <li class="child step24"><a href="<?=RELATIVE_PATH?>/controller/mysearches/control/business"><?=$trans->getTrans('menu','MY_SEARCHES')?></a></li>
                       <li class="child step29"><a href="<?=RELATIVE_PATH?>/controller/mylinks/control/business"><?=$trans->getTrans('menu','MY_LINKS')?></a></li>
                       <li class="child step33"><a href="<?=RELATIVE_PATH?>/controller/orcidworks/control/business"><?=$trans->getTrans('menu','ORCID_WORKS')?></a></li>
+                      <li class="child step35"><a href="<?=RELATIVE_PATH?>/controller/searchresults/control/business"><?=$trans->getTrans('menu','RSS')?></a></li>
                     </ul>
                   </li>
                   <li class="hide side step3"><a href="<?=RELATIVE_PATH?>/controller/authentication"><i class="fa fa-home"></i> <?=$trans->getTrans('menu','HOME')?></a></li>
@@ -57,6 +58,7 @@
                   <li class="hide side step24"><a href="<?=RELATIVE_PATH?>/controller/mysearches/control/business"><i class="fa fa-search"></i> <?=$trans->getTrans('menu','MY_SEARCHES')?></a></li>
                   <li class="hide side step29"><a href="<?=RELATIVE_PATH?>/controller/mylinks/control/business"><i class="fa fa-link"></i> <?=$trans->getTrans('menu','MY_LINKS')?></a></li>
                   <li class="hide side step33"><a href="<?=RELATIVE_PATH?>/controller/orcidworks/control/business"><i class="fa fa-file-text"></i> <?=$trans->getTrans('menu','ORCID_WORKS')?></a></li>
+                  <li class="hide side step35"><a href="<?=RELATIVE_PATH?>/controller/searchresults/control/business"><i class="fa fa-rss"></i> <?=$trans->getTrans('menu','RSS')?></a></li>
                 </ul>
               </div>
             </div>

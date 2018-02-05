@@ -130,6 +130,7 @@ class Translations {
         self::$trans["menu"]["REMOVE_LINK"] = 'Link removed';
         self::$trans["menu"]["QUERY"] = 'Query';
         self::$trans["menu"]["VIEW"] = 'Display';
+        self::$trans["menu"]["RSS"] = 'RSS';
         self::$trans["menu"]["SEARCH_WIDGET"] = 'VHL Search';
         self::$trans["menu"]["PROFILE_WIDGET"] = 'Interest Topics';
         self::$trans["menu"]["SHELF_WIDGET"] = 'Favorite Documents';
@@ -148,6 +149,25 @@ Knowledge Management, Bioethics and Research Area - KBR<br />
 Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Phone: (55 11) 5576-9800 | Fax: (55 11) 5575-8868<br />
 <a href="http://new.paho.org/bireme" title="My VHL">http://www.paho.org/bireme</a><br /></p>
 ';
+
+    // Terms of searchresults pages
+        self::$trans["searchresults"]["FEATURE"] = 'RSS';
+        self::$trans["searchresults"]["RSS"] = 'RSS';
+        self::$trans["searchresults"]["ADD_RSS"] = 'add RSS';
+        self::$trans["searchresults"]["EDIT_RSS"] = 'edit RSS';
+        self::$trans["searchresults"]["REMOVE_RSS"] = 'remove RSS';
+        self::$trans["searchresults"]["PREVIOUS"] = 'Previous';
+        self::$trans["searchresults"]["NEXT"] = 'Next';
+        self::$trans["searchresults"]["RSS_NOT_FOUND"] = 'No RSS found';
+        self::$trans["searchresults"]["ADD_RSS_SUCCESS"] = 'Operation succeeded';
+        self::$trans["searchresults"]["ADD_RSS_ERROR"] = 'There was an error adding the RSS';
+        self::$trans["searchresults"]["RSS_NO_REGISTERS_FOUND"] = 'No registers found';
+        self::$trans["searchresults"]["INCOMING_FOLDER"] = 'Inbox';
+        self::$trans["searchresults"]["ADD_COLLECTION"] = 'add to favorites';
+        self::$trans["searchresults"]["TITLE"] = 'Title';
+        self::$trans["searchresults"]["URL"] = 'URL';
+        self::$trans["searchresults"]["SAVE"] = 'save';
+        self::$trans["searchresults"]["CANCEL"] = 'cancel';
 
     // Terms of mysearches pages
         self::$trans["mysearches"]["FEATURE"] = 'VHL Search History';

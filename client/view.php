@@ -86,6 +86,13 @@ switch($_REQUEST["action"]){
     case "orcidworks":
         require_once(dirname(__FILE__)."/templates/".$_SESSION["skin"]."/orcidworks.tpl.php");
     break;
+    case "searchresults":
+        if ( ($_REQUEST["task"] == "add") || ($_REQUEST["task"] == "edit") ) {
+            require_once(dirname(__FILE__)."/templates/".$_SESSION["skin"]."/searchresults_add.tpl.php");
+        } else {
+            require_once(dirname(__FILE__)."/templates/".$_SESSION["skin"]."/searchresults.tpl.php");
+        }
+    break;
     case "logout":
         if( isset($_REQUEST['origin']) && !empty($_REQUEST['origin']) ) {
             $origin = base64_decode($_REQUEST["origin"]);

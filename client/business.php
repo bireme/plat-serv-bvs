@@ -62,6 +62,9 @@ switch($_REQUEST["action"]){
     case "orcidworks":
         require_once(dirname(__FILE__)."/business/orcidworks.php");
     break;
+    case "searchresults":
+        require_once(dirname(__FILE__)."/business/searchresults.php");
+    break;
     case "logout":
         require_once(dirname(__FILE__)."/business/logout.php");
     break;

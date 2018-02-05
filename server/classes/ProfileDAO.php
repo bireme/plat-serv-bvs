@@ -184,7 +184,7 @@ class ProfileDAO {
 
         $strsql = "SELECT * FROM profiles
             WHERE sysUID = '".$sysUID."' and
-            profileID='".$profileID."'";
+            profileID = '".$profileID."'";
 
         try{
             $_db = new DBClass();
@@ -194,7 +194,7 @@ class ProfileDAO {
             $logger->log($e->getMessage(),PEAR_LOG_EMERG);
         }
 
-        if (count($result) !== 0 ){
+        if ( count($result) !== 0 ) {
             if ($update) {
                 // Update profile documents if last modification date is older than 1 day
                 if(strtotime($result[0]['lastModified']) < strtotime('-1 day')){
@@ -269,7 +269,7 @@ class ProfileDAO {
         $profile = self::getProfile( $userID, $profileID );
 
         $strsql = "DELETE FROM profiles
-            WHERE profileID=".$profileID." and sysUID='".$sysUID."'";
+            WHERE profileID = ".$profileID." and sysUID = '".$sysUID."'";
 
         try{
             $_db = new DBClass();
@@ -299,7 +299,7 @@ class ProfileDAO {
     public static function isProfile($sysUID,$profileID,$profileName){
         $retValue = false;
 
-        $strsql = "SELECT count(profileID) FROM  profiles
+        $strsql = "SELECT count(profileID) FROM profiles
             WHERE sysUID = '".$sysUID."'
             AND (profileID = '".trim($profileID)."'
             OR profileName = '".$profileName."')";
@@ -318,6 +318,7 @@ class ProfileDAO {
 
         return $retValue;
     }
+    
     /**
      * Get an array of document objects from an XML string
      *

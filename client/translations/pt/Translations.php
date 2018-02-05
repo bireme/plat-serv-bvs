@@ -131,6 +131,7 @@ usuário para oferecer serviços personalizados e facilidades tais como:</p>
         self::$trans["menu"]["REMOVE_LINK"] = 'Link excluído';
         self::$trans["menu"]["QUERY"] = 'Expressão de busca';
         self::$trans["menu"]["VIEW"] = 'Buscar';
+        self::$trans["menu"]["RSS"] = 'RSS';
         self::$trans["menu"]["SEARCH_WIDGET"] = 'Buscas na BVS';
         self::$trans["menu"]["PROFILE_WIDGET"] = 'Temas de Interesse';
         self::$trans["menu"]["SHELF_WIDGET"] = 'Documentos Favoritos';
@@ -149,6 +150,25 @@ Centro Latino-Americano e do Caribe de Informação em Ciências da Saúde<br />
 Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 | Fax: (55 11) 5575-8868<br />
 <a href="http://new.paho.org/bireme" title="Minha BVS">http://www.paho.org/bireme/</a><br /></p>
 ';
+
+    // Terms of searchresults pages
+        self::$trans["searchresults"]["FEATURE"] = 'RSS';
+        self::$trans["searchresults"]["RSS"] = 'RSS';
+        self::$trans["searchresults"]["ADD_RSS"] = 'adicionar RSS';
+        self::$trans["searchresults"]["EDIT_RSS"] = 'editar RSS';
+        self::$trans["searchresults"]["REMOVE_RSS"] = 'excluir RSS';
+        self::$trans["searchresults"]["PREVIOUS"] = 'Anterior';
+        self::$trans["searchresults"]["NEXT"] = 'Próximo';
+        self::$trans["searchresults"]["ADD_RSS_SUCCESS"] = 'Operação realizada com sucesso.';
+        self::$trans["searchresults"]["ADD_RSS_ERROR"] = 'Erro ao adicionar RSS';
+        self::$trans["searchresults"]["RSS_NOT_FOUND"] = 'Nenhuma RSS encontrada';
+        self::$trans["searchresults"]["RSS_NO_REGISTERS_FOUND"] = 'Nenhum registro encontrado';
+        self::$trans["searchresults"]["INCOMING_FOLDER"] = 'Caixa de Entrada';
+        self::$trans["searchresults"]["ADD_COLLECTION"] = 'adicionar aos favoritos';
+        self::$trans["searchresults"]["TITLE"] = 'Título';
+        self::$trans["searchresults"]["URL"] = 'URL';
+        self::$trans["searchresults"]["SAVE"] = 'salvar';
+        self::$trans["searchresults"]["CANCEL"] = 'cancelar';
 
     // Terms of mysearches pages
         self::$trans["mysearches"]["FEATURE"] = 'Histórico de Buscas na BVS';

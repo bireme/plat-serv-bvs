@@ -52,6 +52,7 @@
                       <li><a href="<?=RELATIVE_PATH?>/controller/mysearches/control/business"><?=MY_SEARCHES?></a></li>
                       <li><a href="<?=RELATIVE_PATH?>/controller/mylinks/control/business"><?=MY_LINKS?></a></li>
                       <li><a href="<?=RELATIVE_PATH?>/controller/orcidworks/control/business"><?=ORCID_WORKS?></a></li>
+                      <li><a href="<?=RELATIVE_PATH?>/controller/searchresults/control/business"><?=RSS?></a></li>
                     </ul>
                   </li>
                   <li class="hide"><a href="<?=RELATIVE_PATH?>/controller/authentication"><i class="fa fa-home"></i> <?=HOMEPAGE?></a></li>
@@ -60,6 +61,7 @@
                   <li class="hide"><a href="<?=RELATIVE_PATH?>/controller/mysearches/control/business"><i class="fa fa-search"></i> <?=MY_SEARCHES?></a></li>
                   <li class="hide"><a href="<?=RELATIVE_PATH?>/controller/mylinks/control/business"><i class="fa fa-link"></i> <?=MY_LINKS?></a></li>
                   <li class="hide"><a href="<?=RELATIVE_PATH?>/controller/orcidworks/control/business"><i class="fa fa-file-text"></i> <?=ORCID_WORKS?></a></li>
+                  <li class="hide"><a href="<?=RELATIVE_PATH?>/controller/searchresults/control/business"><i class="fa fa-rss"></i> <?=RSS?></a></li>
                 </ul>
               </div>
             </div>
