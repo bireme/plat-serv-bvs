@@ -19,10 +19,10 @@
                 <div class="x_panel">
                   <div class="x_title">
                     <h2><?=$trans->getTrans($_REQUEST["action"],'RSS')?></h2>
-                    <a href="javascript:;" class="btn btn-success btn-xs btn-rss" onclick="window.open('<?=RELATIVE_PATH?>/controller/searchresults/control/view/task/add','','resizable=no,width=420,height=385')"><i class="fa fa-plus-circle"></i> <?=ucfirst($trans->getTrans($_REQUEST["action"],'ADD_RSS'))?></a>
+                    <a id="step36" href="javascript:;" class="btn btn-success btn-xs btn-rss" onclick="window.open('<?=RELATIVE_PATH?>/controller/searchresults/control/view/task/add','','resizable=no,width=420,height=385')"><i class="fa fa-plus-circle"></i> <?=ucfirst($trans->getTrans($_REQUEST["action"],'ADD_RSS'))?></a>
                     <div class="clearfix"></div>
                   </div>
-                  <div class="x_content">
+                  <div id="step37" class="x_content">
                     <?php if ( !$_REQUEST['rss'] ) : ?>
                       <?php if ( $response["values"] != false ) : ?>
                         <?php $count = $_REQUEST["page"] ? --$_REQUEST["page"] * RSS_DOCUMENTS_PER_PAGE : 0; ?>
@@ -124,29 +124,27 @@
           if (RegExp('multipage', 'gi').test(window.location.search)) {
             var steps = [
               {
-                element: 'li.side.step20',
-                intro: "<?=$trans->getTrans('tour','STEP_20')?>",
+                element: 'li.side.step35',
+                intro: "<?=$trans->getTrans('tour','STEP_35')?>",
                 position: 'right'
               },
               {
-                element: 'li.child.step20',
-                intro: "<?=$trans->getTrans('tour','STEP_20')?>",
+                element: 'li.child.step35',
+                intro: "<?=$trans->getTrans('tour','STEP_35')?>",
                 position: 'right'
               },
               {
-                element: '#step21',
-                intro: "<?=$trans->getTrans('tour','STEP_21')?>",
-                position: 'right'
-              },
-              {
-                element: '#step22',
-                intro: "<?=$trans->getTrans('tour','STEP_22')?>",
+                element: '#step36',
+                intro: "<?=$trans->getTrans('tour','STEP_36')?>",
                 position: 'left'
               },
               {
-                element: '#step23',
-                intro: "<?=$trans->getTrans('tour','STEP_23')?>",
+                element: '#step37',
+                intro: "<?=$trans->getTrans('tour','STEP_37')?>",
                 position: 'left'
+              },
+              {
+                intro: '<?=$trans->getTrans('tour','LAST')?>'
               }
             ];
 
@@ -163,7 +161,7 @@
             function startIntro(){
               var intro = introJs();
                 intro.setOptions({
-                  doneLabel: "<?=$trans->getTrans('menu','NEXT_PAGE')?>",
+                  doneLabel: "<?=$trans->getTrans('menu','DONE')?>",
                   prevLabel: "<?=$trans->getTrans('menu','BACK')?>",
                   nextLabel: "<?=$trans->getTrans('menu','NEXT')?>",
                   skipLabel: "<?=$trans->getTrans('menu','SKIP')?>",
@@ -176,7 +174,7 @@
 
                 intro.onchange(function(targetElement) {
                     switch (targetElement.id) { 
-                        case 'step21':
+                        case 'step36':
                             document.getElementById("body").className = "nav-md";
                         break;
                     }
@@ -190,9 +188,7 @@
                     }
                 });
 
-                intro.start().oncomplete(function() {
-                  window.location.href = '<?php echo RELATIVE_PATH."/controller/mysearches/control/business/?multipage=true"; ?>';
-                });
+                intro.start();
             }
             
             window.addEventListener('load', function() {

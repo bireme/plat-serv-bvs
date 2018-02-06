@@ -424,6 +424,10 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
 
         self::$trans["tour"]["STEP_33"] = '<b>Mi Publicaciones</b><br />Visualiza tus publicaciones desde el ORCID ID en tu perfil';
         self::$trans["tour"]["STEP_34"] = 'Lista de las publicaciones recuperadas de su ORCID ID. Usted puede acceder a cada documento en Google Académico y saber cuántas veces su publicación ha sido citada. Véase también documentos de la BVS relacionados con su publicación.';
+
+        self::$trans["tour"]["STEP_35"] = '<b>RSS</b><br />(...)';
+        self::$trans["tour"]["STEP_36"] = 'Haga clic en este botón para añadir una nueva RSS';
+        self::$trans["tour"]["STEP_37"] = '(...)';
         self::$trans["tour"]["LAST"] = 'Felicitaciones! Usted ha completado el Tour y ya sabe cómo funciona los servicios personalizados de <b>Mi BVS</b>. Utilice y divulgue este servicio. Envíe sus dudas y sugerencias para el <a style="text-decoration: underline;" href="http://feedback.bireme.org/feedback/?application=my-vhl&version=2.10-77&site=servplat&lang='.$_SESSION['lang'].'">Servicio de Feedback</a>';
     }
 

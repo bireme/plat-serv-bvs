@@ -384,6 +384,11 @@ div.related_docs p {
     color: #000;
 }
 
+.body_pt .orcid-works .introjs-donebutton span,
+.body_es .orcid-works .introjs-donebutton span {
+    display: flex;
+}
+
 .vhl-search .x_content {
     padding: 0 0 6px;
 }
@@ -494,6 +499,10 @@ div.related_docs p {
 
 .vhl-search .x_title {
     background: url(../../images/default/005-search.png) left no-repeat; height: 54px;
+}
+
+.rss .x_title {
+    background: url(../../images/default/023-tasks.png) left no-repeat; height: 54px;
 }
 
 .rss .tile-stats {
@@ -924,7 +933,7 @@ and (max-device-width : 736px) {
         box-shadow:none !important;
     }
 
-    .search_bar{
+    .search_bar {
         display: flex;
         justify-content: center;
     }
@@ -960,6 +969,24 @@ and (max-device-width : 736px) {
         float: none !important;
         text-align: center !important;
         margin-bottom: 20px;
+    }
+
+    .nav-md .rss .x_title {
+        display: flex;
+        align-items: baseline;
+    }
+
+    .nav-md .rss .x_title h2 {
+        width: 100%;
+    }
+
+    .nav-sm .rss .x_title {
+        display: block;
+    }
+
+    .nav-sm .rss .x_title a.btn-rss {
+        width: 100%;
+        margin: 3em 0 1em 0;
     }
 }
 

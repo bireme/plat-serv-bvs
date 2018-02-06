@@ -87,26 +87,23 @@
                 element: '#step34',
                 intro: "<?=$trans->getTrans('tour','STEP_34')?>",
                 position: 'left'
-              },
-              {
-                intro: '<?=$trans->getTrans('tour','LAST')?>'
               }
             ];
 
             var sw = screen.width;
-            var tooltipClass = '';
+            var tooltipClass = 'orcid-works';
 
             if ( sw > 768 ) {
                 steps.splice(0,1);
             } else {
-                tooltipClass = 'mobile';
+                tooltipClass += ' mobile';
                 steps.splice(1,1);
             }
 
             function startIntro(){
               var intro = introJs();
                 intro.setOptions({
-                  doneLabel: "<?=$trans->getTrans('menu','DONE')?>",
+                  doneLabel: "<?=$trans->getTrans('menu','NEXT_PAGE')?>",
                   prevLabel: "<?=$trans->getTrans('menu','BACK')?>",
                   nextLabel: "<?=$trans->getTrans('menu','NEXT')?>",
                   skipLabel: "<?=$trans->getTrans('menu','SKIP')?>",
@@ -120,20 +117,22 @@
                 intro.onchange(function(targetElement) {
                     switch (targetElement.id) { 
                         case 'step34':
-                            document.getElementById("body").className = "nav-md";
+                            document.getElementById("body").className = "nav-md <?php echo $lang_class; ?>";
                         break;
                     }
 
                     switch (this._currentStep) { 
                         case 0:
                             if ( sw <= 768 ) {
-                                document.getElementById("body").className = "nav-sm";
+                                document.getElementById("body").className = "nav-sm <?php echo $lang_class; ?>";
                             }
                         break;
                     }
                 });
 
-                intro.start();
+                intro.start().oncomplete(function() {
+                  window.location.href = '<?php echo RELATIVE_PATH."/controller/searchresults/control/business/?multipage=true"; ?>';
+                });
             }
             
             window.addEventListener('load', function() {
