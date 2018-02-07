@@ -592,7 +592,6 @@ class SimilarDocs {
         if ( $similars ) {
             if ( 'none' != $similars ) {
                 $retValue = array();
-                $titles = array();
 
                 foreach ($similars as $similar) {
                     $title = self::getSimilarDocTitle($similar);
