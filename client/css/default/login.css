@@ -245,6 +245,10 @@
     display: none;
 }
 
+.youtube-logo {
+    width: 20%;
+}
+
 @media (min-width: 1200px) {
     body.main_page .container {
         width: 1162px;

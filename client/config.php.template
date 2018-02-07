@@ -69,9 +69,16 @@ define('LOG_FILE',dirname(__FILE__).'/out.log');
 
 /* language configuration */
 define("DEFAULT_LANG","pt");
+
 $languages = array(
     'pt' => 'Português',
     'es' => 'Español',
     'en' => 'English'
+);
+
+$my_vhl_playlist = array(
+    'pt' => 'https://www.youtube.com/watch?v=5lcfH3YDtBM&list=PLAJX3aLhb_SbaBae2JYo-QKXe5pNcEy1d&index=5',
+    'es' => 'https://www.youtube.com/watch?v=FV8g4k5iTs8&list=PLAJX3aLhb_SbaBae2JYo-QKXe5pNcEy1d&index=1',
+    'en' => 'https://www.youtube.com/watch?v=FV8g4k5iTs8&list=PLAJX3aLhb_SbaBae2JYo-QKXe5pNcEy1d&index=1'
 );
 ?>

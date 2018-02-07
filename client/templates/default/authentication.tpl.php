@@ -156,6 +156,7 @@
                 <div class="row omb_description">
                     <div class="col-xs-12 col-md-12 col-sm-12">
                         <p><?=$trans->getTrans($_REQUEST["action"],'MY_VHL_SUMMARY')?></p>
+                        <a href="<?php echo $my_vhl_playlist[$_SESSION['lang']] ?>" target="_blank"><img src="<?=RELATIVE_PATH?>/images/<?=$_SESSION["skin"]?>/youtube.png" alt="YouTube Logo" class="youtube-logo"></a>
                     </div>
                     <div class="modal fade bs-modal-lg" tabindex="-1" role="dialog" aria-hidden="true" style="color: #73879C;">
                         <div class="modal-dialog modal-lg">
