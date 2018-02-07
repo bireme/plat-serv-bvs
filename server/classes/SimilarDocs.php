@@ -592,6 +592,7 @@ class SimilarDocs {
         if ( $similars ) {
             if ( 'none' != $similars ) {
                 $retValue = array();
+                $titles = array();
 
                 foreach ($similars as $similar) {
                     $title = self::getSimilarDocTitle($similar);
@@ -608,9 +609,10 @@ class SimilarDocs {
                     $record['authors'] = $authors;
 
                     $retValue[] = $record;
+                }
 
-                    if ( count($retValue) == RELATED_DOCUMENTS_LIMIT ) break;
-                }                
+                $retValue = self::unique_key($retValue, 'title');
+                $retValue = array_slice($retValue, 0, RELATED_DOCUMENTS_LIMIT);
             }
         }
 
@@ -862,6 +864,27 @@ class SimilarDocs {
         }
         
         return CharTools::mysql_escape_mimic($title);
+    }
+
+    /**
+     * Remove duplicate values from an array by key
+     *
+     * @param array $arr
+     * @param string $keyname
+     * @return array $array
+     */
+    public static function unique_key($arr, $keyname){
+        $array = array();
+
+        foreach ( $arr as $key => $value ) {
+            if ( !isset($array[$value[$keyname]]) ){
+                $array[$value[$keyname]] = $value;
+            }
+        }
+
+        $array = array_values($array);
+
+        return $array;
     }
 }
 ?>
