@@ -39,7 +39,7 @@ class LinksDAO {
         $sysUID = UserDAO::getSysUID($userID);
 
         if($sysUID){
-            if(! self::linkExist($userID,$link)){
+            if( !self::linkExist($userID,$link) ) {
                 $strsql = "INSERT INTO
                                     userLinks
                                         (sysUID, name, url, description, inHome)
@@ -49,15 +49,16 @@ class LinksDAO {
 
                 try{
                     $_db = new DBClass();
-                    $result = $_db->databaseExecInsert($strsql);
+                    $res = $_db->databaseExecInsert($strsql);
                 }catch(DBClassException $e){
                     $logger = &Log::singleton('file', LOG_FILE, __CLASS__, $_conf);
                     $logger->log($e->getMessage(),PEAR_LOG_EMERG);
                 }
+            } else {
+                $result = "exists";
             }
-            if ($result === null){
-                $result = false;
-            }else{
+
+            if ( $res ) {
                 $trace = Tracking::addTrace( $userID, 'link', 'add', $link->getName() );
                 $result = true;
             }
@@ -127,7 +128,7 @@ class LinksDAO {
                     $logger->log($e->getMessage(),PEAR_LOG_EMERG);
                 }
 
-                if (count($result) !== 0 ){
+                if ( count($result) !== 0 ){
                     $retValue = $result;
                 }
             }
@@ -324,7 +325,7 @@ class LinksDAO {
                 $logger->log($e->getMessage(),PEAR_LOG_EMERG);
             }
 
-            if ($result !== 0 ){
+            if ( $result !== 0 ){
                 $trace = Tracking::addTrace( $userID, 'link', 'update', $link->getName() );
                 $retValue = true;
             }

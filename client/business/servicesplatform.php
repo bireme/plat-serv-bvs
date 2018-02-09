@@ -4,6 +4,7 @@ header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Methods: GET, POST');
 
 require_once(dirname(__FILE__)."/../config.php");
+require_once(dirname(__FILE__)."/../classes/MyLinks.php");
 require_once(dirname(__FILE__)."/../classes/DocsCollection.php");
 
 if ($_REQUEST["task"] === null){
@@ -36,6 +37,29 @@ XML;
 
             $retValue = DocsCollection::addDoc($userTK,$xmlDoc);
             
+            die($retValue);
+        break;
+        case "addLink":
+            $url = htmlspecialchars($_REQUEST['url']);
+            $title = htmlspecialchars($_REQUEST['title']);
+            $rate = 0;
+            $inHome = 0;
+
+$xmlLink=<<<XML
+<?xml version='1.0'?>
+<docs>
+    <doc>
+        <field name="link_url">{$url}</field>
+        <field name="link_description"></field>
+        <field name="link_name">{$title}</field>
+        <field name="link_rate">{$rate}</field>
+        <field name="link_in_home">{$inHome}</field>
+    </doc>
+</docs>
+XML;
+
+            $retValue = MyLinks::addLink($userTK,$xmlLink);
+
             die($retValue);
         break;
         default:
