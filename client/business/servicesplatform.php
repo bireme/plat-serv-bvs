@@ -6,6 +6,7 @@ header('Access-Control-Allow-Methods: GET, POST');
 require_once(dirname(__FILE__)."/../config.php");
 require_once(dirname(__FILE__)."/../classes/MyLinks.php");
 require_once(dirname(__FILE__)."/../classes/DocsCollection.php");
+require_once(dirname(__FILE__)."/../classes/SearchResults.php");
 
 if ($_REQUEST["task"] === null){
     $_REQUEST["task"] = "list";
@@ -59,6 +60,24 @@ $xmlLink=<<<XML
 XML;
 
             $retValue = MyLinks::addLink($userTK,$xmlLink);
+
+            die($retValue);
+        break;
+        case "addRSS":
+            $name = htmlspecialchars($_REQUEST['name']);
+            $url = htmlspecialchars($_REQUEST['url']);
+
+$xmlRSS=<<<XML
+<?xml version='1.0'?>
+<docs>
+    <doc>
+        <field name="name">{$name}</field>
+        <field name="url">{$url}</field>
+    </doc>
+</docs>
+XML;
+
+            $retValue = SearchResults::addRSS($userTK,$xmlRSS);
 
             die($retValue);
         break;

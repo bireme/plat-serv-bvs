@@ -125,9 +125,12 @@ class Translations {
         self::$trans["menu"]["ADD_PROFILE"] = 'Topic added';
         self::$trans["menu"]["UPDATE_PROFILE"] = 'Topic updated';
         self::$trans["menu"]["REMOVE_PROFILE"] = 'Topic removed';
-        self::$trans["menu"]["ADD_LINK"] = 'Link adicionado';
+        self::$trans["menu"]["ADD_LINK"] = 'Link added';
         self::$trans["menu"]["UPDATE_LINK"] = 'Link updated';
         self::$trans["menu"]["REMOVE_LINK"] = 'Link removed';
+        self::$trans["menu"]["ADD_RSS"] = 'RSS added';
+        self::$trans["menu"]["UPDATE_RSS"] = 'RSS updated';
+        self::$trans["menu"]["REMOVE_RSS"] = 'RSS removed';
         self::$trans["menu"]["QUERY"] = 'Query';
         self::$trans["menu"]["VIEW"] = 'Display';
         self::$trans["menu"]["RSS"] = 'RSS';

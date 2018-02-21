@@ -129,6 +129,9 @@ usuário para oferecer serviços personalizados e facilidades tais como:</p>
         self::$trans["menu"]["ADD_LINK"] = 'Link adicionado';
         self::$trans["menu"]["UPDATE_LINK"] = 'Link atualizado';
         self::$trans["menu"]["REMOVE_LINK"] = 'Link excluído';
+        self::$trans["menu"]["ADD_RSS"] = 'RSS adicionado';
+        self::$trans["menu"]["UPDATE_RSS"] = 'RSS atualizado';
+        self::$trans["menu"]["REMOVE_RSS"] = 'RSS excluído';
         self::$trans["menu"]["QUERY"] = 'Expressão de busca';
         self::$trans["menu"]["VIEW"] = 'Buscar';
         self::$trans["menu"]["RSS"] = 'RSS';

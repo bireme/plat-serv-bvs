@@ -28,6 +28,7 @@ class SearchDAO {
      */
     public static function addRSS($userID,$objSearch){
         $retValue = false;
+
         $sysUID = UserDAO::getSysUID($userID);
 
         if(!self::rss_exists($sysUID, $objSearch->getName())){
@@ -52,11 +53,13 @@ class SearchDAO {
                 $logger = &Log::singleton('file', LOG_FILE, __CLASS__, $_conf);
                 $logger->log($e->getMessage(),PEAR_LOG_EMERG);
             }
+        } else {
+            $retValue = "exists";
         }
 
-        if ($result !== null){
-            //$trace = Tracking::addTrace( $userID, 'RSS', 'add', $objSearch->getName() );
-            $retValue = $result;
+        if ( $result ) {
+            $trace = Tracking::addTrace( $userID, 'rss', 'add', $objSearch->getName() );
+            $retValue = true;
         }
 
         return $retValue;
@@ -91,7 +94,7 @@ class SearchDAO {
             }
 
             if ($result !== 0){
-                //$trace = Tracking::addTrace( $userID, 'RSS', 'update', $objSearch->getProfileName() );
+                $trace = Tracking::addTrace( $userID, 'rss', 'update', $objSearch->getName() );
                 $retValue = true;
             }
 
@@ -216,7 +219,7 @@ class SearchDAO {
     public static function removeRSS($userID,$rssID){
         $retValue = false;
         $sysUID = UserDAO::getSysUID($userID);
-        // $objSearch = self::getRSS( $userID, $rssID );
+        $objSearch = self::getRSS( $userID, $rssID );
 
         $strsql = "DELETE FROM searchResults
             WHERE id = ".$rssID." and sysUID = '".$sysUID."'";
@@ -230,7 +233,7 @@ class SearchDAO {
         }
 
         if ($result !== 0){
-            //$trace = Tracking::addTrace( $userID, 'RSS', 'remove', $objSearch[0]['name'] );
+            $trace = Tracking::addTrace( $userID, 'rss', 'remove', $objSearch[0]['name'] );
             $retValue = true;
         }
         

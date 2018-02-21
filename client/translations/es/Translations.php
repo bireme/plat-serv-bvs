@@ -128,6 +128,9 @@ class Translations {
         self::$trans["menu"]["ADD_LINK"] = 'Enlace añadido';
         self::$trans["menu"]["UPDATE_LINK"] = 'Enlace actualizado';
         self::$trans["menu"]["REMOVE_LINK"] = 'Enlace removido';
+        self::$trans["menu"]["ADD_RSS"] = 'RSS añadido';
+        self::$trans["menu"]["UPDATE_RSS"] = 'RSS actualizado';
+        self::$trans["menu"]["REMOVE_RSS"] = 'RSS removido';
         self::$trans["menu"]["QUERY"] = 'Consulta';
         self::$trans["menu"]["VIEW"] = 'Mostrar';
         self::$trans["menu"]["RSS"] = 'RSS';
