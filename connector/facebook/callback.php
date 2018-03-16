@@ -69,7 +69,7 @@ if (isset($accessToken)) {
             //$response["status"] = true;
             //$response["values"] = $result;
             setcookie("userTK", $result["userTK"], 0, '/', COOKIE_DOMAIN_SCOPE);
-            //UserData::sendCookie($result["userTK"]);
+            UserData::sendCookie($result["userTK"]);
         }
     }
 
@@ -83,9 +83,9 @@ if (isset($accessToken)) {
         exit;
     }
 
-    // Now you can redirect to another page and use the
-    // access token from $_SESSION['fb_access_token']
-    header("location:$homeURL");
+    echo '<script language="javascript">';
+    echo 'window.open("'.$homeURL.'","_parent")';
+    echo '</script>';
     exit;
 }
 

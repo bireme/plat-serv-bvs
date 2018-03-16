@@ -21,7 +21,7 @@ $tmpdata = $_SESSION['data'];
 session_destroy();
 $_SESSION = array();
 setcookie('userTK','',time() -3600,'/',COOKIE_DOMAIN_SCOPE);
-//UserData::sendCookie();
+$send_cookie = 'logout'; // remove cookie from .bvs.br
 
 session_start();
 $_SESSION['lang'] = $tmplang;

@@ -25,6 +25,8 @@ $origin = ( $_REQUEST["origin"] ) ? $_REQUEST["origin"] : '';
 $iahx = ( $_REQUEST['iahx'] ) ? $_REQUEST['iahx'] : base64_encode('portal');
 $label = $trans->getTrans("mysearches", 'ORIGIN_SITE');
 
+$send_cookie = false;
+
 if ( strpos(base64_decode($iahx), VHL_SEARCH_PORTAL_DOMAIN) !== false ) {
     $chunks = explode('/', base64_decode($iahx));
     $chunks = array_values(array_filter($chunks));
@@ -42,6 +44,7 @@ switch($_REQUEST["task"]){
     case "authenticate":
         if (empty($_SESSION["userTK"])){
             $result = Authentication::loginUser($_REQUEST["userID"],$_REQUEST["userPass"]);
+
             if (($result["status"] !== false) and ($result !== false)){
                 $_SESSION["userTK"] = $result["userTK"];
                 $_SESSION["userID"] = $result["userID"];
@@ -54,24 +57,29 @@ switch($_REQUEST["task"]){
                 $_SESSION["iahx"] = base64_decode($iahx);
                 $response["status"] = true;
                 $response["values"] = $result;
+
+                // send cookie to .bvs.br
+                $send_cookie = true;
+                // send cookie to .bvsalud.org
                 setcookie("userTK", $result["userTK"], 0, '/', COOKIE_DOMAIN_SCOPE);
-                //UserData::sendCookie($result["userTK"]);
 
                 // SSO LOGIN
                 if(ENABLE_SSO_LOGIN){
-                  if(!empty($origin)){
-                      $originURL = base64_decode($origin);
+                    if(!empty($origin)){
+                        $originURL = base64_decode($origin);
 
-                      if(strpos($originURL,"?"))
-                          $redirectCommand = $originURL."&spauth=true";
-                      else
-                          $redirectCommand = $originURL."?spauth=true";
+                        if(strpos($originURL,"?"))
+                            $redirectCommand = $originURL."&spauth=true";
+                        else
+                            $redirectCommand = $originURL."?spauth=true";
 
-                      echo '<script language="javascript">';
-                      echo 'window.open("'.$redirectCommand.'","_parent")';
-                      echo '</script>';
-                      exit;
-                  }
+                        UserData::sendCookie($result["userTK"]); // send cookie to .bvs.br
+
+                        echo '<script language="javascript">';
+                        echo 'window.open("'.$redirectCommand.'","_parent")';
+                        echo '</script>';
+                        exit;
+                    }
                 }
             }else{
                 $response["status"] = false;
@@ -82,10 +90,12 @@ switch($_REQUEST["task"]){
                 if(!empty($origin)){
                     $ssoParams = '/origin/'.$origin;
                 }
+
                 header('Location: '. RELATIVE_PATH .
                     '/controller/mig_id_confirmation/userTK/'.
                     base64_encode($response['values']['tmpTK']).'/userID/'.
                     base64_encode($response['values']['userID']).$ssoParams);
+
                 exit();
             }
         }
