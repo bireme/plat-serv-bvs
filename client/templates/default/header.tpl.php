@@ -15,7 +15,7 @@
 
     <?php if ( $public ) : ?>
     <meta property="og:title" content="<?php echo $resultUserDir['dirName']; ?>" /> 
-    <meta property="og:description" content="" />
+    <meta property="og:description" content="<?php echo $trans->getTrans($_REQUEST['action'],'SHARED_COLLECTION_DESC'); ?>" />
     <meta property="og:image" content="<?=RELATIVE_PATH?>/images/default/logo-md-<?=$_SESSION["lang"]?>.png" />
     <?php endif; ?>
 

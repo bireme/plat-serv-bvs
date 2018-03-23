@@ -34,7 +34,7 @@
               <div class="col-md-12 col-sm-12 col-xs-12 fav-docs">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2><?php if ($resultUserDir === null) { echo $trans->getTrans($_REQUEST["action"],'INCOMING_FOLDER'); } ?><?=$resultUserDir['dirName']?></h2>
+                    <h2><?=$resultUserDir['dirName']?></h2>
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content">
@@ -47,14 +47,16 @@
                               var addthis_share = addthis_share||{};
                                   addthis_share.title = "<?php echo $resultUserDir['dirName']; ?>";
                                   addthis_share.url = "<?php echo $public_link; ?>";
+                                  addthis_share.description = "<?php echo $trans->getTrans($_REQUEST['action'],'SHARED_COLLECTION_DESC'); ?>";
                             </script>
                             <div class="addthis_toolbox addthis_32x32_style" addthis:url="<?php echo $public_link; ?>">
+                                <a class="addthis_button_whatsapp"></a>
                                 <a class="addthis_button_facebook"></a>
-                                <a class="addthis_button_twitter"></a>
+                                <a class="addthis_button_google_plusone_share"></a>
                                 <a class="addthis_button_linkedin"></a>
+                                <a class="addthis_button_twitter"></a>
                                 <a class="addthis_button_email"></a>
                                 <a class="addthis_button_link"></a>
-                                <a class="addthis_button_whatsapp"></a>
                                 <!--a class="addthis_button_compact"></a-->
                             </div>
                             <script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#async=1"></script>
@@ -105,6 +107,8 @@
                         <?php else : ?>
                             <p class="none-docs"><?=$trans->getTrans($_REQUEST["action"],'ACCESS_LIST_NO_REGISTERS_FOUND')?></p>
                         <?php endif; ?>
+                        <div class="ln_solid"></div>
+                        <div style="text-align: center; font-size: 14px;"><?=$trans->getTrans($_REQUEST["action"],'INVITE')?></a></div>
                     </div>
                     <!--div class="col-md-3 col-sm-3 col-xs-12"></div-->
                   </div>

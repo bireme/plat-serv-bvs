@@ -152,28 +152,9 @@ switch($_REQUEST["task"]){
 
         $response["values"] = $result;
         $directoryName = $result[0]["name"];
-        $responseListDirs["values"] = $resultListDirs;   
+        $responseListDirs["values"] = $resultListDirs;
 
-        /* is the current dir public? */
-        $shallBreak = false;
-        foreach($responseListDirs['values'] as $arrDirKey => $arrDirValue){            
-            foreach($arrDirValue as $dirAttKey => $dirAttValue){                
-                if(($dirAttKey == 'dirID') && ($dirAttValue == $_REQUEST["directory"])){
-                    $currDirIndex = (string)$arrDirKey;
-                    $shallBreak = true;
-                    break;
-                }
-            }
-            if($shallBreak){
-                break;
-            }
-        }
-
-        unset($shallBreak);
-
-        $isCurrDirPublic = $responseListDirs['values'][$currDirIndex]['public'] != 0 ? true : false;
-
-        if ( !$_REQUEST["uid"] || !$_REQUEST["directory"] || !$result ) {
+        if ( !$_REQUEST["uid"] || !$_REQUEST["directory"] || !$result || !$resultUserDir ) {
             header('Location: '.RELATIVE_PATH.'/controller/authentication');
         }
     break;
