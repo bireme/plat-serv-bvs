@@ -108,7 +108,7 @@
                             <p class="none-docs"><?=$trans->getTrans($_REQUEST["action"],'ACCESS_LIST_NO_REGISTERS_FOUND')?></p>
                         <?php endif; ?>
                         <div class="ln_solid"></div>
-                        <div style="text-align: center; font-size: 14px;"><?=$trans->getTrans($_REQUEST["action"],'INVITE')?></a></div>
+                        <div class="invite"><?=$trans->getTrans($_REQUEST["action"],'INVITE')?></div>
                     </div>
                     <!--div class="col-md-3 col-sm-3 col-xs-12"></div-->
                   </div>

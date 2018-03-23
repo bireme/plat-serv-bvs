@@ -721,6 +721,16 @@ div.item.reason > div:first-child {
     text-align: right;
 }
 
+.invite {
+    text-align: center;
+    font-size: 14px;
+}
+
+.invite a,
+.invite a:hover {
+    text-decoration: underline;
+}
+
 @media only screen
 and (max-device-width : 412px) {
     .introjs-tooltip .introjs-tooltipbuttons {
@@ -783,6 +793,10 @@ and (max-device-width : 414px) {
     select.bulkactions {
         display: block;
         margin: 10px auto 0;
+    }
+
+    .invite a {
+        display: block;
     }
 }
 
@@ -910,6 +924,17 @@ and (max-device-width : 320px) {
 
     .folder-data h4 {
         margin-bottom: 20px;
+    }
+
+    .addthis_toolbox.addthis_32x32_style span {
+        line-height: 28px !important;
+        height: 28px !important;
+        width: 28px !important;
+    }
+
+    .addthis_32x32_style .at-icon {
+        width: 28px !important;
+        height: 28px !important;
     }
 }
 
