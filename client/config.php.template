@@ -17,7 +17,7 @@ define("DEFAULT_SKIN","default");
 define("CHARSET","utf-8");
 define("DOCTYPE",'<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">');
-define("VERSION","4.0-rc7");
+define("VERSION","0.1.0");
 define("ERROR_REPORTING",0);
 define("USE_SERVER_PATH",false);
 

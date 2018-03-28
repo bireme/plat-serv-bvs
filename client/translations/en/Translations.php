@@ -430,9 +430,10 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Phone: (55 11) 5576-980
         self::$trans["tour"]["STEP_33"] = '<b>My Publications</b><br />View your publications from the ORCID ID you entered in your Profile.';
         self::$trans["tour"]["STEP_34"] = 'List of publications retrieved from your ORCID ID. You can access each document in Google Scholar and know how many times your publication was cited. See also VHL documents related to your publication.';
 
-        self::$trans["tour"]["STEP_35"] = '<b>RSS</b><br />(...)';
+        self::$trans["tour"]["STEP_35"] = '<b>RSS</b><br />Displays the latest document updates from the RSS of your favorite portals';
         self::$trans["tour"]["STEP_36"] = 'Click this button to add a new RSS feed';
-        self::$trans["tour"]["STEP_37"] = '(...)';
+        self::$trans["tour"]["STEP_37"] = 'View the list of RSS feeds';
+        self::$trans["tour"]["STEP_38"] = 'List of the last documents retrieved by RSS from your favorite portal. You can: add, edit, or delete an RSS, add to favorites or view related documents.';
         self::$trans["tour"]["LAST"] = 'Congratulations! You have completed the Tour and already know how <b>My VHL</b> custom services work. Use and disseminate this service. Send your questions and suggestions to the <a style="text-decoration: underline;" href="http://feedback.bireme.org/feedback/?application=my-vhl&version=2.10-77&site=servplat&lang='.$_SESSION['lang'].'">Feedback Service</a>';
     }
 
