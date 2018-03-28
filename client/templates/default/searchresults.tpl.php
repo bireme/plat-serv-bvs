@@ -48,7 +48,7 @@
                             }
                         ?>
                       <?php else : ?>
-                        <div id="step21" class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
                             <p class="none-docs"><?=$trans->getTrans($_REQUEST["action"],'RSS_NOT_FOUND')?></p>
                         </div>
                       <?php endif; ?>
@@ -60,7 +60,7 @@
                             <a class="edit" href="javascript:;" onclick="__gaTracker('send','event','Search Results','Edit RSS','<?php echo htmlspecialchars($registerSearch["name"]); ?>'); window.open('<?=RELATIVE_PATH?>/controller/searchresults/control/business/task/edit/rss/<?=$registerSearch["id"]?>','','resizable=no,scrollbars=1,width=420,height=385')"><span class="label label-info"><?=$trans->getTrans($_REQUEST["action"],'EDIT_RSS')?></span></a>
                             <a class="remove" href="<?=RELATIVE_PATH?>/controller/searchresults/control/business/task/delete/rss/<?=$registerSearch["id"]?>" onclick="__gaTracker('send','event','Search Results','Remove RSS','<?php echo htmlspecialchars($registerSearch["name"]); ?>');"><span class="label label-danger"><?=$trans->getTrans($_REQUEST["action"],'REMOVE_RSS')?></span></a>
                         </div>
-                        <div id="step21" class="col-md-9 col-sm-9 col-xs-12">
+                        <div id="step38" class="col-md-9 col-sm-9 col-xs-12">
                             <!-- start project list -->
                             <table class="table table-striped table-list">
                               <!--thead>
@@ -97,7 +97,7 @@
                             <!-- end project list -->
                         </div>
                       <?php else : ?>
-                        <div id="step21" class="col-md-9 col-sm-9 col-xs-12">
+                        <div id="step38" class="col-md-9 col-sm-9 col-xs-12">
                             <p class="none-docs"><?=$trans->getTrans($_REQUEST["action"],'RSS_NO_REGISTERS_FOUND')?></p>
                         </div>
                       <?php endif; ?>
@@ -138,11 +138,19 @@
                 intro: "<?=$trans->getTrans('tour','STEP_36')?>",
                 position: 'left'
               },
+              <?php if ( !$_REQUEST['rss'] ) { ?>
               {
                 element: '#step37',
                 intro: "<?=$trans->getTrans('tour','STEP_37')?>",
                 position: 'left'
               },
+              <?php } else { ?>
+              {
+                element: '#step38',
+                intro: "<?=$trans->getTrans('tour','STEP_38')?>",
+                position: 'left'
+              },
+              <?php } ?>
               {
                 intro: '<?=$trans->getTrans('tour','LAST')?>'
               }

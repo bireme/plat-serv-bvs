@@ -132,6 +132,8 @@
                       <?php endif; ?>
                       <?php if ( 'menu' == $_REQUEST["action"] ) : ?>
                       <li><a href="<?=RELATIVE_PATH?>/controller/authentication/?tour=true"><?=$trans->getTrans('menu','START_TOUR')?></a></li>
+                      <?php elseif ( 'searchresults' == $_REQUEST["action"] && $_REQUEST['rss'] ) : ?>
+                      <li><a href="<?=RELATIVE_PATH?>/controller/<?=$_REQUEST['action']?>/control/business/rss/<?=$_REQUEST['rss']?>?multipage=true"><?=$trans->getTrans('menu','START_TOUR')?></a></li>
                       <?php else : ?>
                       <li><a href="<?=RELATIVE_PATH?>/controller/<?=$_REQUEST['action']?>/control/business/?multipage=true"><?=$trans->getTrans('menu','START_TOUR')?></a></li>
                       <?php endif; ?>
