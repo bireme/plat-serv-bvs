@@ -502,7 +502,7 @@ div.related_docs p {
 }
 
 .rss .x_title {
-    background: url(../../images/default/023-tasks.png) left no-repeat; height: 54px;
+    background: url(../../images/default/rss.png) left no-repeat; height: 54px;
 }
 
 .rss .tile-stats {
@@ -731,6 +731,10 @@ div.item.reason > div:first-child {
     text-decoration: underline;
 }
 
+.fav-link {
+    word-break: break-all;
+}
+
 @media only screen
 and (max-device-width : 412px) {
     .introjs-tooltip .introjs-tooltipbuttons {
@@ -797,6 +801,10 @@ and (max-device-width : 414px) {
 
     .invite a {
         display: block;
+    }
+
+    .keywords {
+        margin-top: -15px !important;
     }
 }
 
@@ -1012,6 +1020,10 @@ and (max-device-width : 736px) {
     .nav-sm .rss .x_title a.btn-rss {
         width: 100%;
         margin: 3em 0 1em 0;
+    }
+
+    .keywords {
+        margin-top: 0;
     }
 }
 

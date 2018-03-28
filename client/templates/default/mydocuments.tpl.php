@@ -192,7 +192,7 @@
               {
                 element: '#step16',
                 intro: "<?=$trans->getTrans('tour','STEP_16')?>",
-                position: 'top'
+                position: 'left'
               },
               {
                 element: '#step17',

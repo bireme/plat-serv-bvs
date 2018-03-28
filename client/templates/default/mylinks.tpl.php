@@ -43,7 +43,7 @@
                                     </div>
                                     <div>
                                         <?php echo $register["name"]; ?>
-                                        <a href="<?php echo $register["url"]; ?>" target="_blank" style="display: block;"><i class="fa fa-external-link-square"></i> <?php echo $register["url"]; ?></a>
+                                        <a class="fav-link" href="<?php echo $register["url"]; ?>" target="_blank" style="display: block;"><i class="fa fa-external-link-square"></i> <?php echo $register["url"]; ?></a>
                                         <small style="display: block;"><?php echo $register["description"]; ?></small>
                                     </div>
                                     <div>

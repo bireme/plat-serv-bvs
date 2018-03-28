@@ -31,7 +31,8 @@
                           <a class="remove" href="<?=RELATIVE_PATH?>/controller/myprofiledocuments/control/business/task/delete/profile/<?=$registerProfile["profileID"]?>" onclick="__gaTracker('send','event','Interest Topics','Remove Topic','<?php echo htmlspecialchars($registerProfile["profileName"]); ?>');"><span class="label label-danger"><?=$trans->getTrans($_REQUEST["action"],'REMOVE_PROFILE')?></span></a>
                       </div>
                       <div class="keywords"><small><?=$trans->getTrans($_REQUEST["action"],'PROFILE_KEYWORDS')?>: <?=$registerProfile["profileText"]?></small></div>
-                      <div id="step21" class="col-md-9 col-sm-9 col-xs-12">
+                      <div class="col-md-9 col-sm-9 col-xs-12">
+                        <div id="step21" class="col-md-9 col-sm-9 col-xs-12">
                           <?php if ( 'on' == $responseSimilarDocs["values"]['status'] ) : ?>
                               <?php //echo $objPaginator->render($trans->getTrans($_REQUEST["action"],'NEXT'), $trans->getTrans($_REQUEST["action"],'PREVIOUS')); ?>
                               <!-- start project list -->
@@ -86,6 +87,7 @@
                               <p class="none-docs"><?=$trans->getTrans($_REQUEST["action"],'SERVICE_TEMPORARY_UNAVAILABLE')?></p>
                             <?php endif; ?>
                           <?php endif; ?>
+                        </div>
                       </div>
                     <?php else : ?>
                       <div id="step21" class="col-md-9 col-sm-9 col-xs-12">
@@ -148,7 +150,7 @@
               {
                 element: '#step21',
                 intro: "<?=$trans->getTrans('tour','STEP_21')?>",
-                position: 'right'
+                position: 'left'
               },
               {
                 element: '#step22',
