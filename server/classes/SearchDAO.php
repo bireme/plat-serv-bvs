@@ -59,7 +59,7 @@ class SearchDAO {
 
         if ( $result ) {
             $trace = Tracking::addTrace( $userID, 'rss', 'add', $objSearch->getName() );
-            $retValue = true;
+            $retValue = $result;
         }
 
         return $retValue;
