@@ -49,6 +49,7 @@ define("HOME","/users/loginLDAP.php");
 define("LOGOUT","");
 
 define("DOCUMENTS_PER_PAGE","10"); /* pagination */
+define("RSS_DOCUMENTS_PER_PAGE","20"); /* RSS pagination */
 define("WIDGETS_ITEMS_LIMIT","5"); /* itens limit in widgets */
 define("RELATED_DOCUMENTS_LIMIT","5"); /* related documents limit */
 
