@@ -79,7 +79,11 @@ XML;
 
             $retValue = SearchResults::addRSS($userTK,$xmlRSS);
 
-            die($retValue);
+            if ( $retValue && is_int($retValue) ) {
+                die('OK');
+            } else {
+                die($retValue);
+            }
         break;
         default:
             die("default");
