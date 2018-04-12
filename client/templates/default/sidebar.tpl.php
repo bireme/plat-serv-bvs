@@ -100,7 +100,7 @@
                   <li>
                     <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false" style="padding-bottom: 21px;">
                       <i class="fa fa-flag"></i> <?php echo $languages[$_SESSION['lang']]; ?>
-                      <span class=" fa fa-angle-down"></span>
+                      <span class="fa fa-angle-down"></span>
                     </a>
                     <ul class="dropdown-menu dropdown-usermenu pull-right">
                       <?php foreach ($languages as $key => $value) : ?>
@@ -123,7 +123,7 @@
                       <?php else : ?>
                       <img src="<?=RELATIVE_PATH?>/images/<?=$_SESSION["skin"]?>/logged.png" alt="avatar"><?=$_SESSION["userFirstName"]?>
                       <?php endif; ?>
-                      <span class=" fa fa-angle-down"></span>
+                      <span class="fa fa-angle-down"></span>
                     </a>
                     <ul class="dropdown-menu dropdown-usermenu pull-right" style="width: 100%;">
                       <li><a href="<?=SERVICES_PLATFORM_DOMAIN?>/pub/userData.php?userTK=<?=urlencode($_SESSION["userTK"])?>&c=<?=$b64HttpHost?>"><?=$trans->getTrans('menu','MY_DATA')?></a></li>
