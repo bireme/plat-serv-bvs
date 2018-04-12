@@ -73,14 +73,14 @@ if (navigator.userAgent.indexOf('gonative') > -1) {
                         "url": "http://feedback.bireme.org/feedback/my-vhl?version=2.10-77&error=1&site=servplat&lang="+LANG,
                         "label": "Informar erro",
                         "subLinks": []
-                      },
-                      {
-                        "url": MY_VHL_DOMAIN+"/client/controller/logout/control/business",
-                        "label": "Salir",
-                        "subLinks": [],
-                        "icon": "fa-sign-out"
-                      },
+                      }
                     ]
+                  },
+                  {
+                    "url": MY_VHL_DOMAIN+"/client/controller/logout/control/business",
+                    "label": "Salir",
+                    "subLinks": [],
+                    "icon": "fa-sign-out"
                   }
                 ];
   } else {
