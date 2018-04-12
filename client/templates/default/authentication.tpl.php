@@ -63,6 +63,12 @@
                     </div>
                 </div>
             </div>
+            <?php elseif ( 'describe' == $_REQUEST["task"] ) : ?>
+            <div class="row omb_row-sm-offset-3 omb_description">
+                <div class="col-xs-12 col-sm-6">
+                    <p><?=$trans->getTrans($_REQUEST["action"],'MY_VHL_DESCRIPTION')?></p>
+                </div>
+            </div>
             <?php else : ?>
             <div class="login-area">
                 <div class="login-box">
