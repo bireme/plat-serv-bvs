@@ -83,7 +83,7 @@
       "levels": [
         {
           "level": 1,
-          "regex": "http://platserv.bvsalud.org/?"
+          "regex": "https?://platserv\\.bvsalud\\.org.*"
         }
       ],
       "active": true
@@ -91,8 +91,8 @@
     "navigationTitles": {
       "titles": [
         {
-          "regex": "https?://platserv\\.bvsalud\\.org.*",
-          "title": ""
+          "regex": ".*",
+          "title": "Minha BVS / Mi BVS / My VHL"
         }
       ],
       "active": true
