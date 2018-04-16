@@ -1,0 +1,288 @@
+{
+  "general": {
+    "userAgentAdd": "gonative",
+    "useWKWebView": true,
+    "enableWindowOpen": true,
+    "useCrosswalkWebView": false,
+    "forceScreenOrientation": null,
+    "initialUrl": "http://platserv.bvsalud.org",
+    "appName": "Minha BVS",
+    "iosBundleId": "org.bvsalud.platserv",
+    "androidPackageName": "org.bvsalud.platserv",
+    "androidVersionName": "1.0.0"
+  },
+  "navigation": {
+    "androidPullToRefresh": false,
+    "iosPullToRefresh": true,
+    "androidShowRefreshButton": false,
+    "iosShowRefreshButton": false,
+    "deepLinkDomains": [],
+    "tabNavigation": {
+      "tabSelectionConfig": [
+        {
+          "id": "1",
+          "regex": ""
+        }
+      ],
+      "tabMenus": [
+        {
+          "id": "1",
+          "items": [
+            {}
+          ]
+        }
+      ],
+      "active": false
+    },
+    "sidebarNavigation": {
+      "menus": [
+        {
+          "name": "default",
+          "items": [
+            {
+              "label": "",
+              "url": ""
+            }
+          ],
+          "active": true
+        },
+        {
+          "name": "loggedIn",
+          "items": [
+            {
+              "label": "Sample Home",
+              "url": "http://platserv.bvsalud.org/home",
+              "subLinks": []
+            },
+            {
+              "label": "Sample About",
+              "url": "http://platserv.bvsalud.org/about",
+              "subLinks": []
+            }
+          ],
+          "active": false
+        }
+      ],
+      "menuSelectionConfig": {
+        "testURL": null,
+        "redirectLocations": [
+          {
+            "regex": null,
+            "menuName": "default",
+            "loggedIn": false
+          },
+          {
+            "regex": ".*",
+            "menuName": "default",
+            "loggedIn": true
+          }
+        ]
+      }
+    },
+    "navigationLevels": {
+      "levels": [
+        {
+          "level": 1,
+          "regex": "http://platserv.bvsalud.org/?"
+        }
+      ],
+      "active": true
+    },
+    "navigationTitles": {
+      "titles": [
+        {
+          "regex": "https?://platserv\\.bvsalud\\.org.*",
+          "title": ""
+        }
+      ],
+      "active": true
+    },
+    "regexInternalExternal": {
+      "rules": [
+        {
+          "regex": "^(?!https?://).*",
+          "internal": false
+        },
+        {
+          "regex": "https?://([-\\w]+\\.)*facebook\\.com/login.php.*",
+          "internal": true
+        },
+        {
+          "regex": "https?://([-\\w]+\\.)*facebook\\.com/dialog.*",
+          "internal": true
+        },
+        {
+          "regex": "https?://([-\\w]+\\.)*facebook\\.com/v1\\.0/.*",
+          "internal": true
+        },
+        {
+          "regex": "https?://([-\\w]+\\.)*facebook\\.com/oauth.*",
+          "internal": true
+        },
+        {
+          "regex": "https?://([-\\w]+\\.)*facebook\\.com/v2\\.0/.*",
+          "internal": true
+        },
+        {
+          "regex": "https?://([-\\w]+\\.)*facebook\\.com/checkpoint.*",
+          "internal": true
+        },
+        {
+          "regex": "https?://([-\\w]+\\.)*facebook\\.com.*",
+          "internal": true
+        },
+        {
+          "regex": "https?://([-\\w]+\\.)*twitter\\.com/.*",
+          "internal": false
+        },
+        {
+          "regex": "https?://([-\\w]+\\.)*instagram\\.com/.*",
+          "internal": false
+        },
+        {
+          "regex": "https?://([-\\w]+\\.)*linkedin\\.com/.*",
+          "internal": false
+        },
+        {
+          "regex": "https?://([-\\w]+\\.)*plus\\.google\\.com/share.*",
+          "internal": false
+        },
+        {
+          "regex": "https?://maps\\.google\\.com.*",
+          "internal": false
+        },
+        {
+          "regex": "https?://([-\\w]+\\.)*google\\.com/maps/search/.*",
+          "internal": false
+        },
+        {
+          "regex": "https?://([-\\w]+\\.)*youtube\\.com/.*",
+          "internal": false
+        },
+        {
+          "regex": "https?://feedback\\.bireme\\.org.*",
+          "internal": false
+        },
+        {
+          "regex": ".*",
+          "internal": true
+        }
+      ],
+      "active": true
+    },
+    "toolbarNavigation": null
+  },
+  "styling": {
+    "icon": "https://gonativeio.s3.amazonaws.com/uploads/mkb8y80w7a7e2_1522849444474.png",
+    "iosHeaderImage": "https://gonativeio.s3.amazonaws.com/uploads/rd7h7gy83tjm2_1522864885655.png",
+    "showActionBar": true,
+    "showNavigationBar": true,
+    "iosSidebarFont": "Default",
+    "androidHideTitleInActionBar": false,
+    "navigationTitleImage": false,
+    "iosTheme": "light",
+    "androidTheme": "light",
+    "menuAnimationDuration": 0.15,
+    "transitionInteractiveDelayMax": 0.2,
+    "hideWebviewAlpha": 0.5,
+    "disableAnimations": false,
+    "androidShowSplash": true,
+    "androidSidebarBackgroundColor": "#FFFFFF",
+    "androidSidebarForegroundColor": "#777777",
+    "androidActionBarBackgroundColor": "#bdbdbd",
+    "androidActionBarForegroundColor": "#000000",
+    "androidPullToRefreshColor": "#777777",
+    "androidAccentColor": "#009688",
+    "androidSidebarSeparatorColor": "#585858",
+    "androidTabBarBackgroundColor": "#bdbdbd",
+    "androidTabBarTextColor": "#000000",
+    "androidTabBarIndicatorColor": "#000000",
+    "iosTitleColor": "#333333",
+    "iosTintColor": "#0091fe",
+    "iosSidebarTextColor": "#333333",
+    "androidLaunchImages": {
+      "mdpi": "https://s3.amazonaws.com/gonativeio/images_generated/1522849480190_54m971wfc16h6_180x180.9.png",
+      "hdpi": "https://s3.amazonaws.com/gonativeio/images_generated/1522849480190_tw3uj03egmvvg_270x270.9.png",
+      "xhdpi": "https://s3.amazonaws.com/gonativeio/images_generated/1522849480190_5zm30b1tn5kqr_360x360.9.png",
+      "xxhdpi": "https://s3.amazonaws.com/gonativeio/images_generated/1522849480191_bx5av3b2n9h3p_540x540.9.png",
+      "xxxhdpi": "https://s3.amazonaws.com/gonativeio/images_generated/1522849480191_jtqf066ynu6tu_720x720.9.png"
+    },
+    "iosLaunchImages": {
+      "ios_launch_640x960": "https://s3.amazonaws.com/gonativeio/images_generated/1522849465069_j4p41f8673p4p_640x960.png",
+      "ios_launch_640x1136": "https://s3.amazonaws.com/gonativeio/images_generated/1522849465070_5qev7ur8cvrb6_640x1136.png",
+      "ios_launch_768x1024": "https://s3.amazonaws.com/gonativeio/images_generated/1522849465070_6uqwqce0x3a4e_768x1024.png",
+      "ios_launch_1024x768": "https://s3.amazonaws.com/gonativeio/images_generated/1522849465070_1n1ge02dnua0y_1024x768.png",
+      "ios_launch_1536x2048": "https://s3.amazonaws.com/gonativeio/images_generated/1522849465070_funcky99kf5e2_1536x2048.png",
+      "ios_launch_2048x1536": "https://s3.amazonaws.com/gonativeio/images_generated/1522849465070_rxjuum5u6b8ap_2048x1536.png",
+      "ios_launch_750x1334": "https://s3.amazonaws.com/gonativeio/images_generated/1522849465070_54e9yv5w9u9uc_750x1334.png",
+      "ios_launch_1242x2208": "https://s3.amazonaws.com/gonativeio/images_generated/1522849465070_f8nqwurcbvmrm_1242x2208.png",
+      "ios_launch_2208x1242": "https://s3.amazonaws.com/gonativeio/images_generated/1522849465070_p28bnpy4h408r_2208x1242.png",
+      "ios_launch_1125x2436": "https://s3.amazonaws.com/gonativeio/images_generated/1522849465070_gtdyc4044akte_1125x2436.png",
+      "ios_launch_2436x1125": "https://s3.amazonaws.com/gonativeio/images_generated/1522849465070_8npp3z5wk2wny_2436x1125.png"
+    },
+    "androidStatusBarBackgroundColor": "#909090",
+    "customCSS": ".main_page .omb_login .languages {\n    padding: 6px;\n}\n\n.main_page .omb_login .languages span {\n    display: none;\n}\n\n.nav_menu {\n    margin-bottom: 10px !important;\n}\n\n.nav_menu .toggle {\n    display: none;\n}\n\n.nav_menu .top_menu {\n    margin-top: 70px;\n}\n\n.nav_menu .top_menu ul {\n    display: none;\n}\n\n.nav_menu nav form {\n    margin-top: 0;\n}"
+  },
+  "forms": {
+    "search": {
+      "active": false
+    },
+    "loginConfig": {
+      "formSelector": null,
+      "loginIsFirstPage": false
+    },
+    "signupConfig": {
+      "active": false,
+      "formSelector": null
+    }
+  },
+  "permissions": {
+    "usesGeolocation": true,
+    "androidDownloadToPublicStorage": false,
+    "enableWebRTC": false
+  },
+  "performance": {
+    "webviewPools": [
+      {
+        "urls": [
+          {
+            "disown": "reload"
+          }
+        ]
+      }
+    ]
+  },
+  "publishing": {},
+  "services": {
+    "push": {
+      "active": false
+    },
+    "analytics": {
+      "active": false
+    },
+    "parse": {
+      "active": false,
+      "pushEnabled": false
+    },
+    "facebook": {
+      "active": false
+    },
+    "oneSignal": {
+      "active": false,
+      "notificationExtension": false
+    },
+    "registration": {
+      "active": false,
+      "endpoints": [
+        {
+          "url": null,
+          "urlRegex": "gonative_nevermatch",
+          "dataType": [
+            "parse",
+            "oneSignal"
+          ]
+        }
+      ]
+    }
+  }
+}
