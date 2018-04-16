@@ -74,7 +74,8 @@ if (navigator.userAgent.indexOf('gonative') > -1) {
                         "label": "Informar erro",
                         "subLinks": []
                       }
-                    ]
+                    ],
+                    "icon": "fa-cog"
                   },
                   {
                     "url": MY_VHL_DOMAIN+"/client/controller/logout/control/business",
@@ -153,7 +154,8 @@ if (navigator.userAgent.indexOf('gonative') > -1) {
                         "label": "Informar erro",
                         "subLinks": []
                       }
-                    ]
+                    ],
+                    "icon": "fa-cog"
                   },
                   {
                     "url": MY_VHL_DOMAIN+"/client/controller/logout/control/business",
