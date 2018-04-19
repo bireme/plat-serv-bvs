@@ -423,7 +423,9 @@ div.related_docs p {
 }
 
 #menu_toggle .fa-chevron-circle-left,
-#menu_toggle .fa-chevron-circle-right {
+#menu_toggle .fa-chevron-circle-right,
+.toggle_data #public_data .fa-chevron-circle-up,
+.toggle_data #public_data .fa-chevron-circle-down {
     display: none;
 }
 
@@ -686,14 +688,14 @@ body.at-expanded-menu-noscroll .bs-public-modal-lg {
     display: none !important;
 }
 
-#sidebar-menu.public_menu {
+.public_menu #sidebar-menu {
     color: #E7E7E7;
     position: relative;
     display: block;
     padding: 13px 15px 12px;
 }
 
-#sidebar-menu.public_menu ul li {
+.public_menu #sidebar-menu ul li {
     cursor: text;
 }
 
@@ -826,6 +828,19 @@ and (min-device-width : 768px) {
         display: flex;
         align-items: center;
     }
+
+    .nav-md .container.body .col-md-3.left_col.public_menu {
+        display: block !important; 
+    }
+
+    .nav-md .container.body .right_col.public_menu {
+        width: auto !important;
+        margin-left: 230px !important;
+    }
+
+    .nav-md footer {
+        margin-left: 230px !important;
+    }
 }
 
 @media only screen
@@ -885,10 +900,6 @@ and (max-device-width : 1024px) {
 
 @media only screen 
 and (min-device-width : 1024px) {
-    .nav-md footer {
-        margin-left: 230px !important;
-    }
-
     #menu_toggle .fa-bars {
         display: none;
     }
@@ -1024,6 +1035,37 @@ and (max-device-width : 736px) {
 
     .keywords {
         margin-top: 0;
+    }
+
+    .left_col.public_menu {
+        position: relative !important;
+        width: 100% !important;
+        margin-bottom: 10px;
+    }
+
+    .public_menu #sidebar-menu {
+        text-align: center;
+    }
+
+    .public_menu .nav_title {
+        width: 100%;
+    }
+
+    .public_menu .menu_section {
+        margin-bottom: 0;
+    }
+
+    .toggle_data #public_data i {
+        font-size: 26px;
+    }
+
+    .toggle_data #public_data .fa-chevron-circle-up {
+        float: right;
+    }
+
+    .toggle_data #public_data .fa-chevron-circle-down {
+        display: block;
+        float: right;
     }
 }
 

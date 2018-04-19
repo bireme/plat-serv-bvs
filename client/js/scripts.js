@@ -365,7 +365,7 @@ $( document ).ready(
             $(this).next().show();
         });
 
-        /********** Miscellaneous Scripts **********/
+        /********** Layout Scripts **********/
         var setContentHeight = function () {
             // reset height
             $RIGHT_COL.css('min-height', $(window).height());
@@ -386,5 +386,24 @@ $( document ).ready(
         $MENU_TOGGLE.on('click', function() { setContentHeight(); });
 
         setContentHeight();
+
+        /********** Miscellaneous Scripts **********/
+        $(this).on('click', '.toggle_data #public_data .fa-chevron-circle-up',
+            function(e){
+                _down = $('.toggle_data #public_data .fa-chevron-circle-down');
+                $(this).hide();
+                $('.left_col.public_menu').hide();
+                _down.show();
+            }
+        );
+
+        $(this).on('click', '.toggle_data #public_data .fa-chevron-circle-down',
+            function(e){
+                _down = $('.toggle_data #public_data .fa-chevron-circle-up');
+                $(this).hide();
+                $('.left_col.public_menu').show();
+                _down.show();
+            }
+        );
     }
 );

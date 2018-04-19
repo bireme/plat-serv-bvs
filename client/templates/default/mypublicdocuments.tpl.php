@@ -4,7 +4,7 @@
 ?>
         <?php require_once(dirname(__FILE__)."/header.tpl.php"); ?>
 
-        <div class="col-md-3 left_col">
+        <div class="col-md-3 left_col public_menu">
           <div class="left_col scroll-view">
             <div class="navbar nav_title" style="border: 0;">
               <a href="<?=RELATIVE_PATH?>/controller/authentication" class="site_title logo-md"><img src="<?=RELATIVE_PATH?>/images/<?=$_SESSION["skin"]?>/logo-md-<?=$_SESSION["lang"]?>.png" alt="VHL Logo"> <span><?=MY_VHL?></span></a>
@@ -12,7 +12,7 @@
 
             <div class="clearfix"></div>
 
-            <div id="sidebar-menu" class="public_menu">
+            <div id="sidebar-menu">
               <div class="menu_section">
                 <h2><?=$trans->getTrans($_REQUEST["action"],'COLLECTION_DOCS')?></h2>
                 <ul class="nav side-menu">
@@ -27,7 +27,7 @@
         </div>
 
         <!-- page content -->
-        <div class="right_col" role="main">
+        <div class="right_col public_menu" role="main">
           <div>
             <div class="clearfix"></div>
             <div class="row">
@@ -35,6 +35,12 @@
                 <div class="x_panel">
                   <div class="x_title">
                     <h2><?=$resultUserDir['dirName']?></h2>
+                    <div class="toggle_data">
+                      <a id="public_data">
+                        <i class="fa fa-chevron-circle-up"></i>
+                        <i class="fa fa-chevron-circle-down"></i>
+                      </a>
+                    </div>
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content">
