@@ -390,19 +390,39 @@ $( document ).ready(
         /********** Miscellaneous Scripts **********/
         $(this).on('click', '.toggle_data #public_data .fa-chevron-circle-up',
             function(e){
-                _down = $('.toggle_data #public_data .fa-chevron-circle-down');
+                _icon = $('.toggle_data #public_data .fa-chevron-circle-down');
+                _icon.show();
                 $(this).hide();
                 $('.left_col.public_menu').hide();
-                _down.show();
             }
         );
 
         $(this).on('click', '.toggle_data #public_data .fa-chevron-circle-down',
             function(e){
-                _down = $('.toggle_data #public_data .fa-chevron-circle-up');
+                _icon = $('.toggle_data #public_data .fa-chevron-circle-up');
+                _icon.show();
                 $(this).hide();
                 $('.left_col.public_menu').show();
-                _down.show();
+            }
+        );
+
+        $(this).on('click', '.toggle_icons #toggle_list .fa-bars',
+            function(e){
+                _icon = $('.toggle_icons #toggle_list .fa-list');
+                _icon.show();
+                $(this).hide();
+                $('.col-list').hide();
+                $('.col-filter').show();
+            }
+        );
+
+        $(this).on('click', '.toggle_icons #toggle_list .fa-list',
+            function(e){
+                _icon = $('.toggle_icons #toggle_list .fa-bars');
+                _icon.show();
+                $(this).hide();
+                $('.col-list').show();
+                $('.col-filter').hide();
             }
         );
     }

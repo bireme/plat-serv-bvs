@@ -20,10 +20,16 @@
                 <div class="x_panel">
                   <div class="x_title">
                     <h2><?=$trans->getTrans($_REQUEST["action"],'MY_COLLECTION')?></h2>
+                    <div class="toggle_icons">
+                      <a id="toggle_list">
+                        <i class="fa fa-bars"></i>
+                        <i class="fa fa-list"></i>
+                      </a>
+                    </div>
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content">
-                    <div class="folder-data col-md-9 col-sm-9 col-xs-12">
+                    <div class="folder-data col-md-9 col-sm-9 col-xs-12 col-list">
                         <h4><i class="fa fa-folder-o"></i> <?if ($resultDirName === null){ echo $trans->getTrans($_REQUEST["action"],'INCOMING_FOLDER'); }?><?=$resultDirName?></h4>
                         <?if ($_REQUEST["directory"] != 0){?>
                             <a href="javascript:;" onclick="__gaTracker('send','event','Favorite Documents','Edit Collection','<?php echo htmlspecialchars($resultDirName); ?>'); window.open('<?=RELATIVE_PATH?>/controller/directories/control/business/task/edit/directory/<?=$_REQUEST["directory"]?>','','resizable=no,scrollbars=1,width=420,height=250');"><span class="label label-info"><?=$trans->getTrans($_REQUEST["action"],'EDIT_FOLDER')?></span></a>
@@ -36,7 +42,7 @@
                             <option class="bulkmovedoc" value="<?=RELATIVE_PATH?>/controller/directories/control/business/task/movedoc/directory/<?=$directory?>"><?=$trans->getTrans($_REQUEST["action"],'BULK_MOVE_DOCS')?></option>
                         </select>
                     </div>
-                    <div id="step16" class="col-md-9 col-sm-9 col-xs-12">
+                    <div id="step16" class="col-md-9 col-sm-9 col-xs-12 col-list">
                         <?php if ( $response["values"] != false ) : ?>
                             <?php //echo $objPaginator->render($trans->getTrans($_REQUEST["action"],'NEXT'), $trans->getTrans($_REQUEST["action"],'PREVIOUS')); ?>
                             <!-- start project list -->
@@ -110,7 +116,7 @@
                             <p class="none-docs"><?=$trans->getTrans($_REQUEST["action"],'ACCESS_LIST_NO_REGISTERS_FOUND')?></p>
                         <?php endif; ?>
                     </div>
-                    <div class="col-md-3 col-sm-3 col-xs-12">
+                    <div class="col-md-3 col-sm-3 col-xs-12 col-filter">
                         <section id="step18" class="panel panel-folder">
                             <div class="panel-body">
                                 <h5><?=$trans->getTrans($_REQUEST["action"],'MY_FOLDERS')?></h5>

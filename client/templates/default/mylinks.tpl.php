@@ -17,10 +17,16 @@
                 <div class="x_panel">
                   <div class="x_title">
                     <h2><?=$trans->getTrans($_REQUEST["action"],'MY_LINKS')?></h2>
+                    <div class="toggle_icons">
+                      <a id="toggle_list">
+                        <i class="fa fa-bars"></i>
+                        <i class="fa fa-list"></i>
+                      </a>
+                    </div>
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content">
-                    <div id="step30" class="col-md-9 col-sm-9 col-xs-12">
+                    <div id="step30" class="col-md-9 col-sm-9 col-xs-12 col-list">
                         <?php if ( $response["values"] != false ) : ?>
                             <?php //echo $objPaginator->render($trans->getTrans($_REQUEST["action"],'NEXT'), $trans->getTrans($_REQUEST["action"],'PREVIOUS')); ?>
                             <!-- start project list -->
@@ -73,7 +79,7 @@
                             <p class="none-docs"><?=$trans->getTrans($_REQUEST["action"],'MY_LINKS_NO_REGISTERS_FOUND')?></p>
                         <?php endif; ?>
                     </div>
-                    <div class="col-md-3 col-sm-3 col-xs-12">
+                    <div class="col-md-3 col-sm-3 col-xs-12 col-filter">
                         <section id="step31" class="panel panel-folder">
                             <div class="panel-body">
                                 <h5><?=$trans->getTrans($_REQUEST["action"],'TOOLS')?></h5>

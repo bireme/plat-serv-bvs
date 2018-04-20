@@ -425,7 +425,9 @@ div.related_docs p {
 #menu_toggle .fa-chevron-circle-left,
 #menu_toggle .fa-chevron-circle-right,
 .toggle_data #public_data .fa-chevron-circle-up,
-.toggle_data #public_data .fa-chevron-circle-down {
+.toggle_data #public_data .fa-chevron-circle-down,
+.toggle_icons #toggle_list .fa-bars,
+.toggle_icons #toggle_list .fa-list {
     display: none;
 }
 
@@ -887,7 +889,7 @@ and (max-device-width : 768px) {
 
 @media only screen 
 and (max-device-width : 1024px) {
-    .themes .x_title {
+    .themes.col-themes .x_title {
         display: inline-table;
         background: url(../../images/default/020-folder.png) top left no-repeat;
     }
@@ -1000,7 +1002,7 @@ and (max-device-width : 736px) {
         white-space: nowrap !important;
     }
 
-    .nav-sm .themes .x_title {
+    .nav-sm .themes.col-themes .x_title {
         display: block;
         height: auto;
     }
@@ -1055,17 +1057,30 @@ and (max-device-width : 736px) {
         margin-bottom: 0;
     }
 
-    .toggle_data #public_data i {
+    .toggle_data #public_data i,
+    .toggle_icons #toggle_list i {
         font-size: 26px;
     }
 
+    .toggle_icons #toggle_list .fa-list,
     .toggle_data #public_data .fa-chevron-circle-up {
         float: right;
     }
 
+    .toggle_icons #toggle_list .fa-bars,
     .toggle_data #public_data .fa-chevron-circle-down {
         display: block;
         float: right;
+    }
+
+    .col-filter {
+        display: none;
+    }
+
+    .nav-sm .themes.col-themes .toggle_icons {
+        position: absolute;
+        top: 5px;
+        right: 10px;
     }
 }
 
