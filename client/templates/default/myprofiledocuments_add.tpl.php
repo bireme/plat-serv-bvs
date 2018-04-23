@@ -13,7 +13,7 @@
                           <?}?>
                             <div class="modal-header">
                                 <?php if ( 'edit' == $_REQUEST['task'] ) : ?>
-                                <h2 class="modal-title"><?=$trans->getTrans($_REQUEST["action"],'EDIT_PROFILE')?></h2>
+                                <h2 class="modal-title"><?=$trans->getTrans($_REQUEST["action"],'EDIT_PROFILE')?>: <?=$response["values"]["profileName"]?></h2>
                                 <?php else : ?>
                                 <h2 class="modal-title"><?=$trans->getTrans($_REQUEST["action"],'ADD_PROFILE')?></h2>
                                 <?php endif; ?>

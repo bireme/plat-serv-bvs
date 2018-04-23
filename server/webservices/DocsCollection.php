@@ -26,9 +26,33 @@ $objSoapServer = new SoapServer(null,array('uri'=>'http://test-uri/'));
 $objSoapServer->addFunction(SOAP_FUNCTIONS_ALL);
 $objSoapServer->handle();
 
+/**
+ * Get document data
+ *
+ * @param string $userTK user hash
+ * @param string $docID
+ * @param string $srcID
+ * @return array object Profile
+ */
+function getDoc($userTK,$docID,$srcID){
+    $retValue = false;
+
+    /*  parameter validation */
+    $params = array('userTK' => $userTK,
+                    'docID' => $docID,
+                    'srcID' => $srcID);
+    $objVerifier = new Verifier($params);
+
+    if($retVerifier = $objVerifier->canPass()){
+        $retParams = $objVerifier->getParams();
+        $retValue = DocumentDAO::getDoc($retParams['docID'],$retParams['srcID']);
+    }
+
+    return $retValue;
+}
 
 /**
- * list user documents
+ * List user documents
  *
  * @param string $userTK mcrypt(userID+password)
  * @param string $dirID mcrypt(dirID)

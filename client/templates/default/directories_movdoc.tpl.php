@@ -1,3 +1,11 @@
+<?php
+    $docTitle = trim($resultDoc->_data['docTitle']);
+
+    if ( strlen($docTitle) > 50 ) {
+        $docTitle = substr($docTitle, 0, 50) . " [...]";
+    }
+?>
+
 <?require_once(dirname(__FILE__)."/header.tpl.php");?>
 
                 <div class="modal" id="squareSpaceModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
@@ -11,7 +19,7 @@
                           <input type="hidden" name="fromDirectory" value="<?=$_REQUEST["directory"]?>" />
                           <input type="hidden" name="document" value="<?=$_REQUEST["document"]?>" />
                             <div class="modal-header">
-                                <h2 class="modal-title"><?=$trans->getTrans($_REQUEST["action"],'MOVE_DOCUMENT_TO')?>:</h2>
+                                <h2 class="modal-title"><?=$trans->getTrans($_REQUEST["action"],'MOVE')?> "<?=$docTitle?>" <?=$trans->getTrans($_REQUEST["action"],'MOVE_DOCUMENT_TO')?>:</h2>
                             </div>
                             <div class="modal-body">
                               <div class="radio">

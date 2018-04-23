@@ -13,7 +13,7 @@
                           <?}?>
                             <div class="modal-header">
                               <?php if ( 'edit' == $_REQUEST['task'] ) : ?>
-                              <h2 class="modal-title"><?=$trans->getTrans($_REQUEST["action"],'EDIT_RSS')?></h2>
+                              <h2 class="modal-title"><?=$trans->getTrans($_REQUEST["action"],'EDIT_RSS')?>: <?=$response["values"]["name"]?></h2>
                               <?php else : ?>
                               <h2 class="modal-title"><?=$trans->getTrans($_REQUEST["action"],'ADD_RSS')?></h2>
                               <?php endif; ?>

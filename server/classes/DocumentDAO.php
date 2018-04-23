@@ -81,10 +81,11 @@ class DocumentDAO {
 	}
 
     /**
-     * Get the user profile data from the database
+     * Get document data
      *
-     * @param $userId
-     * @return array of UserProfile objects
+     * @param string $docID
+     * @param string $srcID
+     * @return array
      */
 	public static function getDoc($docID,$srcID){
         $retValue = false;

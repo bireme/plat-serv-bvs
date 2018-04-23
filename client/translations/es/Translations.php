@@ -239,7 +239,7 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
         self::$trans["mydocuments"]["MY_RANK"] = 'Mi clasificación';
         self::$trans["mydocuments"]["MOVE"] = 'mover';
         self::$trans["mydocuments"]["MOVE_TO"] = 'mover para';
-        self::$trans["mydocuments"]["MOVE_DOCUMENT_TO"] = 'mover para';
+        self::$trans["mydocuments"]["MOVE_DOCUMENT_TO"] = 'para colección';
         self::$trans["mydocuments"]["FULL_TEXT"] = 'texto completo';
         self::$trans["mydocuments"]["REMOVE_FROM_COLLECTION"] = 'borrar';
         self::$trans["mydocuments"]["MONITOR_CITATION"] = 'citaciones monitoradas';
@@ -278,7 +278,7 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
         self::$trans["directories"]["REMOVE_CONTENT"] = 'Borrar contenído';
         self::$trans["directories"]["MOVE"] = 'mover';
         self::$trans["directories"]["MOVE_TO"] = 'mover para';
-        self::$trans["directories"]["MOVE_DOCUMENT_TO"] = 'mover para colección';
+        self::$trans["directories"]["MOVE_DOCUMENT_TO"] = 'para colección';
         self::$trans["directories"]["MOVE_CONTENT_TO_OTHER_FOLDER"] = 'Mover contenído para otra colección';
         self::$trans["directories"]["INCOMING_FOLDER"] = 'Caja de Entrada';
         self::$trans["directories"]["ADD_DIR_SUCESS"] = 'Operación realizada con succeso.';

@@ -14,6 +14,20 @@
  */
 class DocsCollection {
 
+    public static function getDoc($userTK,$docID,$srcID){
+        $retValue = false;
+
+        try{
+            $objSoapClient = self::getSoapClient();
+            $retValue = $objSoapClient->getDoc($userTK,$docID,$srcID);
+        }catch(Exception $e){
+            $logger = &Log::singleton('file', LOG_FILE, __CLASS__, $_conf);
+            $logger->log($e->getMessage(),PEAR_LOG_EMERG);
+        }
+
+        return $retValue;
+    }
+
     public static function listDocs($userTK,$dirID=null,$params){
         $retValue = false;
 

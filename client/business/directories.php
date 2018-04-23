@@ -77,11 +77,15 @@ switch($_REQUEST["task"]){
         }
     break;
     case "movedoc":
-        $resultListDirs   = DocsCollection::listDirs($_SESSION["userTK"]);
+        $docsrc = base64_decode($_REQUEST['docsrc']);
+        $resultDoc = DocsCollection::getDoc($_SESSION["userTK"],$_REQUEST['document'],$docsrc);
+
+        $resultListDirs = DocsCollection::listDirs($_SESSION["userTK"]);
         if ($resultListDirs != false){
             $responseListDirs["status"] = true;
         }
         $responseListDirs["values"] = $resultListDirs;
+
         if ($_REQUEST["mode"] == "persist"){
             $result = DocsCollection::moveDocToAnotherDirectory($_SESSION["userTK"], $_REQUEST["fromDirectory"], $_REQUEST["moveToDirectory"], $_REQUEST["document"]);
             $response["values"] = $result;
