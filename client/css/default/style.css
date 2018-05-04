@@ -32,9 +32,9 @@ p.excerpt span {
 }
     
 #squareSpaceModal .modal-footer .btn-group button {
-    height:40px;
-    border-top-left-radius : 0;
-    border-top-right-radius : 0;
+    height: 40px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
     border: none;
     border-right: 1px solid #ddd;
 }
@@ -50,4 +50,8 @@ p.excerpt span {
 
 #squareSpaceModal .radio-child {
     padding-left: 20px;
+}
+
+#squareSpaceModal .radio-btn {
+    margin-top: 2px;
 }

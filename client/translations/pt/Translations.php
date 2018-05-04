@@ -172,6 +172,8 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
         self::$trans["searchresults"]["URL"] = 'URL';
         self::$trans["searchresults"]["SAVE"] = 'salvar';
         self::$trans["searchresults"]["CANCEL"] = 'cancelar';
+        self::$trans["searchresults"]["ADD"] = 'adicionar';
+        self::$trans["searchresults"]["TO_COLLECTION"] = 'à coleção';
 
     // Terms of mysearches pages
         self::$trans["mysearches"]["FEATURE"] = 'Histórico de Buscas na BVS';
@@ -371,12 +373,14 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
         self::$trans["myprofiledocuments"]["MY_PROFILES_NO_REGISTERS_FOUND"] = 'Nenhum registro encontrado';
         self::$trans["myprofiledocuments"]["MY_PROFILES_NO_SUGGESTIONS_FOUND"] = 'Nenhum documento encontrado. Tente atualizar o tema em <code>editar tema > salvar</code> ou altere as palavras-chave.';
         self::$trans["myprofiledocuments"]["SERVICE_TEMPORARY_UNAVAILABLE"] = 'Serviço temporariamente indisponível. Tente atualizar esse tema mais tarde.';
+        self::$trans["myprofiledocuments"]["ADD"] = 'adicionar';
         self::$trans["myprofiledocuments"]["ADD_PROFILE_SUCESS"] = 'Operação realizada com sucesso.';
         self::$trans["myprofiledocuments"]["ADD_PROFILE_ERROR"] = 'Erro ao adicionar tema';
         self::$trans["myprofiledocuments"]["PAGE"] = 'Página';
         self::$trans["myprofiledocuments"]["NEXT"] = 'Próximo';
         self::$trans["myprofiledocuments"]["PREVIOUS"] = 'Anterior';
         self::$trans["myprofiledocuments"]["ADD_COLLECTION"] = 'adicionar aos favoritos';
+        self::$trans["myprofiledocuments"]["TO_COLLECTION"] = 'à coleção';
         self::$trans["myprofiledocuments"]["INCOMING_FOLDER"] = 'Caixa de Entrada';
         self::$trans["myprofiledocuments"]["UPDATE_ALERT"] = '<p>Os documentos de interesse abaixo podem mudar conforme a atualização das fontes de informação da BVS.</p><p>Por tanto, se algum documento é de seu interesse, adicione-o aos favoritos.</p>';
 

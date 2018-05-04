@@ -122,6 +122,7 @@ $( document ).ready(
         )
 
         /********** Interest Topics Scripts **********/
+/*
         $('a.add-collection').popover({
             html : true,
             placement : 'right',
@@ -183,6 +184,86 @@ $( document ).ready(
                 }
                 
                 $('.popover').popover('hide');
+            });
+        });
+*/
+        $( document ).on('change', 'input[name=docsfolderlist]', function(e) {
+            $('#docsfolderlist').removeAttr('disabled');
+        });
+
+        $( document ).on('click', '#docsfolderlist', function(e) {
+            e.preventDefault();
+
+            path = window.location.pathname;
+            parts = path.split("/controller/");
+            href = parts[0]+"/controller/servicesplatform/control/business/task/addDoc";
+
+            doc = $(this).val();
+            folder = $('input[name=docsfolderlist]:checked');
+            _opener = $("#"+doc, window.opener.document);
+            id = _opener.find('a.add-collection').attr('value');
+            title = _opener.find('div.record a').text();
+            url = _opener.find('a').attr('href');
+            author = _opener.find('small').text();
+
+            obj = new Object();
+            obj.url = $.trim(url);
+            obj.source = 'pesquisa.bvsalud.org';
+            obj.author = $.trim(author);
+            obj.title = $.trim(title);
+            obj.id = $.trim(id);
+            obj.userTK = unescape(getCookie('userTK'));
+
+            $.post( href, obj, function(data) {
+                if (isJSON(data)){
+                    response = $.parseJSON(data);
+                }else{
+                    response = data;
+                }
+
+                href = parts[0]+"/controller/directories/control/business/task/movedoc";
+
+                obj = new Object();
+                obj.mode = 'persist';
+                obj.document = $.trim(id);
+                obj.fromDirectory = 0;
+                obj.moveToDirectory = folder.val();
+
+                if (navigator.userAgent.indexOf('gonative') > -1) {
+                    if(data == true){
+                        $.post( href, obj, function(data) {
+                            alert(labels[LANG]['ADD_DOC_SUCCESS']+' '+folder.next().text());
+                        });
+                    }else if(typeof response == 'object'){
+                        if ( response.dir == 'INCOMING_FOLDER' ) {
+                            alert(labels[LANG]['DOC_EXISTS']+' '+labels[LANG]['INCOMING_FOLDER']);
+                        } else {
+                            alert(labels[LANG]['DOC_EXISTS']+' '+response.dir);
+                        }
+                    }else{
+                        alert(labels[LANG]['ADD_DOC_FAIL']);
+                    }
+
+                    window.close();
+                } else {
+                    if(data == true){
+                        $.post( href, obj, function(data) {
+                            var msg = labels[LANG]['ADD_DOC_SUCCESS']+' '+folder.next().text();
+                            $('.alert').text(msg).show();
+                        });
+                    }else if(typeof response == 'object'){
+                        if ( response.dir == 'INCOMING_FOLDER' ) {
+                            var msg = labels[LANG]['DOC_EXISTS']+' '+labels[LANG]['INCOMING_FOLDER']+'.\n'+labels[LANG]['TRY_ANOTHER_DOC'];
+                            $('.alert').text(msg).show();
+                        } else {
+                            var msg = labels[LANG]['DOC_EXISTS']+' '+response.dir+'.\n'+labels[LANG]['TRY_ANOTHER_DOC'];
+                            $('.alert').text(msg).show();
+                        }
+                    }else{
+                        var msg = labels[LANG]['ADD_DOC_FAIL'];
+                        $('.alert').text(msg).show();
+                    }
+                }
             });
         });
 
@@ -283,7 +364,6 @@ $( document ).ready(
                 if (!$(this).is(e.target) && $(this).has(e.target).length === 0 && $('.popover').has(e.target).length === 0) {                
                     (($(this).popover('hide').data('bs.popover')||{}).inState||{}).click = false  // fix for BS 3.3.6
                 }
-
             });
         });
 
@@ -351,13 +431,15 @@ $( document ).ready(
 
         combinePopover();
 
-        $('#datatable-search').DataTable( {
-            paging: false,
-            ordering: false,
-            info: false,
-            searching: false,
-            responsive: true
-        } );
+        if ( typeof DataTable === "function" ) {
+            $('#datatable-search').DataTable( {
+                paging: false,
+                ordering: false,
+                info: false,
+                searching: false,
+                responsive: true
+            } );
+        }
 
         $('span.show-all').on('click', function(e){
             e.preventDefault();

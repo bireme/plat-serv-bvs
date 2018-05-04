@@ -535,7 +535,7 @@ class SimilarDocs {
 
         $userData = UserDAO::getUser($userID);
         $orcidData = json_decode($userData->getOrcidData(),true);
-        $orcidWorks =  $orcidData['orcid-profile']['orcid-activities']['orcid-works']['orcid-work'];
+        $orcidWorks = $orcidData['orcid-profile']['orcid-activities']['orcid-works']['orcid-work'];
 
         $works = array();
 

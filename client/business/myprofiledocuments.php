@@ -19,10 +19,9 @@ require_once(dirname(__FILE__)."/../classes/SimilarDocs.php");
 if ($_REQUEST["task"] === null){
     $_REQUEST["task"] = "list";
 }
+
 $response["status"] = false;
 $params["sort"]=$_REQUEST["sort"];
-
-$docsFolders = DocsCollection::listDirs($_SESSION["userTK"]);
 
 switch($_REQUEST["task"]){
     case "list":
@@ -110,6 +109,9 @@ switch($_REQUEST["task"]){
         $result = MyProfiles::getProfileList($_SESSION["userTK"],$params);
         $response["values"] = $result;
         $response["status"] = true;
+    break;
+    case "addcol":
+        $docsFolders = DocsCollection::listDirs($_SESSION["userTK"]);
     break;
     default:
         die("default");

@@ -74,9 +74,11 @@ switch($_REQUEST["action"]){
 
     break;
     case "myprofiledocuments":
-        if (($_REQUEST["task"] == "add") or ($_REQUEST["task"] == "edit")){
+        if (($_REQUEST["task"] == "add") or ($_REQUEST["task"] == "edit")) {
             require_once(dirname(__FILE__)."/templates/".$_SESSION["skin"]."/myprofiledocuments_add.tpl.php");
-        }else{
+        } elseif ( $_REQUEST["task"] == "addcol" ) {
+            require_once(dirname(__FILE__)."/templates/".$_SESSION["skin"]."/myprofiledocuments_addcol.tpl.php");
+        } else {
             require_once(dirname(__FILE__)."/templates/".$_SESSION["skin"]."/myprofiledocuments.tpl.php");
         }
     break;
@@ -89,6 +91,8 @@ switch($_REQUEST["action"]){
     case "searchresults":
         if ( ($_REQUEST["task"] == "add") || ($_REQUEST["task"] == "edit") ) {
             require_once(dirname(__FILE__)."/templates/".$_SESSION["skin"]."/searchresults_add.tpl.php");
+        } elseif ( $_REQUEST["task"] == "addcol" ) {
+            require_once(dirname(__FILE__)."/templates/".$_SESSION["skin"]."/searchresults_addcol.tpl.php");
         } else {
             require_once(dirname(__FILE__)."/templates/".$_SESSION["skin"]."/searchresults.tpl.php");
         }

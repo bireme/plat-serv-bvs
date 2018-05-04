@@ -21,8 +21,6 @@ if ($_REQUEST["task"] === null){
 $response["status"] = false;
 $params["sort"]=$_REQUEST["sort"];
 
-$docsFolders = DocsCollection::listDirs($_SESSION["userTK"]);
-
 switch($_REQUEST["task"]){
     case "list":
         /* paginator */
@@ -89,6 +87,9 @@ switch($_REQUEST["task"]){
         $result = SearchResults::getRSSList( $_SESSION["userTK"], $params );
         $response["values"] = $result;
         $response["status"] = true;
+    break;
+    case "addcol":
+        $docsFolders = DocsCollection::listDirs($_SESSION["userTK"]);
     break;
     default:
         die("default");

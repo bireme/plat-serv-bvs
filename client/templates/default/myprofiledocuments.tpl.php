@@ -50,15 +50,16 @@
                                     </tr>
                                   </thead-->
                                   <tbody>
-                                    <?php foreach ( $responseSimilarDocs["values"]['similars'] as $similar ) : ?>
-                                    <tr>
+                                    <?php $count = 0; ?>
+                                    <?php foreach ( $responseSimilarDocs["values"]['similars'] as $similar ) : $count++; ?>
+                                    <tr id="<?php echo 'doc'.$count; ?>">
                                       <td>
                                         <div class="record">
                                             <a href="<?php echo $similar["docURL"]; ?>" target="_blank"><?php echo $similar["title"]; ?></a>
                                             <small style="display: block;"><?php echo $similar["authors"]; ?></small>
                                         </div>
                                         <div class="doc-actions">
-                                            <a class="label label-success add-collection" value="<?php echo $similar["docID"]; ?>" onclick="__gaTracker('send','event','Interest Topics','Favorite Documents','<?php echo htmlspecialchars($similar["title"]); ?>');"><?=$trans->getTrans($_REQUEST["action"],'ADD_COLLECTION')?></a>
+                                            <a class="label label-success add-collection" value="<?php echo $similar["docID"]; ?>" onclick="__gaTracker('send','event','Interest Topics','Favorite Documents','<?php echo htmlspecialchars($similar["title"]); ?>'); window.open('<?=RELATIVE_PATH?>/controller/myprofiledocuments/control/business/task/addcol/similar/doc<?=$count?>','','resizable=no,scrollbars=1,width=420,height=310')"><?=$trans->getTrans($_REQUEST["action"],'ADD_COLLECTION')?></a>
                                             <a class="label label-primary related-docs" href="javascript:;" onclick="__gaTracker('send','event','Interest Topics','Related Documents','<?php echo htmlspecialchars($similar["title"]); ?>');"><?php echo $trans->getTrans('suggesteddocs','RELATED_DOCS'); ?></a>
                                         </div>
                                         <!--div>
@@ -131,16 +132,6 @@
           </div>
         </div>
         <!-- /page content -->
-
-        <div id="docsfolderlist" style="display: none">
-          <select name="docs-folder-list" class="form-control docsfolderlist">
-            <option></option>
-            <option value="0"><?=$trans->getTrans($_REQUEST["action"],'INCOMING_FOLDER')?></option>
-            <?php foreach ($docsFolders as $folder) : ?>
-            <option value="<?php echo $folder['dirID'] ?>"><?php echo $folder['name']; ?></option>
-            <?php endforeach ?>
-          </select>
-        </div>
 
         <script type="text/javascript">
           if (RegExp('multipage', 'gi').test(window.location.search)) {

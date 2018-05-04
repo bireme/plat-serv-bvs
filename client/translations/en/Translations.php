@@ -171,6 +171,8 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Phone: (55 11) 5576-980
         self::$trans["searchresults"]["URL"] = 'URL';
         self::$trans["searchresults"]["SAVE"] = 'save';
         self::$trans["searchresults"]["CANCEL"] = 'cancel';
+        self::$trans["searchresults"]["ADD"] = 'add';
+        self::$trans["searchresults"]["TO_COLLECTION"] = 'to collection';
 
     // Terms of mysearches pages
         self::$trans["mysearches"]["FEATURE"] = 'VHL Search History';
@@ -365,25 +367,27 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Phone: (55 11) 5576-980
         self::$trans["myprofiledocuments"]["PROFILE_TEXT"] = 'Keywords';
         self::$trans["myprofiledocuments"]["PROFILE_TEXT_HELP"] = 'The terms must be separated by commas.';
         self::$trans["myprofiledocuments"]["PROFILE_DEFAULT"] = 'Define as default';
-        self::$trans["myprofiledocuments"]["SAVE"] = 'Save';
-        self::$trans["myprofiledocuments"]["CANCEL"] = 'Cancel';
+        self::$trans["myprofiledocuments"]["SAVE"] = 'save';
+        self::$trans["myprofiledocuments"]["CANCEL"] = 'cancel';
         self::$trans["myprofiledocuments"]["MY_PROFILES_NO_REGISTERS_FOUND"] = 'No registers found';
         self::$trans["myprofiledocuments"]["MY_PROFILES_NO_SUGGESTIONS_FOUND"] = 'No documents found. Try updating topic by <code>edit topic > save</code> or change your keywords.';
         self::$trans["myprofiledocuments"]["SERVICE_TEMPORARY_UNAVAILABLE"] = 'Service temporarily unavailable. Try updating this topic later.';
+        self::$trans["myprofiledocuments"]["ADD"] = 'add';
         self::$trans["myprofiledocuments"]["ADD_PROFILE_SUCESS"] = 'Operation succeeded';
         self::$trans["myprofiledocuments"]["ADD_PROFILE_ERROR"] = 'There was an error adding the topic';
         self::$trans["myprofiledocuments"]["PAGE"] = 'Page';
         self::$trans["myprofiledocuments"]["NEXT"] = 'Next';
         self::$trans["myprofiledocuments"]["PREVIOUS"] = 'Previous';
         self::$trans["myprofiledocuments"]["ADD_COLLECTION"] = 'add to favorites';
+        self::$trans["myprofiledocuments"]["TO_COLLECTION"] = 'to collection';
         self::$trans["myprofiledocuments"]["INCOMING_FOLDER"] = 'Inbox';
+        self::$trans["myprofiledocuments"]["UPDATE_ALERT"] = '<p>The interest documents below may change as the VHL information sources update.</p><p>So if any document is of interest to you, add it to your favorites.</p>';
 
     // Terms of mig_id_confirmation pages
         self::$trans["mig_id_confirmation"]["TITLE"] = 'Login Confirmation';
         self::$trans["mig_id_confirmation"]["LOGIN"] = 'Login';
         self::$trans["mig_id_confirmation"]["CONFIRM"] = 'Confirm';
         self::$trans["mig_id_confirmation"]["ALERT"] = 'After confirmation, this email will be your user to access the service.';
-        self::$trans["myprofiledocuments"]["UPDATE_ALERT"] = '<p>The interest documents below may change as the VHL information sources update.</p><p>So if any document is of interest to you, add it to your favorites.</p>';
 
     // Terms of step-by-step guide
         self::$trans["tour"]["TOUR_EXAMPLE"] = '(Exclusive tour example)';

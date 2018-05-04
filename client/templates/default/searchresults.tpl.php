@@ -69,8 +69,8 @@
                                 </tr>
                               </thead-->
                               <tbody>
-                                <?php foreach ( $items as $item ) : ?>
-                                <tr>
+                                <?php foreach ( $items as $item ) : $count++; ?>
+                                <tr id="<?php echo 'doc'.$count; ?>">
                                   <td>
                                     <div class="record">
                                         <a href="<?php echo $item["link"]; ?>" target="_blank"><?php echo $item["title"]; ?></a>
@@ -78,7 +78,7 @@
                                     </div>
                                     <div class="doc-actions">
                                         <?php if ( strpos( $registerSearch['url'], VHL_SEARCH_PORTAL_DOMAIN ) !== false ) : ?>
-                                        <a class="label label-success add-collection" value="<?php echo $item["guid"]; ?>" onclick="__gaTracker('send','event','Search Results','Favorite Documents','<?php echo htmlspecialchars($item["title"]); ?>');"><?=$trans->getTrans($_REQUEST["action"],'ADD_COLLECTION')?></a>
+                                        <a class="label label-success add-collection" value="<?php echo $item["guid"]; ?>" onclick="__gaTracker('send','event','Search Results','Favorite Documents','<?php echo htmlspecialchars($item["title"]); ?>'); window.open('<?=RELATIVE_PATH?>/controller/searchresults/control/business/task/addcol/similar/doc<?=$count?>','','resizable=no,scrollbars=1,width=420,height=310')"><?=$trans->getTrans($_REQUEST["action"],'ADD_COLLECTION')?></a>
                                         <?php endif; ?>
                                         <a class="label label-primary related-docs" href="javascript:;" onclick="__gaTracker('send','event','Search Results','Related Documents','<?php echo htmlspecialchars($item["title"]); ?>');"><?php echo $trans->getTrans('suggesteddocs','RELATED_DOCS'); ?></a>
                                     </div>

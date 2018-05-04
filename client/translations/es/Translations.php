@@ -171,6 +171,8 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
         self::$trans["searchresults"]["URL"] = 'URL';
         self::$trans["searchresults"]["SAVE"] = 'guardar';
         self::$trans["searchresults"]["CANCEL"] = 'cancelar';
+        self::$trans["searchresults"]["ADD"] = 'añadir';
+        self::$trans["searchresults"]["TO_COLLECTION"] = 'a la colección';
 
     // Terms of mysearches pages
         self::$trans["mysearches"]["FEATURE"] = 'Histórico de Buscas na BVS';
@@ -370,12 +372,14 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
         self::$trans["myprofiledocuments"]["MY_PROFILES_NO_REGISTERS_FOUND"] = 'Ningún registro encontrado';
         self::$trans["myprofiledocuments"]["MY_PROFILES_NO_SUGGESTIONS_FOUND"] = 'No se ha encontrado ningún documento. Intente actualizar el tema en <code>editar tema > grabar</code> o cambiar las palabras-clave.';
         self::$trans["myprofiledocuments"]["SERVICE_TEMPORARY_UNAVAILABLE"] = 'Temporalmente sin servicio. Intente actualizar este tema más tarde.';
+        self::$trans["myprofiledocuments"]["ADD"] = 'añadir';
         self::$trans["myprofiledocuments"]["ADD_PROFILE_SUCESS"] = 'Operación realizada con succeso.';
         self::$trans["myprofiledocuments"]["ADD_PROFILE_ERROR"] = 'Error al añadir tema';
         self::$trans["myprofiledocuments"]["PAGE"] = 'Pagina';
         self::$trans["myprofiledocuments"]["NEXT"] = 'Siguiente';
         self::$trans["myprofiledocuments"]["PREVIOUS"] = 'Anterior';
         self::$trans["myprofiledocuments"]["ADD_COLLECTION"] = 'añadir a favoritos';
+        self::$trans["myprofiledocuments"]["TO_COLLECTION"] = 'a la colección';
         self::$trans["myprofiledocuments"]["INCOMING_FOLDER"] = 'Caja de Entrada';
         self::$trans["myprofiledocuments"]["UPDATE_ALERT"] = '<p>Los documentos de interés abajo pueden cambiar según la actualización de las fuentes de información de la BVS.</p><p>Por lo tanto, si algún documento es de su interés, añádalo a los favoritos.</p>';
 
