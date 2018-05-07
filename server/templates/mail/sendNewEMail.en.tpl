@@ -1,7 +1,7 @@
 <div>
     <p>Dear [USERNAME],</p>
 
-    <p>Following the access data for your account in My VHL:</p>
+    <p>Following the access data for your My VHL account:</p>
 
     <p>User: [USER]<br />Password: [PASSWORD]</p>
 
@@ -18,7 +18,7 @@
 [DELIMITER]
 Dear [USERNAME],
 
-Following the access data for your account in My VHL:
+Following the access data for your My VHL account:
 
 User: [USER]
 Password: [PASSWORD]
