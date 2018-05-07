@@ -1,7 +1,9 @@
 <div>
     <p>Estimado(a) [USERNAME],</p>
 
-    <p>La contraseña de su usuario en Mi BVS es: [PASSWORD]</p>
+    <p>Aquí están los datos de acceso de su cuenta en Mi BVS:</p>
+
+    <p>Usuario: [USER]<br />Contraseña: [PASSWORD]</p>
 
     <p><a href="http://platserv.bvsalud.org/client/controller/authentication/?lang=[LANG]">Haga clic aquí y accede a los Servicios Personalizados.</a></p>
 
@@ -16,7 +18,10 @@
 [DELIMITER]
 Estimado(a) [USERNAME],
 
-La contraseña de su usuario en Mi BVS es: [PASSWORD]
+Aquí están los datos de acceso de su cuenta en Mi BVS:
+
+Usuario: [USER]
+Contraseña: [PASSWORD]
 
 Copie y pegue el enlace abajo en el navegador y accede a los Servicios Personalizados:
 

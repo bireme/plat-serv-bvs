@@ -865,6 +865,7 @@ class UserDAO {
                     $body = str_replace('[PASSWORD]',
                         $userAttributes['userPassword'],
                         file_get_contents($tpl));
+                    $body = str_replace('[USER]', $userID, $body);
                     $body = str_replace('[USERNAME]', $name, $body);
                     $body = str_replace('[LANG]', $_SESSION['lang'], $body);
                     $text = explode('[DELIMITER]', $body);

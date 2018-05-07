@@ -1,7 +1,9 @@
 <div>
     <p>Dear [USERNAME],</p>
 
-    <p>Your user's password in My VHL is: [PASSWORD]</p>
+    <p>Following the access data for your account in My VHL:</p>
+
+    <p>User: [USER]<br />Password: [PASSWORD]</p>
 
     <p><a href="http://platserv.bvsalud.org/client/controller/authentication/?lang=[LANG]">Click here and go to Custom Services.</a></p>
 
@@ -16,7 +18,10 @@
 [DELIMITER]
 Dear [USERNAME],
 
-Your user's password in My VHL is: [PASSWORD]
+Following the access data for your account in My VHL:
+
+User: [USER]
+Password: [PASSWORD]
 
 Copy and paste the link below in your browser and go to Custom Services:
 
