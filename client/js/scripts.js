@@ -1,5 +1,10 @@
 var url;
 var docs = [];
+var GONATIVE = false;
+
+if ( navigator.userAgent.indexOf('gonative') > -1 ) {
+    GONATIVE = true;
+}
 
 $( document ).ready(
     function(){
@@ -229,7 +234,7 @@ $( document ).ready(
                 obj.fromDirectory = 0;
                 obj.moveToDirectory = folder.val();
 
-                if (navigator.userAgent.indexOf('gonative') > -1) {
+                if ( GONATIVE ) {
                     if(data == true){
                         $.post( href, obj, function(data) {
                             alert(labels[LANG]['ADD_DOC_SUCCESS']+' '+folder.next().text());
