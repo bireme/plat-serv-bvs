@@ -4,6 +4,7 @@ client/config.php
 client/out.log
 client/connector/facebook/config.php
 client/connector/google/config.php
+client/images/default/uploads/
 server/out.log
 server/config.php
 server/config.ldap.php
