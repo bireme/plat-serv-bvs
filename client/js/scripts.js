@@ -1,10 +1,5 @@
 var url;
 var docs = [];
-var GONATIVE = false;
-
-if ( navigator.userAgent.indexOf('gonative') > -1 ) {
-    GONATIVE = true;
-}
 
 $( document ).ready(
     function(){
@@ -233,11 +228,13 @@ $( document ).ready(
                 obj.document = $.trim(id);
                 obj.fromDirectory = 0;
                 obj.moveToDirectory = folder.val();
+                obj.docsrc = btoa('pesquisa.bvsalud.org');
 
-                if ( GONATIVE ) {
+                if ( window.opener.navigator.userAgent.indexOf('gonative') > -1 ) {
                     if(data == true){
                         $.post( href, obj, function(data) {
                             alert(labels[LANG]['ADD_DOC_SUCCESS']+' '+folder.next().text());
+                            window.close();
                         });
                     }else if(typeof response == 'object'){
                         if ( response.dir == 'INCOMING_FOLDER' ) {
@@ -245,11 +242,11 @@ $( document ).ready(
                         } else {
                             alert(labels[LANG]['DOC_EXISTS']+' '+response.dir);
                         }
+                        window.close();
                     }else{
                         alert(labels[LANG]['ADD_DOC_FAIL']);
+                        window.close();
                     }
-
-                    window.close();
                 } else {
                     if(data == true){
                         $.post( href, obj, function(data) {

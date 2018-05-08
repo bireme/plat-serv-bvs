@@ -17,6 +17,7 @@ require_once(dirname(__FILE__)."/../classes/DocsCollection.php");
 if ($_REQUEST["task"] === null){
     $_REQUEST["task"] = "list";
 }
+
 switch($_REQUEST["task"]){
     case "list":
         $result = DocsCollection::listDirs($_SESSION["userTK"]);        
@@ -64,7 +65,6 @@ switch($_REQUEST["task"]){
         }
         $responseListDirs["values"] = $resultListDirs;
 
-        //$response["status"] = false;
         if ($_REQUEST["mode"] == "delete"){
             $result = DocsCollection::remDir($_SESSION["userTK"],$_REQUEST["removeDir"]);
             $response["values"] = $result;
