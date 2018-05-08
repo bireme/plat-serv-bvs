@@ -45,6 +45,8 @@
         <script type="text/javascript" src="<?=RELATIVE_PATH?>/vendors/jquery/dist/jquery.min.js"></script>
         <!-- Bootstrap -->
         <script type="text/javascript" src="<?=RELATIVE_PATH?>/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+        <!-- Datatables -->
+        <script type="text/javascript" src="<?=RELATIVE_PATH?>/vendors/datatables.net/js/jquery.dataTables.min.js"></script>
         <!-- Custom Theme Scripts -->
         <script type="text/javascript" src="<?=RELATIVE_PATH?>/build/js/custom.js"></script>
         <!-- Translations Scripts -->

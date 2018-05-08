@@ -433,15 +433,13 @@ $( document ).ready(
 
         combinePopover();
 
-        if ( typeof DataTable === "function" ) {
-            $('#datatable-search').DataTable( {
-                paging: false,
-                ordering: false,
-                info: false,
-                searching: false,
-                responsive: true
-            } );
-        }
+        $('#datatable-search').DataTable( {
+            paging: false,
+            ordering: false,
+            info: false,
+            searching: false,
+            responsive: true
+        } );
 
         $('span.show-all').on('click', function(e){
             e.preventDefault();

@@ -76,7 +76,7 @@
     <script type="text/javascript">
         var MY_VHL_DOMAIN = window.location.protocol + '//' + window.location.hostname;
         var LANG = "<?php echo $_SESSION['lang'] ? $_SESSION['lang'] : DEFAULT_LANG; ?>";
-        var TOUR = "<?php echo $tour; ?>";
+        var TOUR = MY_VHL_DOMAIN + "<?php echo $tour; ?>";
         var PROFILE_PAGE = "<?php echo $profile_page; ?>";
         var PASSWORD_PAGE = "<?php echo $password_page; ?>";
     </script>
