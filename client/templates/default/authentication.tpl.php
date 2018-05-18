@@ -26,6 +26,17 @@
                     </h1>
                 </div>
             </div>
+            <form class="public_search_bar" action="<?php echo VHL_SEARCH_PORTAL_DOMAIN.'/portal/'; ?>" method="get" target="_blank">
+                <div class="search_bar">
+                    <div class="col-xs-11 form-group pull-right top_search">
+                        <div class="input-group">
+                            <input type="text" name="q" class="form-control" placeholder="<?=$trans->getTrans('menu','SEARCH_FOR')?>">
+                            <span class="input-group-btn"><button class="btn btn-default" type="submit"><?=$trans->getTrans('menu','SEARCH')?></button></span>
+                            <input type="hidden" name="lang" value="<?=$_SESSION['lang']?>">
+                        </div>
+                    </div>
+                </div>
+            </form>
             <?php if ( 'recover' == $_REQUEST["task"] ) : ?>
             <div class="row omb_row-sm-offset-3 omb_description">
                 <div class="col-xs-12 col-sm-6">

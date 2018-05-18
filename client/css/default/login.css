@@ -249,6 +249,12 @@
     width: 20%;
 }
 
+.public_search_bar {
+    width: 100%;
+    margin-bottom: -35px;
+    display: none;
+}
+
 @media (min-width: 1200px) {
     body.main_page .container {
         width: 1162px;
