@@ -73,5 +73,11 @@
         });
     </script>
     <?php endif; ?>
+    
+    <?php if ( $_SESSION['userTK'] ) : ?>
+    <script type="text/javascript" src="/app/js/<?php echo $_SESSION['lang']; ?>/menu.<?php echo $_SESSION['lang']; ?>.js"></script>
+    <?php else : ?>
+    <script type="text/javascript" src="/app/js/<?php echo $_SESSION['lang']; ?>/main.menu.<?php echo $_SESSION['lang']; ?>.js"></script>
+    <?php endif; ?>
   </body>
 </html>

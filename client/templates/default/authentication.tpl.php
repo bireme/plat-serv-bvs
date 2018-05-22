@@ -198,6 +198,4 @@
         </div>
     </div>
 
-    <script type="text/javascript" src="/app/js/<?php echo $_SESSION['lang']; ?>/main.menu.<?php echo $_SESSION['lang']; ?>.js"></script>
-
 <?require_once(dirname(__FILE__)."/footer.tpl.php");?>
