@@ -5,7 +5,7 @@
     "enableWindowOpen": true,
     "useCrosswalkWebView": false,
     "forceScreenOrientation": null,
-    "initialUrl": "https?://platserv.bvsalud.org",
+    "initialUrl": "http://platserv.bvsalud.org",
     "appName": "Minha BVS",
     "iosBundleId": "org.bvsalud.platserv",
     "androidPackageName": "org.bvsalud.platserv",
@@ -51,12 +51,12 @@
           "items": [
             {
               "label": "Sample Home",
-              "url": "https?://platserv.bvsalud.org/home",
+              "url": "http://platserv.bvsalud.org/home",
               "subLinks": []
             },
             {
               "label": "Sample About",
-              "url": "https?://platserv.bvsalud.org/about",
+              "url": "http://platserv.bvsalud.org/about",
               "subLinks": []
             }
           ],
