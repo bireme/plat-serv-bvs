@@ -60,11 +60,6 @@ if (navigator.userAgent.indexOf('gonative') > -1) {
                         "subLinks": []
                       },
                       {
-                        "url": TOUR,
-                        "label": "Iniciar Tour",
-                        "subLinks": []
-                      },
-                      {
                         "url": "http://feedback.bireme.org/feedback/my-vhl?version=2.10-77&site=servplat&lang"+LANG,
                         "label": "Enviar comentario",
                         "subLinks": []
@@ -137,11 +132,6 @@ if (navigator.userAgent.indexOf('gonative') > -1) {
                       {
                         "url": PROFILE_PAGE,
                         "label": "Editar Perfil",
-                        "subLinks": []
-                      },
-                      {
-                        "url": TOUR,
-                        "label": "Iniciar Tour",
                         "subLinks": []
                       },
                       {

@@ -83,7 +83,67 @@
       "levels": [
         {
           "level": 1,
-          "regex": "https?://platserv\\.bvsalud\\.org.*"
+          "regex": "http://platserv.bvsalud.org/?"
+        },
+        {
+          "level": 1,
+          "regex": "http://platserv.bvsalud.org/client/controller/authentication.*"
+        },
+        {
+          "level": 2,
+          "regex": "http://platserv.bvsalud.org/server/pub/userData.php.+"
+        },
+        {
+          "level": 2,
+          "regex": "http://platserv.bvsalud.org/client/controller/authentication/task/recover/?"
+        },
+        {
+          "level": 2,
+          "regex": "http://platserv.bvsalud.org/client/controller/authentication/task/describe/?"
+        },
+        {
+          "level": 2,
+          "regex": "http://platserv.bvsalud.org/client/controller/mydocuments/control/business/?"
+        },
+        {
+          "level": 2,
+          "regex": "http://platserv.bvsalud.org/client/controller/myprofiledocuments/control/business/?"
+        },
+        {
+          "level": 2,
+          "regex": "http://platserv.bvsalud.org/client/controller/mysearches/control/business/?"
+        },
+        {
+          "level": 2,
+          "regex": "http://platserv.bvsalud.org/client/controller/mylinks/control/business/?"
+        },
+        {
+          "level": 2,
+          "regex": "http://platserv.bvsalud.org/client/controller/orcidworks/control/business/?"
+        },
+        {
+          "level": 2,
+          "regex": "http://platserv.bvsalud.org/client/controller/searchresults/control/business/?"
+        },
+        {
+          "level": 2,
+          "regex": "http://platserv.bvsalud.org/connector/facebook/.+"
+        },
+        {
+          "level": 2,
+          "regex": "http://platserv.bvsalud.org/connector/google/.+"
+        },
+        {
+          "level": 3,
+          "regex": "http://platserv.bvsalud.org/server/pub/forgotPassword.php.+"
+        },
+        {
+          "level": 3,
+          "regex": "http://platserv.bvsalud.org/server/pub/removeAccount.php.+"
+        },
+        {
+          "level": 3,
+          "regex": "http://platserv.bvsalud.org/client/controller/searchresults/control/business/rss/.+"
         }
       ],
       "active": true
@@ -132,6 +192,10 @@
           "internal": true
         },
         {
+          "regex": "https?://m.facebook\\.com.*",
+          "internal": true
+        },
+        {
           "regex": "https?://([-\\w]+\\.)*twitter\\.com/.*",
           "internal": false
         },
@@ -152,6 +216,10 @@
           "internal": false
         },
         {
+          "regex": "https?://accounts\\.google\\.com.*",
+          "internal": true
+        },
+        {
           "regex": "https?://([-\\w]+\\.)*google\\.com/maps/search/.*",
           "internal": false
         },
@@ -162,6 +230,10 @@
         {
           "regex": "https?://feedback\\.bireme\\.org.*",
           "internal": false
+        },
+        {
+          "regex": "https?://accounts\\.bireme\\.org/accounts/password/reset/.*",
+          "internal": true
         },
         {
           "regex": ".*",
@@ -221,7 +293,7 @@
       "ios_launch_2436x1125": "https://s3.amazonaws.com/gonativeio/images_generated/1522849465070_8npp3z5wk2wny_2436x1125.png"
     },
     "androidStatusBarBackgroundColor": "#909090",
-    "customCSS": ".main_page .omb_login .languages {\n    padding: 6px;\n}\n\n.main_page .omb_login .languages span {\n    display: none;\n}\n\n.nav_menu {\n    margin-bottom: 10px !important;\n}\n\n.nav_menu .toggle {\n    display: none;\n}\n\n.nav_menu .top_menu {\n    margin-top: 70px;\n}\n\n.nav_menu .top_menu ul {\n    display: none;\n}\n\n.nav_menu nav form {\n    margin-top: 0;\n}\n\n.footer .links {\n    display: none;\n}\n\n.public_search_bar {\n    display: block;\n}"
+    "customCSS": ".main_page .omb_login .languages {\n    padding: 6px;\n}\n\n.main_page .omb_login .languages span {\n    display: none;\n}\n\n.main_page .omb_login .omb_socialButtons .google-conn {\n    display: none;\n}\n\n.main_page .omb_login .omb_socialButtons .facebook-conn {\n    width: 100%;\n}\n\n.main_page .omb_login .omb_socialButtons .facebook-conn i.fa.fa-facebook.visible-xs {\n    display: none !important;\n}\n\n.main_page .omb_login .omb_socialButtons .facebook-conn span.hidden-xs {\n    display: inline-block !important;\n}\n\n.nav_menu {\n    margin-bottom: 10px !important;\n}\n\n.nav_menu .toggle {\n    display: none;\n}\n\n.nav_menu .top_menu {\n    margin-top: 70px;\n}\n\n.nav_menu .top_menu ul {\n    display: none;\n}\n\n.nav_menu nav form {\n    margin-top: 0;\n}\n\n.footer .links {\n    display: none;\n}\n\n.public_search_bar {\n    display: block;\n}"
   },
   "forms": {
     "search": {
@@ -237,7 +309,7 @@
     }
   },
   "permissions": {
-    "usesGeolocation": true,
+    "usesGeolocation": false,
     "androidDownloadToPublicStorage": false,
     "enableWebRTC": false
   },
