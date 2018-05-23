@@ -95,13 +95,13 @@
                         </div>
                     </div>
                     <div class="row omb_row-sm-offset-3 omb_socialButtons">
-                        <div class="col-xs-6 col-sm-3">
+                        <div class="col-xs-6 col-sm-3 facebook-conn">
                             <a href="/connector/facebook/<?php echo $build_query; ?>" class="btn btn-lg btn-block omb_btn-facebook">
                                 <i class="fa fa-facebook visible-xs"></i>
                                 <span class="hidden-xs">Facebook</span>
                             </a>
                         </div>
-                        <div class="col-xs-6 col-sm-3">
+                        <div class="col-xs-6 col-sm-3 google-conn">
                             <a href="/connector/google/<?php echo $build_query; ?>" class="btn btn-lg btn-block omb_btn-google">
                                 <i class="fa fa-google visible-xs"></i>
                                 <span class="hidden-xs">Google</span>
@@ -116,7 +116,7 @@
                     </div>
                     <div class="row">
                         <div class="col-xs-12 col-sm-12">
-                            <form class="omb_loginForm" action="<?=RELATIVE_PATH?>/controller/authentication" method="POST">
+                            <form name="omb_loginForm" class="omb_loginForm" action="<?=RELATIVE_PATH?>/controller/authentication" method="POST">
                                 <input type="hidden" name="origin" value="<?php echo $origin; ?>" />
                                 <input type="hidden" name="control" value="business" />
                                 <input type="hidden" name="action" value="authentication" />
@@ -153,7 +153,7 @@
                             </p>
                         </div>
                         <div class="col-xs-12 col-sm-2">
-                            <button class="btn btn-lg btn-primary btn-block btn-login" type="submit" onclick="document.forms[0].submit();"><?=$trans->getTrans($_REQUEST["action"],'LOGIN')?></button>
+                            <button class="btn btn-lg btn-primary btn-block btn-login" type="submit" onclick="document.forms['omb_loginForm'].submit();"><?=$trans->getTrans($_REQUEST["action"],'LOGIN')?></button>
                         </div>
                     </div>
                     <div class="row omb_spacer">
