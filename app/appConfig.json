@@ -5,7 +5,7 @@
     "enableWindowOpen": true,
     "useCrosswalkWebView": false,
     "forceScreenOrientation": null,
-    "initialUrl": "http://platserv.bvsalud.org",
+    "initialUrl": "https?://platserv.bvsalud.org",
     "appName": "Minha BVS",
     "iosBundleId": "org.bvsalud.platserv",
     "androidPackageName": "org.bvsalud.platserv",
@@ -51,12 +51,12 @@
           "items": [
             {
               "label": "Sample Home",
-              "url": "http://platserv.bvsalud.org/home",
+              "url": "https?://platserv.bvsalud.org/home",
               "subLinks": []
             },
             {
               "label": "Sample About",
-              "url": "http://platserv.bvsalud.org/about",
+              "url": "https?://platserv.bvsalud.org/about",
               "subLinks": []
             }
           ],
@@ -83,67 +83,67 @@
       "levels": [
         {
           "level": 1,
-          "regex": "http://platserv.bvsalud.org/?"
+          "regex": "https?://platserv.bvsalud.org/?"
         },
         {
           "level": 1,
-          "regex": "http://platserv.bvsalud.org/client/controller/authentication.*"
+          "regex": "https?://platserv.bvsalud.org/client/controller/authentication/?"
         },
         {
           "level": 2,
-          "regex": "http://platserv.bvsalud.org/server/pub/userData.php.+"
+          "regex": "https?://platserv.bvsalud.org/server/pub/userData.php.+"
         },
         {
           "level": 2,
-          "regex": "http://platserv.bvsalud.org/client/controller/authentication/task/recover/?"
+          "regex": "https?://platserv.bvsalud.org/client/controller/authentication/task/recover/?"
         },
         {
           "level": 2,
-          "regex": "http://platserv.bvsalud.org/client/controller/authentication/task/describe/?"
+          "regex": "https?://platserv.bvsalud.org/client/controller/authentication/task/describe/?"
         },
         {
           "level": 2,
-          "regex": "http://platserv.bvsalud.org/client/controller/mydocuments/control/business/?"
+          "regex": "https?://platserv.bvsalud.org/client/controller/mydocuments/control/business/?"
         },
         {
           "level": 2,
-          "regex": "http://platserv.bvsalud.org/client/controller/myprofiledocuments/control/business/?"
+          "regex": "https?://platserv.bvsalud.org/client/controller/myprofiledocuments/control/business/?"
         },
         {
           "level": 2,
-          "regex": "http://platserv.bvsalud.org/client/controller/mysearches/control/business/?"
+          "regex": "https?://platserv.bvsalud.org/client/controller/mysearches/control/business/?"
         },
         {
           "level": 2,
-          "regex": "http://platserv.bvsalud.org/client/controller/mylinks/control/business/?"
+          "regex": "https?://platserv.bvsalud.org/client/controller/mylinks/control/business/?"
         },
         {
           "level": 2,
-          "regex": "http://platserv.bvsalud.org/client/controller/orcidworks/control/business/?"
+          "regex": "https?://platserv.bvsalud.org/client/controller/orcidworks/control/business/?"
         },
         {
           "level": 2,
-          "regex": "http://platserv.bvsalud.org/client/controller/searchresults/control/business/?"
+          "regex": "https?://platserv.bvsalud.org/client/controller/searchresults/control/business/?"
         },
         {
           "level": 2,
-          "regex": "http://platserv.bvsalud.org/connector/facebook/.+"
+          "regex": "https?://platserv.bvsalud.org/connector/facebook/.+"
         },
         {
           "level": 2,
-          "regex": "http://platserv.bvsalud.org/connector/google/.+"
+          "regex": "https?://platserv.bvsalud.org/connector/google/.+"
         },
         {
           "level": 3,
-          "regex": "http://platserv.bvsalud.org/server/pub/forgotPassword.php.+"
+          "regex": "https?://platserv.bvsalud.org/server/pub/forgotPassword.php.+"
         },
         {
           "level": 3,
-          "regex": "http://platserv.bvsalud.org/server/pub/removeAccount.php.+"
+          "regex": "https?://platserv.bvsalud.org/server/pub/removeAccount.php.+"
         },
         {
           "level": 3,
-          "regex": "http://platserv.bvsalud.org/client/controller/searchresults/control/business/rss/.+"
+          "regex": "https?://platserv.bvsalud.org/client/controller/searchresults/control/business/rss/.+"
         }
       ],
       "active": true
