@@ -85,9 +85,9 @@
                 <div class="search_bar">
                   <div class="col-xs-11 form-group pull-right top_search">
                     <div class="input-group">
-                        <input type="text" name="q" class="form-control" placeholder="<?=$trans->getTrans('menu','SEARCH_FOR')?>">
+                        <input type="text" id="q" name="q" class="form-control" placeholder="<?=$trans->getTrans('menu','SEARCH_FOR')?>">
                         <span class="input-group-btn">
-                          <button class="btn btn-default" type="submit"><?=$trans->getTrans('menu','SEARCH')?></button>
+                          <button class="btn btn-default" type="submit" onclick="__gaTracker('send','event','My VHL','VHL Search Bar',document.getElementById('q').value);"><?=$trans->getTrans('menu','SEARCH')?></button>
                         </span>
                         <input type="hidden" name="lang" value="<?=$_SESSION['lang']?>">
                     </div>
