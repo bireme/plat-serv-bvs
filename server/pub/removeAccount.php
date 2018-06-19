@@ -78,7 +78,7 @@ if(!empty($userID)){
     $isUser = false;
 }
 
-$DocTitle = CHANGE_PASSWORD;
+$DocTitle = REMOVE_ACCOUNT;
 
 ?>
 
@@ -105,6 +105,11 @@ $DocTitle = CHANGE_PASSWORD;
             <div class="row">
               <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
+
+                  <?php if ( $callerURL && $retValue ) : ?>
+                  <div class="breadcrumb"><a href="<?=$callerURL?>"><?=INDEX?></a> &gt; <?=REMOVE_ACCOUNT?></div>
+                  <?php endif; ?>
+                  
                   <div class="x_content">
                     <?php if ( $retValue === true ) : ?>
                     <div class="alert alert-success alert-dismissible fade in" role="alert">

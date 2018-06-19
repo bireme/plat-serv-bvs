@@ -32,8 +32,32 @@
     <!-- Theme Style -->
     <link href="<?=RELATIVE_PATH?>/css/<?=$_SESSION["skin"]?>/style.css" type="text/css" rel="stylesheet" />
 
+    <?php
+        $b64HttpHost = base64_encode(RELATIVE_PATH.'/controller/authentication');
+
+        // Profile page link
+        $profile_page = SERVICES_PLATFORM_DOMAIN . "/pub/userData.php?userTK=" . urlencode($_SESSION["userTK"]) . "&c=" . $b64HttpHost;
+
+        // Password page link
+        $password_page = "";
+        if ( empty($_SESSION["source"]) || 'ldap' == $_SESSION["source"] ) {
+            $password_page = SERVICES_PLATFORM_DOMAIN . "/pub/changePassword.php?userTK=" . urlencode($_SESSION["userTK"]) . "&c=" . $b64HttpHost;
+        }
+
+        // My VHL tour link
+        if ( 'menu' == $_REQUEST["action"] ) {
+            $tour = RELATIVE_PATH . "/controller/authentication/?tour=true";
+        } else {
+            $tour = RELATIVE_PATH . "/controller/" . $_REQUEST['action'] . "/control/business/?multipage=true";
+        }
+    ?>
+
     <script type="text/javascript">
+        var MY_VHL_DOMAIN = window.location.protocol + '//' + window.location.hostname;
         var LANG = "<?php echo $_SESSION['lang'] ? $_SESSION['lang'] : DEFAULT_LANG; ?>";
+        var TOUR = MY_VHL_DOMAIN + "<?php echo $tour; ?>";
+        var PROFILE_PAGE = "<?php echo $profile_page; ?>";
+        var PASSWORD_PAGE = "<?php echo $password_page; ?>";
     </script>
 
     <?php if ( !empty(GOOGLE_ANALYTICS) ) : ?>

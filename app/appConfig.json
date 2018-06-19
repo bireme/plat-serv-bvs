@@ -90,8 +90,12 @@
           "regex": "https?://platserv.bvsalud.org/client/controller/authentication/?"
         },
         {
-          "level": 2,
+          "level": 1,
           "regex": "https?://platserv.bvsalud.org/server/pub/userData.php.+"
+        },
+        {
+          "level": 1,
+          "regex": "https?://platserv.bvsalud.org/server/pub/removeAccount.php.+"
         },
         {
           "level": 2,
@@ -136,10 +140,6 @@
         {
           "level": 3,
           "regex": "https?://platserv.bvsalud.org/server/pub/forgotPassword.php.+"
-        },
-        {
-          "level": 3,
-          "regex": "https?://platserv.bvsalud.org/server/pub/removeAccount.php.+"
         },
         {
           "level": 3,
