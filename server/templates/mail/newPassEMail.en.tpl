@@ -1,7 +1,7 @@
 <div>
     <p>Dear #USERNAME#,</p>
 
-    <p><a href="http://#SITE#/server/pub/forgotPassword.php?c=#HOME#&email=#EMAIL#&key=#KEY#&action=confirmar&lang=#LANG#">Click here to confirm the sending of a new password.</a></p>
+    <p><a href="http://#SITE#/server/pub/forgotPassword.php?c=#HOME#&email=#EMAIL#&key=#KEY#&acao=confirmar&lang=#LANG#">Click here to confirm the sending of a new password.</a></p>
 
     <p>Any questions or problems, <a href="http://feedback.bireme.org/feedback/?application=wp-bvs-plugin&version=2.10-77&site=servplat&lang=#LANG#">contact us.</a></p>
 
