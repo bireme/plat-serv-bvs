@@ -61,8 +61,10 @@ if ($gClient->getAccessToken()) {
         $_SESSION["iahx"] = base64_decode($iahx);
         //$response["status"] = true;
         //$response["values"] = $result;
-        setcookie("userTK", $result["userTK"], 0, '/', COOKIE_DOMAIN_SCOPE);
         UserData::sendCookie($result["userTK"]);
+        $cookie = UserData::sendCookie($result["userTK"], true);
+        setcookie("userData", $result["userTK"], 0, '/', COOKIE_DOMAIN_SCOPE);
+        setcookie("userTK", $result["userTK"], 0, '/', COOKIE_DOMAIN_SCOPE);
     }
 
     if ( isset($_REQUEST['state']) && !empty($_REQUEST['state']) ) {

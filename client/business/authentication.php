@@ -61,6 +61,8 @@ switch($_REQUEST["task"]){
                 // send cookie to .bvs.br
                 $send_cookie = true;
                 // send cookie to .bvsalud.org
+                $cookie = UserData::sendCookie($result["userTK"], true);
+                setcookie("userData", $cookie, 0, '/', COOKIE_DOMAIN_SCOPE);
                 setcookie("userTK", $result["userTK"], 0, '/', COOKIE_DOMAIN_SCOPE);
 
                 // SSO LOGIN
