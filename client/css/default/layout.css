@@ -671,7 +671,12 @@ small.update-alert {
 }
 
 small.update-alert p {
-    margin: 0
+    margin: 0;
+}
+
+small.doc-url {
+    display: block;
+    margin-top: 10px;
 }
 
 .public-link span {

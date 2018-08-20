@@ -1,4 +1,18 @@
-        <?php parse_str($_SERVER['QUERY_STRING'], $output); ?>
+<?php
+    $docURL = '';
+    $site   = '';
+
+    if ( strpos($_SESSION['iahx'], VHL_SEARCH_PORTAL_DOMAIN) !== false ) {
+        $chunks = explode('/', $_SESSION['iahx']);
+        $chunks = array_values(array_filter($chunks));
+
+        if ( count($chunks) > 2 && !empty($chunks[2]) ) {
+            $site  = $chunks[2];
+        }
+    }
+
+    parse_str($_SERVER['QUERY_STRING'], $output);
+?>
 
         <?require_once(dirname(__FILE__)."/header.tpl.php");?>
         <?require_once(dirname(__FILE__)."/sidebar.tpl.php");?>
@@ -62,9 +76,20 @@
                   <div class="x_content">
                     <?php if ( $collections ) : ?>
                       <?php foreach ( $collections as $col ) : ?>
+                        <?php
+                          if ( is_array($col["docURL"]) ) {
+                            if ( 'portal' != $_SESSION['iahx'] && !empty($site) && array_key_exists($site, $col['docURL']) ) {
+                              $docURL = $col['docURL'][$site];
+                            } else {
+                              $docURL = $col['docURL']['portal'];
+                            }
+                          } else {
+                            $docURL = $col['docURL'];
+                          }
+                        ?>
                         <article class="media event">
                           <div class="media-body">
-                            <a class="title" href="<?php echo $col['docURL'] ?>" target="_blank" onclick="__gaTracker('send','event','Overview','Favorite Documents','<?php echo htmlspecialchars($col['title']); ?>');"><i class="fa fa-file-o" aria-hidden="true"></i><?php echo $col['title'] ?></a>
+                            <a class="title" href="<?php echo $docURL; ?>" target="_blank" onclick="__gaTracker('send','event','Overview','Favorite Documents','<?php echo htmlspecialchars($col['title']); ?>');"><i class="fa fa-file-o" aria-hidden="true"></i><?php echo $col['title'] ?></a>
                           </div>
                         </article>
                       <?php endforeach; ?>

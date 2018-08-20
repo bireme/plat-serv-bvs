@@ -92,6 +92,7 @@ usuário para oferecer serviços personalizados e facilidades tais como:</p>
         self::$trans["new_pass"]["CANCEL"] = 'cancelar';
 
     // Terms of the menu pages
+        self::$trans["menu"]["VHL_PORTAL"] = 'Portal Regional da BVS';
         self::$trans["menu"]["FEATURE"] = 'Visão Geral';
         self::$trans["menu"]["MY_VHL"] = 'Minha BVS';
         self::$trans["menu"]["SERVPLAT"] = 'Plataforma de Serviços';
@@ -268,6 +269,7 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
         self::$trans["mydocuments"]["UPDATED_IN"] = 'Atualizado em:';
         self::$trans["mydocuments"]["TOTAL_DOCS"] = 'Total de documentos:';
         self::$trans["mydocuments"]["COLLECTION_DOCS"] = 'Coleção de Documentos';
+        self::$trans["mydocuments"]["AVAILABLE_IN"] = 'Disponível em:';
 
     // Tems of directories pages
         self::$trans["directories"]["FEATURE"] = 'Documentos Favoritos';

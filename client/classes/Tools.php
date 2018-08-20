@@ -212,4 +212,49 @@ class UserData {
     }
 
 }
+
+class Generic {
+
+    public static function unique_list_docs($array, $key) { 
+        // walk input array
+        $_data = array();
+
+        foreach ($array as $v) {
+            // found duplicate
+            if (isset($_data[$v[$key]])) {
+                // docURL
+                $docURL = array();
+                $site = end(explode('/', $v['srcID']));
+                $_site = end(explode('/', $_data[$v[$key]]['srcID']));
+
+                if ( is_array($_data[$v[$key]]['docURL']) ) {
+                    $docURL = $_data[$v[$key]]['docURL'];
+                    $docURL[$site] = $v['docURL'];
+                } else {
+                    $docURL[$site] = $v['docURL'];
+                    $docURL[$_site] = $_data[$v[$key]]['docURL'];
+                }
+
+                // update doc with the latest data
+                if ( $_data[$v[$key]]['process_date'] < $v['process_date'] ) {
+                    $_data[$v[$key]] = $v;
+                }
+
+                $_data[$v[$key]]['docURL'] = $docURL;
+
+                continue;
+            }
+
+            // remember unique item
+            $_data[$v[$key]] = $v;
+        }
+
+        // if you need a zero-based array, otheriwse work with $_data
+        $data = array_values($_data);
+
+        return $data;
+    } 
+
+}
+
 ?>

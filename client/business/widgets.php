@@ -23,6 +23,7 @@ $params["count"]  = WIDGETS_ITEMS_LIMIT;
 
 // My Collections widget
 $collections = DocsCollection::listDocs( $_SESSION['userTK'], null, $params );
+$collections = Generic::unique_list_docs($collections, 'docID');
 $totalCollections = DocsCollection::getTotalDocs( $_SESSION["userTK"], null, true );
 
 // My Links widget

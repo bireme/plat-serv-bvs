@@ -2,7 +2,25 @@
     if ( in_array( $_REQUEST["task"], array( 'rate', 'removedoc' ) ) )
         header("Location: " . $_SERVER['HTTP_REFERER']);
 
-    $directory = $_REQUEST["directory"] ? $_REQUEST["directory"] : 0;
+    $docURL = '';
+    $site   = '';
+    $label  = '';
+
+    if ( strpos($_SESSION['iahx'], VHL_SEARCH_PORTAL_DOMAIN) !== false ) {
+        $chunks = explode('/', $_SESSION['iahx']);
+        $chunks = array_values(array_filter($chunks));
+
+        if ( count($chunks) > 2 && !empty($chunks[2]) ) {
+            $site  = $chunks[2];
+            $label = $trans->getTrans("mysearches", strtoupper($site));
+
+            if ( strpos($label, 'translate_') !== false ) {
+                $label = strtoupper($site);
+            }
+        }
+    }
+
+    $directory   = $_REQUEST["directory"] ? $_REQUEST["directory"] : 0;
     $public_link = "http://".$_SERVER['HTTP_HOST']."/".$_SESSION['lang']."/".base64_encode($_SESSION['userID'])."/".$directory;
 ?>
 
@@ -73,12 +91,26 @@
                                         <?if ($register["rate"] >= 5){?><a href="<?=RELATIVE_PATH?>/controller/mydocuments/control/business/task/rate/document/<?=$register["docID"]?>/grade/4/directory/<?=$register["dirID"]?>"><img src="<?=RELATIVE_PATH?>/images/<?=$_SESSION["skin"]?>/starOn.png" border="0" class="star" /></a><?}else{?><a href="<?=RELATIVE_PATH?>/controller/mydocuments/control/business/task/rate/document/<?=$register["docID"]?>/grade/5/directory/<?=$register["dirID"]?>"><img src="<?=RELATIVE_PATH?>/images/<?=$_SESSION["skin"]?>/starOff.png" border="0" class="star" /></a><?}?>
                                     </div>
                                     <div class="record">
-                                        <?php if ( $register["docURL"] ) : ?>
-                                          <a href="<?php echo $register["docURL"]; ?>" target="_blank"><?php echo $register["title"]; ?></a>
+                                        <?php if ( is_array($register["docURL"]) ) : ?>
+                                            <?php if ( 'portal' != $_SESSION['iahx'] && !empty($site) && array_key_exists($site, $register['docURL']) ) : ?>
+                                                <?php echo $register["title"]; ?>
+                                            <?php else : ?>
+                                                <a href="<?php echo $register["docURL"]["portal"]; ?>" target="_blank"><?php echo $register["title"]; ?></a>
+                                            <?php endif; ?>
                                         <?php else : ?>
-                                          <?php echo $register["title"]; ?>
+                                            <a href="<?php echo $register["docURL"]; ?>" target="_blank"><?php echo $register["title"]; ?></a>
                                         <?php endif; ?>
-                                        <small style="display: block;"><?php echo $register["authors"]; ?></small>
+
+                                        <?php if ( $register["authors"] ) : ?>
+                                            <?php $authors = explode('.', $register['authors']); ?>
+                                            <small style="display: block;"><?php echo $authors[0].'.'; ?></small>
+                                        <?php endif; ?>
+
+                                        <?php if ( is_array($register["docURL"]) && 'portal' != $_SESSION['iahx'] && !empty($site) && array_key_exists($site, $register['docURL']) ) : ?>
+                                            <small class="doc-url">
+                                                <?php echo $trans->getTrans($_REQUEST["action"],'AVAILABLE_IN'); ?> <a href="<?php echo $register["docURL"][$site]; ?>" target="_blank"><?php echo $label; ?></a> | <a href="<?php echo $register["docURL"]["portal"]; ?>" target="_blank"><?php echo $trans->getTrans("menu",'VHL_PORTAL'); ?></a>
+                                            </small>
+                                        <?php endif; ?>
                                     </div>
                                     <?if ($register["dirID"] == null){ $dirID = 0; }?>
                                     <div class="doc-actions">
