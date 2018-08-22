@@ -1,7 +1,7 @@
 <?php
     $location = RELATIVE_PATH.'/controller/mysearches/control/business';
 
-    if ( isset($_REQUEST['page']) ) {
+    if ( isset($_REQUEST['page']) && $_REQUEST['page'] > 1 ) {
         $page = $_REQUEST['page'];
 
         if ( $response["values"] && count($response["values"]) == 1 ) {
