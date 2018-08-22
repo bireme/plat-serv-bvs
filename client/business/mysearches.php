@@ -56,7 +56,7 @@ switch($_REQUEST["task"]){
         $retParams = $obj->getParams();
         $result = $obj->disableQuery($retParams['userID'], $query, $filter);
 
-        $response["values"] = $result;
+        $response["values"] = false;
         $response["status"] = true;
     break;
     default:

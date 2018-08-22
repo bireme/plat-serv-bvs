@@ -1,6 +1,16 @@
 <?php
     $location = RELATIVE_PATH.'/controller/mysearches/control/business';
 
+    if ( isset($_REQUEST['page']) ) {
+        $page = $_REQUEST['page'];
+
+        if ( $response["values"] && count($response["values"]) == 1 ) {
+            $page = $_REQUEST['page'] - 1;
+        }
+
+        $location = $location.'/page/'.$page;
+    }
+
     if ( 'delete' == $_REQUEST["task"] ) {
         header("Location: ".$location);
     }
