@@ -817,7 +817,7 @@ class SimilarDocs {
      * @return string $authors Similar document authors
      */
     public static function getSimilarDocAuthors($authors){
-        $authors = ( is_array($authors) ) ? implode("; ", $authors) : $authors;
+        $authors = ( is_array($authors) ) ? implode("; ", array_filter($authors)) : $authors;
         return CharTools::mysql_escape_mimic($authors);
     }
 
