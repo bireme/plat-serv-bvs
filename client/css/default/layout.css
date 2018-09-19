@@ -713,6 +713,7 @@ body.at-expanded-menu-noscroll .bs-public-modal-lg {
 div.item.reason.bad {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 div.item.reason.bad > div:first-child {
@@ -994,7 +995,7 @@ and (max-device-width : 736px) {
     }
 
     .item.bad .alert {
-        margin: 20px;
+        margin: 20px auto;
     }
 
     .nav-sm .x_title {
