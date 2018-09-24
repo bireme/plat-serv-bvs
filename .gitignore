@@ -2,10 +2,10 @@ servicesplatform.sql
 client/.htaccess
 client/config.php
 client/out.log
-client/connector/facebook/config.php
-client/connector/google/config.php
 client/images/default/uploads/
 server/out.log
 server/config.php
 server/config.ldap.php
 server/instances_code.php
+connector/facebook/config.php
+connector/google/config.php
