@@ -92,7 +92,7 @@ if (isset($accessToken)) {
 }
 
 if (! isset($accessToken)) {
-    if ($helper->getError()) {
+    if ($helper->getError() || $helper->getErrorCode()) {
         if ( isset($_REQUEST['origin']) && !empty($_REQUEST['origin']) ) {
             $origin = 'origin/'.$_REQUEST['origin'].'/';
             $homeURL .= $origin;

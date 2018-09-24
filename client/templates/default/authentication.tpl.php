@@ -133,7 +133,7 @@
                                     <input type="password" name="userPass" maxlenght="15" class="form-control" placeholder="<?=$trans->getTrans($_REQUEST['action'],'PASSWORD')?>"/>
                                 </div>
                                 <span class="help-block"></span>
-                                <? if ($_GET['error'] && $_GET['error'] == 'access_denied' ){ ?>
+                                <? if (($_GET['error'] && $_GET['error'] == 'access_denied') || $_GET['error_code'] ){ ?>
                                     <span class="help-block"><?=$trans->getTrans($_REQUEST["action"],'ACCESS_DENIED')?></span>
                                 <? } ?>
                                 <? if ($response['values']['status'] === false){ ?>
