@@ -403,11 +403,11 @@ div.related_docs p {
 }
 
 .nav-sm .logo-md {
-    display:none !important;
+    display: none !important;
 }
 
 .nav-sm .logo-sm {
-    display:block !important;
+    display: block !important;
 }
 
 .nav-sm .navbar.nav_title {

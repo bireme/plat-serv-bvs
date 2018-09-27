@@ -58,17 +58,15 @@
 	margin-top: -10px;
 }
 
-
 .omb_login .omb_authTitle span {
-	display:none !important;
+	display: none !important;
 }
 
 .omb_login .omb_authTitle .logo-bireme {
     float: right;
     margin-top: 30px;
-	margin-left:3%;
+	margin-left: 3%;
 }
-
 
 .omb_description .col-xs-12 {
     background: #fdfbfb;
@@ -80,7 +78,6 @@
 
 .omb_login .omb_authTitle img.logo {
     float: left;
-
 }
 
 .omb_description {
@@ -241,6 +238,7 @@
     padding: 10px 0;
 }
 
+.omb_login .omb_authTitle .logo-app,
 .omb_login .omb_authTitle .logo-bireme-vert {
     display: none;
 }
