@@ -76,7 +76,8 @@
     padding-left: 20px;
 }
 
-.omb_login .omb_authTitle img.logo {
+.omb_login .omb_authTitle img.logo,
+.omb_login .omb_authTitle img.logo-app {
     float: left;
 }
 
@@ -295,8 +296,23 @@
 
 @media only screen 
 and (max-device-width : 320px) {
-    .omb_login .omb_authTitle img.logo {
+    .omb_login .omb_authTitle img.logo,
+    .omb_login .omb_authTitle img.logo-app {
         margin-top: 10px;
+        position: absolute !important;
+    }
+
+    .omb_login .omb_authTitle img.logo {
+        left: 35px !important;
+    }
+
+    .omb_login .omb_authTitle img.logo-app {
+        left: 20px !important;
+    }
+
+    .omb_login .omb_authTitle img.logo-bireme-vert {
+        position: absolute;
+        right: 0;
     }
 
     .omb_login h1.omb_authTitle {
@@ -319,7 +335,8 @@ and (max-device-width : 736px) {
         display: block;
     }
 
-	.omb_login .omb_authTitle img.logo {
+	.omb_login .omb_authTitle img.logo,
+    .omb_login .omb_authTitle img.logo-app {
         position: relative;
         left: 30px;
     }
@@ -359,7 +376,8 @@ and (max-device-width : 1024px) {
         display: block;
     }
 
-	.omb_login .omb_authTitle img.logo {
+	.omb_login .omb_authTitle img.logo,
+    .omb_login .omb_authTitle img.logo-app {
         margin-left: 40px;
     }
 
