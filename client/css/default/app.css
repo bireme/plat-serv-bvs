@@ -46,3 +46,15 @@
 #nprogress {
     display: none;
 }
+
+.tile_count {
+    display: none;
+}
+
+.widgets .x_panel .x_content {
+    display: none;
+}
+
+.nav-md, .nav-sm {
+    background: #fff !important;
+}

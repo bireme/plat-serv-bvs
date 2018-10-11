@@ -18,7 +18,7 @@
         <?require_once(dirname(__FILE__)."/sidebar.tpl.php");?>
 
         <!-- page content -->
-        <div class="right_col" role="main">
+        <div class="right_col widgets" role="main">
             <!-- top tiles -->
             <div class="row tile_count">
               <div id="step7" class="col-md-3 col-sm-4 col-xs-6 tile_stats_count">
