@@ -1,0 +1,48 @@
+.omb_login .omb_authTitle .logo {
+    display: none;
+}
+
+.omb_login .omb_authTitle .logo-app {
+    display: block !important;
+    margin-top: 10px;
+}
+
+.main_page .omb_login .languages {
+    padding: 6px;
+}
+
+.main_page .omb_login .languages span {
+    display: none;
+}
+
+.nav_menu {
+    margin-bottom: 10px !important;
+}
+
+.nav_menu .toggle {
+    display: none;
+}
+
+.nav_menu .top_menu {
+    margin-top: 70px;
+}
+
+.nav_menu .top_menu ul {
+    display: none;
+}
+
+.nav_menu nav form {
+    margin-top: 0;
+}
+
+.footer .links {
+    display: none;
+}
+
+.public_search_bar {
+    display: block;
+}
+
+#nprogress {
+    display: none;
+}

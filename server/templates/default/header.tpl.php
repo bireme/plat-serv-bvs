@@ -32,6 +32,11 @@
     <!-- Theme Style -->
     <link href="<?=RELATIVE_PATH?>/css/<?=$_SESSION["skin"]?>/style.css" type="text/css" rel="stylesheet" />
 
+    <?php if ( strpos($_SERVER['HTTP_USER_AGENT'], 'gonative') !== false ) : ?>
+    <!-- App Style -->
+    <link href="<?=RELATIVE_PATH?>/css/<?=$_SESSION["skin"]?>/app.css" type="text/css" rel="stylesheet" />
+    <?php endif; ?>
+
     <?php
         $b64HttpHost = base64_encode(RELATIVE_PATH.'/controller/authentication');
 

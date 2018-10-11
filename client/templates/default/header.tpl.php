@@ -48,6 +48,11 @@
     <!-- Theme Style -->
     <link href="<?=RELATIVE_PATH?>/css/<?=$_SESSION["skin"]?>/style.css" type="text/css" rel="stylesheet" />
 
+    <?php if ( strpos($_SERVER['HTTP_USER_AGENT'], 'gonative') !== false ) : ?>
+    <!-- App Style -->
+    <link href="<?=RELATIVE_PATH?>/css/<?=$_SESSION["skin"]?>/app.css" type="text/css" rel="stylesheet" />
+    <?php endif; ?>
+
     <style type="text/css">@import url('<?=RELATIVE_PATH?>/vendors/introjs/themes/introjs-royal.css') (max-width: 768px);</style>
 
     <!-- Intro.js -->
