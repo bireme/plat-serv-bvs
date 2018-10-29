@@ -845,10 +845,6 @@ and (min-device-width : 768px) {
         width: auto !important;
         margin-left: 230px !important;
     }
-
-    .nav-md footer {
-        margin-left: 230px !important;
-    }
 }
 
 @media only screen
@@ -918,6 +914,10 @@ and (min-device-width : 1024px) {
 
     .nav-sm #menu_toggle .fa-chevron-circle-right {
         display: inline;
+    }
+
+    .nav-md footer {
+        margin-left: 230px !important;
     }
 }
 
