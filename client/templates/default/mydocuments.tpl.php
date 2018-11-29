@@ -207,7 +207,7 @@
                         <a class="addthis_button_whatsapp"></a>
                         <!--a class="addthis_button_compact"></a-->
                     </div>
-                    <script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#async=1"></script>
+                    <script type="text/javascript" src="https://s7.addthis.com/js/300/addthis_widget.js#async=1"></script>
                 </div>
                 <div class="modal-footer"></div>
               </div>

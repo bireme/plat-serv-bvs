@@ -65,7 +65,7 @@
                                 <a class="addthis_button_link"></a>
                                 <!--a class="addthis_button_compact"></a-->
                             </div>
-                            <script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#async=1"></script>
+                            <script type="text/javascript" src="https://s7.addthis.com/js/300/addthis_widget.js#async=1"></script>
                         </div>
                     </div>
                     <!--div class="col-md-9 col-sm-9 col-xs-12"-->
