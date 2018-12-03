@@ -86,7 +86,7 @@ define('CRYPT_PUBKEY','biremepublicckey'); /* shared */
 define('CRYPT_SEPARATOR','');
 
 /* ORCID API */
-define("ORCID_API","https://pub.orcid.org/v1.2/");
+define("ORCID_API","https://pub.orcid.org/v2.0/");
 
 /* TRIGRAMAS */
 define("TRIGRAMAS_CITED_ID","http://trigramas.bireme.br/cgi-bin/mx/cgi=@scielo/cited?pid=");

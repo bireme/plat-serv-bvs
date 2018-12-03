@@ -1031,7 +1031,7 @@ class UserDAO {
         $content = '';
 
         if ( $userID && $orcid ) {
-            $requestURI = ORCID_API . urlencode($orcid) . '/orcid-profile';
+            $requestURI = ORCID_API . urlencode($orcid) . '/works';
             $opts = array(
                 'http'=>array(
                     'method'=>"GET",

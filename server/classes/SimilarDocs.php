@@ -535,23 +535,23 @@ class SimilarDocs {
 
         $userData = UserDAO::getUser($userID);
         $orcidData = json_decode($userData->getOrcidData(),true);
-        $orcidWorks = $orcidData['orcid-profile']['orcid-activities']['orcid-works']['orcid-work'];
+        $orcidWorks = $orcidData['group'];
 
         $works = array();
 
         if ( $orcidWorks ) {
             $orcidWork = array_slice($orcidWorks, $from, $count);
             foreach ($orcidWork as $work) {
-                $title = $work['work-title']['title']['value'];
+                $title = $work['work-summary'][0]['title']['title']['value'];
 
                 $url = $work['url']['value'];
                 if ( empty( $url ) ) {
                     $doi = '';
-                    $identifiers = $work['work-external-identifiers']['work-external-identifier'];
+                    $identifiers = $work['external-ids']['external-id'];
 
                     foreach ( $identifiers as $identifier ) {
-                        if ( 'DOI' == $identifier['work-external-identifier-type'] ) {
-                            $doi = 'http://dx.doi.org/'.$identifier['work-external-identifier-id']['value'];
+                        if ( 'doi' == $identifier['external-id-type'] ) {
+                            $doi = 'http://dx.doi.org/'.$identifier['external-id-value'];
                             break;
                         }
                     }
@@ -720,7 +720,7 @@ class SimilarDocs {
         if($userID){
             $userData = UserDAO::getUser($userID);
             $orcidData = json_decode($userData->getOrcidData(),true);
-            $orcidWorks =  $orcidData['orcid-profile']['orcid-activities']['orcid-works']['orcid-work'];
+            $orcidWorks =  $orcidData['group'];
             
             $retValue = count($orcidWorks);
         }
