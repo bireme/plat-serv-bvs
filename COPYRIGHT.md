@@ -12,9 +12,10 @@ Observation: Information may be subject to alteration.
 * MIT license
 * https://opensource.org/licenses/MIT
 ***
-2. JavaScript Form Validator » 3.1.2
+2. Intro.js » 2.5.0
 
-* EULA (FREE USE LICENSE)
+* GNU AGPLv3
+* https://www.gnu.org/licenses/agpl-3.0.en.html
 ***
 3. PHPMailer » 2.1
 
@@ -40,4 +41,72 @@ Observation: Information may be subject to alteration.
 
 * MIT license
 * https://opensource.org/licenses/MIT
+***
+8. Bootstrap » 3.3.6
+
+* MIT license
+* https://opensource.org/licenses/MIT
+***
+9. DataTables » 1.10.11
+
+* MIT license
+* https://opensource.org/licenses/MIT
+***
+10. DataTables Bootstrap » 1.10.11
+
+* MIT license
+* https://opensource.org/licenses/MIT
+***
+11. DataTables Responsive » 2.0.2
+
+* MIT license
+* https://opensource.org/licenses/MIT
+***
+12. DataTables Responsive Bootstrap » 2.0.2
+
+* MIT license
+* https://opensource.org/licenses/MIT
+***
+13. Date Range Picker » 3.0.3
+
+* MIT license
+* https://opensource.org/licenses/MIT
+***
+14. Moment.js » 2.9.0
+
+* MIT license
+* https://opensource.org/licenses/MIT
+***
+15. FastClick » 1.0.6
+
+* MIT license
+* https://opensource.org/licenses/MIT
+***
+16. iCheck Plugin » 1.0.2
+
+* MIT license
+* https://opensource.org/licenses/MIT
+***
+17. NProgress » 0.2.0
+
+* MIT license
+* https://opensource.org/licenses/MIT
+***
+18. Validator » 3.0.0
+
+* MIT license
+* https://opensource.org/licenses/MIT
+***
+19. Font Awesome » 4.6.1
+
+* Icons: CC BY 4.0 License
+ * https://creativecommons.org/licenses/by/4.0/
+* Fonts: SIL OFL 1.1 License
+ * https://scripts.sil.org/OFL
+* Code: MIT license
+ * https://opensource.org/licenses/MIT
+***
+20. JavaScript Form Validator » 3.1.2
+
+* EULA (FREE USE LICENSE)
 ***
