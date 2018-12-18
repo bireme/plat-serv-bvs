@@ -100,11 +100,11 @@ Observation: Information may be subject to alteration.
 19. Font Awesome » 4.6.1
 
 * Icons: CC BY 4.0 License
- * https://creativecommons.org/licenses/by/4.0/
+  * https://creativecommons.org/licenses/by/4.0/
 * Fonts: SIL OFL 1.1 License
- * https://scripts.sil.org/OFL
+  * https://scripts.sil.org/OFL
 * Code: MIT license
- * https://opensource.org/licenses/MIT
+  * https://opensource.org/licenses/MIT
 ***
 20. JavaScript Form Validator » 3.1.2
 
