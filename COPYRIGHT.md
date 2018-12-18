@@ -106,7 +106,3 @@ Observation: Information may be subject to alteration.
 * Code: MIT license
   * https://opensource.org/licenses/MIT
 ***
-20. JavaScript Form Validator » 3.1.2
-
-* EULA (FREE USE LICENSE)
-***
