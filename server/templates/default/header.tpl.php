@@ -72,8 +72,13 @@
             m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
         })(window,document,'script','//www.google-analytics.com/analytics.js','__gaTracker');
 
-        __gaTracker('create', '<?php echo GOOGLE_ANALYTICS; ?>', 'auto');
-        __gaTracker('send','pageview');
+        if (navigator.userAgent.indexOf('gonative') > -1) {
+            __gaTracker('create', '<?php echo APP_GOOGLE_ANALYTICS; ?>', 'auto');
+            __gaTracker('send', 'pageview');
+        } else {
+            __gaTracker('create', '<?php echo GOOGLE_ANALYTICS; ?>', 'auto');
+            __gaTracker('send', 'pageview');
+        }
     </script>
     <?php endif; ?>
 
