@@ -243,8 +243,14 @@
     display: none;
 }
 
-.youtube-logo {
+.youtube-logo,
+.apple-logo,
+.google-logo {
     width: 20%;
+}
+
+.app-store-icons {
+    text-align: center;
 }
 
 .public_search_bar {

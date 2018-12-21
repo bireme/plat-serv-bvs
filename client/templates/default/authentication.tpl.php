@@ -174,8 +174,14 @@
                 <div class="row omb_description">
                     <div class="col-xs-12 col-md-12 col-sm-12">
                         <p><?=$trans->getTrans($_REQUEST["action"],'MY_VHL_SUMMARY')?></p>
-                        <a href="<?php echo $my_vhl_playlist[$_SESSION['lang']] ?>" target="_blank"><img src="<?=RELATIVE_PATH?>/images/<?=$_SESSION["skin"]?>/youtube.png" alt="YouTube Logo" class="youtube-logo"></a>
+                        <a href="<?php echo $my_vhl_playlist[$_SESSION['lang']] ?>" target="_blank"><img src="<?=RELATIVE_PATH?>/images/<?=$_SESSION["skin"]?>/youtube.png" alt="YouTube" class="youtube-logo"></a>
                     </div>
+                    <?php if ( strpos($_SERVER['HTTP_USER_AGENT'], 'gonative') === false ) : ?>
+                    <div class="col-xs-12 col-md-12 col-sm-12 app-store-icons">
+                        <a href="https://itunes.apple.com/us/app/mibvs/id1440172734" target="_blank"><img src="<?=RELATIVE_PATH?>/images/<?=$_SESSION["skin"]?>/ios-bt.png" alt="Apple Store" class="apple-logo"></a>
+                        <a href="https://play.google.com/store/apps/details?id=org.bvsalud.platserv" target="_blank"><img src="<?=RELATIVE_PATH?>/images/<?=$_SESSION["skin"]?>/google-bt.png" alt="Google Play Store" class="google-logo"></a>
+                    </div>
+                    <?php endif; ?>
                     <div class="modal fade bs-modal-lg" tabindex="-1" role="dialog" aria-hidden="true" style="color: #73879C;">
                         <div class="modal-dialog modal-lg">
                           <div class="modal-content">
