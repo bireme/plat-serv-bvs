@@ -51,6 +51,7 @@ define("BVS_COOKIE_DOMAIN","http://brasil.bvs.br");
 define("MONGODB_SERVER","");
 
 define("GOOGLE_ANALYTICS","");
+define("APP_GOOGLE_ANALYTICS","");
 
 /* Regular Expressions */
 define("REGEXP_LANGUAGE","/^(pt)|(es)|(en)$/");
