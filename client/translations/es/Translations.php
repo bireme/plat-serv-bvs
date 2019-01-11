@@ -150,7 +150,7 @@ class Translations {
         self::$trans["menu"]["FOOTER_MESSAGE"] = '
 <p><strong>BIREME - OPS - OMS</strong><br/>
 Centro Latinoamericano y del Caribe de Información en Ciencias de la Salud<br />
-Area de Gestión del Conocimiento, Bioética e Investigación - KBR<br />
+Departamento de Evidencia e Inteligencia para la Acción de Salud – EIH<br />
 Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 | Fax: (55 11) 5575-8868<br />
 <a href="http://new.paho.org/bireme" title="Mi BVS">http://www.paho.org/bireme</a><br /></p>
 ';

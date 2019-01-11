@@ -150,7 +150,7 @@ class Translations {
         self::$trans["menu"]["FOOTER_MESSAGE"] = '
 <p><strong>BIREME - PAHO - WHO</strong><br/>
 Latin American and Caribbean Center on Health Sciences Information<br />
-Knowledge Management, Bioethics and Research Area - KBR<br />
+Department of Evidence and Intelligence for Action in Health – EIH<br />
 Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Phone: (55 11) 5576-9800 | Fax: (55 11) 5575-8868<br />
 <a href="http://new.paho.org/bireme" title="My VHL">http://www.paho.org/bireme</a><br /></p>
 ';
