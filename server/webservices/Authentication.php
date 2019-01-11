@@ -116,6 +116,7 @@ function getUserData($userTK){
             $retValue['source']=$objUser->getSource();
             $retValue['avatar']=$objUser->getAvatar();
             $retValue['agreement_date']=$objUser->getAgreementDate();
+            $retValue['professional_area']=$objUser->getProfessionalArea();
         }
     }
     return $retValue;

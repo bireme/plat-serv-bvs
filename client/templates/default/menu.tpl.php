@@ -147,7 +147,7 @@
               </div>
             </div>
 
-            <div class="row">
+            <div class="row row-last">
               <div id="step13" class="col-md-4 col-xs-12 tasks">
                 <div class="x_panel">
                   <div class="x_title">
@@ -221,72 +221,35 @@
                 </div>
               </div>
 
-              <!--div class="col-md-4">
+              <div class="col-md-4 col-xs-12 events">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>Suggested Events<small></small></h2>
+                    <h2><?=$trans->getTrans('menu','EVENTS')?></h2>
                     <ul class="nav navbar-right panel_toolbox">
-                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                      </li>
-                      <li><a class="close-link"><i class="fa fa-close"></i></a>
-                      </li>
+                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a></li>
                     </ul>
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content">
-                    <article class="media event">
-                      <a class="pull-left date">
-                        <p class="month">April</p>
-                        <p class="day">23</p>
-                      </a>
-                      <div class="media-body">
-                        <a class="title" href="#">Event One Title</a>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                      </div>
-                    </article>
-                    <article class="media event">
-                      <a class="pull-left date">
-                        <p class="month">April</p>
-                        <p class="day">23</p>
-                      </a>
-                      <div class="media-body">
-                        <a class="title" href="#">Event Two Title</a>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                      </div>
-                    </article>
-                    <article class="media event">
-                      <a class="pull-left date">
-                        <p class="month">April</p>
-                        <p class="day">23</p>
-                      </a>
-                      <div class="media-body">
-                        <a class="title" href="#">Event Three Title</a>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                      </div>
-                    </article>
-                    <article class="media event">
-                      <a class="pull-left date">
-                        <p class="month">April</p>
-                        <p class="day">23</p>
-                      </a>
-                      <div class="media-body">
-                        <a class="title" href="#">Event Four Title</a>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                      </div>
-                    </article>
-                    <article class="media event">
-                      <a class="pull-left date">
-                        <p class="month">April</p>
-                        <p class="day">23</p>
-                      </a>
-                      <div class="media-body">
-                        <a class="title" href="#">Event Five Title</a>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                      </div>
-                    </article>
+                    <?php if ( $events ) : ?>
+                      <?php foreach ( $events as $event ) : $month = (int) substr($event->start_date, 5, 2); ?>
+                        <?php if ( $event->link ) : ?>
+                          <article class="media event">
+                            <a class="pull-left date">
+                              <p class="month"><?php echo Generic::month_name($month, TRUE); ?></p>
+                              <p class="day"><?php echo substr($event->start_date, 8, 2); ?></p>
+                            </a>
+                            <div class="media-body">
+                              <a class="title" href="<?php echo $event->link[0]; ?>" target="_blank"><?php echo $event->title; ?></a>
+                              <p><?php // echo substr($event->start_date, 0, 10); ?></p>
+                            </div>
+                          </article>
+                        <?php endif; ?>
+                      <?php endforeach; ?>
+                    <?php endif; ?>
                   </div>
                 </div>
-              </div-->
+              </div>
             </div>
         </div>
         <!-- /page content -->

@@ -147,6 +147,7 @@ usuário para oferecer serviços personalizados e facilidades tais como:</p>
         self::$trans["menu"]["DONE"] = 'Concluir';
         self::$trans["menu"]["LEAVE_COMMENT"] = 'Enviar Comentário';
         self::$trans["menu"]["REPORT_ERROR"] = 'Comunicar Erro';
+        self::$trans["menu"]["EVENTS"] = 'Eventos';
         self::$trans["menu"]["FOOTER_MESSAGE"] = '
 <p><strong>BIREME - OPAS - OMS</strong><br/>
 Centro Latino-Americano e do Caribe de Informação em Ciências da Saúde<br />

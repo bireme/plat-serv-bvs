@@ -146,6 +146,7 @@ class Translations {
         self::$trans["menu"]["DONE"] = 'Finish';
         self::$trans["menu"]["LEAVE_COMMENT"] = 'Leave Comment';
         self::$trans["menu"]["REPORT_ERROR"] = 'Report Error';
+        self::$trans["menu"]["EVENTS"] = 'Events';
         self::$trans["menu"]["FOOTER_MESSAGE"] = '
 <p><strong>BIREME - PAHO - WHO</strong><br/>
 Latin American and Caribbean Center on Health Sciences Information<br />

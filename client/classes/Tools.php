@@ -215,7 +215,7 @@ class UserData {
 
 class Generic {
 
-    public static function unique_list_docs($array, $key) { 
+    public static function unique_list_docs($array, $key) {
         // walk input array
         $_data = array();
 
@@ -253,7 +253,46 @@ class Generic {
         $data = array_values($_data);
 
         return $data;
-    } 
+    }
+
+    public static function month_name($month_number=13, $short=FALSE, $lang) {
+        $month_name = '';
+        $lang = ( $lang ) ? $lang : $_SESSION['lang'];
+
+        $full_names = array();
+        $full_names['pt'] = array("Janeiro","Fevereiro","Março","Abril","Maio","Junho","Julho","Agosto","Setembro","Outubro","Novembro","Dezembro");
+        $full_names['en'] = array("January","February","March","April","May","June","July","August","Septeber","October","November","Dezember");
+        $full_names['es'] = array("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
+
+        $short_names = array();
+        $short_names['pt'] = array("Jan","Fev","Mar","Abr","Maio","Jun","Jul","Ago","Set","Out","Nov","Dez");
+        $short_names['en'] = array("Jan","Feb","Mar","Apr","May","June","July","Aug","Sept","Oct","Nov","Dez");
+        $short_names['es'] = array("Ene","Feb","Mar","Abr","Mayo","Jun","Jul","Ago","Sep","Oct","Nov","Dic");
+
+        if ( $short ) {
+            $month_name = $short_names[$lang][$month_number-1];
+        } else {
+            $month_name = $full_names[$lang][$month_number-1];
+        }
+
+        return $month_name;
+    }
+
+}
+
+class Events {
+
+    public static function get_events($query, $count, $lang, $assoc=FALSE) {
+        $lang       = ( $lang ) ? $lang : $_SESSION['lang'];
+        $count      = ( $count ) ? $count : WIDGETS_ITEMS_LIMIT;
+        $start_date = 'start_date:[NOW TO *]';
+        $query      = ( $query ) ? $query . ' ' . $start_date : $start_date;
+        $request    = FI_ADMIN_EVENTS . '&q=' . urlencode($query) . '&count=' . $count . '&lang=' . $lang . '&sort=start_date%20asc';
+        $response   = json_decode(file_get_contents($request), $assoc);
+        $json       = $response->diaServerResponse[0]->response->docs;
+
+        return $json;
+    }
 
 }
 

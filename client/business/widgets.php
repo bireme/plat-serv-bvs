@@ -11,12 +11,14 @@
 /*
  * Edit this file in UTF-8 - Test String "áéíóú"
  */
+require_once(dirname(__FILE__)."/../classes/Authentication.php");
 require_once(dirname(__FILE__)."/../classes/MyLinks.php");
 require_once(dirname(__FILE__)."/../classes/DocsCollection.php");
 require_once(dirname(__FILE__)."/../classes/MyProfiles.php");
 require_once(dirname(__FILE__)."/../classes/SimilarDocs.php");
 require_once(dirname(__FILE__)."/../classes/Tracking.php");
 require_once(dirname(__FILE__)."/../../logs/functions.php");
+require_once(dirname(__FILE__)."/../../server/pub/include/professionalAreaLibrary.php");
 
 $params["widget"] = true;
 $params["count"]  = WIDGETS_ITEMS_LIMIT;
@@ -40,6 +42,11 @@ $dataHistory = Tracking::getTraceList( $_SESSION["userTK"], $params );
 
 // Suggested Documents widget
 $suggestedDocs = SimilarDocs::getSuggestedDocs( $_SESSION["userTK"], $params, true );
+
+// Events widget
+$data = Authentication::getUserData($_SESSION["userTK"]);
+$query = $professionalArea[$_SESSION['lang']][$data['professional_area']];
+$events = Events::get_events($query);
 
 // My Searches widget
 $obj = new MySearches($_SESSION["userTK"]);

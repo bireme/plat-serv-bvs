@@ -1100,3 +1100,15 @@ and (max-device-width : 360px) {
         background-size: contain !important;
     }
 }
+
+@media only screen
+and (max-device-width : 823px) {
+    .row-last {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .row-last .tasks {
+        order: 1;
+    }
+}
