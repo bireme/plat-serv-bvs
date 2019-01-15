@@ -505,8 +505,16 @@ div.related_docs p {
     background: url(../../images/default/005-search.png) left no-repeat; height: 54px;
 }
 
+.vhl-search .x_title {
+    background: url(../../images/default/005-search.png) left no-repeat; height: 54px;
+}
+
 .rss .x_title {
     background: url(../../images/default/rss.png) left no-repeat; height: 54px;
+}
+
+.events .x_title {
+    background: url(../../images/default/calendar.png) left no-repeat; height: 54px;
 }
 
 .rss .tile-stats {
