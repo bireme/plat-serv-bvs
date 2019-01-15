@@ -9,3 +9,4 @@ server/config.ldap.php
 server/instances_code.php
 connector/facebook/config.php
 connector/google/config.php
+logs/SimilarDocs/
