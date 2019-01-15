@@ -232,19 +232,19 @@
                   </div>
                   <div class="x_content">
                     <?php if ( $events ) : ?>
-                      <?php foreach ( $events as $event ) : $month = (int) substr($event->start_date, 5, 2); ?>
-                        <?php if ( $event->link ) : ?>
-                          <article class="media event">
-                            <a class="pull-left date">
-                              <p class="month"><?php echo Generic::month_name($month, TRUE); ?></p>
-                              <p class="day"><?php echo substr($event->start_date, 8, 2); ?></p>
-                            </a>
-                            <div class="media-body">
-                              <a class="title" href="<?php echo $event->link[0]; ?>" target="_blank"><?php echo $event->title; ?></a>
-                              <p><?php // echo substr($event->start_date, 0, 10); ?></p>
-                            </div>
-                          </article>
-                        <?php endif; ?>
+                      <?php foreach ( $events as $event ) : ?>
+                        <?php $month = (int) substr($event->start_date, 5, 2); ?>
+                        <?php $link = ( $event->link ) ? $event->link[0] : $DIREVE[$_SESSION['lang']] . 'resource/?id=' . $event->django_id; ?>
+                        <article class="media event">
+                          <a class="pull-left date">
+                            <p class="month"><?php echo Generic::month_name($month, TRUE); ?></p>
+                            <p class="day"><?php echo substr($event->start_date, 8, 2); ?></p>
+                          </a>
+                          <div class="media-body">
+                            <a class="title" href="<?php echo $link; ?>" target="_blank"><?php echo $event->title; ?></a>
+                            <p><?php // echo substr($event->start_date, 0, 10); ?></p>
+                          </div>
+                        </article>
                       <?php endforeach; ?>
                     <?php endif; ?>
                   </div>

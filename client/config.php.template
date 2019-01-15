@@ -86,4 +86,10 @@ $my_vhl_playlist = array(
     'es' => 'https://www.youtube.com/watch?v=FV8g4k5iTs8&list=PLAJX3aLhb_SbaBae2JYo-QKXe5pNcEy1d&index=1',
     'en' => 'https://www.youtube.com/watch?v=FV8g4k5iTs8&list=PLAJX3aLhb_SbaBae2JYo-QKXe5pNcEy1d&index=1'
 );
+
+$DIREVE = array(
+    'pt' => 'https://bvsalud.org/direve/',
+    'es' => 'https://bvsalud.org/es/direve/',
+    'en' => 'https://bvsalud.org/en/direve/'
+);
 ?>
