@@ -55,7 +55,7 @@
                                     <tr id="<?php echo 'doc'.$count; ?>">
                                       <td>
                                         <div class="record">
-                                            <a href="<?php echo $similar["docURL"]; ?>" target="_blank"><?php echo $similar["title"]; ?></a>
+                                            <a href="<?php echo $similar["docURL"]; ?>" onclick="__gaTracker('send','event','Interest Topics','View Document','<?php echo addslashes(htmlspecialchars($similar["title"])); ?>');" target="_blank"><?php echo $similar["title"]; ?></a>
                                             <small style="display: block;"><?php echo $similar["authors"]; ?></small>
                                         </div>
                                         <div class="doc-actions">

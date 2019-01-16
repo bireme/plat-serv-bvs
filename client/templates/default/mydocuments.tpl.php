@@ -95,10 +95,10 @@
                                             <?php if ( 'portal' != $_SESSION['iahx'] && !empty($site) && array_key_exists($site, $register['docURL']) ) : ?>
                                                 <?php echo $register["title"]; ?>
                                             <?php else : ?>
-                                                <a href="<?php echo $register["docURL"]["portal"]; ?>" target="_blank"><?php echo $register["title"]; ?></a>
+                                                <a href="<?php echo $register["docURL"]["portal"]; ?>" onclick="__gaTracker('send','event','Favorite Documents','View Document','<?php echo addslashes(htmlspecialchars($register["title"])); ?>');" target="_blank"><?php echo $register["title"]; ?></a>
                                             <?php endif; ?>
                                         <?php else : ?>
-                                            <a href="<?php echo $register["docURL"]; ?>" target="_blank"><?php echo $register["title"]; ?></a>
+                                            <a href="<?php echo $register["docURL"]; ?>" onclick="__gaTracker('send','event','Favorite Documents','View Document','<?php echo addslashes(htmlspecialchars($register["title"])); ?>');" target="_blank"><?php echo $register["title"]; ?></a>
                                         <?php endif; ?>
 
                                         <?php if ( $register["authors"] ) : ?>
