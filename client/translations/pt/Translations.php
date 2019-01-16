@@ -153,7 +153,8 @@ usuário para oferecer serviços personalizados e facilidades tais como:</p>
 Centro Latino-Americano e do Caribe de Informação em Ciências da Saúde<br />
 Departamento de Evidência e Inteligência para a Ação em Saúde – EIH<br />
 Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 | Fax: (55 11) 5575-8868<br />
-<a href="http://new.paho.org/bireme" title="Minha BVS">http://www.paho.org/bireme/</a><br /></p>
+<a href="http://new.paho.org/bireme" title="Minha BVS">http://www.paho.org/bireme/</a><br /><br />
+<strong><a href="http://politicas.bireme.org/terminos/pt/">Termos e Condições de Uso</a> | <a href="http://politicas.bireme.org/privacidad/pt/">Políticas de Privacidade</a></strong></p>
 ';
 
     // Terms of searchresults pages
