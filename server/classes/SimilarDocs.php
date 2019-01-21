@@ -44,14 +44,14 @@ class SimilarDocs {
                 $authors = self::getSimilarDocAuthors($similar['au']);
 
                 $strsql = "INSERT INTO suggestions(`docID`,
-                                            `profileID`,
-                                            `profile`,
-                                            `authors`,
-                                            `docURL`,
-                                            `title`,
-                                            `userID`,
-                                            `order`,
-                                            `creation_date`)
+                                                   `profileID`,
+                                                   `profile`,
+                                                   `authors`,
+                                                   `docURL`,
+                                                   `title`,
+                                                   `userID`,
+                                                   `order`,
+                                                   `creation_date`)
                                     VALUES ('".$similar['id']."','".
                                                $profileID."','".
                                                $profileName."','".
@@ -515,11 +515,11 @@ class SimilarDocs {
             $logger->log($e->getMessage(),PEAR_LOG_EMERG);
         }
 
-        if (count($result) !== 0 ){
+        if ( count($result) !== 0 ){
             $retValue = $result;
         }
 
-        return $result;
+        return $retValue;
     }
 
     /**
@@ -542,6 +542,7 @@ class SimilarDocs {
         if ( $orcidWorks ) {
             $orcidWork = array_slice($orcidWorks, $from, $count);
             foreach ($orcidWork as $work) {
+                $code = $work['work-summary'][0]['put-code'];
                 $title = $work['work-summary'][0]['title']['title']['value'];
 
                 $url = $work['url']['value'];
@@ -566,11 +567,11 @@ class SimilarDocs {
                 }
 
                 $w = array();
-                $w['title'] = $title ? $title : '';
-                $w['docURL'] = $url ? $url : '';
-                $w['authors'] = $authors ? $authors : '';
+                $w['title']    = $title ? $title : '';
+                $w['docURL']   = $url ? $url : '';
+                $w['authors']  = $authors ? $authors : '';
 
-                $works[] = $w;
+                $works[$code] = $w;
             }
         }
 
@@ -781,6 +782,109 @@ class SimilarDocs {
     public static function getTotalSuggestedDocsPages($userID, $itensPerPage){
         $total = self::getTotalSuggestedDocs($userID);
         return ceil($total/$itensPerPage);
+    }
+
+    /**
+     * Get the Google Scholar links
+     *
+     * @param string $userID User ID
+     * @param int $putcode ORCID document ID
+     * @param string $gslink Google Scholar link
+     * @return boolean|array
+     */
+    public static function getGoogleScholarLinks($userID,$putcode,$gslink){
+        global $_conf;
+        $retValue = false;
+
+        $is_user = UserDAO::isUser($userID);
+
+        if ( $is_user ) {
+            $strsql = "SELECT * FROM orcidGoogleScholar
+                                WHERE put_code = '".$putcode."'";
+
+            try{
+                $_db = new DBClass();
+                $result = $_db->databaseQuery($strsql);
+            }catch(DBClassException $e){
+                $logger = &Log::singleton('file', LOG_FILE, __CLASS__, $_conf);
+                $logger->log($e->getMessage(),PEAR_LOG_EMERG);
+            }
+
+            if ( count($result) !== 0 ){
+                $retValue = $result;
+            } elseif ( $gslink ) {
+                $gs_links = self::get_cited_related($gslink);
+
+                if ( !empty($gs_links) ) {
+                    $strsql = "INSERT INTO orcidGoogleScholar(`put_code`,
+                                                              `cited_url`,
+                                                              `related_url`)
+                                        VALUES ('".$putcode."','".
+                                                   $gs_links['cited_url']."','".
+                                                   $gs_links['related_url']."')";
+
+                    try{
+                        $_db = new DBClass();
+                        $res = $_db->databaseExecInsert($strsql);
+                    }catch(DBClassException $e){
+                        $logger = &Log::singleton('file', LOG_FILE, __CLASS__, $_conf);
+                        $logger->log($e->getMessage(),PEAR_LOG_EMERG);
+                    }
+                }
+
+                if ( $res !== null ) {
+                    $retValue = $gs_links;
+                }
+            }
+        }
+
+        return $retValue;
+    }
+
+    /**
+     * Get the Google Scholar links by web scraping
+     *
+     * @param string $src Google Scholar link
+     * @return array
+     */
+    public static function get_cited_related($src) {
+        $links = [];
+        $cited_url = '';
+        $related_url = '';
+
+        if ( $src ){
+            $doc = new DOMDocument();
+            @$doc->loadHTMLFile($src);
+
+            $xpath = new DOMXpath($doc);
+            $articles = $xpath->query('//div[@class="gs_fl"]');
+
+            foreach($articles as $article) {
+                $elements = $article->getElementsByTagName("a");
+
+                foreach($elements as $item) {
+                    $href = $item->getAttribute("href");
+                    // $text = trim(preg_replace("/[\r\n]+/", " ", $item->nodeValue));
+
+                    if ( strpos($href,'cites=') !== false ) {
+                        $cited_url = $href;
+                    } elseif ( strpos($href,'related:') !== false ) {
+                        $related_url = $href;
+                    }
+                }
+
+                break;
+            }
+
+            if ( !empty($cited_url) || !empty($related_url) ) {
+                $links[] = [
+                    'cited_url'   => $cited_url,
+                    'related_url' => $related_url
+                ];
+            }
+        }
+
+        return $links;
     }
 
     /**

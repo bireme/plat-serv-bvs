@@ -300,8 +300,30 @@ function getTotalSuggestedDocsPages($userTK){
     $objVerifier = new Verifier($params);
 
     if($retVerifier = $objVerifier->canPass()){
-        $retParams = $objVerifier->getParams();        
+        $retParams = $objVerifier->getParams();
         $result = SimilarDocs::getTotalSuggestedDocsPages($retParams['userTK']['userID'],DOCUMENTS_PER_PAGE);
+    }
+    return $result;
+}
+
+/**
+ * Return the Google Scholar links
+ *
+ * @param string $userTK user hash
+ * @param int $putcode ORCID document ID
+ * @param string $gslink Google Scholar link
+ * @return boolean|array
+ */
+function getGoogleScholarLinks($userTK,$putcode,$gslink){
+    $result = false;
+
+    /*  parameter validation */
+    $params = array('userTK' => $userTK);
+    $objVerifier = new Verifier($params);
+
+    if($retVerifier = $objVerifier->canPass()){
+        $retParams = $objVerifier->getParams();
+        $result = SimilarDocs::getGoogleScholarLinks($retParams['userTK']['userID'],$putcode,$gslink);
     }
     return $result;
 }

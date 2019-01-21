@@ -551,37 +551,49 @@ div.related_docs p {
 
 .label-danger {
     background: url(../../images/default/remove.png) left no-repeat;
-    height: 16px;
+    /*height: 16px;*/
     background-color: transparent !important;
 }
 
 .label-info {
     background: url(../../images/default/edit.png) left no-repeat;
-    height: 16px;
+    /*height: 16px;*/
     background-color: transparent !important;
 }
 
 .google-scholar {
     background: url(../../images/default/see.png) left no-repeat;
-    height: 16px;
+    /*height: 16px;*/
+    background-color: transparent !important;
+}
+
+.gs-cited {
+    background: url(../../images/default/cited.gif) left no-repeat;
+    /*height: 16px;*/
+    background-color: transparent !important;
+}
+
+.gs-related {
+    background: url(../../images/default/related.gif) left no-repeat;
+    /*height: 16px;*/
     background-color: transparent !important;
 }
 
 .add-collection {
     background: url(../../images/default/star.png) left no-repeat;
-    height: 16px;
+    /*height: 16px;*/
     background-color: transparent !important;
 }
 
 .related-docs,
 .public-related-docs {
     background: url(../../images/default/similar.png) left no-repeat;
-    height: 16px;
+    /*height: 16px;*/
 }
 
 .move {
     background: url(../../images/default/move.png) left no-repeat;
-    height: 16px;
+    /*height: 16px;*/
 }
 
 .record {
@@ -778,6 +790,8 @@ and (max-device-width : 414px) {
 
     .nav-md .doc-actions {
         display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     .nav-sm .doc-actions {
@@ -787,7 +801,7 @@ and (max-device-width : 414px) {
 
     .doc-actions a.label {
         margin: 2px 0;
-        padding: 5px;
+        padding: 8px;
     }
 
     .nav-sm .doc-actions a.label {

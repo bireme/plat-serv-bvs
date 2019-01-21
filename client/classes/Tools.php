@@ -296,39 +296,4 @@ class Events {
 
 }
 
-class GoogleScholar {
-
-    public static function get_cited_related($src) {
-        $doc = new DOMDocument();
-        @$doc->loadHTMLFile($src);
-
-        $xpath = new DOMXpath($doc);
-        $articles = $xpath->query('//div[@class="gs_fl"]');
-
-        $links = [];
-        foreach($articles as $article) {
-            $elements = $article->getElementsByTagName("a");
-            foreach($elements as $item) {
-                $href = $item->getAttribute("href");
-                $text = trim(preg_replace("/[\r\n]+/", " ", $item->nodeValue));
-                if ( strpos($href,'cites=') !== false ) {
-                    $links['cited'] = [
-                        'href' => $href,
-                        'text' => $text
-                    ];
-                } elseif ( strpos($href,'related:') !== false ) {
-                    $links['related'] = [
-                        'href' => $href,
-                        'text' => $text
-                    ];
-                }
-            }
-            break;
-        }
-
-        return $links;
-    }
-
-}
-
 ?>

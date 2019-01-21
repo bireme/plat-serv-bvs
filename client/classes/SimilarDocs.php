@@ -272,5 +272,19 @@ class SimilarDocs {
 
         return $retValue;
     }
+
+    public static function getGoogleScholarLinks($userTK,$putcode,$gslink){
+        $retValue = false;
+
+        try{
+            $objSoapClient = self::getSoapClient();
+            $retValue = $objSoapClient->getGoogleScholarLinks($userTK,$putcode,$gslink);
+        }catch(Exception $e){
+            $logger = &Log::singleton('file', LOG_FILE, __CLASS__, $_conf);
+            $logger->log($e->getMessage(),PEAR_LOG_EMERG);
+        }
+
+        return $retValue;
+    }
 }
 ?>
