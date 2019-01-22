@@ -536,8 +536,17 @@ class SimilarDocs {
         $userData = UserDAO::getUser($userID);
         $orcidData = json_decode($userData->getOrcidData(),true);
         $orcidWorks = $orcidData['group'];
-
         $works = array();
+
+        // Update ORCID data
+        if ( $orcidData && !$orcidWorks ) {
+            $harvest = UserDAO::fillOrcidData($userID, $userData->getOrcid());
+
+            if ( $harvest ) {
+                $orcidData = json_decode($userData->getOrcidData(),true);
+                $orcidWorks = $orcidData['group'];
+            }
+        }
 
         if ( $orcidWorks ) {
             $orcidWork = array_slice($orcidWorks, $from, $count);
@@ -575,7 +584,7 @@ class SimilarDocs {
             }
         }
 
-        $result = !empty( $works ) ? $works : false;
+        $result = ( !empty( $works ) ) ? $works : false;
         
         return $result;
     }

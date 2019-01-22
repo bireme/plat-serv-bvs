@@ -1044,8 +1044,8 @@ class UserDAO {
         }
 
         $strsql = "UPDATE users
-                    SET orcidData ='".$content."'
-                    WHERE userID ='".$userID."'";
+                    SET orcidData = '".$content."'
+                    WHERE userID = '".$userID."'";
 
         try{
             $_db = new DBClass();
@@ -1055,8 +1055,9 @@ class UserDAO {
             $logger->log($e->getMessage(),PEAR_LOG_EMERG);
         }
 
-        if ( $res !== false )
+        if ( $res !== false ) {
             $retValue = $assoc ? json_decode($content, true) : true;
+        }
 
         return $retValue;
     }
