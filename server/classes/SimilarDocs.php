@@ -536,6 +536,7 @@ class SimilarDocs {
         $userData = UserDAO::getUser($userID);
         $orcidData = json_decode($userData->getOrcidData(),true);
         $orcidWorks = $orcidData['group'];
+        
         $works = array();
 
         // Update ORCID data
