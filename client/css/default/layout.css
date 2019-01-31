@@ -604,6 +604,7 @@ div.related_docs p {
     background-color: transparent !important;
 }
 
+.similars .x_content .title,
 .fav-docs .x_content .title {
     font-weight: normal !important;
 }

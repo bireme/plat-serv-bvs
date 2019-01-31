@@ -121,6 +121,25 @@ $( document ).ready(
             }
         )
 
+        $( this ).on( "click", ".fav-docs div.record a, .themes div.record a", function(e) {
+                // e.preventDefault();
+
+                val = $( this ).text();
+                path = window.location.pathname;
+                parts = path.split("/controller/");
+                href = parts[0]+"/controller/suggesteddocs/control/business/task/suggestions";
+
+                data = $.extend({}, [val]);
+                obj = new Object();
+                obj.suggestions = data;
+                obj.prefix = 'RD';
+
+                $.post( href, obj, function(data) {
+                    console.log(data);
+                });
+            }
+        )
+
         /********** Interest Topics Scripts **********/
 /*
         $('a.add-collection').popover({

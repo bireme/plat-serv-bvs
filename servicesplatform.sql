@@ -119,9 +119,9 @@ CREATE TABLE IF NOT EXISTS `suggestions` (
   `docURL` varchar(1000) NOT NULL,
   `title` varchar(500) DEFAULT '',
   `userID` varchar(150) NOT NULL DEFAULT '',
-  `score` int(2) NOT NULL DEFAULT '0',
+  `order` int(2) NOT NULL DEFAULT '0',
   `creation_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (`docID`,`profile`,`userID`)
+  PRIMARY KEY (`docID`,`profileID`,`userID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------

@@ -114,7 +114,7 @@ class Translations {
         self::$trans["menu"]["SEARCH_FOR"] = 'Search the VHL for...';
         self::$trans["menu"]["MY_SEARCHES"] = 'VHL Search History';
         self::$trans["menu"]["KEYWORDS"] = 'Keywords';
-        self::$trans["menu"]["SUGGESTED_DOCS"] = 'Similars';
+        self::$trans["menu"]["SUGGESTED_DOCS"] = 'Related Documents';
         self::$trans["menu"]["ORCID_WORKS"] = 'My Publications';
         self::$trans["menu"]["RECENT_ACTIVITIES"] = 'Recent Activities';
         self::$trans["menu"]["SEE_ALL_DOCS"] = 'View all documents';

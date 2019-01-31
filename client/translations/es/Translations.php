@@ -114,7 +114,7 @@ class Translations {
         self::$trans["menu"]["SEARCH_FOR"] = 'Buscar en la BVS por...';
         self::$trans["menu"]["MY_SEARCHES"] = 'Historial de Búsquedas en BVS';
         self::$trans["menu"]["KEYWORDS"] = 'Palabras clave';
-        self::$trans["menu"]["SUGGESTED_DOCS"] = 'Similares';
+        self::$trans["menu"]["SUGGESTED_DOCS"] = 'Documentos Relacionados';
         self::$trans["menu"]["ORCID_WORKS"] = 'Mis Publicaciones';
         self::$trans["menu"]["RECENT_ACTIVITIES"] = 'Actividades Recientes';
         self::$trans["menu"]["SEE_ALL_DOCS"] = 'Ver todos los documentos';

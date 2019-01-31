@@ -115,7 +115,7 @@ usuário para oferecer serviços personalizados e facilidades tais como:</p>
         self::$trans["menu"]["SEARCH_FOR"] = 'Pesquisar na BVS por...';
         self::$trans["menu"]["MY_SEARCHES"] = 'Histórico de Buscas na BVS';
         self::$trans["menu"]["KEYWORDS"] = 'Palavras-chave';
-        self::$trans["menu"]["SUGGESTED_DOCS"] = 'Similares';
+        self::$trans["menu"]["SUGGESTED_DOCS"] = 'Documentos Relacionados';
         self::$trans["menu"]["ORCID_WORKS"] = 'Minhas Publicações';
         self::$trans["menu"]["RECENT_ACTIVITIES"] = 'Atividades Recentes';
         self::$trans["menu"]["SEE_ALL_DOCS"] = 'Ver todos os documentos';

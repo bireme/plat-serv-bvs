@@ -82,10 +82,16 @@ switch($_REQUEST["task"]){
         $suggestions = false;
 
         if ( $_REQUEST['suggestions'] ) {
-            $suggestions = SimilarDocs::addSuggestedDocs($_SESSION["userTK"],$_REQUEST['suggestions']);
+            if ( $_REQUEST['prefix'] )
+                $suggestions = SimilarDocs::addSuggestedDocs($_SESSION["userTK"],$_REQUEST['suggestions'],$_REQUEST['prefix']);
+            else
+                $suggestions = SimilarDocs::addSuggestedDocs($_SESSION["userTK"],$_REQUEST['suggestions']);
         }
 
-        die($suggestions);
+        if ( $suggestions )
+            die('default');
+        else
+            die('error');
     break;
     case "related":
         $related = SimilarDocs::getRelatedDocs($_SESSION["userTK"],$_REQUEST['sentence']);

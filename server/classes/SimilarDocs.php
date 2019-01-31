@@ -391,13 +391,15 @@ class SimilarDocs {
      *
      * @param string $userID User ID
      * @param array $suggestions
+     * @param string $prefix
      * @return array
      */
-    public static function addSuggestedDocs($userID,$suggestions){
+    public static function addSuggestedDocs($userID,$suggestions,$prefix='SD'){
         $retValue = false;
 
         if ($suggestions && is_array($suggestions) && count($suggestions) > 0) {
-            $prefix = 'SD$';
+            $sep = '$';
+            $prefix .= $sep;
             $date = date('Ymd');
             $profiles = self::getProfiles($userID);
 
@@ -407,10 +409,10 @@ class SimilarDocs {
                 }
             }
 
-            $deleteSuggestedDocs = self::deleteSuggestedDocs($userID);
+            $deleteSuggestedDocs = self::deleteSuggestedDocs($userID,$prefix);
 
             foreach ($suggestions as $suggestion) {
-                $prefix = $prefix . $date . '$';
+                $prefix = $prefix . $date . $sep;
                 $profile = $prefix . md5($suggestion);
                 $addProfile = self::addProfile($userID,0,$profile,$suggestion);
             }
@@ -425,9 +427,10 @@ class SimilarDocs {
      * Delete suggested documents
      *
      * @param string $userID User ID
+     * @param string $prefix
      * @return array
      */
-    public static function deleteSuggestedDocs($userID){
+    public static function deleteSuggestedDocs($userID,$prefix='SD'){
         global $_conf;
         $result = 0;
         $retValue = false;
@@ -435,11 +438,8 @@ class SimilarDocs {
         $is_user = UserDAO::isUser($userID);
 
         if($is_user){
-            // $strsql = "DELETE FROM  suggestions
-            //     WHERE userID = '".$userID."' and profile LIKE BINARY 'SD$%'";
-
-            $strsql = "DELETE FROM  suggestions
-                WHERE userID = '".$userID."' and profileID = 0";
+            $strsql = "DELETE FROM suggestions
+                WHERE userID = '".$userID."' and profileID = 0 and profile LIKE BINARY '".$prefix."%'";
 
             try{
                 $_db = new DBClass();
@@ -460,17 +460,19 @@ class SimilarDocs {
      *
      * @param string $userID User ID
      * @param array $params
+     * @param string $prefix
      * @param boolean $update
      * @return array
      */
-    public static function getSuggestedDocs($userID,$params,$update=false){
+    public static function getSuggestedDocs($userID,$params,$prefix='SD',$update=false){
         global $_conf;
         $retValue = false;
         $count = ( $params["widget"] ) ? WIDGETS_ITEMS_LIMIT : DOCUMENTS_PER_PAGE;
         $from = $count * $params["page"];
 
         if ($update) {
-            $prefix = 'SD$';
+            $sep = '$';
+            $prefix .= $sep;
             $date = date('Ymd');
             $profiles = self::getProfiles($userID);
 /*
@@ -481,12 +483,12 @@ class SimilarDocs {
             if ($profiles) {
                 foreach ($profiles as $profile) {
                     if ($prefix === substr($profile['name'], 0, 3)) {
-                        $data = explode('$', $profile['name']);
+                        $data = explode($sep, $profile['name']);
                         $sentence = $profile['content'];
 
                         // Update suggested documents if last modification date is older than 1 day
                         if(strtotime($data[1]) < strtotime('-1 day')){
-                            $prefix = $prefix . $date . '$';
+                            $prefix = $prefix . $date . $sep;
                             $profileName = $prefix . md5($sentence);
 
                             $deleteProfile = self::deleteProfile($userID,0,$profile['name']);
@@ -497,11 +499,8 @@ class SimilarDocs {
             }
         }
 
-        // $strsql = "SELECT * FROM  suggestions
-        //     WHERE userID = '".$userID."' and profile LIKE BINARY 'SD$%'";
-
-        $strsql = "SELECT * FROM  suggestions
-            WHERE userID = '".$userID."' and profileID = 0";
+        $strsql = "SELECT * FROM suggestions
+            WHERE userID = '".$userID."' and profileID = 0 and profile LIKE BINARY '".$prefix."%'";
 
         if($count > 0){
             $strsql .= " LIMIT $from,$count";

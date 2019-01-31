@@ -94,9 +94,10 @@ function getSimilarsDocs($userTK,$profileID,$args){
  *
  * @param string $userTK User hash
  * @param array $suggestions
+ * @param string $prefix
  * @return array
  */
-function addSuggestedDocs($userTK,$suggestions){
+function addSuggestedDocs($userTK,$suggestions,$prefix){
     $result = false;
 
     /*  parameter validation */
@@ -105,7 +106,7 @@ function addSuggestedDocs($userTK,$suggestions){
 
     if($retVerifier = $objVerifier->canPass()){
         $retParams = $objVerifier->getParams();
-        $result = SimilarDocs::addSuggestedDocs($retParams['userTK']['userID'],$suggestions);
+        $result = SimilarDocs::addSuggestedDocs($retParams['userTK']['userID'],$suggestions,$prefix);
     }
     return $result;
 }
@@ -115,10 +116,11 @@ function addSuggestedDocs($userTK,$suggestions){
  *
  * @param string $userTK User hash
  * @param array $args
+ * @param string $prefix
  * @param boolean $update
  * @return array
  */
-function getSuggestedDocs($userTK,$args,$update){
+function getSuggestedDocs($userTK,$args,$prefix,$update){
     $result = false;
 
     /*  parameter validation */
@@ -127,7 +129,7 @@ function getSuggestedDocs($userTK,$args,$update){
 
     if($retVerifier = $objVerifier->canPass()){
         $retParams = $objVerifier->getParams();
-        $result = SimilarDocs::getSuggestedDocs($retParams['userTK']['userID'],$args,$update);
+        $result = SimilarDocs::getSuggestedDocs($retParams['userTK']['userID'],$args,$prefix,$update);
     }
     return $result;
 }

@@ -126,7 +126,7 @@
                                 <tr>
                                   <td id="sd<?php echo $count; ?>"><a href="<?php echo $register["docURL"]; ?>" target="_blank"><?php echo $register["title"]; ?></a><small style="display: block;"><?php echo $register["authors"]; ?></small></td>
                                   <td style="text-align: right;">
-                                    <button class="btn btn-success btn-xs add-collection" value="<?php echo $register["docID"]; ?>"><?=$trans->getTrans($_REQUEST["action"],'ADD_COLLECTION')?></button>
+                                    <button class="btn btn-success btn-xs add-col" value="<?php echo $register["docID"]; ?>"><?=$trans->getTrans($_REQUEST["action"],'ADD_COLLECTION')?></button>
                                   </td>
                                 </tr>
                                 <?php endforeach; ?>

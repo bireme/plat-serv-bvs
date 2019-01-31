@@ -89,14 +89,15 @@ class SimilarDocs {
      *
      * @param string $userTK User hash
      * @param array $suggestions
+     * @param string $prefix
      * @return array
      */
-    public static function addSuggestedDocs($userTK,$suggestions){
+    public static function addSuggestedDocs($userTK,$suggestions,$prefix){
         $retValue = false;
 
         try{
             $objSoapClient = self::getSoapClient();
-            $retValue = $objSoapClient->addSuggestedDocs($userTK,$suggestions);
+            $retValue = $objSoapClient->addSuggestedDocs($userTK,$suggestions,$prefix);
         }catch(Exception $e){
             $logger = &Log::singleton('file', LOG_FILE, __CLASS__, $_conf);
             $logger->log($e->getMessage(),PEAR_LOG_EMERG);
@@ -110,15 +111,16 @@ class SimilarDocs {
      *
      * @param string $userTK User hash
      * @param array $params
+     * @param string $prefix
      * @param boolean $update
      * @return array
      */
-    public static function getSuggestedDocs($userTK,$params,$update){
+    public static function getSuggestedDocs($userTK,$params,$prefix,$update){
         $retValue = false;
 
         try{
             $objSoapClient = self::getSoapClient();
-            $retValue = $objSoapClient->getSuggestedDocs($userTK,$params,$update);
+            $retValue = $objSoapClient->getSuggestedDocs($userTK,$params,$prefix,$update);
         }catch(Exception $e){
             $logger = &Log::singleton('file', LOG_FILE, __CLASS__, $_conf);
             $logger->log($e->getMessage(),PEAR_LOG_EMERG);
