@@ -42,7 +42,9 @@
                                       $google_scholar = GOOGLE_SCHOLAR_WS . urlencode($register["title"]);
                                       $gs_links = SimilarDocs::getGoogleScholarLinks($_SESSION['userTK'], $put_code, $google_scholar);
                                   ?>
+                                  <?php if ( !$gs_links[0]['cited_url'] && !$gs_links[0]['related_url'] ) : ?>
                                   <a class="label label-success google-scholar" href="<?php echo $google_scholar; ?>" target="_blank" onclick="__gaTracker('send','event','ORCID','Google Scholar','<?php echo htmlspecialchars($register["title"]); ?>');"><?=$trans->getTrans($_REQUEST["action"],'GOOGLE_SCHOLAR')?></a>
+                                  <?php endif; ?>
                                   <?php if ( $gs_links[0]['cited_url'] ) : ?>
                                   <a class="label label-primary gs-cited" href="<?php echo GOOGLE_SCHOLAR . $gs_links[0]['cited_url']; ?>" target="_blank" onclick="__gaTracker('send','event','ORCID','Google Scholar - Cited','<?php echo htmlspecialchars($register["title"]); ?>');"><?php echo $trans->getTrans($_REQUEST["action"],'GOOGLE_SCHOLAR_CITED'); ?></a>
                                   <?php endif; ?>

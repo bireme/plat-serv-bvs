@@ -120,7 +120,7 @@ $( document ).ready(
                 }
             }
         )
-
+/*
         $( this ).on( "click", ".fav-docs div.record a, .themes div.record a", function(e) {
                 // e.preventDefault();
 
@@ -139,7 +139,7 @@ $( document ).ready(
                 });
             }
         )
-
+*/
         /********** Interest Topics Scripts **********/
 /*
         $('a.add-collection').popover({
@@ -452,7 +452,7 @@ $( document ).ready(
 
         combinePopover();
 
-        $('#datatable-search').DataTable( {
+        $('.datatable-search').DataTable( {
             paging: false,
             ordering: false,
             info: false,
@@ -465,7 +465,24 @@ $( document ).ready(
             $(this).hide();
             $(this).next().show();
         });
+/*
+        $(this).on('click', '.btn-bell', function(e) {
+            var txt = $('.alerts-confirm-dialog').text();
+            var r = confirm(txt);
 
+            if ( r == false ) {
+                return false;
+            } else {
+                var total = $('.bs-alerts-modal-lg table.datatable-search tr:last td:first-child').text();
+                
+                if ( total >= 5 ) {
+                    var error = $('.alerts-error').text();
+                    alert(error);
+                    return false;
+                }
+            }
+        });
+*/
         /********** Layout Scripts **********/
         var setContentHeight = function () {
             // reset height

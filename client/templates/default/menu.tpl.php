@@ -41,6 +41,7 @@
 
             <!-- Services Platform Dashboard -->
             <div class="row">
+<!--
               <div class="col-md-8 col-sm-8 col-xs-12 similars">
                 <div class="x_panel">
                   <div class="x_title">
@@ -63,34 +64,9 @@
                   </div>
                 </div>
               </div>
-
-              <div id="step11" class="col-md-4 col-xs-12 themes">
-                <div class="x_panel">
-                  <div class="x_title">
-                    <h2><?=$trans->getTrans('menu','PROFILE_WIDGET')?><small></small></h2>
-                    <ul class="nav navbar-right panel_toolbox">
-                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a></li>
-                    </ul>
-                    <div class="clearfix"></div>
-                  </div>
-                  <div class="x_content">
-                    <?php if ( $profiles ) : ?>
-                      <?php foreach ( $profiles as $profile ) : ?>
-                        <article class="media event">
-                          <div class="media-body">
-                            <a class="title" href="<?php echo RELATIVE_PATH.'/controller/myprofiledocuments/control/business/profile/'.$profile["profileID"]; ?>" onclick="__gaTracker('send','event','Overview','Interest Topics','<?php echo htmlspecialchars($profile['profileName']); ?>');"><i class="fa fa-folder-open-o" aria-hidden="true"></i><?php echo $profile['profileName']; ?></a>
-                            <p><span><?=$trans->getTrans('menu','KEYWORDS')?>: </span><?php echo $profile['profileText']; ?></p>
-                          </div>
-                        </article>
-                      <?php endforeach; ?>
-                    <?php endif; ?>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="row">
-              <div id="step10" class="col-md-8 col-sm-8 col-xs-12 fav-docs">
+-->
+              <!-- <div id="step10" class="col-md-8 col-sm-8 col-xs-12 fav-docs"> -->
+              <div id="step10" class="col-md-4 col-xs-12 fav-docs">
                 <div class="x_panel">
                   <div class="x_title">
                     <h2><?=$trans->getTrans('menu','SHELF_WIDGET')?><small></small></h2>
@@ -116,6 +92,30 @@
                         <article class="media event">
                           <div class="media-body">
                             <a class="title" href="<?php echo $docURL; ?>" target="_blank" onclick="__gaTracker('send','event','Overview','Favorite Documents','<?php echo htmlspecialchars($col['title']); ?>');"><i class="fa fa-file-o" aria-hidden="true"></i><?php echo $col['title'] ?></a>
+                          </div>
+                        </article>
+                      <?php endforeach; ?>
+                    <?php endif; ?>
+                  </div>
+                </div>
+              </div>
+
+              <div id="step11" class="col-md-4 col-xs-12 themes">
+                <div class="x_panel">
+                  <div class="x_title">
+                    <h2><?=$trans->getTrans('menu','PROFILE_WIDGET')?><small></small></h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a></li>
+                    </ul>
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content">
+                    <?php if ( $profiles ) : ?>
+                      <?php foreach ( $profiles as $profile ) : ?>
+                        <article class="media event">
+                          <div class="media-body">
+                            <a class="title" href="<?php echo RELATIVE_PATH.'/controller/myprofiledocuments/control/business/profile/'.$profile["profileID"]; ?>" onclick="__gaTracker('send','event','Overview','Interest Topics','<?php echo htmlspecialchars($profile['profileName']); ?>');"><i class="fa fa-folder-open-o" aria-hidden="true"></i><?php echo $profile['profileName']; ?></a>
+                            <p><span><?=$trans->getTrans('menu','KEYWORDS')?>: </span><?php echo $profile['profileText']; ?></p>
                           </div>
                         </article>
                       <?php endforeach; ?>
