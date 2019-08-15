@@ -234,7 +234,7 @@ class SimilarDocs {
             }
         }
 
-        if ( 'off' == $status ) {
+        if ( 'off' == $status || !$xml ) {
             // Logging class initialization
             $log = new Logging();
             // Log filename

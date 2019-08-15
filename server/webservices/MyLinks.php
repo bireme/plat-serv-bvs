@@ -57,7 +57,7 @@ function addLink($userTK,$linkXML){
  *
  * @param string $userTK user hash
  * @param int $linkID
- * @return booleand
+ * @return boolean
  */
 function removeLink($userTK,$linkID){
     $retObjLink = false;
