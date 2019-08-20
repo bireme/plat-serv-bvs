@@ -357,7 +357,7 @@ div.related_docs p {
 }
 
 #loading, .related-loading {
-    background: url(../../images/default/loading.gif) no-repeat center center;
+    background: url(../../images/myvhl/loading.gif) no-repeat center center;
     height: 60px;
     text-align: center;
     margin-top: 25px;
@@ -482,39 +482,39 @@ div.related_docs p {
 }
 
 .fav-docs .x_title {
-    background: url(../../images/default/document.png) left no-repeat; height: 54px;
+    background: url(../../images/myvhl/document.png) left no-repeat; height: 54px;
 }
 
 .themes .x_title {
-	background: url(../../images/default/020-folder.png) left no-repeat; height: 54px;
+	background: url(../../images/myvhl/020-folder.png) left no-repeat; height: 54px;
 }
 
 .orcid .x_title{
-    background: url(../../images/default/orcid.png) left no-repeat; height: 54px;
+    background: url(../../images/myvhl/orcid.png) left no-repeat; height: 54px;
 }
 
 .fav-links .x_title {
-    background: url(../../images/default/012-bookmark.png) left no-repeat; height: 54px;
+    background: url(../../images/myvhl/012-bookmark.png) left no-repeat; height: 54px;
 }
 
 .tasks .x_title {
-    background: url(../../images/default/023-tasks.png) left no-repeat; height: 54px;
+    background: url(../../images/myvhl/023-tasks.png) left no-repeat; height: 54px;
 }
 
 .vhl-search .x_title {
-    background: url(../../images/default/005-search.png) left no-repeat; height: 54px;
+    background: url(../../images/myvhl/005-search.png) left no-repeat; height: 54px;
 }
 
 .vhl-search .x_title {
-    background: url(../../images/default/005-search.png) left no-repeat; height: 54px;
+    background: url(../../images/myvhl/005-search.png) left no-repeat; height: 54px;
 }
 
 .rss .x_title {
-    background: url(../../images/default/rss.png) left no-repeat; height: 54px;
+    background: url(../../images/myvhl/rss.png) left no-repeat; height: 54px;
 }
 
 .events .x_title {
-    background: url(../../images/default/calendar.png) left no-repeat; height: 54px;
+    background: url(../../images/myvhl/calendar.png) left no-repeat; height: 54px;
 }
 
 .rss .tile-stats {
@@ -550,49 +550,49 @@ div.related_docs p {
 }
 
 .label-danger {
-    background: url(../../images/default/remove.png) left no-repeat;
+    background: url(../../images/myvhl/remove.png) left no-repeat;
     /*height: 16px;*/
     background-color: transparent !important;
 }
 
 .label-info {
-    background: url(../../images/default/edit.png) left no-repeat;
+    background: url(../../images/myvhl/edit.png) left no-repeat;
     /*height: 16px;*/
     background-color: transparent !important;
 }
 
 .google-scholar {
-    background: url(../../images/default/see.png) left no-repeat;
+    background: url(../../images/myvhl/see.png) left no-repeat;
     /*height: 16px;*/
     background-color: transparent !important;
 }
 
 .gs-cited {
-    background: url(../../images/default/cited.gif) left no-repeat;
+    background: url(../../images/myvhl/cited.gif) left no-repeat;
     /*height: 16px;*/
     background-color: transparent !important;
 }
 
 .gs-related {
-    background: url(../../images/default/related.gif) left no-repeat;
+    background: url(../../images/myvhl/related.gif) left no-repeat;
     /*height: 16px;*/
     background-color: transparent !important;
 }
 
 .add-collection {
-    background: url(../../images/default/star.png) left no-repeat;
+    background: url(../../images/myvhl/star.png) left no-repeat;
     /*height: 16px;*/
     background-color: transparent !important;
 }
 
 .related-docs,
 .public-related-docs {
-    background: url(../../images/default/similar.png) left no-repeat;
+    background: url(../../images/myvhl/similar.png) left no-repeat;
     /*height: 16px;*/
 }
 
 .move {
-    background: url(../../images/default/move.png) left no-repeat;
+    background: url(../../images/myvhl/move.png) left no-repeat;
     /*height: 16px;*/
 }
 
@@ -657,15 +657,15 @@ ul.messages li, .tasks li {
 }
 
 .body_pt footer {
-	 background: #FFF url(../../images/default/bireme_azul_pt_horizontal_full.png) top no-repeat !important;             
+	 background: #FFF url(../../images/myvhl/bireme_azul_pt_horizontal_full.png) top no-repeat !important;             
 }
 
 .body_es footer {
-	 background: #FFF url(../../images/default/bireme_azul_es_horizontal_full.png) top no-repeat !important;             
+	 background: #FFF url(../../images/myvhl/bireme_azul_es_horizontal_full.png) top no-repeat !important;             
 }
 
 .body_en footer {
-	 background: #FFF url(../../images/default/bireme_azul_en_horizontal_full.png) top no-repeat !important;             
+	 background: #FFF url(../../images/myvhl/bireme_azul_en_horizontal_full.png) top no-repeat !important;             
 }
 
 .nav-md footer p {
@@ -892,15 +892,15 @@ and (max-device-width : 768px) {
     }
 
 	.body_pt footer {
-	 background: #FFF url(../../images/default/bireme_azul_pt_horizontal.jpg) top no-repeat !important;             
+	 background: #FFF url(../../images/myvhl/bireme_azul_pt_horizontal.jpg) top no-repeat !important;             
 	}
 
 	.body_es footer {
-		 background: #FFF url(../../images/default/bireme_azul_es_horizontal.jpg) top no-repeat !important;             
+		 background: #FFF url(../../images/myvhl/bireme_azul_es_horizontal.jpg) top no-repeat !important;             
 	}
 
 	.body_en footer {
-		 background: #FFF url(../../images/default/bireme_azul_en_horizontal.jpg ) top no-repeat !important;             
+		 background: #FFF url(../../images/myvhl/bireme_azul_en_horizontal.jpg ) top no-repeat !important;             
 	}
 
     .nav-sm footer p {
@@ -916,7 +916,7 @@ and (max-device-width : 768px) {
 and (max-device-width : 1024px) {
     .themes.col-themes .x_title {
         display: inline-table;
-        background: url(../../images/default/020-folder.png) top left no-repeat;
+        background: url(../../images/myvhl/020-folder.png) top left no-repeat;
     }
 
     .themes .x_title small.update-alert {

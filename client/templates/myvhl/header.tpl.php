@@ -1,21 +1,22 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
   <head>
     <!-- Meta, title, CSS, favicons, etc. -->
     <meta http-equiv="Content-Type" content="text/html; charset=<?=CHARSET?>">
     <meta charset="<?=CHARSET?>">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Expires" content="-1" />
-    <meta http-equiv="pragma" content="no-cache" />
+    <meta http-equiv="pragma" content="no-cache" />  
     <meta name="robots" content="all" />
     <meta name="MSSmartTagsPreventParsing" content="true" />
-    <meta name="generator" content="MyVHL <?=VERSION?>" />
+    <meta name="generator" content="BVSServices <?=VERSION?>" />
 
     <?php if ( $public ) : ?>
     <meta property="og:title" content="<?php echo $resultUserDir['dirName']; ?>" /> 
     <meta property="og:description" content="<?php echo $trans->getTrans($_REQUEST['action'],'SHARED_COLLECTION_DESC'); ?>" />
-    <meta property="og:image" content="<?php echo RELATIVE_PATH; ?>/images/default/logo-md-<?=$_SESSION["lang"]?>.png" />
+    <meta property="og:image" content="<?=RELATIVE_PATH?>/images/default/logo-md-<?=$_SESSION["lang"]?>.png" />
     <?php endif; ?>
 
     <?php if ( 'authentication' == $_REQUEST['action'] ) : ?>
@@ -27,36 +28,35 @@
     <?php endif; ?>
 
     <!-- Favicon -->
-    <link rel="icon" href="<?php echo RELATIVE_PATH; ?>/images/<?php echo $_SESSION["skin"]; ?>/favicon.png" sizes="192x192">
-    <!-- Materialize -->
-    <link rel="stylesheet" href="<?php echo RELATIVE_PATH; ?>/css/<?php echo $_SESSION["skin"]; ?>/materialize.css">
-    <!-- Material Icons -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="shortcut icon" href="favicon.ico"/>
+    <!-- Bootstrap -->
+    <link href="<?=RELATIVE_PATH?>/vendors/bootstrap/dist/css/bootstrap.min.css" type="text/css" rel="stylesheet">
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
-    <!-- <link href="<?php echo RELATIVE_PATH; ?>/vendors/font-awesome/css/font-awesome.min.css" type="text/css" rel="stylesheet"> -->
+    <link href="<?=RELATIVE_PATH?>/vendors/font-awesome/css/font-awesome.min.css" type="text/css" rel="stylesheet">
     <!-- Intro.js -->
-    <link href="<?php echo RELATIVE_PATH; ?>/vendors/introjs/introjs.css" type="text/css" rel="stylesheet">
-    <!--link href="<?php echo RELATIVE_PATH; ?>/vendors/introjs/themes/introjs-royal.css" type="text/css" rel="stylesheet"-->
+    <link href="<?=RELATIVE_PATH?>/vendors/introjs/introjs.css" type="text/css" rel="stylesheet">
+    <!--link href="<?=RELATIVE_PATH?>/vendors/introjs/themes/introjs-royal.css" type="text/css" rel="stylesheet"-->
     <!-- Datatables -->
-    <link href="<?php echo RELATIVE_PATH; ?>/vendors/datatables.net-bs/css/dataTables.bootstrap.min.css" type="text/css" rel="stylesheet">
-    <link href="<?php echo RELATIVE_PATH; ?>/vendors/datatables.net-responsive-bs/css/responsive.bootstrap.min.css" type="text/css" rel="stylesheet">
-    <!-- Slick Style -->
-    <link rel="stylesheet" href="<?php echo RELATIVE_PATH; ?>/css/<?php echo $_SESSION["skin"]; ?>/slick.css">
-    <!-- Slick Theme Style -->
-    <link rel="stylesheet" href="<?php echo RELATIVE_PATH; ?>/css/<?php echo $_SESSION["skin"]; ?>/slick-theme.css">
+    <link href="<?=RELATIVE_PATH?>/vendors/datatables.net-bs/css/dataTables.bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link href="<?=RELATIVE_PATH?>/vendors/datatables.net-responsive-bs/css/responsive.bootstrap.min.css" type="text/css" rel="stylesheet">
+    <!-- Theme Login Style -->
+    <link href="<?=RELATIVE_PATH?>/css/<?=$_SESSION["skin"]?>/login.css" type="text/css" rel="stylesheet" />
+    <!-- Theme Layout Style -->
+    <link href="<?=RELATIVE_PATH?>/css/<?=$_SESSION["skin"]?>/layout.css" type="text/css" rel="stylesheet" />
+    <!-- Custom Theme Style -->
+    <link href="<?=RELATIVE_PATH?>/build/css/custom.min.css" type="text/css" rel="stylesheet">
     <!-- Theme Style -->
-    <link href="<?php echo RELATIVE_PATH; ?>/css/<?php echo $_SESSION["skin"]; ?>/style.css" type="text/css" rel="stylesheet" />
+    <link href="<?=RELATIVE_PATH?>/css/<?=$_SESSION["skin"]?>/style.css" type="text/css" rel="stylesheet" />
 
     <?php if ( strpos($_SERVER['HTTP_USER_AGENT'], 'gonative') !== false ) : ?>
     <!-- App Style -->
-    <link href="<?php echo RELATIVE_PATH; ?>/css/<?php echo $_SESSION["skin"]; ?>/app.css" type="text/css" rel="stylesheet" />
+    <link href="<?=RELATIVE_PATH?>/css/<?=$_SESSION["skin"]?>/app.css" type="text/css" rel="stylesheet" />
     <?php endif; ?>
 
-    <style type="text/css">@import url('<?php echo RELATIVE_PATH; ?>/vendors/introjs/themes/introjs-royal.css') (max-width: 768px);</style>
+    <style type="text/css">@import url('<?=RELATIVE_PATH?>/vendors/introjs/themes/introjs-royal.css') (max-width: 768px);</style>
 
     <!-- Intro.js -->
-    <script type="text/javascript" src="<?php echo RELATIVE_PATH; ?>/vendors/introjs/intro.js"></script>
+    <script type="text/javascript" src="<?=RELATIVE_PATH?>/vendors/introjs/intro.js"></script>
 
     <?php
         $b64HttpHost = base64_encode(RELATIVE_PATH.'/controller/authentication');
@@ -118,7 +118,9 @@
     </script>
     <?php endif; ?>
 
-    <?php $body_class = ( !$_SESSION['userTK'] && !$public ) ? 'bodyLogin' : ''; ?>
+    <?php $body_class = ( !$_SESSION['userTK'] && !$public ) ? 'main_page' : ''; ?>
     <?php $lang_class = ( $_SESSION['lang'] ) ? 'body_'.$_SESSION['lang'] : 'body_pt'; ?>
   </head>
-  <body id="body" class="<?php echo $lang_class; ?> <?php echo $body_class; ?>">
+  <body id="body" class="nav-md <?php echo $lang_class; ?> <?php echo $body_class; ?>">
+    <div class="container body">
+      <div class="main_container">

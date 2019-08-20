@@ -11,6 +11,8 @@ require_once(dirname(__FILE__)."/translations.php");
 require_once(dirname(__FILE__)."/../classes/UserDAO.php");
 require_once(dirname(__FILE__)."/../classes/ToolsAuthentication.php");
 
+$path = rtrim($_SERVER['PHP_SELF'], '/');
+
 $acao = isset($_REQUEST['acao'])?$_REQUEST['acao']:'default';
 $email = !empty($_REQUEST['email']) ? trim($_REQUEST['email']) : false;
 $userKey = !empty($_REQUEST['key']) ? $_REQUEST['key'] : false;
@@ -54,73 +56,54 @@ switch($acao){
 $DocTitle = FORGOT_PASSWORD;
 ?>
 
-        <?php require_once(dirname(__FILE__)."/../templates/".DEFAULT_SKIN."/header.tpl.php"); ?>
+<?php require_once(dirname(__FILE__)."/../templates/".DEFAULT_SKIN."/header.tpl.php"); ?>
 
-        <div class="col-md-3 left_col">
-          <div class="left_col scroll-view">
-            <div class="navbar nav_title" style="border: 0;">
-              <a href="<?=RELATIVE_PATH?>/controller/authentication" class="site_title logo-md"><img src="<?=RELATIVE_PATH?>/images/<?=$_SESSION["skin"]?>/logo-md-<?=$_SESSION["lang"]?>.png" alt="VHL Logo"> <span><?=MY_VHL?></span></a>
-            </div>
-            <div class="clearfix"></div>
-          </div>
-        </div>
+	<section  class="container">
+		<div id="recover" class="col-12">
+			<div id="lang">
+   				<?php foreach ($languages as $key => $value) : ?>
+                	<?php if ( $key == $_SESSION['lang'] ) continue; ?>
+                	<a href="<?php echo '?c='.$_REQUEST['c'].'&lang='.$key; ?>"><?php echo $value; ?></a>
+            	<?php endforeach; ?>
+  			</div>
+			<div class="row">
+				<div class="col s12 l4" id="logoRecover">
+					<a href="<?php echo RELATIVE_PATH; ?>/controller/authentication"><img src="<?php echo RELATIVE_PATH; ?>/images/<?php echo $_SESSION["skin"]; ?>/logo-<?php echo $_SESSION["lang"]; ?>.png" alt="" class="responsive-img"></a>
+				</div>
+				<div class="col s12 l8" id="logoRecoverBireme">
+					<img src="http://logos.bireme.org/img/<?php echo $_SESSION["lang"]; ?>/v_bir_color.svg" class="responsive-img" alt="">
+				</div>
+			</div>
+			<div class="divider"></div>
+			<div class="row">
+				<div class="col s12">
+					<?php if ( $retValue === true ) : ?>
+						<div class="card-panel green success-text">
+		    				<span class="white-text"><?php echo $sysMsg; ?></span>
+		  				</div>
+					<?php endif; ?>
+					<h4><?php echo RECOVER_PASSWORD; ?></h4>
+					<?php echo FORGOT_PASSWORD_MESSAGE; ?>
+				</div>
+			</div>
 
-        <!-- page content -->
-        <div class="right_col" role="main">
-          <div>
-            <div class="clearfix"></div>
-            <div class="row">
-              <div class="col-md-12 col-sm-12 col-xs-12">
-                <div class="x_panel">
-                  <?php
-                      if($callerURL) { ?>
-                          <div class="breadcrumb"><a href="<?=$callerURL?>"><?=INDEX?></a> &gt; <?=FORGOT_PASSWORD?></div>
-                      <?php }
-                  ?>
-                  <div class="x_content">
-                    <?php if ( $retValue === true ) : ?>
-                    <div class="alert alert-success alert-dismissible fade in" role="alert">
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
-                        </button>
-                        <strong><?=$sysMsg?></strong>
-                    </div>
-                    <?php else : ?>
-                        <?php if ( $retValue === false || 'DomainNotPermitted' === $retValue ) : ?>
-                        <div class="alert alert-danger alert-dismissible fade in" role="alert">
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
-                            </button>
-                            <strong><?=$sysMsg?></strong>
-                        </div>
-                        <?php endif; ?>
+			<div class="row">
+				<form method="post" name="cadastro" class="form-horizontal form-label-left" novalidate>
+					<div class="input-field col s12 l6 offset-l3">
+						<i class="material-icons prefix">email</i>
+						<input id="icon_prefix" name="login" type="email" data-validate-length-range="0,50">
+						<input type="hidden" value="enviar" name="acao" />
+						<label for="icon_prefix"><?php echo FIELD_LOGIN; ?></label>
+						<?php if ( $retValue === false || 'DomainNotPermitted' === $retValue ) : ?>
+							<span class="helper-text red-text error-text"><?php echo $sysMsg; ?></span>
+						<?php endif; ?>
+					</div>
+					<div class="col s12 center-align">
+						<button class="btn waves-effect waves-light btnPrimary btn-send" type="submit" name="action"><?php echo BUTTON_SEND; ?></button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</section>
 
-                        <form method="post" name="cadastro" class="form-horizontal form-label-left" novalidate>
-                          <span class="section"><?=RECOVER_PASSWORD?></span>
-                          <?=FORGOT_PASSWORD_MESSAGE?>
-                          <div class="item field form-group">
-                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="login"><?=FIELD_LOGIN?> <span class="required">*</span>
-                            </label>
-                            <div class="col-md-6 col-sm-6 col-xs-12">
-                              <input type="email" id="login" name="login" required="required" class="form-control col-md-7 col-xs-12" data-validate-length-range="0,50">
-                            </div>
-                          </div>
-                          <div class="ln_solid"></div>
-                          <div class="form-group">
-                            <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3 col-sm-offset-3" style="text-align: center;">
-                              <?php if($callerURL) : ?>
-                                  <input type="button" value="<?=BUTTON_CANCEL?>" class="btn btn-primary cancel" onclick="javascript:window.location='<?=$callerURL?>'; return false;" />
-                              <?php endif; ?>
-                              <input type="hidden" value="enviar" name="acao" />
-                              <input id="send" type="submit" value="<?=BUTTON_SEND?>" class="btn btn-success submit" />
-                            </div>
-                          </div>
-                        </form>
-                    <?php endif; ?>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- /page content -->
-
-        <?php require_once(dirname(__FILE__)."/../templates/".DEFAULT_SKIN."/footer.tpl.php"); ?>
+<?php require_once(dirname(__FILE__)."/../templates/".DEFAULT_SKIN."/footer.tpl.php"); ?>

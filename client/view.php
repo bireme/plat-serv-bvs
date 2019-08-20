@@ -8,7 +8,11 @@ if (($_REQUEST["action"] == 'authentication' or $_REQUEST["action"] == 'requesta
 
 switch($_REQUEST["action"]){
     case "authentication":
-        require_once(dirname(__FILE__)."/templates/".$_SESSION["skin"]."/authentication.tpl.php");
+        if ( "recover" == $_REQUEST["task"] ) {
+            require_once(dirname(__FILE__)."/templates/".$_SESSION["skin"]."/recover.tpl.php");
+        } else {
+            require_once(dirname(__FILE__)."/templates/".$_SESSION["skin"]."/authentication.tpl.php");
+        }
     break;
     case "requestauth":
         require_once(dirname(__FILE__)."/templates/".$_SESSION["skin"]."/requestauth.tpl.php");

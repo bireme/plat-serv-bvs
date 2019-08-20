@@ -1,58 +1,192 @@
-.media-body .fa-external-link,
-.media-body .fa-folder-open-o,
-.media-body .fa-file-text-o,
-.media-body .fa-file-o {
-    padding-right: 5px;
+body{background: #edf1f5 url('../../images/default/bgGeral.png') fixed no-repeat top right; background-size: 100%; }
+a:hover{color: #ffb042;}
+.p1{padding: 0 20px!important;}
+.pm0{padding: 0!important; margin: 0!important; }
+.pm1{padding: 0 10px!important; margin: 0 0 0 0px!important;}
+.pl1{padding-left: 10px;}
+.m1{margin:0!important;}
+.box1{background: #fff; padding: 20px; margin-bottom: 20px; border-radius: 5px;}
+.box2{background: #fff; padding: 20px; margin-bottom: 20px; position: relative; min-height: 150px;}
+.box3{background: #fff; padding: 20px; margin-bottom: 20px; position: relative; min-height: 280px;}
+.box4{background: #fff; padding: 20px; margin-bottom: 20px; position: relative; min-height: 200px;}
+.box5{background: #fff; padding: 20px 20px 60px 20px; margin-bottom: 20px;  position: relative; border-radius: 5px;}
+.color2{background: #ddd; color: #337ab7;}
+.boxAutor{line-height: 16px; font-size: 12px; margin-top: 10px;}
+/*Botões*/
+.btn1:hover{color: #ccc;}
+.btnSuccess{background: #43a047;}
+.btnPrimary{background: #337ab7;}
+.btnDanger{background: #b71c1c;}
+.btnWarning{background: #b5a921;}
+.btnRegistre{color: #337ab7; border:2px #337ab7 solid; background: #fff;}
+.btnSuccess:hover{background: #55bf59; color: #fff;}
+.btnPrimary:hover{background: #286090; color: #fff;}
+.btnDanger:hover{background: #e62a30; color: #fff;}
+.btnWarning:hover{background: #e0cf04; color: #fff;}
+.btnRegistre:hover{background: #337ab7; color: #fff;}
+.btnFacebook{ background-color: #4e69a2; margin-bottom: 2px;}
+.btnGoogle{ background-color: #c94428; margin-bottom: 2px;}
+.btnFacebook:hover{ background-color: #3b5998; color: #fff; }
+.btnGoogle:hover{ background-color: #c32f10; color: #fff; }
+.dropdown-content{min-width: 250px!important;}
+.btn100{width: 100%;}
+.btn1{padding:5px 10px; text-decoration: none; color: #fff;  font-size: 14px;  cursor: pointer; border: none; border-radius: 2px;}
+.btn1 i{font-size: 16px; margin:0px;}
+.btn2{padding:0px 5px; text-decoration: none; color: #fff;  font-size: 14px;  cursor: pointer; border: none; border-radius: 2px;}
+.btn3{padding:3px 5px; text-decoration: none; margin-right: 2px; color: #fff;  font-size: 12px;  cursor: pointer; border: none; border-radius: 2px;}
+/*Login*/
+#wrap{margin-left: 300px; color: #5a78a2; padding: 20px;}
+#header{margin-left: 300px; background: #5a78a2; color: #fff; padding:20px; position: sticky; top: 0; z-index: 10;}
+#aside{width: 300px; height: 100%; position: fixed; left: 0; background: #fff; color: #5a78a2; padding: 20px; transition: width .5s ease;}
+#nav{background: none!important; box-shadow: none!important; line-height: 50px;}
+#nav ul li{width: 100%; height: 50px!important;}
+#nav ul li a{border-bottom: 1px solid #eee; color: #333; padding:0px 0px 0px 15px!important; display: block; height: auto!important; margin: 0px!important;}
+#nav ul li a:hover{color:#5a78a2;}
+#nav ul li a i{font-size: 20px; line-height: 50px; transition: margin 0.5s ease;}
+#nav ul li a:hover i{font-size: 20px; margin-left: 10px;}
+.customize{color: #fff; padding:10px 10px; border: 1px; transition: background .5s ease; font-size: 14px;}
+.customize:hover{background: #7c9dcc; color: #DDD; border-radius: 5px;}
+.customize i{line-height: 10px; vertical-align: middle;}
+#menuMobile{display: none;}
+.btn2Botoes{position: absolute; bottom: 15px; border-top: 1px solid #ddd; width: 90%; padding-top: 10px;}
+/*login*/
+.bodyLogin{background: url('../../images/default/bgLogin.jpg') fixed center; background-size: cover;}
+#login{
+	width: 450px; max-width: 450px; padding: 32px; margin: 50px auto 0 auto; background: #fff; text-align: center; position: relative;
+	box-shadow: 0 8px 10px -5px rgba(0,0,0,.2), 0 16px 24px 2px rgba(0,0,0,.14), 0 6px 30px 5px rgba(0,0,0,.12);
 }
-
-.panel_toolbox {
-    min-width: 0;
-    margin-top: 10px;
+.loginOu{position: relative;}
+.loginOu::before{content: ""; width: 30px; position: absolute; right: 130%; top: 10px; border-top: 1px solid rgba(0,0,0,.12);}
+.loginOu::after{content: ""; width: 30px; position: absolute; left: 130%; top: 10px; border-top: 1px solid rgba(0,0,0,.12);}
+#lang{position: absolute; top: 5px; text-align: center; left: 50%; transform: translateX(-50%);}
+#lang a{padding: 0 5px; background: #fefefe; }
+.showMenor1200{display: none;}
+.tituloDropdown{margin-top: 20px; font-size: 18px;}
+.btn-send { margin-bottom: 22px; }
+.btn-login { margin-bottom: 22px; }
+.separator { margin-bottom: 22px; }
+img.responsive-img { margin-bottom: 6px }
+span.error-text { margin: 0 !important; width: 100% !important; text-align: center; }
+.card-panel.success-text { margin-top: 2em; text-align: center; }
+#recover{
+	padding: 32px; margin: 50px auto 0 auto; background: #fff; 
+	box-shadow: 0 8px 10px -5px rgba(0,0,0,.2), 0 16px 24px 2px rgba(0,0,0,.14), 0 6px 30px 5px rgba(0,0,0,.12);position: relative;
 }
-
-.profile_info {
-    float: none;
-    width: 100%;
-    padding: 25px 10px;
+#logoRecover{ text-align: left;}
+#logoRecoverBireme{ text-align: right; margin-top: 40px;}
+#logoRecoverBireme img{ max-height: 80px; }
+.listDefault:not(.browser-default){padding-left: 20px;}
+.listDefault:not(.browser-default) > li{list-style-type: square!important;}
+/****** icones compartilhar *******/
+.facebookIcon{ color: #3a589b; }
+.twitterIcon{ color: #598dca; }
+.linkedinIcon{ color: #007ab9; }
+.emailIcon{ color: #fbb040; }
+.whatsappkIcon{ color: #57bb63; }
+.iconShare{transition: margin 0.1s ease; margin-top: 10px;  width: 60px!important;}
+.iconShare:hover{margin-top: 0px;}
+/****** form *********/
+.inputHeader{ background: #fff!important; color: #123!important; border: 0!important; border-radius: 5px!important;}
+#btSearch{ margin-top: -45px!important; height: 3rem; border-radius: 5px; margin-left: 20px;}
+#btSearchModal{height: 3rem; border-radius: 5px; margin-left: 20px;}
+#footer{border-top: 2px solid #ddd; background: #fff; padding: 20px; margin-top: 20px;}
+#footer img{max-width: 700px;}
+.event{ margin-bottom: 10px; border-bottom: 1px dotted #999; padding-bottom: 10px; }
+.event:last-child{ border-bottom: none; }
+.eventDate{float: left; width: 60px; padding: 10px; background: #5a78a2; color: #fff; text-align: center; border-radius: 5px;  margin-right: 20px;}
+.eventMes{ font-size: 12px; font-weight: bold; margin: 0; padding: 0; }
+.eventDia{line-height: 30px; font-size: 30px; margin: 0; padding: 0; }
+.event:hover .eventDate{ background: #ffb042; }
+#combinarMais{display: none; background: #eee; padding: 0 20px;}
+#combinar{position: sticky; top: 0; padding: 12px 0!important; background: #ddd;}
+.slider .slides li .caption{top: 0px;}
+#btnClose{cursor: pointer;}
+#btnClose i{transition: transform.5s ease;}
+#btnClose:hover{ color: #fff;}
+.btnClose2{transform: rotate(-180deg);}
+.linkBreak{word-break: break-all;}
+.lista1 li{	margin-bottom: 10px; border-bottom: 1px dotted #999; padding-bottom: 10px;}
+.lista1 li:last-child{	margin-bottom: 10px; border-bottom: none}
+/*Datepicker*/
+.datepicker-date-display{ background-color: #5a78a2;}
+/****************************** cor dark ************************/
+.bgColor1 {background-color: #ddd;}
+.bgColor1 #header{background: #333;}
+.bgColor1 #aside{background: black; color: #fff;}
+.bgColor1 #nav li a{color: #fff;}
+.bgColor1 #nav li a:hover{color:#ddd;}
+.bgColor1 #menuMobile i{color: #fff!important;}
+/****************************** cor green ************************/
+.bgColor2 {background-color: #8bffca;}
+.bgColor2 #header{background: #02c36b;}
+.bgColor2 #aside{background: #00a65a; color: #fff;}
+.bgColor2 #nav li a{color: #fff;}
+.bgColor2 #nav li a:hover{color:#ddd;}
+.bgColor2 #menuMobile i{color: #fff!important;}
+/**************************************
+************* Breakpoint **************
+**************************************/
+/************ > 1600px ***************/
+@media (min-width: 1600px){
+	.box3{min-height: 230px;}
 }
-
-p.excerpt span {
-    color: #23527c;
+/************ 1336px ***************/
+@media (max-width: 1336px){
+	.card-title{font-size: 18px!important;}
+	.box3{min-height: 320px;}
 }
-
-#squareSpaceModal.modal {
-    display: block;
+/************ 1200px ***************/
+@media (max-width: 1200px){
+	.card-title{font-size: 18px!important;}
+	#flag, #usuario{ display: none;}
+	#btSearch{margin-top: 0!important;}
+	.box3{min-height: 240px;}
+	.showMenor1200{display: block;}
+	.colAction{min-width: 125px}
+	.bannerHomeInt{padding: 0 20px;}
 }
-
-#squareSpaceModal .modal-header {
-    padding-bottom: 5px;
+/************ 1024px ***************/
+@media (max-width: 1024px){
+	#wrap{margin-left: 240px;}
+	#header{margin-left: 240px;}
+	#aside{width: 240px;}
 }
-
-#squareSpaceModal .modal-footer {
-    padding: 0;
+/************ 992px ***************/
+@media (max-width: 991px){
+	#wrap{margin-left: 100px;}
+	#header{margin-left: 100px;}
+	#aside{width: 100px; z-index: 9999;}
+	#aside:hover{width: 300px;}
+	#aside:hover .navtitulo{display:block;}
+	.navtitulo{display: none;}
+	.box2, .box3, .box4{min-height: auto;}
+	.btn2Botoes{ position: static; margin-top: 10px; }
+	#logoRecoverBireme, #logoRecover{ text-align: center;}
 }
-    
-#squareSpaceModal .modal-footer .btn-group button {
-    height: 40px;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-    border: none;
-    border-right: 1px solid #ddd;
+/************ 768px ***************/
+@media (max-width: 768px){
+	.bodyLogin{background: #fff;}
+	#login{width: 100%; max-width: 100%; box-shadow: none; margin: auto;}
+	#wrap{margin-left: 0px;}
+	#header{margin-left: 0px; }
+	#aside, #aside:hover{width: 100%; height: 100%; position: static;}
+	#brand{text-align: center;}
+	#nav{display: none;}
+	#menuMobile{display: inline-block; float: left; color: #fff;}
+	#menuMobile i{font-size: 40px; color: #123;}
+	.colAction{min-width:140px;}
+	.box5{padding:20px;}
 }
-    
-#squareSpaceModal .modal-footer .btn-group:last-child > button {
-    border-right: 0;
-}
-
-#squareSpaceModal .alert {
-    padding: 0;
-    margin: 0 0 20px;
-}
-
-#squareSpaceModal .radio-child {
-    padding-left: 20px;
-}
-
-#squareSpaceModal .radio-btn {
-    margin-top: 2px;
+/************ 600px ***************/
+@media (max-width: 600px){
+	.box1{min-height: auto;}
+	.btn2Botoes{ position: static; margin-top: 10px; }
+	.btn90{width: 100%;}
+	#btSearchModal{margin:0;}
+	#btSearch{margin:0;}
+	.colAction{min-width:50px; max-width:50px;}
+	.colAction .btn1{border-radius: 0;}
+	#boxBtSearch{padding-left:0px;}
+	.pm1{padding: 0 5%!important; width: 85%!important;} 
+	.dropdown-content{min-width: 220px!important;}
 }

@@ -25,7 +25,7 @@ Facebook, Google, BIREME Account ou do próprio serviço Minha BVS. <a href="jav
         self::$trans["authentication"]["MY_VHL_DESCRIPTION"] = '
 <p>Minha BVS é um serviço gratuito que guarda informações e preferências do
 usuário para oferecer serviços personalizados e facilidades tais como:</p>
-<ul>
+<ul class="listDefault">
     <li>Criação de coleções de documentos a partir de resultado de buscas processadas nas bases de dados da BVS.</li>
     <li>Documentos encontrados nas bases de dados da BVS a partir das palavras-chaves indicadas para Temas de Interesse.</li>
     <li>Publicações de autoria do usuário recuperadas em várias fontes considerando o número ORCID informado no Perfil do Usuário.</li>
@@ -48,8 +48,8 @@ usuário para oferecer serviços personalizados e facilidades tais como:</p>
         self::$trans["authentication"]["EMAIL"] = 'e-mail ou';
         self::$trans["authentication"]["LOGIN_FIELD"] = 'e-mail ou usuário';
         self::$trans["authentication"]["LOGIN"] = 'Entrar';
-        self::$trans["authentication"]["USER"] = 'usuário';
-        self::$trans["authentication"]["PASSWORD"] = 'senha';
+        self::$trans["authentication"]["USER"] = 'Usuário';
+        self::$trans["authentication"]["PASSWORD"] = 'Senha';
         self::$trans["authentication"]["PRESS_HERE"] = 'clique aqui';
         self::$trans["authentication"]["INVALID_LOGIN"] = 'usuário ou senha inválidos';
         self::$trans["authentication"]["INVALID_LOGIN_MAIL"] = '
@@ -75,10 +75,11 @@ usuário para oferecer serviços personalizados e facilidades tais como:</p>
         self::$trans["authentication"]["HELPLOGINMESSAGE"] = '';
         self::$trans["authentication"]["KNOWMORE"] = 'saiba mais';
         self::$trans["authentication"]["ACCESS_DENIED"] = 'acesso negado';
-        self::$trans["authentication"]["OR"] = 'ou';
+        self::$trans["authentication"]["OR"] = 'OU';
         self::$trans["authentication"]["LOGIN_WITH"] = 'entrar com';
-        self::$trans["authentication"]["LOGIN_MESSAGE"] = 'Faça o login na Minha BVS';
+        self::$trans["authentication"]["LOGIN_MESSAGE"] = 'FAÇA O LOGIN NA MINHA BVS';
         self::$trans["authentication"]["LOGIN_ACCESS_MESSAGE"] = 'Acesse diretamente na Minha BVS';
+        self::$trans["authentication"]["REMEMBER_ME"] = 'Lembrar-me';
 
     // Terms of the Request Authentication Page
         self::$trans["requestauth"]["LOGIN"] = 'login';
