@@ -110,7 +110,7 @@ usuário para oferecer serviços personalizados e facilidades tais como:</p>
         self::$trans["menu"]["MY_NEWS"] = 'Minhas Notícias';
         self::$trans["menu"]["FORGOT_MY_PASSWORD"] = 'Esqueci minha senha';
         self::$trans["menu"]["CHANGE_PASSWORD"] = 'Alterar minha senha';
-        self::$trans["menu"]["MY_DATA"] = 'Editar meu Perfil';
+        self::$trans["menu"]["MY_DATA"] = 'Editar Perfil';
         self::$trans["menu"]["MY_ALERTS"] = 'Meus Alertas';
         self::$trans["menu"]["SEARCH"] = 'Pesquisar';
         self::$trans["menu"]["SEARCH_FOR"] = 'Pesquisar na BVS por...';
@@ -137,9 +137,11 @@ usuário para oferecer serviços personalizados e facilidades tais como:</p>
         self::$trans["menu"]["QUERY"] = 'Expressão de busca';
         self::$trans["menu"]["VIEW"] = 'Buscar';
         self::$trans["menu"]["RSS"] = 'RSS';
-        self::$trans["menu"]["SEARCH_WIDGET"] = 'Buscas na BVS';
+        self::$trans["menu"]["SEARCH_WIDGET"] = 'Histórico de Buscas';
         self::$trans["menu"]["PROFILE_WIDGET"] = 'Temas de Interesse';
         self::$trans["menu"]["SHELF_WIDGET"] = 'Documentos Favoritos';
+        self::$trans["menu"]["INFO_WIDGET"] = 'Isso pode lhe interessar';
+        self::$trans["menu"]["TOUR"] = 'Tour Virtual';
         self::$trans["menu"]["START_TOUR"] = 'Iniciar Tour';
         self::$trans["menu"]["NEXT_PAGE"] = '<span>Próxima</span> <span>funcionalidade</span>';
         self::$trans["menu"]["BACK"] = '&larr; Voltar';
@@ -148,14 +150,18 @@ usuário para oferecer serviços personalizados e facilidades tais como:</p>
         self::$trans["menu"]["DONE"] = 'Concluir';
         self::$trans["menu"]["LEAVE_COMMENT"] = 'Enviar Comentário';
         self::$trans["menu"]["REPORT_ERROR"] = 'Comunicar Erro';
+        self::$trans["menu"]["SUGGESTIONS"] = 'Sugestões';
         self::$trans["menu"]["EVENTS"] = 'Eventos';
+        self::$trans["menu"]["MORE"] = 'Mais';
+        self::$trans["menu"]["PROFILE"] = 'Perfil';
+        self::$trans["menu"]["CONFIGURATIONS"] = 'Configurações';
         self::$trans["menu"]["FOOTER_MESSAGE"] = '
-<p><strong>BIREME - OPAS - OMS</strong><br/>
+<b>BIREME - OPAS - OMS</b><br/>
 Centro Latino-Americano e do Caribe de Informação em Ciências da Saúde<br />
 Departamento de Evidência e Inteligência para a Ação em Saúde – EIH<br />
 Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 | Fax: (55 11) 5575-8868<br />
-<a href="http://new.paho.org/bireme" title="Minha BVS">http://www.paho.org/bireme/</a><br /><br />
-<strong><a href="http://politicas.bireme.org/terminos/pt/">Termos e Condições de Uso</a> | <a href="http://politicas.bireme.org/privacidad/pt/">Políticas de Privacidade</a></strong></p>
+<a href="http://new.paho.org/bireme" title="Minha BVS" target="_blank">http://www.paho.org/bireme/</a><br />
+<b><a href="http://politicas.bireme.org/terminos/pt/" target="_blank">Termos e Condições de Uso</a> | <a href="http://politicas.bireme.org/privacidad/pt/" target="_blank">Políticas de Privacidade</a></b>
 ';
 
     // Terms of searchresults pages

@@ -146,14 +146,18 @@ class CharTools {
      * @param string $string
      * @return string
      */
-    public static function shortenedQueryString($query){
+    public static function shortenedQueryString($query,$crop=true){
         $query =  htmlspecialchars_decode($query);
 
         if ( strlen($query) > 100 ) {
             $start = substr($query, 0, 100);
             $end = substr($query, 100);
 
-            return $start.'<span class="show-all"> [...]</span><span class="short-query">'.$end.'</span>';
+            if ($crop) {
+                $query = $start . ' [...]';
+            } else {
+                return $start.'<span class="show-all"> [...]</span><span class="short-query">'.$end.'</span>';
+            }
         }
 
         return $query;
