@@ -8,6 +8,15 @@
     <script type="text/javascript" src="<?php echo RELATIVE_PATH; ?>/js/materialize.min.js"></script>
     <!-- Slick -->
     <script type="text/javascript" src="<?php echo RELATIVE_PATH; ?>/js/slick.js"></script>
+    <!-- Validator Form -->
+    <script src="<?php echo RELATIVE_PATH; ?>/vendors/validator/validator.js"></script>
+    <!-- jQuery Validate -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
+    <!-- iCheck -->
+    <!-- <script src="<?php echo RELATIVE_PATH; ?>/vendors/iCheck/icheck.min.js"></script> -->
+    <!-- bootstrap-daterangepicker -->
+    <script src="<?php echo RELATIVE_PATH; ?>/vendors/moment/moment.min.js"></script>
+    <script src="<?php echo RELATIVE_PATH; ?>/vendors/datepicker/daterangepicker.js"></script>
     <!-- Datatables -->
     <script type="text/javascript" src="<?php echo RELATIVE_PATH; ?>/vendors/datatables.net/js/jquery.dataTables.min.js"></script>
     <script type="text/javascript" src="<?php echo RELATIVE_PATH; ?>/vendors/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
@@ -34,116 +43,160 @@
         };
     </script>
 
-    <!-- bootstrap-daterangepicker -->
+    <!-- Datepicker -->
     <script type="text/javascript">
       $(document).ready(function() {
         var max = moment();
         var min = moment().subtract(100, 'years');
+        var maxYear = new Date(max).getFullYear();
+        var minYear = new Date(min).getFullYear();
 
         var regional = [];
         regional["pt"] = {
-            daysOfWeek: [ "Do", "2ª", "3ª", "4ª", "5ª", "6ª", "Sa" ],
-            monthNames: [ "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro" ]
+            months: [ "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro" ],
+            monthsShort: [ 'Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez' ],
+            weekdaysShort: [ 'Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sab' ],
+            // weekdaysAbbrev: [ "Do", "2ª", "3ª", "4ª", "5ª", "6ª", "Sa" ],
+            today: 'Hoje',
+            clear: 'Limpar',
+            cancel: 'Sair',
+            done: 'Confirmar',
+            labelMonthNext: 'Próximo mês',
+            labelMonthPrev: 'Mês anterior',
+            labelMonthSelect: 'Selecione um mês',
+            labelYearSelect: 'Selecione um ano',
         };
         regional["es"] = {
-            daysOfWeek: [ "Do", "Lu", "Ma", "Mi", "Ju", "Vi", "Sa" ],
-            monthNames: [ "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre" ]
+            months: [ "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre" ],
+            monthsShort: [ 'Ene', 'Feb', 'Mar', 'Abr', 'Mayo', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic' ],
+            weekdaysShort: [ "Dom", "Lun", "Mar", "Mie", "Jue", "Vie", "Sab" ],
+            today: 'Hoy',
+            clear: 'Limpiar',
+            cancel: 'Salir',
+            done: 'Confirmar',
+            labelMonthNext: 'Proximo mes',
+            labelMonthPrev: 'Mes anterior',
+            labelMonthSelect: 'Seleccione un mes',
+            labelYearSelect: 'Seleccione um año',
         };
         regional["en"] = {
-            daysOfWeek: [ "Su", "Mo", "Tu", "We", "Th", "Fr", "Sa" ],
-            monthNames: [ "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ]
+            months: [ "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ],
+            monthsShort: [ 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec' ],
+            weekdaysShort: [ "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat" ],
+            today: 'Today',
+            clear: 'Clear',
+            cancel: 'Cancel',
+            done: 'Done',
+            labelMonthNext: 'Next month',
+            labelMonthPrev: 'Previous month',
+            labelMonthSelect: 'Select a month',
+            labelYearSelect: 'Select a year',
         };
 
-        $('#birthday').daterangepicker({
-          maxDate: max,
-          minDate: min,
-          format: 'DD/MM/YYYY',
-          locale: regional[LANG],
-          singleDatePicker: true,
-          showDropdowns: true,
-          calender_style: "picker_2"
-        }, function(start, end, label) {
-          console.log(start.toISOString(), end.toISOString(), label);
+        $('#birthday').datepicker({
+            i18n: regional[LANG],
+            format: 'dd/mm/yyyy',
+            container: 'body',
+            maxDate: new Date(max),
+            minDate: new Date(minYear, 0, 1),
+            yearRange: [minYear, maxYear],
         });
 
-        $('#birthday').on('keydown', function (e) {
-            e.preventDefault();
-            return false;
-        });
+        // $('#birthday').on('keydown', function (e) {
+        //     e.preventDefault();
+        //     return false;
+        // });
       });
     </script>
-    <!-- /bootstrap-daterangepicker -->
+    <!-- /Datepicker -->
 
-    <!-- Validator -->
     <script type="text/javascript">
-        // initialize the validator
-        var validator = new FormValidator();
-
-        // initialize the validator function
-        validator.texts.invalid         = labels[LANG]['INVALID'];
-        validator.texts.empty           = labels[LANG]['EMPTY'];
-        validator.texts.short           = labels[LANG]['SHORT'];
-        validator.texts.long            = labels[LANG]['LONG'];
-        validator.texts.number_min      = labels[LANG]['NUMBER_MIN'];
-        validator.texts.number_max      = labels[LANG]['NUMBER_MAX'];
-        validator.texts.url             = labels[LANG]['URL'];
-        validator.texts.number          = labels[LANG]['NUMBER'];
-        validator.texts.email           = labels[LANG]['EMAIL'];
-        validator.texts.email_repeat    = labels[LANG]['EMAIL_REPEAT'];
-        validator.texts.password_repeat = labels[LANG]['PASSWORD_REPEAT'];
-        validator.texts.no_match        = labels[LANG]['NO_MATCH'];
-        validator.texts.complete        = labels[LANG]['COMPLETE'];
-        validator.texts.select          = labels[LANG]['SELECT'];
-        validator.texts.radio           = labels[LANG]['RADIO'];
-        validator.texts.date            = labels[LANG]['DATA'];
-        validator.texts.time            = labels[LANG]['TIME'];
-        validator.texts.checked         = labels[LANG]['CHECKED'];
-
-        document.forms['cadastro'].addEventListener('blur', function(e){
-            if ( !$(e.target).is('#birthday') )
-                validator.checkField.call(validator, e.target);
-        }, true);
-
-        document.forms['cadastro'].addEventListener('input', function(e){
-            validator.checkField.call(validator, e.target);
-        }, true);
-
-        document.forms['cadastro'].addEventListener('change', function(e){
-            validator.checkField.call(validator, e.target);
-        }, true);
-
-        document.forms['cadastro'].onsubmit = function(e){
-            var submit = true,
-                validatorResult = validator.checkAll(this);
-
-            console.log(validatorResult);
-            return !!validatorResult.valid;
-        };
-
-        document.forms['cadastro'].onsubmit = function(e){
-            var submit = true,
-                validatorResult = validator.checkAll(this);
-
-            console.log(validatorResult);
-            return !!validatorResult.valid;
-        };
-
-        $('#reason').on('click', function (e) {
-            var submit = true,
-                form = document.forms['cadastro'];
-                validatorResult = validator.checkAll(form);
-
-            if ( validatorResult.valid ) {
-                $('.bs-account-modal-lg').modal('show');
+        $("#cadastro").validate({
+            rules: {
+                firstName: {
+                    required: true,
+                    maxlength: 150
+                },
+                lastName: {
+                    required: true,
+                    maxlength: 150
+                },
+                user: {
+                    required: true,
+                    email: true
+                },
+                confirmUser: {
+                    required: true,
+                    email: true,
+                    equalTo: "#user"
+                },
+                lattes: {
+                    url: true
+                },
+                linkedin: {
+                    url: true
+                },
+                researchGate: {
+                    url: true
+                },
+                country: "required",
+                degree: "required",
+                profArea: "required",
+                gender: "required",
+                birthday: "required",
+                accept_mail: "required",
+                terms: "required",
+            },
+            messages: {
+                firstName: {
+                    required: labels[LANG]['EMPTY'],
+                    maxlength: labels[LANG]['SHORT']
+                },
+                lastName: {
+                    required: labels[LANG]['EMPTY'],
+                    maxlength: labels[LANG]['SHORT']
+                },
+                user: {
+                    required: labels[LANG]['EMPTY'],
+                    email: labels[LANG]['EMAIL']
+                },
+                confirmUser: {
+                    required: labels[LANG]['EMPTY'],
+                    email: labels[LANG]['EMAIL'],
+                    equalTo: labels[LANG]['EMAIL_REPEAT']
+                },
+                lattes: {
+                    url: labels[LANG]['URL']
+                },
+                linkedin: {
+                    url: labels[LANG]['URL']
+                },
+                researchGate: {
+                    url: labels[LANG]['URL']
+                },
+                country: labels[LANG]['SELECT'],
+                degree: labels[LANG]['SELECT'],
+                profArea: labels[LANG]['SELECT'],
+                gender: labels[LANG]['SELECT'],
+                birthday: labels[LANG]['EMPTY'],
+                accept_mail: labels[LANG]['CHECKED'],
+                terms: labels[LANG]['CHECKED'],
+            },
+            // errorClass: "invalid form-error error",
+            errorElement : 'div',
+            errorPlacement: function(error, element) {
+              var placement = $(element).data('error');
+              if (placement) {
+                $(placement).append(error)
+              } else {
+                if (element.attr("name") == "accept_mail" || element.attr("name") == "terms" ) {
+                    error.insertAfter("#"+element.attr("name"));
+                } else {
+                    error.insertAfter(element);
+                }
+              }
             }
-
-            console.log(validatorResult);
-            return !!validatorResult.valid;
         });
-
-        // $('.multi.required').on('keyup blur', 'input', function(){
-        //     var field = validator.checkField.call( validator, this).siblings('[required]')[0] );
-        // });
     </script>
 
     <?php if ( $_SESSION['userTK'] ) : ?>

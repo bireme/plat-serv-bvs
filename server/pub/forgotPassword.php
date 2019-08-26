@@ -86,7 +86,6 @@ $DocTitle = FORGOT_PASSWORD;
 					<?php echo FORGOT_PASSWORD_MESSAGE; ?>
 				</div>
 			</div>
-
 			<div class="row">
 				<form method="post" name="cadastro" class="form-horizontal form-label-left" novalidate>
 					<div class="input-field col s12 l6 offset-l3">

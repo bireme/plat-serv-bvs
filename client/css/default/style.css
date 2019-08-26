@@ -260,6 +260,8 @@ a:hover {
 }
 .loginOu {
 	position: relative;
+    margin-bottom: 22px;
+    display: block;
 }
 .loginOu::before {
 	content: "";
@@ -343,6 +345,24 @@ a.portal,
 a.search {
 	cursor: pointer;
 }
+.input-field div.error {
+    font-size: 0.8rem;
+    color: #FF0000;
+    -webkit-transform: translateY(0%);
+    -ms-transform: translateY(0%);
+    -o-transform: translateY(0%);
+    transform: translateY(0%);
+}
+.checkbox-field div.error {
+    font-size: 0.8rem;
+    color: #FF0000;
+    -webkit-transform: translateY(0%);
+    -ms-transform: translateY(0%);
+    -o-transform: translateY(0%);
+    transform: translateY(0%);
+    padding-left: 35px;
+}
+
 /* SHARE ICONS */
 .facebookIcon {
     color: #3a589b;

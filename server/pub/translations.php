@@ -18,6 +18,7 @@ if($lang == 'pt'){
     define('BVSSIGLA','BVS');
     define('BVS','Passaporte BVS e SciELO');
     define('CONTACT_FORM','Formulário de contato');
+    define('CHOOSE_GENDER','selecionar');
     define('CHOOSE_DEGREE','selecionar');
     define('CHOOSE_PROFESSIONAL_AREA','selecionar');
     define('CHOOSE_COUNTRY','selecionar');
@@ -54,7 +55,7 @@ if($lang == 'pt'){
 <p>Minha BVS é um serviço gratuito disponível para qualquer usuário por meio de sua conta Facebook, Google, BIREME Account ou do próprio serviço Minha BVS.</p>
 <p>O usuário que preferir usar o serviço Minha BVS com sua conta Facebook ou Google NÃO precisa criar nova conta de usuário na Minha BVS.</p>
 <p>BIREME Account é um sistema de gestão de usuários dos Centros Cooperantes da Rede BIREME. Estes usuários NÃO precisam criar nova conta de usuário na Minha BVS.</p>
-<p>Para criar uma nova conta de usuário Minha BVS é necessário preencher o formulário abaixo com dados pessoais e concordar com os termos de uso e política de privacidade. <a href="javascript:;" class="decor" data-toggle="modal" data-target=".bs-modal-lg" style="text-decoration: underline;">Saiba mais</a></p>
+<p>Para criar uma nova conta de usuário Minha BVS é necessário preencher o formulário abaixo com dados pessoais e concordar com os termos de uso e política de privacidade.</p>
 ');
     define("MY_VHL_DESCRIPTION",'
 <p>Minha BVS é um serviço gratuito que guarda informações e preferências do
@@ -73,11 +74,14 @@ usuário para oferecer serviços personalizados e facilidades tais como:</p>
     define('MY_VHL_ENTRY','Já tem registro de usuário da Minha BVS?');
     define('OR_ENTER_WITH','ou entre com');
     define('ENTER','Entrar');
-    define("FOOTER_MESSAGE",'<p><strong>BIREME - OPAS - OMS</strong><br/>
+    define("FOOTER_MESSAGE",'
+<br /><b>BIREME - OPAS - OMS</b><br />
 Centro Latino-Americano e do Caribe de Informação em Ciências da Saúde<br />
-Área de Gestão do Conhecimento, Bioética e Pesquisa - KBR<br />
+Departamento de Evidência e Inteligência para a Ação em Saúde – EIH<br />
 Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 | Fax: (55 11) 5575-8868<br />
-<a href="http://new.paho.org/bireme" title="Minha BVS">http://www.paho.org/bireme/</a><br /></p>');
+<a href="http://new.paho.org/bireme" title="Minha BVS" target="_blank">http://www.paho.org/bireme/</a><br />
+<b><a href="http://politicas.bireme.org/terminos/pt/" target="_blank">Termos e Condições de Uso</a> | <a href="http://politicas.bireme.org/privacidad/pt/" target="_blank">Políticas de Privacidade</a></b>
+');
     define('LEARN_MORE','saiba mais');
     define('PERSONAL_DATA','Seus dados');
     define('REGISTER_NEW_USER_TITLE','Registro de Novo Usuário');
@@ -108,11 +112,11 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
     define("NOTICE",'Mensagem ao usuário');
     define("NOTICE_MESSAGE",'');
     define("UPDATE_INFO",'<b>Por favor, revise seus dados no formulário abaixo para continuar utilizando a Minha BVS.</b>');
-    define("ACCEPT_MAIL",'Quero receber por email novidades sobre o serviço Minha BVS');
+    define("ACCEPT_MAIL",'Quero receber por email novidades sobre o serviço MinhaBVS');
     define("UNSUBSCRIBE_MAIL_SUCCESS",'Suas configurações de email foram atualizadas.');
     define("UNSUBSCRIBE_MAIL_ERROR",'<b>ERRO: Não foi possível cancelar o envio de emails.</b>');
     define("TERMS",'Termos de uso');
-    define("TERMS_AGREEMENT_MESSAGE",'Eu concordo com os <a data-toggle="modal" data-target=".bs-terms-modal-lg" style="cursor: pointer; text-decoration: underline;">Termos de Uso</a> e confirmo que li a <a data-toggle="modal" data-target=".bs-policy-modal-lg" style="cursor: pointer; text-decoration: underline;">Política de Privacidade</a> da Minha BVS');
+    define("TERMS_AGREEMENT_MESSAGE",'Eu concordo com os <a href="http://politicas.bireme.org/terminos/pt/" target="_blank">Termos de Uso</a> e confirmo que li a <a href="http://politicas.bireme.org/privacidad/pt/" target="_blank">Política de Privacidade</a> da MinhaBVS');
     define("TERMS_MESSAGE",'
 <div class="terms">
 
@@ -336,6 +340,15 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
     define("USER_REMOVE_ACCOUNT","<b>Sua conta foi removida.</b>");
     define("USER_REMOVE_ACCOUNT_ERROR","<b>ERRO: Não foi possível remover sua conta.</b>");
     define('DELETE_ACCOUNT_REQUEST', 'Solicitar exclusão da conta');
+    define('WHAT_IS_IT','O que é?');
+    define('WHAT_IS_IT_DESC','
+<h4>O que é?</h4>
+<b>ORCID</b>
+<p>ORCID é um código alfanumérico não proprietário para identificar exclusivamente cientistas e outros autores acadêmicos e contribuidores.</p>
+
+<b>ResearcherID</b>
+<p>O ResearcherID é um identificador único que permite que os pesquisadores gerenciem suas listas de publicações, rastreiem suas contagens de citações e índice h e evitem a identificação errônea do autor. Além disso, sua informação ResearcherID se integra com a Web of Science e com o ORCiD, possibilitando que você reivindique e exiba suas publicações a partir de uma única conta.</p>
+');
 }
 
 if($lang == 'es'){

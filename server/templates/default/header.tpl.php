@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html>
   <head>
     <!-- Meta, title, CSS, favicons, etc. -->
@@ -21,7 +21,7 @@
     <!-- Material Icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css">
     <!-- <link href="<?php echo RELATIVE_PATH; ?>/vendors/font-awesome/css/font-awesome.min.css" type="text/css" rel="stylesheet"> -->
     <!-- Intro.js -->
     <link href="<?php echo RELATIVE_PATH; ?>/vendors/introjs/introjs.css" type="text/css" rel="stylesheet">
