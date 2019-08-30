@@ -80,141 +80,97 @@ if(!empty($userID)){
 
 $DocTitle = REMOVE_ACCOUNT;
 
+require_once(dirname(__FILE__)."/../templates/".DEFAULT_SKIN."/header.tpl.php");
+require_once(dirname(__FILE__)."/../templates/".DEFAULT_SKIN."/sidebar.tpl.php");
+require_once(dirname(__FILE__)."/../templates/".DEFAULT_SKIN."/nav.tpl.php");
 ?>
 
-        <?php require_once(dirname(__FILE__)."/../templates/".DEFAULT_SKIN."/header.tpl.php"); ?>
-
-        <?php
-            if($isUser) {
-                require_once(dirname(__FILE__)."/../templates/".DEFAULT_SKIN."/sidebar.tpl.php");
-            } else { ?>
-                <div class="col-md-3 left_col">
-                  <div class="left_col scroll-view">
-                    <div class="navbar nav_title" style="border: 0;">
-                      <a href="<?=RELATIVE_PATH?>/controller/authentication" class="site_title logo-md"><img src="<?=RELATIVE_PATH?>/images/<?=$_SESSION["skin"]?>/logo-md-<?=$_SESSION["lang"]?>.png" alt="VHL Logo"> <span><?=MY_VHL?></span></a>
-                    </div>
-                    <div class="clearfix"></div>
-                  </div>
-                </div>
-        <?php } ?>
-
-        <!-- page content -->
-        <div class="right_col" role="main">
-          <div>
-            <div class="clearfix"></div>
-            <div class="row">
-              <div class="col-md-12 col-sm-12 col-xs-12">
-                <div class="x_panel">
-
-                  <?php if ( $callerURL && $retValue ) : ?>
-                  <div class="breadcrumb"><a href="<?=$callerURL?>"><?=INDEX?></a> &gt; <?=REMOVE_ACCOUNT?></div>
-                  <?php endif; ?>
-                  
-                  <div class="x_content">
-                    <?php if ( $retValue === true ) : ?>
-                    <div class="alert alert-success alert-dismissible fade in" role="alert">
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
-                        </button>
-                        <strong><?=$sysMsg?></strong>
-                    </div>
-                    <?php else : ?>
-                        <?php if ( $retValue === false ) : ?>
-                        <div class="alert alert-danger alert-dismissible fade in" role="alert">
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
-                            </button>
-                            <strong><?=$sysMsg?></strong>
-                        </div>
-                        <?php endif; ?>
-
-                        <form method="post" name="cadastro" class="form-horizontal form-label-left" novalidate>
-                          <span class="section"><?=REMOVE_ACCOUNT?></span>
-                          <?php echo REMOVE_ACCOUNT_DESCRIPTION; ?>
-                          <div class="item field form-group reason">
-                            <div class="col-md-5 col-sm-5 col-xs-12">
-                              <?php echo REMOVE_ACCOUNT_REASON; ?>
-                              <div class="radio">
-                                  <input name="reason" type="radio" class="flat" value="SAFETY" required="required">
-                                  <span><?php echo REMOVE_ACCOUNT_OPTION_A; ?></span>
-                              </div>
-                              <div class="radio">
-                                  <input name="reason" type="radio" class="flat" value="USEFUL">
-                                  <span><?php echo REMOVE_ACCOUNT_OPTION_B; ?></span>
-                              </div>
-                              <div class="radio">
-                                  <input name="reason" type="radio" class="flat" value="HACKED">
-                                  <span><?php echo REMOVE_ACCOUNT_OPTION_C; ?></span>
-                              </div>
-                              <div class="radio">
-                                  <input name="reason" type="radio" class="flat" value="UNDERSTAND">
-                                  <span><?php echo REMOVE_ACCOUNT_OPTION_D; ?></span>
-                              </div>
-                              <div class="radio">
-                                  <input name="reason" type="radio" class="flat" value="OTHERACCOUNTS">
-                                  <span><?php echo REMOVE_ACCOUNT_OPTION_E; ?></span>
-                              </div>
-                              <div class="radio">
-                                  <input name="reason" type="radio" class="flat" value="EMAIL">
-                                  <span><?php echo REMOVE_ACCOUNT_OPTION_F; ?></span>
-                              </div>
-                              <div class="radio">
-                                  <input name="reason" type="radio" class="flat" value="PRIVACY">
-                                  <span><?php echo REMOVE_ACCOUNT_OPTION_G; ?></span>
-                              </div>
-                              <div class="radio">
-                                  <input name="reason" type="radio" class="flat" value="OTHER">
-                                  <span><?php echo REMOVE_ACCOUNT_OPTION_H; ?></span>
-                              </div>
-                            </div>
-                          </div>
-                          <?php echo REMOVE_ACCOUNT_DETAILS; ?>
-                          <div class="item field form-group">
-                            </label>
-                            <div class="col-md-6 col-sm-6 col-xs-12">
-                              <textarea id="details" class="form-control col-md-6 col-sm-6 col-xs-12" name="details"></textarea>
-                            </div>
-                          </div>
-                          <div class="ln_solid"></div>
-                          <div class="form-group">
-                            <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3 col-sm-offset-3" style="text-align: center;">
-                              <?php if($callerURL) : ?>
-                                <button type="button" class="btn btn-primary" onclick="javascript:window.location='<?=$callerURL?>'; return false;"><?=BUTTON_CANCEL?></button>
-                              <?php endif; ?>
-                              <input type="hidden" value="remover" name="acao" />
-                              <button id="reason" type="button" class="btn btn-success"><?=BUTTON_CONTINUE?></button>
-                            </div>
-                          </div>
-
-                          <div class="modal fade bs-account-modal-lg" tabindex="-1" role="dialog" aria-hidden="true" style="z-index: 9999; color: #73879C; text-align: center;">
-                            <div class="modal-dialog modal-lg">
-                              <div class="modal-content">
-                                <div class="modal-header">
-                                  <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span>
-                                  </button>
-                                  <h2 class="modal-title"><?=REMOVE_ACCOUNT?></h2>
-                                </div>
-                                <div class="modal-body">
-                                  <?=REMOVE_ACCOUNT_POPUP?>
-                                  <div class="item field form-group" style="display: inline-flex; align-items: center;">
-                                    <div class="col-md-12 col-sm-12 col-xs-12">
-                                      <div class="g-recaptcha" data-callback="recaptchaCallback" data-sitekey="<?=RECAPTCHA_SITE_KEY?>"></div>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div class="modal-footer">
-                                  <button type="button" class="btn btn-default" data-dismiss="modal" style="float: left;"><?=BUTTON_CANCEL?></button>
-                                  <button id="recaptcha" type="submit" class="btn btn-danger" disabled><?=BUTTON_DELETE?></button>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </form>
-                    <?php endif; ?>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- /page content -->
-
-        <?php require_once(dirname(__FILE__)."/../templates/".DEFAULT_SKIN."/footer.tpl.php"); ?>
+	<div id="wrap">
+		<div class="row box1">
+			<div class="col s12">
+				<h5 class="title1"><i class="fas fa-door-open left"></i> <?php echo REMOVE_ACCOUNT; ?></h5>
+				<div class="divider"></div>
+			</div>
+			<?php if ( $retValue === true ) : ?>
+				<div class="col s12">
+					<div class="card-panel green success-text">
+						<i class="close material-icons right white-text dismiss" style="cursor: pointer;">close</i>
+						<i class="material-icons white-text left" style="cursor: default;">check_circle</i>
+						<span class="white-text"><?php echo $sysMsg; ?></span>
+					</div>
+				</div>
+			<?php else : ?>
+				<?php if ( $retValue === false ) : ?>
+					<div class="col s12">
+						<div class="card-panel red success-text">
+							<i class="close material-icons right white-text dismiss" style="cursor: pointer;">close</i>
+							<i class="material-icons white-text left" style="cursor: default;">report_problem</i>
+							<span class="white-text"><?php echo $sysMsg; ?></span>
+						</div>
+					</div>
+				<?php endif; ?>
+				<section class="col s12">
+					<div class="box1">
+	                    <form method="post" id="removeaccount" name="removeaccount" class="col s12" novalidate>
+	                    	<input type="hidden" value="remover" name="acao" />
+							<div class="row">
+								<div class="input-field col s12">
+									<?php echo REMOVE_ACCOUNT_DESCRIPTION; ?>
+								</div>
+								<div class="input-field col s12">
+	                                <?php echo REMOVE_ACCOUNT_REASON; ?>
+									<div>
+										<label><input class="with-gap" name="reason" type="radio" value="SAFETY" checked /><span><?php echo REMOVE_ACCOUNT_OPTION_A; ?></span></label>
+									</div>
+									<div>
+										<label><input class="with-gap" name="reason" type="radio" value="USEFUL" /><span><?php echo REMOVE_ACCOUNT_OPTION_B; ?></span></label>
+									</div>
+									<div>
+										<label><input class="with-gap" name="reason" type="radio" value="HACKED" /><span><?php echo REMOVE_ACCOUNT_OPTION_C; ?></span></label>
+									</div>
+									<div>
+										<label><input class="with-gap" name="reason" type="radio" value="UNDERSTAND" /><span><?php echo REMOVE_ACCOUNT_OPTION_D; ?></span></label>
+									</div>
+									<div>
+										<label><input class="with-gap" name="reason" type="radio" value="OTHERACCOUNTS" /><span><?php echo REMOVE_ACCOUNT_OPTION_E; ?></span></label>
+									</div>
+									<div>
+										<label><input class="with-gap" name="reason" type="radio" value="EMAIL" /><span><?php echo REMOVE_ACCOUNT_OPTION_F; ?></span></label>
+									</div>
+									<div>
+										<label><input class="with-gap" name="reason" type="radio" value="PRIVACY" /><span><?php echo REMOVE_ACCOUNT_OPTION_G; ?></span></label>
+									</div>
+									<div>
+										<label><input class="with-gap" name="reason" type="radio" value="OTHER" /><span><?php echo REMOVE_ACCOUNT_OPTION_H; ?></span></label>
+									</div>
+								</div>
+								<div class="input-field col s12" style="display: none;">
+									<textarea id="details" name="details" class="materialize-textarea bgInputs"></textarea>
+									<label for="details"><?php echo REMOVE_ACCOUNT_DETAILS; ?></label>
+								</div>
+								<div class="col s12 recaptcha">
+	                                <div class="g-recaptcha" data-callback="recaptchaCallback" data-sitekey="<?=RECAPTCHA_SITE_KEY?>"></div>
+	                            </div>
+								<div class="right">
+									<a href="#modal" id="recaptcha" class=" modal-trigger waves-effect waves-light btn btnDanger hoverable" disabled><?php echo BUTTON_DELETE; ?></a>
+								</div>
+							</div>
+						</form>
+					</div>
+				</section>
+			<?php endif; ?>
+		</div>
+		<?php require_once(dirname(__FILE__)."/../templates/".DEFAULT_SKIN."/info.tpl.php"); ?>
+		<?php require_once(dirname(__FILE__)."/../templates/".DEFAULT_SKIN."/more.tpl.php"); ?>
+	</div>
+	<div id="modal" class="modal">
+	    <div class="modal-content">
+	        <h5><?php echo REMOVE_ACCOUNT; ?></h5>
+	        <p><?php echo REMOVE_ACCOUNT_POPUP; ?></p>
+	    </div>
+	    <div class="modal-footer">
+	        <a href="#!" id="remove-account" class="modal-action modal-close waves-effect btn-flat"><?php echo BUTTON_CONFIRM; ?></a>
+	        <a href="#!" class="modal-action modal-close waves-effect btn-flat"><?php echo BUTTON_CANCEL; ?></a>
+	    </div>
+    </div>
+	<?php require_once(dirname(__FILE__)."/../templates/".DEFAULT_SKIN."/footer.tpl.php"); ?>
