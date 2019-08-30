@@ -46,75 +46,66 @@ if ( 'atualizar' == $acao && $oldPassword && $newPassword && $userID ) {
 }
 
 $DocTitle = CHANGE_PASSWORD;
+
+require_once(dirname(__FILE__)."/../templates/".DEFAULT_SKIN."/header.tpl.php");
+require_once(dirname(__FILE__)."/../templates/".DEFAULT_SKIN."/sidebar.tpl.php");
+require_once(dirname(__FILE__)."/../templates/".DEFAULT_SKIN."/nav.tpl.php");
 ?>
 
-        <?php require_once(dirname(__FILE__)."/../templates/".DEFAULT_SKIN."/header.tpl.php"); ?>
-        <?php require_once(dirname(__FILE__)."/../templates/".DEFAULT_SKIN."/sidebar.tpl.php"); ?>
+	<div id="wrap">
+		<div class="row box1">
+			<div class="col s12">
+				<h5 class="title1"><i class="fas fa-unlock-alt left"></i> <?php echo CHANGE_PASSWORD; ?></h5>
+				<div class="divider"></div>
+			</div>
+			<?php if ( $retValue === true ) : ?>
+				<div class="col s12">
+					<div class="card-panel green success-text">
+						<i class="close material-icons right white-text dismiss" style="cursor: pointer;">close</i>
+						<i class="material-icons white-text left" style="cursor: default;">check_circle</i>
+						<span class="white-text"><?php echo $sysMsg; ?></span>
+					</div>
+				</div>
+			<?php endif; ?>
+			<?php if ( $retValue === false || 'DomainNotPermitted' === $retValue || 'invalidpass' === $retValue ) : ?>
+				<div class="col s12">
+					<div class="card-panel red success-text">
+						<i class="close material-icons right white-text dismiss" style="cursor: pointer;">close</i>
+						<i class="material-icons white-text left" style="cursor: default;">report_problem</i>
+						<span class="white-text"><?php echo $sysMsg; ?></span>
+					</div>
+				</div>
+			<?php endif; ?>
+			<section class="col s12">
+				<div class="box1">
+                    <form method="post" id="changepass" name="changepass" class="col s12" novalidate>
+                        <input type="hidden" value="atualizar" name="acao" />
+						<div class="row">
+							<div class="input-field col s12 center-align">
+								<img src="<?php echo RELATIVE_PATH; ?>/images/<?php echo $_SESSION["skin"]; ?>/user.svg" class="circle" width="150" alt="Avatar User">
+							</div>
+							<div class="input-field col s12">
+								<input id="oldPassword" name="oldPassword" type="password" class="bgInputs" autocomplete="off" required="">
+								<label for="oldPassword">* <?php echo FIELD_OLD_PASSWORD; ?></label>
+							</div>
+							<div class="input-field col s12">
+								<input id="newPassword" name="newPassword" type="password" class="bgInputs" autocomplete="off" required="">
+								<label for="newPassword">* <?php echo FIELD_NEW_PASSWORD; ?></label>
+							</div>
+							<div class="input-field col s12">
+								<input id="confirmPassword" name="confirmPassword" type="password" class="bgInputs" autocomplete="off" required="">
+								<label for="confirmPassword">* <?php echo FIELD_NEW_PASSWORD_CONFIRM; ?></label>
+							</div>
+							<div class="right">
+								<input type="submit" class="btn btnSuccess hoverable" value="<?php echo BUTTON_UPDATE_USER; ?>">
+							</div>
+						</div>
+					</form>
+				</div>
+			</section>
+		</div>
+		<?php require_once(dirname(__FILE__)."/../templates/".DEFAULT_SKIN."/info.tpl.php"); ?>
+		<?php require_once(dirname(__FILE__)."/../templates/".DEFAULT_SKIN."/more.tpl.php"); ?>
+	</div>
 
-        <!-- page content -->
-        <div class="right_col" role="main">
-          <div>
-            <div class="clearfix"></div>
-            <div class="row">
-              <div class="col-md-12 col-sm-12 col-xs-12">
-                <div class="x_panel">
-                  <div class="x_content">
-                    <?php if ( $retValue === true ) : ?>
-                    <div class="alert alert-success alert-dismissible fade in" role="alert">
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
-                        </button>
-                        <strong><?=$sysMsg?></strong>
-                    </div>
-                    <?php else : ?>
-                        <?php if ( $retValue === false || 'DomainNotPermitted' === $retValue || 'invalidpass' === $retValue ) : ?>
-                        <div class="alert alert-danger alert-dismissible fade in" role="alert">
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
-                            </button>
-                            <strong><?=$sysMsg?></strong>
-                        </div>
-                        <?php endif; ?>
-
-                        <form method="post" name="cadastro" class="form-horizontal form-label-left" novalidate>
-                          <span class="section"><?=CHANGE_PASSWORD?></span>
-                          <div class="item field form-group">
-                            <label for="oldPassword" class="control-label col-md-3 col-sm-3 col-xs-12"><?=FIELD_OLD_PASSWORD?> <span class="required">*</span>
-                            </label>
-                            <div class="col-md-6 col-sm-6 col-xs-12">
-                              <input id="oldPassword" type="password" name="oldPassword" data-validate-length-range="8,40" class="form-control col-md-7 col-xs-12" required="required">
-                            </div>
-                          </div>
-                          <div class="item field form-group">
-                            <label for="newPassword" class="control-label col-md-3 col-sm-3 col-xs-12"><?=FIELD_NEW_PASSWORD?> <span class="required">*</span>
-                            </label>
-                            <div class="col-md-6 col-sm-6 col-xs-12">
-                              <input id="newPassword" type="password" name="newPassword" data-validate-length-range="8,40" class="form-control col-md-7 col-xs-12" required="required">
-                            </div>
-                          </div>
-                          <div class="item field form-group">
-                            <label for="confirmPassword" class="control-label col-md-3 col-sm-3 col-xs-12"><?=FIELD_NEW_PASSWORD_CONFIRM?> <span class="required">*</span>
-                            </label>
-                            <div class="col-md-6 col-sm-6 col-xs-12">
-                              <input id="confirmPassword" type="password" name="confirmPassword" data-validate-linked="newPassword" class="form-control col-md-7 col-xs-12" required="required">
-                            </div>
-                          </div>
-                          <div class="ln_solid"></div>
-                          <div class="form-group">
-                            <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3 col-sm-offset-3" style="text-align: center;">
-                              <?php if($callerURL) : ?>
-                                <input type="button" value="<?=BUTTON_CANCEL?>" class="btn btn-primary cancel" onclick="javascript:window.location='<?=$callerURL?>'; return false;" />
-                              <?php endif; ?>
-                              <input type="hidden" value="atualizar" name="acao" />
-                              <input id="send" type="submit" value="<?=BUTTON_UPDATE_USER?>" class="btn btn-success submit" />
-                            </div>
-                          </div>
-                        </form>
-                    <?php endif; ?>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- /page content -->
-
-        <?php require_once(dirname(__FILE__)."/../templates/".DEFAULT_SKIN."/footer.tpl.php"); ?>
+	<?php require_once(dirname(__FILE__)."/../templates/".DEFAULT_SKIN."/footer.tpl.php"); ?>
