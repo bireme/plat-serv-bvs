@@ -6,12 +6,17 @@
 			<?php if ( $response["status"] === true ) : ?>
 				<div class="col s12 l12">
 					<div class="card-panel green success-text">
+						<i class="close material-icons right white-text dismiss" style="cursor: pointer;">close</i>
+						<i class="material-icons white-text left" style="cursor: default;">check_circle</i>
 						<span class="white-text"><?php echo $response["msg"]; ?></span>
 					</div>
 				</div>
-			<?php else : ?>
+			<?php endif; ?>
+			<?php if ( $response["status"] === false ) : ?>
 				<div class="col s12 l12">
 					<div class="card-panel red success-text">
+						<i class="close material-icons right white-text dismiss" style="cursor: pointer;">close</i>
+						<i class="material-icons white-text left" style="cursor: default;">report_problem</i>
 						<span class="white-text"><?php echo $response["msg"]; ?></span>
 					</div>
 				</div>
@@ -52,33 +57,6 @@
 						<input id="afiliacao" name="afiliacao" type="text" class="bgInputs" autocomplete="off">
 						<label for="afiliacao"><?php echo FIELD_AFILIATION; ?></label>
 					</div>
-<!--
-					<div class="input-field col s12">
-						<input id="lattes" name="lattes" type="url" class="bgInputs" autocomplete="off" value="">
-						<label for="lattes"><?php echo FIELD_LATTES; ?></label>
-						<span class="helper-text" data-error="wrong" data-success="right"></span>
-					</div>
-					<div class="input-field col s12">
-						<input id="linkedin" name="linkedin" type="url" class="bgInputs" autocomplete="off" value="">
-						<label for="linkedin"><?php echo FIELD_LINKEDIN; ?></label>
-						<span class="helper-text" data-error="wrong" data-success="right"></span>
-					</div>
-					<div class="input-field col s12">
-						<input id="researchGate" name="researchGate" type="url" class="bgInputs" autocomplete="off" value="">
-						<label for="researchGate"><?php echo FIELD_RESEARCHGATE; ?></label>
-						<span class="helper-text" data-error="wrong" data-success="right"></span>
-					</div>
-					<div class="input-field col s12 m6">
-						<input id="orcid" name="orcid" type="text" class="bgInputs" autocomplete="off" value="">
-						<label for="orcid"><?php echo FIELD_ORCID; ?></label>
-						<span class="helper-text" data-error="wrong" data-success="right"><a class="modal-trigger" href="#modal"><?php echo WHAT_IS_IT; ?></a></span>
-					</div>
-					<div class="input-field col s12 m6">
-						<input id="researcherID" name="researcherID" type="text" class=" bgInputs" autocomplete="off" value="">
-						<label for="researcherID"><?php echo FIELD_RESEARCHERID; ?></label>
-						<span class="helper-text" data-error="wrong" data-success="right"><a class="modal-trigger" href="#modal"><?php echo WHAT_IS_IT; ?></a></span>
-					</div>
--->
 					<div class="input-field col s12 m6">
 						<select id="country" name="country" required="">
                             <?php
@@ -138,19 +116,6 @@
 						<label for="birthday"><?php echo FIELD_BIRTHDAY; ?></label>
 						<div class="clearfix"></div>
 					</div>
-<!--
-					<div class="input-field col s12">
-						<div class="file-field input-field">
-							<div class="btn">
-								<span><?php echo FIELD_AVATAR; ?></span>
-								<input id="avatar" name="avatar" type="file" accept="image/*">
-							</div>
-							<div class="file-path-wrapper">
-								<input id="file-path" name="file-path" class="file-path " type="text">
-							</div>
-						</div>
-					</div>
--->
 					<div class="checkbox-field col s12">
 						<label>
 							<input name="accept_mail" type="checkbox" value="1" />

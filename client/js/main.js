@@ -148,3 +148,15 @@ $(document).ready(function(){
 $(document).ready(function() {
   $('input.formTitulo').characterCounter();
 });
+//  --------------------------------- Dismiss Button
+$('.dismiss').click(function(){
+  $(this).parent().hide();
+})
+//  --------------------------------- Dismiss Button
+$('input[type=radio][name=reason]').change(function() {
+    if (this.value == 'OTHER') {
+        $('#details').parent().show();
+    } else {
+        $('#details').parent().hide();
+    }
+});

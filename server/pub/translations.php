@@ -9,12 +9,15 @@ if($lang == 'pt'){
     define("MY_VHL",'Minha BVS');
     define("SERVPLAT",'Plataforma de Serviços');
     define('BIREME','BIREME | OPAS | OMS');
+    define("PROFILE",'Perfil');
+    define("CONFIGURATIONS",'Configurações');
     define('BUTTON_NEW_USER','Enviar');
     define('BUTTON_CANCEL','Cancelar');
     define('BUTTON_CONTINUE','Prosseguir');
     define('BUTTON_CLOSE','Fechar');
     define('BUTTON_SEND','Enviar');
     define("BUTTON_UPDATE_USER","Atualizar");
+    define('BUTTON_CONFIRM','Confirmar');
     define('BVSSIGLA','BVS');
     define('BVS','Passaporte BVS e SciELO');
     define('CONTACT_FORM','Formulário de contato');
@@ -267,7 +270,7 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
 
     define("DASHBOARD",'Meus Conteúdos');
     define("INDEX",'home');
-    define("HOMEPAGE",'Visão Geral');
+    define("HOMEPAGE",'Home');
     define("WELCOME",'Bem-vindo');
     define("USERS_SERVICES",'Serviços Personalizados');
     define("OLA",'Olá');
@@ -285,7 +288,7 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
 ');
     define("CHANGE_PASSWORD",'Alterar Senha');
     define("RECOVER_PASSWORD",'Recuperar Senha');
-    define("MY_DATA",'Editar meu Perfil');
+    define("MY_DATA",'Editar Perfil');
     define("MY_ALERTS",'Meus Alertas');
     define("SEARCH",'Pesquisar');
     define("SEARCH_FOR",'Pesquisar na BVS por...');
@@ -312,6 +315,7 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
     define("SEARCH_WIDGET",'Buscas na BVS');
     define("PROFILE_WIDGET",'Temas de Interesse');
     define("SHELF_WIDGET",'Documentos das Coleções');
+    define("TOUR",'Tour Virtual');
     define("START_TOUR",'Iniciar Tour');
     define("LEAVE_COMMENT",'Enviar Comentário');
     define("REPORT_ERROR",'Comunicar Erro');
@@ -322,19 +326,18 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
 <p>Você solicitou a exclusão da sua conta nos Serviços Personalizados de Informação - Minha BVS. Ao excluí-la você perderá as informações relacionadas ao seu perfil, suas coleções de documentos, perfis de interesse e demais conteúdos da Minha BVS. Esta ação é irreversível.</p>
 <p>Se você tem certeza que quer excluir seu usuário, por favor conte-nos rapidamente o motivo de deixar de utilizar o Minha BVS.</p>'
 );
-    define("REMOVE_ACCOUNT_REASON",'<strong>Motivo da Exclusão (obrigatório)</strong>');
-    define("REMOVE_ACCOUNT_OPTION_A",'Eu não me sinto seguro no Minha BVS');
-    define("REMOVE_ACCOUNT_OPTION_B",'Eu não acho que o Minha BVS seja útil');
+    define("REMOVE_ACCOUNT_REASON",'<b>Motivo da Exclusão (obrigatório)</b><br /><br />');
+    define("REMOVE_ACCOUNT_OPTION_A",'Eu não me sinto seguro na MinhaBVS');
+    define("REMOVE_ACCOUNT_OPTION_B",'Eu não acho que a MinhaBVS seja útil');
     define("REMOVE_ACCOUNT_OPTION_C",'Minha conta foi invadida');
-    define("REMOVE_ACCOUNT_OPTION_D",'Não sei utilizar o Minha BVS');
-    define("REMOVE_ACCOUNT_OPTION_E",'Eu possuo outra conta no Minha BVS');
-    define("REMOVE_ACCOUNT_OPTION_F",'Recebo muitos e-mails do Minha BVS');
+    define("REMOVE_ACCOUNT_OPTION_D",'Não sei utilizar a MinhaBVS');
+    define("REMOVE_ACCOUNT_OPTION_E",'Eu possuo outra conta na MinhaBVS');
+    define("REMOVE_ACCOUNT_OPTION_F",'Recebo muitos e-mails da MinhaBVS');
     define("REMOVE_ACCOUNT_OPTION_G",'Tenho uma preocupação quanto à privacidade');
     define("REMOVE_ACCOUNT_OPTION_H",'Outro');
-    define("REMOVE_ACCOUNT_DETAILS",'<p>Dê mais detalhes sobre o motivo da sua saída (opcional)</p>');
+    define("REMOVE_ACCOUNT_DETAILS",'Dê mais detalhes sobre o motivo da sua saída (opcional)');
     define("REMOVE_ACCOUNT_POPUP",'
 <p>Você está prestes a excluir permanentemente sua conta. Tem certeza?</p>
-<p>Em caso afirmativo, basta clicar na opção abaixo.</p>
 ');
     define('BUTTON_DELETE','Apagar Conta');
     define("USER_REMOVE_ACCOUNT","<b>Sua conta foi removida.</b>");

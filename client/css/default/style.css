@@ -70,6 +70,10 @@ a:hover {
 .btn1:hover {
 	color: #ccc;
 }
+.btnDefault {
+    color: #212529;
+    background: #f8f9fa;
+}
 .btnSuccess {
 	background: #43a047;
 }
@@ -86,6 +90,10 @@ a:hover {
 	color: #337ab7;
 	border: 2px #337ab7 solid;
 	background: #fff;
+}
+.btnDefault:hover {
+    background: #e2e6ea;
+    /*color: #fff;*/
 }
 .btnSuccess:hover {
 	background: #55bf59;
@@ -362,6 +370,12 @@ a.search {
     transform: translateY(0%);
     padding-left: 35px;
 }
+.form-group .input-field {
+    min-height: 72px;
+}
+.recaptcha {
+    margin-top: 2em;
+}
 
 /* SHARE ICONS */
 .facebookIcon {
@@ -485,6 +499,12 @@ a.search {
 .lista1 li:last-child {
     margin-bottom: 10px;
     border-bottom: none
+}
+#modal .btn-flat:focus,
+#modal .btn-flat:hover {
+    background-color: rgba(0,0,0,0.1);
+    box-shadow: none;
+    color: #343434;
 }
 
 /* DATEPICKER */

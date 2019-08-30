@@ -94,12 +94,12 @@ usuário para oferecer serviços personalizados e facilidades tais como:</p>
 
     // Terms of the menu pages
         self::$trans["menu"]["VHL_PORTAL"] = 'Portal Regional da BVS';
-        self::$trans["menu"]["FEATURE"] = 'Visão Geral';
+        self::$trans["menu"]["FEATURE"] = 'Home';
         self::$trans["menu"]["MY_VHL"] = 'Minha BVS';
         self::$trans["menu"]["SERVPLAT"] = 'Plataforma de Serviços';
         self::$trans["menu"]["COLLAPSE_MENU"] = 'Recolher Menu';
         self::$trans["menu"]["DASHBOARD"] = 'Meus Conteúdos';
-        self::$trans["menu"]["HOME"] = 'Visão Geral';
+        self::$trans["menu"]["HOME"] = 'Home';
         self::$trans["menu"]["WELCOME"] = 'Bem-vindo';
         self::$trans["menu"]["USERS_SERVICES"] = 'Serviços Personalizados';
         self::$trans["menu"]["OLA"] = 'Olá';
@@ -109,7 +109,7 @@ usuário para oferecer serviços personalizados e facilidades tais como:</p>
         self::$trans["menu"]["MY_LINKS"] = 'Links Favoritos';
         self::$trans["menu"]["MY_NEWS"] = 'Minhas Notícias';
         self::$trans["menu"]["FORGOT_MY_PASSWORD"] = 'Esqueci minha senha';
-        self::$trans["menu"]["CHANGE_PASSWORD"] = 'Alterar minha senha';
+        self::$trans["menu"]["CHANGE_PASSWORD"] = 'Alterar Senha';
         self::$trans["menu"]["MY_DATA"] = 'Editar Perfil';
         self::$trans["menu"]["MY_ALERTS"] = 'Meus Alertas';
         self::$trans["menu"]["SEARCH"] = 'Pesquisar';

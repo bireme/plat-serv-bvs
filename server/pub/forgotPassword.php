@@ -79,6 +79,8 @@ $DocTitle = FORGOT_PASSWORD;
 				<div class="col s12">
 					<?php if ( $retValue === true ) : ?>
 						<div class="card-panel green success-text">
+							<i class="close material-icons right white-text dismiss" style="cursor: pointer;">close</i>
+							<i class="material-icons white-text left" style="cursor: default;">check_circle</i>
 		    				<span class="white-text"><?php echo $sysMsg; ?></span>
 		  				</div>
 					<?php endif; ?>
@@ -87,7 +89,7 @@ $DocTitle = FORGOT_PASSWORD;
 				</div>
 			</div>
 			<div class="row">
-				<form method="post" name="cadastro" class="form-horizontal form-label-left" novalidate>
+				<form method="post" id="forgotpass" name="forgotpass" class="form-horizontal form-label-left" novalidate>
 					<div class="input-field col s12 l6 offset-l3">
 						<i class="material-icons prefix">email</i>
 						<input id="icon_prefix" name="login" type="email" data-validate-length-range="0,50">

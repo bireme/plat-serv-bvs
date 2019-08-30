@@ -38,6 +38,13 @@
     <script src='https://www.google.com/recaptcha/api.js?hl=<?php echo $_SESSION['lang']; ?>'></script>
 
     <script type="text/javascript">
+        $(document).ready(function() {
+            $('#remove-account').on('click', function(e) {
+                e.preventDefault();
+                $('#removeaccount').submit();
+            })
+        });
+
         function recaptchaCallback() {
             $('#recaptcha').removeAttr('disabled');
         };
@@ -144,17 +151,16 @@
                 profArea: "required",
                 gender: "required",
                 birthday: "required",
-                accept_mail: "required",
                 terms: "required",
             },
             messages: {
                 firstName: {
                     required: labels[LANG]['EMPTY'],
-                    maxlength: labels[LANG]['SHORT']
+                    maxlength: labels[LANG]['LONG']
                 },
                 lastName: {
                     required: labels[LANG]['EMPTY'],
-                    maxlength: labels[LANG]['SHORT']
+                    maxlength: labels[LANG]['LONG']
                 },
                 user: {
                     required: labels[LANG]['EMPTY'],
@@ -179,7 +185,6 @@
                 profArea: labels[LANG]['SELECT'],
                 gender: labels[LANG]['SELECT'],
                 birthday: labels[LANG]['EMPTY'],
-                accept_mail: labels[LANG]['CHECKED'],
                 terms: labels[LANG]['CHECKED'],
             },
             // errorClass: "invalid form-error error",
@@ -189,11 +194,58 @@
               if (placement) {
                 $(placement).append(error)
               } else {
-                if (element.attr("name") == "accept_mail" || element.attr("name") == "terms" ) {
-                    error.insertAfter("#"+element.attr("name"));
+                if ( "terms" == element.attr("name") ) {
+                  error.insertAfter("#"+element.attr("name"));
                 } else {
-                    error.insertAfter(element);
+                  error.insertAfter(element);
                 }
+              }
+            }
+        });
+    </script>
+
+    <script type="text/javascript">
+        $("#changepass").validate({
+            rules: {
+                oldPassword: {
+                    required: true,
+                    minlength: 8,
+                    maxlength: 40
+                },
+                newPassword: {
+                    required: true,
+                    minlength: 8,
+                    maxlength: 40
+                },
+                confirmPassword: {
+                    required: true,
+                    equalTo: "#newPassword"
+                },
+            },
+            messages: {
+                oldPassword: {
+                    required: labels[LANG]['EMPTY'],
+                    minlength: labels[LANG]['SHORT'],
+                    maxlength: labels[LANG]['LONG']
+                },
+                newPassword: {
+                    required: labels[LANG]['EMPTY'],
+                    minlength: labels[LANG]['SHORT'],
+                    maxlength: labels[LANG]['LONG']
+                },
+                confirmPassword: {
+                    required: labels[LANG]['EMPTY'],
+                    equalTo: labels[LANG]['PASSWORD_REPEAT']
+                },
+            },
+            // errorClass: "invalid form-error error",
+            errorElement : 'div',
+            errorPlacement: function(error, element) {
+              var placement = $(element).data('error');
+              if (placement) {
+                $(placement).append(error)
+              } else {
+                error.insertAfter(element);
               }
             }
         });
