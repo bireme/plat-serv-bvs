@@ -376,6 +376,18 @@ a.search {
 .recaptcha {
     margin-top: 2em;
 }
+.addthis_toolbox.addthis_60x60_style {
+    margin-top: 2em;
+}
+.addthis_toolbox.addthis_60x60_style span {
+    width: 52px !important;
+    height: 52px !important;
+    border-radius: 10px;
+}
+.addthis_toolbox.addthis_60x60_style span svg {
+    width: 40px !important;
+    height: 100% !important;
+}
 
 /* SHARE ICONS */
 .facebookIcon {

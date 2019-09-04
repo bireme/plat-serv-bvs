@@ -342,7 +342,14 @@ class ShelfDAO {
                   userShelf.docID = documents.docID and
                   userShelf.visible = 1 ".$filter."
             order by userShelf.".$sort;
-
+/*
+        $strsql = "SELECT * FROM userShelf, documents".$filterTb."
+            WHERE userShelf.sysUID = '".$sysUID."' and
+                  userShelf.docID = documents.docID and
+                  userShelf.visible = 1 ".$filter."
+            GROUP BY userShelf.docID
+            ORDER BY userShelf.".$sort;
+*/
         if($count > 0){
             $strsql .= " LIMIT $from,$count";
         }

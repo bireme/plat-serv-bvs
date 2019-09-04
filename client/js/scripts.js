@@ -4,6 +4,28 @@ var docs = [];
 $( document ).ready(
     function(){
 
+        /********** Favorite Documents Scripts **********/
+        // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+        // the "data-source" attribute of .modal-trigger must specify the url that will be ajaxed
+        $('.modal-ajax').click(function(){ 
+            var url = $(this).attr("data-source");
+            // use other ajax submission type for post, put ...
+            $.get( url, function( data ) {
+                // use this method you need to handle the response from the view 
+                // with rails Server-Generated JavaScript Responses this is portion will be in a .js.erb file  
+                $( ".modal" ).html(data);
+            });
+        });
+        // opens the modal
+        $('.modal-trigger').modal();
+
+        $('div.btn2Botoes a.remove').click(function(){
+            title = $(this).parent().siblings('a.doctitle').text();
+            url = $(this).data('source');
+            $('#doc-title').text(title);
+            $('#doc-url').attr('href', url);
+        });
+
         /********** Suggestions Scripts **********/
         $( "#reference" ).change(
             function(e){
@@ -329,7 +351,63 @@ $( document ).ready(
 
                         html = before;
                         $.each(response, function(index, res) {
-                            html += '<li><a href="'+res.docURL+'" target="_blank">'+res.title+'</a></li>';
+                            html += '<li><a href="'+res.docURL+'" target="_blank">'+res.title.replace(/\\/g, '')+'</a></li>';
+                        });
+                        html += after;
+
+                        content.find('.related-loading').hide();
+                        content.find('.related-list').append(html).show();
+                    } else {
+                        content.find('.related-loading').hide();
+                        alert(content.find('.related-alert').text());
+                    }
+
+                    _this.prop('disabled', false);
+                });
+            }
+        );
+
+        $('div.btn2Botoes a.related-docs').click(
+            function(e){
+                e.preventDefault();
+                _this = $(this);
+                _this.prop('disabled', true);
+
+                if ( $(this).is(".related-docs") ) {
+                    task = 'related';
+                } else {
+                    task = 'public';
+                }
+
+                path = window.location.pathname;
+                parts = path.split("/controller/");
+                href = parts[0]+"/controller/suggesteddocs/control/business/task/"+task;
+
+                content = $('#modal-related-docs');
+                title = $(this).parent().siblings('a.doctitle').text();
+
+                obj = new Object();
+                obj.sentence = $.trim(title);
+
+                content.find('.related-list').hide();
+                content.find('.related-list').find('ol').remove();
+                content.find('.related-loading').show();
+
+                $.post( href, obj, function(data) {
+                    if (isJSON(data)){
+                        response = $.parseJSON(data);
+                    }else{
+                        response = data;
+                    }
+
+                    if (typeof response == 'object') {
+                        var html;
+                        var before = '<ol>';
+                        var after = '</ol>';
+
+                        html = before;
+                        $.each(response, function(index, res) {
+                            html += '<li><a href="'+res.docURL+'" target="_blank">'+res.title.replace(/\\/g, '')+'</a></li>';
                         });
                         html += after;
 

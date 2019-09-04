@@ -40,7 +40,7 @@ class Paginator {
     }
 
     /**
-     * render the paginator
+     * show the paginator
      */
     function show($label){
         $cleanURL = preg_replace('/\/page.*$/', '',
@@ -67,7 +67,7 @@ class Paginator {
     }
 
     /**
-     * show the paginator
+     * render the paginator
      */
     function render($next, $previous){
         $cleanURL = preg_replace('/\/page.*$/', '',
@@ -100,6 +100,43 @@ class Paginator {
 
         $strPaginator .= '</ul>';
         $strPaginator .= '</div>';
+        $strPaginator .= '</div>';
+
+        return $strPaginator;
+    }
+
+    /**
+     * build the paginator
+     */
+    function build(){
+        $cleanURL = preg_replace('/\/page.*$/', '',
+            'http://' . $_SERVER['HTTP_HOST'] . rtrim($_SERVER['PHP_SELF'], '/'));
+        $page = $this->currentPage;
+
+        $strPaginator = '<div class="center-align">';
+        $strPaginator .= '<ul class="pagination">';
+
+        $disabled = ( $page == 0 ) ? 'disabled' : 'waves-effect';
+        $previousPage = ( 'disabled' == $disabled ) ? 'javascript:;' : $cleanURL . '/page/' . $page;
+        $strPaginator .= '<li class="' . $disabled . '"><a href="' . $previousPage . '"><i class="material-icons">chevron_left</i></a></li>';
+
+        for($i = 1; $i <= $this->totalPages; $i++){
+            if($page == ($i - 1)){
+                $strPaginator .= '<li class="active green">';
+                $url = 'javascript:;';
+            }else{
+                $strPaginator .= '<li class="waves-effect">';
+                $url = $cleanURL . '/page/' . $i;
+            }
+            $strPaginator .= '<a href="' . $url . '">' . $i . '</a>';
+            $strPaginator .= '</li>';
+        }
+        
+        $disabled = ( $page + 1 == $this->totalPages ) ? 'disabled' : 'waves-effect';
+        $nextPage = ( 'disabled' == $disabled ) ? 'javascript:;' : $cleanURL . '/page/' . ($page + 2);
+        $strPaginator .= '<li class="' . $disabled . '"><a href="' . $nextPage . '"><i class="material-icons">chevron_right</i></a></li>';
+
+        $strPaginator .= '</ul>';
         $strPaginator .= '</div>';
 
         return $strPaginator;

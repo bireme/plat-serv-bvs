@@ -99,11 +99,11 @@
 						<?php echo $trans->getTrans($_REQUEST["action"],'INFO_WIDGET'); ?>
 						<span id="btnClose" class="btn btnSuccess" style="padding: 0 3px;" ><i class="arrowClose material-icons">keyboard_arrow_up</i></span>
 					</h5>
-					<div class="divider"></div> <br>
+					<div class="divider"></div><br />
 					<div class="row" id="interessar">
 						<div class="col s12 l6 xl4 p1">
 							<h6><b><?php echo $trans->getTrans($_REQUEST["action"],'SUGGESTIONS'); ?></b></h6>
-							<div class="divider"></div>
+							<div class="divider"></div><br />
 							<ul class="lista1">
 								<li><a href="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis vel, minima rem odit ipsa autem..</a></li>
 								<li><a href="">Lorem ipsum dolor sit amet.</a></li>
@@ -114,7 +114,7 @@
 						</div>
 						<div class="col s12 l6 xl4 p1">
 							<h6><b><?php echo $trans->getTrans($_REQUEST["action"],'EVENTS'); ?></b></h6>
-							<div class="divider"></div><br>
+							<div class="divider"></div><br />
 							<article class="event">
 								<a href="http://www.enfermeria2019.sld.cu/index.php/enfermeria/2019" target="_blank">
 									<div class="eventDate">

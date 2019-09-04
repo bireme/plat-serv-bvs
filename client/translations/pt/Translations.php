@@ -244,6 +244,8 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
 
     // Tems of mydocuments pages
         self::$trans["mydocuments"]["FEATURE"] = 'Documentos Favoritos';
+        self::$trans["mydocuments"]["COLLECTION"] = 'Coleção';
+        self::$trans["mydocuments"]["COLLECTION_NAME"] = 'nome da coleção';
         self::$trans["mydocuments"]["MY_COLLECTION"] = 'Documentos Favoritos';
         self::$trans["mydocuments"]["BY_DATE"] = 'por Data';
         self::$trans["mydocuments"]["INCOMING_FOLDER"] = 'Caixa de Entrada';
@@ -281,9 +283,12 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
         self::$trans["mydocuments"]["TOTAL_DOCS"] = 'Total de documentos:';
         self::$trans["mydocuments"]["COLLECTION_DOCS"] = 'Coleção de Documentos';
         self::$trans["mydocuments"]["AVAILABLE_IN"] = 'Disponível em:';
+        self::$trans["mydocuments"]["CANCEL"] = 'cancelar';
+        self::$trans["mydocuments"]["REMOVE"] = 'excluir';
 
     // Tems of directories pages
         self::$trans["directories"]["FEATURE"] = 'Documentos Favoritos';
+        self::$trans["directories"]["COLLECTION_NAME"] = 'nome da coleção';
         self::$trans["directories"]["FOLDER_NAME"] = 'Nome da coleção';
         self::$trans["directories"]["ADD_FOLDER"] = 'adicionar coleção';
         self::$trans["directories"]["EDIT_FOLDER"] = 'editar coleção';
