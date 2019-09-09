@@ -7,15 +7,19 @@ $( document ).ready(
         /********** Favorite Documents Scripts **********/
         // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
         // the "data-source" attribute of .modal-trigger must specify the url that will be ajaxed
-        $('.modal-ajax').click(function(){ 
-            var url = $(this).attr("data-source");
+        $('.modal-ajax').click(function(){
+            var url = $(this).data("source");
+            var modal = $(this).attr('href');
+            // clear modal content
+            $( modal ).empty();
             // use other ajax submission type for post, put ...
             $.get( url, function( data ) {
                 // use this method you need to handle the response from the view 
                 // with rails Server-Generated JavaScript Responses this is portion will be in a .js.erb file  
-                $( ".modal" ).html(data);
+                $( modal ).html(data);
             });
         });
+
         // opens the modal
         $('.modal-trigger').modal();
 
@@ -310,6 +314,103 @@ $( document ).ready(
             });
         });
 
+        $( document ).on('click', '#docs-folder-list', function(e) {
+            e.preventDefault();
+
+            path = window.location.pathname;
+            parts = path.split("/controller/");
+            href = parts[0]+"/controller/servicesplatform/control/business/task/addDoc";
+
+            doc = $(this).data('similar');
+            folder = $('input[name=docsfolderlist]:checked');
+            similar = $("#"+doc);
+            id = similar.find('a.add-collection').data('similar');
+            title = similar.find('a.doctitle').text();
+            url = similar.find('a.doctitle').attr('href');
+            author = similar.find('div.boxAutor').text();
+
+            obj = new Object();
+            obj.url = $.trim(url);
+            obj.source = 'pesquisa.bvsalud.org';
+            obj.author = $.trim(author);
+            obj.title = $.trim(title);
+            obj.id = $.trim(id);
+            obj.userTK = unescape(getCookie('userTK'));
+
+            // alert(JSON.stringify(folder.val())); return false;
+
+            $.post( href, obj, function(data) {
+                if (isJSON(data)){
+                    response = $.parseJSON(data);
+                }else{
+                    response = data;
+                }
+
+                href = parts[0]+"/controller/directories/control/business/task/movedoc";
+
+                obj = new Object();
+                obj.mode = 'persist';
+                obj.document = $.trim(id);
+                obj.fromDirectory = 0;
+                obj.moveToDirectory = folder.val();
+                obj.docsrc = btoa('pesquisa.bvsalud.org');
+
+                if ( window.navigator.userAgent.indexOf('gonative') > -1 ) {
+                    if(data == true){
+                        $.post( href, obj, function(data) {
+                            alert(labels[LANG]['ADD_DOC_SUCCESS']+' '+folder.next().text());
+                            window.close();
+                        });
+                    }else if(typeof response == 'object'){
+                        if ( response.dir == 'INCOMING_FOLDER' ) {
+                            alert(labels[LANG]['DOC_EXISTS']+' '+labels[LANG]['INCOMING_FOLDER']);
+                        } else {
+                            alert(labels[LANG]['DOC_EXISTS']+' '+response.dir);
+                        }
+                        window.close();
+                    }else{
+                        alert(labels[LANG]['ADD_DOC_FAIL']);
+                        window.close();
+                    }
+                } else {
+                    if(data == true){
+                        $.post( href, obj, function(data) {
+                            var msg = labels[LANG]['ADD_DOC_SUCCESS']+' '+folder.next().text();
+                            $('.alert div.card-panel').removeClass('red light-blue darken-1').addClass('green');
+                            $('.alert div.card-panel').addClass('green');
+                            $('.alert span').text(msg);
+                            $('.alert').show();
+                        });
+                    }else if(typeof response == 'object'){
+                        if ( response.dir == 'INCOMING_FOLDER' ) {
+                            var msg = labels[LANG]['DOC_EXISTS']+' '+labels[LANG]['INCOMING_FOLDER']+'.\n'+labels[LANG]['TRY_ANOTHER_DOC'];
+                            $('.alert div.card-panel').removeClass('red green').addClass('light-blue darken-1');
+                            $('.alert span').text(msg);
+                            $('.alert').show();
+                        } else {
+                            var msg = labels[LANG]['DOC_EXISTS']+' '+response.dir+'.\n'+labels[LANG]['TRY_ANOTHER_DOC'];
+                            $('.alert div.card-panel').removeClass('red green').addClass('light-blue darken-1');
+                            $('.alert span').text(msg);
+                            $('.alert').show();
+                        }
+                    }else{
+                        var msg = labels[LANG]['ADD_DOC_FAIL'];
+                        $('.alert div.card-panel').removeClass('green light-blue darken-1').addClass('red');
+                        $('.alert div.card-panel').addClass('red');
+                        $('.alert span').text(msg);
+                        $('.alert').show();
+                    }
+                }
+            });
+        });
+
+        $('ul#profile-actions a.remove').click(function(){
+            title = $('b.topictitle').text();
+            url = $(this).data('source');
+            $('#topic-title').text(title);
+            $('#topic-url').attr('href', url);
+        });
+
         /********** Related Documents Scripts **********/
         $(this).on('click', 'a.related-docs, a.public-related-docs',
             function(e){
@@ -384,7 +485,7 @@ $( document ).ready(
                 href = parts[0]+"/controller/suggesteddocs/control/business/task/"+task;
 
                 content = $('#modal-related-docs');
-                title = $(this).parent().siblings('a.doctitle').text();
+                title = $(this).parent().siblings('div.record').find('a.doctitle').text();
 
                 obj = new Object();
                 obj.sentence = $.trim(title);

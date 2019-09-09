@@ -16,7 +16,11 @@
                 </div>
             </div>
             <?php if ( $response["status"] === false ) : ?>
-                <div><?php echo $trans->getTrans($_REQUEST["action"],'ADD_DIR_ERROR'); ?></div>
+                <div class="col s12 alert" style="display: none;">
+                    <div class="card-panel red success-text">
+                        <span class="white-text" style="white-space: pre;"><?php echo $trans->getTrans($_REQUEST["action"],'ADD_DIR_ERROR'); ?></span>
+                    </div>
+                </div>
             <?php endif; ?>
             <div class="modal-footer">
                 <input type="submit" class="btn green darken-1 modal-close" value="<?php echo $trans->getTrans($_REQUEST["action"],'SAVE'); ?>">
@@ -40,7 +44,11 @@
                 </div>
             </div>
             <?php if ( $response["status"] === false ) : ?>
-                <div><?php echo $trans->getTrans($_REQUEST["action"],'ADD_DIR_ERROR'); ?></div>
+                <div class="col s12 alert" style="display: none;">
+                    <div class="card-panel red success-text">
+                        <span class="white-text" style="white-space: pre;"><?php echo $trans->getTrans($_REQUEST["action"],'ADD_DIR_ERROR'); ?></span>
+                    </div>
+                </div>
             <?php endif; ?>
             <div class="modal-footer">
                 <input type="submit" class="btn green darken-1 modal-close" value="<?php echo $trans->getTrans($_REQUEST["action"],'SAVE'); ?>">
@@ -60,7 +68,5 @@
         <?php $href = RELATIVE_PATH.'/controller/mydocuments/control/business/directory/'.$_REQUEST["directory"]; ?>
         <?php header("location:".$href); exit; ?>
     <?php endif; ?>
-
-    <div><?php echo $trans->getTrans($_REQUEST["action"],'ADD_DIR_SUCESS'); ?></div>
 
 <?php endif; ?>

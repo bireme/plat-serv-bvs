@@ -16,13 +16,13 @@
                 <div class="divider"></div>
                 <p>
                   <label>
-                    <input class="with-gap" name="mode" type="radio" value="move" checked="true" />
+                    <input class="with-gap" name="mode" type="radio" value="move" checked />
                     <span><?php echo $trans->getTrans($_REQUEST["action"],'MOVE_CONTENT_TO_OTHER_FOLDER'); ?></span>
                   </label>
                 </p>
                 <p style="padding-left: 2em;">
                   <label>
-                    <input class="with-gap" name="moveToDirectory" type="radio" value="0" checked="true" />
+                    <input class="with-gap" name="moveToDirectory" type="radio" value="0" checked />
                     <span><?php echo $trans->getTrans($_REQUEST["action"],'INCOMING_FOLDER'); ?></span>
                   </label>
                 </p>
@@ -39,7 +39,11 @@
             </div>
         </div>
         <?php if ( $response["status"] === false ) : ?>
-            <div><?php echo $trans->getTrans($_REQUEST["action"],'REMOVE_DIR_ERROR'); ?></div>
+            <div class="col s12 alert">
+                <div class="card-panel red success-text">
+                    <span class="white-text" style="white-space: pre;"><?php echo $trans->getTrans($_REQUEST["action"],'REMOVE_DIR_ERROR'); ?></span>
+                </div>
+            </div>
         <?php endif; ?>
         <div class="modal-footer">
             <input type="submit" class="btn green darken-1 modal-close" value="<?php echo $trans->getTrans($_REQUEST["action"],'REMOVE'); ?>">
@@ -51,6 +55,5 @@
 
     <?php $href = RELATIVE_PATH.'/controller/mydocuments/control/business'; ?>
     <?php header("location:".$href); exit; ?>
-    <div class="alert"><?php echo $trans->getTrans($_REQUEST["action"],'REMOVE_DIR_SUCESS'); ?></div>
 
 <?php endif; ?>

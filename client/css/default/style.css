@@ -56,6 +56,18 @@ a:hover {
 	position: relative;
 	border-radius: 5px;
 }
+.box2P {
+    height: 70px;
+    overflow-y: auto;
+}
+.box3P {
+    height: 155px;
+    overflow-y: auto;
+}
+.box4P {
+    height: 125px;
+    overflow-y: auto;
+}
 .color2 {
 	background: #ddd;
 	color: #337ab7;
@@ -658,6 +670,12 @@ a.search {
     .box4 {
         min-height: auto;
     }
+    .box2P,
+    .box3P,
+    .box4P {
+        height: auto;
+        overflow-y: hidden;
+    }
     .btn2Botoes {
         position: static;
         margin-top: 10px;
@@ -712,6 +730,9 @@ a.search {
     }
     .box5 {
         padding: 20px;
+    }
+    #footer img {
+        max-width: 100%;
     }
 }
 

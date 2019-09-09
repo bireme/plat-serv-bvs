@@ -1,217 +1,219 @@
-<?
+<?php
     if ( 'rate' == $_REQUEST["task"] )
         header("Location: " . $_SERVER['HTTP_REFERER']);
     if ( 'delete' == $_REQUEST["task"] )
         header("Location: ".RELATIVE_PATH.'/controller/myprofiledocuments/control/business');
 ?>
-
-        <?require_once(dirname(__FILE__)."/header.tpl.php");?>
-        <?require_once(dirname(__FILE__)."/sidebar.tpl.php");?>
-
-        <!-- page content -->
-        <div class="right_col" role="main">
-          <div>
-            
-            <div class="clearfix"></div>
-
-            <div class="row">
-              <div class="col-sm-12 col-md-12 col-xs-12 col-themes themes">
-                <div class="x_panel">
-                  <div class="x_title">
-                    <h2><?=$trans->getTrans($_REQUEST["action"],'MY_PROFILES')?></h2>
-                    <div class="toggle_icons">
-                      <a id="toggle_list">
-                        <i class="fa fa-bars"></i>
-                        <i class="fa fa-list"></i>
-                      </a>
-                    </div>
-                    <small class="update-alert"><?=$trans->getTrans($_REQUEST["action"],'UPDATE_ALERT')?></small>
-                    <div class="clearfix"></div>
-                  </div>
-                  <div class="x_content">
-                    <?php if ($responseProfile["values"] != false ) : ?>
-                      <?php $registerProfile = $responseProfile["values"][0]; ?>
-                      <div class="col-list">
-                        <div class="folder-data">
-                            <h4><i class="fa fa-folder-o"></i> <?=$registerProfile["profileName"]?></h4>
-                            <a class="edit" href="javascript:;" onclick="__gaTracker('send','event','Interest Topics','Edit Topic','<?php echo htmlspecialchars($registerProfile["profileName"]); ?>'); window.open('<?=RELATIVE_PATH?>/controller/myprofiledocuments/control/business/task/edit/profile/<?=$registerProfile["profileID"]?>','','resizable=no,scrollbars=1,width=420,height=385')"><span class="label label-info"><?=$trans->getTrans($_REQUEST["action"],'EDIT_PROFILE')?></span></a>
-                            <a class="remove" href="<?=RELATIVE_PATH?>/controller/myprofiledocuments/control/business/task/delete/profile/<?=$registerProfile["profileID"]?>" onclick="__gaTracker('send','event','Interest Topics','Remove Topic','<?php echo htmlspecialchars($registerProfile["profileName"]); ?>');"><span class="label label-danger"><?=$trans->getTrans($_REQUEST["action"],'REMOVE_PROFILE')?></span></a>
-                        </div>
-                        <div class="keywords"><small><?=$trans->getTrans($_REQUEST["action"],'PROFILE_KEYWORDS')?>: <?=$registerProfile["profileText"]?></small></div>
-                        <div class="col-md-9 col-sm-9 col-xs-12">
-                          <div id="step21" class="col-md-9 col-sm-9 col-xs-12">
-                            <?php if ( 'on' == $responseSimilarDocs["values"]['status'] ) : ?>
-                                <?php //echo $objPaginator->render($trans->getTrans($_REQUEST["action"],'NEXT'), $trans->getTrans($_REQUEST["action"],'PREVIOUS')); ?>
-                                <!-- start project list -->
-                                <table class="table table-striped table-list">
-                                  <!--thead>
-                                    <tr>
-                                      <th>#</th>
-                                    </tr>
-                                  </thead-->
-                                  <tbody>
-                                    <?php $count = 0; ?>
-                                    <?php foreach ( $responseSimilarDocs["values"]['similars'] as $similar ) : $count++; ?>
-                                    <tr id="<?php echo 'doc'.$count; ?>">
-                                      <td>
-                                        <div class="record">
-                                            <a href="<?php echo $similar["docURL"]; ?>" onclick="__gaTracker('send','event','Interest Topics','View Document','<?php echo addslashes(htmlspecialchars($similar["title"])); ?>');" target="_blank"><?php echo $similar["title"]; ?></a>
-                                            <small style="display: block;"><?php echo $similar["authors"]; ?></small>
+	<?php require_once(dirname(__FILE__)."/header.tpl.php"); ?>
+    <?php require_once(dirname(__FILE__)."/sidebar.tpl.php"); ?>
+    <?php require_once(dirname(__FILE__)."/nav.tpl.php"); ?>
+	<div id="wrap">
+		<div class="row">
+			<div class="col m12 ">
+				<div class="box1">
+					<div data-target="modal-alert" class="modal-trigger" style="cursor: pointer;"><i class="fas fa-info-circle fa-lg right"></i></div>
+					<h5 class="title1"><i class="fas fa-folder left"></i> <?php echo $trans->getTrans($_REQUEST["action"],'MY_PROFILES'); ?></h5>
+					<div class="divider"></div>
+					<div class="row">
+                        <?php if ( $responseProfile["values"] ) : ?>
+                            <?php $registerProfile = $responseProfile["values"][0]; ?>
+    						<div class="col s12 m6">
+    							<div class="tituloDropdown"><?php echo $trans->getTrans($_REQUEST["action"],'PROFILE'); ?>: <b class="topictitle"><?php echo $registerProfile["profileName"]; ?></b>
+    								<!-- Dropdown Trigger -->
+    								<a class='dropdown-trigger btn2 btnSuccess' href='#' data-target='profile-actions'><i class="fas fa-angle-down"></i></a>
+    								<!-- Dropdown Structure -->
+    								<ul id='profile-actions' class='dropdown-content'>
+                                        <li><a class="modal-trigger modal-ajax" href="#modal-ajax" data-source="<?php echo RELATIVE_PATH; ?>/controller/myprofiledocuments/control/business/task/edit/profile/<?php echo $registerProfile["profileID"]; ?>" onclick="__gaTracker('send','event','Interest Topics','Edit Topic','<?php echo htmlspecialchars($registerProfile["profileName"]); ?>');"><i class="far fa-edit right m1"></i> <?=$trans->getTrans($_REQUEST["action"],'EDIT_PROFILE')?></a></li>
+                                        <li><a class="modal-trigger remove" href="#modal-remove" data-source="<?=RELATIVE_PATH?>/controller/myprofiledocuments/control/business/task/delete/profile/<?=$registerProfile["profileID"]?>" onclick="__gaTracker('send','event','Interest Topics','Remove Topic','<?php echo htmlspecialchars($registerProfile["profileName"]); ?>');"><i class="fas fa-eraser right m1"></i> <?=$trans->getTrans($_REQUEST["action"],'REMOVE_PROFILE')?></a></li>
+    								</ul>
+    							</div>
+    						</div>
+                        <?php endif; ?>
+						<div class="col s12 m6">
+							<div class="tituloDropdown"><b><?php echo ucwords($trans->getTrans($_REQUEST["action"],'TOOLS')); ?></b>
+								<!-- Dropdown Trigger -->
+								<a class='dropdown-trigger btn2 btnSuccess' href='#' data-target='profile-list'><i class="fas fa-angle-down"></i></a>
+								<!-- Dropdown Structure -->
+								<ul id='profile-list' class='dropdown-content'>
+                                    <li><a href="#modal-ajax" class="modal-trigger modal-ajax" data-source="<?php echo RELATIVE_PATH; ?>/controller/myprofiledocuments/control/view/task/add"><i class="material-icons right m1">add</i> <?php echo $trans->getTrans($_REQUEST["action"],'ADD_PROFILE'); ?></a></li>
+									<li class="divider"></li>
+									<li><a href="<?php echo RELATIVE_PATH; ?>/controller/myprofiledocuments/control/business/directory/0"><?php echo $trans->getTrans($_REQUEST["action"],'INCOMING_FOLDER'); ?></a></li>
+                                    <?php if ( $response["values"] ) : ?>
+                                        <?php foreach ($response["values"] as $register) : ?>
+                                            <li><a href="<?php echo RELATIVE_PATH; ?>/controller/myprofiledocuments/control/business/profile/<?php echo $register["profileID"]; ?>"><?php if ( $register["profileDefault"] == 1 ) : ?><i class="material-icons right m1">star_border</i><?php endif; ?> <?php echo $register["profileName"]; ?></a></li>
+                                        <?php endforeach; ?>
+                                    <?php endif; ?>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<section class="row">
+                    <?php if ( $responseProfile["values"] ) : ?>
+                        <?php if ( 'on' == $responseSimilarDocs["values"]['status'] ) : $count = 0; ?>
+                            <?php foreach ( $responseSimilarDocs["values"]['similars'] as $similar ) : $count++; ?>
+        						<article id="<?php echo 'doc'.$count; ?>" class="col s12 l6 xl4">
+        							<div class="box2 hoverable">
+                                        <div class="box2P record">
+                                            <a class="doctitle" href="<?php echo $similar["docURL"]; ?>" onclick="__gaTracker('send','event','Interest Topics','View Document','<?php echo addslashes(htmlspecialchars($similar["title"])); ?>');" target="_blank"><?php echo $similar["title"]; ?></a><br />
+            								<div class="boxAutor"><?php echo $similar["authors"]; ?></div>
                                         </div>
-                                        <div class="doc-actions">
-                                            <a class="label label-success add-collection" value="<?php echo $similar["docID"]; ?>" onclick="__gaTracker('send','event','Interest Topics','Favorite Documents','<?php echo htmlspecialchars($similar["title"]); ?>'); window.open('<?=RELATIVE_PATH?>/controller/myprofiledocuments/control/business/task/addcol/similar/doc<?=$count?>','','resizable=no,scrollbars=1,width=420,height=310')"><?=$trans->getTrans($_REQUEST["action"],'ADD_COLLECTION')?></a>
-                                            <a class="label label-primary related-docs" href="javascript:;" onclick="__gaTracker('send','event','Interest Topics','Related Documents','<?php echo htmlspecialchars($similar["title"]); ?>');"><?php echo $trans->getTrans('suggesteddocs','RELATED_DOCS'); ?></a>
-                                        </div>
-                                        <!--div>
-                                          <span class="label label-default">Default</span>
-                                          <span class="label label-primary">Primary</span>
-                                          <span class="label label-success">Success</span>
-                                          <span class="label label-info">Info</span>
-                                          <span class="label label-warning">Warning</span>
-                                          <span class="label label-danger">Danger</span>
-                                        </div-->
-                                        <div class="related_docs">
-                                            <div class="related-loading"><?php echo $trans->getTrans('suggesteddocs','LOADING'); ?></div>
-                                            <div class="related-list">
-                                                <p><?php echo ucwords($trans->getTrans('suggesteddocs','RELATED_DOCS')); ?>:</p>
-                                            </div>
-                                            <div class="related-alert"><?php echo $trans->getTrans('suggesteddocs','RELATED_DOCS_ALERT'); ?></div>
-                                        </div>
-                                      </td>
-                                    </tr>
-                                    <?php endforeach; ?>
-                                  </tbody>
-                                </table>
-                                <!-- end project list -->
-                                <?php
-                                    if ( $objPaginator->totalPages > 1 ) {
-                                        echo $objPaginator->render($trans->getTrans($_REQUEST["action"],'NEXT'), $trans->getTrans($_REQUEST["action"],'PREVIOUS'));
-                                    }
-                                ?>
+        								<div class="btn2Botoes">
+                                            <a href="#modal-ajax" class="btn3 btnSuccess modal-trigger modal-ajax add-collection" data-similar="<?php echo $similar["docID"]; ?>" data-source="<?php echo RELATIVE_PATH; ?>/controller/myprofiledocuments/control/business/task/addcol/similar/doc<?php echo $count; ?>" onclick="__gaTracker('send','event','Interest Topics','Favorite Documents','<?php echo htmlspecialchars($similar["title"]); ?>');"><?=$trans->getTrans($_REQUEST["action"],'ADD_COLLECTION')?></a>
+                                            <a href="#modal-related-docs" class="btn3 btnPrimary modal-trigger related-docs" onclick="__gaTracker('send','event','Favorite Documents','Related Documents','<?php echo addslashes(htmlspecialchars($register["title"])); ?>');"><?php echo $trans->getTrans('suggesteddocs','RELATED_DOCS'); ?></a>
+        								</div>
+        							</div>
+        						</article>
+                            <?php endforeach; ?>
+                        <?php else : ?>
+                            <?php if ( 'none' == $responseSimilarDocs["values"]['status'] ) : ?>
+                                <div class="card-panel center-align">
+                                    <span class="blue-text text-darken-2"><?php echo $trans->getTrans($_REQUEST["action"],'MY_PROFILES_NO_SUGGESTIONS_FOUND'); ?></span>
+                                </div>
                             <?php else : ?>
-                              <?php if ( 'none' == $responseSimilarDocs["values"]['status'] ) : ?>
-                                <p class="none-docs"><?=$trans->getTrans($_REQUEST["action"],'MY_PROFILES_NO_SUGGESTIONS_FOUND')?></p>
-                              <?php else : ?>
-                                <p class="none-docs"><?=$trans->getTrans($_REQUEST["action"],'SERVICE_TEMPORARY_UNAVAILABLE')?></p>
-                              <?php endif; ?>
+                                <div class="card-panel center-align">
+                                    <span class="blue-text text-darken-2"><?php echo $trans->getTrans($_REQUEST["action"],'SERVICE_TEMPORARY_UNAVAILABLE'); ?></span>
+                                </div>
                             <?php endif; ?>
-                          </div>
-                        </div>
-                      </div>
+                        <?php endif; ?>
                     <?php else : ?>
-                      <div id="step21" class="col-md-9 col-sm-9 col-xs-12 col-list">
-                          <p class="none-docs"><?=$trans->getTrans($_REQUEST["action"],'MY_PROFILES_NO_REGISTERS_FOUND')?></p>
-                      </div>
+                        <div class="card-panel center-align">
+                            <span class="blue-text text-darken-2"><?php echo $trans->getTrans($_REQUEST["action"],'MY_PROFILES_NO_REGISTERS_FOUND'); ?></span>
+                        </div>
                     <?php endif; ?>
-                    <div class="col-md-3 col-sm-3 col-xs-12 col-filter">
-                        <section id="step22" class="panel panel-folder">
-                            <div class="panel-body">
-                                <h5><?=$trans->getTrans($_REQUEST["action"],'TOOLS')?></h5>
-                                <ul class="list-docs-unstyled project_files">
-                                    <li><a href="javascript:;" onclick="window.open('<?=RELATIVE_PATH?>/controller/myprofiledocuments/control/view/task/add','','resizable=no,width=420,height=385')"><i class="fa fa-plus-circle"></i><?=ucfirst($trans->getTrans($_REQUEST["action"],'ADD_PROFILE'))?></a></li>
-                                </ul>
-                            </div>
-                        </section>
-                        <section id="step23" class="panel panel-folder">
-                            <div class="panel-body">
-                                <h5><?=$trans->getTrans($_REQUEST["action"],'PROFILES')?></h5>
-                                <?php if ($response["values"] != false ) : ?>
-                                  <ul class="list-docs-unstyled project_files profiles">
-                                      <?php foreach ($response["values"] as $register) : ?>
-                                          <li><a href="<?=RELATIVE_PATH?>/controller/myprofiledocuments/control/business/profile/<?=$register["profileID"]?>"><?php echo $register["profileName"]; ?></a><?php if ($register["profileDefault"] == 1) { ?>&nbsp;<img class="starOn" src="<?=RELATIVE_PATH?>/images/<?=$_SESSION["skin"]?>/starOn.gif" border="0"/><?php } ?></li>
-                                      <?php endforeach; ?>
-                                  </ul>
-                                <?php endif; ?>
-                            </div>
-                        </section>
+				</section>
+				<?php // if ( $objPaginator->totalPages > 1 ) { echo $objPaginator->build(); } ?>
+			</div>
+		</div>
+		<?php require_once(dirname(__FILE__)."/info.tpl.php"); ?>
+        <?php require_once(dirname(__FILE__)."/more.tpl.php"); ?>
+	</div>
+	<!--- Modal Ajax -->
+    <div id="modal-ajax" class="modal"></div>
+    <!-- Modal Alert -->
+	<div id="modal-alert" class="modal">
+		<div class="modal-content">
+            <div><?php echo $trans->getTrans($_REQUEST["action"],'ALERT'); ?></div>
+			<div><?php echo $trans->getTrans($_REQUEST["action"],'UPDATE_ALERT'); ?></div>
+		</div>
+		<div class="modal-footer">
+			<a href="#!" class="modal-close waves-effect waves-green btn-flat"><?php echo $trans->getTrans($_REQUEST["action"],'CLOSE'); ?></a>
+		</div>
+	</div>
+	<!-- Modal Similares -->
+    <div id="modal-related-docs" class="modal">
+        <form action="#" class="col s12">
+            <div class="modal-content">
+                <h4><?php echo ucwords($trans->getTrans('suggesteddocs','RELATED_DOCS')); ?></h4>
+                <div class="related_docs">
+                    <div class="related-loading center-align"><?php echo $trans->getTrans('suggesteddocs','LOADING'); ?></div>
+                    <div class="related-loading row">
+                        <div class="progress col s8 offset-s2">
+                            <div class="indeterminate" style="width: 0"><?php echo $trans->getTrans('suggesteddocs','LOADING'); ?></div>
+                        </div>
                     </div>
-                  </div>
+                    <div class="related-list"></div>
+                    <div class="related-alert" style="display: none;"><?php echo $trans->getTrans('suggesteddocs','RELATED_DOCS_ALERT'); ?></div>
                 </div>
-              </div>
             </div>
-          </div>
+            <div class="modal-footer">
+                <a href="#!" class="btn btnDanger modal-close"><?php echo $trans->getTrans($_REQUEST["action"],'CLOSE'); ?></a>
+            </div>
+        </form>
+    </div>
+    <!-- Modal Excluir Tema -->
+    <div id="modal-remove" class="modal">
+        <div class="modal-content">
+            <h4><?php echo $trans->getTrans($_REQUEST["action"],'REMOVE_TOPIC'); ?></h4>
+            <p class="center-align">
+                <?php echo $trans->getTrans($_REQUEST["action"],'REMOVE_TOPIC_CONFIRM'); ?>:<br />
+                <b id="topic-title"></b>
+            </p>
+            <div class="divider"></div><br />
+            <div class="center-align">
+                <a href="#!" class="btn btnPrimary modal-close"><?php echo $trans->getTrans($_REQUEST["action"],'CANCEL'); ?></a>
+                <a id="topic-url" href="#!" class="btn btnDanger modal-close"><?php echo $trans->getTrans($_REQUEST["action"],'REMOVE'); ?></a>
+            </div>
         </div>
-        <!-- /page content -->
-
-        <script type="text/javascript">
-          if (RegExp('multipage', 'gi').test(window.location.search)) {
+    </div>
+	<script type="text/javascript">
+        if (RegExp('multipage', 'gi').test(window.location.search)) {
             var steps = [
-              {
-                element: 'li.side.step20',
-                intro: "<?=$trans->getTrans('tour','STEP_20')?>",
-                position: 'right'
-              },
-              {
-                element: 'li.child.step20',
-                intro: "<?=$trans->getTrans('tour','STEP_20')?>",
-                position: 'right'
-              },
-              {
-                element: '#step21',
-                intro: "<?=$trans->getTrans('tour','STEP_21')?>",
-                position: 'left'
-              },
-              {
-                element: '#step22',
-                intro: "<?=$trans->getTrans('tour','STEP_22')?>",
-                position: 'left'
-              },
-              {
-                element: '#step23',
-                intro: "<?=$trans->getTrans('tour','STEP_23')?>",
-                position: 'left'
-              }
+                {
+                    element: 'li.side.step20',
+                    intro: "<?=$trans->getTrans('tour','STEP_20')?>",
+                    position: 'right'
+                },
+                {
+                    element: 'li.child.step20',
+                    intro: "<?=$trans->getTrans('tour','STEP_20')?>",
+                    position: 'right'
+                },
+                {
+                    element: '#step21',
+                    intro: "<?=$trans->getTrans('tour','STEP_21')?>",
+                    position: 'left'
+                },
+                {
+                    element: '#step22',
+                    intro: "<?=$trans->getTrans('tour','STEP_22')?>",
+                    position: 'left'
+                },
+                {
+                    element: '#step23',
+                    intro: "<?=$trans->getTrans('tour','STEP_23')?>",
+                    position: 'left'
+                }
             ];
 
             var sw = screen.width;
             var tooltipClass = '';
 
             if ( sw > 768 ) {
-                steps.splice(0,1);
+                    steps.splice(0,1);
             } else {
-                tooltipClass = 'mobile';
-                steps.splice(1,1);
+                    tooltipClass = 'mobile';
+                    steps.splice(1,1);
             }
 
             function startIntro(){
-              var intro = introJs();
-                intro.setOptions({
-                  doneLabel: "<?=$trans->getTrans('menu','NEXT_PAGE')?>",
-                  prevLabel: "<?=$trans->getTrans('menu','BACK')?>",
-                  nextLabel: "<?=$trans->getTrans('menu','NEXT')?>",
-                  skipLabel: "<?=$trans->getTrans('menu','SKIP')?>",
-                  exitOnOverlayClick: false,
-                  showStepNumbers: false,
-                  showBullets: false,
-                  tooltipClass: tooltipClass,
-                  steps: steps
-                });
+                var intro = introJs();
+                    intro.setOptions({
+                        doneLabel: "<?=$trans->getTrans('menu','NEXT_PAGE')?>",
+                        prevLabel: "<?=$trans->getTrans('menu','BACK')?>",
+                        nextLabel: "<?=$trans->getTrans('menu','NEXT')?>",
+                        skipLabel: "<?=$trans->getTrans('menu','SKIP')?>",
+                        exitOnOverlayClick: false,
+                        showStepNumbers: false,
+                        showBullets: false,
+                        tooltipClass: tooltipClass,
+                        steps: steps
+                    });
 
-                intro.onchange(function(targetElement) {
-                    switch (targetElement.id) { 
-                        case 'step21':
-                            document.getElementById("body").className = "nav-md";
-                        break;
-                    }
+                    intro.onchange(function(targetElement) {
+                        switch (targetElement.id) { 
+                            case 'step21':
+                                document.getElementById("body").className = "nav-md";
+                            break;
+                        }
 
-                    switch (this._currentStep) { 
-                        case 0:
-                            if ( sw <= 768 ) {
-                                document.getElementById("body").className = "nav-sm";
-                            }
-                        break;
-                    }
-                });
+                        switch (this._currentStep) { 
+                            case 0:
+                                if ( sw <= 768 ) {
+                                    document.getElementById("body").className = "nav-sm";
+                                }
+                            break;
+                        }
+                    });
 
-                intro.start().oncomplete(function() {
-                  window.location.href = '<?php echo RELATIVE_PATH."/controller/mysearches/control/business/?multipage=true"; ?>';
-                });
+                    intro.start().oncomplete(function() {
+                        window.location.href = '<?php echo RELATIVE_PATH."/controller/mysearches/control/business/?multipage=true"; ?>';
+                    });
             }
             
             window.addEventListener('load', function() {
                 startIntro();
             });
-          }
-        </script>
-
-        <?require_once(dirname(__FILE__)."/footer.tpl.php");?>
+        }
+    </script>
+    <?php require_once(dirname(__FILE__)."/footer.tpl.php"); ?>

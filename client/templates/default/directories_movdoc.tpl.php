@@ -12,7 +12,7 @@
                 <div class="divider"></div>
                 <p>
                   <label>
-                    <input class="with-gap" name="moveToDirectory" type="radio" value="0" checked="true" />
+                    <input class="with-gap" name="moveToDirectory" type="radio" value="0" checked />
                     <span><?php echo $trans->getTrans($_REQUEST["action"],'INCOMING_FOLDER'); ?></span>
                   </label>
                 </p>
@@ -29,7 +29,11 @@
             </div>
         </div>
         <?php if ( $response["status"] === false ) : ?>
-            <div><?php echo $trans->getTrans($_REQUEST["action"],'REMOVE_DIR_ERROR'); ?></div>
+            <div class="col s12 alert">
+                <div class="card-panel red success-text">
+                    <span class="white-text" style="white-space: pre;"><?php echo $trans->getTrans($_REQUEST["action"],'REMOVE_DIR_ERROR'); ?></span>
+                </div>
+            </div>
         <?php endif; ?>
         <div class="modal-footer">
             <input type="submit" class="btn green darken-1 modal-close" value="<?php echo $trans->getTrans($_REQUEST["action"],'MOVE'); ?>">
@@ -40,6 +44,5 @@
 <?php else : ?>
 
     <?php header("location:".$_SERVER["HTTP_REFERER"]); exit; ?>
-    <div class="alert"><?php echo $trans->getTrans($_REQUEST["action"],'MOVE_DOC_SUCCESS'); ?></div>
 
 <?php endif; ?>

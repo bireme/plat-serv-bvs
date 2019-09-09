@@ -59,7 +59,6 @@ switch($_REQUEST["task"]){
             $responseSimilarDocs["values"] = $result;
             $responseSimilarDocs["status"] = true;
         }
-
     break;
     case "add":
         $inHome = ($_REQUEST["profileInHome"]=="on")?"1":"0";

@@ -1,72 +1,98 @@
-<?require_once(dirname(__FILE__)."/header.tpl.php");?>
+<?php if ( $response["status"] == null or $response["status"] == false ) : ?>
 
-                <div class="modal" id="squareSpaceModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
-                  <div class="modal-dialog">
-                    <div class="modal-content">
-                      <?if ($response["status"] == null or $response["status"] == false){?>
-                        <form name="addDir" method="post" action="<?=RELATIVE_PATH?>/controller/myprofiledocuments">
-                          <input type="hidden" name="control" value="business"/>
-                          <input type="hidden" name="task" value="<?=$_REQUEST["task"]?>"/>
-                          <?if ($_REQUEST["task"] == "edit") {?>
-                            <input type="hidden" name="profile" value="<?=$_REQUEST["profile"]?>"/>
-                            <input type="hidden" name="persist" value="true"/>
-                          <?}?>
-                            <div class="modal-header">
-                                <?php if ( 'edit' == $_REQUEST['task'] ) : ?>
-                                <h2 class="modal-title"><?=$trans->getTrans($_REQUEST["action"],'EDIT_PROFILE')?>: <?=$response["values"]["profileName"]?></h2>
-                                <?php else : ?>
-                                <h2 class="modal-title"><?=$trans->getTrans($_REQUEST["action"],'ADD_PROFILE')?></h2>
-                                <?php endif; ?>
-                            </div>
-                            <div class="modal-body">
-                                  <div class="form-group">
-                                    <label for="profileName"><?=$trans->getTrans($_REQUEST["action"],'PROFILE_NAME')?></label>
-                                    <input type="text" class="form-control" id="profileName" name="profileName" value="<?=$response["values"]["profileName"]?>" required>
-                                  </div>
-                                  <div class="form-group">
-                                    <label for="profileText"><?=$trans->getTrans($_REQUEST["action"],'PROFILE_TEXT')?></label>
-                                    <textarea class="form-control" id="profileText" name="profileText" required><?=$response["values"]["profileText"]?></textarea>
-                                    <div class="help"><?=$trans->getTrans($_REQUEST["action"],'PROFILE_TEXT_HELP')?></div>
-                                  </div>
-                                  <div class="checkbox">
-                                    <label>
-                                      <input type="checkbox" name="profileDefault" value="1" <?if ($response["values"]["profileDefault"] == 1){?>checked="true"<?}?>> <?=$trans->getTrans($_REQUEST["action"],'PROFILE_DEFAULT')?>
-                                    </label>
-                                  </div>
-                            </div>
-                            <?if ($response["status"] === false){?>
-                                <div class="alert"><?=$trans->getTrans($_REQUEST["action"],'ADD_PROFILE_ERROR')?></div>
-                            <?}?>
-                            <div class="modal-footer">
-                                <div class="btn-group btn-group-justified" role="group" aria-label="group button">
-                                    <div class="btn-group" role="group">
-                                        <button type="button" class="btn btn-default submitFalse" data-dismiss="modal" role="button" onclick="window.close();"><?=$trans->getTrans($_REQUEST["action"],'CANCEL')?></button>
-                                    </div>
-                                    <div class="btn-group" role="group">
-                                        <button type="submit" class="btn btn-default btn-hover-green submitTrue" data-action="save" role="button"><?=$trans->getTrans($_REQUEST["action"],'SAVE')?></button>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
-                      <?}else{?>
-                        <?php if ( 'add' == $_REQUEST['task'] ) : ?>
-                          <?php $href = RELATIVE_PATH.'/controller/myprofiledocuments/control/business/profile/'.$response['values']; ?>
-                          <script language="javascript">
-                              window.opener.location = "<?php echo $href ?>";
-                              window.close();
-                          </script>
-                        <?php else : ?>
-                          <script language="javascript">
-                              window.opener.location.reload(true);
-                              window.close();
-                          </script>
-                        <?php endif; ?>
-                        <div class="alert"><?=$trans->getTrans($_REQUEST["action"],'ADD_PROFILE_SUCESS')?></div>
-                      <?}?>
+    <?php if ( 'edit' == $_REQUEST["task"] ) : ?>
+        <form name="editTopic" class="col s12" method="post" action="<?php echo RELATIVE_PATH; ?>/controller/myprofiledocuments">
+            <div class="modal-content">
+                <h4><?php echo $trans->getTrans($_REQUEST["action"],'EDIT_PROFILE'); ?></h4>
+                <div class="row">
+                    <input type="hidden" name="control" value="business"/>
+                    <input type="hidden" name="task" value="<?php echo $_REQUEST["task"]; ?>"/>
+                    <input type="hidden" name="profile" value="<?php echo $_REQUEST["profile"]; ?>"/>
+                    <input type="hidden" name="persist" value="true"/>
+                    <div class="input-field col s12">
+                        <input id="profileName" name="profileName" class="bgInputs" type="text" autocomplete="off" value="<?php echo $response["values"]["profileName"]; ?>">
+                        <label for="profileName" class="active"><?php echo $trans->getTrans($_REQUEST["action"],'PROFILE_NAME'); ?></label>
                     </div>
-                  </div>
+                    <div class="input-field col s12">
+                        <input id="profileText" name="profileText" class="bgInputs" type="text" autocomplete="off" value="<?php echo $response["values"]["profileText"]; ?>">
+                        <label for="profileText" class="active"><?php echo $trans->getTrans($_REQUEST["action"],'PROFILE_TEXT'); ?></label>
+                        <small><?php echo $trans->getTrans($_REQUEST["action"],'PROFILE_TEXT_HELP'); ?></small>
+                    </div>
+                    <div class="input-field col s12">
+                        <p>
+                            <label>
+                                <input type="checkbox" name="profileDefault" value="1" <?php if ( $response["values"]["profileDefault"] == 1 ) { ?> checked <?php } ?> />
+                                <span><?php echo $trans->getTrans($_REQUEST["action"],'PROFILE_DEFAULT'); ?></span>
+                            </label>
+                        </p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </body>
-</html>
+            <?php if ( $response["status"] === false ) : ?>
+                <div class="col s12 alert" style="display: none;">
+                    <div class="card-panel red success-text">
+                        <span class="white-text" style="white-space: pre;"><?php echo $trans->getTrans($_REQUEST["action"],'ADD_DIR_ERROR'); ?></span>
+                    </div>
+                </div>
+            <?php endif; ?>
+            <div class="modal-footer">
+                <input type="submit" class="btn green darken-1 modal-close" value="<?php echo $trans->getTrans($_REQUEST["action"],'SAVE'); ?>">
+                <a href="#!" class="btn btnDanger modal-close"><?php echo $trans->getTrans($_REQUEST["action"],'CANCEL'); ?></a>
+            </div>
+        </form>
+    <?php endif; ?>
+
+    <?php if ( 'add' == $_REQUEST["task"] ) : ?>
+        <form name="addTopic" class="col s12" method="post" action="<?php echo RELATIVE_PATH; ?>/controller/myprofiledocuments">
+            <div class="modal-content">
+                <h4><?php echo $trans->getTrans($_REQUEST["action"],'ADD_PROFILE'); ?></h4>
+                <div class="row">
+                    <input type="hidden" name="control" value="business"/>
+                    <input type="hidden" name="task" value="<?php echo $_REQUEST["task"]; ?>"/>
+                    <input type="hidden" name="persist" value="true"/>
+                    <div class="input-field col s12">
+                        <input id="profileName" name="profileName" class="bgInputs" type="text" autocomplete="off">
+                        <label for="profileName"><?php echo $trans->getTrans($_REQUEST["action"],'PROFILE_NAME'); ?></label>
+                    </div>
+                    <div class="input-field col s12">
+                        <input id="profileText" name="profileText" class="bgInputs" type="text" autocomplete="off" value="<?php echo $responseDirName["values"]; ?>">
+                        <label for="profileText"><?php echo $trans->getTrans($_REQUEST["action"],'PROFILE_TEXT'); ?></label>
+                        <small><?php echo $trans->getTrans($_REQUEST["action"],'PROFILE_TEXT_HELP'); ?></small>
+                    </div>
+                    <div class="input-field col s12">
+                        <p>
+                            <label>
+                                <input type="checkbox" name="profileDefault" value="1" />
+                                <span><?php echo $trans->getTrans($_REQUEST["action"],'PROFILE_DEFAULT'); ?></span>
+                            </label>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <?php if ( $response["status"] === false ) : ?>
+                <div class="col s12 alert">
+                    <div class="card-panel red success-text">
+                        <span class="white-text" style="white-space: pre;"><?php echo $trans->getTrans($_REQUEST["action"],'ADD_DIR_ERROR'); ?></span>
+                    </div>
+                </div>
+            <?php endif; ?>
+            <div class="modal-footer">
+                <input type="submit" class="btn green darken-1 modal-close" value="<?php echo $trans->getTrans($_REQUEST["action"],'SAVE'); ?>">
+                <a href="#!" class="btn btnDanger modal-close"><?php echo $trans->getTrans($_REQUEST["action"],'CANCEL'); ?></a>
+            </div>
+        </form>
+    <?php endif; ?>
+
+<?php else : ?>
+
+    <?php if ( 'add' == $_REQUEST['task'] ) : ?>
+        <?php $href = RELATIVE_PATH.'/controller/myprofiledocuments/control/business/profile/'.$response['values']; ?>
+        <?php header("location:".$href); exit; ?>
+    <?php endif; ?>
+
+    <?php if ( 'edit' == $_REQUEST['task'] ) : ?>
+        <?php $href = RELATIVE_PATH.'/controller/myprofiledocuments/control/business/profile/'.$_REQUEST["profile"]; ?>
+        <?php header("location:".$href); exit; ?>
+    <?php endif; ?>
+
+<?php endif; ?>

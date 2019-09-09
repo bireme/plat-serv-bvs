@@ -259,6 +259,7 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
         self::$trans["mydocuments"]["MOVE_DOCUMENT_TO"] = 'para coleção';
         self::$trans["mydocuments"]["FULL_TEXT"] = 'mostrar';
         self::$trans["mydocuments"]["REMOVE_FROM_COLLECTION"] = 'excluir';
+        self::$trans["mydocuments"]["REMOVE_FROM_COLLECTION_CONFIRM"] = 'Tem certeza que deseja excluir';
         self::$trans["mydocuments"]["MONITOR_CITATION"] = '';
         self::$trans["mydocuments"]["MONITOR_ACCESS"] = '';
         self::$trans["mydocuments"]["ACCESS_LIST_NO_REGISTERS_FOUND"] = 'Nenhum registro encontrado';
@@ -285,6 +286,7 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
         self::$trans["mydocuments"]["AVAILABLE_IN"] = 'Disponível em:';
         self::$trans["mydocuments"]["CANCEL"] = 'cancelar';
         self::$trans["mydocuments"]["REMOVE"] = 'excluir';
+        self::$trans["mydocuments"]["CLOSE"] = 'fechar';
 
     // Tems of directories pages
         self::$trans["directories"]["FEATURE"] = 'Documentos Favoritos';
@@ -381,6 +383,7 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
         self::$trans["myprofiledocuments"]["TOOLS"] = 'Meus temas';
         self::$trans["myprofiledocuments"]["SIMILARS_IN"] = 'Similares';
         self::$trans["myprofiledocuments"]["PROFILE_KEYWORDS"] = 'Palavras-chave';
+        self::$trans["myprofiledocuments"]["PROFILE"] = 'Tema';
         self::$trans["myprofiledocuments"]["PROFILES"] = 'Temas';
         self::$trans["myprofiledocuments"]["PROFILE_NAME"] = 'Nome do tema';
         self::$trans["myprofiledocuments"]["PROFILE_TEXT"] = 'Palavras-chave';
@@ -388,6 +391,8 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
         self::$trans["myprofiledocuments"]["PROFILE_DEFAULT"] = 'Definir como padrão';
         self::$trans["myprofiledocuments"]["SAVE"] = 'salvar';
         self::$trans["myprofiledocuments"]["CANCEL"] = 'cancelar';
+        self::$trans["myprofiledocuments"]["REMOVE"] = 'excluir';
+        self::$trans["myprofiledocuments"]["CLOSE"] = 'fechar';
         self::$trans["myprofiledocuments"]["MY_PROFILES_NO_REGISTERS_FOUND"] = 'Nenhum registro encontrado';
         self::$trans["myprofiledocuments"]["MY_PROFILES_NO_SUGGESTIONS_FOUND"] = 'Nenhum documento encontrado. Tente atualizar o tema em <code>editar tema > salvar</code> ou altere as palavras-chave.';
         self::$trans["myprofiledocuments"]["SERVICE_TEMPORARY_UNAVAILABLE"] = 'Serviço temporariamente indisponível. Tente atualizar esse tema mais tarde.';
@@ -400,7 +405,10 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
         self::$trans["myprofiledocuments"]["ADD_COLLECTION"] = 'adicionar aos favoritos';
         self::$trans["myprofiledocuments"]["TO_COLLECTION"] = 'à coleção';
         self::$trans["myprofiledocuments"]["INCOMING_FOLDER"] = 'Caixa de Entrada';
-        self::$trans["myprofiledocuments"]["UPDATE_ALERT"] = '<p>Os documentos de interesse abaixo podem mudar conforme a atualização das fontes de informação da BVS.</p><p>Por tanto, se algum documento é de seu interesse, adicione-o aos favoritos.</p>';
+        self::$trans["myprofiledocuments"]["ALERT"] = '<b>Atualização dos Temas de Interesse</b>';
+        self::$trans["myprofiledocuments"]["UPDATE_ALERT"] = '<p>Os documentos exibidos nos temas de interesse podem mudar conforme a atualização das fontes de informação da BVS.</p><p>Por tanto, se algum documento é de seu interesse, adicione-o aos favoritos.</p>';
+        self::$trans["myprofiledocuments"]["REMOVE_TOPIC"] = 'excluir';
+        self::$trans["myprofiledocuments"]["REMOVE_TOPIC_CONFIRM"] = 'Tem certeza que deseja excluir';
 
     // Terms of mig_id_confirmation pages
         self::$trans["mig_id_confirmation"]["TITLE"] = 'Confirmação de Usuário';
