@@ -156,6 +156,14 @@ usuário para oferecer serviços personalizados e facilidades tais como:</p>
         self::$trans["menu"]["PROFILE"] = 'Perfil';
         self::$trans["menu"]["CONFIGURATIONS"] = 'Configurações';
         self::$trans["menu"]["FOOTER_MESSAGE"] = '
+<p><strong>BIREME - OPAS - OMS</strong><br/>
+Centro Latino-Americano e do Caribe de Informação em Ciências da Saúde<br />
+Departamento de Evidência e Inteligência para a Ação em Saúde – EIH<br />
+Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 | Fax: (55 11) 5575-8868<br />
+<a href="http://new.paho.org/bireme" title="Minha BVS">http://www.paho.org/bireme/</a><br /><br />
+<strong><a href="http://politicas.bireme.org/terminos/pt/">Termos e Condições de Uso</a> | <a href="http://politicas.bireme.org/privacidad/pt/">Políticas de Privacidade</a></strong></p>
+';
+        self::$trans["menu"]["FOOTER_MESSAGE_DEFAULT"] = '
 <br /><b>BIREME - OPAS - OMS</b><br />
 Centro Latino-Americano e do Caribe de Informação em Ciências da Saúde<br />
 Departamento de Evidência e Inteligência para a Ação em Saúde – EIH<br />
