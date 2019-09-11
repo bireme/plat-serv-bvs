@@ -30,21 +30,21 @@
 					<div class="card-reveal">
 						<span class="card-title grey-text text-darken-4"><?php echo $trans->getTrans('menu','SHELF_WIDGET'); ?><i class="material-icons right">close</i></span>
 						<?php if ( $collections ) : ?>
-              <?php foreach ( $collections as $col ) : ?>
-                <?php
-                  if ( is_array($col["docURL"]) ) {
-                    if ( 'portal' != $_SESSION['iahx'] && !empty($site) && array_key_exists($site, $col['docURL']) ) {
-                      $docURL = $col['docURL'][$site];
-                    } else {
-                      $docURL = $col['docURL']['portal'];
-                    }
-                  } else {
-                    $docURL = $col['docURL'];
-                  }
-                ?>
-                <p><a href="<?php echo $docURL; ?>" target="_blank" onclick="__gaTracker('send','event','Overview','Favorite Documents','<?php echo htmlspecialchars($col['title']); ?>');"><?php echo $col['title'] ?></a></p>
-              <?php endforeach; ?>
-            <?php endif; ?>
+                            <?php foreach ( $collections as $col ) : ?>
+                                <?php
+                                    if ( is_array($col["docURL"]) ) {
+                                        if ( 'portal' != $_SESSION['iahx'] && !empty($site) && array_key_exists($site, $col['docURL']) ) {
+                                            $docURL = $col['docURL'][$site];
+                                        } else {
+                                            $docURL = $col['docURL']['portal'];
+                                        }
+                                    } else {
+                                        $docURL = $col['docURL'];
+                                    }
+                                ?>
+                                <p><a href="<?php echo $docURL; ?>" target="_blank" onclick="__gaTracker('send','event','Overview','Favorite Documents','<?php echo htmlspecialchars($col['title']); ?>');"><?php echo $col['title'] ?></a></p>
+                            <?php endforeach; ?>
+                        <?php endif; ?>
 					</div>
 				</div>
 			</article>
@@ -59,10 +59,10 @@
 					<div class="card-reveal">
 						<span class="card-title grey-text text-darken-4"><?php echo $trans->getTrans('menu','PROFILE_WIDGET'); ?><i class="material-icons right">close</i></span>
 						<?php if ( $profiles ) : ?>
-              <?php foreach ( $profiles as $profile ) : ?>
-                <p><a href="<?php echo RELATIVE_PATH.'/controller/myprofiledocuments/control/business/profile/'.$profile["profileID"]; ?>" onclick="__gaTracker('send','event','Overview','Interest Topics','<?php echo htmlspecialchars($profile['profileName']); ?>');"><i class="fas fa-folder-open"></i> <?php echo $profile['profileName']; ?></a></p>
-              <?php endforeach; ?>
-            <?php endif; ?>
+                            <?php foreach ( $profiles as $profile ) : ?>
+                                <p><a href="<?php echo RELATIVE_PATH.'/controller/myprofiledocuments/control/business/profile/'.$profile["profileID"]; ?>" onclick="__gaTracker('send','event','Overview','Interest Topics','<?php echo htmlspecialchars($profile['profileName']); ?>');"><i class="fas fa-folder-open"></i> <?php echo $profile['profileName']; ?></a></p>
+                            <?php endforeach; ?>
+                        <?php endif; ?>
 					</div>
 				</div>
 			</article>
@@ -81,12 +81,12 @@
 								<p>
 									<?php if ( 'portal' == $_SESSION['iahx'] ) : ?>
 										<a id="v<?php echo $count; ?>" class="portal" value="portal" data-query="<?php echo $search['query']; ?>" data-filter="<?php echo $search['filter']; ?>" onclick="__gaTracker('send','event','Overview','VHL Search History','<?php echo htmlspecialchars($search['query']); ?>');"><i class="fas fa-search"></i> <?php echo CharTools::shortenedQueryString($search['query'], true); ?></a>
-	                <?php else : ?>
+	                                <?php else : ?>
 										<a id="v<?php echo $count; ?>" class="search" value="<?php echo $_SESSION['iahx']; ?>" data-label="<?php echo $label; ?>" data-query="<?php echo $search['query']; ?>" data-filter="<?php echo $search['filter']; ?>" onclick="__gaTracker('send','event','Overview','VHL Search History','<?php echo htmlspecialchars($search['query']); ?>');"><i class="fas fa-search"></i> <?php echo CharTools::shortenedQueryString($search['query'], true); ?></a>
-	                <?php endif; ?>
+	                               <?php endif; ?>
 								</p>
-	            <?php endforeach; ?>
-            <?php endif; ?>
+            	            <?php endforeach; ?>
+                        <?php endif; ?>
 					</div>
 				</div>
 			</article>

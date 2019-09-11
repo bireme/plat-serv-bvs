@@ -184,7 +184,7 @@ class CharTools {
      * @return string
      */
     public static function shortenedQueryString($query,$crop=true){
-        $query =  htmlspecialchars_decode($query);
+        $query = htmlspecialchars_decode($query);
 
         if ( strlen($query) > 100 ) {
             $start = substr($query, 0, 100);

@@ -104,7 +104,7 @@
                         </div>
                     <?php endif; ?>
                 </section>
-                <?php // if ( $objPaginator->totalPages > 1 ) { echo $objPaginator->build(); } ?>
+                <?php if ( $objPaginator->totalPages > 1 ) { echo $objPaginator->build(); } ?>
             </div>
         </div>
         <?php require_once(dirname(__FILE__)."/info.tpl.php"); ?>

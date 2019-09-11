@@ -30,6 +30,13 @@ $( document ).ready(
             $('#doc-url').attr('href', url);
         });
 
+        $('.search-actions a.remove').click(function(){
+            query = $(this).siblings('a.search-query').data('query');
+            url = $(this).data('source');
+            $('#search-query').text(query);
+            $('#search-query-url').attr('href', url);
+        });
+
         /********** Suggestions Scripts **********/
         $( "#reference" ).change(
             function(e){
@@ -662,6 +669,44 @@ $( document ).ready(
             }
         });
 */
+        $('.search-actions a.portal').on('click', function(e){
+            var portal = "http://pesquisa.bvsalud.org/portal";
+            var query  = encodeURIComponent($(this).data('query'));
+            var filter = encodeURIComponent($(this).data('filter'));
+            var expr = ( filter != '*' && filter != '' ) ? '?q='+query+' AND '+filter : '?q='+query;
+
+            window.open(portal+expr, '_blank');
+        });
+
+        $('.search-actions a.combine').on('click', function(e){
+            var query  = $(this).data('query');
+            var filter = $(this).data('filter');
+            var expr = ( filter != '*' && filter != '' ) ? query+' AND '+filter : query;
+            $('#combine-q').val(expr);
+        });
+
+        $('a.btnOperator').on('click', function(){
+            operator = $(this).text();
+            
+            $('a.btnOperator').removeClass('darken-1').addClass('darken-4');
+            $(this).removeClass('darken-4').addClass('darken-1');
+            $('#combine-more').show();
+            $('.modal.bottom-sheet').css('max-height','80%');
+        });
+
+        $('a.btnCombine').on('click', function(){
+            var query    = $(this).data('query');
+            var filter   = $(this).data('filter');
+            var search   = $("#combine-q").val();
+
+            filter = ( filter !== '' && filter !== '*' ) ? ' AND ' + filter : '';
+            search = ( search !== '' ) ? search + ' ' + operator + ' ' : '';
+
+            $("#combine-q").val(search +  '(' + query + filter + ')');
+            $( "#combine-q" ).focus();
+            $('#btSearchModal').removeClass('disabled');
+        });
+
         /********** Layout Scripts **********/
         var setContentHeight = function () {
             // reset height

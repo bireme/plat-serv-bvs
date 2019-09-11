@@ -24,7 +24,7 @@
     								<!-- Dropdown Structure -->
     								<ul id='profile-actions' class='dropdown-content'>
                                         <li><a class="modal-trigger modal-ajax" href="#modal-ajax" data-source="<?php echo RELATIVE_PATH; ?>/controller/myprofiledocuments/control/business/task/edit/profile/<?php echo $registerProfile["profileID"]; ?>" onclick="__gaTracker('send','event','Interest Topics','Edit Topic','<?php echo htmlspecialchars($registerProfile["profileName"]); ?>');"><i class="far fa-edit right m1"></i> <?=$trans->getTrans($_REQUEST["action"],'EDIT_PROFILE')?></a></li>
-                                        <li><a class="modal-trigger remove" href="#modal-remove" data-source="<?=RELATIVE_PATH?>/controller/myprofiledocuments/control/business/task/delete/profile/<?=$registerProfile["profileID"]?>" onclick="__gaTracker('send','event','Interest Topics','Remove Topic','<?php echo htmlspecialchars($registerProfile["profileName"]); ?>');"><i class="fas fa-eraser right m1"></i> <?=$trans->getTrans($_REQUEST["action"],'REMOVE_PROFILE')?></a></li>
+                                        <li><a class="modal-trigger remove" href="#modal-remove-topic" data-source="<?=RELATIVE_PATH?>/controller/myprofiledocuments/control/business/task/delete/profile/<?=$registerProfile["profileID"]?>" onclick="__gaTracker('send','event','Interest Topics','Remove Topic','<?php echo htmlspecialchars($registerProfile["profileName"]); ?>');"><i class="fas fa-eraser right m1"></i> <?=$trans->getTrans($_REQUEST["action"],'REMOVE_PROFILE')?></a></li>
     								</ul>
     							</div>
     						</div>
@@ -122,7 +122,7 @@
         </form>
     </div>
     <!-- Modal Excluir Tema -->
-    <div id="modal-remove" class="modal">
+    <div id="modal-remove-topic" class="modal">
         <div class="modal-content">
             <h4><?php echo $trans->getTrans($_REQUEST["action"],'REMOVE_TOPIC'); ?></h4>
             <p class="center-align">

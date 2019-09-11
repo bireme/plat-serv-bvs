@@ -14,229 +14,277 @@
     if ( 'delete' == $_REQUEST["task"] ) {
         header("Location: ".$location);
     }
+
+    parse_str($_SERVER['QUERY_STRING'], $output);
 ?>
-
-        <?php parse_str($_SERVER['QUERY_STRING'], $output); ?>
-
-        <?require_once(dirname(__FILE__)."/header.tpl.php");?>
-        <?require_once(dirname(__FILE__)."/sidebar.tpl.php");?>
-
-        <!-- page content -->
-        <div class="right_col" role="main">
-          <div class="">
-            
-            <div class="clearfix"></div>
-
-            <div class="row">
-              <div class="col-md-12 col-sm-12 col-xs-12 vhl-search">
-                <div class="x_panel">
-                  <div class="x_title">
-                    <h2>
-                      <?=$trans->getTrans($_REQUEST["action"],'MY_SEARCHES')?>
-                      <?php if ( !$response["values"] && isset($output['multipage']) ) : ?>
-                        <small class="example"><?=$trans->getTrans('tour','TOUR_EXAMPLE')?></small>
-                      <?php endif; ?>
-                    </h2>
-                    <div class="clearfix"></div>
-                  </div>
-                  <div id="step25" class="x_content">
-                    <?php if ( $response["values"] != false ) : ?>
-                        <?php //echo $objPaginator->render($trans->getTrans($_REQUEST["action"],'NEXT'), $trans->getTrans($_REQUEST["action"],'PREVIOUS')); ?>
-                        <!-- start project list -->
-                        <table id="datatable-search" class="table table-striped table-list">
-                          <thead>
+    <?php require_once(dirname(__FILE__)."/header.tpl.php"); ?>
+    <?php require_once(dirname(__FILE__)."/sidebar.tpl.php"); ?>
+    <?php require_once(dirname(__FILE__)."/nav.tpl.php"); ?>
+    <div id="wrap">
+        <div class="row">
+            <div class="col s12">
+                <div class="box1">
+                    <h5 class="title1"><i class="fas fa-history left"></i> <?php echo $trans->getTrans($_REQUEST["action"],'MY_SEARCHES'); ?></h5>
+                </div>
+                <?php if ( $response["values"] != false ) : ?>
+                    <section class="box1">
+                        <table class="highlight">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th class="query" style="width: 40%"><?php echo $trans->getTrans($_REQUEST["action"],'QUERY'); ?></th>
+                                    <th class="filter" style="width: 40%"><?php echo $trans->getTrans($_REQUEST["action"],'FILTERS'); ?></th>
+                                    <th class="center-align" style="width: 15%"><?php echo $trans->getTrans($_REQUEST["action"],'ACTIONS'); ?></th>
+                                </tr>
+                            </thead>
+                            <tbody style="font-size: 12px;">
+                                <?php $count = $_REQUEST["page"] ? --$_REQUEST["page"] * DOCUMENTS_PER_PAGE : 0; ?>
+                                <?php foreach ( $response["values"] as $register) : $count++; ?>
+                                    <tr>
+                                        <td id="s<?php echo $count; ?>"><?php echo $count; ?></td>
+                                        <td class="query"><a href="<?php echo VHL_SEARCH_PORTAL_DOMAIN.'/portal/?q='.$register['query']; ?>" target="_blank"><?php echo CharTools::shortenedQueryString($register['query'], false); ?></a></td>
+                                        <td class="filter"><?php echo CharTools::shortenedQueryString($register['filter'], false); ?></td>
+                                        <td class="center-align search-actions">
+                                            <?php if ( 'portal' == $_SESSION['iahx'] ) : ?>
+                                            <a href="#!" id="v<?php echo $count; ?>" class="btn1 waves-effect blue darken-4 tooltipped search-query portal" value="portal" data-query="<?php echo $register['query']; ?>" data-filter="<?php echo $register['filter']; ?>" data-position="top" data-tooltip="<?php echo $trans->getTrans($_REQUEST["action"],'VIEW'); ?>" onclick="__gaTracker('send','event','VHL Search History','Show Result','<?php echo htmlspecialchars($register["query"]); ?>');"><i class="material-icons left">search</i></a>
+                                            <?php else : ?>
+                                            <a href="#!" id="v<?php echo $count; ?>" class="btn1 waves-effect blue darken-4 tooltipped search-query search" value="<?php echo $_SESSION['iahx']; ?>" data-label="<?php echo $label; ?>" data-query="<?php echo $register['query']; ?>" data-filter="<?php echo $register['filter']; ?>" data-position="top" data-tooltip="<?php echo $trans->getTrans($_REQUEST["action"],'VIEW'); ?>" onclick="__gaTracker('send','event','VHL Search History','Show Result','<?php echo htmlspecialchars($register["query"]); ?>');"><i class="material-icons left">search</i></a>
+                                            <?php endif; ?>
+                                            <a href="#modal-combine" id="c<?php echo $count; ?>" class="btn1 waves-effect blue darken-2 tooltipped modal-trigger combine" data-query="<?php echo $register['query']; ?>" data-filter="<?php echo $register['filter']; ?>" data-position="top" data-tooltip="<?php echo $trans->getTrans($_REQUEST["action"],'COMBINE'); ?>" onclick="__gaTracker('send','event','VHL Search History','Combine Queries','<?php echo htmlspecialchars($register["query"]); ?>');"><i class="material-icons left">shuffle</i></a>
+                                            <a href="#modal-remove-search" id="d<?php echo $count; ?>" class="btn1 waves-effect red darken-4 tooltipped modal-trigger remove" data-source="<?php echo $location.'/task/delete/?query='.$register['query'].'&filter='.$register['filter']; ?>" data-position="top" data-tooltip="<?php echo $trans->getTrans($_REQUEST["action"],'REMOVE'); ?>" onclick="__gaTracker('send','event','VHL Search History','Delete Query','<?php echo htmlspecialchars($register["query"]); ?>');"><i class="material-icons left">delete</i></a>
+                                        </td>
+                                    </tr>
+                                <?php endforeach; ?>
+                            </tbody>
+                        </table><br />
+                        <?php if ( $objPaginator->totalPages > 1 ) { echo $objPaginator->build(); } ?>
+                    </section>
+                <?php else : ?>
+                    <?php if ( isset($output['multipage']) ) : ?>
+                        <section class="box1">
+                            <table class="highlight">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th class="query" style="width: 40%"><?php echo $trans->getTrans($_REQUEST["action"],'QUERY'); ?></th>
+                                        <th class="filter" style="width: 40%"><?php echo $trans->getTrans($_REQUEST["action"],'FILTERS'); ?></th>
+                                        <th class="center-align" style="width: 15%"><?php echo $trans->getTrans($_REQUEST["action"],'ACTIONS'); ?></th>
+                                    </tr>
+                                </thead>
+                                <tbody style="font-size: 12px;">
+                                    <tr>
+                                        <td id="s1">1</td>
+                                        <td class="query">health</td>
+                                        <td class="filter">db:("MEDLINE")</td>
+                                        <td class="center-align search-actions">
+                                            <?php if ( 'portal' == $_SESSION['iahx'] ) : ?>
+                                            <a href="#!" id="v1" class="btn1 waves-effect blue darken-4 tooltipped search-query portal" value="portal" data-query="health" data-filter="db:('MEDLINE')" data-position="top" data-tooltip="<?php echo $trans->getTrans($_REQUEST["action"],'VIEW'); ?>"><i class="material-icons left">search</i></a>
+                                            <?php else : ?>
+                                            <a href="#!" id="v1" class="btn1 waves-effect blue darken-4 tooltipped search-query search" value="<?php echo $_SESSION['iahx']; ?>" data-label="<?php echo $label; ?>" data-query="health" data-filter="db:('MEDLINE')" data-position="top" data-tooltip="<?php echo $trans->getTrans($_REQUEST["action"],'VIEW'); ?>"><i class="material-icons left">search</i></a>
+                                            <?php endif; ?>
+                                            <a href="#modal-combine" id="c1" class="btn1 waves-effect blue darken-2 tooltipped modal-trigger combine" data-query="health" data-filter="db:('MEDLINE')" data-position="top" data-tooltip="<?php echo $trans->getTrans($_REQUEST["action"],'COMBINE'); ?>"><i class="material-icons left">shuffle</i></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td id="s2">2</td>
+                                        <td class="query">salud</td>
+                                        <td class="filter">db:("LILACS")</td>
+                                        <td class="center-align search-actions">
+                                            <?php if ( 'portal' == $_SESSION['iahx'] ) : ?>
+                                            <a href="#!" id="v2" class="btn1 waves-effect blue darken-4 tooltipped search-query portal" value="portal" data-query="salud" data-filter="db:('LILACS')" data-position="top" data-tooltip="<?php echo $trans->getTrans($_REQUEST["action"],'VIEW'); ?>"><i class="material-icons left">search</i></a>
+                                            <?php else : ?>
+                                            <a href="#!" id="v2" class="btn1 waves-effect blue darken-4 tooltipped search-query search" value="<?php echo $_SESSION['iahx']; ?>" data-label="<?php echo $label; ?>" data-query="salud" data-filter="db:('LILACS')" data-position="top" data-tooltip="<?php echo $trans->getTrans($_REQUEST["action"],'VIEW'); ?>"><i class="material-icons left">search</i></a>
+                                            <?php endif; ?>
+                                            <a href="#modal-combine" id="c2" class="btn1 waves-effect blue darken-2 tooltipped modal-trigger combine" data-query="salud" data-filter="db:('LILACS')" data-position="top" data-tooltip="<?php echo $trans->getTrans($_REQUEST["action"],'COMBINE'); ?>"><i class="material-icons left">shuffle</i></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td id="s3">3</td>
+                                        <td class="query">saúde</td>
+                                        <td class="filter">db:("BDENF")</td>
+                                        <td class="center-align search-actions">
+                                            <?php if ( 'portal' == $_SESSION['iahx'] ) : ?>
+                                            <a href="#!" id="v3" class="btn1 waves-effect blue darken-4 tooltipped search-query portal" value="portal" data-query="saúde" data-filter="db:('BDENF')" data-position="top" data-tooltip="<?php echo $trans->getTrans($_REQUEST["action"],'VIEW'); ?>"><i class="material-icons left">search</i></a>
+                                            <?php else : ?>
+                                            <a href="#!" id="v3" class="btn1 waves-effect blue darken-4 tooltipped search-query search" value="<?php echo $_SESSION['iahx']; ?>" data-label="<?php echo $label; ?>" data-query="saúde" data-filter="db:('BDENF')" data-position="top" data-tooltip="<?php echo $trans->getTrans($_REQUEST["action"],'VIEW'); ?>"><i class="material-icons left">search</i></a>
+                                            <?php endif; ?>
+                                            <a href="#modal-combine" id="c3" class="btn1 waves-effect blue darken-2 tooltipped modal-trigger combine" data-query="saúde" data-filter="db:('BDENF')" data-position="top" data-tooltip="<?php echo $trans->getTrans($_REQUEST["action"],'COMBINE'); ?>"><i class="material-icons left">shuffle</i></a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </section>
+                    <?php else : ?>
+                        <div class="card-panel center-align">
+                            <span class="blue-text text-darken-2"><?php echo $trans->getTrans($_REQUEST["action"],'MY_SEARCHES_NO_REGISTERS_FOUND'); ?></span>
+                        </div>
+                    <?php endif; ?>
+                <?php endif; ?>
+            </div>
+        </div>
+        <?php require_once(dirname(__FILE__)."/info.tpl.php"); ?>
+        <?php require_once(dirname(__FILE__)."/more.tpl.php"); ?>
+    </div>
+    <!-- Modal Combine -->
+    <div id="modal-combine" class="modal bottom-sheet color2">
+        <div class="modal-content">
+            <div class="container">
+                <div id="combine-header">
+                    <h5><?php echo $trans->getTrans($_REQUEST["action"],'COMBINE'); ?></h5>
+                    <a href="#" id="btnAnd" class="btn1 waves-effect blue darken-4 btnOperator">AND</a>
+                    <a href="#" id="btnOr" class="btn1 waves-effect blue darken-4 btnOperator">OR</a>
+                    <a href="#" id="btnAndNot" class="btn1 waves-effect blue darken-4 btnOperator">AND NOT</a>
+                    <a href="#" id="Fechar" class="btn1 waves-effect red darken-4 modal-close"><?php echo ucfirst($trans->getTrans($_REQUEST["action"],'CLOSE')); ?></a>
+                    <br /><br />
+                    <?php if ( 'portal' == $_SESSION['iahx'] ) : ?>
+                    <form id="combine-form" class="row pm0" action="<?php echo VHL_SEARCH_PORTAL_DOMAIN.'/portal/'; ?>" method="get" target="_blank">
+                    <?php else : ?>
+                    <form id="combine-form" class="row pm0" action="<?php echo $_SESSION['iahx']; ?>" method="get" target="_blank">
+                    <?php endif; ?>
+                        <div class="col s9 m8 l7 input-field pm0">
+                            <input id="combine-q" name="q" type="text" class="pm1 inputHeader" autocomplete="off" value="">
+                        </div>
+                        <div class="col s3 m4 l5" id="boxbtSearchModal">
+                            <button id="btSearchModal" class="btn btnSuccess disabled"><i class="fas fa-search"></i></button>
+                        </div>
+                    </form>
+                </div>
+                <div id="combine-more">
+                    <table>
+                        <thead>
                             <tr>
-                              <th style="width: 10%" class="all">#</th>
-                              <th style="width: 35%" class="all query"><?=$trans->getTrans($_REQUEST["action"],'QUERY')?></th>
-                              <th style="width: 35%" class="min-tablet-l filter"><?=$trans->getTrans($_REQUEST["action"],'FILTERS')?></th>
-                              <th style="width: 20%" class="min-tablet"><?=$trans->getTrans($_REQUEST["action"],'ACTIONS')?></th>
+                                <th>#</th>
+                                <th class="query" style="width: 45%"><?php echo $trans->getTrans($_REQUEST["action"],'QUERY'); ?></th>
+                                <th class="filter" style="width: 45%"><?php echo $trans->getTrans($_REQUEST["action"],'FILTERS'); ?></th>
+                                <th class="right-align"></th>
                             </tr>
-                          </thead>
-                          <tbody>
+                        </thead>
+                        <tbody style="font-size: 12px;">
                             <?php $count = $_REQUEST["page"] ? --$_REQUEST["page"] * DOCUMENTS_PER_PAGE : 0; ?>
                             <?php foreach ( $response["values"] as $register) : $count++; ?>
-                            <tr>
-                              <td id="s<?php echo $count; ?>"><?php echo $count; ?></td>
-                              <td class="query step26"><a href="<?php echo VHL_SEARCH_PORTAL_DOMAIN.'/portal/?q='.$register['query']; ?>" target="_blank"><?php echo CharTools::shortenedQueryString($register['query']); ?></a></td>
-                              <td class="filter step27"><?php echo CharTools::shortenedQueryString($register['filter']); ?></td>
-                              <td class="step28">
-                                <?php if ( 'portal' == $_SESSION['iahx'] ) : ?>
-                                <button id="v<?php echo $count; ?>" class="btn btn-primary btn-xs portal" value="portal" data-query="<?php echo $register['query']; ?>" data-filter="<?php echo $register['filter']; ?>" onclick="__gaTracker('send','event','VHL Search History','Show Result','<?php echo htmlspecialchars($register["query"]); ?>');"><i class="fa fa-search"></i> <?=$trans->getTrans($_REQUEST["action"],'VIEW')?></button>
-                                <?php else : ?>
-                                <button id="v<?php echo $count; ?>" class="btn btn-primary btn-xs search" value="<?php echo $_SESSION['iahx']; ?>" data-label="<?php echo $label; ?>" data-query="<?php echo $register['query']; ?>" data-filter="<?php echo $register['filter']; ?>" onclick="__gaTracker('send','event','VHL Search History','Show Result','<?php echo htmlspecialchars($register["query"]); ?>');"><i class="fa fa-search search"></i> <?=$trans->getTrans($_REQUEST["action"],'VIEW')?></button>
-                                <?php endif; ?>
-                                <button id="c<?php echo $count; ?>" class="btn btn-info btn-xs combine" data-query="<?php echo $register['query']; ?>" data-filter="<?php echo $register['filter']; ?>" onclick="__gaTracker('send','event','VHL Search History','Combine Queries','<?php echo htmlspecialchars($register["query"]); ?>');"><i class="fa fa-compress combine"></i> <?=$trans->getTrans($_REQUEST["action"],'COMBINE')?></button>
-                                <a href="<?php echo $location.'/task/delete/?query='.$register['query'].'&filter='.$register['filter']; ?>" id="d<?php echo $count; ?>" class="btn btn-danger btn-xs" onclick="__gaTracker('send','event','VHL Search History','Delete Query','<?php echo htmlspecialchars($register["query"]); ?>');"><i class="fa fa-remove"></i> <?=$trans->getTrans($_REQUEST["action"],'REMOVE')?></a>
-                              </td>
-                            </tr>
+                                <tr>
+                                    <td><?php echo $count; ?></td>
+                                    <td class="query"><a href="<?php echo VHL_SEARCH_PORTAL_DOMAIN.'/portal/?q='.$register['query']; ?>" target="_blank"><?php echo CharTools::shortenedQueryString($register['query'], false); ?></a></td>
+                                    <td class="filter"><?php echo CharTools::shortenedQueryString($register['filter'], false); ?></td>
+                                    <td class="right-align search-actions">
+                                        <a href="#!" class="btn1 btnCombine waves-effect blue darken-2 tooltipped" data-query="<?php echo $register['query']; ?>" data-filter="<?php echo $register['filter']; ?>" data-position="top" data-tooltip="<?php echo $trans->getTrans($_REQUEST["action"],'COMBINE'); ?>" onclick="__gaTracker('send','event','VHL Search History','Combine Queries','<?php echo htmlspecialchars($register["query"]); ?>');"><i class="material-icons left">shuffle</i></a>
+                                    </td>
+                                </tr>
                             <?php endforeach; ?>
-                          </tbody>
-                        </table>
-                        <!-- end project list -->
-                        <?php if ( $objPaginator->totalPages > 1 ) : ?>
-                        <div class="datatable-search-pagination">
-                          <?php echo $objPaginator->render($trans->getTrans($_REQUEST["action"],'NEXT'), $trans->getTrans($_REQUEST["action"],'PREVIOUS')); ?>
-                        </div>
-                        <?php endif; ?>
-                    <?php else : ?>
-                        <?php if ( isset($output['multipage']) ) : ?>
-                          <table id="datatable-search" class="table table-striped table-list">
-                            <thead>
-                              <tr>
-                                <th style="width: 10%" class="all">#</th>
-                                <th style="width: 35%" class="all query"><?=$trans->getTrans($_REQUEST["action"],'QUERY')?></th>
-                                <th style="width: 35%" class="filter"><?=$trans->getTrans($_REQUEST["action"],'FILTERS')?></th>
-                                <th style="width: 20%"><?=$trans->getTrans($_REQUEST["action"],'ACTIONS')?></th>
-                              </tr>
-                            </thead>
-                            <tbody>
-                              <tr>
-                                <td id="s1">1</td>
-                                <td class="query step26">health</td>
-                                <td class="filter step27">db:("MEDLINE")</td>
-                                <td class="step28">
-                                  <?php if ( 'portal' == $_SESSION['iahx'] ) : ?>
-                                  <button id="v1" class="btn btn-primary btn-xs portal" value="portal" data-query="health" data-filter="db:('MEDLINE')"><i class="fa fa-search"></i> <?=$trans->getTrans($_REQUEST["action"],'VIEW')?></button>
-                                  <?php else : ?>
-                                  <button id="v1" class="btn btn-primary btn-xs search" value="<?php echo $_SESSION['iahx']; ?>" data-label="<?php echo $label; ?>" data-query="health" data-filter="db:('MEDLINE')"><i class="fa fa-search search"></i> <?=$trans->getTrans($_REQUEST["action"],'VIEW')?></button>
-                                  <?php endif; ?>
-                                  <button id="c1" class="btn btn-info btn-xs combine" data-query="health" data-filter="db:('MEDLINE')"><i class="fa fa-compress combine"></i> <?=$trans->getTrans($_REQUEST["action"],'COMBINE')?></button>
-                                </td>
-                              </tr>
-                              <tr>
-                                <td id="s2">2</td>
-                                <td class="query step26">salud</td>
-                                <td class="filter step27">db:("LILACS")</td>
-                                <td class="step28">
-                                  <?php if ( 'portal' == $_SESSION['iahx'] ) : ?>
-                                  <button id="v2" class="btn btn-primary btn-xs portal" value="portal" data-query="salud" data-filter="db:('LILACS')"><i class="fa fa-search"></i> <?=$trans->getTrans($_REQUEST["action"],'VIEW')?></button>
-                                  <?php else : ?>
-                                  <button id="v2" class="btn btn-primary btn-xs search" value="<?php echo $_SESSION['iahx']; ?>" data-label="<?php echo $label; ?>" data-query="salud" data-filter="db:('LILACS')"><i class="fa fa-search search"></i> <?=$trans->getTrans($_REQUEST["action"],'VIEW')?></button>
-                                  <?php endif; ?>
-                                  <button id="c2" class="btn btn-info btn-xs combine" data-query="salud" data-filter="db:('LILACS')"><i class="fa fa-compress combine"></i> <?=$trans->getTrans($_REQUEST["action"],'COMBINE')?></button>
-                                </td>
-                              </tr>
-                              <tr>
-                                <td id="s3">3</td>
-                                <td class="query step26">saúde</td>
-                                <td class="filter step27">db:("BDENF")</td>
-                                <td class="step28">
-                                  <?php if ( 'portal' == $_SESSION['iahx'] ) : ?>
-                                  <button id="v3" class="btn btn-primary btn-xs portal" value="portal" data-query="saúde" data-filter="db:('BDENF')"><i class="fa fa-search"></i> <?=$trans->getTrans($_REQUEST["action"],'VIEW')?></button>
-                                  <?php else : ?>
-                                  <button id="v3" class="btn btn-primary btn-xs search" value="<?php echo $_SESSION['iahx']; ?>" data-label="<?php echo $label; ?>" data-query="saúde" data-filter="db:('BDENF')"><i class="fa fa-search search"></i> <?=$trans->getTrans($_REQUEST["action"],'VIEW')?></button>
-                                  <?php endif; ?>
-                                  <button id="c3" class="btn btn-info btn-xs combine" data-query="saúde" data-filter="db:('BDENF')"><i class="fa fa-compress combine"></i> <?=$trans->getTrans($_REQUEST["action"],'COMBINE')?></button>
-                                </td>
-                              </tr>
-                            </tbody>
-                          </table>
-                        <?php else : ?>
-                          <p class="none-docs"><?=$trans->getTrans($_REQUEST["action"],'MY_SEARCHES_NO_REGISTERS_FOUND')?></p>
-                        <?php endif; ?>
-                    <?php endif; ?>
-                  </div>
+                        </tbody>
+                    </table>
                 </div>
-              </div>
             </div>
-          </div>
         </div>
-        <!-- /page content -->
-
-        <script type="text/javascript">
-          if (RegExp('multipage', 'gi').test(window.location.search)) {
-            var steps = [
-              {
-                element: 'li.side.step24',
-                intro: "<?=$trans->getTrans('tour','STEP_24')?>",
-                position: 'right'
-              },
-              {
-                element: 'li.child.step24',
-                intro: "<?=$trans->getTrans('tour','STEP_24')?>",
-                position: 'right'
-              },
-              {
-                element: '#step25',
-                intro: "<?=$trans->getTrans('tour','STEP_25')?>",
-                position: 'left'
-              },
-              {
-                element: '.step26',
-                intro: "<?=$trans->getTrans('tour','STEP_26')?>",
-                position: 'bottom'
-              },
-              {
-                element: '.step27',
-                intro: "<?=$trans->getTrans('tour','STEP_27')?>",
-                position: 'bottom'
-              },
-              {
-                element: '.step28',
-                intro: "<?=$trans->getTrans('tour','STEP_28')?>",
-                position: 'left'
-              },
-              {
-                element: '#s1',
-                intro: "<?=$trans->getTrans('tour','STEP_S1')?>",
-                position: 'bottom'
-              }
-            ];
-
-            var sw = screen.width;
-            var tooltipClass = '';
-
-            if ( sw > 768 ) {
-                steps.splice(0,1);
-                steps.splice(-1,1);
-            } else {
-                tooltipClass = 'mobile';
-                steps.splice(1,1);
-                steps.splice(3,2);
-            }
-
-            function startIntro(){
-              var intro = introJs();
-                intro.setOptions({
-                  doneLabel: "<?=$trans->getTrans('menu','NEXT_PAGE')?>",
-                  prevLabel: "<?=$trans->getTrans('menu','BACK')?>",
-                  nextLabel: "<?=$trans->getTrans('menu','NEXT')?>",
-                  skipLabel: "<?=$trans->getTrans('menu','SKIP')?>",
-                  exitOnOverlayClick: false,
-                  showStepNumbers: false,
-                  showBullets: false,
-                  tooltipClass: tooltipClass,
-                  steps: steps
-                });
-
-                intro.onchange(function(targetElement) {
-                    switch (targetElement.id) { 
-                        case 'step25':
-                            document.getElementById("body").className = "nav-md";
-                        break;
-                    }
-
-                    switch (this._currentStep) { 
-                        case 0:
-                            if ( sw <= 768 ) {
-                                document.getElementById("body").className = "nav-sm";
-                            }
-                        break;
-                        case 3:
-                            document.getElementById('s1').click();
-                        break;
-                    }
-                });
-
-                intro.start().oncomplete(function() {
-                  window.location.href = '<?php echo RELATIVE_PATH."/controller/mylinks/control/business/?multipage=true"; ?>';
-                });
-            }
-            
-            window.addEventListener('load', function() {
-                startIntro();
-            });
+    </div>
+    <!-- Modal Excluir Item -->
+    <div id="modal-remove-search" class="modal">
+        <div class="modal-content">
+            <h4><?php echo $trans->getTrans($_REQUEST["action"],'REMOVE_SEARCH'); ?></h4>
+            <p class="center-align">
+                <?php echo $trans->getTrans($_REQUEST["action"],'REMOVE_SEARCH_CONFIRM'); ?>:<br />
+                <b id="search-query"></b>
+            </p>
+            <div class="divider"></div><br />
+            <div class="center-align">
+                <a href="#!" class="btn btnPrimary modal-close"><?php echo $trans->getTrans($_REQUEST["action"],'CANCEL'); ?></a>
+                <a id="search-query-url" href="#!" class="btn btnDanger modal-close"><?php echo $trans->getTrans($_REQUEST["action"],'REMOVE'); ?></a>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+      if (RegExp('multipage', 'gi').test(window.location.search)) {
+        var steps = [
+          {
+            element: 'li.side.step24',
+            intro: "<?=$trans->getTrans('tour','STEP_24')?>",
+            position: 'right'
+          },
+          {
+            element: 'li.child.step24',
+            intro: "<?=$trans->getTrans('tour','STEP_24')?>",
+            position: 'right'
+          },
+          {
+            element: '#step25',
+            intro: "<?=$trans->getTrans('tour','STEP_25')?>",
+            position: 'left'
+          },
+          {
+            element: '.step26',
+            intro: "<?=$trans->getTrans('tour','STEP_26')?>",
+            position: 'bottom'
+          },
+          {
+            element: '.step27',
+            intro: "<?=$trans->getTrans('tour','STEP_27')?>",
+            position: 'bottom'
+          },
+          {
+            element: '.step28',
+            intro: "<?=$trans->getTrans('tour','STEP_28')?>",
+            position: 'left'
+          },
+          {
+            element: '#s1',
+            intro: "<?=$trans->getTrans('tour','STEP_S1')?>",
+            position: 'bottom'
           }
-        </script>
+        ];
 
-        <?require_once(dirname(__FILE__)."/footer.tpl.php");?>
+        var sw = screen.width;
+        var tooltipClass = '';
+
+        if ( sw > 768 ) {
+            steps.splice(0,1);
+            steps.splice(-1,1);
+        } else {
+            tooltipClass = 'mobile';
+            steps.splice(1,1);
+            steps.splice(3,2);
+        }
+
+        function startIntro(){
+          var intro = introJs();
+            intro.setOptions({
+              doneLabel: "<?=$trans->getTrans('menu','NEXT_PAGE')?>",
+              prevLabel: "<?=$trans->getTrans('menu','BACK')?>",
+              nextLabel: "<?=$trans->getTrans('menu','NEXT')?>",
+              skipLabel: "<?=$trans->getTrans('menu','SKIP')?>",
+              exitOnOverlayClick: false,
+              showStepNumbers: false,
+              showBullets: false,
+              tooltipClass: tooltipClass,
+              steps: steps
+            });
+
+            intro.onchange(function(targetElement) {
+                switch (targetElement.id) { 
+                    case 'step25':
+                        document.getElementById("body").className = "nav-md";
+                    break;
+                }
+
+                switch (this._currentStep) { 
+                    case 0:
+                        if ( sw <= 768 ) {
+                            document.getElementById("body").className = "nav-sm";
+                        }
+                    break;
+                    case 3:
+                        document.getElementById('s1').click();
+                    break;
+                }
+            });
+
+            intro.start().oncomplete(function() {
+              window.location.href = '<?php echo RELATIVE_PATH."/controller/mylinks/control/business/?multipage=true"; ?>';
+            });
+        }
+        
+        window.addEventListener('load', function() {
+            startIntro();
+        });
+      }
+    </script>
+    <?php require_once(dirname(__FILE__)."/footer.tpl.php"); ?>

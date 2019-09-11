@@ -206,6 +206,10 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
         self::$trans["mysearches"]["VIEW"] = 'Exibir';
         self::$trans["mysearches"]["COMBINE"] = 'Combinar';
         self::$trans["mysearches"]["REMOVE"] = 'Remover';
+        self::$trans["mysearches"]["CANCEL"] = 'cancelar';
+        self::$trans["mysearches"]["CLOSE"] = 'fechar';
+        self::$trans["mysearches"]["REMOVE_SEARCH"] = 'excluir';
+        self::$trans["mysearches"]["REMOVE_SEARCH_CONFIRM"] = 'Tem certeza que deseja excluir';
         self::$trans["mysearches"]["ORIGIN_SITE"] = 'BVS de origem';
         self::$trans["mysearches"]["BRASIL"] = 'Brasil';
 

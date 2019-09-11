@@ -103,6 +103,10 @@ a:hover {
 	border: 2px #337ab7 solid;
 	background: #fff;
 }
+/*.btnOperator:focus {
+    background: #039be5 !important;
+    color: #fff;
+}*/
 .btnDefault:hover {
     background: #e2e6ea;
     /*color: #fff;*/
@@ -400,6 +404,12 @@ a.search {
     width: 40px !important;
     height: 100% !important;
 }
+span.show-all {
+    color: #000fff;
+}
+span.short-query {
+    display: none;
+}
 
 /* SHARE ICONS */
 .facebookIcon {
@@ -486,16 +496,17 @@ a.search {
 .event:hover .eventDate {
     background: #ffb042;
 }
-#combinarMais {
+#combine-more {
     display: none;
     background: #eee;
     padding: 0 20px;
 }
-#combinar {
+#combine-header {
     position: sticky;
     top: 0;
     padding: 12px 0 !important;
     background: #ddd;
+    z-index: 10;
 }
 .slider .slides li .caption {
     top: 0px;

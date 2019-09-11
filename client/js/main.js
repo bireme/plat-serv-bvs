@@ -73,34 +73,6 @@ var cor = $.cookie('cor'); // carrega cookie da cor
       $('body').addClass('bgColor2'); // insere no body cor selecionada (2)
       $('body').removeClass('bgColor1'); // remover primeira cor
     });
-//  --------------------------------- Historico
-var busca = 'Dengue';
-  // javascript para explicar como será usado
-  $('#btnAnd').click(function(){
-    $("#search, #search2").val(busca+' AND');
-    $('#combinarMais').show();
-    $('.modal.bottom-sheet').css('max-height','80%');
-    $( "#search2" ).focus();
-  })
-  $('#btnOr').click(function(){
-    $("#search, #search2").val(busca+' OR');
-    $('#combinarMais').show();
-    $('.modal.bottom-sheet').css('max-height','80%');
-    $( "#search2" ).focus();
-  })
-  $('#btnAndNot').click(function(){
-    $("#search, #search2").val(busca+' AND NOT');
-    $('#combinarMais').show();
-    $('.modal.bottom-sheet').css({'max-height':'80%','transition':'max-height .8s ease'});
-    $( "#search2" ).focus();
-  });
-
-  $('#btnCombinar2').click(function(){
-    var busca2 = $('#search2').val()+' Febre Amarela';
-    $("#search, #search2").val(busca2+'');
-    $('#btSearchModal').removeClass('disabled')
-    $( "#search2" ).focus();
-  })
 //  --------------------------------- Fechar
 $('#btnClose').click(function(){
   $('#interessar').slideToggle();
