@@ -332,6 +332,7 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
         self::$trans["mylinks"]["ADD_LINK"] = 'adicionar link';
         self::$trans["mylinks"]["MY_LINKS"] = 'Links Favoritos';
         self::$trans["mylinks"]["REMOVE_LINK"] = 'excluir';
+        self::$trans["mylinks"]["REMOVE_LINK_CONFIRM"] = 'Tem certeza que deseja excluir';
         self::$trans["mylinks"]["EDIT_LINK"] = 'editar';
         self::$trans["mylinks"]["EDIT_LINK_POPUP"] = 'editar link';
         self::$trans["mylinks"]["HIDE_FROM_HOME"] = 'excluir da home page';
@@ -348,6 +349,7 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
         self::$trans["mylinks"]["ADD_LINK_ERROR"] = 'Erro ao adicionar link';
         self::$trans["mylinks"]["NEXT"] = 'Próximo';
         self::$trans["mylinks"]["PREVIOUS"] = 'Anterior';
+        self::$trans["mylinks"]["REMOVE"] = 'excluir';
 
     // Tems of mynews pages
         self::$trans["mynews"]["SHOW_BY"] = 'Ordenar por';

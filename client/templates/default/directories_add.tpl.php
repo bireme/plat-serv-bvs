@@ -1,7 +1,7 @@
 <?php if ( $response["status"] == null or $response["status"] == false ) : ?>
 
     <?php if ( 'edit' == $_REQUEST["task"] ) : ?>
-        <form name="editDir" class="col s12" method="post" action="<?php echo RELATIVE_PATH; ?>/controller/directories">
+        <form id="editDir" name="editDir" class="col s12" method="post" action="<?php echo RELATIVE_PATH; ?>/controller/directories">
             <div class="modal-content">
                 <h4><?php echo $trans->getTrans($_REQUEST["action"],'EDIT_FOLDER'); ?></h4>
                 <div class="row">
@@ -23,14 +23,14 @@
                 </div>
             <?php endif; ?>
             <div class="modal-footer">
-                <input type="submit" class="btn green darken-1 modal-close" value="<?php echo $trans->getTrans($_REQUEST["action"],'SAVE'); ?>">
+                <input type="submit" class="btn green darken-1" value="<?php echo $trans->getTrans($_REQUEST["action"],'SAVE'); ?>">
                 <a href="#!" class="btn btnDanger modal-close"><?php echo $trans->getTrans($_REQUEST["action"],'CANCEL'); ?></a>
             </div>
         </form>
     <?php endif; ?>
 
     <?php if ( 'add' == $_REQUEST["task"] ) : ?>
-        <form name="addDir" class="col s12" method="post" action="<?php echo RELATIVE_PATH; ?>/controller/directories">
+        <form id="addDir" name="addDir" class="col s12" method="post" action="<?php echo RELATIVE_PATH; ?>/controller/directories">
             <div class="modal-content">
                 <h4><?php echo $trans->getTrans($_REQUEST["action"],'ADD_FOLDER'); ?></h4>
                 <div class="row">
@@ -51,7 +51,7 @@
                 </div>
             <?php endif; ?>
             <div class="modal-footer">
-                <input type="submit" class="btn green darken-1 modal-close" value="<?php echo $trans->getTrans($_REQUEST["action"],'SAVE'); ?>">
+                <input type="submit" class="btn green darken-1" value="<?php echo $trans->getTrans($_REQUEST["action"],'SAVE'); ?>">
                 <a href="#!" class="btn btnDanger modal-close"><?php echo $trans->getTrans($_REQUEST["action"],'CANCEL'); ?></a>
             </div>
         </form>
@@ -70,3 +70,26 @@
     <?php endif; ?>
 
 <?php endif; ?>
+
+<script type="text/javascript">
+    $("#addDir, #editDir").validate({
+        rules: {
+            directoryName: "required",
+        },
+        messages: {
+            directoryName: {
+                required: labels[LANG]['EMPTY']
+            },
+        },
+        // errorClass: "invalid form-error error",
+        errorElement : 'div',
+        errorPlacement: function(error, element) {
+          var placement = $(element).data('error');
+          if (placement) {
+            $(placement).append(error)
+          } else {
+            error.insertAfter(element);
+          }
+        }
+    });
+</script>

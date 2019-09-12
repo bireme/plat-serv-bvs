@@ -1,62 +1,110 @@
-<?require_once(dirname(__FILE__)."/header.tpl.php");?>
+<?php if ( $response["status"] == null or $response["status"] == false ) : ?>
 
-                <?if ($response["status"] == null or $response["status"] == false){?>
-                <div class="modal" id="squareSpaceModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
-                  <div class="modal-dialog">
-                    <div class="modal-content">
-                        <form name="addDir" method="post" action="<?=RELATIVE_PATH?>/controller/mylinks">
-                          <input type="hidden" name="control" value="business"/>
-                          <input type="hidden" name="task" value="<?=$_REQUEST["task"]?>"/>
-                          <?if ($_REQUEST["task"] == "edit") {?>
-                            <input type="hidden" name="link" value="<?=$_REQUEST["link"]?>"/>
-                            <input type="hidden" name="persist" value="true"/>
-                          <?}?>
-                            <div class="modal-header">
-                                <?php if ( 'edit' == $_REQUEST['task'] ) : ?>
-                                <h2 class="modal-title"><?=$trans->getTrans($_REQUEST["action"],'EDIT_LINK_POPUP')?>: <?=$response["values"]["name"]?></h2>
-                                <?php else : ?>
-                                <h2 class="modal-title"><?=$trans->getTrans($_REQUEST["action"],'ADD_LINK')?></h2>
-                                <?php endif; ?>
-                            </div>
-                            <div class="modal-body">
-                                  <div class="form-group">
-                                    <label for="linkName"><?=$trans->getTrans($_REQUEST["action"],'LINK_TITLE')?></label>
-                                    <input type="text" class="form-control" id="linkName" name="linkName" value="<?=$response["values"]["name"]?>" required>
-                                  </div>
-                                  <div class="form-group">
-                                    <label for="linkUrl"><?=$trans->getTrans($_REQUEST["action"],'LINK_URL')?></label>
-                                    <input type="text" class="form-control" id="linkUrl" name="linkUrl" value="<?=$response["values"]["url"]?>" required>
-                                  </div>
-                                  <div class="form-group">
-                                    <label for="linkDescription"><?=$trans->getTrans($_REQUEST["action"],'LINK_DESCRIPTION')?></label>
-                                    <input type="text" class="form-control" id="linkDescription" name="linkDescription" value="<?=$response["values"]["description"]?>">
-                                  </div>
-                            </div>
-                            <?if ($response["status"] === false){?>
-                                <div class="alert"><?=$trans->getTrans($_REQUEST["action"],'ADD_LINK_ERROR')?></div>
-                            <?}?>
-                            <div class="modal-footer">
-                                <div class="btn-group btn-group-justified" role="group" aria-label="group button">
-                                    <div class="btn-group" role="group">
-                                        <button type="button" class="btn btn-default submitFalse" data-dismiss="modal" role="button" onclick="window.close();"><?=$trans->getTrans($_REQUEST["action"],'CANCEL')?></button>
-                                    </div>
-                                    <div class="btn-group" role="group">
-                                        <button type="submit" class="btn btn-default btn-hover-green submitTrue" data-action="save" role="button"><?=$trans->getTrans($_REQUEST["action"],'SAVE')?></button>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
+    <?php if ( 'edit' == $_REQUEST["task"] ) : ?>
+        <form id="editLink" name="editLink" class="col s12" method="post" action="<?php echo RELATIVE_PATH; ?>/controller/mylinks">
+            <div class="modal-content">
+                <h4><?php echo $trans->getTrans($_REQUEST["action"],'EDIT_LINK_POPUP'); ?></h4>
+                <div class="row">
+                    <input type="hidden" name="control" value="business"/>
+                    <input type="hidden" name="task" value="<?php echo $_REQUEST["task"]; ?>"/>
+                    <input type="hidden" name="link" value="<?php echo $_REQUEST["link"]; ?>"/>
+                    <input type="hidden" name="persist" value="true"/>
+                    <div class="input-field col s12">
+                        <input id="linkName" name="linkName" class="bgInputs" type="text" autocomplete="off" value="<?php echo $response["values"]["name"]; ?>">
+                        <label for="linkName" class="active"><?php echo $trans->getTrans($_REQUEST["action"],'LINK_TITLE'); ?></label>
                     </div>
-                  </div>
+                    <div class="input-field col s12">
+                        <input id="linkUrl" name="linkUrl" class="bgInputs" type="url" autocomplete="off" value="<?php echo $response["values"]["url"]; ?>">
+                        <label for="linkUrl" class="active"><?php echo $trans->getTrans($_REQUEST["action"],'LINK_URL'); ?></label>
+                    </div>
+                    <div class="input-field col s12">
+                        <input id="linkDescription" name="linkDescription" class="bgInputs" type="text" autocomplete="off" value="<?php echo $response["values"]["description"]; ?>">
+                        <label for="linkDescription" <?php if ( $response["values"]["description"] ) { echo 'class="active"'; } ?>><?php echo $trans->getTrans($_REQUEST["action"],'LINK_DESCRIPTION'); ?></label>
+                    </div>
                 </div>
-                <?}else{?>
-                    <script language="javascript">
-                        opener.location.reload(true);
-                        window.close();
-                    </script>
-                    <div class="alert"><?=$trans->getTrans($_REQUEST["action"],'ADD_LINK_SUCESS')?></div>
-                <?}?>
             </div>
-        </div>
-    </body>
-</html>
+            <?php if ( $response["status"] === false ) : ?>
+                <div class="col s12 alert" style="display: none;">
+                    <div class="card-panel red success-text">
+                        <span class="white-text" style="white-space: pre;"><?php echo $trans->getTrans($_REQUEST["action"],'ADD_LINK_ERROR'); ?></span>
+                    </div>
+                </div>
+            <?php endif; ?>
+            <div class="modal-footer">
+                <input type="submit" class="btn green darken-1" value="<?php echo $trans->getTrans($_REQUEST["action"],'SAVE'); ?>">
+                <a href="#!" class="btn btnDanger modal-close"><?php echo $trans->getTrans($_REQUEST["action"],'CANCEL'); ?></a>
+            </div>
+        </form>
+    <?php endif; ?>
+
+    <?php if ( 'add' == $_REQUEST["task"] ) : ?>
+        <form id="addLink" name="addLink" class="col s12" method="post" action="<?php echo RELATIVE_PATH; ?>/controller/mylinks">
+            <div class="modal-content">
+                <h4><?php echo $trans->getTrans($_REQUEST["action"],'ADD_LINK'); ?></h4>
+                <div class="row">
+                    <input type="hidden" name="control" value="business"/>
+                    <input type="hidden" name="task" value="<?php echo $_REQUEST["task"]; ?>"/>
+                    <div class="input-field col s12">
+                        <input id="linkName" name="linkName" class="bgInputs" type="text" autocomplete="off" value="">
+                        <label for="linkName"><?php echo $trans->getTrans($_REQUEST["action"],'LINK_TITLE'); ?></label>
+                    </div>
+                    <div class="input-field col s12">
+                        <input id="linkUrl" name="linkUrl" class="bgInputs" type="url" autocomplete="off" value="">
+                        <label for="linkUrl"><?php echo $trans->getTrans($_REQUEST["action"],'LINK_URL'); ?></label>
+                    </div>
+                    <div class="input-field col s12">
+                        <input id="linkDescription" name="linkDescription" class="bgInputs" type="text" autocomplete="off" value="">
+                        <label for="linkDescription"><?php echo $trans->getTrans($_REQUEST["action"],'LINK_DESCRIPTION'); ?></label>
+                    </div>
+                </div>
+            </div>
+            <?php if ( $response["status"] === false ) : ?>
+                <div class="col s12 alert" style="display: none;">
+                    <div class="card-panel red success-text">
+                        <span class="white-text" style="white-space: pre;"><?php echo $trans->getTrans($_REQUEST["action"],'ADD_LINK_ERROR'); ?></span>
+                    </div>
+                </div>
+            <?php endif; ?>
+            <div class="modal-footer">
+                <input type="submit" class="btn green darken-1" value="<?php echo $trans->getTrans($_REQUEST["action"],'SAVE'); ?>">
+                <a href="#!" class="btn btnDanger modal-close"><?php echo $trans->getTrans($_REQUEST["action"],'CANCEL'); ?></a>
+            </div>
+        </form>
+    <?php endif; ?>
+
+<?php else : ?>
+
+    <?php header("location:".$_SERVER["HTTP_REFERER"]); exit; ?>
+
+<?php endif; ?>
+
+<script type="text/javascript">
+    $("#addLink, #editLink").validate({
+        rules: {
+            linkName: "required",
+            linkUrl: {
+                required: true,
+                url: true
+            },
+        },
+        messages: {
+            linkName: {
+                required: labels[LANG]['EMPTY']
+            },
+            linkUrl: {
+                required: labels[LANG]['EMPTY'],
+                url: labels[LANG]['URL']
+            },
+        },
+        // errorClass: "invalid form-error error",
+        errorElement : 'div',
+        errorPlacement: function(error, element) {
+          var placement = $(element).data('error');
+          if (placement) {
+            $(placement).append(error)
+          } else {
+            error.insertAfter(element);
+          }
+        }
+    });
+</script>

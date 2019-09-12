@@ -24,7 +24,7 @@ $( document ).ready(
         $('.modal-trigger').modal();
 
         $('div.btn2Botoes a.remove').click(function(){
-            title = $(this).parent().siblings('a.doctitle').text();
+            title = $(this).data('title');
             url = $(this).data('source');
             $('#doc-title').text(title);
             $('#doc-url').attr('href', url);
@@ -638,13 +638,15 @@ $( document ).ready(
 
         combinePopover();
 
-        $('.datatable-search').DataTable( {
-            paging: false,
-            ordering: false,
-            info: false,
-            searching: false,
-            responsive: true
-        } );
+        if (typeof DataTable != 'undefined' && $.isFunction(DataTable)) {
+            $('.datatable-search').DataTable( {
+                paging: false,
+                ordering: false,
+                info: false,
+                searching: false,
+                responsive: true
+            } );
+        }
 
         $('span.show-all').on('click', function(e){
             e.preventDefault();

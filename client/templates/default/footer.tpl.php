@@ -8,11 +8,6 @@
     <script type="text/javascript" src="<?php echo RELATIVE_PATH; ?>/js/materialize.min.js"></script>
     <!-- Slick -->
     <script type="text/javascript" src="<?php echo RELATIVE_PATH; ?>/js/slick.js"></script>
-    <!-- Datatables -->
-    <script type="text/javascript" src="<?php echo RELATIVE_PATH; ?>/vendors/datatables.net/js/jquery.dataTables.min.js"></script>
-    <script type="text/javascript" src="<?php echo RELATIVE_PATH; ?>/vendors/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
-    <script type="text/javascript" src="<?php echo RELATIVE_PATH; ?>/vendors/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
-    <script type="text/javascript" src="<?php echo RELATIVE_PATH; ?>/vendors/datatables.net-responsive-bs/js/responsive.bootstrap.js"></script>
     <!-- Custom Theme Scripts -->
     <script type="text/javascript" src="<?php echo RELATIVE_PATH; ?>/build/js/custom.js"></script>
     <!-- Translations Scripts -->
@@ -25,8 +20,50 @@
     <script type="text/javascript" src="<?php echo RELATIVE_PATH; ?>/js/cookie.js"></script>
     <!-- Main Scripts -->
     <script type="text/javascript" src="<?php echo RELATIVE_PATH; ?>/js/main.js"></script>
+    <!-- jQuery Validate -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
 
     <?php $actions = array( 'menu', 'mydocuments', 'mysearches' ); ?>
+    <?php if ( $_SESSION['userTK'] && in_array($_REQUEST['action'], $actions) ) : ?>
+    <script type="text/javascript">
+        var start;
+        var end;
+        var time;
+        var seconds;
+        $(window).on('focus', function(e) {
+            if ( start ) {
+                // later record end time
+                end = new Date().getTime();
+                // time difference in ms
+                time = end - start;
+                // strip the ms
+                time /= 1000;
+                // get seconds (Original had 'round' which incorrectly counts 0:28, 0:29, 1:30 ... 1:59, 1:0)
+                seconds = Math.round(time % 60);
+/*
+                // remove seconds from the date
+                time = Math.floor(time / 60);
+                // get minutes
+                var minutes = Math.round(time % 60);
+                // remove minutes from the date
+                time = Math.floor(time / 60);
+                // get hours
+                var hours = Math.round(time % 24);
+                // remove hours from the date
+                time = Math.floor(time / 24);
+                // the rest of time is number of days
+                var days = time ;
+*/
+                if ( seconds >= 10 ) {
+                    window.location.reload();
+                }
+            }
+        }).blur(function(e) {
+            // record start time
+            start = new Date().getTime();
+        });
+    </script>
+    <?php endif; ?>
     
     <?php if ( $_SESSION['userTK'] ) : ?>
     <script type="text/javascript" src="/app/js/<?php echo $_SESSION['lang']; ?>/menu.<?php echo $_SESSION['lang']; ?>.js"></script>

@@ -17,11 +17,6 @@
     <!-- bootstrap-daterangepicker -->
     <script src="<?php echo RELATIVE_PATH; ?>/vendors/moment/moment.min.js"></script>
     <script src="<?php echo RELATIVE_PATH; ?>/vendors/datepicker/daterangepicker.js"></script>
-    <!-- Datatables -->
-    <script type="text/javascript" src="<?php echo RELATIVE_PATH; ?>/vendors/datatables.net/js/jquery.dataTables.min.js"></script>
-    <script type="text/javascript" src="<?php echo RELATIVE_PATH; ?>/vendors/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
-    <script type="text/javascript" src="<?php echo RELATIVE_PATH; ?>/vendors/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
-    <script type="text/javascript" src="<?php echo RELATIVE_PATH; ?>/vendors/datatables.net-responsive-bs/js/responsive.bootstrap.js"></script>
     <!-- Custom Theme Scripts -->
     <script type="text/javascript" src="<?php echo RELATIVE_PATH; ?>/build/js/custom.js"></script>
     <!-- Translations Scripts -->

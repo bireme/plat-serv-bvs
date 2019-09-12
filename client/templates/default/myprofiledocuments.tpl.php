@@ -60,7 +60,7 @@
                                         </div>
         								<div class="btn2Botoes">
                                             <a href="#modal-ajax" class="btn3 btnSuccess modal-trigger modal-ajax add-collection" data-similar="<?php echo $similar["docID"]; ?>" data-source="<?php echo RELATIVE_PATH; ?>/controller/myprofiledocuments/control/business/task/addcol/similar/doc<?php echo $count; ?>" onclick="__gaTracker('send','event','Interest Topics','Favorite Documents','<?php echo htmlspecialchars($similar["title"]); ?>');"><?=$trans->getTrans($_REQUEST["action"],'ADD_COLLECTION')?></a>
-                                            <a href="#modal-related-docs" class="btn3 btnPrimary modal-trigger related-docs" onclick="__gaTracker('send','event','Favorite Documents','Related Documents','<?php echo addslashes(htmlspecialchars($register["title"])); ?>');"><?php echo $trans->getTrans('suggesteddocs','RELATED_DOCS'); ?></a>
+                                            <a href="#modal-related-docs" class="btn3 btnPrimary modal-trigger related-docs" onclick="__gaTracker('send','event','Interest Topics','Related Documents','<?php echo addslashes(htmlspecialchars($similar["title"])); ?>');"><?php echo $trans->getTrans('suggesteddocs','RELATED_DOCS'); ?></a>
         								</div>
         							</div>
         						</article>
