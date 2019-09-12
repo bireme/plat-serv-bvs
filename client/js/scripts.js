@@ -524,6 +524,7 @@ $( document ).ready(
                     } else {
                         content.find('.related-loading').hide();
                         alert(content.find('.related-alert').text());
+                        $("#modal-related-docs").modal();
                     }
 
                     _this.prop('disabled', false);

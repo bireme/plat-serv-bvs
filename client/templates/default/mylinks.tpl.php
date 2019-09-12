@@ -13,7 +13,8 @@
                     <div class="divider"></div>
                     <div class="row">
                         <div class="col s12">
-                            <div class="tituloDropdown"><?php echo $trans->getTrans($_REQUEST["action"],'MY_LINKS'); ?>
+                            <div class="tituloDropdown">
+                                <b><?php echo $trans->getTrans($_REQUEST["action"],'TOOLS'); ?></b>
                                 <!-- Dropdown Trigger -->
                                 <a class='dropdown-trigger btn2 btnSuccess' href='#' data-target='dropdown1'><i class="fas fa-angle-down"></i></a>
                                 <!-- Dropdown Structure -->

@@ -245,10 +245,11 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
         self::$trans["orcidworks"]["NEXT"] = 'Próximo';
         self::$trans["orcidworks"]["PREVIOUS"] = 'Anterior';
         self::$trans["orcidworks"]["ORCID_WORKS"] = 'Minhas Publicações';
-        self::$trans["orcidworks"]["ORCID_WORKS_NO_REGISTERS_FOUND"] = 'Nenhuma publicação encontrada. Suas publicações são recuperadas a partir do ORCID ID indicado no seu Perfil.';
+        self::$trans["orcidworks"]["ORCID_WORKS_NO_REGISTERS_FOUND"] = 'Nenhuma publicação encontrada. Suas publicações são recuperadas a partir do ORCID ID indicado no seu perfil.';
         self::$trans["orcidworks"]["GOOGLE_SCHOLAR"] = 'ver no Google Scholar';
         self::$trans["orcidworks"]["GOOGLE_SCHOLAR_CITED"] = 'citado por';
         self::$trans["orcidworks"]["GOOGLE_SCHOLAR_RELATED"] = 'artigos relacionados';
+        self::$trans["orcidworks"]["CLOSE"] = 'fechar';
 
     // General Terms
         self::$trans["general"]["IDENTIFICATION"] = 'Biblioteca Virtual em Saúde';
@@ -472,7 +473,7 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
         self::$trans["tour"]["STEP_31"] = 'Adicione novo Link Favorito e crie sua própria biblioteca de links';
         self::$trans["tour"]["STEP_32"] = 'Ordene seus links por data ou pelo ranking de avaliação atribuído por você a cada link';
         
-        self::$trans["tour"]["STEP_33"] = '<b>Minhas Publicações</b><br />Visualize suas publicações a partir do ORCID ID informado no seu Perfil';
+        self::$trans["tour"]["STEP_33"] = '<b>Minhas Publicações</b><br />Visualize suas publicações a partir do ORCID ID informado no seu perfil';
         self::$trans["tour"]["STEP_34"] = 'Lista das publicações recuperadas a partir do seu ORCID ID. Você pode acessar cada documento no Google Scholar e saber quantas vezes sua publicação foi citada. Veja também documentos da BVS relacionados a sua publicação.';
 
         self::$trans["tour"]["STEP_35"] = '<b>RSS</b><br />Apresenta as últimas atualizações de documentos a partir do RSS de seus portais favoritos';

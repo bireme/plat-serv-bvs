@@ -410,6 +410,11 @@ span.show-all {
 span.short-query {
     display: none;
 }
+.no-url,
+.no-url:hover {
+    color: #5a78a2;
+    cursor: text;
+}
 
 /* SHARE ICONS */
 .facebookIcon {
