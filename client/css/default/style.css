@@ -56,6 +56,10 @@ a:hover {
 	position: relative;
 	border-radius: 5px;
 }
+.box2rss {
+    height: 110px;
+    overflow-y: auto;
+}
 .box2P {
     height: 70px;
     overflow-y: auto;
@@ -686,6 +690,7 @@ span.short-query {
     .box4 {
         min-height: auto;
     }
+    .box2rss,
     .box2P,
     .box3P,
     .box4P {

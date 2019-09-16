@@ -1,74 +1,36 @@
-<?require_once(dirname(__FILE__)."/header.tpl.php");?>
+<?php if ( $response["status"] == null or $response["status"] == false ) : ?>
 
-                <div class="modal" id="squareSpaceModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
-                  <div class="modal-dialog">
-                    <div class="modal-content">
-                      <?if ($response["status"] == null or $response["status"] == false){?>
-                        <div class="modal-header">
-                          <h2 class="modal-title"><?=$trans->getTrans($_REQUEST["action"],'ADD')?> "<span id="docTitle"></span>" <?=$trans->getTrans($_REQUEST["action"],'TO_COLLECTION')?>:</h2>
-                        </div>
-                        <div class="modal-body">
-                          <div class="radio">
-                            <label>
-                              <input type="radio" name="docsfolderlist" value="0" class="radio-btn"><span><?=$trans->getTrans($_REQUEST["action"],'INCOMING_FOLDER')?></span>
-                            </label>
-                          </div>
-                          <?php foreach ($docsFolders as $folder) : ?>
-                          <div class="radio">
-                            <label>
-                              <input type="radio" name="docsfolderlist" value="<?php echo $folder['dirID'] ?>" class="radio-btn"><span><?php echo $folder['name']; ?></span>
-                            </label>
-                          </div>
-                          <?php endforeach ?>
-                        </div>
-
-                        <div class="alert" style="display: none; white-space: pre-line;"></div>
-
-                        <div class="modal-footer">
-                          <div class="btn-group btn-group-justified" role="group" aria-label="group button">
-                            <div class="btn-group" role="group">
-                              <button type="button" class="btn btn-default submitFalse" data-dismiss="modal" role="button" onclick="window.close();"><?=$trans->getTrans($_REQUEST["action"],'CANCEL')?></button>
-                            </div>
-                            <div class="btn-group" role="group">
-                              <button id="docsfolderlist" class="btn btn-default btn-hover-green submitTrue" value="<?php echo $_REQUEST['similar']; ?>" role="button" disabled><?=$trans->getTrans($_REQUEST["action"],'ADD')?></button>
-                            </div>
-                          </div>
-                        </div>
-                      <?}?>
-                    </div>
-                  </div>
+    <form class="col s12">
+        <div class="modal-content">
+            <h4><?php echo $trans->getTrans($_REQUEST["action"],'ADD');?> <?php echo $trans->getTrans($_REQUEST["action"],'TO_COLLECTION'); ?></h4>
+            <div class="row">
+                <div class="divider"></div>
+                <p>
+                    <label>
+                        <input class="with-gap" name="docsfolderlist" type="radio" value="0" checked />
+                        <span><?php echo $trans->getTrans($_REQUEST["action"],'INCOMING_FOLDER'); ?></span>
+                    </label>
+                </p>
+                <?php foreach ($docsFolders as $folder) : ?>
+                    <p>
+                        <label>
+                            <input class="with-gap" name="docsfolderlist" type="radio" value="<?php echo $folder['dirID'] ?>" />
+                            <span><?php echo $folder['name'] ?></span>
+                        </label>
+                    </p>
+                <?php endforeach; ?>
+            </div>
+            <div class="col s12 alert" style="display: none;">
+                <div class="card-panel success-text">
+                    <span class="white-text" style="white-space: pre;"></span>
                 </div>
             </div>
         </div>
-        
-        <!-- jQuery -->
-        <script type="text/javascript" src="<?=RELATIVE_PATH?>/vendors/jquery/dist/jquery.min.js"></script>
-        <!-- Bootstrap -->
-        <script type="text/javascript" src="<?=RELATIVE_PATH?>/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
-        <!-- Datatables -->
-        <script type="text/javascript" src="<?=RELATIVE_PATH?>/vendors/datatables.net/js/jquery.dataTables.min.js"></script>
-        <!-- Custom Theme Scripts -->
-        <script type="text/javascript" src="<?=RELATIVE_PATH?>/build/js/custom.js"></script>
-        <!-- Translations Scripts -->
-        <script type="text/javascript" src="<?=RELATIVE_PATH?>/js/texts.js"></script>
-        <!-- Theme Scripts -->
-        <script type="text/javascript" src="<?=RELATIVE_PATH?>/js/functions.js"></script>
-        <!-- Main Scripts -->
-        <script type="text/javascript" src="<?=RELATIVE_PATH?>/js/scripts.js"></script>
-        <script type="text/javascript">
-          $( document ).ready(
-              function(){
-                  doc = $('#docsfolderlist').val();
-                  _opener = $("#"+doc, window.opener.document);
-                  title = _opener.find('div.record a').text();
 
-                  if ( title.length > 50 ) {
-                      title = title.substr(0, 50) + " [...]";
-                  }
+        <div class="modal-footer">
+            <button id="docs-folder-list" class="btn green darken-1" data-similar="<?php echo $_REQUEST['similar']; ?>"><?php echo $trans->getTrans($_REQUEST["action"],'ADD'); ?></button>
+            <a href="#!" class="btn btnDanger modal-close"><?php echo $trans->getTrans($_REQUEST["action"],'CANCEL'); ?></a>
+        </div>
+    </form>
 
-                  $('#docTitle').text(title);
-              }
-          );
-        </script>
-    </body>
-</html>
+<?php endif; ?>

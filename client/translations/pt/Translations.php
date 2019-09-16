@@ -136,7 +136,7 @@ usuário para oferecer serviços personalizados e facilidades tais como:</p>
         self::$trans["menu"]["REMOVE_RSS"] = 'RSS excluído';
         self::$trans["menu"]["QUERY"] = 'Expressão de busca';
         self::$trans["menu"]["VIEW"] = 'Buscar';
-        self::$trans["menu"]["RSS"] = 'RSS';
+        self::$trans["menu"]["RSS"] = 'Feed RSS';
         self::$trans["menu"]["SEARCH_WIDGET"] = 'Histórico de Buscas';
         self::$trans["menu"]["PROFILE_WIDGET"] = 'Temas de Interesse';
         self::$trans["menu"]["SHELF_WIDGET"] = 'Documentos Favoritos';
@@ -174,7 +174,9 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
 
     // Terms of searchresults pages
         self::$trans["searchresults"]["FEATURE"] = 'RSS';
-        self::$trans["searchresults"]["RSS"] = 'RSS';
+        self::$trans["searchresults"]["RSS"] = 'Feed RSS';
+        self::$trans["searchresults"]["FEED"] = 'RSS';
+        self::$trans["searchresults"]["MY_RSS"] = 'Meus Feeds';
         self::$trans["searchresults"]["ADD_RSS"] = 'adicionar RSS';
         self::$trans["searchresults"]["EDIT_RSS"] = 'editar RSS';
         self::$trans["searchresults"]["REMOVE_RSS"] = 'excluir RSS';
@@ -192,6 +194,10 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
         self::$trans["searchresults"]["CANCEL"] = 'cancelar';
         self::$trans["searchresults"]["ADD"] = 'adicionar';
         self::$trans["searchresults"]["TO_COLLECTION"] = 'à coleção';
+        self::$trans["searchresults"]["CLOSE"] = 'fechar';
+        self::$trans["searchresults"]["REMOVE"] = 'excluir';
+        self::$trans["searchresults"]["REMOVE_FEED"] = 'excluir';
+        self::$trans["searchresults"]["REMOVE_FEED_CONFIRM"] = 'Tem certeza que deseja excluir';
 
     // Terms of mysearches pages
         self::$trans["mysearches"]["FEATURE"] = 'Histórico de Buscas na BVS';

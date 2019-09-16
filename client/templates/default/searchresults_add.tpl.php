@@ -1,66 +1,113 @@
-<?require_once(dirname(__FILE__)."/header.tpl.php");?>
+<?php if ( $response["status"] == null or $response["status"] == false ) : ?>
 
-                <div class="modal" id="squareSpaceModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
-                  <div class="modal-dialog">
-                    <div class="modal-content">
-                      <? if ( $response["status"] == null || $response["status"] == false ) { ?>
-                        <form name="addSearchResults" method="post" action="<?=RELATIVE_PATH?>/controller/searchresults">
-                          <input type="hidden" name="control" value="business"/>
-                          <input type="hidden" name="task" value="<?=$_REQUEST["task"]?>"/>
-                          <?if ($_REQUEST["task"] == "edit") {?>
-                            <input type="hidden" name="rss" value="<?=$_REQUEST["rss"]?>"/>
-                            <input type="hidden" name="persist" value="true"/>
-                          <?}?>
-                            <div class="modal-header">
-                              <?php if ( 'edit' == $_REQUEST['task'] ) : ?>
-                              <h2 class="modal-title"><?=$trans->getTrans($_REQUEST["action"],'EDIT_RSS')?>: <?=$response["values"]["name"]?></h2>
-                              <?php else : ?>
-                              <h2 class="modal-title"><?=$trans->getTrans($_REQUEST["action"],'ADD_RSS')?></h2>
-                              <?php endif; ?>
-                            </div>
-                            <div class="modal-body">
-                              <div class="form-group">
-                                <label for="profileName"><?=$trans->getTrans($_REQUEST["action"],'TITLE')?></label>
-                                <input type="text" class="form-control" id="name" name="name" value="<?=$response["values"]["name"]?>" required>
-                              </div>
-                              <div class="form-group">
-                                <label for="profileText"><?=$trans->getTrans($_REQUEST["action"],'URL')?></label>
-                                <textarea class="form-control" id="url" name="url" required><?=$response["values"]["url"]?></textarea>
-                              </div>
-                            </div>
-                            <?if ($response["status"] === false){?>
-                                <div class="alert"><?=$trans->getTrans($_REQUEST["action"],'ADD_RSS_ERROR')?></div>
-                            <?}?>
-                            <div class="modal-footer">
-                              <div class="btn-group btn-group-justified" role="group" aria-label="group button">
-                                <div class="btn-group" role="group">
-                                  <button type="button" class="btn btn-default submitFalse" data-dismiss="modal" role="button" onclick="window.close();"><?=$trans->getTrans($_REQUEST["action"],'CANCEL')?></button>
-                                </div>
-                                <div class="btn-group" role="group">
-                                  <button type="submit" class="btn btn-default btn-hover-green submitTrue" data-action="save" role="button"><?=$trans->getTrans($_REQUEST["action"],'SAVE')?></button>
-                                </div>
-                              </div>
-                            </div>
-                        </form>
-                      <?}else{?>
-                        <?php if ( 'add' == $_REQUEST['task'] ) : ?>
-                          <?php $href = RELATIVE_PATH.'/controller/searchresults/control/business/rss/'.$response['values']; ?>
-                          <script language="javascript">
-                            window.opener.location = "<?php echo $href ?>";
-                            window.close();
-                          </script>
-                        <?php else : ?>
-                          <script language="javascript">
-                            window.opener.location.reload(true);
-                            window.close();
-                          </script>
-                        <?php endif; ?>
-                        <div class="alert"><?=$trans->getTrans($_REQUEST["action"],'ADD_RSS_SUCCESS')?></div>
-                      <?}?>
+    <?php if ( 'edit' == $_REQUEST["task"] ) : ?>
+        <form id="editRSS" name="editRSS" class="col s12" method="post" action="<?php echo RELATIVE_PATH; ?>/controller/searchresults">
+            <div class="modal-content">
+                <h4><?php echo $trans->getTrans($_REQUEST["action"],'EDIT_RSS'); ?></h4>
+                <div class="row">
+                    <input type="hidden" name="control" value="business"/>
+                    <input type="hidden" name="task" value="<?php echo $_REQUEST["task"]; ?>"/>
+                    <input type="hidden" name="rss" value="<?php echo $_REQUEST["rss"]; ?>"/>
+                    <input type="hidden" name="persist" value="true"/>
+                    <div class="input-field col s12">
+                        <input id="name" name="name" class="bgInputs" type="text" autocomplete="off" value="<?php echo $response["values"]["name"]; ?>">
+                        <label for="name" class="active"><?php echo $trans->getTrans($_REQUEST["action"],'TITLE'); ?></label>
                     </div>
-                  </div>
+                    <div class="input-field col s12">
+                        <textarea class="materialize-textarea bgInputs" id="url" name="url" style="height: auto;"><?=$response["values"]["url"]?></textarea>
+                        <label id="xxx" for="url" class="active"><?php echo $trans->getTrans($_REQUEST["action"],'URL'); ?></label>
+                    </div>
                 </div>
             </div>
-        </div>
-    </body>
-</html>
+            <?php if ( $response["status"] === false ) : ?>
+                <div class="col s12 alert" style="display: none;">
+                    <div class="card-panel red success-text">
+                        <span class="white-text" style="white-space: pre;"><?php echo $trans->getTrans($_REQUEST["action"],'ADD_RSS_ERROR'); ?></span>
+                    </div>
+                </div>
+            <?php endif; ?>
+            <div class="modal-footer">
+                <input type="submit" class="btn green darken-1" value="<?php echo $trans->getTrans($_REQUEST["action"],'SAVE'); ?>">
+                <a href="#!" class="btn btnDanger modal-close"><?php echo $trans->getTrans($_REQUEST["action"],'CANCEL'); ?></a>
+            </div>
+        </form>
+    <?php endif; ?>
+
+    <?php if ( 'add' == $_REQUEST["task"] ) : ?>
+        <form id="addRSS" name="addRSS" class="col s12" method="post" action="<?php echo RELATIVE_PATH; ?>/controller/searchresults">
+            <div class="modal-content">
+                <h4><?php echo $trans->getTrans($_REQUEST["action"],'ADD_RSS'); ?></h4>
+                <div class="row">
+                    <input type="hidden" name="control" value="business"/>
+                    <input type="hidden" name="task" value="<?php echo $_REQUEST["task"]; ?>"/>
+                    <div class="input-field col s12">
+                        <input id="name" name="name" class="bgInputs" type="text" autocomplete="off" value="">
+                        <label for="name"><?php echo $trans->getTrans($_REQUEST["action"],'TITLE'); ?></label>
+                    </div>
+                    <div class="input-field col s12">
+                        <textarea class="materialize-textarea bgInputs" id="url" name="url"></textarea>
+                        <label for="url"><?php echo $trans->getTrans($_REQUEST["action"],'URL'); ?></label>
+                    </div>
+                </div>
+            </div>
+            <?php if ( $response["status"] === false ) : ?>
+                <div class="col s12 alert" style="display: none;">
+                    <div class="card-panel red success-text">
+                        <span class="white-text" style="white-space: pre;"><?php echo $trans->getTrans($_REQUEST["action"],'ADD_RSS_ERROR'); ?></span>
+                    </div>
+                </div>
+            <?php endif; ?>
+            <div class="modal-footer">
+                <input type="submit" class="btn green darken-1" value="<?php echo $trans->getTrans($_REQUEST["action"],'SAVE'); ?>">
+                <a href="#!" class="btn btnDanger modal-close"><?php echo $trans->getTrans($_REQUEST["action"],'CANCEL'); ?></a>
+            </div>
+        </form>
+    <?php endif; ?>
+
+<?php else : ?>
+
+    <?php if ( 'add' == $_REQUEST['task'] ) : ?>
+        <?php $href = RELATIVE_PATH.'/controller/searchresults/control/business/rss/'.$response['values']; ?>
+        <?php header("location:".$href); exit; ?>
+    <?php endif; ?>
+
+    <?php if ( 'edit' == $_REQUEST['task'] ) : ?>
+        <?php $href = RELATIVE_PATH.'/controller/searchresults/control/business/rss/'.$_REQUEST["rss"]; ?>
+        <?php header("location:".$href); exit; ?>
+    <?php endif; ?>
+
+<?php endif; ?>
+
+
+<script type="text/javascript">
+    M.textareaAutoResize($('#url')); // textarea auto resize
+
+    $("#addRSS, #editRSS").validate({
+        rules: {
+            name: "required",
+            url: {
+                required: true,
+                url: true
+            },
+        },
+        messages: {
+            name: {
+                required: labels[LANG]['EMPTY']
+            },
+            url: {
+                required: labels[LANG]['EMPTY'],
+                url: labels[LANG]['URL']
+            },
+        },
+        // errorClass: "invalid form-error error",
+        errorElement : 'div',
+        errorPlacement: function(error, element) {
+          var placement = $(element).data('error');
+          if (placement) {
+            $(placement).append(error)
+          } else {
+            error.insertAfter(element);
+          }
+        }
+    });
+</script>

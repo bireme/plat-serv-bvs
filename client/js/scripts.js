@@ -23,7 +23,7 @@ $( document ).ready(
         // opens the modal
         $('.modal-trigger').modal();
 
-        $('div.btn2Botoes a.remove').click(function(){
+        $('.btn2Botoes a.remove, .btn2Buttons a.remove').click(function(){
             title = $(this).data('title');
             url = $(this).data('source');
             $('#doc-title').text(title);
@@ -334,7 +334,7 @@ $( document ).ready(
             id = similar.find('a.add-collection').data('similar');
             title = similar.find('a.doctitle').text();
             url = similar.find('a.doctitle').attr('href');
-            author = similar.find('div.boxAutor').text();
+            author = similar.find('.boxAutor').text();
 
             obj = new Object();
             obj.url = $.trim(url);
@@ -475,7 +475,7 @@ $( document ).ready(
             }
         );
 
-        $('div.btn2Botoes a.related-docs').click(
+        $('.btn2Botoes a.related-docs, .btn2Buttons a.related-docs').click(
             function(e){
                 e.preventDefault();
                 _this = $(this);

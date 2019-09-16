@@ -39,7 +39,7 @@ $EscapeRedirectToHome = array(substr(HOME,(strrpos(HOME,'/'))+1),
                                 'userProfile.php',
                                 'forgot.php'); /* escape from authentication */
 
-define("DOCUMENTS_PER_PAGE","200"); /* pagination */
+define("DOCUMENTS_PER_PAGE","20"); /* pagination */
 define("RSS_DOCUMENTS_PER_PAGE","20"); /* RSS pagination */
 define("WIDGETS_ITEMS_LIMIT","5"); /* itens limit in widgets */
 define("MY_SEARCHES_LIMIT","50"); /* itens limit in MongoDB (per user) */

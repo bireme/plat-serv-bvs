@@ -318,7 +318,7 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
     define("REMOVE_LINK",'Link excluído');
     define("QUERY",'Expressões de busca');
     define("VIEW",'Mostrar');
-    define("RSS",'RSS');
+    define("RSS",'Feed RSS');
     define("SEARCH_WIDGET",'Buscas na BVS');
     define("PROFILE_WIDGET",'Temas de Interesse');
     define("SHELF_WIDGET",'Documentos das Coleções');
