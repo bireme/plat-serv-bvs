@@ -53,21 +53,21 @@
 	<li class="divider" tabindex="-1"></li>
 	<li class="row">
 		<div class="col s4">
-			<a href="#" id="cor0">
+			<a href="#" id="default-theme">
 				Default
 				<div class="light-blue darken-3" style="height: 20px;"></div>
 				<div class="blue-grey lighten-5" style="height: 20px;"></div>
 			</a>
 		</div>
 		<div class="col s4">
-			<a href="#" id="cor1">
+			<a href="#" id="dark-theme">
 				Dark
-				<div class="grey" style="height: 20px;"></div>
 				<div class="black" style="height: 20px;"></div>
+				<div class="grey" style="height: 20px;"></div>
 			</a>
 		</div>
 		<div class="col s4">
-			<a href="#" id="cor2">
+			<a href="#" id="green-theme">
 				Green
 				<div class="green darken-3" style="height: 20px;"></div>
 				<div class="green" style="height: 20px;"></div>

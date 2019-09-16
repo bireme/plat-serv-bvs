@@ -46,33 +46,24 @@ $('.carousel.carousel-slider').carousel({
 ******************************************************
 *****************************************************/
 //  --------------------------------- Cores
-var cor = $.cookie('cor'); // carrega cookie da cor
-    // Ao Abrir a pagina  
-    $( window ).on( "load", function() {
-      $corSelecionada = cor;
-      if(cor != ''){ // ser for diferente de vazio adiciona cor
-        $('body').addClass($corSelecionada);
-      }else{ // se for igual vazio remover cores
-        $('body').removeClass("bgColor1 + bgColor2");
-      }
-    });
-    //Ao clicar Cor Padrão
-    $('#cor0').click(function(){
-      $.cookie("cor","",{expires:1}); // seta cor vazia
-      $('body').removeClass('bgColor1 + bgColor2'); // remover classes de cores
-    });
-    //Ao clicar Cor Dark
-    $('#cor1').click(function(){
-      $.cookie("cor","bgColor1",{expires:1}); //seta cor 1
-      $('body').addClass('bgColor1'); // insere no body cor selecionada (1)
-      $('body').removeClass('bgColor2'); // remover segunda cor
-    });
-    //Ao clicar Cor Blue
-    $('#cor2').click(function(){
-      $.cookie("cor","bgColor2",{expires:1}); // seta cor 2
-      $('body').addClass('bgColor2'); // insere no body cor selecionada (2)
-      $('body').removeClass('bgColor1'); // remover primeira cor
-    });
+var theme = $.cookie('color'); // carrega cookie da cor
+// Ao clicar tema Default
+$('#default-theme').click(function(){
+  $.cookie("color","",{ path: '/', expires: 365 * 10 }); // seta cor vazia
+  $('body').removeClass('bgColor1 + bgColor2'); // remover classes de cores
+});
+// Ao clicar tema Dark
+$('#dark-theme').click(function(){
+  $.cookie("color","bgColor1",{ path: '/', expires: 365 * 10 }); //seta cor 1
+  $('body').addClass('bgColor1'); // insere no body cor selecionada (1)
+  $('body').removeClass('bgColor2'); // remover segunda cor
+});
+// Ao clicar tema Green
+$('#green-theme').click(function(){
+  $.cookie("color","bgColor2",{ path: '/', expires: 365 * 10 }); // seta cor 2
+  $('body').addClass('bgColor2'); // insere no body cor selecionada (2)
+  $('body').removeClass('bgColor1'); // remover primeira cor
+});
 //  --------------------------------- Fechar
 $('#btnClose').click(function(){
   $('#interessar').slideToggle();

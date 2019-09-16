@@ -121,4 +121,4 @@
     <?php $body_class = ( !$_SESSION['userTK'] && !$public ) ? 'bodyLogin' : ''; ?>
     <?php $lang_class = ( $_SESSION['lang'] ) ? 'body_'.$_SESSION['lang'] : 'body_pt'; ?>
   </head>
-  <body id="body" class="<?php echo $lang_class; ?> <?php echo $body_class; ?>">
+  <body id="body" class="<?php echo $lang_class; ?> <?php echo $body_class; ?> <?php echo $_COOKIE['color']; ?>">
