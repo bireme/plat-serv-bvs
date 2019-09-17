@@ -68,15 +68,34 @@ $('#green-theme').click(function(){
 $('#btnClose').click(function(){
   $('#interessar').slideToggle();
   $('#btnClose i').toggleClass('btnClose2');
-})
+
+  // Toggle cookie value
+  if($.cookie('hide_info') === 'on') {
+    $.cookie('hide_info', 'off');
+  } else {
+    $.cookie('hide_info', 'on');
+  }
+});
+$(function(){
+  // Toggle cookie value
+  if($.cookie('hide_info') === 'on') {
+    $('#interessar').hide();
+    $('#btnClose i').addClass('btnClose2');
+  } else {
+    $('#interessar').show();
+    $('#btnClose i').removeClass('btnClose2');
+  }
+});
 //  --------------------------------- Banner Slick
-$(document).ready(function(){
+$(function(){
   $('.bannerHome').slick({
     dots: true,
-    infinite: false,
+    infinite: true,
     speed: 300,
     slidesToShow: 1,
     slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
     responsive: [
     {
       breakpoint: 1200,

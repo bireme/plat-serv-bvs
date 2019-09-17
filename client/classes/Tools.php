@@ -337,4 +337,22 @@ class Events {
 
 }
 
+class Slider {
+
+    public static function get_highlights() {
+        $highlights = array();
+        $dir    = dirname(__FILE__, 2) . '/images/' . $_SESSION["skin"] . '/highlights';
+        $slides = glob($dir . "/*.jpg");
+        $links = file($dir.'/links.txt', FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+
+        foreach ($slides as $key => $value) {
+            $src = str_replace($_SERVER['DOCUMENT_ROOT'], '', $value);
+            $highlights[$key]['image'] = $src;
+            $highlights[$key]['link'] = $links[$key];
+        }
+
+        return $highlights;
+    }
+}
+
 ?>

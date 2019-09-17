@@ -76,8 +76,8 @@
 					</div>
 					<div class="card-reveal">
 						<span class="card-title grey-text text-darken-4"><?php echo $trans->getTrans($_REQUEST["action"],'SEARCH_WIDGET'); ?><i class="material-icons right">close</i></span>
-						<?php if ( $searches ) : ?>
-							<?php foreach ( $searches as $search ) : $count++ ?>
+						<?php if ( $searches ) : $count = 0; ?>
+							<?php foreach ( $searches as $search ) : $count++; ?>
 								<p>
 									<?php if ( 'portal' == $_SESSION['iahx'] ) : ?>
 										<a id="v<?php echo $count; ?>" class="portal" value="portal" data-query="<?php echo $search['query']; ?>" data-filter="<?php echo $search['filter']; ?>" onclick="__gaTracker('send','event','Overview','VHL Search History','<?php echo htmlspecialchars($search['query']); ?>');"><i class="fas fa-search"></i> <?php echo CharTools::shortenedQueryString($search['query'], true); ?></a>
@@ -140,10 +140,11 @@
 						<div class="clearfix showMenor1200"></div>
 						<div class="col s12 l12 xl4 p1">
 							<div class="bannerHome">
-								<div class="bannerHomeInt"><a href="" target="_blank"><img src="<?php echo RELATIVE_PATH; ?>/images/<?php echo $_SESSION["skin"]; ?>/home1.jpg" class="responsive-img" alt="Banner1"></a></div>
-								<div class="bannerHomeInt"><a href="" target="_blank"><img src="<?php echo RELATIVE_PATH; ?>/images/<?php echo $_SESSION["skin"]; ?>/home2.jpg" class="responsive-img" alt="Banner2"></a></div>
-								<div class="bannerHomeInt"><a href="" target="_blank"><img src="<?php echo RELATIVE_PATH; ?>/images/<?php echo $_SESSION["skin"]; ?>/home3.jpg" class="responsive-img" alt="Banner3"></a></div>
-								<div class="bannerHomeInt"><a href="" target="_blank"><img src="<?php echo RELATIVE_PATH; ?>/images/<?php echo $_SESSION["skin"]; ?>/home4.jpg" class="responsive-img" alt="Banner4"></a></div>
+								<?php if ( $highlights ) : $count = 0; ?>
+			                    	<?php foreach ( $highlights as $slide ) : $count++; ?>
+										<div class="bannerHomeInt"><a href="<?php echo $slide['link'] ?>" target="_blank"><img src="<?php echo $slide['image']; ?>" class="responsive-img" alt="Slide<?php echo $count; ?>"></a></div>
+									<?php endforeach ?>
+								<?php endif; ?>
 							</div>
 						</div>
 					</div>

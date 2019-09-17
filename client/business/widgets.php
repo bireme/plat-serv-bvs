@@ -44,6 +44,10 @@ $dataHistory = Tracking::getTraceList( $_SESSION["userTK"], $params );
 $suggestedDocs = SimilarDocs::getSuggestedDocs( $_SESSION["userTK"], $params, 'RD', true );
 // echo "<pre>"; print_r($suggestedDocs); echo "</pre>"; die();
 
+// Highlights widget
+$highlights = Slider::get_highlights();
+// echo "<pre>"; print_r($highlights); echo "</pre>"; die();
+
 // Events widget
 $data = Authentication::getUserData($_SESSION["userTK"]);
 $query_pt = $professionalArea['pt'][$data['professional_area']];
