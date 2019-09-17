@@ -76,6 +76,7 @@ $('#btnClose').click(function(){
     $.cookie('hide_info', 'on',{ path: '/', expires: 365 * 10 });
   }
 });
+/*
 $(function(){
   // Toggle cookie value
   if($.cookie('hide_info') === 'on') {
@@ -86,6 +87,7 @@ $(function(){
     $('#btnClose i').removeClass('btnClose2');
   }
 });
+*/
 //  --------------------------------- Banner Slick
 $(function(){
   $('.bannerHome').slick({

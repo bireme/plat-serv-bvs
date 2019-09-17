@@ -97,10 +97,10 @@
 				<div class="box1">
 					<h5>
 						<?php echo $trans->getTrans($_REQUEST["action"],'INFO_WIDGET'); ?>
-						<span id="btnClose" class="btn btnSuccess" style="padding: 0 3px;" ><i class="arrowClose material-icons">keyboard_arrow_up</i></span>
+						<span id="btnClose" class="btn btnSuccess" style="padding: 0 3px;" ><i class="arrowClose material-icons <?php if ( isset($_COOKIE['hide_info']) && "on" == $_COOKIE['hide_info'] ) { echo "btnClose2"; } ?>">keyboard_arrow_up</i></span>
 					</h5>
 					<div class="divider"></div><br />
-					<div class="row" id="interessar">
+					<div class="row" id="interessar" <?php if ( isset($_COOKIE['hide_info']) && "on" == $_COOKIE['hide_info'] ) { echo 'style="display: none;"'; } ?>>
 						<div class="col s12 l6 xl4 p1">
 							<h6><b><?php echo $trans->getTrans($_REQUEST["action"],'SUGGESTIONS'); ?></b></h6>
 							<div class="divider"></div>
