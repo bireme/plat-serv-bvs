@@ -48,7 +48,7 @@
 						</div>
 					</div>
 				</div>
-				<section class="row">
+				<section class="row themes">
                     <?php if ( $responseProfile["values"] ) : ?>
                         <?php if ( 'on' == $responseSimilarDocs["values"]['status'] ) : $count = 0; ?>
                             <?php foreach ( $responseSimilarDocs["values"]['similars'] as $similar ) : $count++; ?>

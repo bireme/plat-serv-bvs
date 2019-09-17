@@ -153,7 +153,7 @@ $( document ).ready(
                 }
             }
         )
-/*
+
         $( this ).on( "click", ".fav-docs div.record a, .themes div.record a", function(e) {
                 // e.preventDefault();
 
@@ -172,7 +172,7 @@ $( document ).ready(
                 });
             }
         )
-*/
+
         /********** Interest Topics Scripts **********/
 /*
         $('a.add-collection').popover({

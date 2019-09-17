@@ -95,21 +95,23 @@
                         <section class="row">
                             <?php foreach ($response["values"] as $register) : $count++; ?>
                                 <div class="col s12 l6 xl4">
-                                    <div class="box2 hoverable">
-                                        <div class="box2rss">
-                                            <div class="col s3">
-                                                <?php $file_headers = @get_headers($register['image']); ?>
-                                                <?php if ( $register['image'] && $file_headers[0] != 'HTTP/1.0 404 Not Found' ) : ?>
-                                                <img class="responsive-img" src="<?php echo $register['image']; ?>" alt="RSS">
-                                                <?php else : ?>
-                                                <i class="fa fa-rss-square fa-2x"></i>
-                                                <?php endif; ?>
-                                            </div>
-                                            <div class="col s9">    
-                                                <a href="<?php echo RELATIVE_PATH; ?>/controller/searchresults/control/business/rss/<?php echo $register['id']; ?>"><b><?php echo $register['name']; ?></b></a>
+                                    <a href="<?php echo RELATIVE_PATH; ?>/controller/searchresults/control/business/rss/<?php echo $register['id']; ?>">
+                                        <div class="box2 hoverable">
+                                            <div class="box2rss">
+                                                <div class="col s3">
+                                                    <?php $file_headers = @get_headers($register['image']); ?>
+                                                    <?php if ( $register['image'] && $file_headers[0] != 'HTTP/1.0 404 Not Found' ) : ?>
+                                                    <img class="responsive-img" src="<?php echo $register['image']; ?>" alt="RSS">
+                                                    <?php else : ?>
+                                                    <i class="fa fa-rss-square fa-2x"></i>
+                                                    <?php endif; ?>
+                                                </div>
+                                                <div class="col s9">    
+                                                    <b><?php echo $register['name']; ?></b>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </a>
                                 </div>
                             <?php endforeach; ?>
                         </section>

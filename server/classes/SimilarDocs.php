@@ -500,7 +500,7 @@ class SimilarDocs {
         }
 
         $strsql = "SELECT * FROM suggestions
-            WHERE userID = '".$userID."' and profileID = 0 and profile LIKE BINARY '".$prefix."%'";
+            WHERE userID = '".$userID."' and profileID = 0 and profile LIKE BINARY '".$prefix."%' ORDER BY `order`";
 
         if($count > 0){
             $strsql .= " LIMIT $from,$count";

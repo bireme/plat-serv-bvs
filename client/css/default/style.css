@@ -505,6 +505,9 @@ span.short-query {
 .event:hover .eventDate {
     background: #ffb042;
 }
+.eventText {
+    display: table;
+}
 #combine-more {
     display: none;
     background: #eee;

@@ -66,7 +66,7 @@
                         </div>
                     </div>
                 </div>
-                <section class="row">
+                <section class="row fav-docs">
                     <?php if ( $response["values"] ) : ?>
                         <?php $count = $_REQUEST["page"] ? --$_REQUEST["page"] * DOCUMENTS_PER_PAGE : 0; ?>
                         <?php foreach ( $response["values"] as $register) : $count++; ?>

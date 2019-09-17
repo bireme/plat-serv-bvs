@@ -103,66 +103,39 @@
 					<div class="row" id="interessar">
 						<div class="col s12 l6 xl4 p1">
 							<h6><b><?php echo $trans->getTrans($_REQUEST["action"],'SUGGESTIONS'); ?></b></h6>
-							<div class="divider"></div><br />
+							<div class="divider"></div>
 							<ul class="lista1">
-								<li><a href="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis vel, minima rem odit ipsa autem..</a></li>
-								<li><a href="">Lorem ipsum dolor sit amet.</a></li>
-								<li><a href="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus reiciendis .</a></li>
-								<li><a href="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus reiciendis voluptate corporis dolores ad est in deserunt labore quod, sapiente, inventore nesciunt.</a></li>
-								<li><a href="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus reiciendis voluptate corporis dolores ad est in deserunt labore quod, sapiente, inventore nesciunt.</a></li>
+								<?php if ( $suggestedDocs ) : ?>
+                      				<?php foreach ( $suggestedDocs as $docs ) : ?>
+										<li><a href="<?php echo $docs['docURL'] ?>" target="_blank"><?php echo $docs['title'] ?></a></li>
+									<?php endforeach; ?>
+								<?php else : ?>
+									Nenhum sugestão encontrada
+								<?php endif; ?>
 							</ul>
 						</div>
 						<div class="col s12 l6 xl4 p1">
 							<h6><b><?php echo $trans->getTrans($_REQUEST["action"],'EVENTS'); ?></b></h6>
 							<div class="divider"></div><br />
-							<article class="event">
-								<a href="http://www.enfermeria2019.sld.cu/index.php/enfermeria/2019" target="_blank">
-									<div class="eventDate">
-										<p class="eventMes">JUL</p>
-										<p class="eventDia">01</p>
-									</div>
-									<div class="eventText">
-										9as. Jornadas Internacionales de Patología Cardiovascular Integrada
-									</div>
-									<div class="clearfix"></div>
-								</a>
-							</article>
-							<article class="event">
-								<a href="http://www.enfermeria2019.sld.cu/index.php/enfermeria/2019" target="_blank">
-									<div class="eventDate">
-										<p class="eventMes">AGO</p>
-										<p class="eventDia">27</p>
-									</div>
-									<div class="eventText">
-										VIII Congresso de Infecções Osteoarticulares do IOT
-									</div>
-									<div class="clearfix"></div>
-								</a>
-							</article>
-							<article class="event">
-								<a href="http://www.enfermeria2019.sld.cu/index.php/enfermeria/2019" target="_blank">
-									<div class="eventDate">
-										<p class="eventMes">DEZ</p>
-										<p class="eventDia">20</p>
-									</div>
-									<div class="eventText">
-										VI Congreso Nacional y V Internacional de Atención al Paciente con Heridas
-									</div>
-									<div class="clearfix"></div>
-								</a>
-							</article>
-							<article class="event">
-								<a href="http://www.enfermeria2019.sld.cu/index.php/enfermeria/2019" target="_blank">
-									<div class="eventDate">
-										<p class="eventMes">JAN</p>
-										<p class="eventDia">11</p>
-									</div>
-									<div class="eventText">
-										VI Congreso Nacional y V Internacional de Atención al Paciente con Heridas
-									</div>
-									<div class="clearfix"></div>
-								</a>
-							</article>
+							<?php if ( $events ) : ?>
+			                    <?php foreach ( $events as $event ) : ?>
+			                        <?php $month = (int) substr($event->start_date, 5, 2); ?>
+			                        <?php // $link = ( $event->link ) ? $event->link[0] : $DIREVE[$_SESSION['lang']] . 'resource/?id=' . $event->django_id; ?>
+			                        <?php $link = $DIREVE[$_SESSION['lang']] . 'resource/?id=' . $event->django_id; ?>
+									<article class="event">
+										<a href="<?php echo $link; ?>" target="_blank">
+											<div class="eventDate">
+												<p class="eventMes"><?php echo Generic::month_name($month, TRUE); ?></p>
+												<p class="eventDia"><?php echo substr($event->start_date, 8, 2); ?></p>
+											</div>
+											<div class="eventText"><?php echo $event->title; ?></div>
+											<div class="clearfix"></div>
+										</a>
+									</article>
+								<?php endforeach; ?>
+							<?php else : ?>
+								Nenhum evento encontrado
+							<?php endif; ?>
 						</div>
 						<div class="clearfix showMenor1200"></div>
 						<div class="col s12 l12 xl4 p1">
