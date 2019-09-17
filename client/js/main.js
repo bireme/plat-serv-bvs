@@ -71,9 +71,9 @@ $('#btnClose').click(function(){
 
   // Toggle cookie value
   if($.cookie('hide_info') === 'on') {
-    $.cookie('hide_info', 'off');
+    $.cookie('hide_info', 'off',{ path: '/', expires: 365 * 10 });
   } else {
-    $.cookie('hide_info', 'on');
+    $.cookie('hide_info', 'on',{ path: '/', expires: 365 * 10 });
   }
 });
 $(function(){
