@@ -6,7 +6,7 @@ $lang = isset($_SESSION['lang'])?$_SESSION['lang']:DEFAULT_LANG;
 
 if($lang == 'pt'){
     /* tela de cadastro do usuário*/
-    define("MY_VHL",'Minha BVS');
+    define("MY_VHL",'MinhaBVS');
     define("SERVPLAT",'Plataforma de Serviços');
     define('BIREME','BIREME | OPAS | OMS');
     define("PROFILE",'Perfil');
@@ -28,10 +28,10 @@ if($lang == 'pt'){
     define('DEGREE','Nível acadêmico');
     define('PROFESSIONAL_AREA','Área de atuação profissional');
     define('EMAIL_SENT','E-mail enviado.');
-    define("EMAIL_FROMNAME",'Minha BVS');
-    define("NEW_PASSWORD_EMAIL_SUBJECT",'Serviços Personalizados Minha BVS: Senha');
-    define("CONFIRM_USER_EMAIL_SUBJECT",'Serviços Personalizados Minha BVS: Confirmação de Registro - ');
-    define("CONFIRM_NEW_PASS_SUBJECT",'Serviços Personalizados Minha BVS: Confirmação de Envio de Senha - ');
+    define("EMAIL_FROMNAME",'MinhaBVS');
+    define("NEW_PASSWORD_EMAIL_SUBJECT",'Serviços Personalizados MinhaBVS: Senha');
+    define("CONFIRM_USER_EMAIL_SUBJECT",'Serviços Personalizados MinhaBVS: Confirmação de Registro - ');
+    define("CONFIRM_NEW_PASS_SUBJECT",'Serviços Personalizados MinhaBVS: Confirmação de Envio de Senha - ');
     define('FIELD_CONTACT_NAME','nome');
     define('FIELD_CONTACT_EMAIL','e-mail');
     define('FIELD_CONTACT_DESCRIPTION','descrição');
@@ -55,13 +55,13 @@ if($lang == 'pt'){
     define('FIELD_AVATAR','Foto do perfil');
     define("FREE_REGISTRY","Registre-se agora!");
     define("FREE_REGISTRY_MESSAGE",'
-<p>Minha BVS é um serviço gratuito disponível para qualquer usuário por meio de sua conta Facebook, Google, BIREME Account ou do próprio serviço Minha BVS.</p>
-<p>O usuário que preferir usar o serviço Minha BVS com sua conta Facebook ou Google NÃO precisa criar nova conta de usuário na Minha BVS.</p>
-<p>BIREME Account é um sistema de gestão de usuários dos Centros Cooperantes da Rede BIREME. Estes usuários NÃO precisam criar nova conta de usuário na Minha BVS.</p>
-<p>Para criar uma nova conta de usuário Minha BVS é necessário preencher o formulário abaixo com dados pessoais e concordar com os termos de uso e política de privacidade.</p>
+<p>MinhaBVS é um serviço gratuito disponível para qualquer usuário por meio de sua conta Facebook, Google, BIREME Account ou do próprio serviço MinhaBVS.</p>
+<p>O usuário que preferir usar o serviço MinhaBVS com sua conta Facebook ou Google NÃO precisa criar nova conta de usuário na MinhaBVS.</p>
+<p>BIREME Account é um sistema de gestão de usuários dos Centros Cooperantes da Rede BIREME. Estes usuários NÃO precisam criar nova conta de usuário na MinhaBVS.</p>
+<p>Para criar uma nova conta de usuário MinhaBVS é necessário preencher o formulário abaixo com dados pessoais e concordar com os termos de uso e política de privacidade.</p>
 ');
     define("MY_VHL_DESCRIPTION",'
-<p>Minha BVS é um serviço gratuito que guarda informações e preferências do
+<p>MinhaBVS é um serviço gratuito que guarda informações e preferências do
 usuário para oferecer serviços personalizados e facilidades tais como:</p>
 <ul>
     <li>Criação de coleções de documentos a partir de resultado de buscas processadas nas bases de dados da BVS.</li>
@@ -70,26 +70,26 @@ usuário para oferecer serviços personalizados e facilidades tais como:</p>
     <li>Histórico de buscas realizadas na BVS sempre que o usuário estiver logado no serviço.</li>
     <li>Lista de links favoritos indicados pelo usuário permitindo acesso rápido e direto a sites de seu interesse.</li>
 </ul>
-<p>Minha BVS está disponível para qualquer usuário por meio de sua conta Facebook, Google, BIREME Account ou do próprio serviço Minha BVS.</p>
-<p>BIREME Account é um sistema de gestão de contas de usuários dos Centros Cooperantes da Rede BIREME que acessam o sistema FI-Admin, dentre outros sistemas. Esta mesma conta de usuário está habilitada para o serviço Minha BVS.</p>
-<p>Se o usuário prefere uma conta própria para o serviço Minha BVS, é necessário fazer seu registro gratuitamente como usuário, além de aceitar os termos de uso e política de privacidade.</p>
+<p>MinhaBVS está disponível para qualquer usuário por meio de sua conta Facebook, Google, BIREME Account ou do próprio serviço MinhaBVS.</p>
+<p>BIREME Account é um sistema de gestão de contas de usuários dos Centros Cooperantes da Rede BIREME que acessam o sistema FI-Admin, dentre outros sistemas. Esta mesma conta de usuário está habilitada para o serviço MinhaBVS.</p>
+<p>Se o usuário prefere uma conta própria para o serviço MinhaBVS, é necessário fazer seu registro gratuitamente como usuário, além de aceitar os termos de uso e política de privacidade.</p>
 ');
-    define('MY_VHL_ENTRY','Já tem registro de usuário da Minha BVS?');
+    define('MY_VHL_ENTRY','Já tem registro de usuário da MinhaBVS?');
     define('OR_ENTER_WITH','ou entre com');
     define('ENTER','Entrar');
     define("FOOTER_MESSAGE",'
 <p><strong>BIREME - OPAS - OMS</strong><br/>
 Centro Latino-Americano e do Caribe de Informação em Ciências da Saúde<br />
-Área de Gestão do Conhecimento, Bioética e Pesquisa - KBR<br />
+Departamento de Evidência e Inteligência para a Ação em Saúde – EIH<br />
 Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 | Fax: (55 11) 5575-8868<br />
-<a href="http://new.paho.org/bireme" title="Minha BVS">http://www.paho.org/bireme/</a><br /></p>
+<a href="http://new.paho.org/bireme" title="MinhaBVS">http://www.paho.org/bireme/</a><br /></p>
 ');
     define("FOOTER_MESSAGE_DEFAULT",'
 <br /><b>BIREME - OPAS - OMS</b><br />
 Centro Latino-Americano e do Caribe de Informação em Ciências da Saúde<br />
 Departamento de Evidência e Inteligência para a Ação em Saúde – EIH<br />
 Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 | Fax: (55 11) 5575-8868<br />
-<a href="http://new.paho.org/bireme" title="Minha BVS" target="_blank">http://www.paho.org/bireme/</a><br />
+<a href="http://new.paho.org/bireme" title="MinhaBVS" target="_blank">http://www.paho.org/bireme/</a><br />
 <b><a href="http://politicas.bireme.org/terminos/pt/" target="_blank">Termos e Condições de Uso</a> | <a href="http://politicas.bireme.org/privacidad/pt/" target="_blank">Políticas de Privacidade</a></b>
 ');
     define('LEARN_MORE','saiba mais');
@@ -103,11 +103,11 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
     define("USER_EXISTS","<b>Usuário já registrado</b><br />Tente autenticar-se com este usuário ou acesse<br /><b>\"esqueci minha senha\"</b> na caixa de login de usuários.");
     define("USER_ADD_ERROR","<b>Erro no cadastro</b>");
     define("USER_ADD_SUCCESS","<b>Usuário registrado com sucesso!</b>");
-    define("USER_SEND_CONFIRMATION","<b>Usuário registrado com sucesso!</b><br />Enviamos um e-mail com link de confirmação de seu registro.<br />Se demorar para chegar, confira sua caixa de SPAM e lixo eletrônico.<br />Clique no link enviado para ativar seu registro de usuário da Minha BVS.");
+    define("USER_SEND_CONFIRMATION","<b>Usuário registrado com sucesso!</b><br />Enviamos um e-mail com link de confirmação de seu registro.<br />Se demorar para chegar, confira sua caixa de SPAM e lixo eletrônico.<br />Clique no link enviado para ativar seu registro de usuário da MinhaBVS.");
     define("USER_UPDATED",'Usuário atualizado com sucesso.');
     define("USER_PASSWORD_UPDATE",'Senha atualizada com sucesso!');
     define("USER_UPDATE_ERROR",'<b>Problemas durante atualização</b><br />Não foi possível atualizar os dados. Tente mais tarde.');
-    define("USER_CONFIRMED",'<b>Sua conta foi confirmada com sucesso!</b><br />Por favor, complete ou atualize seus dados e preferências no seu Perfil.<br />Em breve, você receberá um e-mail com sua senha de acesso da Minha BVS.<br />Se demorar para chegar, confira sua caixa de SPAM e lixo eletrônico.');
+    define("USER_CONFIRMED",'<b>Sua conta foi confirmada com sucesso!</b><br />Por favor, complete ou atualize seus dados e preferências no seu Perfil.<br />Em breve, você receberá um e-mail com sua senha de acesso da MinhaBVS.<br />Se demorar para chegar, confira sua caixa de SPAM e lixo eletrônico.');
     define("USER_ADD_CONFIRMED",'<b>Usuário registrado com sucesso!</b><br />Sua senha foi enviada por e-mail.<br />Se demorar para chegar, confira sua caixa de SPAM e lixo eletrônico.');
     define("USER_CONFIRMATION_ERROR",'<b>ERRO: Não foi possível realizar a confirmação de usuário.</b>');
     define("VALMSG_G_EMPTY","Campo obrigatório. Não pode ficar em branco.");
@@ -118,10 +118,10 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
     define("NEWPASS_INVALID_PASSWORD",'Senha inválida');
     define("NEWPASS_DOMAIN_NOT_PERMITTED",'Ação não permitida para este usuário.');
     define("NEWPASS_PASSWORD_SENT",'Uma nova senha foi enviada para o seu email.<br />Se demorar para chegar, confira sua caixa de SPAM e lixo eletrônico.');
-    define("NEWPASS_SEND_CONFIRMATION","Enviamos um e-mail com link para confirmação de envio de nova senha.<br />Se demorar para chegar, confira sua caixa de SPAM e lixo eletrônico.<br />Clique no link enviado para receber sua nova senha de usuário da Minha BVS.");
+    define("NEWPASS_SEND_CONFIRMATION","Enviamos um e-mail com link para confirmação de envio de nova senha.<br />Se demorar para chegar, confira sua caixa de SPAM e lixo eletrônico.<br />Clique no link enviado para receber sua nova senha de usuário da MinhaBVS.");
     define("NOTICE",'Mensagem ao usuário');
     define("NOTICE_MESSAGE",'');
-    define("UPDATE_INFO",'<b>Por favor, revise seus dados no formulário abaixo para continuar utilizando a Minha BVS.</b>');
+    define("UPDATE_INFO",'<b>Por favor, revise seus dados no formulário abaixo para continuar utilizando a MinhaBVS.</b>');
     define("ACCEPT_MAIL",'Quero receber por email novidades sobre o serviço MinhaBVS');
     define("UNSUBSCRIBE_MAIL_SUCCESS",'Suas configurações de email foram atualizadas.');
     define("UNSUBSCRIBE_MAIL_ERROR",'<b>ERRO: Não foi possível cancelar o envio de emails.</b>');
@@ -215,7 +215,7 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
 
     <p style="text-decoration: underline;">Compilação de informação que permite identificar a pessoa</p>
 
-    <p>Se você se registrar para acessar algum site, produto ou serviço da BIREME/OPAS, como os Serviços Personalizados Mi BVS e FI-Admin, deverá oferecer informação pessoal como seu nome, email, instituição em que trabalha, país de origem, nível acadêmico, área de atuação profissional, sexo, data de nascimento e dados das suas redes sociais. Esta informação só será compilada com seu conhecimento e permissão e será mantida nas bases de dados da BIREME/OPAS, bem como nas listas de endereços.</p>
+    <p>Se você se registrar para acessar algum site, produto ou serviço da BIREME/OPAS, como os Serviços Personalizados MiBVS e FI-Admin, deverá oferecer informação pessoal como seu nome, email, instituição em que trabalha, país de origem, nível acadêmico, área de atuação profissional, sexo, data de nascimento e dados das suas redes sociais. Esta informação só será compilada com seu conhecimento e permissão e será mantida nas bases de dados da BIREME/OPAS, bem como nas listas de endereços.</p>
 
     <p>Para certos sites da BIREME/OPAS, o registro ou certas informações pessoais fazem com que seja instalado um cookie* em seu computador, que permitirá que a BIREME/OPAS lembre suas informações da próxima vez que consultar o site, para que não seja preciso colocar novamente seus dados, ajudando-nos a lhe oferecer um serviço melhor.</p>
 
@@ -239,7 +239,7 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
 
     <h4>Que acontece se não quiser oferecer informação pessoal?</h4>
 
-    <p>É voluntário fornecer informação pessoal nos sites da BIREME/OPAS. Se optar por não fornecer esse tipo de informação, de qualquer forma pode consultar e usar os sites da BIREME/OPAS, porém não poderá utilizar certas opções, como acessar os Serviços Personalizados Mi BVS ou gerir fontes de informação da BVS através do sistema web FI-Admin.</p>
+    <p>É voluntário fornecer informação pessoal nos sites da BIREME/OPAS. Se optar por não fornecer esse tipo de informação, de qualquer forma pode consultar e usar os sites da BIREME/OPAS, porém não poderá utilizar certas opções, como acessar os Serviços Personalizados MiBVS ou gerir fontes de informação da BVS através do sistema web FI-Admin.</p>
 
     <p style="text-decoration: underline;">Opção de modificar a informação ou solicitar que ela seja eliminada</p>
 
@@ -289,9 +289,9 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
     define("FORGOT_PASSWORD",'Esqueci minha senha?');
     define("FORGOT_MY_PASSWORD",'Esqueci minha senha');
     define("FORGOT_PASSWORD_MESSAGE",'
-<p>Minha BVS está disponível gratuitamente para qualquer usuário por meio de sua conta Facebook, Google, BIREME Account ou do próprio serviço Minha BVS.</p>
-<p>Este formulário é exclusivo para recuperar senha de usuário registrado do serviço Minha BVS.</p>
-<p>Informe seu e-mail ou usuário do serviço Minha BVS para receber uma mensagem de correio eletrônico com a sua senha.</p>
+<p>MinhaBVS está disponível gratuitamente para qualquer usuário por meio de sua conta Facebook, Google, BIREME Account ou do próprio serviço MinhaBVS.</p>
+<p>Este formulário é exclusivo para recuperar senha de usuário registrado do serviço MinhaBVS.</p>
+<p>Informe seu e-mail ou usuário do serviço MinhaBVS para receber uma mensagem de correio eletrônico com a sua senha.</p>
 ');
     define("CHANGE_PASSWORD",'Alterar Senha');
     define("RECOVER_PASSWORD",'Recuperar Senha');
@@ -330,8 +330,8 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
 
     define("REMOVE_ACCOUNT",'Remover Conta');
     define("REMOVE_ACCOUNT_DESCRIPTION",'
-<p>Você solicitou a exclusão da sua conta nos Serviços Personalizados de Informação - Minha BVS. Ao excluí-la você perderá as informações relacionadas ao seu perfil, suas coleções de documentos, perfis de interesse e demais conteúdos da Minha BVS. Esta ação é irreversível.</p>
-<p>Se você tem certeza que quer excluir seu usuário, por favor conte-nos rapidamente o motivo de deixar de utilizar o Minha BVS.</p>'
+<p>Você solicitou a exclusão da sua conta nos Serviços Personalizados de Informação - MinhaBVS. Ao excluí-la você perderá as informações relacionadas ao seu perfil, suas coleções de documentos, perfis de interesse e demais conteúdos da MinhaBVS. Esta ação é irreversível.</p>
+<p>Se você tem certeza que quer excluir seu usuário, por favor conte-nos rapidamente o motivo de deixar de utilizar o MinhaBVS.</p>'
 );
     define("REMOVE_ACCOUNT_REASON",'<b>Motivo da Exclusão (obrigatório)</b><br /><br />');
     define("REMOVE_ACCOUNT_OPTION_A",'Eu não me sinto seguro na MinhaBVS');
@@ -353,38 +353,43 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
     define('WHAT_IS_IT','O que é?');
     define('WHAT_IS_IT_DESC','
 <h4>O que é?</h4>
+
 <b>ORCID</b>
 <p>ORCID é um código alfanumérico não proprietário para identificar exclusivamente cientistas e outros autores acadêmicos e contribuidores.</p>
 
 <b>ResearcherID</b>
-<p>O ResearcherID é um identificador único que permite que os pesquisadores gerenciem suas listas de publicações, rastreiem suas contagens de citações e índice h e evitem a identificação errônea do autor. Além disso, sua informação ResearcherID se integra com a Web of Science e com o ORCiD, possibilitando que você reivindique e exiba suas publicações a partir de uma única conta.</p>
+<p>O ResearcherID é um identificador único que permite que os pesquisadores gerenciem suas listas de publicações, rastreiem suas contagens de citações e h-index, e evitem a identificação errônea do autor. Além disso, sua informação ResearcherID se integra com a Web of Science e com o ORCiD, possibilitando que você reivindique e exiba suas publicações a partir de uma única conta.</p>
 ');
 }
 
 if($lang == 'es'){
     /* tela de cadastro do usuário*/
-    define("MY_VHL",'Mi BVS');
+    define("MY_VHL",'MiBVS');
     define("SERVPLAT",'Plataforma de Servicios');
     define('BIREME','BIREME | OPS | OMS');
+    define("PROFILE",'Perfil');
+    define("CONFIGURATIONS",'Configuraciones');
     define('BUTTON_NEW_USER','Enviar');
     define('BUTTON_CANCEL','Cancelar');
     define('BUTTON_CONTINUE','Proseguir');
     define('BUTTON_CLOSE','Cerrar');
     define('BUTTON_SEND','Enviar');
     define("BUTTON_UPDATE_USER","Actualizar");
+    define('BUTTON_CONFIRM','Confirmar');
     define('BVSSIGLA','BVS');
     define('BVS','Pasaporte BVS y SciELO');
     define('CONTACT_FORM','Formulario para contacto');
-    define('CHOOSE_DEGREE','elijir');
-    define('CHOOSE_PROFESSIONAL_AREA','elejir');
-    define('CHOOSE_COUNTRY','elijir');
+    define('CHOOSE_GENDER','elegir');
+    define('CHOOSE_DEGREE','elegir');
+    define('CHOOSE_PROFESSIONAL_AREA','elegir');
+    define('CHOOSE_COUNTRY','elegir');
     define('DEGREE','Nível académico');
     define('PROFESSIONAL_AREA','Área de actuación profesional');
     define('EMAIL_SENT','E-mail enviado.');
-    define("EMAIL_FROMNAME",'Mi BVS');
-    define("NEW_PASSWORD_EMAIL_SUBJECT",'Servicios Personalizados Mi BVS: Contraseña');
-    define("CONFIRM_USER_EMAIL_SUBJECT",'Servicios Personalizados Mi BVS: Confirmación de Registro - ');
-    define("CONFIRM_NEW_PASS_SUBJECT",'Servicios Personalizados Mi BVS: Confirmación de Envío de Contraseña - ');
+    define("EMAIL_FROMNAME",'MiBVS');
+    define("NEW_PASSWORD_EMAIL_SUBJECT",'Servicios Personalizados MiBVS: Contraseña');
+    define("CONFIRM_USER_EMAIL_SUBJECT",'Servicios Personalizados MiBVS: Confirmación de Registro - ');
+    define("CONFIRM_NEW_PASS_SUBJECT",'Servicios Personalizados MiBVS: Confirmación de Envío de Contraseña - ');
     define('FIELD_CONTACT_NAME','nombre');
     define('FIELD_CONTACT_EMAIL','e-mail');
     define('FIELD_CONTACT_DESCRIPTION','descripción');
@@ -408,13 +413,13 @@ if($lang == 'es'){
     define('FIELD_AVATAR','Foto del perfil');
     define("FREE_REGISTRY","¡Registrate ahora!");
     define("FREE_REGISTRY_MESSAGE",'
-<p>Mi BVS es un servicio gratuito disponible a cualquier usuario a través de su cuenta Facebook, Google, BIREME Account o del propio servicio Mi BVS.</p>
-<p>El usuario que prefiere usar el servicio Mi BVS con su cuenta Facebook o Google NO requiere crear una nueva cuenta de usuario en Mi BVS.</p>
-<p>BIREME Account es un sistema de gestión de usuarios de los Centros Cooperantes de la Red BIREME. Estos usuarios NO requieren crear una nueva cuenta de usuario en Mi BVS.</p>
-<p>Para crear una nueva cuenta de usuario Mi BVS es necesario llenar el formulario abajo con datos personales y concordar con los términos de uso y política de privacidad. <a href="javascript:;" class="decor" data-toggle="modal" data-target=".bs-modal-lg" style="text-decoration: underline;">¡Conozca más!</a></p>
+<p>MiBVS es un servicio gratuito disponible a cualquier usuario a través de su cuenta Facebook, Google, BIREME Account o del propio servicio MiBVS.</p>
+<p>El usuario que prefiere usar el servicio MiBVS con su cuenta Facebook o Google NO requiere crear una nueva cuenta de usuario en MiBVS.</p>
+<p>BIREME Account es un sistema de gestión de usuarios de los Centros Cooperantes de la Red BIREME. Estos usuarios NO requieren crear una nueva cuenta de usuario en MiBVS.</p>
+<p>Para crear una nueva cuenta de usuario MiBVS es necesario llenar el formulario abajo con datos personales y concordar con los términos de uso y política de privacidad.</p>
 ');
     define("MY_VHL_DESCRIPTION",'
-<p>Mi BVS es un servicio gratuito que guarda informaciones y preferencias del usuario para ofrecer servicios personalizados y facilidades tales como:</p>
+<p>MiBVS es un servicio gratuito que guarda informaciones y preferencias del usuario para ofrecer servicios personalizados y facilidades tales como:</p>
 <ul>
     <li>Creación de colecciones de documentos a partir del resultado de búsquedas procesadas en las bases de datos de la BVS.</li>
     <li>Documentos recuperados en las bases de datos de la BVS a partir de palabras-claves indicadas en los Temas de Interés.</li>
@@ -422,18 +427,28 @@ if($lang == 'es'){
     <li>Histórico de búsquedas realizadas en la BVS desde que el usuario se inscribió en el servicio.</li>
     <li>Lista de links favoritos indicados por el usuario que posibilita el acceso rápido y directo a sitios de su interés.</li>
 </ul>
-<p>Mi BVS está disponible a cualquier usuario a través de su cuenta Facebook, Google, BIREME Account o del propio servicio Mi BVS.</p>
-<p>BIREME Account es un sistema de gestión de cuentas de usuarios de los centros cooperantes de la Red BIREME que acceden al sistema FI-Admin y otros. Esta misma cuenta de usuario está habilitada para el servicio Mi BVS.</p>
-<p>Si el usuario prefiere una cuenta propia para el Servicio Mi BVS es necesario hacer su registro gratuitamente como usuario, y además aceptar a los términos de uso y política de privacidad.</p>
+<p>MiBVS está disponible a cualquier usuario a través de su cuenta Facebook, Google, BIREME Account o del propio servicio MiBVS.</p>
+<p>BIREME Account es un sistema de gestión de cuentas de usuarios de los centros cooperantes de la Red BIREME que acceden al sistema FI-Admin y otros. Esta misma cuenta de usuario está habilitada para el servicio MiBVS.</p>
+<p>Si el usuario prefiere una cuenta propia para el Servicio MiBVS es necesario hacer su registro gratuitamente como usuario, y además aceptar a los términos de uso y política de privacidad.</p>
 ');
-    define('MY_VHL_ENTRY','¿Es usuario de Mi BVS?');
+    define('MY_VHL_ENTRY','¿Es usuario de MiBVS?');
     define('OR_ENTER_WITH','o entre con');
     define('ENTER','Entrar');
-    define("FOOTER_MESSAGE",'<p><strong>BIREME - OPS - OMS</strong><br/>
+    define("FOOTER_MESSAGE",'
+<p><strong>BIREME - OPS - OMS</strong><br/>
 Centro Latinoamericano y del Caribe de Información en Ciencias de la Salud<br />
-Area de Gestión del Conocimiento, Bioética y Investigación - KBR<br />
+Departamento de Evidencia e Inteligencia para la Acción de Salud – EIH<br />
 Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 | Fax: (55 11) 5575-8868<br />
-<a href="http://new.paho.org/bireme" title="Mi BVS">http://www.paho.org/bireme</a><br /></p>');
+<a href="http://new.paho.org/bireme" title="MiBVS">http://www.paho.org/bireme</a><br /></p>
+');
+    define("FOOTER_MESSAGE_DEFAULT",'
+<br /><b>BIREME - OPS - OMS</b><br />
+Centro Latinoamericano y del Caribe de Información en Ciencias de la Salud<br />
+Departamento de Evidencia e Inteligencia para la Acción de Salud – EIH<br />
+Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 | Fax: (55 11) 5575-8868<br />
+<a href="http://new.paho.org/bireme" title="MiBVS" target="_blank">http://www.paho.org/bireme</a><br />
+<b><a href="http://politicas.bireme.org/terminos/es/" target="_blank">Términos y Condiciones de Uso</a> | <a href="http://politicas.bireme.org/privacidad/es/" target="_blank">Políticas de Privacidad</a></b>
+');
     define('LEARN_MORE','sepa mas');
     define('PERSONAL_DATA','Datos Personales');
     define('REGISTER_NEW_USER_TITLE','Registro de Nuevo Usuario');
@@ -445,11 +460,11 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
     define("USER_EXISTS","<b>Ya existe registro de usuario</b><br />Pruebe autenticarse con ese usuário o acceda<br /><b>\"Olvide mi contraseña\"</b> en el area de login del servicio.");
     define("USER_ADD_ERROR","<b>Erro en el registro</b>");
     define("USER_ADD_SUCCESS","<b>¡Usuario registrado con succeso!</b>");
-    define("USER_SEND_CONFIRMATION","<b>¡Registro de usuario realizado con éxito!</b><br />Enviamos un mensaje a su correo electrónico con enlace de confirmación de su registro como usuario de Mi BVS.<br />Si tarda en llegar, compruebe su caja de SPAM y basura electrónica.<br />Por favor haga clic en el enlace enviado para activar su usuario de Mi BVS.");
+    define("USER_SEND_CONFIRMATION","<b>¡Registro de usuario realizado con éxito!</b><br />Enviamos un mensaje a su correo electrónico con enlace de confirmación de su registro como usuario de MiBVS.<br />Si tarda en llegar, compruebe su caja de SPAM y basura electrónica.<br />Por favor haga clic en el enlace enviado para activar su usuario de MiBVS.");
     define("USER_UPDATED",'Usuario actualizado con succeso.');
     define("USER_PASSWORD_UPDATE",'¡Contraseña actualizada con succeso!');
     define("USER_UPDATE_ERROR",'<b>Problemas en la actualización</b><br />El sistema no logro actualizar los datos del usuário. Tente mas tardera.');
-    define("USER_CONFIRMED",'<b>Su cuenta ha sido confirmada con éxito!</b><br />Por favor, acceda a su perfil en Mi BVS y complete su registro.<br />Pronto, Usted recibirá un e-mail con su contraseña de acceso a Mi BVS.<br />Si tarda en llegar, compruebe su caja de SPAM y basura electrónica.');
+    define("USER_CONFIRMED",'<b>Su cuenta ha sido confirmada con éxito!</b><br />Por favor, acceda a su perfil en MiBVS y complete su registro.<br />Pronto, Usted recibirá un e-mail con su contraseña de acceso a MiBVS.<br />Si tarda en llegar, compruebe su caja de SPAM y basura electrónica.');
     define("USER_ADD_CONFIRMED",'<b>¡Usuário añadido con succeso!</b><br />La contraseña de acceso de su usuario ha sido enviada por e-mail.<br />Si tarda en llegar, compruebe su caja de SPAM y basura electrónica.');
     define("USER_CONFIRMATION_ERROR",'<b>ERROR: No fue posible confirmar el Usuario.</b>');
     define("VALMSG_G_EMPTY","Campo obligatório. No puede quedarse en blanco.");
@@ -460,15 +475,15 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
     define("NEWPASS_INVALID_PASSWORD",'Contraseña incorrecta');
     define("NEWPASS_DOMAIN_NOT_PERMITTED",'Acción no permitida para este usuario.');
     define("NEWPASS_PASSWORD_SENT",'Una nueva contraseña fue enviada para su correo electrónico.<br />Si tarda en llegar, compruebe su caja de SPAM y basura electrónica.');
-    define("NEWPASS_SEND_CONFIRMATION","Hemos enviado un correo electrónico con un enlace para confirmar el envío de la nueva contraseña.<br />Si tarda en llegar, compruebe su caja de SPAM y basura electrónica.<br />Por favor haga clic en el enlace enviado para recibir su nueva contraseña de usuario de Mi BVS.");
+    define("NEWPASS_SEND_CONFIRMATION","Hemos enviado un correo electrónico con un enlace para confirmar el envío de la nueva contraseña.<br />Si tarda en llegar, compruebe su caja de SPAM y basura electrónica.<br />Por favor haga clic en el enlace enviado para recibir su nueva contraseña de usuario de MiBVS.");
     define("NOTICE",'Mensaje al usuário');
     define("NOTICE_MESSAGE",'');
-    define("UPDATE_INFO",'<b>Por favor, revise sus datos en el formulario para seguir utilizando el servicio Mi BVS.</b>');
-    define("ACCEPT_MAIL",'Me gustaría recibir actualizaciones acerca del servicio Mi BVS');
+    define("UPDATE_INFO",'<b>Por favor, revise sus datos en el formulario para seguir utilizando el servicio MiBVS.</b>');
+    define("ACCEPT_MAIL",'Me gustaría recibir actualizaciones acerca del servicio MiBVS');
     define("UNSUBSCRIBE_MAIL_SUCCESS",'Su configuración de correo electrónico ha sido actualizada.');
     define("UNSUBSCRIBE_MAIL_ERROR",'<b>ERROR: No se pudo cancelar el envío de correo electrónico.</b>');
     define("TERMS",'Condiciones de uso');
-    define("TERMS_AGREEMENT_MESSAGE",'Estoy de acuerdo con los <a data-toggle="modal" data-target=".bs-terms-modal-lg" style="cursor: pointer; text-decoration: underline;">Términos de Uso</a> y confirmo que leí la <a data-toggle="modal" data-target=".bs-policy-modal-lg" style="cursor: pointer; text-decoration: underline;">Política de Privacidad</a> de Mi BVS');
+    define("TERMS_AGREEMENT_MESSAGE",'Estoy de acuerdo con los <a href="http://politicas.bireme.org/terminos/es/" target="_blank">Términos de Uso</a> y confirmo que leí la <a href="http://politicas.bireme.org/privacidad/es/" target="_blank">Política de Privacidad</a> de MiBVS');
     define("TERMS_MESSAGE",'
 <div class="terms">
 
@@ -557,7 +572,7 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
 
     <p style="text-decoration: underline;">Recopilación de información que permite identificar a la persona</p>
 
-    <p>Si usted se registra para acceder a algún sitio, producto o servicio de BIREME/OPS, como los Servicios Personalizados Mi BVS y el FI-Admin, se le pedirá que suministre información personal como su nombre, dirección de correo electrónico, institución a la cual pertenece, país de origen, nivel académico, área de actuación profesional, sexo, fecha de nacimiento e datos de sus redes sociales. Esta información se recopila solo con su conocimiento y permiso, y se mantiene en las bases de datos de BIREME/OPS y listas de direcciones.</p>
+    <p>Si usted se registra para acceder a algún sitio, producto o servicio de BIREME/OPS, como los Servicios Personalizados MiBVS y el FI-Admin, se le pedirá que suministre información personal como su nombre, dirección de correo electrónico, institución a la cual pertenece, país de origen, nivel académico, área de actuación profesional, sexo, fecha de nacimiento e datos de sus redes sociales. Esta información se recopila solo con su conocimiento y permiso, y se mantiene en las bases de datos de BIREME/OPS y listas de direcciones.</p>
 
     <p>Para ciertos sitios de BIREME/OPS, registrarse o proporcionar cierta información personal hace que se instale una cookie* en su computadora, que permitirá que BIREME/OPS recuerde su información la próxima vez que usted consulte el sitio, de manera que no tenga que volver a ingresar sus datos, lo que nos ayuda a brindarle un  servicio mejor.</p>
 
@@ -581,7 +596,7 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
 
     <h4>¿Qué sucede si no quiero suministrar información personal?</h4>
 
-    <p>Suministrar información personal en los sitios de BIREME/OPS es voluntario. Si decide no suministrar información personal, puede de todas formas consultar y usar los sitios de BIREME/OPS, pero no podrá utilizar ciertas opciones como acceder a los Servicios Personalizados Mi BVS o hacer gestión de las fuentes de información de la BVS a través del sistema web FI-Admin.</p>
+    <p>Suministrar información personal en los sitios de BIREME/OPS es voluntario. Si decide no suministrar información personal, puede de todas formas consultar y usar los sitios de BIREME/OPS, pero no podrá utilizar ciertas opciones como acceder a los Servicios Personalizados MiBVS o hacer gestión de las fuentes de información de la BVS a través del sistema web FI-Admin.</p>
 
     <p style="text-decoration: underline;">Opción de modificar la información o solicitar que sea eliminada</p>
 
@@ -619,7 +634,7 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
 
     define("DASHBOARD",'Mis Contenidos');
     define("INDEX",'home');
-    define("HOMEPAGE",'Visión General');
+    define("HOMEPAGE",'Home');
     define("WELCOME",'Bienvenido');
     define("USERS_SERVICES",'Servicios Personalizados');
     define("OLA",'Hola');
@@ -631,9 +646,9 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
     define("FORGOT_PASSWORD",'¿Se ha olvidado de su contraseña?');
     define("FORGOT_MY_PASSWORD",'¿Se ha olvidado de su contraseña?');
     define("FORGOT_PASSWORD_MESSAGE",'
-<p>Mi BVS está disponible gratuitamente para cualquier usuario a través de su cuenta de Facebook, Google, BIREME Account o del propio servicio Mi BVS.</p>
-<p>Este formulario es exclusivo para recuperar seña de usuario registrado del servicio Mi BVS.</p>
-<p>Informe su e-mail o usuario del servicio Mi BVS para recibir un mensaje de correo electrónico con su seña.</p>
+<p>MiBVS está disponible gratuitamente para cualquier usuario a través de su cuenta de Facebook, Google, BIREME Account o del propio servicio MiBVS.</p>
+<p>Este formulario es exclusivo para recuperar seña de usuario registrado del servicio MiBVS.</p>
+<p>Informe su e-mail o usuario del servicio MiBVS para recibir un mensaje de correo electrónico con su seña.</p>
 ');
     define("CHANGE_PASSWORD",'Cambiar Contraseña');
     define("RECOVER_PASSWORD",'Recuperar Contraseña');
@@ -660,10 +675,11 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
     define("REMOVE_LINK",'Enlace excluido');
     define("QUERY",'Expresión de búsqueda');
     define("VIEW",'Mostrar');
-    define("RSS",'RSS');
+    define("RSS",'Feed RSS');
     define("SEARCH_WIDGET",'Mis Búsquedas en la BVS');
     define("PROFILE_WIDGET",'Temas de Interés');
     define("SHELF_WIDGET",'Documentos Favoritos');
+    define("TOUR",'Tour Virtual');
     define("START_TOUR",'Empezar Tour');
     define("LEAVE_COMMENT",'Enviar Comentario');
     define("REPORT_ERROR",'Informar Error');
@@ -671,52 +687,65 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
 
     define("REMOVE_ACCOUNT", "Eliminar cuenta");
     define("REMOVE_ACCOUNT_DESCRIPTION", '
-<p>Usted solicitó la exclusión de su cuenta en los Servicios Personalizados de Información - Mi BVS. Al excluirla usted perderá las informaciones relacionadas a su perfil, sus colecciones de documentos, perfiles de interés y demás contenidos de Mi BVS. Esta acción es irreversible.</p>
-<p>Si está seguro de que desea eliminar su usuario, por favor contáctenos rápidamente por el motivo de dejar de utilizar Mi BVS.</p>'
+<p>Usted solicitó la exclusión de su cuenta en los Servicios Personalizados de Información - MiBVS. Al excluirla usted perderá las informaciones relacionadas a su perfil, sus colecciones de documentos, perfiles de interés y demás contenidos de MiBVS. Esta acción es irreversible.</p>
+<p>Si está seguro de que desea eliminar su usuario, por favor contáctenos rápidamente por el motivo de dejar de utilizar MiBVS.</p>'
 );
-    define("REMOVE_ACCOUNT_REASON", '<strong>Motivo de la exclusión (obligatorio)</strong>');
-    define("REMOVE_ACCOUNT_OPTION_A", "No me siento seguro en Mi BVS");
-    define("REMOVE_ACCOUNT_OPTION_B", "No creo que Mi BVS sea útil");
+    define("REMOVE_ACCOUNT_REASON", '<b>Motivo de la exclusión (obligatorio)</b><br /><br />');
+    define("REMOVE_ACCOUNT_OPTION_A", "No me siento seguro en MiBVS");
+    define("REMOVE_ACCOUNT_OPTION_B", "No creo que MiBVS sea útil");
     define("REMOVE_ACCOUNT_OPTION_C", "Mi cuenta ha sido invadida");
-    define("REMOVE_ACCOUNT_OPTION_D", "No sé utilizar Mi BVS");
-    define("REMOVE_ACCOUNT_OPTION_E", "Tengo otra cuenta en Mi BVS");
-    define("REMOVE_ACCOUNT_OPTION_F", "Recibo muchos correos electrónicos de Mi BVS");
+    define("REMOVE_ACCOUNT_OPTION_D", "No sé utilizar MiBVS");
+    define("REMOVE_ACCOUNT_OPTION_E", "Tengo otra cuenta en MiBVS");
+    define("REMOVE_ACCOUNT_OPTION_F", "Recibo muchos correos electrónicos de MiBVS");
     define("REMOVE_ACCOUNT_OPTION_G", "Tengo una preocupación por la privacidad");
     define("REMOVE_ACCOUNT_OPTION_H", "Otro");
-    define("REMOVE_ACCOUNT_DETAILS", '<p>Dé más detalles sobre el motivo de su salida (opcional)</p>');
+    define("REMOVE_ACCOUNT_DETAILS", 'Dé más detalles sobre el motivo de su salida (opcional)');
     define("REMOVE_ACCOUNT_POPUP", '
 <p>Usted está a punto de eliminar permanentemente su cuenta. ¿Está seguro?</p>
-<p>En caso afirmativo, simplemente haga clic en la opción siguiente.</p>
 ');
     define('BUTTON_DELETE', 'Borrar Cuenta');
     define("USER_REMOVE_ACCOUNT", "<b>Su cuenta se ha eliminado.</b>");
     define("USER_REMOVE_ACCOUNT_ERROR", "<b>ERROR: No se pudo quitar su cuenta.</b>");
     define('DELETE_ACCOUNT_REQUEST', 'Solicitar la eliminación de la cuenta');
+    define('WHAT_IS_IT','¿Qué es?');
+    define('WHAT_IS_IT_DESC','
+<h4>¿Qué es?</h4>
+
+<b>ORCID</b>
+<p>ORCID es un código alfanumérico no patentado para identificar de manera exclusiva a científicos y otros autores y colaboradores académicos.</p>
+
+<b>ResearcherID</b>
+<p>O ResearcherID es un identificador único que permite a los investigadores administrar sus listas de publicaciones, rastrear sus recuentos de citas y h-index, y evitar la identificación errónea del autor. Además, su información de ResearcherID se integra con Web of Science y ORCiD, lo que le permite reclamar y mostrar sus publicaciones desde una sola cuenta.</p>
+');
 }
 
 if($lang == 'en'){
     /* tela de cadastro do usuário*/
-    define("MY_VHL",'My VHL');
+    define("MY_VHL",'MyVHL');
     define("SERVPLAT",'Service Platform');
     define('BIREME','BIREME | PAHO | WHO');
+    define("PROFILE",'Profile');
+    define("CONFIGURATIONS",'Settings');
     define('BUTTON_NEW_USER','Send');
     define('BUTTON_CANCEL','Cancel');
     define('BUTTON_CONTINUE','Continue');
     define('BUTTON_CLOSE','Close');
     define('BUTTON_SEND','Send');
     define("BUTTON_UPDATE_USER","Update");
+    define('BUTTON_CONFIRM','Confirm');
     define('BVSSIGLA','VHL');
     define('BVS','VHL and SciELO Passport');
     define('CONTACT_FORM','Contact form');
+    define('CHOOSE_GENDER','choose');
     define('CHOOSE_DEGREE','choose');
     define('CHOOSE_PROFESSIONAL_AREA','choose');
     define('CHOOSE_COUNTRY','choose');
     define('DEGREE','Degree');
     define('EMAIL_SENT','E-mail sent.');
-    define("EMAIL_FROMNAME",'My VHL');
-    define("NEW_PASSWORD_EMAIL_SUBJECT",'Custom Services My VHL: Password');
-    define("CONFIRM_USER_EMAIL_SUBJECT",'Custom Services My VHL: Register Confirmation - ');
-    define("CONFIRM_NEW_PASS_SUBJECT",'Custom Services My VHL: Password Submit Confirmation - ');
+    define("EMAIL_FROMNAME",'MyVHL');
+    define("NEW_PASSWORD_EMAIL_SUBJECT",'Custom Services MyVHL: Password');
+    define("CONFIRM_USER_EMAIL_SUBJECT",'Custom Services MyVHL: Register Confirmation - ');
+    define("CONFIRM_NEW_PASS_SUBJECT",'Custom Services MyVHL: Password Submit Confirmation - ');
     define('PROFESSIONAL_AREA','Professional area');
     define('FIELD_CONTACT_NAME','name');
     define('FIELD_CONTACT_EMAIL','e-mail');
@@ -741,13 +770,13 @@ if($lang == 'en'){
     define('FIELD_AVATAR','Profile picture');
     define("FREE_REGISTRY","Register for free!");
     define("FREE_REGISTRY_MESSAGE",'
-<p>My VHL is a free service available to any user through their Facebook, Google, BIREME Account or the My VHL service itself.</p>
-<p>Users who prefer to use the My VHL service with their Facebook or Google account do NOT need to create a new user account in My VHL.</p>
-<p>BIREME Account is a system of account management of users of BIREME Network Cooperating Centers. These users do NOT need to create a new user account in My VHL.<p/>
-<p>To create a new My VHL user account, you must complete with personal data and agree to the terms of use and privacy policy. <a href="javascript:;" class="decor" data-toggle="modal" data-target=".bs-modal-lg" style="text-decoration: underline;">Know more</a></p>
+<p>MyVHL is a free service available to any user through their Facebook, Google, BIREME Account or the MyVHL service itself.</p>
+<p>Users who prefer to use the MyVHL service with their Facebook or Google account do NOT need to create a new user account in MyVHL.</p>
+<p>BIREME Account is a system of account management of users of BIREME Network Cooperating Centers. These users do NOT need to create a new user account in MyVHL.<p/>
+<p>To create a new MyVHL user account, you must complete with personal data and agree to the terms of use and privacy policy.</p>
 ');
     define("MY_VHL_DESCRIPTION",'
-<p>My VHL is a free service that stores information and user preferences to offer customized services and facilities such as:</p>
+<p>MyVHL is a free service that stores information and user preferences to offer customized services and facilities such as:</p>
 <ul>
     <li>Creation of collections of documents from the results of searches processed in the VHL databases.</li>
     <li>Documents found in the VHL databases from the keywords indicated for Topics of Interest.</li>
@@ -755,18 +784,28 @@ if($lang == 'en'){
     <li>History of searches performed on the VHL whenever the user is logged into the service.</li>
     <li>List of favorite links indicated by the user allowing quick and direct access to sites of interest.</li>
 </ul>
-<p>My VHL is available to any user through their Facebook, Google, BIREME Account or the My VHL service itself.</p>
-<p>BIREME Account is a system of account management of users of BIREME Network Cooperating Centers that access the FI-Admin system, among other systems. This same user account is enabled for the My VHL service.</p>
-<p>If you prefer a separate account for the My VHL service, you must make your free registration as a user, and accept the terms of use and privacy policy.</p>
+<p>MyVHL is available to any user through their Facebook, Google, BIREME Account or the MyVHL service itself.</p>
+<p>BIREME Account is a system of account management of users of BIREME Network Cooperating Centers that access the FI-Admin system, among other systems. This same user account is enabled for the MyVHL service.</p>
+<p>If you prefer a separate account for the MyVHL service, you must make your free registration as a user, and accept the terms of use and privacy policy.</p>
 ');
-    define('MY_VHL_ENTRY','Already registered in My VHL?');
+    define('MY_VHL_ENTRY','Already registered in MyVHL?');
     define('OR_ENTER_WITH','or sign in with');
     define('ENTER','Sign in');
-    define("FOOTER_MESSAGE",'<p><strong>BIREME - PAHO - WHO</strong><br/>
+    define("FOOTER_MESSAGE",'
+<p><strong>BIREME - PAHO - WHO</strong><br/>
 Latin American and Caribbean Center on Health Sciences Information<br />
-Knowledge Management, Bioethics and Research Area - KBR<br />
+Department of Evidence and Intelligence for Action in Health – EIH<br />
 Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Phone: (55 11) 5576-9800 | Fax: (55 11) 5575-8868<br />
-<a href="http://new.paho.org/bireme" title="My VHL">http://www.paho.org/bireme</a><br /></p>');
+<a href="http://new.paho.org/bireme" title="MyVHL">http://www.paho.org/bireme</a><br /></p>
+');
+    define("FOOTER_MESSAGE_DEFAULT",'
+<br /><b>BIREME - PAHO - WHO</b><br />
+Latin American and Caribbean Center on Health Sciences Information<br />
+Department of Evidence and Intelligence for Action in Health – EIH<br />
+Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Phone: (55 11) 5576-9800 | Fax: (55 11) 5575-8868<br />
+<a href="http://new.paho.org/bireme" title="MyVHL" target="_blank">http://www.paho.org/bireme</a><br />
+<b><a href="http://politicas.bireme.org/terminos/en/" target="_blank">Terms and Conditions of Use</a> | <a href="http://politicas.bireme.org/privacidad/en/" target="_blank">Privacy Policy</a></b>
+');
     define('LEARN_MORE','Learn more');
     define('PERSONAL_DATA','Personal Data');
     define('REGISTER_NEW_USER_TITLE','New User Registration');
@@ -778,11 +817,11 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Phone: (55 11) 5576-980
     define("USER_EXISTS","<b>User already exists</b><br />Try to log in with this user, if you have no success trying to authenticate with this user and don\'t remember the password,<br />use the link <b>\"forgot my password\"</b> in the user login box.");
     define("USER_ADD_ERROR","<b>Registry error</b>");
     define("USER_ADD_SUCCESS","<b>User registration successful!</b>");
-    define("USER_SEND_CONFIRMATION","<b>User registration successful!</b><br />We sent a confirmation link to your account for your e-mail.<br />If it takes too long to get there, check out your SPAM box and junk mail.<br />Please click on the link sent to activate your account in My VHL.");
+    define("USER_SEND_CONFIRMATION","<b>User registration successful!</b><br />We sent a confirmation link to your account for your e-mail.<br />If it takes too long to get there, check out your SPAM box and junk mail.<br />Please click on the link sent to activate your account in MyVHL.");
     define("USER_UPDATED",'User successfully updated!');
     define("USER_PASSWORD_UPDATE",'Password successfully updated!');
     define("USER_UPDATE_ERROR",'<b>Problems updating user data</b><br />The applications could not update the user data. Please try again later.');
-    define("USER_CONFIRMED",'<b>Your account has been successfully confirmed!</b><br />Please access your profile in My VHL and complete your registration.<br />Soon, you will receive an email with your My VHL access password.<br />If it takes too long to get there, check out your SPAM box and junk mail.');
+    define("USER_CONFIRMED",'<b>Your account has been successfully confirmed!</b><br />Please access your profile in MyVHL and complete your registration.<br />Soon, you will receive an email with your MyVHL access password.<br />If it takes too long to get there, check out your SPAM box and junk mail.');
     define("USER_ADD_CONFIRMED",'<b>User registration was successful!</b><br />Your user password was sent by e-mail.<br />If it takes too long to get there, check out your SPAM box and junk mail.');
     define("USER_CONFIRMATION_ERROR",'<b>ERROR: Account verification failed.</b>');
     define("VALMSG_G_EMPTY","Mandatory field.");
@@ -793,15 +832,15 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Phone: (55 11) 5576-980
     define("NEWPASS_INVALID_PASSWORD",'Invalid password');
     define("NEWPASS_DOMAIN_NOT_PERMITTED",'Action not allowed for this user.');    
     define("NEWPASS_PASSWORD_SENT",'A new password was sent to your e-mail.<br />If it takes too long to get there, check out your SPAM box and junk mail.');
-    define("NEWPASS_SEND_CONFIRMATION","We send an email with a link to confirm the sending of a new password.<br />If it takes too long to get there, check out your SPAM box and junk mail.<br />Please click the link sent to receive your new My VHL user password.");
+    define("NEWPASS_SEND_CONFIRMATION","We send an email with a link to confirm the sending of a new password.<br />If it takes too long to get there, check out your SPAM box and junk mail.<br />Please click the link sent to receive your new MyVHL user password.");
     define("NOTICE",'Notice to the users');
     define("NOTICE_MESSAGE",'');
-    define("UPDATE_INFO",'<b>Please review your data in the form below to continue using the My VHL.</b>');
-    define("ACCEPT_MAIL",'I would like to receive emails with information from My VHL.');
+    define("UPDATE_INFO",'<b>Please review your data in the form below to continue using the MyVHL.</b>');
+    define("ACCEPT_MAIL",'I would like to receive emails with information from MyVHL.');
     define("UNSUBSCRIBE_MAIL_SUCCESS",'Your email settings have been updated.');
     define("UNSUBSCRIBE_MAIL_ERROR",'<b>ERROR: Could not cancel email sending.</b>');
     define("TERMS",'Terms of use');
-    define("TERMS_AGREEMENT_MESSAGE",'I agree to the <a data-toggle="modal" data-target=".bs-terms-modal-lg" style="cursor: pointer; text-decoration: underline;">Terms of Use</a> and have read the <a data-toggle="modal" data-target=".bs-policy-modal-lg" style="cursor: pointer; text-decoration: underline;">Privacy Policy</a> of My VHL');
+    define("TERMS_AGREEMENT_MESSAGE",'I agree to the <a href="http://politicas.bireme.org/terminos/en/" target="_blank">Terms of Use</a> and have read the <a href="http://politicas.bireme.org/privacidad/en/" target="_blank">Privacy Policy</a> of MyVHL');
     define("TERMS_MESSAGE",'
 <div class="terms">
 
@@ -888,7 +927,7 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Phone: (55 11) 5576-980
 
     <p style="text-decoration: underline;">Collection of information that allows identifying a person</p>
 
-    <p>If you register to access a product or service, such as My VHL Personalized Services and FI-Admin, at a BIREME/PAHO website, you will be asked to provide personal information such as your name, email address, institution to which you belong, country of origin, academic level, work field, sex, date of birth and social network data. This information is collected only with your knowledge and permission, and is maintained in BIREME/PAHO databases and lists of addresses.</p>
+    <p>If you register to access a product or service, such as MyVHL Personalized Services and FI-Admin, at a BIREME/PAHO website, you will be asked to provide personal information such as your name, email address, institution to which you belong, country of origin, academic level, work field, sex, date of birth and social network data. This information is collected only with your knowledge and permission, and is maintained in BIREME/PAHO databases and lists of addresses.</p>
 
     <p>For certain BIREME/PAHO websites, registering or providing certain personal information causes a cookie* to be installed on your computer, which will allow BIREME/PAHO to remember your information the next time you access the website, so that you do not have to reenter it, and it helps us to provide you with a better service.</p>
 
@@ -912,7 +951,7 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Phone: (55 11) 5576-980
 
     <h4>What happens if I do not want to provide personal information?</h4>
 
-    <p>Providing personal information on BIREME/PAHO websites is voluntary. If you choose not to provide personal information, you can still consult and use BIREME/PAHO\'s websites, but you will not be able to use certain options such as accessing the My VHL Personalized Services or managing BVS information sources through the Web FI-Admin system.</p>
+    <p>Providing personal information on BIREME/PAHO websites is voluntary. If you choose not to provide personal information, you can still consult and use BIREME/PAHO\'s websites, but you will not be able to use certain options such as accessing the MyVHL Personalized Services or managing BVS information sources through the Web FI-Admin system.</p>
 
     <p style="text-decoration: underline;">Option to modify information or request to have it deleted</p>
 
@@ -950,7 +989,7 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Phone: (55 11) 5576-980
 
     define("DASHBOARD",'My Contents');
     define("INDEX",'home');
-    define("HOMEPAGE",'Overview');
+    define("HOMEPAGE",'Home');
     define("WELCOME",'Welcome');
     define("USERS_SERVICES",'Custom Services');
     define("OLA",'Hello');
@@ -962,9 +1001,9 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Phone: (55 11) 5576-980
     define("FORGOT_PASSWORD",'Forgot your password?');
     define("FORGOT_MY_PASSWORD",'forgot my password');
     define("FORGOT_PASSWORD_MESSAGE",'
-<p>My VHL is freely available to any user through their Facebook, Google, BIREME Account or the My VHL service itself.</p>
-<p>This form is unique for recovering registered user password from the My VHL service.</p>
-<p>Enter your e-mail or My VHL Service User to receive an e-mail with your password.</p>
+<p>MyVHL is freely available to any user through their Facebook, Google, BIREME Account or the MyVHL service itself.</p>
+<p>This form is unique for recovering registered user password from the MyVHL service.</p>
+<p>Enter your e-mail or MyVHL Service User to receive an e-mail with your password.</p>
 ');
     define("CHANGE_PASSWORD",'Change Password');
     define("RECOVER_PASSWORD",'Recover Password');
@@ -991,10 +1030,11 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Phone: (55 11) 5576-980
     define("REMOVE_LINK",'Link deleted');
     define("QUERY",'Query');
     define("VIEW",'View');
-    define("RSS",'RSS');
+    define("RSS",'Feed RSS');
     define("SEARCH_WIDGET",'VHL Search');
     define("PROFILE_WIDGET",'Interest Topics');
     define("SHELF_WIDGET",'Favorite Documents');
+    define("TOUR",'Virtual Tour');
     define("START_TOUR",'Start Tour');
     define("LEAVE_COMMENT",'Leave Comment');
     define("REPORT_ERROR",'Report Error');
@@ -1002,27 +1042,36 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Phone: (55 11) 5576-980
 
     define("REMOVE_ACCOUNT", "Remove Account");
     define("REMOVE_ACCOUNT_DESCRIPTION", '
-<p>You have requested the deletion of your account from the Custom Information Services - My VHL. By deleting it you will lose the information related to your profile, your documents collection, interest topics and other contents of My VHL. This action is irreversible.</p>
-<p>If you are sure you want to delete your user, please tell us quickly why you should stop using My VHL.</p>
+<p>You have requested the deletion of your account from the Custom Information Services - MyVHL. By deleting it you will lose the information related to your profile, your documents collection, interest topics and other contents of MyVHL. This action is irreversible.</p>
+<p>If you are sure you want to delete your user, please tell us quickly why you should stop using MyVHL.</p>
 ');
-    define("REMOVE_ACCOUNT_REASON", '<strong>Exclusion reason (required)</strong>');
-    define("REMOVE_ACCOUNT_OPTION_A", "I do not feel secure in My VHL");
-    define("REMOVE_ACCOUNT_OPTION_B", "I do not think My VHL is useful");
+    define("REMOVE_ACCOUNT_REASON", '<b>Exclusion reason (required)</b><br /><br />');
+    define("REMOVE_ACCOUNT_OPTION_A", "I do not feel secure in MyVHL");
+    define("REMOVE_ACCOUNT_OPTION_B", "I do not think MyVHL is useful");
     define("REMOVE_ACCOUNT_OPTION_C", "My account has been hacked");
-    define("REMOVE_ACCOUNT_OPTION_D", "I do not know how to use My VHL");
-    define("REMOVE_ACCOUNT_OPTION_E", "I have another account in My VHL");
-    define("REMOVE_ACCOUNT_OPTION_F", "I receive many emails from My VHL");
+    define("REMOVE_ACCOUNT_OPTION_D", "I do not know how to use MyVHL");
+    define("REMOVE_ACCOUNT_OPTION_E", "I have another account in MyVHL");
+    define("REMOVE_ACCOUNT_OPTION_F", "I receive many emails from MyVHL");
     define("REMOVE_ACCOUNT_OPTION_G", "I have a privacy concern");
     define("REMOVE_ACCOUNT_OPTION_H", "Other");
-    define("REMOVE_ACCOUNT_DETAILS", '<p>Give more details about the reason for your exit (optional)</p>');
+    define("REMOVE_ACCOUNT_DETAILS", 'Give more details about the reason for your exit (optional)');
     define("REMOVE_ACCOUNT_POPUP", '
 <p>You are about to permanently delete your account. Are you sure?</p>
-<p>If yes, just click on the option below.</p>
 ');
     define('BUTTON_DELETE', 'Delete Account');
     define("USER_REMOVE_ACCOUNT", "<b>Your account has been removed.</b>");
     define("USER_REMOVE_ACCOUNT_ERROR", "<b>ERROR: Could not remove your account.</b>");
     define('DELETE_ACCOUNT_REQUEST', 'Request account exclusion');
+    define('WHAT_IS_IT','What is it?');
+    define('WHAT_IS_IT_DESC','
+<h4>What is it?</h4>
+
+<b>ORCID</b>
+<p>ORCID is a non-proprietary alphanumeric code to uniquely identify scientists and other academic authors and contributors.</p>
+
+<b>ResearcherID</b>
+<p>O ResearcherID is a unique identifier that allows researchers to manage their publication lists, track their citation counts and h-index, and avoid misidentification of the author. In addition, your ResearcherID information integrates with Web of Science and ORCiD, enabling you to claim and display your publications from a single account.</p>
+');
 }
 
 ?>

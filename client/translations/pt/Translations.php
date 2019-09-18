@@ -9,9 +9,9 @@ class Translations {
 
     public function translations(){
     // Terms of authentication pages
-        self::$trans["authentication"]["MY_VHL"] = 'Minha BVS';
+        self::$trans["authentication"]["MY_VHL"] = 'MinhaBVS';
         self::$trans["authentication"]["MY_VHL_SUMMARY"] = '
-<p>Minha BVS é um serviço gratuito que guarda informações e preferências do usuário para oferecer serviços personalizados tais como:</p>
+<p>MinhaBVS é um serviço gratuito que guarda informações e preferências do usuário para oferecer serviços personalizados tais como:</p>
 <ul>
     <li>Criação de coleções de documentos selecionados da BVS</li>
     <li>Definição de temas de interesse</li>
@@ -19,11 +19,11 @@ class Translations {
     <li>Histórico de buscas realizadas na BVS</li>
     <li>Lista de links favoritos</li>
 </ul>
-<p>Minha BVS está disponível para qualquer usuário por meio de sua conta
-Facebook, Google, BIREME Account ou do próprio serviço Minha BVS. <a href="javascript:;" class="decor" data-toggle="modal" data-target=".bs-modal-lg">Saiba mais</a></p>
+<p>MinhaBVS está disponível para qualquer usuário por meio de sua conta
+Facebook, Google, BIREME Account ou do próprio serviço MinhaBVS. <a href="javascript:;" class="decor" data-toggle="modal" data-target=".bs-modal-lg">Saiba mais</a></p>
 ';
         self::$trans["authentication"]["MY_VHL_DESCRIPTION"] = '
-<p>Minha BVS é um serviço gratuito que guarda informações e preferências do
+<p>MinhaBVS é um serviço gratuito que guarda informações e preferências do
 usuário para oferecer serviços personalizados e facilidades tais como:</p>
 <ul class="listDefault">
     <li>Criação de coleções de documentos a partir de resultado de buscas processadas nas bases de dados da BVS.</li>
@@ -32,15 +32,15 @@ usuário para oferecer serviços personalizados e facilidades tais como:</p>
     <li>Histórico de buscas realizadas na BVS sempre que o usuário estiver logado no serviço.</li>
     <li>Lista de links favoritos indicados pelo usuário permitindo acesso rápido e direto a sites de seu interesse.</li>
 </ul>
-<p>Minha BVS está disponível para qualquer usuário por meio de sua conta Facebook, Google, BIREME Account ou do próprio serviço Minha BVS.</p>
-<p>BIREME Account é um sistema de gestão de contas de usuários dos Centros Cooperantes da Rede BIREME que acessam o sistema FI-Admin, dentre outros sistemas. Esta mesma conta de usuário está habilitada para o serviço Minha BVS.</p>
-<p>Se o usuário prefere uma conta própria para o serviço Minha BVS, é necessário fazer seu registro gratuitamente como usuário, além de aceitar os termos de uso e política de privacidade.</p>
+<p>MinhaBVS está disponível para qualquer usuário por meio de sua conta Facebook, Google, BIREME Account ou do próprio serviço MinhaBVS.</p>
+<p>BIREME Account é um sistema de gestão de contas de usuários dos Centros Cooperantes da Rede BIREME que acessam o sistema FI-Admin, dentre outros sistemas. Esta mesma conta de usuário está habilitada para o serviço MinhaBVS.</p>
+<p>Se o usuário prefere uma conta própria para o serviço MinhaBVS, é necessário fazer seu registro gratuitamente como usuário, além de aceitar os termos de uso e política de privacidade.</p>
 ';
         self::$trans["authentication"]["NOTICE"] = 'É novo por aqui?';
         self::$trans["authentication"]["BUTTON_CLOSE"] = 'Fechar';
         self::$trans["authentication"]["RECOVER_ACCOUNTS"] = 'Se você é um Centro Cooperante da Rede BIREME, tem conta no BIREME Accounts, mas esqueceu sua senha...';
         self::$trans["authentication"]["RECOVER_ACCOUNTS_LINK"] = 'Redefinir minha senha';
-        self::$trans["authentication"]["RECOVER_PASSWORD"] = 'Se você é um usuário já registrado no serviço Minha BVS, mas esqueceu sua senha...';
+        self::$trans["authentication"]["RECOVER_PASSWORD"] = 'Se você é um usuário já registrado no serviço MinhaBVS, mas esqueceu sua senha...';
         self::$trans["authentication"]["RECOVER_PASSWORD_LINK"] = 'Redefinir minha senha';
         self::$trans["authentication"]["TITLE"] = 'Autenticação de Usuários';
         self::$trans["authentication"]["NOREGISTRY"] = 'Registro de novos usuários indisponível temporariamente';
@@ -77,8 +77,8 @@ usuário para oferecer serviços personalizados e facilidades tais como:</p>
         self::$trans["authentication"]["ACCESS_DENIED"] = 'acesso negado';
         self::$trans["authentication"]["OR"] = 'OU';
         self::$trans["authentication"]["LOGIN_WITH"] = 'entrar com';
-        self::$trans["authentication"]["LOGIN_MESSAGE"] = 'FAÇA O LOGIN NA MINHA BVS';
-        self::$trans["authentication"]["LOGIN_ACCESS_MESSAGE"] = 'Acesse diretamente na Minha BVS';
+        self::$trans["authentication"]["LOGIN_MESSAGE"] = 'FAÇA O LOGIN NA MinhaBVS';
+        self::$trans["authentication"]["LOGIN_ACCESS_MESSAGE"] = 'Acesse diretamente na MinhaBVS';
         self::$trans["authentication"]["REMEMBER_ME"] = 'Lembrar-me';
 
     // Terms of the Request Authentication Page
@@ -95,7 +95,7 @@ usuário para oferecer serviços personalizados e facilidades tais como:</p>
     // Terms of the menu pages
         self::$trans["menu"]["VHL_PORTAL"] = 'Portal Regional da BVS';
         self::$trans["menu"]["FEATURE"] = 'Home';
-        self::$trans["menu"]["MY_VHL"] = 'Minha BVS';
+        self::$trans["menu"]["MY_VHL"] = 'MinhaBVS';
         self::$trans["menu"]["SERVPLAT"] = 'Plataforma de Serviços';
         self::$trans["menu"]["COLLAPSE_MENU"] = 'Recolher Menu';
         self::$trans["menu"]["DASHBOARD"] = 'Meus Conteúdos';
@@ -155,12 +155,14 @@ usuário para oferecer serviços personalizados e facilidades tais como:</p>
         self::$trans["menu"]["MORE"] = 'Mais';
         self::$trans["menu"]["PROFILE"] = 'Perfil';
         self::$trans["menu"]["CONFIGURATIONS"] = 'Configurações';
+        self::$trans["menu"]["SUGGESTIONS_NOT_FOUND"] = 'Nenhuma sugestão encontrada';
+        self::$trans["menu"]["EVENTS_NOT_FOUND"] = 'Nenhum evento encontrado';
         self::$trans["menu"]["FOOTER_MESSAGE"] = '
-<p><strong>BIREME - OPAS - OMS</strong><br/>
+<p><strong>BIREME - OPAS - OMS</strong><br />
 Centro Latino-Americano e do Caribe de Informação em Ciências da Saúde<br />
 Departamento de Evidência e Inteligência para a Ação em Saúde – EIH<br />
 Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 | Fax: (55 11) 5575-8868<br />
-<a href="http://new.paho.org/bireme" title="Minha BVS">http://www.paho.org/bireme/</a><br /><br />
+<a href="http://new.paho.org/bireme" title="MinhaBVS">http://www.paho.org/bireme/</a><br /><br />
 <strong><a href="http://politicas.bireme.org/terminos/pt/">Termos e Condições de Uso</a> | <a href="http://politicas.bireme.org/privacidad/pt/">Políticas de Privacidade</a></strong></p>
 ';
         self::$trans["menu"]["FOOTER_MESSAGE_DEFAULT"] = '
@@ -168,7 +170,7 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
 Centro Latino-Americano e do Caribe de Informação em Ciências da Saúde<br />
 Departamento de Evidência e Inteligência para a Ação em Saúde – EIH<br />
 Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 | Fax: (55 11) 5575-8868<br />
-<a href="http://new.paho.org/bireme" title="Minha BVS" target="_blank">http://www.paho.org/bireme/</a><br />
+<a href="http://new.paho.org/bireme" title="MinhaBVS" target="_blank">http://www.paho.org/bireme/</a><br />
 <b><a href="http://politicas.bireme.org/terminos/pt/" target="_blank">Termos e Condições de Uso</a> | <a href="http://politicas.bireme.org/privacidad/pt/" target="_blank">Políticas de Privacidade</a></b>
 ';
 
@@ -294,8 +296,8 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
         self::$trans["mydocuments"]["BULK_MOVE_DOCS"] = 'Mover';
         self::$trans["mydocuments"]["SHARE_COLLECTION"] = 'compartilhar coleção';
         self::$trans["mydocuments"]["SHARED_COLLECTION"] = 'coleção compartilhada';
-        self::$trans["mydocuments"]["SHARED_COLLECTION_DESC"] = "Coleção disponível na <a href='http://platserv.bvsalud.org/client/controller/authentication/?lang=pt'>Minha BVS<a/>.";
-        self::$trans["mydocuments"]["INVITE"] = 'Ainda não tem conta na Minha BVS? <a href="/client/controller/authentication/?lang=pt" target="_blank">Acesse nosso site e registre-se!';
+        self::$trans["mydocuments"]["SHARED_COLLECTION_DESC"] = "Coleção disponível na <a href='http://platserv.bvsalud.org/client/controller/authentication/?lang=pt'>MinhaBVS<a/>.";
+        self::$trans["mydocuments"]["INVITE"] = 'Ainda não tem conta na MinhaBVS? <a href="/client/controller/authentication/?lang=pt" target="_blank">Acesse nosso site e registre-se!';
         self::$trans["mydocuments"]["BUTTON_CLOSE"] = 'Fechar';
         self::$trans["mydocuments"]["CREATED_BY"] = 'Criado por:';
         self::$trans["mydocuments"]["PUBLISHED_IN"] = 'Publicado em:';
@@ -439,8 +441,8 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
 
     // Terms of step-by-step guide
         self::$trans["tour"]["TOUR_EXAMPLE"] = '(Exemplo exclusivo do tour)';
-        self::$trans["tour"]["INTRO"] = 'Bem-vindo ao Tour da <b>Minha BVS</b>. Conheça as funcionalidades deste serviço personalizado navegando pelos botões de Avançar e Voltar. A qualquer momento você poderá sair do Tour e, se desejar, reiniciá-lo por meio menu do seu perfil.';
-        self::$trans["tour"]["FIRST"] = 'A <b>Minha BVS</b> registra as informações dos usuários e as preferências de pesquisas realizadas nas bases de dados da Rede BVS';
+        self::$trans["tour"]["INTRO"] = 'Bem-vindo ao Tour da <b>MinhaBVS</b>. Conheça as funcionalidades deste serviço personalizado navegando pelos botões de Avançar e Voltar. A qualquer momento você poderá sair do Tour e, se desejar, reiniciá-lo por meio menu do seu perfil.';
+        self::$trans["tour"]["FIRST"] = 'A <b>MinhaBVS</b> registra as informações dos usuários e as preferências de pesquisas realizadas nas bases de dados da Rede BVS';
         self::$trans["tour"]["STEP_1"] = 'Foto do usuário quando logado pelas Redes Sociais';
         self::$trans["tour"]["STEP_2"] = 'Seus conteúdos são organizados por este Menu';
         self::$trans["tour"]["STEP_3"] = '<b>Visão Geral</b><br />Apresenta a Home do serviço com um resumo de suas ações realizadas';
@@ -467,7 +469,7 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
         self::$trans["tour"]["STEP_22"] = 'Crie temas e defina palavras-chave para receber documentos relacionados da BVS';
         self::$trans["tour"]["STEP_23"] = 'Clique nos seus temas de interesse para visualizar documentos recuperados da BVS';
 
-        self::$trans["tour"]["STEP_24"] = '<b>Histórico de busca na BVS</b><br />Armazena suas buscas realizadas na BVS sempre que estiver logado na Minha BVS';
+        self::$trans["tour"]["STEP_24"] = '<b>Histórico de busca na BVS</b><br />Armazena suas buscas realizadas na BVS sempre que estiver logado na MinhaBVS';
         self::$trans["tour"]["STEP_25"] = 'Lista das últimas expressões de buscas realizadas na BVS';
         self::$trans["tour"]["STEP_26"] = 'Termos que foram utilizados na busca';
         self::$trans["tour"]["STEP_27"] = 'Filtros que foram aplicados na busca';
@@ -486,7 +488,7 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
         self::$trans["tour"]["STEP_36"] = 'Clique nesse botão para adicionar uma nova RSS';
         self::$trans["tour"]["STEP_37"] = 'Visualize a lista dos RSS cadastrados';
         self::$trans["tour"]["STEP_38"] = 'Lista dos últimos documentos recuperados via RSS do seu portal favorito. Você pode: adicionar, editar ou excluir um RSS, adicionar aos favoritos ou ver documentos relacionados.';
-        self::$trans["tour"]["LAST"] = 'Parabéns! Você concluiu o Tour e já sabe como funciona os serviços personalizados da <b>Minha BVS</b>. Use e divulgue este serviço. Envie suas dúvidas e sugestões para o <a style="text-decoration: underline;" href="http://feedback.bireme.org/feedback/?application=my-vhl&version=2.10-77&site=servplat&lang='.$_SESSION['lang'].'">Serviço de Feedback</a>';
+        self::$trans["tour"]["LAST"] = 'Parabéns! Você concluiu o Tour e já sabe como funciona os serviços personalizados da <b>MinhaBVS</b>. Use e divulgue este serviço. Envie suas dúvidas e sugestões para o <a style="text-decoration: underline;" href="http://feedback.bireme.org/feedback/?application=my-vhl&version=2.10-77&site=servplat&lang='.$_SESSION['lang'].'">Serviço de Feedback</a>';
     }
 
 /**

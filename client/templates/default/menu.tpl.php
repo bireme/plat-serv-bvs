@@ -110,7 +110,7 @@
 										<li><a href="<?php echo $docs['docURL'] ?>" target="_blank"><?php echo $docs['title'] ?></a></li>
 									<?php endforeach; ?>
 								<?php else : ?>
-									Nenhum sugestão encontrada
+									<?php echo $trans->getTrans($_REQUEST["action"],'SUGGESTIONS_NOT_FOUND'); ?>
 								<?php endif; ?>
 							</ul>
 						</div>
@@ -134,7 +134,7 @@
 									</article>
 								<?php endforeach; ?>
 							<?php else : ?>
-								Nenhum evento encontrado
+								<?php echo $trans->getTrans($_REQUEST["action"],'EVENTS_NOT_FOUND'); ?>
 							<?php endif; ?>
 						</div>
 						<div class="clearfix showMenor1200"></div>

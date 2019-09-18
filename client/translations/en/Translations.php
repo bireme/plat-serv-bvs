@@ -9,9 +9,9 @@ class Translations {
 
     public function translations(){
     // Terms of authentication pages
-        self::$trans["authentication"]["MY_VHL"] = 'My VHL';
+        self::$trans["authentication"]["MY_VHL"] = 'MyVHL';
         self::$trans["authentication"]["MY_VHL_SUMMARY"] = '
-<p>My VHL is a free service that stores information and user preferences to offer customized services such as:</p>
+<p>MyVHL is a free service that stores information and user preferences to offer customized services such as:</p>
 <ul>
     <li>Creation of collections of documents selected from the VHL</li>
     <li>Definition of topics of interest to receive alerts of new documents</li>
@@ -19,26 +19,26 @@ class Translations {
     <li>VHL search history</li>
     <li>List of favorite links</li>
 </ul>
-<p>My VHL is available to any user through their Facebook, Google, BIREME Account or through the My VHL service itself. <a href="javascript:;" class="decor" data-toggle="modal" data-target=".bs-modal-lg">Know more</a></p>
+<p>MyVHL is available to any user through their Facebook, Google, BIREME Account or through the MyVHL service itself. <a href="javascript:;" class="decor" data-toggle="modal" data-target=".bs-modal-lg">Know more</a></p>
 ';
         self::$trans["authentication"]["MY_VHL_DESCRIPTION"] = '
-<p>My VHL is a free service that stores information and user preferences to offer customized services and facilities such as:</p>
-<ul>
+<p>MyVHL is a free service that stores information and user preferences to offer customized services and facilities such as:</p>
+<ul class="listDefault">
     <li>Creation of collections of documents from the results of searches processed in the VHL databases.</li>
     <li>Documents found in the VHL databases from the keywords indicated for Topics of Interest.</li>
     <li>User-authored publications retrieved from multiple sources by considering the ORCID number entered in the User Profile.</li>
     <li>History of searches performed on the VHL whenever the user is logged into the service.</li>
     <li>List of favorite links indicated by the user allowing quick and direct access to sites of interest.</li>
 </ul>
-<p>My VHL is available to any user through their Facebook, Google, BIREME Account or the My VHL service itself.</p>
-<p>BIREME Account is a system of account management of users of BIREME Network Cooperating Centers that access the FI-Admin system, among other systems. This same user account is enabled for the My VHL service.</p>
-<p>If you prefer a separate account for the My VHL service, you must make your free registration as a user, and accept the terms of use and privacy policy.</p>
+<p>MyVHL is available to any user through their Facebook, Google, BIREME Account or the MyVHL service itself.</p>
+<p>BIREME Account is a system of account management of users of BIREME Network Cooperating Centers that access the FI-Admin system, among other systems. This same user account is enabled for the MyVHL service.</p>
+<p>If you prefer a separate account for the MyVHL service, you must make your free registration as a user, and accept the terms of use and privacy policy.</p>
 ';
         self::$trans["authentication"]["NOTICE"] = 'Are you new here?';
         self::$trans["authentication"]["BUTTON_CLOSE"] = 'Close';
         self::$trans["authentication"]["RECOVER_ACCOUNTS"] = 'If you are a cooperating center of the BIREME Network, have an account with BIREME Accounts, but forgot your password...';
         self::$trans["authentication"]["RECOVER_ACCOUNTS_LINK"] = 'Recover your password';
-        self::$trans["authentication"]["RECOVER_PASSWORD"] = 'If you are a user already registered in the My VHL service, but have forgotten your password...';
+        self::$trans["authentication"]["RECOVER_PASSWORD"] = 'If you are a user already registered in the MyVHL service, but have forgotten your password...';
         self::$trans["authentication"]["RECOVER_PASSWORD_LINK"] = 'Recover your password';
         self::$trans["authentication"]["TITLE"] = 'User Authentication';
         self::$trans["authentication"]["NOREGISTRY"] = 'New users registration temporarily unavailable';
@@ -46,8 +46,8 @@ class Translations {
         self::$trans["authentication"]["HOME"] = 'home';
         self::$trans["authentication"]["LOGIN_FIELD"] = 'e-mail or user';
         self::$trans["authentication"]["LOGIN"] = 'Sign in';
-        self::$trans["authentication"]["USER"] = 'user';
-        self::$trans["authentication"]["PASSWORD"] = 'password';
+        self::$trans["authentication"]["USER"] = 'User';
+        self::$trans["authentication"]["PASSWORD"] = 'Password';
         self::$trans["authentication"]["PRESS_HERE"] = 'click here';
         self::$trans["authentication"]["INVALID_LOGIN"] = 'password/user not valid';
         self::$trans["authentication"]["INVALID_LOGIN_MAIL"] = '
@@ -74,10 +74,11 @@ class Translations {
         self::$trans["authentication"]["HELPLOGINMESSAGE"] = '';
         self::$trans["authentication"]["KNOWMORE"] = 'Learn more';
         self::$trans["authentication"]["ACCESS_DENIED"] = 'Access denied';
-        self::$trans["authentication"]["OR"] = 'or';
+        self::$trans["authentication"]["OR"] = 'OR';
         self::$trans["authentication"]["LOGIN_WITH"] = 'Sign in with';
-        self::$trans["authentication"]["LOGIN_MESSAGE"] = 'Sign in to My VHL';
-        self::$trans["authentication"]["LOGIN_ACCESS_MESSAGE"] = 'Access directly to My VHL';
+        self::$trans["authentication"]["LOGIN_MESSAGE"] = 'SIGN IN TO MyVHL';
+        self::$trans["authentication"]["LOGIN_ACCESS_MESSAGE"] = 'Access directly to MyVHL';
+        self::$trans["authentication"]["REMEMBER_ME"] = 'Remember me';
 
     // Terms of the Request Authentication Page
         self::$trans["requestauth"]["LOGIN"] = 'Sign in';
@@ -92,12 +93,12 @@ class Translations {
 
     // Terms of the menu pages
         self::$trans["menu"]["VHL_PORTAL"] = 'VHL Regional Portal';
-        self::$trans["menu"]["FEATURE"] = 'Overview';
-        self::$trans["menu"]["MY_VHL"] = 'My VHL';
+        self::$trans["menu"]["FEATURE"] = 'Home';
+        self::$trans["menu"]["MY_VHL"] = 'MyVHL';
         self::$trans["menu"]["SERVPLAT"] = 'Service Platform';
         self::$trans["menu"]["COLLAPSE_MENU"] = 'Collapse Menu';
         self::$trans["menu"]["DASHBOARD"] = 'My Content';
-        self::$trans["menu"]["HOME"] = 'Overview';
+        self::$trans["menu"]["HOME"] = 'Home';
         self::$trans["menu"]["WELCOME"] = 'Welcome';
         self::$trans["menu"]["USERS_SERVICES"] = 'Custom Services';
         self::$trans["menu"]["OLA"] = 'Hello';
@@ -134,10 +135,12 @@ class Translations {
         self::$trans["menu"]["REMOVE_RSS"] = 'RSS removed';
         self::$trans["menu"]["QUERY"] = 'Query';
         self::$trans["menu"]["VIEW"] = 'Display';
-        self::$trans["menu"]["RSS"] = 'RSS';
-        self::$trans["menu"]["SEARCH_WIDGET"] = 'VHL Search';
+        self::$trans["menu"]["RSS"] = 'Feed RSS';
+        self::$trans["menu"]["SEARCH_WIDGET"] = 'VHL Search History';
         self::$trans["menu"]["PROFILE_WIDGET"] = 'Interest Topics';
         self::$trans["menu"]["SHELF_WIDGET"] = 'Favorite Documents';
+        self::$trans["menu"]["INFO_WIDGET"] = 'It may interest you';
+        self::$trans["menu"]["TOUR"] = 'Virtual Tour';
         self::$trans["menu"]["START_TOUR"] = 'Start Tour';
         self::$trans["menu"]["NEXT_PAGE"] = '<span>Next</span> <span>feature</span>';
         self::$trans["menu"]["BACK"] = '&larr; Back';
@@ -147,18 +150,33 @@ class Translations {
         self::$trans["menu"]["LEAVE_COMMENT"] = 'Leave Comment';
         self::$trans["menu"]["REPORT_ERROR"] = 'Report Error';
         self::$trans["menu"]["EVENTS"] = 'Events';
+        self::$trans["menu"]["MORE"] = 'More';
+        self::$trans["menu"]["PROFILE"] = 'Profile';
+        self::$trans["menu"]["CONFIGURATIONS"] = 'Settings';
+        self::$trans["menu"]["SUGGESTIONS_NOT_FOUND"] = 'No suggestions found';
+        self::$trans["menu"]["EVENTS_NOT_FOUND"] = 'No events found';
         self::$trans["menu"]["FOOTER_MESSAGE"] = '
-<p><strong>BIREME - PAHO - WHO</strong><br/>
+<p><strong>BIREME - PAHO - WHO</strong><br />
 Latin American and Caribbean Center on Health Sciences Information<br />
 Department of Evidence and Intelligence for Action in Health – EIH<br />
 Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Phone: (55 11) 5576-9800 | Fax: (55 11) 5575-8868<br />
-<a href="http://new.paho.org/bireme" title="My VHL">http://www.paho.org/bireme</a><br /><br />
+<a href="http://new.paho.org/bireme" title="MyVHL">http://www.paho.org/bireme</a><br /><br />
 <strong><a href="http://politicas.bireme.org/terminos/en/">Terms and Conditions of Use</a> | <a href="http://politicas.bireme.org/privacidad/en/">Privacy Policy</a></strong></p>
+';
+        self::$trans["menu"]["FOOTER_MESSAGE_DEFAULT"] = '
+<br /><b>BIREME - PAHO - WHO</b><br />
+Latin American and Caribbean Center on Health Sciences Information<br />
+Department of Evidence and Intelligence for Action in Health – EIH<br />
+Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Phone: (55 11) 5576-9800 | Fax: (55 11) 5575-8868<br />
+<a href="http://new.paho.org/bireme" title="MyVHL" target="_blank">http://www.paho.org/bireme</a><br />
+<b><a href="http://politicas.bireme.org/terminos/en/" target="_blank">Terms and Conditions of Use</a> | <a href="http://politicas.bireme.org/privacidad/en/" target="_blank">Privacy Policy</a></b>
 ';
 
     // Terms of searchresults pages
         self::$trans["searchresults"]["FEATURE"] = 'RSS';
-        self::$trans["searchresults"]["RSS"] = 'RSS';
+        self::$trans["searchresults"]["RSS"] = 'Feed RSS';
+        self::$trans["searchresults"]["FEED"] = 'RSS';
+        self::$trans["searchresults"]["MY_RSS"] = 'My Feeds';
         self::$trans["searchresults"]["ADD_RSS"] = 'add RSS';
         self::$trans["searchresults"]["EDIT_RSS"] = 'edit RSS';
         self::$trans["searchresults"]["REMOVE_RSS"] = 'remove RSS';
@@ -176,6 +194,10 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Phone: (55 11) 5576-980
         self::$trans["searchresults"]["CANCEL"] = 'cancel';
         self::$trans["searchresults"]["ADD"] = 'add';
         self::$trans["searchresults"]["TO_COLLECTION"] = 'to collection';
+        self::$trans["searchresults"]["CLOSE"] = 'close';
+        self::$trans["searchresults"]["REMOVE"] = 'remove';
+        self::$trans["searchresults"]["REMOVE_FEED"] = 'remove';
+        self::$trans["searchresults"]["REMOVE_FEED_CONFIRM"] = 'Are you sure you want to delete';
 
     // Terms of mysearches pages
         self::$trans["mysearches"]["FEATURE"] = 'VHL Search History';
@@ -190,6 +212,10 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Phone: (55 11) 5576-980
         self::$trans["mysearches"]["VIEW"] = 'View';
         self::$trans["mysearches"]["COMBINE"] = 'Combine';
         self::$trans["mysearches"]["REMOVE"] = 'Remove';
+        self::$trans["mysearches"]["CANCEL"] = 'cancel';
+        self::$trans["mysearches"]["CLOSE"] = 'close';
+        self::$trans["mysearches"]["REMOVE_SEARCH"] = 'remove';
+        self::$trans["mysearches"]["REMOVE_SEARCH_CONFIRM"] = 'Are you sure you want to delete';
         self::$trans["mysearches"]["ORIGIN_SITE"] = 'Initial site';
         self::$trans["mysearches"]["BRASIL"] = 'VHL Brazil';
 
@@ -225,10 +251,11 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Phone: (55 11) 5576-980
         self::$trans["orcidworks"]["NEXT"] = 'Next';
         self::$trans["orcidworks"]["PREVIOUS"] = 'Previous';
         self::$trans["orcidworks"]["ORCID_WORKS"] = 'My Publications';
-        self::$trans["orcidworks"]["ORCID_WORKS_NO_REGISTERS_FOUND"] = 'No publication found. To view your publications, please inform the ORCID ID in your Profile.';
+        self::$trans["orcidworks"]["ORCID_WORKS_NO_REGISTERS_FOUND"] = 'No publication found. To view your publications, please inform the ORCID ID in your profile.';
         self::$trans["orcidworks"]["GOOGLE_SCHOLAR"] = 'view on Google Scholar';
         self::$trans["orcidworks"]["GOOGLE_SCHOLAR_CITED"] = 'cited by';
         self::$trans["orcidworks"]["GOOGLE_SCHOLAR_RELATED"] = 'related articles';
+        self::$trans["orcidworks"]["CLOSE"] = 'close';
 
     // General Terms
         self::$trans["general"]["IDENTIFICATION"] = 'Virtual Health Library';
@@ -236,6 +263,8 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Phone: (55 11) 5576-980
 
     // Tems of mydocuments pages
         self::$trans["mydocuments"]["FEATURE"] = 'Favorite Documents';
+        self::$trans["mydocuments"]["COLLECTION"] = 'Collection';
+        self::$trans["mydocuments"]["COLLECTION_NAME"] = 'collection name';
         self::$trans["mydocuments"]["MY_COLLECTION"] = 'Favorite Documents';
         self::$trans["mydocuments"]["BY_DATE"] = 'by Date';
         self::$trans["mydocuments"]["INCOMING_FOLDER"] = 'Inbox';
@@ -249,6 +278,7 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Phone: (55 11) 5576-980
         self::$trans["mydocuments"]["MOVE_DOCUMENT_TO"] = 'to collection';
         self::$trans["mydocuments"]["FULL_TEXT"] = 'full text';
         self::$trans["mydocuments"]["REMOVE_FROM_COLLECTION"] = 'remove';
+        self::$trans["mydocuments"]["REMOVE_FROM_COLLECTION_CONFIRM"] = 'Are you sure you want to delete';
         self::$trans["mydocuments"]["MONITOR_CITATION"] = 'monitored citations';
         self::$trans["mydocuments"]["MONITOR_ACCESS"] = 'monitored access';
         self::$trans["mydocuments"]["ACCESS_LIST_NO_REGISTERS_FOUND"] = 'No registers found';
@@ -264,8 +294,8 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Phone: (55 11) 5576-980
         self::$trans["mydocuments"]["BULK_MOVE_DOCS"] = 'Move';
         self::$trans["mydocuments"]["SHARE_COLLECTION"] = 'share collection';
         self::$trans["mydocuments"]["SHARED_COLLECTION"] = 'shared collection';
-        self::$trans["mydocuments"]["SHARED_COLLECTION_DESC"] = "Collection available in <a href='http://platserv.bvsalud.org/client/controller/authentication/?lang=en'>My VHL<a/>.";
-        self::$trans["mydocuments"]["INVITE"] = 'Do not have an account in MY VHL yet? <a href="/client/controller/authentication/?lang=en" target="_blank">Visit our site and register!';
+        self::$trans["mydocuments"]["SHARED_COLLECTION_DESC"] = "Collection available in <a href='http://platserv.bvsalud.org/client/controller/authentication/?lang=en'>MyVHL<a/>.";
+        self::$trans["mydocuments"]["INVITE"] = 'Do not have an account in MyVHL yet? <a href="/client/controller/authentication/?lang=en" target="_blank">Visit our site and register!';
         self::$trans["mydocuments"]["BUTTON_CLOSE"] = 'Close';
         self::$trans["mydocuments"]["CREATED_BY"] = 'Created by:';
         self::$trans["mydocuments"]["PUBLISHED_IN"] = 'Published in:';
@@ -273,9 +303,13 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Phone: (55 11) 5576-980
         self::$trans["mydocuments"]["TOTAL_DOCS"] = 'Total of documents:';
         self::$trans["mydocuments"]["COLLECTION_DOCS"] = 'Documents Collection';
         self::$trans["mydocuments"]["AVAILABLE_IN"] = 'Available in:';
+        self::$trans["mydocuments"]["CANCEL"] = 'cancel';
+        self::$trans["mydocuments"]["REMOVE"] = 'remove';
+        self::$trans["mydocuments"]["CLOSE"] = 'close';
 
     // Tems of directories pages
         self::$trans["directories"]["FEATURE"] = 'Favorite Documents';
+        self::$trans["directories"]["COLLECTION_NAME"] = 'collection name';
         self::$trans["directories"]["FOLDER_NAME"] = 'Collection Name';
         self::$trans["directories"]["ADD_FOLDER"] = 'add collection';
         self::$trans["directories"]["EDIT_FOLDER"] = 'edit collection';
@@ -305,6 +339,7 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Phone: (55 11) 5576-980
         self::$trans["mylinks"]["ADD_LINK"] = 'add link';
         self::$trans["mylinks"]["MY_LINKS"] = 'Favorite Links';
         self::$trans["mylinks"]["REMOVE_LINK"] = 'remove';
+        self::$trans["mylinks"]["REMOVE_LINK_CONFIRM"] = 'Are you sure you want to delete';
         self::$trans["mylinks"]["EDIT_LINK"] = 'edit';
         self::$trans["mylinks"]["EDIT_LINK_POPUP"] = 'edit link';
         self::$trans["mylinks"]["HIDE_FROM_HOME"] = 'Remove from home';
@@ -321,6 +356,7 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Phone: (55 11) 5576-980
         self::$trans["mylinks"]["ADD_LINK_ERROR"] = 'There was an error adding the link';
         self::$trans["mylinks"]["NEXT"] = 'Next';
         self::$trans["mylinks"]["PREVIOUS"] = 'Previous';
+        self::$trans["mylinks"]["REMOVE"] = 'remove';
 
     // Tems of mylinks pages
         self::$trans["mynews"]["SHOW_BY"] = 'View List by';
@@ -368,6 +404,7 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Phone: (55 11) 5576-980
         self::$trans["myprofiledocuments"]["TOOLS"] = 'My Topics';
         self::$trans["myprofiledocuments"]["SIMILARS_IN"] = 'Similars in';
         self::$trans["myprofiledocuments"]["PROFILE_KEYWORDS"] = 'Topics keywords';
+        self::$trans["myprofiledocuments"]["PROFILE"] = 'Topic';
         self::$trans["myprofiledocuments"]["PROFILES"] = 'Topics';
         self::$trans["myprofiledocuments"]["PROFILE_NAME"] = 'Topic Name';
         self::$trans["myprofiledocuments"]["PROFILE_TEXT"] = 'Keywords';
@@ -375,6 +412,8 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Phone: (55 11) 5576-980
         self::$trans["myprofiledocuments"]["PROFILE_DEFAULT"] = 'Define as default';
         self::$trans["myprofiledocuments"]["SAVE"] = 'save';
         self::$trans["myprofiledocuments"]["CANCEL"] = 'cancel';
+        self::$trans["myprofiledocuments"]["REMOVE"] = 'remove';
+        self::$trans["myprofiledocuments"]["CLOSE"] = 'close';
         self::$trans["myprofiledocuments"]["MY_PROFILES_NO_REGISTERS_FOUND"] = 'No registers found';
         self::$trans["myprofiledocuments"]["MY_PROFILES_NO_SUGGESTIONS_FOUND"] = 'No documents found. Try updating topic by <code>edit topic > save</code> or change your keywords.';
         self::$trans["myprofiledocuments"]["SERVICE_TEMPORARY_UNAVAILABLE"] = 'Service temporarily unavailable. Try updating this topic later.';
@@ -387,7 +426,10 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Phone: (55 11) 5576-980
         self::$trans["myprofiledocuments"]["ADD_COLLECTION"] = 'add to favorites';
         self::$trans["myprofiledocuments"]["TO_COLLECTION"] = 'to collection';
         self::$trans["myprofiledocuments"]["INCOMING_FOLDER"] = 'Inbox';
-        self::$trans["myprofiledocuments"]["UPDATE_ALERT"] = '<p>The interest documents below may change as the VHL information sources update.</p><p>So if any document is of interest to you, add it to your favorites.</p>';
+        self::$trans["myprofiledocuments"]["ALERT"] = '<b>Interest Topics Update</b>';
+        self::$trans["myprofiledocuments"]["UPDATE_ALERT"] = '<p>The documents displayed on interest topics may change as the VHL information sources update.</p><p>So if any document is of interest to you, add it to your favorites.</p>';
+        self::$trans["myprofiledocuments"]["REMOVE_TOPIC"] = 'remove';
+        self::$trans["myprofiledocuments"]["REMOVE_TOPIC_CONFIRM"] = 'Are you sure you want to delete';
 
     // Terms of mig_id_confirmation pages
         self::$trans["mig_id_confirmation"]["TITLE"] = 'Login Confirmation';
@@ -397,8 +439,8 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Phone: (55 11) 5576-980
 
     // Terms of step-by-step guide
         self::$trans["tour"]["TOUR_EXAMPLE"] = '(Exclusive tour example)';
-        self::$trans["tour"]["INTRO"] = 'Welcome to the <b>My VHL</b> Tour. Get to know the features of this personalized service by navigating the Next and Back buttons. At any time you can leave the Tour and, if you wish, restart it through your profile menu.';
-        self::$trans["tour"]["FIRST"] = 'The <b>My VHL</b> registers user information and search preferences performed in the VHL Network databases.';
+        self::$trans["tour"]["INTRO"] = 'Welcome to the <b>MyVHL</b> Tour. Get to know the features of this personalized service by navigating the Next and Back buttons. At any time you can leave the Tour and, if you wish, restart it through your profile menu.';
+        self::$trans["tour"]["FIRST"] = 'The <b>MyVHL</b> registers user information and search preferences performed in the VHL Network databases.';
         self::$trans["tour"]["STEP_1"] = 'User picture when logged in through Social Networks.';
         self::$trans["tour"]["STEP_2"] = 'Your content is organized by this Menu.';
         self::$trans["tour"]["STEP_3"] = '<b>Overview</b><br /> displays the Service Homepage with a summary of your actions performed.';
@@ -425,7 +467,7 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Phone: (55 11) 5576-980
         self::$trans["tour"]["STEP_22"] = 'Create topics and define keywords to receive VHL related documents.';
         self::$trans["tour"]["STEP_23"] = 'Click on your topics of interest to view documents retrieved from the VHL.';
 
-        self::$trans["tour"]["STEP_24"] = '<b>VHL Search History</b><br />Stores your search queries in the VHL whenever you are logged in to My VHL.';
+        self::$trans["tour"]["STEP_24"] = '<b>VHL Search History</b><br />Stores your search queries in the VHL whenever you are logged in to MyVHL.';
         self::$trans["tour"]["STEP_25"] = 'List of the last search queries carried out in the VHL.';
         self::$trans["tour"]["STEP_26"] = 'Terms that were used in the search.';
         self::$trans["tour"]["STEP_27"] = 'Filters that were applied in the search.';
@@ -437,16 +479,15 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Phone: (55 11) 5576-980
         self::$trans["tour"]["STEP_31"] = 'Add new Favorite Link and create your own link library.';
         self::$trans["tour"]["STEP_32"] = 'Order your links by date or by the ranking assigned by you to each link.';
 
-        self::$trans["tour"]["STEP_33"] = '<b>My Publications</b><br />View your publications from the ORCID ID you entered in your Profile.';
+        self::$trans["tour"]["STEP_33"] = '<b>My Publications</b><br />View your publications from the ORCID ID you entered in your profile.';
         self::$trans["tour"]["STEP_34"] = 'List of publications retrieved from your ORCID ID. You can access each document in Google Scholar and know how many times your publication was cited. See also VHL documents related to your publication.';
 
         self::$trans["tour"]["STEP_35"] = '<b>RSS</b><br />Displays the latest document updates from the RSS of your favorite portals';
         self::$trans["tour"]["STEP_36"] = 'Click this button to add a new RSS feed';
         self::$trans["tour"]["STEP_37"] = 'View the list of RSS feeds';
         self::$trans["tour"]["STEP_38"] = 'List of the last documents retrieved by RSS from your favorite portal. You can: add, edit, or delete an RSS, add to favorites or view related documents.';
-        self::$trans["tour"]["LAST"] = 'Congratulations! You have completed the Tour and already know how <b>My VHL</b> custom services work. Use and disseminate this service. Send your questions and suggestions to the <a style="text-decoration: underline;" href="http://feedback.bireme.org/feedback/?application=my-vhl&version=2.10-77&site=servplat&lang='.$_SESSION['lang'].'">Feedback Service</a>';
+        self::$trans["tour"]["LAST"] = 'Congratulations! You have completed the Tour and already know how <b>MyVHL</b> custom services work. Use and disseminate this service. Send your questions and suggestions to the <a style="text-decoration: underline;" href="http://feedback.bireme.org/feedback/?application=my-vhl&version=2.10-77&site=servplat&lang='.$_SESSION['lang'].'">Feedback Service</a>';
     }
-
 
 /**
  * @param <type> $term

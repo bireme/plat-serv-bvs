@@ -9,9 +9,9 @@ class Translations {
 
     public function translations(){
     // Terms of authentication pages
-        self::$trans["authentication"]["MY_VHL"] = 'Mi BVS';
+        self::$trans["authentication"]["MY_VHL"] = 'MiBVS';
         self::$trans["authentication"]["MY_VHL_SUMMARY"] = '
-<p>Mi BVS es un servicio gratuito que guarda informaciones y preferencias del usuario para ofrecer servicios personalizados tales como:</p>
+<p>MiBVS es un servicio gratuito que guarda informaciones y preferencias del usuario para ofrecer servicios personalizados tales como:</p>
 <ul>
     <li>Creación de colecciones de documentos seleccionados de la BVS</li>
     <li>Definición de temas de interés para recibir alertas de nuevos documentos</li>
@@ -19,26 +19,26 @@ class Translations {
     <li>Histórico de búsquedas realizadas en la BVS</li>
     <li>Lista de links favoritos</li>
 </ul>
-<p>Mi BVS está disponible a cualquier usuario a través de su cuenta Facebook, Google, BIREME Account o del propio servicio Mi BVS. <a href="javascript:;" class="decor" data-toggle="modal" data-target=".bs-modal-lg">¡Conozca más!</a></p>
+<p>MiBVS está disponible a cualquier usuario a través de su cuenta Facebook, Google, BIREME Account o del propio servicio MiBVS. <a href="javascript:;" class="decor" data-toggle="modal" data-target=".bs-modal-lg">¡Conozca más!</a></p>
 ';
         self::$trans["authentication"]["MY_VHL_DESCRIPTION"] = '
-<p>Mi BVS es un servicio gratuito que guarda informaciones y preferencias del usuario para ofrecer servicios personalizados y facilidades tales como:</p>
-<ul>
+<p>MiBVS es un servicio gratuito que guarda informaciones y preferencias del usuario para ofrecer servicios personalizados y facilidades tales como:</p>
+<ul class="listDefault">
     <li>Creación de colecciones de documentos a partir del resultado de búsquedas procesadas en las bases de datos de la BVS.</li>
     <li>Documentos recuperados en las bases de datos de la BVS a partir de palabras-claves indicadas en los Temas de Interés.</li>
     <li>Publicaciones de autoria del usuario recuperadas en varias fuentes considerando el número ORCID informado en el Perfil del usuario.</li>
     <li>Histórico de búsquedas realizadas en la BVS desde que el usuario se inscribió en el servicio.</li>
     <li>Lista de links favoritos indicados por el usuario que posibilita el acceso rápido y directo a sitios de su interés.</li>
 </ul>
-<p>Mi BVS está disponible a cualquier usuario a través de su cuenta Facebook, Google, BIREME Account o del propio servicio Mi BVS.</p>
-<p>BIREME Account es un sistema de gestión de cuentas de usuarios de los centros cooperantes de la Red BIREME que acceden al sistema FI-Admin y otros. Esta misma cuenta de usuario está habilitada para el servicio Mi BVS.</p>
-<p>Si el usuario prefiere una cuenta propia para el Servicio Mi BVS es necesario hacer su registro gratuitamente como usuario, y además aceptar a los términos de uso y política de privacidad.</p>
+<p>MiBVS está disponible a cualquier usuario a través de su cuenta Facebook, Google, BIREME Account o del propio servicio MiBVS.</p>
+<p>BIREME Account es un sistema de gestión de cuentas de usuarios de los centros cooperantes de la Red BIREME que acceden al sistema FI-Admin y otros. Esta misma cuenta de usuario está habilitada para el servicio MiBVS.</p>
+<p>Si el usuario prefiere una cuenta propia para el Servicio MiBVS es necesario hacer su registro gratuitamente como usuario, y además aceptar a los términos de uso y política de privacidad.</p>
 ';
         self::$trans["authentication"]["NOTICE"] = '¿Es nuevo por aquí?';
         self::$trans["authentication"]["BUTTON_CLOSE"] = 'Cerrar';
         self::$trans["authentication"]["RECOVER_ACCOUNTS"] = 'Si Usted es un Centro Cooperante de la Red BIREME y tiene cuenta BIREME Accounts, pero se olvidó su contraseña...';
         self::$trans["authentication"]["RECOVER_ACCOUNTS_LINK"] = 'Recuperar su contraseña';
-        self::$trans["authentication"]["RECOVER_PASSWORD"] = 'Si Usted es un usuario ya registrado del servicio Mi BVS, pero se olvidó su contraseña...';
+        self::$trans["authentication"]["RECOVER_PASSWORD"] = 'Si Usted es un usuario ya registrado del servicio MiBVS, pero se olvidó su contraseña...';
         self::$trans["authentication"]["RECOVER_PASSWORD_LINK"] = 'Recuperar su contraseña';
         self::$trans["authentication"]["TITLE"] = 'Autenticación de Usuários';
         self::$trans["authentication"]["NOREGISTRY"] = 'Registro de nuevos usuarios temporariamente no disponible';
@@ -46,8 +46,8 @@ class Translations {
         self::$trans["authentication"]["HOME"] = 'home';
         self::$trans["authentication"]["LOGIN_FIELD"] = 'e-mail o login';
         self::$trans["authentication"]["LOGIN"] = 'Entrar';
-        self::$trans["authentication"]["USER"] = 'usuario';
-        self::$trans["authentication"]["PASSWORD"] = 'contraseña';
+        self::$trans["authentication"]["USER"] = 'Usuario';
+        self::$trans["authentication"]["PASSWORD"] = 'Contraseña';
         self::$trans["authentication"]["PRESS_HERE"] = 'clic aquí';
         self::$trans["authentication"]["INVALID_LOGIN"] = 'usuário o contraseña inválidos';
         self::$trans["authentication"]["INVALID_LOGIN_MAIL"] = '
@@ -74,10 +74,11 @@ class Translations {
         self::$trans["authentication"]["HELPLOGINMESSAGE"] = '';
         self::$trans["authentication"]["KNOWMORE"] = 'sepa más';
         self::$trans["authentication"]["ACCESS_DENIED"] = 'acceso denegado';
-        self::$trans["authentication"]["OR"] = 'o';
+        self::$trans["authentication"]["OR"] = 'O';
         self::$trans["authentication"]["LOGIN_WITH"] = 'entrar con';
-        self::$trans["authentication"]["LOGIN_MESSAGE"] = 'Iniciar sesión en Mi BVS';
-        self::$trans["authentication"]["LOGIN_ACCESS_MESSAGE"] = 'Acceda directamente a Mi BVS';
+        self::$trans["authentication"]["LOGIN_MESSAGE"] = 'INICIAR SESIÓN EN MiBVS';
+        self::$trans["authentication"]["LOGIN_ACCESS_MESSAGE"] = 'Acceda directamente a MiBVS';
+        self::$trans["authentication"]["REMEMBER_ME"] = 'Recuérdame';
 
     // Terms of the Request Authentication Page
         self::$trans["requestauth"]["LOGIN"] = 'login';
@@ -92,12 +93,12 @@ class Translations {
 
     // Terms of the menu pages
         self::$trans["menu"]["VHL_PORTAL"] = 'Portal Regional de la BVS';
-        self::$trans["menu"]["FEATURE"] = 'Visão Geral';
-        self::$trans["menu"]["MY_VHL"] = 'Mi BVS';
+        self::$trans["menu"]["FEATURE"] = 'Home';
+        self::$trans["menu"]["MY_VHL"] = 'MiBVS';
         self::$trans["menu"]["SERVPLAT"] = 'Plataforma de Servicios';
         self::$trans["menu"]["COLLAPSE_MENU"] = 'Retraer Menú';
         self::$trans["menu"]["DASHBOARD"] = 'Mis Contenidos';
-        self::$trans["menu"]["HOME"] = 'Visión General';
+        self::$trans["menu"]["HOME"] = 'Home';
         self::$trans["menu"]["WELCOME"] = 'Bienvenido';
         self::$trans["menu"]["USERS_SERVICES"] = 'Servicios Personalizados';
         self::$trans["menu"]["OLA"] = 'Hola';
@@ -107,7 +108,7 @@ class Translations {
         self::$trans["menu"]["MY_LINKS"] = 'Enlaces Favoritos';
         self::$trans["menu"]["MY_NEWS"] = 'Mis Noticias';
         self::$trans["menu"]["FORGOT_MY_PASSWORD"] = 'olvidé mi contraseña';
-        self::$trans["menu"]["CHANGE_PASSWORD"] = 'Cambiar contraseña';
+        self::$trans["menu"]["CHANGE_PASSWORD"] = 'Cambiar Contraseña';
         self::$trans["menu"]["MY_DATA"] = 'Editar Perfil';
         self::$trans["menu"]["MY_ALERTS"] = 'Mis Alertas';
         self::$trans["menu"]["SEARCH"] = 'Buscar';
@@ -134,10 +135,12 @@ class Translations {
         self::$trans["menu"]["REMOVE_RSS"] = 'RSS removido';
         self::$trans["menu"]["QUERY"] = 'Consulta';
         self::$trans["menu"]["VIEW"] = 'Mostrar';
-        self::$trans["menu"]["RSS"] = 'RSS';
-        self::$trans["menu"]["SEARCH_WIDGET"] = 'Búsquedas en la BVS';
+        self::$trans["menu"]["RSS"] = 'Feed RSS';
+        self::$trans["menu"]["SEARCH_WIDGET"] = 'Historial de Busqueda';
         self::$trans["menu"]["PROFILE_WIDGET"] = 'Temas de Interés';
         self::$trans["menu"]["SHELF_WIDGET"] = 'Documentos Favoritos';
+        self::$trans["menu"]["INFO_WIDGET"] = 'Quizá le interese';
+        self::$trans["menu"]["TOUR"] = 'Tour Virtual';
         self::$trans["menu"]["START_TOUR"] = 'Iniciar Tour';
         self::$trans["menu"]["NEXT_PAGE"] = '<span>Siguiente</span> <span>funcionalidad</span>';
         self::$trans["menu"]["BACK"] = '&larr; Volver';
@@ -146,19 +149,35 @@ class Translations {
         self::$trans["menu"]["DONE"] = 'Concluir';
         self::$trans["menu"]["LEAVE_COMMENT"] = 'Enviar Comentario';
         self::$trans["menu"]["REPORT_ERROR"] = 'Informar Error';
+        self::$trans["menu"]["SUGGESTIONS"] = 'Sugerencias';
         self::$trans["menu"]["EVENTS"] = 'Eventos';
+        self::$trans["menu"]["MORE"] = 'Más';
+        self::$trans["menu"]["PROFILE"] = 'Perfil';
+        self::$trans["menu"]["CONFIGURATIONS"] = 'Configuraciones';
+        self::$trans["menu"]["SUGGESTIONS_NOT_FOUND"] = 'No se han encontrado sugerencias';
+        self::$trans["menu"]["EVENTS_NOT_FOUND"] = 'No se han encontrado eventos';
         self::$trans["menu"]["FOOTER_MESSAGE"] = '
-<p><strong>BIREME - OPS - OMS</strong><br/>
+<p><strong>BIREME - OPS - OMS</strong><br />
 Centro Latinoamericano y del Caribe de Información en Ciencias de la Salud<br />
 Departamento de Evidencia e Inteligencia para la Acción de Salud – EIH<br />
 Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 | Fax: (55 11) 5575-8868<br />
-<a href="http://new.paho.org/bireme" title="Mi BVS">http://www.paho.org/bireme</a><br /><br />
+<a href="http://new.paho.org/bireme" title="MiBVS">http://www.paho.org/bireme</a><br /><br />
 <strong><a href="http://politicas.bireme.org/terminos/es/">Términos y Condiciones de Uso</a> | <a href="http://politicas.bireme.org/privacidad/es/">Políticas de Privacidad</a></strong></p>
+';
+        self::$trans["menu"]["FOOTER_MESSAGE_DEFAULT"] = '
+<br /><b>BIREME - OPS - OMS</b><br />
+Centro Latinoamericano y del Caribe de Información en Ciencias de la Salud<br />
+Departamento de Evidencia e Inteligencia para la Acción de Salud – EIH<br />
+Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 | Fax: (55 11) 5575-8868<br />
+<a href="http://new.paho.org/bireme" title="MiBVS" target="_blank">http://www.paho.org/bireme</a><br />
+<b><a href="http://politicas.bireme.org/terminos/es/" target="_blank">Términos y Condiciones de Uso</a> | <a href="http://politicas.bireme.org/privacidad/es/" target="_blank">Políticas de Privacidad</a></b>
 ';
 
     // Terms of searchresults pages
         self::$trans["searchresults"]["FEATURE"] = 'RSS';
-        self::$trans["searchresults"]["RSS"] = 'RSS';
+        self::$trans["searchresults"]["RSS"] = 'Feed RSS';
+        self::$trans["searchresults"]["FEED"] = 'RSS';
+        self::$trans["searchresults"]["MY_RSS"] = 'Mis Feeds';
         self::$trans["searchresults"]["ADD_RSS"] = 'añadir RSS';
         self::$trans["searchresults"]["EDIT_RSS"] = 'editar RSS';
         self::$trans["searchresults"]["REMOVE_RSS"] = 'borrar RSS';
@@ -176,6 +195,10 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
         self::$trans["searchresults"]["CANCEL"] = 'cancelar';
         self::$trans["searchresults"]["ADD"] = 'añadir';
         self::$trans["searchresults"]["TO_COLLECTION"] = 'a la colección';
+        self::$trans["searchresults"]["CLOSE"] = 'cerrar';
+        self::$trans["searchresults"]["REMOVE"] = 'borrar';
+        self::$trans["searchresults"]["REMOVE_FEED"] = 'borrar';
+        self::$trans["searchresults"]["REMOVE_FEED_CONFIRM"] = 'Estás seguro de que quieres borrar';
 
     // Terms of mysearches pages
         self::$trans["mysearches"]["FEATURE"] = 'Histórico de Buscas na BVS';
@@ -190,6 +213,10 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
         self::$trans["mysearches"]["VIEW"] = 'Mostrar';
         self::$trans["mysearches"]["COMBINE"] = 'Combinar';
         self::$trans["mysearches"]["REMOVE"] = 'Borrar';
+        self::$trans["mysearches"]["CANCEL"] = 'cancelar';
+        self::$trans["mysearches"]["CLOSE"] = 'cerrar';
+        self::$trans["mysearches"]["REMOVE_SEARCH"] = 'borrar';
+        self::$trans["mysearches"]["REMOVE_SEARCH_CONFIRM"] = 'Estás seguro de que quieres borrar';
         self::$trans["mysearches"]["ORIGIN_SITE"] = 'Sitio web de origen';
         self::$trans["mysearches"]["BRASIL"] = 'BVS Brasil';
 
@@ -225,10 +252,11 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
         self::$trans["orcidworks"]["NEXT"] = 'Siguiente';
         self::$trans["orcidworks"]["PREVIOUS"] = 'Anterior';
         self::$trans["orcidworks"]["ORCID_WORKS"] = 'Mis Publicaciones';
-        self::$trans["orcidworks"]["ORCID_WORKS_NO_REGISTERS_FOUND"] = 'No se ha encontrado ninguna publicación. Para ver sus publicaciones, por favor informe el ORCID ID en su Perfil.';
+        self::$trans["orcidworks"]["ORCID_WORKS_NO_REGISTERS_FOUND"] = 'No se ha encontrado ninguna publicación. Para ver sus publicaciones, por favor informe el ORCID ID en su perfil.';
         self::$trans["orcidworks"]["GOOGLE_SCHOLAR"] = 'ver en Google Scholar';
         self::$trans["orcidworks"]["GOOGLE_SCHOLAR_CITED"] = 'citado por';
         self::$trans["orcidworks"]["GOOGLE_SCHOLAR_RELATED"] = 'artículos relacionados';
+        self::$trans["orcidworks"]["CLOSE"] = 'cerrar';
 
     // General Terms
         self::$trans["general"]["IDENTIFICATION"] = 'Biblioteca Virtual en Salud';
@@ -236,6 +264,8 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
 
     // Tems of mydocuments pages
         self::$trans["mydocuments"]["FEATURE"] = 'Documentos Favoritos';
+        self::$trans["mydocuments"]["COLLECTION"] = 'Colección';
+        self::$trans["mydocuments"]["COLLECTION_NAME"] = 'nombre de la colección';
         self::$trans["mydocuments"]["MY_COLLECTION"] = 'Documentos Favoritos';
         self::$trans["mydocuments"]["BY_DATE"] = 'por Fecha';
         self::$trans["mydocuments"]["INCOMING_FOLDER"] = 'Caja de Entrada';
@@ -249,6 +279,7 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
         self::$trans["mydocuments"]["MOVE_DOCUMENT_TO"] = 'para colección';
         self::$trans["mydocuments"]["FULL_TEXT"] = 'texto completo';
         self::$trans["mydocuments"]["REMOVE_FROM_COLLECTION"] = 'borrar';
+        self::$trans["mydocuments"]["REMOVE_FROM_COLLECTION_CONFIRM"] = 'Estás seguro de que quieres borrar';
         self::$trans["mydocuments"]["MONITOR_CITATION"] = 'citaciones monitoradas';
         self::$trans["mydocuments"]["MONITOR_ACCESS"] = 'acceso monitorado';
         self::$trans["mydocuments"]["ACCESS_LIST_NO_REGISTERS_FOUND"] = 'Ningún registro localizado';
@@ -264,8 +295,8 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
         self::$trans["mydocuments"]["BULK_MOVE_DOCS"] = 'Mover';
         self::$trans["mydocuments"]["SHARE_COLLECTION"] = 'compartir colección';
         self::$trans["mydocuments"]["SHARED_COLLECTION"] = 'colección compartida';
-        self::$trans["mydocuments"]["SHARED_COLLECTION_DESC"] = "Colección disponible en <a href='http://platserv.bvsalud.org/client/controller/authentication/?lang=es'>Mi BVS<a/>.";
-        self::$trans["mydocuments"]["INVITE"] = '¿Todavía no tienes registro en Mi BVS? <a href="/client/controller/authentication/?lang=es" target="_blank">¡Acceda a nuestro sitio y registrese!';
+        self::$trans["mydocuments"]["SHARED_COLLECTION_DESC"] = "Colección disponible en <a href='http://platserv.bvsalud.org/client/controller/authentication/?lang=es'>MiBVS<a/>.";
+        self::$trans["mydocuments"]["INVITE"] = '¿Todavía no tienes registro en MiBVS? <a href="/client/controller/authentication/?lang=es" target="_blank">¡Acceda a nuestro sitio y registrese!';
         self::$trans["mydocuments"]["BUTTON_CLOSE"] = 'Cerrar';
         self::$trans["mydocuments"]["CREATED_BY"] = 'Creado por:';
         self::$trans["mydocuments"]["PUBLISHED_IN"] = 'Publicado en:';
@@ -273,9 +304,13 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
         self::$trans["mydocuments"]["TOTAL_DOCS"] = 'Total de documentos:';
         self::$trans["mydocuments"]["COLLECTION_DOCS"] = 'Colección de Documentos';
         self::$trans["mydocuments"]["AVAILABLE_IN"] = 'Disponible en:';
+        self::$trans["mydocuments"]["CANCEL"] = 'cancelar';
+        self::$trans["mydocuments"]["REMOVE"] = 'borrar';
+        self::$trans["mydocuments"]["CLOSE"] = 'cerrar';
 
     // Tems of directories pages
         self::$trans["directories"]["FEATURE"] = 'Documentos Favoritos';
+        self::$trans["directories"]["COLLECTION_NAME"] = 'nombre de la colección';
         self::$trans["directories"]["FOLDER_NAME"] = 'Nombre de la colección';
         self::$trans["directories"]["ADD_FOLDER"] = 'añadir colección';
         self::$trans["directories"]["EDIT_FOLDER"] = 'editar colección';
@@ -305,6 +340,7 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
         self::$trans["mylinks"]["ADD_LINK"] = 'añadir enlace';
         self::$trans["mylinks"]["MY_LINKS"] = 'Enlaces Favoritos';
         self::$trans["mylinks"]["REMOVE_LINK"] = 'borrar';
+        self::$trans["mylinks"]["REMOVE_LINK_CONFIRM"] = 'Estás seguro de que quieres borrar';
         self::$trans["mylinks"]["EDIT_LINK"] = 'editar';
         self::$trans["mylinks"]["EDIT_LINK_POPUP"] = 'editar enlace';
         self::$trans["mylinks"]["HIDE_FROM_HOME"] = 'remover de la home';
@@ -321,6 +357,7 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
         self::$trans["mylinks"]["ADD_LINK_ERROR"] = 'Error al añadir enlace';
         self::$trans["mylinks"]["NEXT"] = 'Siguiente';
         self::$trans["mylinks"]["PREVIOUS"] = 'Anterior';
+        self::$trans["mylinks"]["REMOVE"] = 'borrar';
 
     // Tems of mylinks pages
         self::$trans["mynews"]["SHOW_BY"] = 'Ver la Lista por';
@@ -368,6 +405,7 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
         self::$trans["myprofiledocuments"]["TOOLS"] = 'Mis Temas';
         self::$trans["myprofiledocuments"]["SIMILARS_IN"] = 'Similares en';
         self::$trans["myprofiledocuments"]["PROFILE_KEYWORDS"] = 'Palabras-clave del tema';
+        self::$trans["myprofiledocuments"]["PROFILE"] = 'Tema';
         self::$trans["myprofiledocuments"]["PROFILES"] = 'Temas';
         self::$trans["myprofiledocuments"]["PROFILE_NAME"] = 'Nombre del tema';
         self::$trans["myprofiledocuments"]["PROFILE_TEXT"] = 'Palabras-clave';
@@ -375,6 +413,8 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
         self::$trans["myprofiledocuments"]["PROFILE_DEFAULT"] = 'Definir como padrón';
         self::$trans["myprofiledocuments"]["SAVE"] = 'salvar';
         self::$trans["myprofiledocuments"]["CANCEL"] = 'cancelar';
+        self::$trans["myprofiledocuments"]["REMOVE"] = 'borrar';
+        self::$trans["myprofiledocuments"]["CLOSE"] = 'cerrar';
         self::$trans["myprofiledocuments"]["MY_PROFILES_NO_REGISTERS_FOUND"] = 'Ningún registro encontrado';
         self::$trans["myprofiledocuments"]["MY_PROFILES_NO_SUGGESTIONS_FOUND"] = 'No se ha encontrado ningún documento. Intente actualizar el tema en <code>editar tema > grabar</code> o cambiar las palabras-clave.';
         self::$trans["myprofiledocuments"]["SERVICE_TEMPORARY_UNAVAILABLE"] = 'Temporalmente sin servicio. Intente actualizar este tema más tarde.';
@@ -387,7 +427,10 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
         self::$trans["myprofiledocuments"]["ADD_COLLECTION"] = 'añadir a favoritos';
         self::$trans["myprofiledocuments"]["TO_COLLECTION"] = 'a la colección';
         self::$trans["myprofiledocuments"]["INCOMING_FOLDER"] = 'Caja de Entrada';
-        self::$trans["myprofiledocuments"]["UPDATE_ALERT"] = '<p>Los documentos de interés abajo pueden cambiar según la actualización de las fuentes de información de la BVS.</p><p>Por lo tanto, si algún documento es de su interés, añádalo a los favoritos.</p>';
+        self::$trans["myprofiledocuments"]["ALERT"] = '<b>Actualización de Temas de Interés</b>';
+        self::$trans["myprofiledocuments"]["UPDATE_ALERT"] = '<p>Los documentos que se muestran en temas de interés pueden cambiar según la actualización de las fuentes de información de la BVS.</p><p>Por lo tanto, si algún documento es de su interés, añádalo a los favoritos.</p>';
+        self::$trans["myprofiledocuments"]["REMOVE_TOPIC"] = 'borrar';
+        self::$trans["myprofiledocuments"]["REMOVE_TOPIC_CONFIRM"] = 'Estás seguro de que quieres borrar';
 
     // Terms of mig_id_confirmation pages
         self::$trans["mig_id_confirmation"]["TITLE"] = 'Confirmación de Login';
@@ -397,8 +440,8 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
 
     // Terms of step-by-step guide
         self::$trans["tour"]["TOUR_EXAMPLE"] = '(Ejemplo exclusivo del Tour)';
-        self::$trans["tour"]["INTRO"] = 'Bienvenido al Tour de <b>Mi BVS</b>. Conozca las características de este servicio personalizado navegando por los botones de Siguiente y Anterior. En cualquier momento usted podrá salir del Tour y, si lo desea, reiniciarla por medio del menú de su perfil.';
-        self::$trans["tour"]["FIRST"] = '<b>Mi BVS</b> registra las informaciones de los usuarios y las preferencias de búsqueda realizadas en las bases de datos de la Red BVS';
+        self::$trans["tour"]["INTRO"] = 'Bienvenido al Tour de <b>MiBVS</b>. Conozca las características de este servicio personalizado navegando por los botones de Siguiente y Anterior. En cualquier momento usted podrá salir del Tour y, si lo desea, reiniciarla por medio del menú de su perfil.';
+        self::$trans["tour"]["FIRST"] = '<b>MiBVS</b> registra las informaciones de los usuarios y las preferencias de búsqueda realizadas en las bases de datos de la Red BVS';
         self::$trans["tour"]["STEP_1"] = 'Foto del usuario cuando se inicia con las redes sociales';
         self::$trans["tour"]["STEP_2"] = 'Su contenido está organizado por este menú';
         self::$trans["tour"]["STEP_3"] = '<b>Vision General</b><br />Presenta la Página de inicio del servicio con un resumen de sus acciones realizadas';
@@ -425,7 +468,7 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
         self::$trans["tour"]["STEP_22"] = 'Cree temas y defina palabras clave para recibir documentos relacionados de la BVS';
         self::$trans["tour"]["STEP_23"] = 'Haga clic en sus temas de interés para visualizar documentos recuperados de la BVS';
 
-        self::$trans["tour"]["STEP_24"] = '<b>Historial de búsqueda en la BVS</b><br />Almacena sus búsquedas realizadas en la BVS siempre que esté conectado a Mi BVS';
+        self::$trans["tour"]["STEP_24"] = '<b>Historial de búsqueda en la BVS</b><br />Almacena sus búsquedas realizadas en la BVS siempre que esté conectado a MiBVS';
         self::$trans["tour"]["STEP_25"] = 'Lista de las últimas expresiones de búsqueda realizadas en la BVS';
         self::$trans["tour"]["STEP_26"] = 'Términos que se utilizaron en la búsqueda';
         self::$trans["tour"]["STEP_27"] = 'Filtros que se aplicaron en la búsqueda';
@@ -444,7 +487,7 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
         self::$trans["tour"]["STEP_36"] = 'Haga clic en este botón para añadir una nueva RSS';
         self::$trans["tour"]["STEP_37"] = 'Visualice la lista de los RSS registrados';
         self::$trans["tour"]["STEP_38"] = 'Lista de los últimos documentos recuperados vía RSS de su portal favorito. Usted puede: añadir, editar o eliminar un RSS, añadir a favoritos o ver documentos relacionados.';
-        self::$trans["tour"]["LAST"] = 'Felicitaciones! Usted ha completado el Tour y ya sabe cómo funciona los servicios personalizados de <b>Mi BVS</b>. Utilice y divulgue este servicio. Envíe sus dudas y sugerencias para el <a style="text-decoration: underline;" href="http://feedback.bireme.org/feedback/?application=my-vhl&version=2.10-77&site=servplat&lang='.$_SESSION['lang'].'">Servicio de Feedback</a>';
+        self::$trans["tour"]["LAST"] = 'Felicitaciones! Usted ha completado el Tour y ya sabe cómo funciona los servicios personalizados de <b>MiBVS</b>. Utilice y divulgue este servicio. Envíe sus dudas y sugerencias para el <a style="text-decoration: underline;" href="http://feedback.bireme.org/feedback/?application=my-vhl&version=2.10-77&site=servplat&lang='.$_SESSION['lang'].'">Servicio de Feedback</a>';
     }
 
 /**
