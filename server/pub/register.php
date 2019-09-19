@@ -137,7 +137,7 @@
 				</form>
 				<div class="row ">
 					<div class="col s12 center-align">
-						<span class="loginOu"><?php echo OR_ENTER_WITH; ?></span>
+						<span class="loginOu"><?php echo OR_ENTER_WITH; ?></span><br /><br />
 					</div>
 					<div class="col s12 m6">
 						<a href="/connector/google/<?php echo $build_query; ?>" class="btn waves-effect waves-light btn100 btnGoogle" name="action">GOOGLE</a>

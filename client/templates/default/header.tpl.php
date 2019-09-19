@@ -53,10 +53,9 @@
     <link href="<?php echo RELATIVE_PATH; ?>/css/<?php echo $_SESSION["skin"]; ?>/app.css" type="text/css" rel="stylesheet" />
     <?php endif; ?>
 
-    <style type="text/css">@import url('<?php echo RELATIVE_PATH; ?>/vendors/introjs/themes/introjs-royal.css') (max-width: 768px);</style>
-
     <!-- Intro.js -->
-    <script type="text/javascript" src="<?php echo RELATIVE_PATH; ?>/vendors/introjs/intro.js"></script>
+    <!-- <style type="text/css">@import url('<?php echo RELATIVE_PATH; ?>/vendors/introjs/themes/introjs-royal.css') (max-width: 768px);</style> -->
+    <!-- <script type="text/javascript" src="<?php echo RELATIVE_PATH; ?>/vendors/introjs/intro.js"></script> -->
 
     <?php
         $b64HttpHost = base64_encode(RELATIVE_PATH.'/controller/authentication');
