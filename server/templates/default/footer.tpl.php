@@ -40,6 +40,10 @@
             })
         });
 
+        if (navigator.userAgent.indexOf('gonative') > -1) {
+            $('#recaptcha').removeAttr('disabled');
+        }
+
         function recaptchaCallback() {
             $('#recaptcha').removeAttr('disabled');
         };

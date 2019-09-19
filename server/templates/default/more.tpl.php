@@ -1,10 +1,10 @@
 <?php $path = rtrim($_SERVER['PHP_SELF'], '/') . '/'; ?>
 <div class="fixed-action-btn">
-	<a class="btn-floating btn-large blue darken-3 pulse">
+	<a class="btn-floating btn-large blue darken-3">
 		<i class="large material-icons">more_horiz</i>
 	</a>
 	<ul>
-		<li><a href="<?php echo RELATIVE_PATH; ?>/controller/authentication/?tour=true" class="btn-floating red pulse tooltipped" data-position="left" data-tooltip="<?php echo TOUR; ?>"><i class="material-icons">computer</i></a></li>
+		<li><a href="<?php echo RELATIVE_PATH; ?>/controller/authentication/?tour=true" class="btn-floating red tooltipped" data-position="left" data-tooltip="<?php echo TOUR; ?>"><i class="material-icons">computer</i></a></li>
 		<li><a href="#" class="btn-floating cray tooltipped sidenav-trigger" data-target="slide-out" data-position="left" data-tooltip="<?php echo CONFIGURATIONS; ?>"><i class="material-icons">settings</i></a></li>
 	</ul>
 </div>

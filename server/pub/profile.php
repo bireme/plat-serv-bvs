@@ -182,7 +182,7 @@
 								<br /><input id="send" type="submit" class="btn btnSuccess hoverable" value="<?php echo BUTTON_UPDATE_USER?>" />
                                 <input type="hidden" value="atualizar" name="acao">
 							</div>
-							<div class="card-panel right blue-text text-darken-2"><a href="<?php echo SERVICES_PLATFORM_DOMAIN; ?>/pub/removeAccount.php?userTK=<?=urlencode($_SESSION["userTK"])?>&c=<?=$b64HttpHost?>" class="remove-account"><?php echo DELETE_ACCOUNT_REQUEST; ?></a></div>
+							<div class="card-panel right blue-text text-darken-2 delete-account"><a href="<?php echo SERVICES_PLATFORM_DOMAIN; ?>/pub/removeAccount.php?userTK=<?=urlencode($_SESSION["userTK"])?>&c=<?=$b64HttpHost?>" class="remove-account"><?php echo DELETE_ACCOUNT_REQUEST; ?></a></div>
 						</div>
 					</form>
 				</div>

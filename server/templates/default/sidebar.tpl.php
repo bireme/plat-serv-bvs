@@ -26,5 +26,7 @@
 		<li><a href="<?php echo RELATIVE_PATH; ?>/controller/orcidworks/control/business"><?php echo ORCID_WORKS; ?></a></li>
 		<li><a href="<?php echo RELATIVE_PATH; ?>/controller/searchresults/control/business"><?php echo RSS; ?></a></li>
 		<li><a href="<?php echo SERVICES_PLATFORM_DOMAIN; ?>/pub/userData.php?userTK=<?php echo urlencode($_SESSION["userTK"]); ?>&c=<?php echo $b64HttpHost; ?>"><?php echo PROFILE; ?></a></li>
+		<li class="divider" tabindex="-1"></li>
+		<li><a href="<?php echo RELATIVE_PATH; ?>/controller/logout/control/business"><?php echo LOGOFF; ?><i class="material-icons right m1">exit_to_app</i></a></li>
 	</ul>
 </aside>

@@ -1,15 +1,15 @@
 <?php $path = rtrim($_SERVER['PHP_SELF'], '/') . '/'; ?>
 <div class="fixed-action-btn">
-	<a class="btn-floating btn-large blue darken-3 pulse">
+	<a class="btn-floating btn-large blue darken-3">
 		<i class="large material-icons">more_horiz</i>
 	</a>
 	<ul>
 		<?php if ( 'menu' == $_REQUEST["action"] ) : ?>
-		<li><a href="<?php echo RELATIVE_PATH; ?>/controller/authentication/?tour=true" class="btn-floating red pulse tooltipped" data-position="left" data-tooltip="<?php echo $trans->getTrans('menu','TOUR'); ?>"><i class="material-icons">computer</i></a></li>
+		<li><a href="<?php echo RELATIVE_PATH; ?>/controller/authentication/?tour=true" class="btn-floating red tooltipped" data-position="left" data-tooltip="<?php echo $trans->getTrans('menu','TOUR'); ?>"><i class="material-icons">computer</i></a></li>
 		<?php elseif ( 'searchresults' == $_REQUEST["action"] && $_REQUEST['rss'] ) : ?>
-		<li><a href="<?php echo RELATIVE_PATH; ?>/controller/<?php echo $_REQUEST['action']?>/control/business/rss/<?php echo $_REQUEST['rss']; ?>?multipage=true" class="btn-floating red pulse tooltipped" data-position="left" data-tooltip="<?php echo $trans->getTrans('menu','TOUR'); ?>"><i class="material-icons">computer</i></a></li>
+		<li><a href="<?php echo RELATIVE_PATH; ?>/controller/<?php echo $_REQUEST['action']?>/control/business/rss/<?php echo $_REQUEST['rss']; ?>?multipage=true" class="btn-floating red tooltipped" data-position="left" data-tooltip="<?php echo $trans->getTrans('menu','TOUR'); ?>"><i class="material-icons">computer</i></a></li>
 		<?php else : ?>
-		<li><a href="<?php echo RELATIVE_PATH; ?>/controller/<?php echo $_REQUEST['action']?>/control/business/?multipage=true" class="btn-floating red pulse tooltipped" data-position="left" data-tooltip="<?php echo $trans->getTrans('menu','TOUR'); ?>"><i class="material-icons">computer</i></a></li>
+		<li><a href="<?php echo RELATIVE_PATH; ?>/controller/<?php echo $_REQUEST['action']?>/control/business/?multipage=true" class="btn-floating red tooltipped" data-position="left" data-tooltip="<?php echo $trans->getTrans('menu','TOUR'); ?>"><i class="material-icons">computer</i></a></li>
 		<?php endif; ?>
 		<li><a href="#" class="btn-floating cray tooltipped sidenav-trigger" data-target="slide-out" data-position="left" data-tooltip="<?php echo $trans->getTrans('menu','CONFIGURATIONS'); ?>"><i class="material-icons">settings</i></a></li>
 	</ul>

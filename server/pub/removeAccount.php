@@ -151,7 +151,7 @@ require_once(dirname(__FILE__)."/../templates/".DEFAULT_SKIN."/nav.tpl.php");
 								<div class="col s12 recaptcha">
 	                                <div class="g-recaptcha" data-callback="recaptchaCallback" data-sitekey="<?=RECAPTCHA_SITE_KEY?>"></div>
 	                            </div>
-								<div class="right">
+								<div id="btn-remove-account" class="right">
 									<a href="#modal" id="recaptcha" class=" modal-trigger waves-effect waves-light btn btnDanger hoverable" disabled><?php echo BUTTON_DELETE; ?></a>
 								</div>
 							</div>
