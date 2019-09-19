@@ -68,12 +68,12 @@
                     <?php if ($responseSearch["values"] != false ) : ?>
                         <?php $registerSearch = $responseSearch["values"][0]; ?>
                         <section class="row">
-                            <?php foreach ( $items as $item ) : $count++; ?>
+                            <?php foreach ( $responseSearchItems["values"] as $item ) : $count++; ?>
                                 <div id="<?php echo 'doc'.$count; ?>" class="col s12">
                                     <div class="box1 hoverable">
                                         <div class="record">
                                             <a class="doctitle" href="<?php echo $item["link"]; ?>" target="_blank"><?php echo $item["title"]; ?></a><br />
-                                            <small class="boxAutor"><?php echo $item["author"]; ?></small><br /><br />
+                                            <small class="boxAutor"><?php echo ( is_array($item["author"]) ) ? implode("; ", $item["author"]) : $item["author"]; ?></small><br /><br />
                                         </div>
                                         <div class="btn2Buttons">
                                             <?php if ( strpos( $registerSearch['url'], VHL_SEARCH_PORTAL_DOMAIN ) !== false ) : ?>

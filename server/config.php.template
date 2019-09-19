@@ -52,6 +52,7 @@ define("DOCUMENTS_PER_PAGE","10"); /* pagination */
 define("RSS_DOCUMENTS_PER_PAGE","20"); /* RSS pagination */
 define("WIDGETS_ITEMS_LIMIT","5"); /* itens limit in widgets */
 define("RELATED_DOCUMENTS_LIMIT","5"); /* related documents limit */
+define("SEARCH_RESULTS_LIMIT","10"); /* itens limit in Search Results */
 
 define("VHL_SEARCH_PORTAL_DOMAIN","https://pesquisa.bvsalud.org");
 define("BVS_COOKIE_DOMAIN","http://brasil.bvs.br");

@@ -321,6 +321,8 @@ class SearchDAO {
      * @return boolean|array
      */
     public static function parseRSS($userID,$rssID,$url=''){
+        $items = array();
+
         if ( empty($url) ) {
             $rss = self::getRSS($userID, $rssID);
             $url = $rss[0]['url'];
@@ -332,7 +334,27 @@ class SearchDAO {
         $json = json_encode($xml);
         $result = json_decode($json,true);
 
-        return $result;
+        // Feed RSS
+        if ( $result["channel"] ) {
+            if ( $result["channel"]["item"][0] ) {
+                $items = array_slice($result["channel"]["item"], 0, SEARCH_RESULTS_LIMIT);
+            } else {
+                $items = array();
+                $items[] = $result["channel"]["item"];
+            }
+        }
+
+        // Feed Atom
+        if ( $result["entry"] ) {
+            if ( $result["entry"][0] ) {
+                $items = array_slice($result["entry"], 0, SEARCH_RESULTS_LIMIT);
+            } else {
+                $items = array();
+                $items[] = $result["entry"];
+            }
+        }
+
+        return $items;
     }
 }
 ?>

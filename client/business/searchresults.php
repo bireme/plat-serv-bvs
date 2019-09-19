@@ -37,16 +37,8 @@ switch($_REQUEST["task"]){
         $responseSearch["values"] = $result;
         $responseSearch["status"] = true;
 
-        $result = SearchResults::parseRSS($_SESSION["userTK"], $_REQUEST["rss"]);
-
-        if ( array_key_exists(0, $result["channel"]["item"]) ) {
-            $items = array_slice($result["channel"]["item"], 0, SEARCH_RESULTS_LIMIT);
-        } else {
-            $items = array();
-            $items[] = $result["channel"]["item"];
-        }
-
-        $responseSearchItems["values"] = $result;
+        $items = SearchResults::parseRSS($_SESSION["userTK"], $_REQUEST["rss"]);
+        $responseSearchItems["values"] = $items;
         $responseSearchItems["status"] = true;
     break;
     case "add":
