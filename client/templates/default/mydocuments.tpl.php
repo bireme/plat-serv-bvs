@@ -37,9 +37,9 @@
                             <div class="tituloDropdown"><?php echo $trans->getTrans($_REQUEST["action"],'COLLECTION'); ?>: <b><?php if ( !$resultDirName ) { echo $trans->getTrans($_REQUEST["action"],'INCOMING_FOLDER'); } ?><?php echo $resultDirName; ?></b>
                                 <?php if ( $resultDirName ) : ?>
                                     <!-- Dropdown Trigger -->
-                                    <a class='dropdown-trigger btn2 btnSuccess' href='#' data-target='dropdown1'><i class="fas fa-angle-down"></i></a>
+                                    <a class='dropdown-trigger btn2 btnSuccess' href='#' data-target='dir-actions'><i class="fas fa-angle-down"></i></a>
                                     <!-- Dropdown Structure -->
-                                    <ul id='dropdown1' class='dropdown-content'>
+                                    <ul id='dir-actions' class='dropdown-content'>
                                         <li><a href="#modal-ajax" class="modal-trigger modal-ajax" data-source="<?php echo RELATIVE_PATH; ?>/controller/directories/control/business/task/edit/directory/<?php echo $_REQUEST["directory"]; ?>" onclick="__gaTracker('send','event','Favorite Documents','Edit Collection','<?php echo htmlspecialchars($resultDirName); ?>');"><i class="far fa-edit right m1"></i><?php echo $trans->getTrans($_REQUEST["action"],'EDIT_FOLDER'); ?></a></li>
                                         <li><a href="#modal-ajax" class="modal-trigger modal-ajax" data-source="<?php echo RELATIVE_PATH; ?>/controller/directories/control/business/task/delete/directory/<?php echo $_REQUEST["directory"]; ?>" onclick="__gaTracker('send','event','Favorite Documents','Remove Collection','<?php echo htmlspecialchars($resultDirName); ?>');"><i class="fas fa-eraser right m1"></i><?php echo $trans->getTrans($_REQUEST["action"],'REMOVE_FOLDER'); ?></a></li>
                                         <li><a href="#modal-share" class="modal-trigger" onclick="__gaTracker('send','event','Favorite Documents','Share Collection','<?php echo htmlspecialchars($resultDirName); ?>');"><i class="fas fa-share-alt right m1"></i><?php echo $trans->getTrans($_REQUEST["action"],'SHARE_COLLECTION'); ?></a></li>
@@ -48,11 +48,11 @@
                             </div>
                         </div>
                         <div class="col s12 m6">
-                            <div class="tituloDropdown"><b><?=$trans->getTrans($_REQUEST["action"],'MY_FOLDERS')?></b>
+                            <div class="tituloDropdown"><b><?php echo $trans->getTrans($_REQUEST["action"],'MY_FOLDERS'); ?></b>
                                 <!-- Dropdown Trigger -->
-                                <a class='dropdown-trigger btn2 btnSuccess' href='#' data-target='dropdown2'><i class="fas fa-angle-down"></i></a>
+                                <a class='dropdown-trigger btn2 btnSuccess' href='#' data-target='dir-list'><i class="fas fa-angle-down"></i></a>
                                 <!-- Dropdown Structure -->
-                                <ul id='dropdown2' class='dropdown-content'>
+                                <ul id='dir-list' class='dropdown-content'>
                                     <li><a href="#modal-ajax" class="modal-trigger modal-ajax" data-source="<?php echo RELATIVE_PATH; ?>/controller/directories/control/view/task/add"><i class="material-icons right m1">add</i> <?php echo $trans->getTrans($_REQUEST["action"],'ADD_FOLDER'); ?></a></li>
                                     <li class="divider"></li>
                                     <li><a href="<?php echo RELATIVE_PATH; ?>/controller/mydocuments/control/business/directory/0"><?php echo $trans->getTrans($_REQUEST["action"],'INCOMING_FOLDER'); ?></a></li>

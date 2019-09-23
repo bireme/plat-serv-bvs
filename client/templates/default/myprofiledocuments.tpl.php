@@ -23,8 +23,8 @@
     								<a class='dropdown-trigger btn2 btnSuccess' href='#' data-target='profile-actions'><i class="fas fa-angle-down"></i></a>
     								<!-- Dropdown Structure -->
     								<ul id='profile-actions' class='dropdown-content'>
-                                        <li><a class="modal-trigger modal-ajax" href="#modal-ajax" data-source="<?php echo RELATIVE_PATH; ?>/controller/myprofiledocuments/control/business/task/edit/profile/<?php echo $registerProfile["profileID"]; ?>" onclick="__gaTracker('send','event','Interest Topics','Edit Topic','<?php echo htmlspecialchars($registerProfile["profileName"]); ?>');"><i class="far fa-edit right m1"></i> <?=$trans->getTrans($_REQUEST["action"],'EDIT_PROFILE')?></a></li>
-                                        <li><a class="modal-trigger remove" href="#modal-remove-topic" data-source="<?=RELATIVE_PATH?>/controller/myprofiledocuments/control/business/task/delete/profile/<?=$registerProfile["profileID"]?>" onclick="__gaTracker('send','event','Interest Topics','Remove Topic','<?php echo htmlspecialchars($registerProfile["profileName"]); ?>');"><i class="fas fa-eraser right m1"></i> <?=$trans->getTrans($_REQUEST["action"],'REMOVE_PROFILE')?></a></li>
+                                        <li><a class="modal-trigger modal-ajax" href="#modal-ajax" data-source="<?php echo RELATIVE_PATH; ?>/controller/myprofiledocuments/control/business/task/edit/profile/<?php echo $registerProfile["profileID"]; ?>" onclick="__gaTracker('send','event','Interest Topics','Edit Topic','<?php echo htmlspecialchars($registerProfile["profileName"]); ?>');"><i class="far fa-edit right m1"></i> <?php echo $trans->getTrans($_REQUEST["action"],'EDIT_PROFILE'); ?></a></li>
+                                        <li><a class="modal-trigger remove" href="#modal-remove-topic" data-source="<?php echo RELATIVE_PATH; ?>/controller/myprofiledocuments/control/business/task/delete/profile/<?php echo $registerProfile["profileID"]; ?>" onclick="__gaTracker('send','event','Interest Topics','Remove Topic','<?php echo htmlspecialchars($registerProfile["profileName"]); ?>');"><i class="fas fa-eraser right m1"></i> <?php echo $trans->getTrans($_REQUEST["action"],'REMOVE_PROFILE'); ?></a></li>
     								</ul>
     							</div>
     						</div>
@@ -37,7 +37,6 @@
 								<ul id='profile-list' class='dropdown-content'>
                                     <li><a href="#modal-ajax" class="modal-trigger modal-ajax" data-source="<?php echo RELATIVE_PATH; ?>/controller/myprofiledocuments/control/view/task/add"><i class="material-icons right m1">add</i> <?php echo $trans->getTrans($_REQUEST["action"],'ADD_PROFILE'); ?></a></li>
 									<li class="divider"></li>
-									<li><a href="<?php echo RELATIVE_PATH; ?>/controller/myprofiledocuments/control/business/directory/0"><?php echo $trans->getTrans($_REQUEST["action"],'INCOMING_FOLDER'); ?></a></li>
                                     <?php if ( $response["values"] ) : ?>
                                         <?php foreach ($response["values"] as $register) : ?>
                                             <li><a href="<?php echo RELATIVE_PATH; ?>/controller/myprofiledocuments/control/business/profile/<?php echo $register["profileID"]; ?>"><?php if ( $register["profileDefault"] == 1 ) : ?><i class="material-icons right m1">star_border</i><?php endif; ?> <?php echo $register["profileName"]; ?></a></li>
