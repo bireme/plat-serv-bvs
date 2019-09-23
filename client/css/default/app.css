@@ -1,0 +1,39 @@
+textarea + label:not(.active),
+textarea + div + label:not(.active),
+input + label:not(.active),
+input + div + label:not(.active) {
+    position: absolute !important;
+    top: -26px !important;
+    font-size: 0.8rem !important;
+}
+
+#menuMobile {
+	display: none;
+}
+
+.fixed-action-btn {
+	display: none;
+}
+
+.bannerHome {
+	display: none;
+}
+
+.recaptcha {
+	display: none;
+}
+
+.delete-account {
+	width: 100%;
+    text-align: center;
+}
+
+#btn-remove-account {
+    float: none !important;
+	margin: 0 auto;
+    display: table;
+}
+
+textarea#details {
+	margin-top: 1em;
+}
