@@ -794,4 +794,7 @@ span.short-query {
     .dropdown-content {
         min-width: 220px !important;
     }
+    .dropdown-trigger {
+        float: right;
+    }
 }
