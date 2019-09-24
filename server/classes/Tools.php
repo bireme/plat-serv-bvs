@@ -310,14 +310,14 @@ class UserData {
 
         $src = BVS_COOKIE_DOMAIN.'/cookies.php?userData='.$userData;
 
+        if ( $return ) return $userData;
+
         ?>
         <script type="text/javascript">
             var element = document.createElement("img");
             element.setAttribute('src', "<?php echo $src; ?>");
         </script>
         <?php
-
-        if ( $return ) return $userData;
     }
 
     /**
