@@ -418,6 +418,9 @@ span.short-query {
     color: #5a78a2;
     cursor: text;
 }
+.public_search_bar {
+    display: none;
+}
 
 /* SHARE ICONS */
 .facebookIcon {

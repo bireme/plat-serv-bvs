@@ -4,7 +4,7 @@
 		<i class="large material-icons">more_horiz</i>
 	</a>
 	<ul>
-		<li><a href="<?php echo RELATIVE_PATH; ?>/controller/authentication/?tour=true" class="btn-floating red tooltipped" data-position="left" data-tooltip="<?php echo TOUR; ?>"><i class="material-icons">computer</i></a></li>
+		<!-- <li><a href="<?php echo RELATIVE_PATH; ?>/controller/authentication/?tour=true" class="btn-floating red tooltipped" data-position="left" data-tooltip="<?php echo TOUR; ?>"><i class="material-icons">computer</i></a></li> -->
 		<li><a href="#" class="btn-floating cray tooltipped sidenav-trigger" data-target="slide-out" data-position="left" data-tooltip="<?php echo CONFIGURATIONS; ?>"><i class="material-icons">settings</i></a></li>
 	</ul>
 </div>
@@ -30,7 +30,7 @@
 	<?php if ( empty($_SESSION["source"]) || 'ldap' == $_SESSION["source"] ) : ?>
 	<li><a href="<?php echo SERVICES_PLATFORM_DOMAIN; ?>/pub/changePassword.php?userTK=<?php echo urlencode($_SESSION["userTK"]); ?>&c=<?php echo $b64HttpHost; ?>"><?php echo CHANGE_PASSWORD; ?></a></li>
 	<?php endif; ?>
-	<li><a href="<?php echo RELATIVE_PATH; ?>/controller/authentication/?tour=true"><?php echo START_TOUR; ?></a></li>
+	<!-- <li><a href="<?php echo RELATIVE_PATH; ?>/controller/authentication/?tour=true"><?php echo START_TOUR; ?></a></li> -->
 	<li><a href="http://feedback.bireme.org/feedback/my-vhl?version=2.10-77&site=servplat&lang=<?php echo $_SESSION['lang']; ?>" target="_blank"><?php echo LEAVE_COMMENT; ?></a></li>
 	<li><a href="http://feedback.bireme.org/feedback/my-vhl?version=2.10-77&error=1&site=servplat&lang=<?php echo $_SESSION['lang']; ?>" target="_blank"><?php echo REPORT_ERROR; ?></a></li>
 	<li class="divider" tabindex="-1"></li>

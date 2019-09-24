@@ -12,7 +12,7 @@ input + div + label:not(.active) {
 }
 
 .fixed-action-btn {
-	display: none;
+	/*display: none;*/
 }
 
 .bannerHome {
@@ -36,4 +36,8 @@ input + div + label:not(.active) {
 
 textarea#details {
 	margin-top: 1em;
+}
+
+.public_search_bar {
+    display: block;
 }
