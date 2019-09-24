@@ -25,6 +25,7 @@ $origin = ( $_REQUEST["origin"] ) ? $_REQUEST["origin"] : '';
 $iahx = ( $_REQUEST['iahx'] ) ? $_REQUEST['iahx'] : base64_encode('portal');
 $label = $trans->getTrans("mysearches", 'ORIGIN_SITE');
 
+$token = false;
 $send_cookie = false;
 
 if ( strpos(base64_decode($iahx), VHL_SEARCH_PORTAL_DOMAIN) !== false ) {
@@ -42,10 +43,22 @@ if ( strpos(base64_decode($iahx), VHL_SEARCH_PORTAL_DOMAIN) !== false ) {
 
 switch($_REQUEST["task"]){
     case "authenticate":
-        if (empty($_SESSION["userTK"])){
-            $result = Authentication::loginUser($_REQUEST["userID"],$_REQUEST["userPass"]);
+        if ( !isset($_SESSION["userTK"]) || empty($_SESSION["userTK"])){
+            $userID = $_REQUEST["userID"];
+            $userPass =  $_REQUEST["userPass"];
 
-            if (($result["status"] !== false) and ($result !== false)){
+            if ( isset($_COOKIE["userTK"]) && !empty($_COOKIE["userTK"]) ) {
+                $token = Token::unmakeUserTK($_COOKIE["userTK"], true);
+
+                if ( $token ) {
+                    $userID = $token["userID"];
+                    $userPass = $token["userPass"];
+                }
+            }
+
+            $result = Authentication::loginUser($userID,$userPass);
+
+            if (($result["status"] !== false) && ($result !== false)){
                 $_SESSION["userTK"] = $result["userTK"];
                 $_SESSION["userID"] = $result["userID"];
                 $_SESSION["userFirstName"] = $result["userFirstName"];
@@ -60,10 +73,11 @@ switch($_REQUEST["task"]){
 
                 // send cookie to .bvs.br
                 $send_cookie = true;
+                $remember_me = ( $_REQUEST['remember_me'] || $token ) ? time() + (10 * 365 * 24 * 60 * 60) : 0;
                 // send cookie to .bvsalud.org
                 $cookie = UserData::sendCookie($result["userTK"], true);
-                setcookie("userData", $cookie, 0, '/', COOKIE_DOMAIN_SCOPE);
-                setcookie("userTK", $result["userTK"], 0, '/', COOKIE_DOMAIN_SCOPE);
+                setcookie("userData", $cookie, $remember_me, '/', COOKIE_DOMAIN_SCOPE);
+                setcookie("userTK", $result["userTK"], $remember_me, '/', COOKIE_DOMAIN_SCOPE);
 
                 // SSO LOGIN
                 if(ENABLE_SSO_LOGIN){

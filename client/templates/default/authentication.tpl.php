@@ -47,7 +47,7 @@
 					</div>
 					<div class="col s6 left-align">
 						<label>
-							<input type="checkbox" />
+							<input type="checkbox" name="remember_me" />
 							<span><?php echo $trans->getTrans($_REQUEST["action"],'REMEMBER_ME'); ?></span>
 						</label>
 					</div>
