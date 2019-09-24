@@ -807,7 +807,7 @@ class UserDAO {
                         $newToken = Token::makeUserTK($userID,$newPassword,'ldap');
                         $_SESSION['userTK'] = $newToken;
                         setcookie("userTK", $_SESSION["userTK"], 0, '/', COOKIE_DOMAIN_SCOPE);
-                        //UserData::sendCookie($result["userTK"]);
+                        // UserData::sendCookie($result["userTK"]);
                     }
                 } else {
                     $retValue = 'invalidpass';

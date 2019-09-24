@@ -110,9 +110,11 @@
         if (navigator.userAgent.indexOf('gonative') > -1) {
             __gaTracker('create', '<?php echo APP_GOOGLE_ANALYTICS; ?>', 'auto');
             __gaTracker('send', 'pageview');
+            __gaTracker('set', 'userId', '<?php echo $_SESSION["userID"]; ?>'); // Set the user ID using signed-in user_id.
         } else {
             __gaTracker('create', '<?php echo GOOGLE_ANALYTICS; ?>', 'auto');
             __gaTracker('send', 'pageview');
+            __gaTracker('set', 'userId', '<?php echo $_SESSION["userID"]; ?>'); // Set the user ID using signed-in user_id.
         }
     </script>
     <?php endif; ?>

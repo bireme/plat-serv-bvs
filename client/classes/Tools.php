@@ -238,10 +238,6 @@ class UserData {
 
         $src = BVS_COOKIE_DOMAIN.'/cookies.php?userData='.$userData;
 
-        if ( $return ) {
-            return $userData;
-        } else {
-
         ?>
         <script type="text/javascript">
             var element = document.createElement("img");
@@ -249,7 +245,7 @@ class UserData {
         </script>
         <?php
 
-        }
+        if ( $return ) return $userData;
     }
 
 }
