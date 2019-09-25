@@ -458,6 +458,8 @@ $('.btn2Botoes a.related-docs, .btn2Buttons a.related-docs').click(
         content = $('#modal-related-docs');
         title = $(this).parent().siblings('div.record').find('a.doctitle').text();
 
+        $('#ref-title').text(title);
+
         obj = new Object();
         obj.sentence = $.trim(title);
 

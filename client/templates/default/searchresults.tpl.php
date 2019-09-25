@@ -134,6 +134,9 @@
         <form action="#" class="col s12">
             <div class="modal-content">
                 <h4><?php echo ucwords($trans->getTrans('suggesteddocs','RELATED_DOCS')); ?></h4>
+                <p class="center-align">
+                    <b id="ref-title"></b>
+                </p>
                 <div class="related_docs">
                     <div class="related-loading center-align"><?php echo $trans->getTrans('suggesteddocs','LOADING'); ?></div>
                     <div class="related-loading row">
