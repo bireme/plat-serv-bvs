@@ -118,7 +118,7 @@
             <div class="modal-content">
                 <h4><?php echo $trans->getTrans($_REQUEST["action"],'SHARE_COLLECTION'); ?></h4>
                 <p class="center-align">
-                    <b id="doc-title"><?php echo $resultDirName; ?></b>
+                    <b><?php echo $resultDirName; ?></b>
                 </p>
                 <div class="row center-align">
                     <p class="center-align linkBreak"><?php echo $public_link; ?></p>
