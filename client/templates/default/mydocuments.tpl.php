@@ -117,6 +117,9 @@
         <form action="#" class="col s12">
             <div class="modal-content">
                 <h4><?php echo $trans->getTrans($_REQUEST["action"],'SHARE_COLLECTION'); ?></h4>
+                <p class="center-align">
+                    <b id="doc-title"><?php echo $resultDirName; ?></b>
+                </p>
                 <div class="row center-align">
                     <p class="center-align linkBreak"><?php echo $public_link; ?></p>
                     <hr>
@@ -126,6 +129,8 @@
                       var addthis_share = addthis_share||{};
                           addthis_share.title = "<?php echo $resultDirName; ?>";
                           addthis_share.url = "<?php echo $public_link; ?>";
+
+                      addthis.init();
                     </script>
                     <div class="addthis_toolbox addthis_60x60_style" addthis:url="<?php echo $public_link; ?>">
                         <a class="addthis_button_facebook"></a>
