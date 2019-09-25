@@ -164,7 +164,7 @@
                             <?php foreach ( $response["values"] as $register) : $count++; ?>
                                 <tr>
                                     <td><?php echo $count; ?></td>
-                                    <td class="query"><a href="<?php echo VHL_SEARCH_PORTAL_DOMAIN.'/portal/?q='.$register['query']; ?>" target="_blank"><?php echo CharTools::shortenedQueryString($register['query'], false); ?></a></td>
+                                    <td class="query"><?php echo CharTools::shortenedQueryString($register['query'], false); ?></td>
                                     <td class="filter"><?php echo CharTools::shortenedQueryString($register['filter'], false); ?></td>
                                     <td class="right-align search-actions">
                                         <a href="#!" class="btn1 btnCombine waves-effect blue darken-2 tooltipped" data-query="<?php echo $register['query']; ?>" data-filter="<?php echo $register['filter']; ?>" data-position="top" data-tooltip="<?php echo $trans->getTrans($_REQUEST["action"],'COMBINE'); ?>" onclick="__gaTracker('send','event','VHL Search History','Combine Queries','<?php echo htmlspecialchars($register["query"]); ?>');"><i class="material-icons left">shuffle</i></a>
