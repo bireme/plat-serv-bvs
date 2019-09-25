@@ -295,7 +295,7 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
         self::$trans["mydocuments"]["BULK_MOVE_DOCS"] = 'Mover';
         self::$trans["mydocuments"]["SHARE_COLLECTION"] = 'compartir colección';
         self::$trans["mydocuments"]["SHARED_COLLECTION"] = 'colección compartida';
-        self::$trans["mydocuments"]["SHARED_COLLECTION_DESC"] = "Colección disponible en <a href='http://platserv.bvsalud.org/client/controller/authentication/?lang=es'>MiBVS<a/>.";
+        self::$trans["mydocuments"]["SHARED_COLLECTION_DESC"] = "Colección disponible en Servicios Personalizados MiBVS - https://platserv.bvsalud.org";
         self::$trans["mydocuments"]["INVITE"] = '¿Todavía no tienes registro en MiBVS? <a href="/client/controller/authentication/?lang=es" target="_blank">¡Acceda a nuestro sitio y registrese!';
         self::$trans["mydocuments"]["BUTTON_CLOSE"] = 'Cerrar';
         self::$trans["mydocuments"]["CREATED_BY"] = 'Creado por:';
