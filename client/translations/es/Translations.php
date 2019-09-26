@@ -176,6 +176,10 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
 <h4>Eventos</h4>
 <p>Los eventos que se muestran en este widget están relacionados con el área de actuación profesional ingresada en su perfil.</p>
 ';
+        self::$trans["menu"]["SUGGESTIONS_WIDGET_INFO"] = '
+<h4>Sugerencias</h4>
+<p>Los documentos que se muestran en este widget son sugerencias hechas desde el último documento visto en los servicios Documentos Favoritos o Temas de Interés.</p>
+';
 
     // Terms of searchresults pages
         self::$trans["searchresults"]["FEATURE"] = 'RSS';
