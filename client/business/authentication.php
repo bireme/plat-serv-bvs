@@ -79,7 +79,7 @@ switch($_REQUEST["task"]){
                 $cookie = UserData::sendCookie($result["userTK"], true);
                 setcookie("userData", $cookie, $remember_me, '/', COOKIE_DOMAIN_SCOPE);
                 setcookie("userTK", $result["userTK"], $remember_me, '/', COOKIE_DOMAIN_SCOPE);
-                setcookie("userID", $_SESSION["userID"], $remember_me, '/', COOKIE_DOMAIN_SCOPE);
+                setcookie("userID", $result["sysUID"], $remember_me, '/', COOKIE_DOMAIN_SCOPE);
 
                 // SSO LOGIN
                 if(ENABLE_SSO_LOGIN){
