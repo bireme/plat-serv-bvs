@@ -171,6 +171,10 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Phone: (55 11) 5576-980
 <a href="http://new.paho.org/bireme" title="MyVHL" target="_blank">http://www.paho.org/bireme</a><br />
 <b><a href="http://politicas.bireme.org/terminos/en/" target="_blank">Terms and Conditions of Use</a> | <a href="http://politicas.bireme.org/privacidad/en/" target="_blank">Privacy Policy</a></b>
 ';
+        self::$trans["menu"]["EVENTS_WIDGET_INFO"] = '
+<h4>Events</h4>
+<p>The events displayed in this widget are related to the professional area entered in your profile.</p>
+';
 
     // Terms of searchresults pages
         self::$trans["searchresults"]["FEATURE"] = 'RSS';

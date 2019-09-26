@@ -1,4 +1,10 @@
-<?php $path = rtrim($_SERVER['PHP_SELF'], '/') . '/'; ?>
+<?php
+    unset($_REQUEST['lang']);
+    $request = array_filter($_REQUEST);
+    $query = (!empty($request)) ? '?'.http_build_query($request).'&' : '?';
+    $path = rtrim($_SERVER['PHP_SELF'], '/').'/'.$query;
+    $b64HttpHost = base64_encode(RELATIVE_PATH.'/controller/authentication');
+?>
 <header id="header">
 	<div class="right" style="margin-top: 10px;">
 		<!-- botão 1 -->
@@ -6,7 +12,7 @@
 		<ul id='idioma' class='dropdown-content' style="min-width: 200px !important;">
 			<?php foreach ($languages as $key => $value) : ?>
 	            <?php if ( $key == $_SESSION['lang'] ) continue; ?>
-	            <li><a href="<?php echo $path.'?lang='.$key; ?>"><?php echo $value; ?></a></li>
+	            <li><a href="<?php echo $path.'lang='.$key; ?>"><?php echo $value; ?></a></li>
 	        <?php endforeach; ?>
 		</ul>
 		<!-- botão 2 -->

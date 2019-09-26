@@ -104,6 +104,7 @@ usuário para oferecer serviços personalizados e facilidades tais como:</p>
         self::$trans["menu"]["USERS_SERVICES"] = 'Serviços Personalizados';
         self::$trans["menu"]["OLA"] = 'Olá';
         self::$trans["menu"]["LOGOUT"] = 'Sair';
+        self::$trans["menu"]["CLOSE"] = 'fechar';
         self::$trans["menu"]["MY_PROFILE_DOCUMENTS"] = 'Temas de Interesse';
         self::$trans["menu"]["MY_SHELF"] = 'Documentos Favoritos';
         self::$trans["menu"]["MY_LINKS"] = 'Links Favoritos';
@@ -172,6 +173,10 @@ Departamento de Evidência e Inteligência para a Ação em Saúde – EIH<br />
 Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 | Fax: (55 11) 5575-8868<br />
 <a href="http://new.paho.org/bireme" title="MinhaBVS" target="_blank">http://www.paho.org/bireme/</a><br />
 <b><a href="http://politicas.bireme.org/terminos/pt/" target="_blank">Termos e Condições de Uso</a> | <a href="http://politicas.bireme.org/privacidad/pt/" target="_blank">Políticas de Privacidade</a></b>
+';
+        self::$trans["menu"]["EVENTS_WIDGET_INFO"] = '
+<h4>Eventos</h4>
+<p>Os eventos exibidos nesse widget estão relacionados com a área de atuação profissional informada no seu perfil.</p>
 ';
 
     // Terms of searchresults pages

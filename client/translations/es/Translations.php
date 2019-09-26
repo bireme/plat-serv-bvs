@@ -172,6 +172,10 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
 <a href="http://new.paho.org/bireme" title="MiBVS" target="_blank">http://www.paho.org/bireme</a><br />
 <b><a href="http://politicas.bireme.org/terminos/es/" target="_blank">Términos y Condiciones de Uso</a> | <a href="http://politicas.bireme.org/privacidad/es/" target="_blank">Políticas de Privacidad</a></b>
 ';
+        self::$trans["menu"]["EVENTS_WIDGET_INFO"] = '
+<h4>Eventos</h4>
+<p>Los eventos que se muestran en este widget están relacionados con el área de actuación profesional ingresada en su perfil.</p>
+';
 
     // Terms of searchresults pages
         self::$trans["searchresults"]["FEATURE"] = 'RSS';

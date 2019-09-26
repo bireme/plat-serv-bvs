@@ -115,7 +115,7 @@
 							</ul>
 						</div>
 						<div class="col s12 l6 xl4 p1">
-							<h6><b><?php echo $trans->getTrans($_REQUEST["action"],'EVENTS'); ?></b></h6>
+							<h6><b><?php echo $trans->getTrans($_REQUEST["action"],'EVENTS'); ?></b><a class="modal-trigger" href="#modal-events" style="float: right;"><i class="fas fa-info-circle fa-sm"></i></a></h6>
 							<div class="divider"></div><br />
 							<?php if ( $events ) : ?>
 			                    <?php foreach ( $events as $event ) : ?>
@@ -153,5 +153,19 @@
 		</div>
 		<?php require_once(dirname(__FILE__)."/info.tpl.php"); ?>
 		<?php require_once(dirname(__FILE__)."/more.tpl.php"); ?>
+	</div>
+	<!-- Modal Widget Eventos -->
+	<div id="modal-events" class="modal">
+		<div class="modal-content"><?php echo $trans->getTrans($_REQUEST["action"],'EVENTS_WIDGET_INFO'); ?></div>
+		<div class="modal-footer">
+			<a href="#!" class="modal-close waves-effect waves-green btn-flat"><?php echo $trans->getTrans($_REQUEST["action"],'CLOSE'); ?></a>
+		</div>
+	</div>
+	<!-- Modal Widget Sugestões -->
+	<div id="modal-suggestions" class="modal">
+		<div class="modal-content"><?php echo $trans->getTrans($_REQUEST["action"],'SUGGESTIONS_WIDGET_INFO'); ?></div>
+		<div class="modal-footer">
+			<a href="#!" class="modal-close waves-effect waves-green btn-flat"><?php echo $trans->getTrans($_REQUEST["action"],'CLOSE'); ?></a>
+		</div>
 	</div>
 	<?php require_once(dirname(__FILE__)."/footer.tpl.php"); ?>

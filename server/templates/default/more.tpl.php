@@ -1,4 +1,10 @@
-<?php $path = rtrim($_SERVER['PHP_SELF'], '/') . '/'; ?>
+<?php
+    unset($_REQUEST['lang']);
+    $request = array_filter($_REQUEST);
+    $query = (!empty($request)) ? '?'.http_build_query($request).'&' : '?';
+    $path = rtrim($_SERVER['PHP_SELF'], '/').'/'.$query;
+    $b64HttpHost = base64_encode(RELATIVE_PATH.'/controller/authentication');
+?>
 <div class="fixed-action-btn">
 	<a class="btn-floating btn-large blue darken-3">
 		<i class="large material-icons">more_horiz</i>
@@ -36,7 +42,7 @@
 	<li class="divider" tabindex="-1"></li>
 	<?php foreach ($languages as $key => $value) : ?>
         <?php if ( $key == $_SESSION['lang'] ) continue; ?>
-        <li><a href="<?php echo $path.'?lang='.$key; ?>"><?php echo $value; ?></a></li>
+        <li><a href="<?php echo $path.'lang='.$key; ?>"><?php echo $value; ?></a></li>
     <?php endforeach; ?>
 	<li class="divider" tabindex="-1"></li>
 	<li class="row">
