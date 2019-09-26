@@ -110,16 +110,17 @@
         if (navigator.userAgent.indexOf('gonative') > -1) {
             __gaTracker('create', '<?php echo APP_GOOGLE_ANALYTICS; ?>', 'auto');
             __gaTracker('send', 'pageview');
-            __gaTracker('set', 'userId', '<?php echo $_SESSION["userID"]; ?>'); // Set the user ID using signed-in user_id.
+            __gaTracker('set', 'userId', '<?php echo $_SESSION["sysUID"]; ?>'); // Set the user ID using signed-in user_id.
         } else {
             __gaTracker('create', '<?php echo GOOGLE_ANALYTICS; ?>', 'auto');
             __gaTracker('send', 'pageview');
-            __gaTracker('set', 'userId', '<?php echo $_SESSION["userID"]; ?>'); // Set the user ID using signed-in user_id.
+            __gaTracker('set', 'userId', '<?php echo $_SESSION["sysUID"]; ?>'); // Set the user ID using signed-in user_id.
         }
     </script>
     <?php endif; ?>
 
-    <?php $body_class = ( !$_SESSION['userTK'] && !$public ) ? 'bodyLogin' : ''; ?>
-    <?php $lang_class = ( $_SESSION['lang'] ) ? 'body_'.$_SESSION['lang'] : 'body_pt'; ?>
+    <?php $body_class   = ( !$_SESSION['userTK'] ) ? 'bodyLogin' : ''; ?>
+    <?php $public_class = ( $public ) ? 'public-col' : ''; ?>
+    <?php $lang_class   = ( $_SESSION['lang'] ) ? 'body_'.$_SESSION['lang'] : 'body_pt'; ?>
   </head>
-  <body id="body" class="<?php echo $lang_class; ?> <?php echo $body_class; ?> <?php echo $_COOKIE['color']; ?>">
+  <body id="body" class="<?php echo $lang_class; ?> <?php echo $body_class; ?> <?php echo $public_class; ?> <?php echo $_COOKIE['color']; ?>">

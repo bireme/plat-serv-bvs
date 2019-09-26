@@ -62,6 +62,7 @@ function loginUser($userID,$userPass,$socialMedia){
             $retValue['source'] = $response["source"];
             $retValue['visited'] = $response["visited"];
             $retValue['userTK'] = Token::makeUserTK($objUser->getID(),$dUserPass,$response['source']);
+            $retValue['sysUID'] = UserDAO::getSysUID($objUser->getID());
         }else{
             $retValue = array(); /* redeclare the variable */
             $retValue = $response;

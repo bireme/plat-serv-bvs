@@ -59,6 +59,7 @@ switch($_REQUEST["task"]){
             $result = Authentication::loginUser($userID,$userPass);
 
             if (($result["status"] !== false) && ($result !== false)){
+                $_SESSION["sysUID"] = $result["sysUID"];
                 $_SESSION["userTK"] = $result["userTK"];
                 $_SESSION["userID"] = $result["userID"];
                 $_SESSION["userFirstName"] = $result["userFirstName"];

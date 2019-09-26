@@ -51,6 +51,7 @@ if ($gClient->getAccessToken()) {
 
         // Logged in!
     	$_SESSION['google_data'] = $userProfile; // Storing Google User Data in Session
+        $_SESSION["sysUID"] = $result["sysUID"];
         $_SESSION["userTK"] = $result["userTK"];
         $_SESSION["userID"] = $result["userID"];
         $_SESSION["userFirstName"] = $result["userFirstName"];
