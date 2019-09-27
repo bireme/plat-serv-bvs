@@ -102,7 +102,7 @@
 					<div class="divider"></div><br />
 					<div class="row" id="interessar" <?php if ( isset($_COOKIE['hide_info']) && "on" == $_COOKIE['hide_info'] ) { echo 'style="display: none;"'; } ?>>
 						<div class="col s12 l6 xl4 p1">
-							<h6><b><?php echo $trans->getTrans($_REQUEST["action"],'SUGGESTIONS'); ?></b><a class="modal-trigger" href="#modal-suggestions" style="float: right;"><i class="fas fa-info-circle fa-sm"></i></a></h6>
+							<h6><b><?php echo $trans->getTrans($_REQUEST["action"],'SUGGESTIONS'); ?></b><a class="modal-trigger" href="#modal-suggestions"  title="Widget Info"><i class="fas fa-info-circle widget-info"></i></a></h6>
 							<div class="divider"></div>
 							<ul class="lista1">
 								<?php if ( $suggestedDocs ) : ?>
@@ -115,7 +115,7 @@
 							</ul>
 						</div>
 						<div class="col s12 l6 xl4 p1">
-							<h6><b><?php echo $trans->getTrans($_REQUEST["action"],'EVENTS'); ?></b><a class="modal-trigger" href="#modal-events" style="float: right;"><i class="fas fa-info-circle fa-sm"></i></a></h6>
+							<h6><b><?php echo $trans->getTrans($_REQUEST["action"],'EVENTS'); ?></b><a class="modal-trigger" href="#modal-events"  title="Widget Info"><i class="fas fa-info-circle widget-info"></i></a></h6>
 							<div class="divider"></div><br />
 							<?php if ( $events ) : ?>
 			                    <?php foreach ( $events as $event ) : ?>

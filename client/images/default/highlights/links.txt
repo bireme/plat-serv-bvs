@@ -1,4 +1,4 @@
 http://decs.bvs.br/
 https://pesquisa.bvsalud.org/portal/
-https://bvsalud.org/
-http://lilacs.bvsalud.org/
+https://eblueinfo.bvsalud.org/
+https://www.globalhealthlibrary.net/
