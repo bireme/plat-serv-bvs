@@ -129,8 +129,6 @@
                       var addthis_share = addthis_share||{};
                           addthis_share.title = "<?php echo $resultDirName; ?>";
                           addthis_share.url = "<?php echo $public_link; ?>";
-
-                      addthis.init();
                     </script>
                     <div class="addthis_toolbox addthis_60x60_style" addthis:url="<?php echo $public_link; ?>">
                         <a class="addthis_button_facebook"></a>
@@ -142,6 +140,7 @@
                         <!--a class="addthis_button_compact"></a-->
                     </div>
                     <script type="text/javascript" src="https://s7.addthis.com/js/300/addthis_widget.js#async=1"></script>
+                    <script type="text/javascript">addthis.init();</script>
                 </div>
             </div>
             <div class="modal-footer">

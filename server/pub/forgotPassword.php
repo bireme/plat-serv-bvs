@@ -68,10 +68,10 @@ $DocTitle = FORGOT_PASSWORD;
   			</div>
 			<div class="row">
 				<div class="col s12 l4" id="logoRecover">
-					<a href="<?php echo RELATIVE_PATH; ?>/controller/authentication"><img src="<?php echo RELATIVE_PATH; ?>/images/<?php echo $_SESSION["skin"]; ?>/logo-<?php echo $_SESSION["lang"]; ?>.png" alt="" class="responsive-img"></a>
+					<a href="<?php echo RELATIVE_PATH; ?>/controller/authentication"><img src="<?php echo RELATIVE_PATH; ?>/images/<?php echo $_SESSION["skin"]; ?>/logo-<?php echo $_SESSION["lang"]; ?>.png" alt="Logo MiBVS" class="responsive-img"></a>
 				</div>
 				<div class="col s12 l8" id="logoRecoverBireme">
-					<img src="http://logos.bireme.org/img/<?php echo $_SESSION["lang"]; ?>/v_bir_color.svg" class="responsive-img" alt="">
+					<img src="http://logos.bireme.org/img/<?php echo $_SESSION["lang"]; ?>/v_bir_color.svg" class="responsive-img" alt="Logo BIREME">
 				</div>
 			</div>
 			<div class="divider"></div>
@@ -106,5 +106,7 @@ $DocTitle = FORGOT_PASSWORD;
 			</div>
 		</div>
 	</section>
+
+	<?php require_once(dirname(__FILE__)."/../templates/".DEFAULT_SKIN."/info.tpl.php"); ?>
 
 <?php require_once(dirname(__FILE__)."/../templates/".DEFAULT_SKIN."/footer.tpl.php"); ?>

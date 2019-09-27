@@ -1,3 +1,4 @@
+html, body { height: 100%; }
 body {
 	background: #edf1f5 url('../../images/default/bgGeral.png') fixed no-repeat top right;
 	background-size: 100%;
@@ -402,6 +403,7 @@ a.search {
     width: 52px !important;
     height: 52px !important;
     border-radius: 10px;
+    text-align: center;
 }
 .addthis_toolbox.addthis_60x60_style span svg {
     width: 40px !important;
@@ -421,6 +423,20 @@ span.short-query {
 .public_search_bar {
     display: none;
 }
+body.public-col section {
+    height: 100%;
+}
+body.public-col section {
+    display: flex;
+    flex-direction: column;
+}
+body.public-col #recover {
+    margin-bottom: 50px;
+}
+body.public-col footer {
+    margin-top: auto !important;
+}
+
 
 /* SHARE ICONS */
 .facebookIcon {

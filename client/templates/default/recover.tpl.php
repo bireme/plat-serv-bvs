@@ -1,10 +1,8 @@
 <?php
-	require_once(dirname(__FILE__)."/header.tpl.php");
-
 	$path = rtrim($_SERVER['PHP_SELF'], '/') . '/';
     $b64HttpHost = base64_encode(RELATIVE_PATH.'/controller/authentication');
 ?>
-
+	<?php require_once(dirname(__FILE__)."/header.tpl.php"); ?>
 	<section  class="container">
 		<div id="recover" class="col-12">
 			<div id="lang">
@@ -15,10 +13,10 @@
   			</div>
 			<div class="row">
 				<div class="col s12 l4" id="logoRecover">
-					<a href="<?php echo RELATIVE_PATH; ?>/controller/authentication"><img src="<?php echo RELATIVE_PATH; ?>/images/<?php echo $_SESSION["skin"]; ?>/logo-<?php echo $_SESSION["lang"]; ?>.png" alt="" class="responsive-img"></a>
+					<a href="<?php echo RELATIVE_PATH; ?>/controller/authentication"><img src="<?php echo RELATIVE_PATH; ?>/images/<?php echo $_SESSION["skin"]; ?>/logo-<?php echo $_SESSION["lang"]; ?>.png" alt="Logo MiBVS" class="responsive-img"></a>
 				</div>
 				<div class="col s12 l8" id="logoRecoverBireme">
-					<img src="http://logos.bireme.org/img/<?php echo $_SESSION["lang"]; ?>/v_bir_color.svg" class="responsive-img" alt="">
+					<img src="http://logos.bireme.org/img/<?php echo $_SESSION["lang"]; ?>/v_bir_color.svg" class="responsive-img" alt="Logo BIREME">
 				</div>
 			</div>
 			<div class="divider"></div>
@@ -44,5 +42,5 @@
 			</div>
 		</div>
 	</section>
-
-<?php require_once(dirname(__FILE__)."/footer.tpl.php"); ?>
+    <?php require_once(dirname(__FILE__)."/info.tpl.php"); ?>
+	<?php require_once(dirname(__FILE__)."/footer.tpl.php"); ?>

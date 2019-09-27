@@ -301,6 +301,7 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Phone: (55 11) 5576-980
         self::$trans["mydocuments"]["BULK_REMOVE_DOCS"] = 'Remove';
         self::$trans["mydocuments"]["BULK_MOVE_DOCS"] = 'Move';
         self::$trans["mydocuments"]["SHARE_COLLECTION"] = 'share collection';
+        self::$trans["mydocuments"]["SHARE"] = 'Share';
         self::$trans["mydocuments"]["SHARED_COLLECTION"] = 'shared collection';
         self::$trans["mydocuments"]["SHARED_COLLECTION_DESC"] = "Collection available in Custom Services MyVHL - https://platserv.bvsalud.org";
         self::$trans["mydocuments"]["INVITE"] = 'Do not have an account in MyVHL yet? <a href="/client/controller/authentication/?lang=en" target="_blank">Visit our site and register!';

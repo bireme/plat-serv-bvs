@@ -445,10 +445,10 @@ $('.btn2Botoes a.related-docs, .btn2Buttons a.related-docs').click(
         _this = $(this);
         _this.prop('disabled', true);
 
-        if ( $(this).is(".related-docs") ) {
-            task = 'related';
-        } else {
+        if ( $(this).is(".public-related-docs") ) {
             task = 'public';
+        } else {
+            task = 'related';
         }
 
         path = window.location.pathname;
