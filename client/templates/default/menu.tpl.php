@@ -25,7 +25,7 @@
 						<img class="activator" src="<?php echo RELATIVE_PATH; ?>/images/<?php echo $_SESSION["skin"]; ?>/favoritos-<?php echo $_SESSION["lang"]; ?>.jpg" alt="Título Documentos Favoritos">
 					</div>
 					<div class="card-action">
-						<a href="<?=RELATIVE_PATH?>/controller/mydocuments/control/business" onclick="__gaTracker('send','event','Overview','Favorite Documents','See All');"><b><?php echo $trans->getTrans($_REQUEST["action"],'MORE'); ?> [+]</b></a>
+						<a href="<?php echo RELATIVE_PATH; ?>/controller/mydocuments/control/business" onclick="__gaTracker('send','event','Overview','Favorite Documents','See All');"><b><?php echo $trans->getTrans($_REQUEST["action"],'MORE'); ?> [+]</b></a>
 					</div>
 					<div class="card-reveal">
 						<span class="card-title grey-text text-darken-4"><?php echo $trans->getTrans('menu','SHELF_WIDGET'); ?><i class="material-icons right">close</i></span>
@@ -54,7 +54,7 @@
 						<img class="activator" src="<?php echo RELATIVE_PATH; ?>/images/<?php echo $_SESSION["skin"]; ?>/interesse-<?php echo $_SESSION["lang"]; ?>.jpg" alt="Título Temas de Interesses">
 					</div>
 					<div class="card-action">
-						<a href="<?=RELATIVE_PATH?>/controller/myprofiledocuments/control/business" onclick="__gaTracker('send','event','Overview','Interest Topics','See All');"><b><?php echo $trans->getTrans($_REQUEST["action"],'MORE'); ?> [+]</b></a>
+						<a href="<?php echo RELATIVE_PATH; ?>/controller/myprofiledocuments/control/business" onclick="__gaTracker('send','event','Overview','Interest Topics','See All');"><b><?php echo $trans->getTrans($_REQUEST["action"],'MORE'); ?> [+]</b></a>
 					</div>
 					<div class="card-reveal">
 						<span class="card-title grey-text text-darken-4"><?php echo $trans->getTrans('menu','PROFILE_WIDGET'); ?><i class="material-icons right">close</i></span>
@@ -72,7 +72,7 @@
 						<img class="activator" src="<?php echo RELATIVE_PATH; ?>/images/<?php echo $_SESSION["skin"]; ?>/historico-<?php echo $_SESSION["lang"]; ?>.jpg"  alt="Título Histórico de Buscas">
 					</div>
 					<div class="card-action">
-						<a href="<?=RELATIVE_PATH?>/controller/mysearches/control/business" onclick="__gaTracker('send','event','Overview','VHL Search History','See All');"><b><?php echo $trans->getTrans($_REQUEST["action"],'MORE'); ?> [+]</b></a>
+						<a href="<?php echo RELATIVE_PATH; ?>/controller/mysearches/control/business" onclick="__gaTracker('send','event','Overview','VHL Search History','See All');"><b><?php echo $trans->getTrans($_REQUEST["action"],'MORE'); ?> [+]</b></a>
 					</div>
 					<div class="card-reveal">
 						<span class="card-title grey-text text-darken-4"><?php echo $trans->getTrans($_REQUEST["action"],'SEARCH_WIDGET'); ?><i class="material-icons right">close</i></span>
