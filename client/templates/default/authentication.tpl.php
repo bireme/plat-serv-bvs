@@ -86,6 +86,18 @@
                 <a href="https://play.google.com/store/apps/details?id=org.bvsalud.platserv" target="_blank"><img src="<?php echo RELATIVE_PATH; ?>/images/<?php echo $_SESSION["skin"]; ?>/google-bt.png" alt="Download Google Play"></a>
                 <a href="https://apps.apple.com/us/app/mibvs/id1440172734" target="_blank"><img src="<?php echo RELATIVE_PATH; ?>/images/<?php echo $_SESSION["skin"]; ?>/ios-bt.png" alt="Download Apple Store"></a>
             </div>
+            <div class="col s12">
+                <a class="modal-trigger" href="#modal-readmore"><?php echo $trans->getTrans($_REQUEST["action"],'KNOWMORE'); ?></a>
+            </div>
         </div>
     </section>
+    <!-- Modal Saiba Mais -->
+    <div id="modal-readmore" class="modal">
+        <form action="#" class="col s12">
+            <div class="modal-content">
+                <h4><?php echo $trans->getTrans($_REQUEST["action"],'MY_VHL'); ?></h4>
+                <?php echo $trans->getTrans($_REQUEST["action"],'MY_VHL_DESCRIPTION'); ?>
+            </div>
+        </form> 
+    </div>
 <?php require_once(dirname(__FILE__)."/footer.tpl.php"); ?>

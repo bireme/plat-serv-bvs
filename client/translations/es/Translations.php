@@ -23,7 +23,7 @@ class Translations {
 ';
         self::$trans["authentication"]["MY_VHL_DESCRIPTION"] = '
 <p>MiBVS es un servicio gratuito que guarda informaciones y preferencias del usuario para ofrecer servicios personalizados y facilidades tales como:</p>
-<ul class="listDefault">
+<ul class="listaNormal">
     <li>Creación de colecciones de documentos a partir del resultado de búsquedas procesadas en las bases de datos de la BVS.</li>
     <li>Documentos recuperados en las bases de datos de la BVS a partir de palabras-claves indicadas en los Temas de Interés.</li>
     <li>Publicaciones de autoria del usuario recuperadas en varias fuentes considerando el número ORCID informado en el Perfil del usuario.</li>

@@ -379,7 +379,7 @@ span.error-text {
     padding-left: 30px !important;
 }
 .listaNormal li {
-    list-style: square !important;
+    list-style: disc !important;
 }
 a.portal,
 a.search {

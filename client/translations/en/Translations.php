@@ -23,7 +23,7 @@ class Translations {
 ';
         self::$trans["authentication"]["MY_VHL_DESCRIPTION"] = '
 <p>MyVHL is a free service that stores information and user preferences to offer customized services and facilities such as:</p>
-<ul class="listDefault">
+<ul class="listaNormal">
     <li>Creation of collections of documents from the results of searches processed in the VHL databases.</li>
     <li>Documents found in the VHL databases from the keywords indicated for Topics of Interest.</li>
     <li>User-authored publications retrieved from multiple sources by considering the ORCID number entered in the User Profile.</li>

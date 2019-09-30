@@ -25,7 +25,7 @@ Facebook, Google, BIREME Account ou do próprio serviço MinhaBVS. <a href="java
         self::$trans["authentication"]["MY_VHL_DESCRIPTION"] = '
 <p>MinhaBVS é um serviço gratuito que guarda informações e preferências do
 usuário para oferecer serviços personalizados e facilidades tais como:</p>
-<ul class="listDefault">
+<ul class="listaNormal">
     <li>Criação de coleções de documentos a partir de resultado de buscas processadas nas bases de dados da BVS.</li>
     <li>Documentos encontrados nas bases de dados da BVS a partir das palavras-chaves indicadas para Temas de Interesse.</li>
     <li>Publicações de autoria do usuário recuperadas em várias fontes considerando o número ORCID informado no Perfil do Usuário.</li>
