@@ -11,8 +11,7 @@
 		<div class="row">
 			<div class="col m12 ">
 				<div class="box1">
-					<div data-target="modal-alert" class="modal-trigger" style="cursor: pointer;"><i class="fas fa-info-circle fa-lg right"></i></div>
-					<h5 class="title1"><i class="fas fa-folder left"></i> <?php echo $trans->getTrans($_REQUEST["action"],'MY_PROFILES'); ?></h5>
+					<h5 class="title1"><i class="fas fa-folder left"></i> <?php echo $trans->getTrans($_REQUEST["action"],'MY_PROFILES'); ?> <a class="modal-trigger" href="#modal-alert"  title="Widget Info"><i class="fas fa-info-circle widget-info"></i></a></h5>
 					<div class="divider"></div>
 					<div class="row">
                         <?php if ( $responseProfile["values"] ) : ?>
