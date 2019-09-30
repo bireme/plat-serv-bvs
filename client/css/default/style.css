@@ -280,7 +280,7 @@ a:hover {
 #login {
 	width: 450px;
 	max-width: 450px;
-	padding: 32px;
+    padding: 32px 32px 10px 32px;
 	margin: 50px auto 0 auto;
 	background: #fff;
 	text-align: center;
@@ -368,6 +368,18 @@ span.error-text {
 }
 .listDefault:not(.browser-default) > li {
 	list-style-type: square !important;
+}
+#store {
+    margin-top: 15px;
+}
+#store img {
+    height: 40px;
+}
+.listaNormal {
+    padding-left: 30px !important;
+}
+.listaNormal li {
+    list-style: square !important;
 }
 a.portal,
 a.search {
@@ -813,6 +825,9 @@ body.public-col footer {
     .pm1 {
         padding: 0 5% !important;
         width: 85% !important;
+    }
+    .mTextCenter {
+        text-align: center;
     }
     .dropdown-content {
         min-width: 220px !important;

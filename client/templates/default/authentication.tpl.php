@@ -5,7 +5,6 @@
     $b64HttpHost = base64_encode(RELATIVE_PATH.'/controller/authentication');
     $build_query = '?origin='.$origin.'&iahx='.$iahx;
 ?>
-
     <section  class="container">
         <div id="login" class="col">
             <div id="lang">
@@ -56,13 +55,13 @@
                     <div class="col s12 btn-login">
                         <button class="btn waves-effect waves-light btnPrimary" type="submit" name="action"><?php echo $trans->getTrans($_REQUEST["action"],'LOGIN'); ?></button>
                     </div>
-                    <div class="col s6 left-align">
+                    <div class="col s12 m6 mTextCenter left-align">
                         <label>
                             <input type="checkbox" name="remember_me" />
                             <span><?php echo $trans->getTrans($_REQUEST["action"],'REMEMBER_ME'); ?></span>
                         </label>
                     </div>
-                    <div class="col s6 right-align">
+                    <div class="col s12 m6 mTextCenter right-align">
                         <a href="<?php echo RELATIVE_PATH; ?>/controller/authentication/task/recover"><?php echo $trans->getTrans($_REQUEST["action"],'FORGOT_MY_PASSWORD'); ?></a>
                     </div>
                 </div>
@@ -70,17 +69,23 @@
             <div class="separator">
                 <span class="loginOu"><?php echo $trans->getTrans($_REQUEST["action"],'OR'); ?></span>
             </div>
-            <div class="col s12">
-                <a href="/connector/google/<?php echo $build_query; ?>" class="btn waves-effect waves-light btn100 btnGoogle" name="action">GOOGLE</a>
+            <div class="row">
+                <div class="col s12 m6">
+                    <a href="/connector/google/<?php echo $build_query; ?>" class="btn waves-effect waves-light btn100 btnGoogle">GOOGLE</a>
+                </div>
+                <div class="col s12 m6">
+                    <a href="/connector/facebook/<?php echo $build_query; ?>" class="btn waves-effect waves-light btn100 btnFacebook">FACEBOOK</a>
+                </div>
             </div>
-            <div class="col s12">
-                <a href="/connector/facebook/<?php echo $build_query; ?>" class="btn waves-effect waves-light btn100 btnFacebook" name="action">FACEBOOK</a>
+            <div class="row">
+                <div class="col s12 ">
+                    <a href="<?php echo SERVICES_PLATFORM_DOMAIN.'/pub/userData.php?c='.$b64HttpHost; ?>" class="btn waves-effect waves-light btn100 btnRegistre" href="registrar.php"><?php echo $trans->getTrans($_REQUEST["action"],'REGISTRY'); ?></a>
+                </div>
             </div>
-            <hr>
-            <div class="col 12">
-                <a href="<?php echo SERVICES_PLATFORM_DOMAIN.'/pub/userData.php?c='.$b64HttpHost; ?>" class="btn waves-effect waves-light btn100 btnRegistre" href="registrar.php"><?php echo $trans->getTrans($_REQUEST["action"],'REGISTRY'); ?></a>
+            <div class="col s12 center-align" id="store">
+                <a href="https://play.google.com/store/apps/details?id=org.bvsalud.platserv" target="_blank"><img src="<?php echo RELATIVE_PATH; ?>/images/<?php echo $_SESSION["skin"]; ?>/google-bt.png" alt="Download Google Play"></a>
+                <a href="https://apps.apple.com/us/app/mibvs/id1440172734" target="_blank"><img src="<?php echo RELATIVE_PATH; ?>/images/<?php echo $_SESSION["skin"]; ?>/ios-bt.png" alt="Download Apple Store"></a>
             </div>
         </div>
     </section>
-
 <?php require_once(dirname(__FILE__)."/footer.tpl.php"); ?>
