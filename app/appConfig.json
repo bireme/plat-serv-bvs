@@ -9,7 +9,7 @@
     "useCrosswalkWebView": false,
     "forceScreenOrientation": null,
     "forceUserAgent": "Mozilla/5.0 (Linux; Android 7.1.2; Pixel XL Build/N2G47O) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.83 Mobile Safari/537.36 gonative",
-    "initialUrl": "http://platserv2.teste.bvsalud.org",
+    "initialUrl": "https://platserv.bvsalud.org",
     "appName": "MiBVS",
     "iosBundleId": "org.bvsalud.platserv",
     "androidPackageName": "org.bvsalud.platserv",
@@ -65,12 +65,12 @@
             {
               "subLinks": [],
               "label": "Sample Home",
-              "url": "http://platserv2.teste.bvsalud.org/home"
+              "url": "https://platserv.bvsalud.org/home"
             },
             {
               "subLinks": [],
               "label": "Sample About",
-              "url": "http://platserv2.teste.bvsalud.org/about"
+              "url": "https://platserv.bvsalud.org/about"
             }
           ],
           "name": "loggedIn",
