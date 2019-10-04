@@ -42,11 +42,9 @@ $dataHistory = Tracking::getTraceList( $_SESSION["userTK"], $params );
 
 // Suggested Documents widget
 $suggestedDocs = SimilarDocs::getSuggestedDocs( $_SESSION["userTK"], $params, 'RD', true );
-// echo "<pre>"; print_r($suggestedDocs); echo "</pre>"; die();
 
 // Highlights widget
 $highlights = Slider::get_highlights();
-// echo "<pre>"; print_r($highlights); echo "</pre>"; die();
 
 // Events widget
 $data = Authentication::getUserData($_SESSION["userTK"]);
@@ -55,6 +53,7 @@ $query_es = $professionalArea['es'][$data['professional_area']];
 $query_en = $professionalArea['en'][$data['professional_area']];
 $query = '(' . $query_pt . ' OR ' . $query_es . ' OR ' . $query_en . ')';
 $events = Events::get_events($query);
+$multimedia = Multimedia::get_media('dengue');
 
 // My Searches widget
 $obj = new MySearches($_SESSION["userTK"]);

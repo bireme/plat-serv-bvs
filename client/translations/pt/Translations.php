@@ -158,6 +158,9 @@ usuário para oferecer serviços personalizados e facilidades tais como:</p>
         self::$trans["menu"]["CONFIGURATIONS"] = 'Configurações';
         self::$trans["menu"]["SUGGESTIONS_NOT_FOUND"] = 'Nenhuma sugestão encontrada';
         self::$trans["menu"]["EVENTS_NOT_FOUND"] = 'Nenhum evento encontrado';
+        self::$trans["menu"]["MEDIA_NOT_FOUND"] = 'Nenhuma mídia encontrada';
+        self::$trans["menu"]["SEE_MORE"] = 'veja mais';
+        self::$trans["menu"]["MULTIMEDIA"] = 'Multimídia';
         self::$trans["menu"]["FOOTER_MESSAGE"] = '
 <p><strong>BIREME - OPAS - OMS</strong><br />
 Centro Latino-Americano e do Caribe de Informação em Ciências da Saúde<br />

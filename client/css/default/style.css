@@ -452,6 +452,25 @@ body.public-col footer {
     font-size: 20px;
     margin-left: 10px;
 }
+#verMaisMidia {
+    margin-top: 20px;
+}
+#verMaisMidia a {
+    border: 2px solid #5a78a2;
+    border-radius: 30px;
+    background: #5a78a2;
+    color: #fff;
+    padding: 5px 20px;
+    transition: all .5s ease;
+}
+#verMaisMidia a:hover {
+    background: #fff;
+    color: #5a78a2;
+}
+.media-title {
+    display: block;
+    min-height: 90px !important;
+}
 
 /* SHARE ICONS */
 .facebookIcon {

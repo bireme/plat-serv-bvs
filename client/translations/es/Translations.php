@@ -156,6 +156,9 @@ class Translations {
         self::$trans["menu"]["CONFIGURATIONS"] = 'Configuraciones';
         self::$trans["menu"]["SUGGESTIONS_NOT_FOUND"] = 'No se han encontrado sugerencias';
         self::$trans["menu"]["EVENTS_NOT_FOUND"] = 'No se han encontrado eventos';
+        self::$trans["menu"]["MEDIA_NOT_FOUND"] = 'No se han encontrado medios';
+        self::$trans["menu"]["SEE_MORE"] = 'vea más';
+        self::$trans["menu"]["MULTIMEDIA"] = 'Multimedia';
         self::$trans["menu"]["FOOTER_MESSAGE"] = '
 <p><strong>BIREME - OPS - OMS</strong><br />
 Centro Latinoamericano y del Caribe de Información en Ciencias de la Salud<br />

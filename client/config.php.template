@@ -50,6 +50,7 @@ define("VHL_SEARCH_PORTAL_DOMAIN","https://pesquisa.bvsalud.org");
 define("BVS_COOKIE_DOMAIN","http://brasil.bvs.br");
 define("MONGODB_SERVER","");
 define("FI_ADMIN_EVENTS","http://fi-admin.data.bvsalud.org/api/event/search/?format=json"); /* FI-ADMIN Events API request */
+define("FI_ADMIN_MULTIMEDIA","http://fi-admin.data.bvsalud.org/api/multimedia/search/?format=json"); /* FI-ADMIN Multimedia API request */
 define("GOOGLE_SCHOLAR","https://scholar.google.com");
 define("GOOGLE_SCHOLAR_WS",GOOGLE_SCHOLAR."/scholar?as_q=&as_epq=");
 

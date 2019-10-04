@@ -155,6 +155,9 @@ class Translations {
         self::$trans["menu"]["CONFIGURATIONS"] = 'Settings';
         self::$trans["menu"]["SUGGESTIONS_NOT_FOUND"] = 'No suggestions found';
         self::$trans["menu"]["EVENTS_NOT_FOUND"] = 'No events found';
+        self::$trans["menu"]["MEDIA_NOT_FOUND"] = 'No media found';
+        self::$trans["menu"]["SEE_MORE"] = 'see more';
+        self::$trans["menu"]["MULTIMEDIA"] = 'Multimedia';
         self::$trans["menu"]["FOOTER_MESSAGE"] = '
 <p><strong>BIREME - PAHO - WHO</strong><br />
 Latin American and Caribbean Center on Health Sciences Information<br />
