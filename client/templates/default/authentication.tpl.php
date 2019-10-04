@@ -61,7 +61,7 @@
                             <span><?php echo $trans->getTrans($_REQUEST["action"],'REMEMBER_ME'); ?></span>
                         </label>
                     </div>
-                    <div class="col s12 m6 mTextCenter right-align">
+                    <div class="col s12 m6 mTextCenter right-align forgotpass">
                         <a href="<?php echo RELATIVE_PATH; ?>/controller/authentication/task/recover"><?php echo $trans->getTrans($_REQUEST["action"],'FORGOT_MY_PASSWORD'); ?></a>
                     </div>
                 </div>

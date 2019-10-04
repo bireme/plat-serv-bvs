@@ -848,6 +848,9 @@ body.public-col footer {
     .mTextCenter {
         text-align: center;
     }
+    .forgotpass {
+        margin-top: 1em;
+    }
     .dropdown-content {
         min-width: 220px !important;
     }
