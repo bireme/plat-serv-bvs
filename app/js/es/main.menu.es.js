@@ -22,11 +22,11 @@ if (navigator.userAgent.indexOf('gonative') > -1) {
                     }
                   ]
                 },
-                {
-                  "url": MY_VHL_DOMAIN+"/client/controller/authentication/task/describe",
-                  "label": "Conozca mais",
-                  "subLinks": []
-                }
+                // {
+                //   "url": MY_VHL_DOMAIN+"/client/controller/authentication/task/describe",
+                //   "label": "Conozca mais",
+                //   "subLinks": []
+                // }
               ];
 
   var items = JSON.stringify(json);
