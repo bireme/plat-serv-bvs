@@ -154,12 +154,14 @@
                             <div class="row">
 	                            <?php if ( $multimedia ) : ?>
 	                                <?php foreach ( $multimedia as $media ) : $thumb = Multimedia::get_thumbnail($media); ?>
+                                        <?php // $link = ( $media->link ) ? $media->link[0] : $MULTIMEDIA[$_SESSION['lang']] . 'resource/?id=' . $media->id; ?>
+                                        <?php $link = $MULTIMEDIA[$_SESSION['lang']] . 'resource/?id=' . $media->id; ?>
 			                            <div class="col s12 m4">
-			                                <a href="<?php echo $media->link[0]; ?>" target="_blank">
+			                                <a href="<?php echo $link; ?>" target="_blank">
 			                                    <p>
 			                                        <span class="left"><img src="<?php echo Multimedia::get_thumbnail($media); ?>" alt="" style="padding: 0 20px 5px 0px"></span>
 			                                        <?php if ( strlen($media->title) > 50 ) : ?>
-			                                        	<b class="media-title"><?php echo substr($media->title, 0, 50) . '...'; ?></b>
+			                                        	<b class="media-title"><?php echo mb_substr($media->title, 0, 50) . '...'; ?></b>
 			                                        <?php else : ?>
 			                                        	<b class="media-title"><?php echo $media->title; ?></b>
 			                                        <?php endif; ?>

@@ -93,4 +93,10 @@ $DIREVE = array(
     'es' => 'https://bvsalud.org/es/direve/',
     'en' => 'https://bvsalud.org/en/direve/'
 );
+
+$MULTIMEDIA = array(
+    'pt' => 'https://bvsalud.org/multimedia/',
+    'es' => 'https://bvsalud.org/es/multimedia/',
+    'en' => 'https://bvsalud.org/en/multimedia/'
+);
 ?>

@@ -349,11 +349,14 @@ class Multimedia {
         $thumb = 'http://placehold.it/120x90';
         $src = RELATIVE_PATH . '/images/' . $_SESSION["skin"] . '/thumbs';
         $ext = pathinfo($media->link[0], PATHINFO_EXTENSION);
+        $img_ext = array('jpg', 'jpeg', 'png', 'gif');
 
         if ( 'pdf' == $ext ) {
             $thumb = $src . '/pdf.jpg';
         } elseif ( 'ppt' == $ext || 'pptx' == $ext ) {
             $thumb = $src . '/ppt.jpg';
+        } elseif ( in_array(strtolower($ext), $img_ext) ) {
+            $thumb = $src . '/image.jpg';
         } elseif ( 'slide' == strtolower($media->media_type) ) {
             $thumb = $src . '/slideshare.jpg';
         } elseif ( 'video' == strtolower($media->media_type) ) {
