@@ -53,7 +53,7 @@ $query_es = $professionalArea['es'][$data['professional_area']];
 $query_en = $professionalArea['en'][$data['professional_area']];
 $query = '(' . $query_pt . ' OR ' . $query_es . ' OR ' . $query_en . ')';
 $events = Events::get_events($query);
-$multimedia = Multimedia::get_media('dengue');
+$multimedia = Multimedia::get_media($query);
 
 // My Searches widget
 $obj = new MySearches($_SESSION["userTK"]);
