@@ -149,6 +149,7 @@ class Translations {
         self::$trans["menu"]["DONE"] = 'Concluir';
         self::$trans["menu"]["LEAVE_COMMENT"] = 'Enviar Comentario';
         self::$trans["menu"]["REPORT_ERROR"] = 'Informar Error';
+        self::$trans["menu"]["DOCUMENTS"] = 'Documentos';
         self::$trans["menu"]["SUGGESTIONS"] = 'Sugerencias';
         self::$trans["menu"]["EVENTS"] = 'Eventos';
         self::$trans["menu"]["MORE"] = 'Más';
