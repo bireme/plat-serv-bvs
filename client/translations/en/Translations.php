@@ -91,6 +91,18 @@ class Translations {
         self::$trans["new_pass"]["SUBMIT"] = 'send';
         self::$trans["new_pass"]["CANCEL"] = 'cancel';
 
+    // Terms of tutorial pages
+        self::$trans["tutorial"]["TUTORIALS"]     = 'Tutorials';
+        self::$trans["tutorial"]["HOME"]          = 'Home';
+        self::$trans["tutorial"]["MY_COLLECTION"] = 'Favorite Documents';
+        self::$trans["tutorial"]["MY_PROFILES"]   = 'Interest Topics';
+        self::$trans["tutorial"]["MY_SEARCHES"]   = 'VHL Search History';
+        self::$trans["tutorial"]["MY_LINKS"]      = 'Favorite Links';
+        self::$trans["tutorial"]["ORCID_WORKS"]   = 'My Publications';
+        self::$trans["tutorial"]["FEED_RSS"]      = 'Feed RSS';
+        self::$trans["tutorial"]["PROFILE"]       = 'Profile';
+        self::$trans["tutorial"]["CLOSE"]         = 'close';
+
     // Terms of the menu pages
         self::$trans["menu"]["VHL_PORTAL"] = 'VHL Regional Portal';
         self::$trans["menu"]["FEATURE"] = 'Home';
@@ -160,6 +172,8 @@ class Translations {
         self::$trans["menu"]["MEDIA_NOT_FOUND"] = 'No media found';
         self::$trans["menu"]["SEE_MORE"] = 'see more';
         self::$trans["menu"]["MULTIMEDIA"] = 'Multimedia';
+        self::$trans["menu"]["TUTORIAL"] = 'Tutorial';
+        self::$trans["menu"]["TUTORIALS"] = 'Tutorials';
         self::$trans["menu"]["FOOTER_MESSAGE"] = '
 <p><strong>BIREME - PAHO - WHO</strong><br />
 Latin American and Caribbean Center on Health Sciences Information<br />

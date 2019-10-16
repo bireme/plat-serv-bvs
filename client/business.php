@@ -74,6 +74,7 @@ switch($_REQUEST["action"]){
     case "servicesplatform":
         require_once(dirname(__FILE__)."/business/servicesplatform.php");
     break;
+    case 'tutorial': break;
     default:
         die("default");
     break;

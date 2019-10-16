@@ -91,6 +91,18 @@ class Translations {
         self::$trans["new_pass"]["SUBMIT"] = 'enviar';
         self::$trans["new_pass"]["CANCEL"] = 'cancelar';
 
+    // Terms of tutorial pages
+        self::$trans["tutorial"]["TUTORIALS"]     = 'Tutoriales';
+        self::$trans["tutorial"]["HOME"]          = 'Home';
+        self::$trans["tutorial"]["MY_COLLECTION"] = 'Documentos Favoritos';
+        self::$trans["tutorial"]["MY_PROFILES"]   = 'Temas de Interés';
+        self::$trans["tutorial"]["MY_SEARCHES"]   = 'Historial de Búsquedas en BVS';
+        self::$trans["tutorial"]["MY_LINKS"]      = 'Enlaces Favoritos';
+        self::$trans["tutorial"]["ORCID_WORKS"]   = 'Mis Publicaciones';
+        self::$trans["tutorial"]["FEED_RSS"]      = 'Feed RSS';
+        self::$trans["tutorial"]["PROFILE"]       = 'Perfil';
+        self::$trans["tutorial"]["CLOSE"]         = 'cerrar';
+
     // Terms of the menu pages
         self::$trans["menu"]["VHL_PORTAL"] = 'Portal Regional de la BVS';
         self::$trans["menu"]["FEATURE"] = 'Home';
@@ -160,6 +172,8 @@ class Translations {
         self::$trans["menu"]["MEDIA_NOT_FOUND"] = 'No se han encontrado medios';
         self::$trans["menu"]["SEE_MORE"] = 'vea más';
         self::$trans["menu"]["MULTIMEDIA"] = 'Multimedia';
+        self::$trans["menu"]["TUTORIAL"] = 'Tutorial';
+        self::$trans["menu"]["TUTORIALS"] = 'Tutoriales';
         self::$trans["menu"]["FOOTER_MESSAGE"] = '
 <p><strong>BIREME - OPS - OMS</strong><br />
 Centro Latinoamericano y del Caribe de Información en Ciencias de la Salud<br />

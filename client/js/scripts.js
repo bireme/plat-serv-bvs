@@ -756,15 +756,15 @@ $( document ).on('click', '.modal-ajax', function(){
 // $('.modal-trigger').modal();
 
 $( document ).on('click', '.btn2Botoes a.remove, .btn2Buttons a.remove', function(){
-    title = $(this).data('title');
-    url = $(this).data('source');
+    var title = $(this).data('title');
+    var url = $(this).data('source');
     $('#doc-title').text(title);
     $('#doc-url').attr('href', url);
 });
 
 $( document ).on('click', '.search-actions a.remove', function(){
-    query = $(this).siblings('a.search-query').data('query');
-    url = $(this).data('source');
+    var query = $(this).siblings('a.search-query').data('query');
+    var url = $(this).data('source');
     $('#search-query').text(query);
     $('#search-query-url').attr('href', url);
 });

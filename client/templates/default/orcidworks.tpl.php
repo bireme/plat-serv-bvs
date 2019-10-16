@@ -41,6 +41,17 @@
                 <?php if ( $objPaginator->totalPages > 1 ) { echo $objPaginator->build(); } ?>
             </div>
         </div>
+        <div class="box1">
+            <div class="col-12 center-align">
+                <div class="box12">
+                    <h6><b><?php echo $trans->getTrans('menu','TUTORIAL'); ?></b></h6>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/Fe4cW3B0q_U" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <div class="center-align" id="verMaisMidia" >
+                        <a href="#!"><?php echo $trans->getTrans('menu','SEE_MORE'); ?></a>
+                    </div>
+                </div>
+            </div>
+        </div>
         <?php require_once(dirname(__FILE__)."/info.tpl.php"); ?>
         <?php require_once(dirname(__FILE__)."/more.tpl.php"); ?>
     </div>

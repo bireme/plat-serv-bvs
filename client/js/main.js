@@ -144,6 +144,20 @@ $('input[type=radio][name=reason]').change(function() {
         $('#details').parent().hide();
     }
 });
+//  --------------------------------- Tutorial Modal
+$( document ).on('click', 'a.modal-video', function(){
+    var title = $(this).find('b.video-title').text();
+    var video = $(this).data('video');
+    $('#modal-video-title').text(title);
+    $('#modal-video').find('iframe').attr('src', video);
+});
+$("#modal-video").modal({
+    dismissible: true,
+    onCloseEnd: function() {
+        $('#modal-video-title').text('');
+        $('#modal-video').find('iframe').attr('src', '');
+    }
+});
 
 // Resize reCAPTCHA to fit width of container
 // Since it has a fixed width, we're scaling

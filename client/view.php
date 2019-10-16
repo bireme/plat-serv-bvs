@@ -101,6 +101,9 @@ switch($_REQUEST["action"]){
             require_once(dirname(__FILE__)."/templates/".$_SESSION["skin"]."/searchresults.tpl.php");
         }
     break;
+    case "tutorial":
+        require_once(dirname(__FILE__)."/templates/".$_SESSION["skin"]."/tutorial.tpl.php");
+    break;
     case "logout":
         if( isset($_REQUEST['origin']) && !empty($_REQUEST['origin']) ) {
             $origin = base64_decode($_REQUEST["origin"]);

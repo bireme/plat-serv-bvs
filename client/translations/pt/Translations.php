@@ -92,6 +92,18 @@ usuário para oferecer serviços personalizados e facilidades tais como:</p>
         self::$trans["new_pass"]["SUBMIT"] = 'enviar';
         self::$trans["new_pass"]["CANCEL"] = 'cancelar';
 
+    // Terms of tutorial pages
+        self::$trans["tutorial"]["TUTORIALS"]     = 'Tutoriais';
+        self::$trans["tutorial"]["HOME"]          = 'Home';
+        self::$trans["tutorial"]["MY_COLLECTION"] = 'Documentos Favoritos';
+        self::$trans["tutorial"]["MY_PROFILES"]   = 'Temas de Interesse';
+        self::$trans["tutorial"]["MY_SEARCHES"]   = 'Histórico de Buscas na BVS';
+        self::$trans["tutorial"]["MY_LINKS"]      = 'Links Favoritos';
+        self::$trans["tutorial"]["ORCID_WORKS"]   = 'Minhas Publicações';
+        self::$trans["tutorial"]["FEED_RSS"]      = 'Feed RSS';
+        self::$trans["tutorial"]["PROFILE"]       = 'Perfil';
+        self::$trans["tutorial"]["CLOSE"]         = 'fechar';
+
     // Terms of the menu pages
         self::$trans["menu"]["VHL_PORTAL"] = 'Portal Regional da BVS';
         self::$trans["menu"]["FEATURE"] = 'Home';
@@ -162,6 +174,8 @@ usuário para oferecer serviços personalizados e facilidades tais como:</p>
         self::$trans["menu"]["MEDIA_NOT_FOUND"] = 'Nenhuma mídia encontrada';
         self::$trans["menu"]["SEE_MORE"] = 'veja mais';
         self::$trans["menu"]["MULTIMEDIA"] = 'Multimídia';
+        self::$trans["menu"]["TUTORIAL"] = 'Tutorial';
+        self::$trans["menu"]["TUTORIALS"] = 'Tutoriais';
         self::$trans["menu"]["FOOTER_MESSAGE"] = '
 <p><strong>BIREME - OPAS - OMS</strong><br />
 Centro Latino-Americano e do Caribe de Informação em Ciências da Saúde<br />

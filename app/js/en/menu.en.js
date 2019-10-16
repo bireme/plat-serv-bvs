@@ -44,6 +44,12 @@ if (navigator.userAgent.indexOf('gonative') > -1) {
                     "icon": "fa-rss"
                   },
                   {
+                    "url": MY_VHL_DOMAIN+"/client/controller/tutorial/control/business",
+                    "label": "Tutorials",
+                    "subLinks": [],
+                    "icon": "fa-film"
+                  },
+                  {
                     "label": "Settings",
                     "grouping": "[grouping]",
                     "isGrouping": true,
@@ -122,6 +128,12 @@ if (navigator.userAgent.indexOf('gonative') > -1) {
                     "label": "RSS",
                     "subLinks": [],
                     "icon": "fa-rss"
+                  },
+                  {
+                    "url": MY_VHL_DOMAIN+"/client/controller/tutorial/control/business",
+                    "label": "Tutorials",
+                    "subLinks": [],
+                    "icon": "fa-film"
                   },
                   {
                     "label": "Settings",
