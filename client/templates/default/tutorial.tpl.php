@@ -8,91 +8,83 @@
 					<h5 class="title1"><i class="fas fa-film left"></i> <?php echo $trans->getTrans($_REQUEST["action"],'TUTORIALS'); ?></h5>
 				</div>
 				<section class="row">
-					<article class="col s12 m4">
+					<article class="col s12 m6 xl4">
 						<a href="#modal-video" class="modal-trigger modal-video" data-video="https://www.youtube.com/embed/Fe4cW3B0q_U">
 							<div class="box1 hoverable">
-								<p>
-									<span class="left"><img src="https://img.youtube.com/vi/Fe4cW3B0q_U/1.jpg" alt="tutorial" style="padding:0 20px 5px 0px"></span>
-									<b class="video-title"><?php echo $trans->getTrans($_REQUEST["action"],'HOME'); ?></b>
-									<div class="clearfix"></div>
-								</p>
+								<div class="row">
+							        <div class="col s5 m4"><img src="https://img.youtube.com/vi/Fe4cW3B0q_U/1.jpg" alt="tutorial" class="responsive-img"></div>
+									<div class="col s7 m8"><b class="video-title"><?php echo $trans->getTrans($_REQUEST["action"],'HOME'); ?></b></div>
+								</div>
 							</div>
 						</a>
 					</article>
-					<article class="col s12 m4">
+					<article class="col s12 m6 xl4">
 						<a href="#modal-video" class="modal-trigger modal-video" data-video="https://www.youtube.com/embed/Fe4cW3B0q_U">
 							<div class="box1 hoverable">
-								<p>
-									<span class="left"><img src="https://img.youtube.com/vi/Fe4cW3B0q_U/1.jpg" alt="tutorial" style="padding:0 20px 5px 0px"></span>
-									<b class="video-title"><?php echo $trans->getTrans($_REQUEST["action"],'MY_COLLECTION'); ?></b>
-									<div class="clearfix"></div>
-								</p>
+								<div class="row">
+							        <div class="col s5 m4"><img src="https://img.youtube.com/vi/Fe4cW3B0q_U/1.jpg" alt="tutorial" class="responsive-img"></div>
+									<div class="col s7 m8"><b class="video-title"><?php echo $trans->getTrans($_REQUEST["action"],'MY_COLLECTION'); ?></b></div>
+								</div>
 							</div>
 						</a>
 					</article>
-					<article class="col s12 m4">
+					<article class="col s12 m6 xl4">
 						<a href="#modal-video" class="modal-trigger modal-video" data-video="https://www.youtube.com/embed/Fe4cW3B0q_U">
 							<div class="box1 hoverable">
-								<p>
-									<span class="left"><img src="https://img.youtube.com/vi/Fe4cW3B0q_U/1.jpg" alt="tutorial" style="padding:0 20px 5px 0px"></span>
-									<b class="video-title"><?php echo $trans->getTrans($_REQUEST["action"],'MY_PROFILES'); ?></b>
-									<div class="clearfix"></div>
-								</p>
+								<div class="row">
+							        <div class="col s5 m4"><img src="https://img.youtube.com/vi/Fe4cW3B0q_U/1.jpg" alt="tutorial" class="responsive-img"></div>
+									<div class="col s7 m8"><b class="video-title"><?php echo $trans->getTrans($_REQUEST["action"],'MY_PROFILES'); ?></b></div>
+								</div>
 							</div>
 						</a>
 					</article>
-					<article class="col s12 m4">
+					<article class="col s12 m6 xl4">
 						<a href="#modal-video" class="modal-trigger modal-video" data-video="https://www.youtube.com/embed/Fe4cW3B0q_U">
 							<div class="box1 hoverable">
-								<p>
-									<span class="left"><img src="https://img.youtube.com/vi/Fe4cW3B0q_U/1.jpg" alt="tutorial" style="padding:0 20px 5px 0px"></span>
-									<b class="video-title"><?php echo $trans->getTrans($_REQUEST["action"],'MY_SEARCHES'); ?></b>
-									<div class="clearfix"></div>
-								</p>
+								<div class="row">
+							        <div class="col s5 m4"><img src="https://img.youtube.com/vi/Fe4cW3B0q_U/1.jpg" alt="tutorial" class="responsive-img"></div>
+									<div class="col s7 m8"><b class="video-title"><?php echo $trans->getTrans($_REQUEST["action"],'MY_SEARCHES'); ?></b></div>
+								</div>
 							</div>
 						</a>
 					</article>
-					<article class="col s12 m4">
+					<article class="col s12 m6 xl4">
 						<a href="#modal-video" class="modal-trigger modal-video" data-video="https://www.youtube.com/embed/Fe4cW3B0q_U">
 							<div class="box1 hoverable">
-								<p>
-									<span class="left"><img src="https://img.youtube.com/vi/Fe4cW3B0q_U/1.jpg" alt="tutorial" style="padding:0 20px 5px 0px"></span>
-									<b class="video-title"><?php echo $trans->getTrans($_REQUEST["action"],'MY_LINKS'); ?></b>
-									<div class="clearfix"></div>
-								</p>
+								<div class="row">
+							        <div class="col s5 m4"><img src="https://img.youtube.com/vi/Fe4cW3B0q_U/1.jpg" alt="tutorial" class="responsive-img"></div>
+									<div class="col s7 m8"><b class="video-title"><?php echo $trans->getTrans($_REQUEST["action"],'MY_LINKS'); ?></b></div>
+								</div>
 							</div>
 						</a>
 					</article>
-					<article class="col s12 m4">
+					<article class="col s12 m6 xl4">
 						<a href="#modal-video" class="modal-trigger modal-video" data-video="https://www.youtube.com/embed/Fe4cW3B0q_U">
 							<div class="box1 hoverable">
-								<p>
-									<span class="left"><img src="https://img.youtube.com/vi/Fe4cW3B0q_U/1.jpg" alt="tutorial" style="padding:0 20px 5px 0px"></span>
-									<b class="video-title"><?php echo $trans->getTrans($_REQUEST["action"],'ORCID_WORKS'); ?></b>
-									<div class="clearfix"></div>
-								</p>
+								<div class="row">
+							        <div class="col s5 m4"><img src="https://img.youtube.com/vi/Fe4cW3B0q_U/1.jpg" alt="tutorial" class="responsive-img"></div>
+									<div class="col s7 m8"><b class="video-title"><?php echo $trans->getTrans($_REQUEST["action"],'ORCID_WORKS'); ?></b></div>
+								</div>
 							</div>
 						</a>
 					</article>
-					<article class="col s12 m4">
+					<article class="col s12 m6 xl4">
 						<a href="#modal-video" class="modal-trigger modal-video" data-video="https://www.youtube.com/embed/Fe4cW3B0q_U">
 							<div class="box1 hoverable">
-								<p>
-									<span class="left"><img src="https://img.youtube.com/vi/Fe4cW3B0q_U/1.jpg" alt="tutorial" style="padding:0 20px 5px 0px"></span>
-									<b class="video-title"><?php echo $trans->getTrans($_REQUEST["action"],'FEED_RSS'); ?></b>
-									<div class="clearfix"></div>
-								</p>
+								<div class="row">
+							        <div class="col s5 m4"><img src="https://img.youtube.com/vi/Fe4cW3B0q_U/1.jpg" alt="tutorial" class="responsive-img"></div>
+									<div class="col s7 m8"><b class="video-title"><?php echo $trans->getTrans($_REQUEST["action"],'FEED_RSS'); ?></b></div>
+								</div>
 							</div>
 						</a>
 					</article>
-					<article class="col s12 m4">
+					<article class="col s12 m6 xl4">
 						<a href="#modal-video" class="modal-trigger modal-video" data-video="https://www.youtube.com/embed/Fe4cW3B0q_U">
 							<div class="box1 hoverable">
-								<p>
-									<span class="left"><img src="https://img.youtube.com/vi/Fe4cW3B0q_U/1.jpg" alt="tutorial" style="padding:0 20px 5px 0px"></span>
-									<b class="video-title"><?php echo $trans->getTrans($_REQUEST["action"],'PROFILE'); ?></b>
-									<div class="clearfix"></div>
-								</p>
+								<div class="row">
+							        <div class="col s5 m4"><img src="https://img.youtube.com/vi/Fe4cW3B0q_U/1.jpg" alt="tutorial" class="responsive-img"></div>
+									<div class="col s7 m8"><b class="video-title"><?php echo $trans->getTrans($_REQUEST["action"],'PROFILE'); ?></b></div>
+								</div>
 							</div>
 						</a>
 					</article>
