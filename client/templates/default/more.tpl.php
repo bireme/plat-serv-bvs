@@ -4,13 +4,7 @@
 		<i class="large material-icons">more_horiz</i>
 	</a>
 	<ul>
-		<?php if ( 'menu' == $_REQUEST["action"] ) : ?>
-		<!-- <li><a href="<?php echo RELATIVE_PATH; ?>/controller/authentication/?tour=true" class="btn-floating red tooltipped" data-position="left" data-tooltip="<?php echo $trans->getTrans('menu','TOUR'); ?>"><i class="material-icons">computer</i></a></li> -->
-		<?php elseif ( 'searchresults' == $_REQUEST["action"] && $_REQUEST['rss'] ) : ?>
-		<!-- <li><a href="<?php echo RELATIVE_PATH; ?>/controller/<?php echo $_REQUEST['action']?>/control/business/rss/<?php echo $_REQUEST['rss']; ?>?multipage=true" class="btn-floating red tooltipped" data-position="left" data-tooltip="<?php echo $trans->getTrans('menu','TOUR'); ?>"><i class="material-icons">computer</i></a></li> -->
-		<?php else : ?>
-		<!-- <li><a href="<?php echo RELATIVE_PATH; ?>/controller/<?php echo $_REQUEST['action']?>/control/business/?multipage=true" class="btn-floating red tooltipped" data-position="left" data-tooltip="<?php echo $trans->getTrans('menu','TOUR'); ?>"><i class="material-icons">computer</i></a></li> -->
-		<?php endif; ?>
+		<!-- <li><a href="<?php echo RELATIVE_PATH; ?>/controller/tutorial/control/business" class="btn-floating red tooltipped" data-position="left" data-tooltip="<?php echo $trans->getTrans('menu','TUTORIALS'); ?>"><i class="material-icons">computer</i></a></li> -->
 		<li><a href="#" class="btn-floating cray tooltipped sidenav-trigger" data-target="slide-out" data-position="left" data-tooltip="<?php echo $trans->getTrans('menu','CONFIGURATIONS'); ?>"><i class="material-icons">settings</i></a></li>
 	</ul>
 </div>
@@ -36,13 +30,7 @@
 	<?php if ( empty($_SESSION["source"]) || 'ldap' == $_SESSION["source"] ) : ?>
 	<li><a href="<?php echo SERVICES_PLATFORM_DOMAIN; ?>/pub/changePassword.php?userTK=<?php echo urlencode($_SESSION["userTK"]); ?>&c=<?php echo $b64HttpHost; ?>"><?php echo $trans->getTrans('menu','CHANGE_PASSWORD'); ?></a></li>
 	<?php endif; ?>
-	<?php if ( 'menu' == $_REQUEST["action"] ) : ?>
-	<!-- <li><a href="<?php echo RELATIVE_PATH; ?>/controller/authentication/?tour=true"><?php echo $trans->getTrans('menu','START_TOUR'); ?></a></li> -->
-	<?php elseif ( 'searchresults' == $_REQUEST["action"] && $_REQUEST['rss'] ) : ?>
-	<!-- <li><a href="<?php echo RELATIVE_PATH; ?>/controller/<?php echo $_REQUEST['action']?>/control/business/rss/<?php echo $_REQUEST['rss']; ?>?multipage=true"><?php echo $trans->getTrans('menu','START_TOUR'); ?></a></li> -->
-	<?php else : ?>
-	<!-- <li><a href="<?php echo RELATIVE_PATH; ?>/controller/<?php echo $_REQUEST['action']?>/control/business/?multipage=true"><?php echo $trans->getTrans('menu','START_TOUR'); ?></a></li> -->
-	<?php endif; ?>
+	<!-- <li><a href="<?php echo RELATIVE_PATH; ?>/controller/tutorial/control/business"><?php echo $trans->getTrans('menu','TUTORIALS'); ?></a></li> -->
 	<li><a href="http://feedback.bireme.org/feedback/my-vhl?version=2.10-77&site=servplat&lang=<?php echo $_SESSION['lang']; ?>" target="_blank"><?php echo $trans->getTrans('menu','LEAVE_COMMENT'); ?></a></li>
 	<li><a href="http://feedback.bireme.org/feedback/my-vhl?version=2.10-77&error=1&site=servplat&lang=<?php echo $_SESSION['lang']; ?>" target="_blank"><?php echo $trans->getTrans('menu','REPORT_ERROR'); ?></a></li>
 	<li class="divider" tabindex="-1"></li>
