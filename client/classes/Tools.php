@@ -380,7 +380,7 @@ class Slider {
 
     public static function get_highlights() {
         $highlights = array();
-        $dir    = dirname(__FILE__, 2) . '/images/' . $_SESSION["skin"] . '/highlights';
+        $dir = dirname(__FILE__, 2) . '/images/' . $_SESSION["skin"] . '/highlights';
         $slides = glob($dir . "/*.jpg");
         $links = file($dir.'/links.txt', FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
 
