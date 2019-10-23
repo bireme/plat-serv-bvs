@@ -106,7 +106,7 @@
                             <div class="divider"></div>
                             <ul class="lista1">
                                 <?php if ( $suggestedDocs ) : ?>
-                                      <?php foreach ( $suggestedDocs as $docs ) : ?>
+                                    <?php foreach ( $suggestedDocs as $docs ) : ?>
                                         <li><a href="<?php echo $docs['docURL'] ?>" target="_blank"><?php echo $docs['title'] ?></a></li>
                                     <?php endforeach; ?>
                                 <?php else : ?>

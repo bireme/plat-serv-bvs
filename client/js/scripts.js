@@ -117,7 +117,7 @@ $( document ).on( "click", "#tab_config button.submit", function(e) {
         }
     }
 )
-
+/*
 $( document ).on( "click", ".fav-docs div.record a, .themes div.record a", function(e) {
         // e.preventDefault();
 
@@ -134,6 +134,13 @@ $( document ).on( "click", ".fav-docs div.record a, .themes div.record a", funct
         $.post( href, obj, function(data) {
             console.log(data);
         });
+    }
+)
+*/
+$( document ).on( "click", ".fav-docs div.record a, .themes div.record a", function() {
+        var text = $( this ).text();
+        var related = $.cookie('related');
+        $.cookie('related', text,{ path: '/', expires: 365 * 10 });
     }
 )
 
