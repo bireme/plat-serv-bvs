@@ -93,6 +93,7 @@ usuário para oferecer serviços personalizados e facilidades tais como:</p>
         self::$trans["new_pass"]["CANCEL"] = 'cancelar';
 
     // Terms of tutorial pages
+        self::$trans["tutorial"]["FEATURE"]       = 'Tutoriais';
         self::$trans["tutorial"]["TUTORIALS"]     = 'Tutoriais';
         self::$trans["tutorial"]["HOME"]          = 'Home';
         self::$trans["tutorial"]["MY_COLLECTION"] = 'Documentos Favoritos';

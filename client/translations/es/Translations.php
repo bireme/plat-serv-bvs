@@ -92,6 +92,7 @@ class Translations {
         self::$trans["new_pass"]["CANCEL"] = 'cancelar';
 
     // Terms of tutorial pages
+        self::$trans["tutorial"]["FEATURE"]       = 'Tutoriales';
         self::$trans["tutorial"]["TUTORIALS"]     = 'Tutoriales';
         self::$trans["tutorial"]["HOME"]          = 'Home';
         self::$trans["tutorial"]["MY_COLLECTION"] = 'Documentos Favoritos';
