@@ -471,6 +471,9 @@ body.public-col footer {
     display: block;
     min-height: 90px !important;
 }
+.video-box {
+    display: none;
+}
 
 /* SHARE ICONS */
 .facebookIcon {

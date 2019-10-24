@@ -41,7 +41,7 @@
                 <?php if ( $objPaginator->totalPages > 1 ) { echo $objPaginator->build(); } ?>
             </div>
         </div>
-        <div class="box1">
+        <div class="box1 video-box">
             <div class="col-12 center-align">
                 <div class="box12">
                     <h6><b><?php echo $trans->getTrans('menu','TUTORIAL'); ?></b></h6>
