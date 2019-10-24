@@ -117,6 +117,14 @@ $( document ).on( "click", "#tab_config button.submit", function(e) {
         }
     }
 )
+
+$( document ).on( "click", ".fav-docs div.record a, .themes div.record a, .widget a.record", function() {
+        var text = $( this ).text();
+        var related = $.cookie('related');
+        $.cookie('related', text,{ path: '/', expires: 365 * 10 });
+    }
+)
+
 /*
 $( document ).on( "click", ".fav-docs div.record a, .themes div.record a", function(e) {
         // e.preventDefault();
@@ -137,79 +145,8 @@ $( document ).on( "click", ".fav-docs div.record a, .themes div.record a", funct
     }
 )
 */
-$( document ).on( "click", ".fav-docs div.record a, .themes div.record a", function() {
-        var text = $( this ).text();
-        var related = $.cookie('related');
-        $.cookie('related', text,{ path: '/', expires: 365 * 10 });
-    }
-)
 
 /********** Interest Topics Scripts **********/
-/*
-$('a.add-collection').popover({
-    html : true,
-    placement : 'right',
-    title: labels[LANG]['COLLECTIONS'],
-    // trigger: 'manual',
-    content : function() {
-        return $('#docsfolderlist').html();
-    }
-});
-
-$( document ).on('change', '.docsfolderlist', function(e) {
-    e.preventDefault();
-
-    path = window.location.pathname;
-    parts = path.split("/controller/");
-    href = parts[0]+"/controller/servicesplatform/control/business/task/addDoc";
-
-    folder = $(this).val();
-    text = $('.docsfolderlist option:selected').text();
-    id = $(this).closest('td').find('a.add-collection').attr('value');
-    title = $(this).closest('tr').find('div.record a').text();
-    url = $(this).closest('tr').find('a').attr('href');
-    author = $(this).closest('tr').find('small').text();
-
-    obj = new Object();
-    obj.url = $.trim(url);
-    obj.source = 'pesquisa.bvsalud.org';
-    obj.author = $.trim(author);
-    obj.title = $.trim(title);
-    obj.id = $.trim(id);
-    obj.userTK = unescape(getCookie('userTK'));
-
-    $.post( href, obj, function(data) {
-        if (isJSON(data)){
-            response = $.parseJSON(data);
-        }else{
-            response = data;
-        }
-
-        if(data == true){
-            href = parts[0]+"/controller/directories/control/business/task/movedoc";
-
-            obj = new Object();
-            obj.mode = 'persist';
-            obj.document = $.trim(id);
-            obj.fromDirectory = 0;
-            obj.moveToDirectory = folder;
-
-            $.post( href, obj, function(data) {
-                alert(labels[LANG]['ADD_DOC_SUCCESS']+' '+text);
-            });
-        }else if(typeof response == 'object'){
-            if ( response.dir == 'INCOMING_FOLDER' )
-                alert(labels[LANG]['DOC_EXISTS']+' '+labels[LANG]['INCOMING_FOLDER']);
-            else
-                alert(labels[LANG]['DOC_EXISTS']+' '+response.dir);
-        }else{
-            alert(labels[LANG]['ADD_DOC_FAIL']);
-        }
-        
-        $('.popover').popover('hide');
-    });
-});
-*/
 $( document ).on('change', 'input[name=docsfolderlist]', function(e) {
     $('#docsfolderlist').removeAttr('disabled');
 });

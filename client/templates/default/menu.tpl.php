@@ -19,7 +19,7 @@
     <div id="wrap">
         <div class="row">
             <!-- Inicio Caixas -->
-            <article class="col s12 m6 l4">
+            <article class="col s12 m6 l4 widget">
                 <div class="card sticky-action">
                     <div class="card-image waves-effect waves-block waves-black">
                         <img class="activator" src="<?php echo RELATIVE_PATH; ?>/images/<?php echo $_SESSION["skin"]; ?>/favoritos-<?php echo $_SESSION["lang"]; ?>.jpg" alt="Título Documentos Favoritos">
@@ -42,13 +42,13 @@
                                         $docURL = $col['docURL'];
                                     }
                                 ?>
-                                <p><a href="<?php echo $docURL; ?>" target="_blank" onclick="__gaTracker('send','event','Overview','Favorite Documents','<?php echo htmlspecialchars($col['title']); ?>');"><?php echo $col['title'] ?></a></p>
+                                <p><a href="<?php echo $docURL; ?>" class="record" target="_blank" onclick="__gaTracker('send','event','Overview','Favorite Documents','<?php echo htmlspecialchars($col['title']); ?>');"><?php echo $col['title'] ?></a></p>
                             <?php endforeach; ?>
                         <?php endif; ?>
                     </div>
                 </div>
             </article>
-            <article class="col s12 m6 l4">
+            <article class="col s12 m6 l4 widget">
                 <div class="card sticky-action">
                     <div class="card-image waves-effect waves-block waves-black">
                         <img class="activator" src="<?php echo RELATIVE_PATH; ?>/images/<?php echo $_SESSION["skin"]; ?>/interesse-<?php echo $_SESSION["lang"]; ?>.jpg" alt="Título Temas de Interesses">
@@ -66,7 +66,7 @@
                     </div>
                 </div>
             </article>
-            <article class="col s12 m6 l4">
+            <article class="col s12 m6 l4 widget">
                 <div class="card sticky-action">
                     <div class="card-image waves-effect waves-block waves-black">
                         <img class="activator" src="<?php echo RELATIVE_PATH; ?>/images/<?php echo $_SESSION["skin"]; ?>/historico-<?php echo $_SESSION["lang"]; ?>.jpg"  alt="Título Histórico de Buscas">
