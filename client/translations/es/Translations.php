@@ -116,6 +116,7 @@ class Translations {
         self::$trans["menu"]["USERS_SERVICES"] = 'Servicios Personalizados';
         self::$trans["menu"]["OLA"] = 'Hola';
         self::$trans["menu"]["LOGOUT"] = 'Salir';
+        self::$trans["menu"]["CLOSE"] = 'cerrar';
         self::$trans["menu"]["MY_PROFILE_DOCUMENTS"] = 'Temas de Interés';
         self::$trans["menu"]["MY_SHELF"] = 'Documentos Favoritos';
         self::$trans["menu"]["MY_LINKS"] = 'Enlaces Favoritos';
