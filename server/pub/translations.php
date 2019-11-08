@@ -360,6 +360,9 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
 <b>ResearcherID</b>
 <p>O ResearcherID é um identificador único que permite que os pesquisadores gerenciem suas listas de publicações, rastreiem suas contagens de citações e h-index, e evitem a identificação errônea do autor. Além disso, sua informação ResearcherID se integra com a Web of Science e com o ORCiD, possibilitando que você reivindique e exiba suas publicações a partir de uma única conta.</p>
 ');
+    define('FEEDBACK_TITLE','Queremos a sua opinião sobre o novo desing da MinhaBVS');
+    define('FEEDBACK_INVITE','Convidamos-lhe a responder a uma pesquisa que não levará mais que 3 minutos');
+    define('GO_TO_SURVEY','Ir para a pesquisa');
 }
 
 if($lang == 'es'){
@@ -717,6 +720,9 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
 <b>ResearcherID</b>
 <p>O ResearcherID es un identificador único que permite a los investigadores administrar sus listas de publicaciones, rastrear sus recuentos de citas y h-index, y evitar la identificación errónea del autor. Además, su información de ResearcherID se integra con Web of Science y ORCiD, lo que le permite reclamar y mostrar sus publicaciones desde una sola cuenta.</p>
 ');
+    define('FEEDBACK_TITLE','Queremos sus comentarios sobre el nuevo diseño de MiBVS');
+    define('FEEDBACK_INVITE','Lo invitamos a completar una encuesta que no tomará más de 3 minutos');
+    define('GO_TO_SURVEY','Ir a la encuesta');
 }
 
 if($lang == 'en'){
@@ -1072,6 +1078,9 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Phone: (55 11) 5576-980
 <b>ResearcherID</b>
 <p>O ResearcherID is a unique identifier that allows researchers to manage their publication lists, track their citation counts and h-index, and avoid misidentification of the author. In addition, your ResearcherID information integrates with Web of Science and ORCiD, enabling you to claim and display your publications from a single account.</p>
 ');
+    define('FEEDBACK_TITLE','We want your opinion about the new design of MyVHL');
+    define('FEEDBACK_INVITE','We invite you to complete a survey that will take no more than 3 minutes');
+    define('GO_TO_SURVEY','Go to survey');
 }
 
 ?>

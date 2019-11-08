@@ -467,6 +467,11 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Phone: (55 11) 5576-980
         self::$trans["mig_id_confirmation"]["CONFIRM"] = 'Confirm';
         self::$trans["mig_id_confirmation"]["ALERT"] = 'After confirmation, this email will be your user to access the service.';
 
+    // Terms of feedback survey
+        self::$trans["feedback"]["TITLE"] = 'We want your opinion about the new design of MyVHL';
+        self::$trans["feedback"]["INVITE"] = 'We invite you to complete a survey that will take no more than 3 minutes';
+        self::$trans["feedback"]["GO_TO_SURVEY"] = 'Go to survey';
+
     // Terms of step-by-step guide
         self::$trans["tour"]["TOUR_EXAMPLE"] = '(Exclusive tour example)';
         self::$trans["tour"]["INTRO"] = 'Welcome to the <b>MyVHL</b> Tour. Get to know the features of this personalized service by navigating the Next and Back buttons. At any time you can leave the Tour and, if you wish, restart it through your profile menu.';

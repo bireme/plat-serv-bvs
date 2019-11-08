@@ -467,6 +467,11 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
         self::$trans["mig_id_confirmation"]["CONFIRM"] = 'Confirmar';
         self::$trans["mig_id_confirmation"]["ALERT"] = 'Después de la confirmación, este e-mail será su usuario de acceso al servicio.';
 
+    // Terms of feedback survey
+        self::$trans["feedback"]["TITLE"] = 'Queremos sus comentarios sobre el nuevo diseño de MiBVS';
+        self::$trans["feedback"]["INVITE"] = 'Lo invitamos a completar una encuesta que no tomará más de 3 minutos';
+        self::$trans["feedback"]["GO_TO_SURVEY"] = 'Ir a la encuesta';
+
     // Terms of step-by-step guide
         self::$trans["tour"]["TOUR_EXAMPLE"] = '(Ejemplo exclusivo del Tour)';
         self::$trans["tour"]["INTRO"] = 'Bienvenido al Tour de <b>MiBVS</b>. Conozca las características de este servicio personalizado navegando por los botones de Siguiente y Anterior. En cualquier momento usted podrá salir del Tour y, si lo desea, reiniciarla por medio del menú de su perfil.';

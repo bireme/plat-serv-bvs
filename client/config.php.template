@@ -75,11 +75,18 @@ define('LOG_FILE',dirname(__FILE__).'/out.log');
 
 /* language configuration */
 define("DEFAULT_LANG","pt");
-
 $languages = array(
     'pt' => 'Português',
     'es' => 'Español',
     'en' => 'English'
+);
+
+/* feedback configuration */
+define("FEEDBACK",false);
+$survey = array(
+    "pt" => "http://bit.ly/pesquisaMinhaBVS",
+    "es" => "http://bit.ly/encuestaMiBVS",
+    "en" => "http://bit.ly/MyVHLSurvey"
 );
 
 $my_vhl_playlist = array(

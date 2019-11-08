@@ -1,3 +1,7 @@
+    <?php if ( FEEDBACK ) : ?>
+        <?php require_once(dirname(__FILE__)."/feedback.tpl.php"); ?>
+    <?php endif; ?>
+
     <!-- jQuery -->
     <script type="text/javascript" src="<?php echo RELATIVE_PATH; ?>/vendors/jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap -->
@@ -29,6 +33,8 @@
     <script type="text/javascript" src="<?php echo RELATIVE_PATH; ?>/js/cookie.js"></script>
     <!-- Main Scripts -->
     <script type="text/javascript" src="<?php echo RELATIVE_PATH; ?>/js/main.js"></script>
+    <!-- Feedback Scripts -->
+    <script type="text/javascript" src="<?php echo RELATIVE_PATH; ?>/js/feedback.js"></script>
     <!-- reCAPTCHA -->
     <script src='https://www.google.com/recaptcha/api.js?hl=<?php echo $_SESSION['lang']; ?>'></script>
 

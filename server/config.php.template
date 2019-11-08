@@ -132,4 +132,12 @@ $languages = array(
     'es' => 'Español',
     'en' => 'English'
 );
+
+/* feedback configuration */
+define("FEEDBACK",false);
+$survey = array(
+    "pt" => "http://bit.ly/pesquisaMinhaBVS",
+    "es" => "http://bit.ly/encuestaMiBVS",
+    "en" => "http://bit.ly/MyVHLSurvey"
+);
 ?>

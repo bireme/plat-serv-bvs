@@ -16,7 +16,7 @@
             <img src="<?php echo RELATIVE_PATH; ?>/images/<?php echo $_SESSION["skin"]; ?>/logo-<?php echo $_SESSION["lang"]; ?>.png" alt="" class="responsive-img">
             <form class="row public_search_bar" action="<?php echo VHL_SEARCH_PORTAL_DOMAIN.'/portal/'; ?>" method="get" target="_blank">
                 <div class="input-field col s10">
-                    <input type="text" id="q" name="q" class="form-control" placeholder="<?=$trans->getTrans('menu','SEARCH_FOR')?>" autocomplete="off">
+                    <input type="text" id="q" name="q" class="form-control" placeholder="<?php echo $trans->getTrans('menu','SEARCH_FOR'); ?>" autocomplete="off">
                     <input type="hidden" name="lang" value="<?=$_SESSION['lang']?>">
                 </div>
                 <div class="input-field col s2">

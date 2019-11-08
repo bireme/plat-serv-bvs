@@ -468,6 +468,11 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
         self::$trans["mig_id_confirmation"]["CONFIRM"] = 'Confirmar';
         self::$trans["mig_id_confirmation"]["ALERT"] = 'Após a confirmação, este e-mail será o seu usuário de acesso ao serviço.';
 
+    // Terms of feedback survey
+        self::$trans["feedback"]["TITLE"] = 'Queremos a sua opinião sobre o novo desing da MinhaBVS';
+        self::$trans["feedback"]["INVITE"] = 'Convidamos-lhe a responder a uma pesquisa que não levará mais que 3 minutos';
+        self::$trans["feedback"]["GO_TO_SURVEY"] = 'Ir para a pesquisa';
+
     // Terms of step-by-step guide
         self::$trans["tour"]["TOUR_EXAMPLE"] = '(Exemplo exclusivo do tour)';
         self::$trans["tour"]["INTRO"] = 'Bem-vindo ao Tour da <b>MinhaBVS</b>. Conheça as funcionalidades deste serviço personalizado navegando pelos botões de Avançar e Voltar. A qualquer momento você poderá sair do Tour e, se desejar, reiniciá-lo por meio menu do seu perfil.';

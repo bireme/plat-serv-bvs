@@ -1,3 +1,7 @@
+    <?php if ( FEEDBACK ) : ?>
+        <?php require_once(dirname(__FILE__)."/feedback.tpl.php"); ?>
+    <?php endif; ?>
+
     <!-- jQuery -->
     <script type="text/javascript" src="<?php echo RELATIVE_PATH; ?>/vendors/jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap -->
@@ -20,6 +24,8 @@
     <script type="text/javascript" src="<?php echo RELATIVE_PATH; ?>/js/cookie.js"></script>
     <!-- Main Scripts -->
     <script type="text/javascript" src="<?php echo RELATIVE_PATH; ?>/js/main.js"></script>
+    <!-- Feedback Scripts -->
+    <script type="text/javascript" src="<?php echo RELATIVE_PATH; ?>/js/feedback.js"></script>
     <!-- jQuery Validate -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
 
