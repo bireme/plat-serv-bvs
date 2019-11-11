@@ -84,9 +84,9 @@ $languages = array(
 /* feedback configuration */
 define("FEEDBACK",false);
 $survey = array(
-    "pt" => "http://bit.ly/pesquisaMinhaBVS",
-    "es" => "http://bit.ly/encuestaMiBVS",
-    "en" => "http://bit.ly/MyVHLSurvey"
+    "pt" => "https://docs.google.com/forms/d/e/1FAIpQLSe8BfqsPKXOwQZjwxzZKSoeu6pmHN0b8TjuoF1qWVKNFgrj_g/viewform",
+    "es" => "https://docs.google.com/forms/d/e/1FAIpQLSdfWaZIHpRXW_kLPnn1G4nh9aE2FvOkjWj11Qz5BBZCkXzY0Q/viewform",
+    "en" => "https://docs.google.com/forms/d/e/1FAIpQLSdAalFIuio31CNgcyaF_G39A0z0zEMjX7U3J60TrZx9Wez8rg/viewform"
 );
 
 $my_vhl_playlist = array(
