@@ -43,12 +43,12 @@ if (navigator.userAgent.indexOf('gonative') > -1) {
                     "subLinks": [],
                     "icon": "fa-rss"
                   },
-                  {
-                    "url": MY_VHL_DOMAIN+"/client/controller/tutorial/control/business",
-                    "label": "Tutorials",
-                    "subLinks": [],
-                    "icon": "fa-film"
-                  },
+                  // {
+                  //   "url": MY_VHL_DOMAIN+"/client/controller/tutorial/control/business",
+                  //   "label": "Tutorials",
+                  //   "subLinks": [],
+                  //   "icon": "fa-film"
+                  // },
                   {
                     "label": "Settings",
                     "grouping": "[grouping]",
@@ -129,12 +129,12 @@ if (navigator.userAgent.indexOf('gonative') > -1) {
                     "subLinks": [],
                     "icon": "fa-rss"
                   },
-                  {
-                    "url": MY_VHL_DOMAIN+"/client/controller/tutorial/control/business",
-                    "label": "Tutorials",
-                    "subLinks": [],
-                    "icon": "fa-film"
-                  },
+                  // {
+                  //   "url": MY_VHL_DOMAIN+"/client/controller/tutorial/control/business",
+                  //   "label": "Tutorials",
+                  //   "subLinks": [],
+                  //   "icon": "fa-film"
+                  // },
                   {
                     "label": "Settings",
                     "grouping": "[grouping]",
