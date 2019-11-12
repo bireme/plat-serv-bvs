@@ -162,7 +162,7 @@ class LinksDAO {
                     $sort = "linkID desc";
                     break;
                 default:
-                    $sort = "rate desc";
+                    $sort = "linkID desc";
                     break;
             }
 
