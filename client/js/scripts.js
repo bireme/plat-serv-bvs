@@ -582,7 +582,7 @@ $(document).on('click', '.btn-bell', function(e) {
     }
 });
 */
-$('.search-actions a.portal').on('click', function(e){
+$('.search-actions a.portal, .widget a.portal').on('click', function(e){
     var portal = "http://pesquisa.bvsalud.org/portal";
     var query  = encodeURIComponent($(this).data('query'));
     var filter = encodeURIComponent($(this).data('filter'));
