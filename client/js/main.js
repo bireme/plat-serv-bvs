@@ -5,7 +5,8 @@ $('.fixed-action-btn').floatingActionButton({
 //  --------------------------------- navbar responsive
 $('.sidenav').sidenav();
 //  --------------------------------- Dropdown
-$(".dropdown-trigger").dropdown({'hover':'true'});
+$(".dropdown-trigger").dropdown();
+$("div.tituloDropdown .dropdown-trigger").dropdown({'hover':'true'});
 //  --------------------------------- Collapse
 $('.collapsible').collapsible();
 // expandir (nao funcinou)
