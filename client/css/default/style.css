@@ -478,6 +478,9 @@ body.public-col footer {
 .video-box {
     display: none;
 }
+#nav .action {
+    background: #eee;
+}
 
 /* SHARE ICONS */
 .facebookIcon {
