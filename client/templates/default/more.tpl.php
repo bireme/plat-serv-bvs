@@ -19,7 +19,7 @@
 		<?php elseif ( $_SESSION['google_data']['picture'] ) : ?>
 		<a href="#"><img class="circle" src="<?php echo $_SESSION['google_data']['picture']; ?>" alt="avatar"></a>
 		<?php elseif ( $_SESSION['avatar'] && !in_array($_SESSION['source'], array('google','facebook')) ) : ?>
-		<a href="#"><img class="circle" src="<?=RELATIVE_PATH; ?>/images/<?=$_SESSION["skin"]?>/uploads/<?=$_SESSION['avatar']?>" alt="avatar"></a>
+		<a href="#"><img class="circle" src="<?php echo RELATIVE_PATH; ?>/images/<?php echo $_SESSION["skin"]; ?>/uploads/<?php echo $_SESSION['avatar']; ?>" alt="avatar"></a>
 		<?php else : ?>
 		<a href="#"><img class="circle" src="<?php echo RELATIVE_PATH; ?>/images/<?php echo $_SESSION["skin"]; ?>/user.svg" alt="avatar"></a>
 		<?php endif; ?>
