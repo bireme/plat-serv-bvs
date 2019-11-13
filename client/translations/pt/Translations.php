@@ -93,17 +93,17 @@ usuário para oferecer serviços personalizados e facilidades tais como:</p>
         self::$trans["new_pass"]["CANCEL"] = 'cancelar';
 
     // Terms of tutorial pages
-        self::$trans["tutorial"]["FEATURE"]       = 'Tutoriais';
-        self::$trans["tutorial"]["TUTORIALS"]     = 'Tutoriais';
-        self::$trans["tutorial"]["HOME"]          = 'Home';
-        self::$trans["tutorial"]["MY_COLLECTION"] = 'Documentos Favoritos';
-        self::$trans["tutorial"]["MY_PROFILES"]   = 'Temas de Interesse';
-        self::$trans["tutorial"]["MY_SEARCHES"]   = 'Histórico de Buscas na BVS';
-        self::$trans["tutorial"]["MY_LINKS"]      = 'Links Favoritos';
-        self::$trans["tutorial"]["ORCID_WORKS"]   = 'Minhas Publicações';
-        self::$trans["tutorial"]["FEED_RSS"]      = 'Feed RSS';
-        self::$trans["tutorial"]["PROFILE"]       = 'Perfil';
-        self::$trans["tutorial"]["CLOSE"]         = 'fechar';
+        self::$trans["tutorial"]["FEATURE"]        = 'Tutoriais';
+        self::$trans["tutorial"]["TUTORIALS"]      = 'Tutoriais';
+        self::$trans["tutorial"]["HOME"]           = 'Home';
+        self::$trans["tutorial"]["MY_COLLECTION"]  = 'Documentos Favoritos';
+        self::$trans["tutorial"]["MY_PROFILES"]    = 'Temas de Interesse';
+        self::$trans["tutorial"]["MY_SEARCHES"]    = 'Histórico de Buscas na BVS';
+        self::$trans["tutorial"]["COMBINE_SEARCH"] = 'Combinação de Buscas';
+        self::$trans["tutorial"]["MY_LINKS"]       = 'Links Favoritos';
+        self::$trans["tutorial"]["ORCID_WORKS"]    = 'Minhas Publicações';
+        self::$trans["tutorial"]["FEED_RSS"]       = 'Feed RSS';
+        self::$trans["tutorial"]["CLOSE"]          = 'fechar';
 
     // Terms of the menu pages
         self::$trans["menu"]["VHL_PORTAL"] = 'Portal Regional da BVS';

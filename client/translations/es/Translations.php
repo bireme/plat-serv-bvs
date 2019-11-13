@@ -92,17 +92,18 @@ class Translations {
         self::$trans["new_pass"]["CANCEL"] = 'cancelar';
 
     // Terms of tutorial pages
-        self::$trans["tutorial"]["FEATURE"]       = 'Tutoriales';
-        self::$trans["tutorial"]["TUTORIALS"]     = 'Tutoriales';
-        self::$trans["tutorial"]["HOME"]          = 'Home';
-        self::$trans["tutorial"]["MY_COLLECTION"] = 'Documentos Favoritos';
-        self::$trans["tutorial"]["MY_PROFILES"]   = 'Temas de Interés';
-        self::$trans["tutorial"]["MY_SEARCHES"]   = 'Historial de Búsquedas en BVS';
-        self::$trans["tutorial"]["MY_LINKS"]      = 'Enlaces Favoritos';
-        self::$trans["tutorial"]["ORCID_WORKS"]   = 'Mis Publicaciones';
-        self::$trans["tutorial"]["FEED_RSS"]      = 'Feed RSS';
-        self::$trans["tutorial"]["PROFILE"]       = 'Perfil';
-        self::$trans["tutorial"]["CLOSE"]         = 'cerrar';
+        self::$trans["tutorial"]["FEATURE"]        = 'Tutoriales';
+        self::$trans["tutorial"]["TUTORIALS"]      = 'Tutoriales';
+        self::$trans["tutorial"]["HOME"]           = 'Home';
+        self::$trans["tutorial"]["MY_COLLECTION"]  = 'Documentos Favoritos';
+        self::$trans["tutorial"]["MY_PROFILES"]    = 'Temas de Interés';
+        self::$trans["tutorial"]["MY_SEARCHES"]    = 'Historial de Búsquedas en BVS';
+        self::$trans["tutorial"]["COMBINE_SEARCH"] = 'Combinación de Búsqueda';
+        self::$trans["tutorial"]["MY_LINKS"]       = 'Enlaces Favoritos';
+        self::$trans["tutorial"]["ORCID_WORKS"]    = 'Mis Publicaciones';
+        self::$trans["tutorial"]["FEED_RSS"]       = 'Feed RSS';
+        self::$trans["tutorial"]["PROFILE"]        = 'Perfil';
+        self::$trans["tutorial"]["CLOSE"]          = 'cerrar';
 
     // Terms of the menu pages
         self::$trans["menu"]["VHL_PORTAL"] = 'Portal Regional de la BVS';

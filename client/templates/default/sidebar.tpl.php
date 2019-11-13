@@ -11,7 +11,7 @@
 				<li class="<?php echo ('mylinks' == $_REQUEST['action']) ? 'action' : ''; ?>"><a href="<?php echo RELATIVE_PATH; ?>/controller/mylinks/control/business"><i class="fas fa-link left"></i><span class="navtitulo"><?php echo $trans->getTrans('menu','MY_LINKS'); ?></span></a></li>
 				<li class="<?php echo ('orcidworks' == $_REQUEST['action']) ? 'action' : ''; ?>"><a href="<?php echo RELATIVE_PATH; ?>/controller/orcidworks/control/business"><i class="far fa-file-alt left"></i><span class="navtitulo"><?php echo $trans->getTrans('menu','ORCID_WORKS'); ?></span></a></li>
 				<li class="<?php echo ('searchresults' == $_REQUEST['action']) ? 'action' : ''; ?>"><a href="<?php echo RELATIVE_PATH; ?>/controller/searchresults/control/business"><i class="fas fa-rss left"></i><span class="navtitulo"><?php echo $trans->getTrans('menu','RSS'); ?></span></a></li>
-				<!-- <li class="<?php echo ('tutorial' == $_REQUEST['action']) ? 'action' : ''; ?>"><a href="<?php echo RELATIVE_PATH; ?>/controller/tutorial/control/business"><i class="fas fa-film left"></i><span class="navtitulo"><?php echo $trans->getTrans('menu','TUTORIALS'); ?></span></a></li> -->
+				<li class="<?php echo ('tutorial' == $_REQUEST['action']) ? 'action' : ''; ?>"><a href="<?php echo RELATIVE_PATH; ?>/controller/tutorial/control/business"><i class="fas fa-film left"></i><span class="navtitulo"><?php echo $trans->getTrans('menu','TUTORIALS'); ?></span></a></li>
 				<li><a href="<?php echo SERVICES_PLATFORM_DOMAIN; ?>/pub/userData.php?userTK=<?php echo urlencode($_SESSION["userTK"]); ?>&c=<?php echo $b64HttpHost; ?>"><i class="fas fa-user-edit left"></i><span class="navtitulo"><?php echo $trans->getTrans('menu','PROFILE'); ?></span></a></li>
 			</ul>
 		</div>
@@ -26,7 +26,7 @@
 		<li class="<?php echo ('mylinks' == $_REQUEST['action']) ? 'action' : ''; ?>"><a href="<?php echo RELATIVE_PATH; ?>/controller/mylinks/control/business"><?php echo $trans->getTrans('menu','MY_LINKS'); ?></a></li>
 		<li class="<?php echo ('orcidworks' == $_REQUEST['action']) ? 'action' : ''; ?>"><a href="<?php echo RELATIVE_PATH; ?>/controller/orcidworks/control/business"><?php echo $trans->getTrans('menu','ORCID_WORKS'); ?></a></li>
 		<li class="<?php echo ('searchresults' == $_REQUEST['action']) ? 'action' : ''; ?>"><a href="<?php echo RELATIVE_PATH; ?>/controller/searchresults/control/business"><?php echo $trans->getTrans('menu','RSS'); ?></a></li>
-		<!-- <li class="<?php echo ('tutorial' == $_REQUEST['action']) ? 'action' : ''; ?>"><a href="<?php echo RELATIVE_PATH; ?>/controller/tutorial/control/business"><?php echo $trans->getTrans('menu','TUTORIALS'); ?></a></li> -->
+		<li class="<?php echo ('tutorial' == $_REQUEST['action']) ? 'action' : ''; ?>"><a href="<?php echo RELATIVE_PATH; ?>/controller/tutorial/control/business"><?php echo $trans->getTrans('menu','TUTORIALS'); ?></a></li>
 		<li><a href="<?php echo SERVICES_PLATFORM_DOMAIN; ?>/pub/userData.php?userTK=<?php echo urlencode($_SESSION["userTK"]); ?>&c=<?php echo $b64HttpHost; ?>"><?php echo $trans->getTrans('menu','PROFILE'); ?></a></li>
 		<li class="divider" tabindex="-1"></li>
 		<li><a href="<?php echo RELATIVE_PATH; ?>/controller/logout/control/business"><?php echo $trans->getTrans('menu','LOGOUT'); ?><i class="material-icons right m1">exit_to_app</i></a></li>

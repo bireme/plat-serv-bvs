@@ -11,6 +11,7 @@
 				<li><a href="<?php echo RELATIVE_PATH; ?>/controller/mylinks/control/business"><i class="fas fa-link left"></i><span class="navtitulo"><?php echo MY_LINKS; ?></span></a></li>
 				<li><a href="<?php echo RELATIVE_PATH; ?>/controller/orcidworks/control/business"><i class="far fa-file-alt left"></i><span class="navtitulo"><?php echo ORCID_WORKS; ?></span></a></li>
 				<li><a href="<?php echo RELATIVE_PATH; ?>/controller/searchresults/control/business"><i class="fas fa-rss left"></i><span class="navtitulo"><?php echo RSS; ?></span></a></li>
+				<li><a href="<?php echo RELATIVE_PATH; ?>/controller/tutorial/control/business"><i class="fas fa-film left"></i><span class="navtitulo"><?php echo TUTORIALS; ?></span></a></li>
 				<li class="action"><a href="<?php echo SERVICES_PLATFORM_DOMAIN; ?>/pub/userData.php?userTK=<?php echo urlencode($_SESSION["userTK"]); ?>&c=<?php echo $b64HttpHost; ?>"><i class="fas fa-user-edit left"></i><span class="navtitulo"><?php echo PROFILE; ?></span></a></li>
 			</ul>
 		</div>
@@ -25,6 +26,7 @@
 		<li><a href="<?php echo RELATIVE_PATH; ?>/controller/mylinks/control/business"><?php echo MY_LINKS; ?></a></li>
 		<li><a href="<?php echo RELATIVE_PATH; ?>/controller/orcidworks/control/business"><?php echo ORCID_WORKS; ?></a></li>
 		<li><a href="<?php echo RELATIVE_PATH; ?>/controller/searchresults/control/business"><?php echo RSS; ?></a></li>
+		<li><a href="<?php echo RELATIVE_PATH; ?>/controller/tutorial/control/business"><?php echo TUTORIALS; ?></a></li>
 		<li class="action"><a href="<?php echo SERVICES_PLATFORM_DOMAIN; ?>/pub/userData.php?userTK=<?php echo urlencode($_SESSION["userTK"]); ?>&c=<?php echo $b64HttpHost; ?>"><?php echo PROFILE; ?></a></li>
 		<li class="divider" tabindex="-1"></li>
 		<li><a href="<?php echo RELATIVE_PATH; ?>/controller/logout/control/business"><?php echo LOGOFF; ?><i class="material-icons right m1">exit_to_app</i></a></li>

@@ -322,6 +322,7 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
     define("SEARCH_WIDGET",'Buscas na BVS');
     define("PROFILE_WIDGET",'Temas de Interesse');
     define("SHELF_WIDGET",'Documentos das Coleções');
+    define("TUTORIALS",'Tutoriais');
     define("TOUR",'Tour Virtual');
     define("START_TOUR",'Iniciar Tour');
     define("LEAVE_COMMENT",'Enviar Comentário');
@@ -682,6 +683,7 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
     define("SEARCH_WIDGET",'Mis Búsquedas en la BVS');
     define("PROFILE_WIDGET",'Temas de Interés');
     define("SHELF_WIDGET",'Documentos Favoritos');
+    define("TUTORIALS",'Tutoriales');
     define("TOUR",'Tour Virtual');
     define("START_TOUR",'Empezar Tour');
     define("LEAVE_COMMENT",'Enviar Comentario');
@@ -1040,6 +1042,7 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Phone: (55 11) 5576-980
     define("SEARCH_WIDGET",'VHL Search');
     define("PROFILE_WIDGET",'Interest Topics');
     define("SHELF_WIDGET",'Favorite Documents');
+    define("TUTORIALS",'Tutorials');
     define("TOUR",'Virtual Tour');
     define("START_TOUR",'Start Tour');
     define("LEAVE_COMMENT",'Leave Comment');
