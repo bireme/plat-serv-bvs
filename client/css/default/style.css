@@ -476,7 +476,7 @@ body.public-col footer {
     min-height: 90px !important;
 }
 .video-box {
-    display: none;
+    /*display: none;*/
 }
 #nav .action {
     background: #eee;

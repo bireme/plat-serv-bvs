@@ -42,12 +42,16 @@
             </div>
         </div>
         <div class="box1 video-box">
-            <div class="col-12 center-align">
-                <div class="box12">
-                    <h6><b><?php echo $trans->getTrans('menu','TUTORIAL'); ?></b></h6>
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/Fe4cW3B0q_U" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    <div class="center-align" id="verMaisMidia" >
-                        <a href="#!"><?php echo $trans->getTrans('menu','SEE_MORE'); ?></a>
+            <div class="row">
+                <div class="col s12 m12 l8 offset-l2 center-align">
+                    <div class="box12">
+                        <h6><b><?php echo $trans->getTrans('tutorial','ORCID_WORKS'); ?></b></h6>
+                        <div class="video-container">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/qcffIKLNFWg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                        <div class="center-align" id="verMaisMidia" >
+                            <a href="#!"><?php echo $trans->getTrans('menu','SEE_MORE'); ?></a>
+                        </div>
                     </div>
                 </div>
             </div>
