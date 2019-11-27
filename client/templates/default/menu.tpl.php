@@ -185,6 +185,21 @@
                 </div>
             </section>
         </div>
+        <div class="box1 video-box">
+            <div class="row">
+                <div class="col s12 m12 l8 offset-l2 center-align">
+                    <div class="box12">
+                        <h6><b><?php echo $trans->getTrans('tutorial','HOME'); ?></b></h6>
+                        <div class="video-container">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/ZmxupTsVlGE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                        <div class="center-align" id="verMaisMidia" >
+                            <a href="<?php echo RELATIVE_PATH; ?>/controller/tutorial/control/business"><?php echo $trans->getTrans('menu','SEE_MORE'); ?></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <?php require_once(dirname(__FILE__)."/info.tpl.php"); ?>
         <?php require_once(dirname(__FILE__)."/more.tpl.php"); ?>
     </div>
