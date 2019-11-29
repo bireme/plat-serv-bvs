@@ -173,8 +173,10 @@ class Translations {
         self::$trans["menu"]["SUGGESTIONS_NOT_FOUND"] = 'No suggestions found';
         self::$trans["menu"]["EVENTS_NOT_FOUND"] = 'No events found';
         self::$trans["menu"]["MEDIA_NOT_FOUND"] = 'No media found';
+        self::$trans["menu"]["OER_NOT_FOUND"] = 'No resources found';
         self::$trans["menu"]["SEE_MORE"] = 'see more';
         self::$trans["menu"]["MULTIMEDIA"] = 'Multimedia';
+        self::$trans["menu"]["OER"] = 'Open Educational Resources';
         self::$trans["menu"]["TUTORIAL"] = 'Tutorial';
         self::$trans["menu"]["TUTORIALS"] = 'Tutorials';
         self::$trans["menu"]["FOOTER_MESSAGE"] = '

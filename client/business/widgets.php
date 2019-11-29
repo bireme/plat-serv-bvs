@@ -52,8 +52,10 @@ $query_pt = $professionalArea['pt'][$data['professional_area']];
 $query_es = $professionalArea['es'][$data['professional_area']];
 $query_en = $professionalArea['en'][$data['professional_area']];
 $query = '(' . $query_pt . ' OR ' . $query_es . ' OR ' . $query_en . ')';
+$oer_query = 'ti:'.$query.' OR mh:'.$query;
 $events = Events::get_events($query);
 $multimedia = Multimedia::get_media($query);
+$resources = OER::get_resources($oer_query);
 
 // My Searches widget
 $obj = new MySearches($_SESSION["userTK"]);

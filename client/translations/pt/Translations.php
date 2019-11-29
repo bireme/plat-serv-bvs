@@ -173,8 +173,10 @@ usuário para oferecer serviços personalizados e facilidades tais como:</p>
         self::$trans["menu"]["SUGGESTIONS_NOT_FOUND"] = 'Nenhuma sugestão encontrada';
         self::$trans["menu"]["EVENTS_NOT_FOUND"] = 'Nenhum evento encontrado';
         self::$trans["menu"]["MEDIA_NOT_FOUND"] = 'Nenhuma mídia encontrada';
+        self::$trans["menu"]["OER_NOT_FOUND"] = 'Nenhum recurso encontrado';
         self::$trans["menu"]["SEE_MORE"] = 'veja mais';
         self::$trans["menu"]["MULTIMEDIA"] = 'Multimídia';
+        self::$trans["menu"]["OER"] = 'Recursos Educacionais Abertos';
         self::$trans["menu"]["TUTORIAL"] = 'Tutorial';
         self::$trans["menu"]["TUTORIALS"] = 'Tutoriais';
         self::$trans["menu"]["FOOTER_MESSAGE"] = '

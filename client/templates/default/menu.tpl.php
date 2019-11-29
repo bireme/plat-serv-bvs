@@ -147,7 +147,6 @@
                                 <?php endif; ?>
                             </div>
                         </div>
-                        <!-- inicio multimidia -->
                         <div class="col s12"><br />
                             <div class="divider"></div>
                             <h6><b><?php echo $trans->getTrans($_REQUEST["action"],'MULTIMEDIA'); ?></b></h6>
@@ -159,7 +158,7 @@
 			                            <div class="col s12 m4">
 			                                <a href="<?php echo $link; ?>" target="_blank">
 			                                    <p>
-			                                        <span class="left"><img src="<?php echo Multimedia::get_thumbnail($media); ?>" alt="" style="padding: 0 20px 5px 0px"></span>
+			                                        <span class="left"><img src="<?php echo $thumb; ?>" alt="" style="padding: 0 20px 5px 0px"></span>
 			                                        <?php if ( strlen($media->title) > 50 ) : ?>
 			                                        	<b class="media-title"><?php echo mb_substr($media->title, 0, 50) . '...'; ?></b>
 			                                        <?php else : ?>
@@ -172,7 +171,7 @@
 			                            </div>
 			                        <?php endforeach; ?>
 		                            <div class="col s12 center-align" id="verMaisMidia" >
-		                                <a href="https://bvsalud.org/multimedia/?q=<?php echo urlencode($query); ?>" target="_blank"><?php echo $trans->getTrans($_REQUEST["action"],'SEE_MORE'); ?></a>
+		                                <a href="<?php echo $MULTIMEDIA[$_SESSION['lang']]; ?>?q=<?php echo urlencode($query); ?>" target="_blank"><?php echo $trans->getTrans($_REQUEST["action"],'SEE_MORE'); ?></a>
 		                            </div>
 		                        <?php else : ?>
 		                        	<div class="col s12">
@@ -180,6 +179,38 @@
 	                            	</div>
 	                            <?php endif; ?>
 	                        </div>
+                        </div>
+                        <div class="col s12"><br />
+                            <div class="divider"></div>
+                            <h6><b><?php echo $trans->getTrans($_REQUEST["action"],'OER'); ?></b></h6>
+                            <div class="row">
+                                <?php if ( $resources ) : ?>
+                                    <?php foreach ( $resources as $oer ) : $thumb = OER::get_thumbnail($oer); ?>
+                                        <?php $link = ( $oer->link ) ? $oer->link[0] : '#'; ?>
+                                        <div class="col s12 m4">
+                                            <a href="<?php echo $link; ?>" target="_blank">
+                                                <p>
+                                                    <span class="left"><img src="<?php echo $thumb; ?>" alt="" style="padding: 0 20px 5px 0px"></span>
+                                                    <?php if ( strlen($oer->title) > 50 ) : ?>
+                                                        <b class="media-title"><?php echo mb_substr($oer->title, 0, 50) . '...'; ?></b>
+                                                    <?php else : ?>
+                                                        <b class="media-title"><?php echo $oer->title; ?></b>
+                                                    <?php endif; ?>
+                                                </p>
+                                                <div class="clearfix"></div>
+                                                <div class="divider"></div>
+                                            </a>
+                                        </div>
+                                    <?php endforeach; ?>
+                                    <div class="col s12 center-align" id="verMaisMidia" >
+                                        <a href="<?php echo OER_DOMAIN; ?>?q=<?php echo urlencode($oer_query); ?>&lang=<?php echo $_SESSION['lang']; ?>" target="_blank"><?php echo $trans->getTrans($_REQUEST["action"],'SEE_MORE'); ?></a>
+                                    </div>
+                                <?php else : ?>
+                                    <div class="col s12">
+                                        <?php echo $trans->getTrans($_REQUEST["action"],'OER_NOT_FOUND'); ?>
+                                    </div>
+                                <?php endif; ?>
+                            </div>
                         </div>
                     </div>
                 </div>

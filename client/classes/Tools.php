@@ -376,6 +376,47 @@ class Multimedia {
 
 }
 
+class OER {
+
+    public static function get_resources($query, $count, $lang, $assoc=FALSE) {
+        $lang     = ( $lang ) ? $lang : $_SESSION['lang'];
+        $count    = ( $count ) ? $count : WIDGETS_ITEMS_LIMIT;
+        $request  = FI_ADMIN_OER . '&q=' . urlencode($query) . '&count=' . $count . '&lang=' . $lang;
+        $response = json_decode(file_get_contents($request), $assoc);
+        $json     = $response->diaServerResponse[0]->response->docs;
+
+        return $json;
+    }
+
+    public static function get_thumbnail($oer) {
+        $thumb = 'http://placehold.it/120x90';
+        $src = RELATIVE_PATH . '/images/' . $_SESSION["skin"] . '/thumbs';
+        $ext = pathinfo($oer->link[0], PATHINFO_EXTENSION);
+        $img_ext = array('jpg', 'jpeg', 'png', 'gif');
+        $args = parse_url($oer->link[0]);
+
+        if ( 'pdf' == $ext ) {
+            $thumb = $src . '/pdf.jpg';
+        } elseif ( 'ppt' == $ext || 'pptx' == $ext ) {
+            $thumb = $src . '/ppt.jpg';
+        } elseif ( in_array(strtolower($ext), $img_ext) ) {
+            $thumb = $src . '/image.jpg';
+        } elseif ( strpos($oer->link[0], 'slideshare') > 0 ) {
+            $thumb = $src . '/slideshare.jpg';
+        } elseif ( strpos($args['host'], 'youtube') > 0 ) {
+            parse_str($args['query'], $query);
+            $thumb = 'https://img.youtube.com/vi/'.$query['v'].'/1.jpg';
+        } elseif ( strpos($args['host'], 'youtu.be') > 0 ) {
+            $thumb = 'https://img.youtube.com/vi'.$args['path'].'/1.jpg';
+        } elseif ( strpos($args['host'], 'vimeo') > 0 ) {
+            $thumb = $src . '/vimeo.jpg';
+        }
+
+        return $thumb;
+    }
+
+}
+
 class Slider {
 
     public static function get_highlights() {
