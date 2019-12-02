@@ -186,7 +186,8 @@
                             <div class="row">
                                 <?php if ( $resources ) : ?>
                                     <?php foreach ( $resources as $oer ) : $thumb = OER::get_thumbnail($oer); ?>
-                                        <?php $link = ( $oer->link ) ? $oer->link[0] : '#'; ?>
+                                        <?php // $link = ( $oer->link ) ? $oer->link[0] : OER_DOMAIN.'/resource/'.$_SESSION['lang'].'/oer-'.$oer->django_id; ?>
+                                        <?php $link = OER_DOMAIN . '/resource/' . $_SESSION['lang'] . '/oer-' . $oer->django_id; ?>
                                         <div class="col s12 m4">
                                             <a href="<?php echo $link; ?>" target="_blank">
                                                 <p>
