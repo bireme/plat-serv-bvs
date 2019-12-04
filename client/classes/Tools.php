@@ -410,6 +410,8 @@ class OER {
             $thumb = 'https://img.youtube.com/vi'.$args['path'].'/1.jpg';
         } elseif ( strpos($args['host'], 'vimeo') > 0 ) {
             $thumb = $src . '/vimeo.jpg';
+        } else {
+            $thumb = $src . '/web.jpg';
         }
 
         return $thumb;
