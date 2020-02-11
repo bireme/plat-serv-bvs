@@ -32,7 +32,7 @@
     <!-- Cookie Scripts -->
     <script type="text/javascript" src="<?php echo RELATIVE_PATH; ?>/js/cookie.js"></script>
     <!-- Main Scripts -->
-    <script type="text/javascript" src="<?php echo RELATIVE_PATH; ?>/js/main.js"></script>
+    <script type="text/javascript" src="<?php echo RELATIVE_PATH; ?>/js/app.js"></script>
     <!-- Feedback Scripts -->
     <script type="text/javascript" src="<?php echo RELATIVE_PATH; ?>/js/feedback.js"></script>
     <!-- reCAPTCHA -->
