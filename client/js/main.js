@@ -6,7 +6,11 @@ $('.fixed-action-btn').floatingActionButton({
 $('.sidenav').sidenav();
 //  --------------------------------- Dropdown
 $(".dropdown-trigger").dropdown();
-$("div.tituloDropdown .dropdown-trigger").dropdown({'hover':'true'});
+if (navigator.userAgent.indexOf('gonative') > -1) {
+  $("div.tituloDropdown .dropdown-trigger").dropdown();
+} else {
+  $("div.tituloDropdown .dropdown-trigger").dropdown({'hover':'true'});
+}
 //  --------------------------------- Collapse
 $('.collapsible').collapsible();
 // expandir (nao funcinou)
