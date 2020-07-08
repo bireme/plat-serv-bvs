@@ -311,7 +311,8 @@ class UserDAO {
         global $_conf;
         $retValue = false;
         $strsql = "SELECT count(userID) FROM users
-                    WHERE userID = '".trim($userID)."'" ;
+                    WHERE userID = '".trim($userID)."'
+                    OR sysUID = '".trim($userID)."'" ;
 
         try{
             $_db = new DBClass();
@@ -954,6 +955,22 @@ class UserDAO {
         }
         
         return $res[0]['sysUID'] ? $res[0]['sysUID'] : false;
+    }
+
+    public static function getUserID($sysUID){
+        global $_conf;
+
+        $strsql = "SELECT userID FROM users WHERE sysUID = '".$sysUID."'";
+
+        try{
+            $_db = new DBClass();
+            $res = $_db->databaseQuery($strsql);
+        }catch(DBClassException $e){
+            $logger = &Log::singleton('file', LOG_FILE, __CLASS__, $_conf);
+            $logger->log($e->getMessage(),PEAR_LOG_EMERG);
+        }
+        
+        return $res[0]['userID'] ? $res[0]['userID'] : false;
     }
 
     /**

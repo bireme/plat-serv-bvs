@@ -305,7 +305,7 @@ class ShelfDAO {
 
         $sysUID = UserDAO::getSysUID($shelf->getUserID());
 
-        $count = ( $params["widget"] ) ? WIDGETS_ITEMS_LIMIT : DOCUMENTS_PER_PAGE;
+        $count = ( $params["count"] ) ? $params["count"] : DOCUMENTS_PER_PAGE;
         $from = $count * $params["page"];
         $objUserDirectory = $shelf->getDir();
         

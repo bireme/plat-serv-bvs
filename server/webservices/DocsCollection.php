@@ -85,8 +85,13 @@ function listPublicDocs($userID,$dirID=null,$filter=null){
     $userID = base64_decode($userID);
     $is_user = UserDAO::isUser($userID);
     
-    if ( $is_user ) {        
+    if ( $is_user ) {
         $objShelf = new Shelf();
+        $usrID = UserDAO::getUserID($userID);
+
+        if ( $usrID ) {
+            $userID = $usrID;
+        }
 
         if ( isset($dirID) ) {
             $objUserDirectory = UserDirectoryDAO::getDir($userID,$dirID);

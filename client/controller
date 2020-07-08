@@ -7,6 +7,11 @@ if ($control == "business" || $_REQUEST["action"] == 'authentication'){
     require_once(dirname(__FILE__)."/business.php");
 }
 
+/* API */
+if ($control == "view" && $_REQUEST["action"] == 'api'){
+    require_once(dirname(__FILE__)."/api.php");
+}
+
 require_once(dirname(__FILE__)."/view.php");
 ob_end_flush();
 ?>
