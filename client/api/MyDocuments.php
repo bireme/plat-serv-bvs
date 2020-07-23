@@ -8,7 +8,7 @@ require_once(dirname(__FILE__)."/../classes/DocsCollection.php");
 
 parse_str(ltrim($_REQUEST['favorites'], '?'));
 
-if ( $userID ) {
+if ( $userID && !filter_var($userID, FILTER_VALIDATE_EMAIL) ) {
     $params["widget"] = true;
     $params["count"]  = -1;
 
