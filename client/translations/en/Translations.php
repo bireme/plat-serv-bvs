@@ -164,6 +164,7 @@ class Translations {
         self::$trans["menu"]["DONE"] = 'Finish';
         self::$trans["menu"]["LEAVE_COMMENT"] = 'Leave Comment';
         self::$trans["menu"]["REPORT_ERROR"] = 'Report Error';
+        self::$trans["menu"]["FEEDBACK_SERVICE"] = 'Leave Comment / Report Error';
         self::$trans["menu"]["DOCUMENTS"] = 'Documents';
         self::$trans["menu"]["SUGGESTIONS"] = 'Suggestions';
         self::$trans["menu"]["EVENTS"] = 'Events';

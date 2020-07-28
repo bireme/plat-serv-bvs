@@ -140,4 +140,10 @@ $survey = array(
     "es" => "https://docs.google.com/forms/d/e/1FAIpQLSdfWaZIHpRXW_kLPnn1G4nh9aE2FvOkjWj11Qz5BBZCkXzY0Q/viewform",
     "en" => "https://docs.google.com/forms/d/e/1FAIpQLSdAalFIuio31CNgcyaF_G39A0z0zEMjX7U3J60TrZx9Wez8rg/viewform"
 );
+
+$feedback_service = array(
+    'pt' => 'https://bvsalud.org/contate-nos/',
+    'es' => 'https://bvsalud.org/es/contactenos/',
+    'en' => 'https://bvsalud.org/en/contact_us/'
+);
 ?>

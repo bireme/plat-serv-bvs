@@ -164,6 +164,7 @@ usuário para oferecer serviços personalizados e facilidades tais como:</p>
         self::$trans["menu"]["DONE"] = 'Concluir';
         self::$trans["menu"]["LEAVE_COMMENT"] = 'Enviar Comentário';
         self::$trans["menu"]["REPORT_ERROR"] = 'Comunicar Erro';
+        self::$trans["menu"]["FEEDBACK_SERVICE"] = 'Enviar Comentário / Comunicar Erro';
         self::$trans["menu"]["DOCUMENTS"] = 'Documentos';
         self::$trans["menu"]["SUGGESTIONS"] = 'Sugestões';
         self::$trans["menu"]["EVENTS"] = 'Eventos';
