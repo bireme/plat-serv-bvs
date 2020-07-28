@@ -17,13 +17,14 @@ $acao = isset($_REQUEST['acao'])?$_REQUEST['acao']:'default';
 $email = !empty($_REQUEST['email']) ? trim($_REQUEST['email']) : false;
 $userKey = !empty($_REQUEST['key']) ? $_REQUEST['key'] : false;
 $callerURL = !empty($_REQUEST['c'])?base64_decode($_REQUEST['c']):false;
+$user = !empty($_REQUEST['user']) ? $_REQUEST['user'] : false;
 
 switch($acao){
     case "enviar":
         $retValue = false;
 
-        if( filter_var($_REQUEST['login'], FILTER_VALIDATE_EMAIL) ) {
-            $retValue = UserDAO::sendNewPassConfirm(trim($_REQUEST['login']), 'pass');
+        if( filter_var($user, FILTER_VALIDATE_EMAIL) ) {
+            $retValue = UserDAO::sendNewPassConfirm(trim($user), 'pass');
      
             if( $retValue === false )
                 $sysMsg = NEWPASS_CREATE_ERROR;
@@ -92,9 +93,9 @@ $DocTitle = FORGOT_PASSWORD;
 				<form method="post" id="forgotpass" name="forgotpass" class="form-horizontal form-label-left" novalidate>
 					<div class="input-field col s12 l6 offset-l3">
 						<i class="material-icons prefix">email</i>
-						<input id="icon_prefix" name="login" type="email" data-validate-length-range="0,50">
+						<input id="user" name="user" type="email" data-validate-length-range="0,50">
 						<input type="hidden" value="enviar" name="acao" />
-						<label for="icon_prefix"><?php echo FIELD_LOGIN; ?></label>
+						<label for="user"><?php echo FIELD_LOGIN; ?></label>
 						<?php if ( $retValue === false || 'DomainNotPermitted' === $retValue ) : ?>
 							<span class="helper-text red-text error-text"><?php echo $sysMsg; ?></span>
 						<?php endif; ?>

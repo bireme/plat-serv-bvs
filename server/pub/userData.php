@@ -76,8 +76,8 @@ switch($acao){
         $usr->setFirstName($firstName);
         $usr->setLastName($lastName);
         $usr->setGender($gender);
-        $usr->setID($login);
-        $usr->setEmail($login);
+        $usr->setID($user);
+        $usr->setEmail($user);
         $usr->setAffiliation($afiliacao);
         $usr->setCountry($country);
         $usr->setSource($source);
