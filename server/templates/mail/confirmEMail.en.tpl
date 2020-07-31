@@ -1,11 +1,11 @@
 <div>
     <p>Dear #USERNAME#,</p>
 
-    <p>The BIREME/PAHO/WHO welcomes you to My VHL Personalized Services.</p>
+    <p>The BIREME/PAHO/WHO welcomes you to MyVHL Personalized Services.</p>
 
     <p><a href="http://#SITE#/server/pub/userData.php?c=#HOME#&email=#EMAIL#&key=#KEY#&acao=confirmar&lang=#LANG#">Click here to confirm your registration.</a></p>
 
-    <p>By accessing My VHL, you will have the opportunity to know the functionalities of this service through a virtual tour. Any questions or problems, <a href="http://feedback.bireme.org/feedback/?application=wp-bvs-plugin&version=2.10-77&site=servplat&lang=#LANG#">contact us.</a></p>
+    <p>By accessing My VHL, you will have the opportunity to know the functionalities of this service through a virtual tour. Any questions or problems, <a href="https://bvsalud.org/en/contact_us/">contact us.</a></p>
 
     <p>If you did not register for My VHL, please disregard this message.</p>
 
@@ -16,7 +16,7 @@
 [DELIMITER]
 Dear #USERNAME#,
 
-The BIREME/PAHO/WHO welcomes you to My VHL Personalized Services.
+The BIREME/PAHO/WHO welcomes you to MyVHL Personalized Services.
 
 Copy and paste the link below in your browser to confirm your registration:
 
@@ -24,7 +24,7 @@ http://#SITE#/server/pub/userData.php?c=#HOME#&email=#EMAIL#&key=#KEY#&action=co
 
 By accessing My VHL, you will have the opportunity to know the functionalities of this service through a virtual tour. Any questions or problems, please contact us at the following address:
 
-http://feedback.bireme.org/feedback/?application=wp-bvs-plugin&version=2.10-77&site=servplat&lang=#LANG#
+https://bvsalud.org/en/contact_us/
 
 If you did not register for My VHL, please disregard this message.
 

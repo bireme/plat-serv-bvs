@@ -136,8 +136,8 @@ class UserDAO {
         $canInsert = true;
 
         $source = $objUser->getSource() ? $objUser->getSource() : '';
-        
-        if ( $active && ( empty($source) || 'ldap' == $source ) ) {
+
+        if ( $active && ( empty($source) || 'ldap' == $source || 'e-blueinfo' == $source ) ) {
             /* add user to LDAP */
             $attrs = array('cn' => $objUser->getID(),
                            'userPassword' => (string)$objUser->getPassword(),
@@ -825,9 +825,10 @@ class UserDAO {
      * Create and set a random password
      *
      * @param string $userID
+     * @param string $userSource
      * @return boolean
      */
-    public static function createNewPassword($userID){
+    public static function createNewPassword($userID,$userSource=''){
         global $_conf;
         $name = '';
         $retValue = false;
@@ -860,9 +861,14 @@ class UserDAO {
                     throw $e;
                 }
 
+                $template = ( 'e-blueinfo' == $userSource ) ? EMAIL_EBLUEINFO_TEMPLATE : EMAIL_NEWPASSWORD_TEMPLATE;
+                $subject  = ( 'e-blueinfo' == $userSource ) ? EBLUEINFO_EMAIL_SUBJECT : NEW_PASSWORD_EMAIL_SUBJECT;
+                $fromMail = ( 'e-blueinfo' == $userSource ) ? EBLUEINFO_EMAIL_FROM : EMAIL_FROM;
+                $fromName = ( 'e-blueinfo' == $userSource ) ? EBLUEINFO_EMAIL_FROMNAME : EMAIL_FROMNAME;
+
                 if($retStats !== false){
                     $to = array($userID);
-                    $tpl = str_replace('#LANG#', $_SESSION['lang'], EMAIL_NEWPASSWORD_TEMPLATE);
+                    $tpl = str_replace('#LANG#', $_SESSION['lang'], $template);
                     $body = str_replace('[PASSWORD]',
                         $userAttributes['userPassword'],
                         file_get_contents($tpl));
@@ -870,7 +876,7 @@ class UserDAO {
                     $body = str_replace('[USERNAME]', $name, $body);
                     $body = str_replace('[LANG]', $_SESSION['lang'], $body);
                     $text = explode('[DELIMITER]', $body);
-                    $retValue = Mailer::sendMail($text[0], $text[1], NEW_PASSWORD_EMAIL_SUBJECT, $to);
+                    $retValue = Mailer::sendMail($text[0], $text[1], $subject, $to, $fromMail, $fromName);
                 }
             }
         }else{

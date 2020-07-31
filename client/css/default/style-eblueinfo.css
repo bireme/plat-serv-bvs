@@ -1,0 +1,324 @@
+.containerAos{
+	overflow:hidden;
+}
+#main{
+	width: 720px;
+	margin: auto;
+}
+.flexContainer{
+	display: flex;
+	flex-wrap: wrap;
+}
+.flexCol1{
+	width: 50%;
+}
+body{
+	background: url('../../images/default/bg1.jpg') #fff top right fixed no-repeat;
+}
+#brand{
+	text-align: center;
+	max-width: 100%;
+	margin: auto;
+	margin-top: 20px;
+}
+#brand img{
+	width: 250px;
+}
+.nav-wrapper{
+	background-color: #0d47a1;
+}
+#search{
+	color: #fff;
+}
+#search:focus{
+	color: #000;
+}
+.bannerHome{
+	margin-bottom: 20px;
+}
+.bannerHome div{
+	padding: 0 1px;
+}
+.padding1{
+	padding: 5px;
+}
+.padding2{
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+.padding3{
+	padding:0 10px 0 0
+}
+.margin1{
+	margin-bottom: 10px;
+}
+.titleDefault{
+	font-family: 'Bebas Neue', cursive;
+}
+.title{
+	font-size: 30px;
+	margin-top: 0;
+	margin-bottom: 0;
+	text-align: center;
+	padding: 10px;
+	font-family: 'Bebas Neue', cursive;
+}
+.title2{
+	font-size: 25px;
+	margin-top: 0;
+	text-align: center;
+	padding: 10px;
+	font-family: 'Bebas Neue', cursive;
+}
+.iconActions{
+	margin-bottom: 10px;
+}
+a:active{
+	border-color:red;
+	outline: red;
+}
+.cardSingle>div{
+	border-left: 10px solid #cfd8dc; 
+	/*transition: all 1s ease;*/
+}
+.cardVisited>div{
+	border-left: 10px solid #80deea;
+	/*transition: all 1s ease;*/
+}
+.cardLastVisited>div{
+	border-left: 10px solid #1e88e5;
+	/*transition: all 1s ease;*/
+}
+.cardBoxText{
+	height: 190px;
+	position: relative;
+}
+.boxCardGray{
+	position: absolute;
+	bottom: 0;
+}
+.legendCard{
+	position: sticky;
+	top: 0;
+	z-index: 10;
+	padding:10px 0px 1px 0px;
+}
+.sidenav{
+	background: url('../../images/default/bgShape.png') #01408f bottom center no-repeat;
+}
+.sidenav li>a{
+	color: #fff;
+	font-size: 20px;
+}
+.sidenav li>a:hover{
+	background: #4b91e8;
+}
+.bt100{
+	width: 100%;
+}
+#containerCenter {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 100%;
+	transform: translate(-50%, -50%);
+	text-align: center;
+}
+.logoMinisterio{
+	max-height: 70px;
+}
+#logoFooter img{
+	max-width: 400px;
+}
+#footerFlag{
+	max-width: 30px;
+	border-radius: 50%;
+}
+#search{
+	padding-left: 80px
+}
+#speakBtn{
+	color: rgba(255,255,255,0.7);
+	float: left;
+	position: absolute;
+	left: 45px;
+}
+#speakBtn:hover{
+	color: #fff;
+}
+#cardLastVisited, #cardVisited, #cardSingle{
+	cursor: pointer;
+}
+#color0,#color1,#color2{
+	cursor: pointer;
+}
+.boxthumb{
+	height: 300px;
+	background: red!important;
+}
+.textInfo{
+	margin: 10px 0;
+}
+.textInfo .divider{
+	margin-top: 10px;
+}
+.fieldset{
+	background-color: #fff;
+	border: 1px solid #ddd;
+}
+#fieldSetOptions{
+	display: none;
+}
+.switch label input[type=checkbox]:checked+.lever{
+	background-color: #83c4f7;
+}
+.switch label input[type=checkbox]:checked+.lever:after {
+    background-color: #2196f3;
+}
+.btn-small i {
+    font-size: 22px;
+}
+/****************************** cor 01 ************************/
+.bgColor1{
+	background: url('../../images/default/bgShape.png') #2962ff top right fixed no-repeat;
+	color: #fff;
+}
+.bgColor1 a, .bgColor1 label{color: #ddd;}
+.bgColor1 .card-content, .bgColor1 .collapsible-header, .bgColor1  .modal-footer, .bgColor1 .title2{
+	background: #26469e!important;
+}
+.bgColor1 .collapsible-body, .bgColor1 .modal, .bgColor1 .collection-item{
+	background: #2962ff!important;
+}
+.bgColor1 [type="radio"]:not(:checked)+span:before,.bgColor1 [type="radio"]:not(:checked)+span:after,
+.bgColor1 [type="radio"]:checked+span:after, .bgColor1 [type="radio"].with-gap:checked+span:before, .bgColor1 [type="radio"].with-gap:checked+span:after{
+	border-color: #fff;
+}
+.bgColor1 [type="radio"]:checked+span:after,.bgColor1 [type="radio"].with-gap:checked+span:after{
+	background-color: #fff;
+}
+.bgColor1 .cardSingle .blue-grey, .bgColor1 .cardVisited .blue-grey, .bgColor1 .cardLastVisited .blue-grey{
+	background: #052e9e!important;
+}
+.bgColor1 .sidenav{
+	background-color: #4071f9;
+}
+.bgColor1 #brand{
+	background: #fff;
+	margin-bottom: 10px;
+}
+.bgColor1 .sidenav #brand{
+	background: none;
+}
+/******** form **********/
+.bgColor1 input:not([type]):focus:not([readonly]), .bgColor1 input[type=text]:not(.browser-default):focus:not([readonly]),
+.bgColor1 input[type=password]:not(.browser-default):focus:not([readonly]), .bgColor1 input[type=email]:not(.browser-default):focus:not([readonly]),
+.bgColor1 input[type=url]:not(.browser-default):focus:not([readonly]), .bgColor1 input[type=time]:not(.browser-default):focus:not([readonly]),
+.bgColor1 input[type=date]:not(.browser-default):focus:not([readonly]), .bgColor1 input[type=datetime]:not(.browser-default):focus:not([readonly]),
+.bgColor1 input[type=datetime-local]:not(.browser-default):focus:not([readonly]), .bgColor1 input[type=tel]:not(.browser-default):focus:not([readonly]),
+.bgColor1 input[type=number]:not(.browser-default):focus:not([readonly]), .bgColor1 input[type=search]:not(.browser-default):focus:not([readonly]),
+.bgColor1 textarea.materialize-textarea:focus:not([readonly]),
+.bgColor1 input:not([type]), .bgColor1 input[type=text]:not(.browser-default), .bgColor1 input[type=password]:not(.browser-default),
+.bgColor1 input[type=email]:not(.browser-default), .bgColor1 input[type=url]:not(.browser-default), .bgColor1 input[type=time]:not(.browser-default),
+.bgColor1 input[type=date]:not(.browser-default), .bgColor1 input[type=datetime]:not(.browser-default), .bgColor1 input[type=datetime-local]:not(.browser-default),
+.bgColor1 input[type=tel]:not(.browser-default), .bgColor1 input[type=number]:not(.browser-default), .bgColor1 input[type=search]:not(.browser-default),
+{
+	border-color: #fff!important;
+}
+.bgColor1 input:not([type]):focus:not([readonly])+label, .bgColor1  input[type=text]:not(.browser-default):focus:not([readonly])+label, 
+.bgColor1 input[type=password]:not(.browser-default):focus:not([readonly])+label, .bgColor1  input[type=email]:not(.browser-default):focus:not([readonly])+label,
+.bgColor1 input[type=url]:not(.browser-default):focus:not([readonly])+label, .bgColor1 input[type=time]:not(.browser-default):focus:not([readonly])+label,
+.bgColor1 input[type=date]:not(.browser-default):focus:not([readonly])+label, .bgColor1 input[type=datetime]:not(.browser-default):focus:not([readonly])+label,
+.bgColor1 input[type=datetime-local]:not(.browser-default):focus:not([readonly])+label, .bgColor1 input[type=tel]:not(.browser-default):focus:not([readonly])+label,
+.bgColor1 input[type=number]:not(.browser-default):focus:not([readonly])+label, .bgColor1 input[type=search]:not(.browser-default):focus:not([readonly])+label,
+.bgColor1 textarea.materialize-textarea:focus:not([readonly])+label{
+	color: #fff;
+}
+.bgColor1 ::selection{
+	background-color: #333;
+	color: #FF0;
+}
+.input-field div.error {
+    font-size: 0.8rem;
+    color: #FF0000;
+}
+/****************************** cor 02 ************************/
+.bgColor2{
+	background: url('../../images/default/bgShape.png') #42a5f5 top right fixed no-repeat;
+	color: #fff;
+}
+.bgColor2 a, .bgColor2 label{color: #ddd;}
+.bgColor2 .card-content, .bgColor2 .collapsible-header, .bgColor2  .modal-footer, .bgColor2 .title2 {
+	background: #2178bf!important;
+}
+.bgColor2 .collapsible-body, .bgColor2 .modal, .bgColor2 .collection-item{
+	background: #42a5f5!important;
+}
+.bgColor2 [type="radio"]:not(:checked)+span:before, .bgColor2 [type="radio"]:not(:checked)+span:after,
+.bgColor2 [type="radio"]:checked+span:after, .bgColor2 [type="radio"].with-gap:checked+span:before, .bgColor2 [type="radio"].with-gap:checked+span:after{
+	border-color: #fff;
+}
+.bgColor2 [type="radio"]:checked+span:after, .bgColor2 [type="radio"].with-gap:checked+span:after{
+	background-color: #fff;
+}
+.bgColor2 .cardSingle .blue-grey, .bgColor2 .cardVisited .blue-grey, .bgColor2 .cardLastVisited .blue-grey{
+	background: #052e9e!important;
+}
+.bgColor2 .sidenav{
+	background-color: #73b8f1;
+}
+.bgColor2 #brand{
+	background: #fff;
+	margin-bottom: 10px;
+}
+.bgColor2 .sidenav #brand{
+	background: none;
+}
+/******** form **********/
+.bgColor2 input:not([type]):focus:not([readonly]), .bgColor2 input[type=text]:not(.browser-default):focus:not([readonly]),
+.bgColor2 input[type=password]:not(.browser-default):focus:not([readonly]), .bgColor2 input[type=email]:not(.browser-default):focus:not([readonly]),
+.bgColor2 input[type=url]:not(.browser-default):focus:not([readonly]), .bgColor2 input[type=time]:not(.browser-default):focus:not([readonly]),
+.bgColor2 input[type=date]:not(.browser-default):focus:not([readonly]), .bgColor2 input[type=datetime]:not(.browser-default):focus:not([readonly]),
+.bgColor2 input[type=datetime-local]:not(.browser-default):focus:not([readonly]), .bgColor2 input[type=tel]:not(.browser-default):focus:not([readonly]),
+.bgColor2 input[type=number]:not(.browser-default):focus:not([readonly]), .bgColor2 input[type=search]:not(.browser-default):focus:not([readonly]),
+.bgColor2 textarea.materialize-textarea:focus:not([readonly]), 
+.bgColor2 input:not([type]), .bgColor2 input[type=text]:not(.browser-default), .bgColor2 input[type=password]:not(.browser-default),
+.bgColor2 input[type=email]:not(.browser-default), .bgColor2 input[type=url]:not(.browser-default), .bgColor2 input[type=time]:not(.browser-default),
+.bgColor2 input[type=date]:not(.browser-default), .bgColor2 input[type=datetime]:not(.browser-default), .bgColor2 input[type=datetime-local]:not(.browser-default),
+.bgColor2 input[type=tel]:not(.browser-default), .bgColor2 input[type=number]:not(.browser-default), .bgColor2 input[type=search]:not(.browser-default),
+.bgColor2 textarea.materialize-textarea
+{
+	border-color: #fff!important;
+}
+.bgColor2 input:not([type]):focus:not([readonly])+label, .bgColor2  input[type=text]:not(.browser-default):focus:not([readonly])+label, 
+.bgColor2 input[type=password]:not(.browser-default):focus:not([readonly])+label, .bgColor2  input[type=email]:not(.browser-default):focus:not([readonly])+label,
+.bgColor2 input[type=url]:not(.browser-default):focus:not([readonly])+label, .bgColor2 input[type=time]:not(.browser-default):focus:not([readonly])+label,
+.bgColor2 input[type=date]:not(.browser-default):focus:not([readonly])+label, .bgColor2 input[type=datetime]:not(.browser-default):focus:not([readonly])+label,
+.bgColor2 input[type=datetime-local]:not(.browser-default):focus:not([readonly])+label, .bgColor2 input[type=tel]:not(.browser-default):focus:not([readonly])+label,
+.bgColor2 input[type=number]:not(.browser-default):focus:not([readonly])+label, .bgColor2 input[type=search]:not(.browser-default):focus:not([readonly])+label,
+.bgColor2 textarea.materialize-textarea:focus:not([readonly])+label{
+	color: #fff;
+}
+.bgColor2 ::selection{
+	background-color: #333;
+	color: #FF0;
+}
+
+@media (max-width: 1024px){
+	.flexCol1{
+		width: 50%;
+	}
+}
+@media (max-width: 768px){
+	.flexCol1{
+		width: 100%;
+	}
+	.cardBoxImg{
+		max-width: 100%!important;
+	}
+}
+@media (max-width: 560px){
+	#logoFooter img{
+		max-width: 100%;
+	}
+}

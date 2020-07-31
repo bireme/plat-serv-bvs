@@ -56,6 +56,7 @@ $acceptMail = !empty($_REQUEST['accept_mail']) ? $_REQUEST['accept_mail'] : 0;
 $acao = !empty($_REQUEST['acao']) ? $_REQUEST['acao'] : 'default';
 $userKey = !empty($_REQUEST['key']) ? $_REQUEST['key'] : false;
 $ut = !empty($_REQUEST['ut']) ? $_REQUEST['ut'] : false;
+$theme = !empty($_REQUEST['theme']) ? $_REQUEST['theme'] : false;
 $msg = null; /* system messages */
 $birthday = false;
 
@@ -100,22 +101,23 @@ switch($acao){
             $migrationResult = ToolsRegister::authenticateRegisteringUser($usr);
         }
 
-        if ($migrationResult["status"] === true){
+        if ($migrationResult["status"] === true) {
             $response["status"] = true;
 
-            if ($migrationResult["error"] === "userexists")
-                $response["msg"] = USER_ADD_SUCCESS;
-            elseif ($migrationResult["error"] === "userconfirmed")
+            if ( 'e-blueinfo' == $usr->getSource() ) {
+                header('Location: '.rtrim($callerURL, '/').'/?status='.$migrationResult["error"]);
+            }
+
+            if ($migrationResult["error"] === "userconfirmed")
                 $response["msg"] = USER_ADD_CONFIRMED;
             else
                 $response["msg"] = USER_SEND_CONFIRMATION;
 
             $retValue = UserDAO::fillOrcidData($usr->getID(), $usr->getOrcid());
-        }elseif (($migrationResult["status"] === false) &&
-                ($migrationResult["error"] === "userexists")){
+        } elseif ($migrationResult["status"] === false && $migrationResult["error"] === "userexists") {
             $response["msg"] = USER_EXISTS;
             $response["status"] = false;
-        }else{
+        } else {
             $response["msg"] = USER_ADD_ERROR;
             $response["status"] = false;
         }
@@ -204,7 +206,7 @@ if(!empty($userID)){
         $_SESSION["userLastName"] = $usr->getLastName();
     }
 }else{
-    $usr = new User();
+    if ( !$usr ) $usr = new User();
 }
 
 $DocTitle = $isUser?UPDATE_USER_TITLE:REGISTER_NEW_USER_TITLE;
@@ -212,7 +214,10 @@ $DocTitle = $isUser?UPDATE_USER_TITLE:REGISTER_NEW_USER_TITLE;
 if ( $isUser ) {
     require_once(dirname(__FILE__)."/profile.php");
 } else {
-    require_once(dirname(__FILE__)."/register.php");
+    if ( $theme && 'e-blueinfo' == $theme )
+        require_once(dirname(__FILE__)."/register-eblueinfo.php");
+    else
+        require_once(dirname(__FILE__)."/register.php");
 }
 
 ?>

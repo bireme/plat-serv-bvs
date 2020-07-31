@@ -3,7 +3,7 @@
 
     <p><a href="http://#SITE#/server/pub/forgotPassword.php?c=#HOME#&email=#EMAIL#&key=#KEY#&acao=confirmar&lang=#LANG#">Clique aqui para confirmar o envio de uma nova senha.</a></p>
 
-    <p>Qualquer dúvida ou problema, <a href="http://feedback.bireme.org/feedback/?application=wp-bvs-plugin&version=2.10-77&site=servplat&lang=[LANG]">entre em contato conosco.</a></p>
+    <p>Qualquer dúvida ou problema, <a href="https://bvsalud.org/contate-nos/">entre em contato conosco.</a></p>
 
     <p>Se você não solicitou o envio de senha, por favor desconsidere essa mensagem.</p>
 
@@ -20,7 +20,7 @@ http://#SITE#/server/pub/forgotPassword.php?c=#HOME#&email=#EMAIL#&key=#KEY#&aca
 
 Qualquer dúvida ou problema, entre em contato conosco através do seguinte endereço:
 
-http://feedback.bireme.org/feedback/?application=wp-bvs-plugin&version=2.10-77&site=servplat&lang=[LANG]
+https://bvsalud.org/contate-nos/
 
 Se você não solicitou o envio de senha, por favor desconsidere essa mensagem.
 

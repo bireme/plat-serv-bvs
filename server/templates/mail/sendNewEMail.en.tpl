@@ -1,13 +1,13 @@
 <div>
     <p>Dear [USERNAME],</p>
 
-    <p>Following the access data for your My VHL account:</p>
+    <p>Following the access data for your MyVHL account:</p>
 
     <p>User: [USER]<br />Password: [PASSWORD]</p>
 
     <p><a href="http://platserv.bvsalud.org/client/controller/authentication/?lang=[LANG]">Click here and go to Custom Services.</a></p>
 
-    <p>Any questions or concerns, <a href="http://feedback.bireme.org/feedback/?application=wp-bvs-plugin&version=2.10-77&site=servplat&lang=[LANG]">contact us.</a></p>
+    <p>Any questions or concerns, <a href="https://bvsalud.org/en/contact_us/">contact us.</a></p>
 
     <p>If you did not request a password, please disregard this message.</p>
 
@@ -18,7 +18,7 @@
 [DELIMITER]
 Dear [USERNAME],
 
-Following the access data for your My VHL account:
+Following the access data for your MyVHL account:
 
 User: [USER]
 Password: [PASSWORD]
@@ -29,7 +29,7 @@ http://platserv.bvsalud.org/client/controller/authentication/?lang=[LANG]
 
 Any questions or concerns, please contact us at the following address:
 
-http://feedback.bireme.org/feedback/?application=wp-bvs-plugin&version=2.10-77&site=servplat&lang=[LANG]
+https://bvsalud.org/en/contact_us/
 
 If you did not request a password, please disregard this message.
 

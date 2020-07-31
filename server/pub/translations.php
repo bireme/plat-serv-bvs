@@ -29,6 +29,8 @@ if($lang == 'pt'){
     define('PROFESSIONAL_AREA','Área de atuação profissional');
     define('EMAIL_SENT','E-mail enviado.');
     define("EMAIL_FROMNAME",'MinhaBVS');
+    define("EBLUEINFO_EMAIL_FROMNAME",'e-BlueInfo');
+    define("EBLUEINFO_EMAIL_SUBJECT",'e-BlueInfo: Dados de Acesso');
     define("NEW_PASSWORD_EMAIL_SUBJECT",'Serviços Personalizados MinhaBVS: Senha');
     define("CONFIRM_USER_EMAIL_SUBJECT",'Serviços Personalizados MinhaBVS: Confirmação de Registro - ');
     define("CONFIRM_NEW_PASS_SUBJECT",'Serviços Personalizados MinhaBVS: Confirmação de Envio de Senha - ');
@@ -392,6 +394,8 @@ if($lang == 'es'){
     define('PROFESSIONAL_AREA','Área de actuación profesional');
     define('EMAIL_SENT','E-mail enviado.');
     define("EMAIL_FROMNAME",'MiBVS');
+    define("EBLUEINFO_EMAIL_FROMNAME",'e-BlueInfo');
+    define("EBLUEINFO_EMAIL_SUBJECT",'e-BlueInfo: Datos de Acceso');
     define("NEW_PASSWORD_EMAIL_SUBJECT",'Servicios Personalizados MiBVS: Contraseña');
     define("CONFIRM_USER_EMAIL_SUBJECT",'Servicios Personalizados MiBVS: Confirmación de Registro - ');
     define("CONFIRM_NEW_PASS_SUBJECT",'Servicios Personalizados MiBVS: Confirmación de Envío de Contraseña - ');
@@ -753,6 +757,8 @@ if($lang == 'en'){
     define('DEGREE','Degree');
     define('EMAIL_SENT','E-mail sent.');
     define("EMAIL_FROMNAME",'MyVHL');
+    define("EBLUEINFO_EMAIL_FROMNAME",'e-BlueInfo');
+    define("EBLUEINFO_EMAIL_SUBJECT",'e-BlueInfo: Access Info');
     define("NEW_PASSWORD_EMAIL_SUBJECT",'Custom Services MyVHL: Password');
     define("CONFIRM_USER_EMAIL_SUBJECT",'Custom Services MyVHL: Register Confirmation - ');
     define("CONFIRM_NEW_PASS_SUBJECT",'Custom Services MyVHL: Password Submit Confirmation - ');

@@ -1,13 +1,13 @@
 <div>
     <p>Estimado(a) [USERNAME],</p>
 
-    <p>Aquí están los datos de acceso de su cuenta en MiBVS:</p>
+    <p>Aquí están los datos de acceso de su cuenta en e-BlueInfo:</p>
 
     <p>Usuario: [USER]<br />Contraseña: [PASSWORD]</p>
 
-    <p><a href="http://platserv.bvsalud.org/client/controller/authentication/?lang=[LANG]">Haga clic aquí y accede a los Servicios Personalizados.</a></p>
+    <p>Al crear su cuenta en e-BlueInfo, también tiene acceso a los <a href="http://platserv.bvsalud.org/client/controller/authentication/?lang=[LANG]">Servicios Personalizados MiBVS</a>.</p>
 
-    <p>Cualquier duda o problema, <a href="https://bvsalud.org/es/contactenos/">póngase en contacto con nosotros.</a></p>
+    <p>Cualquier duda o problema, <a href="https://bvsalud.org/es/contactenos/">póngase en contacto con nosotros</a>.</p>
 
     <p>Si no ha solicitado el envío de contraseña, por favor desconsidere este mensaje.</p>
 
@@ -18,10 +18,12 @@
 [DELIMITER]
 Estimado(a) [USERNAME],
 
-Aquí están los datos de acceso de su cuenta en MiBVS:
+Aquí están los datos de acceso de su cuenta en e-BlueInfo:
 
 Usuario: [USER]
 Contraseña: [PASSWORD]
+
+Al crear su cuenta en e-BlueInfo, también tiene acceso a los Servicios Personalizados MiBVS.
 
 Copie y pegue el enlace abajo en el navegador y accede a los Servicios Personalizados:
 

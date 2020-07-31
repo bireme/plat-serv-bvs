@@ -201,10 +201,10 @@ class ToolsRegister {
             if ( $isInServPlat ) {
                 if ( $is_active ) {
                     $retValue = UserDAO::addUser($objUserArg, 1);
-                    $retValue = UserDAO::createNewPassword($mailUserID);
+                    $res = UserDAO::createNewPassword($mailUserID);
                 } else {
                     $retValue = UserDAO::updateUser($objUserArg);
-                    $retValue = UserDAO::sendUserConfirm($objUserArg, 'user');
+                    $res = UserDAO::sendUserConfirm($objUserArg, 'user');
                 }
             } elseif ( $isInLDAP ) {
                 //$result["source"] = "ldap";
@@ -212,7 +212,14 @@ class ToolsRegister {
                 $result["status"] = false;
                 $result["error"] = "userexists";
             } else {
-                $retValue = UserDAO::addUser($objUserArg);
+                if ( 'e-blueinfo' == $objUserArg->getSource() ) {
+                    $retValue = UserDAO::addUser($objUserArg, 1);
+                    $isInServPlat = UserDAO::isUser($mailUserID);
+                    $is_active = UserDAO::isActive($mailUserID);
+                    $res = UserDAO::createNewPassword($mailUserID, $objUserArg->getSource());
+                } else {
+                    $retValue = UserDAO::addUser($objUserArg);
+                }
             }
 
             if($retValue === true){

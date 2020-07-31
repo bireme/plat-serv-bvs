@@ -111,8 +111,10 @@ define('LOG_FILE_MAIL',APP_BASEDIR.'/mail.log');
 /* EMAIL configuration */
 define("EMAIL_HOST",'pombo.bireme.br');
 define("EMAIL_FROM",'appservplat@bireme.org');
+define("EBLUEINFO_EMAIL_FROM",'eblueinfo@bireme.org');
 define("EMAIL_USERNAME",'');
 define("EMAIL_PASSWORD",'');
+define("EMAIL_EBLUEINFO_TEMPLATE",APP_BASEDIR.'/templates/mail/sendEBlueinfoEMail.#LANG#.tpl');
 define("EMAIL_NEWPASSWORD_TEMPLATE",APP_BASEDIR.'/templates/mail/sendNewEMail.#LANG#.tpl');
 define("EMAIL_CONFIRMATION_TEMPLATE",APP_BASEDIR.'/templates/mail/confirmEMail.#LANG#.tpl');
 define("NEW_PASS_CONFIRMATION_TEMPLATE",APP_BASEDIR.'/templates/mail/newPassEMail.#LANG#.tpl');
