@@ -52,5 +52,5 @@
   </head>
   <body>
     <header id="brand">
-      <a href="https://sites.teste.bvsalud.org/e-blueinfo/"><img src="<?php echo RELATIVE_PATH; ?>/images/<?php echo $_SESSION["skin"]; ?>/logo-eblueinfo.png" alt="" class="responsive-img"></a>
+      <a href="<?php echo $callerURL; ?>"><img src="<?php echo RELATIVE_PATH; ?>/images/<?php echo $_SESSION["skin"]; ?>/logo-eblueinfo.png" alt="" class="responsive-img"></a>
     </header>
