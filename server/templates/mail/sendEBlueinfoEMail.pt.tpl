@@ -7,7 +7,6 @@
 
     <p>Ao criar sua conta no e-BlueInfo, você também tem acesso aos <a href="http://platserv.bvsalud.org/client/controller/authentication/?lang=[LANG]">Serviços Personalizados MinhaBVS</a>.</p>
 
-
     <p>Qualquer dúvida ou problema, <a href="https://bvsalud.org/contate-nos/">entre em contato conosco</a>.</p>
 
     <p>Se você não solicitou o envio de senha, por favor desconsidere essa mensagem.</p>
