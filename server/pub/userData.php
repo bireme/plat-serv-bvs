@@ -115,8 +115,13 @@ switch($acao){
 
             $retValue = UserDAO::fillOrcidData($usr->getID(), $usr->getOrcid());
         } elseif ($migrationResult["status"] === false && $migrationResult["error"] === "userexists") {
-            $response["msg"] = USER_EXISTS;
-            $response["status"] = false;
+            if ( 'e-blueinfo' == $usr->getSource() ) {
+                $response["msg"] = USER_EXISTS_EBLUEINFO;
+                $response["status"] = false;
+            } else {
+                $response["msg"] = USER_EXISTS;
+                $response["status"] = false;
+            }
         } else {
             $response["msg"] = USER_ADD_ERROR;
             $response["status"] = false;

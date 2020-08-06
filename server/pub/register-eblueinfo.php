@@ -1,7 +1,7 @@
 <?php require_once(dirname(__FILE__)."/../templates/".DEFAULT_SKIN."/header-eblueinfo.tpl.php"); ?>
 <?php $birth = ( $usr->getBirthday() ) ? date("d/m/Y", strtotime($usr->getBirthday())) : ''; ?>
 
-		<section class="row" id="containerCenter">
+		<section class="row">
 			<h4 class="center-align"><?php echo FREE_REGISTRY; ?></h4>
 			<form id="cadastro" class="col s10 offset-s1 m6 offset-m3 l4 offset-l4" method="post" name="cadastro" novalidate>
 				<div class="row">
@@ -13,7 +13,7 @@
 
                     <?php if ( $response["status"] === false ) : ?>
 		            <div class="col s12">
-						<div class="card-panel red success-text">
+						<div class="card-panel red success-text center-align">
 							<span class="white-text"><?php echo $response["msg"]; ?></span>
 						</div>
 					</div>

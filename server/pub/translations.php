@@ -103,6 +103,7 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
     define("UPDATE_USER_TITLE","Atualização dos dados");
     define("USER_ADDED",'Usuário registrado com sucesso.');
     define("USER_EXISTS","<b>Usuário já registrado</b><br />Tente autenticar-se com este usuário ou acesse<br /><b>\"esqueci minha senha\"</b> na caixa de login de usuários.");
+    define("USER_EXISTS_EBLUEINFO","<b>Usuário já registrado</b><br />Por favor, tente autenticar-se com este usuário.");
     define("USER_ADD_ERROR","<b>Erro no cadastro</b>");
     define("USER_ADD_SUCCESS","<b>Usuário registrado com sucesso!</b>");
     define("USER_SEND_CONFIRMATION","<b>Usuário registrado com sucesso!</b><br />Enviamos um e-mail com link de confirmação de seu registro.<br />Se demorar para chegar, confira sua caixa de SPAM e lixo eletrônico.<br />Clique no link enviado para ativar seu registro de usuário da MinhaBVS.");
@@ -467,6 +468,7 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Tel: (55 11) 5576-9800 
     define("UPDATE_USER_TITLE","Actualización de los datos");
     define("USER_ADDED",'Usuario registrado con succeso.');
     define("USER_EXISTS","<b>Ya existe registro de usuario</b><br />Pruebe autenticarse con ese usuário o acceda<br /><b>\"Olvide mi contraseña\"</b> en el area de login del servicio.");
+    define("USER_EXISTS_EBLUEINFO","<b>Ya existe registro de usuario</b><br />Por favor, pruebe autenticarse con ese usuário.");
     define("USER_ADD_ERROR","<b>Erro en el registro</b>");
     define("USER_ADD_SUCCESS","<b>¡Usuario registrado con succeso!</b>");
     define("USER_SEND_CONFIRMATION","<b>¡Registro de usuario realizado con éxito!</b><br />Enviamos un mensaje a su correo electrónico con enlace de confirmación de su registro como usuario de MiBVS.<br />Si tarda en llegar, compruebe su caja de SPAM y basura electrónica.<br />Por favor haga clic en el enlace enviado para activar su usuario de MiBVS.");
@@ -830,7 +832,8 @@ Rua Vergueiro, 1759 | cep: 04101-000 | São Paulo - SP | Phone: (55 11) 5576-980
     define("TIP_LOGIN","The access login needs to be the user e-mail, eg: user@bireme.org");
     define("UPDATE_USER_TITLE","Update user");
     define("USER_ADDED",'User added successfully');
-    define("USER_EXISTS","<b>User already exists</b><br />Try to log in with this user, if you have no success trying to authenticate with this user and don\'t remember the password,<br />use the link <b>\"forgot my password\"</b> in the user login box.");
+    define("USER_EXISTS","<b>User already exists</b><br />Try to log in with this user, if you have no success trying to authenticate with this user and don't remember the password,<br />use the link <b>\"forgot my password\"</b> in the user login box.");
+    define("USER_EXISTS_EBLUEINFO","<b>User already exists</b><br />Please try to log in with this user.");
     define("USER_ADD_ERROR","<b>Registry error</b>");
     define("USER_ADD_SUCCESS","<b>User registration successful!</b>");
     define("USER_SEND_CONFIRMATION","<b>User registration successful!</b><br />We sent a confirmation link to your account for your e-mail.<br />If it takes too long to get there, check out your SPAM box and junk mail.<br />Please click on the link sent to activate your account in MyVHL.");
