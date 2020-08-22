@@ -236,9 +236,9 @@ class UserData {
             }
         }
 
-        $src = BVS_COOKIE_DOMAIN.'/cookies.php?userData='.$userData;
-
         if ( $return ) return $userData;
+
+        $src = BVS_COOKIE_DOMAIN.'/cookies.php?userData='.$userData;
 
         ?>
         <script type="text/javascript">

@@ -586,9 +586,18 @@ $('.search-actions a.portal, .widget a.portal').on('click', function(e){
     var portal = "http://pesquisa.bvsalud.org/portal";
     var query  = encodeURIComponent($(this).data('query'));
     var filter = encodeURIComponent($(this).data('filter'));
-    var expr = ( filter != '*' && filter != '' ) ? '?q='+query+' AND '+filter : '?q='+query;
+    var expr   = ( filter != '*' && filter != '' ) ? '?q='+query+' AND '+filter : '?q='+query;
 
     window.open(portal+expr, '_blank');
+});
+
+$('.search-actions a.search, .widget a.search').on('click', function(e){
+    var origin = $(this).data('origin');
+    var query  = encodeURIComponent($(this).data('query'));
+    var filter = encodeURIComponent($(this).data('filter'));
+    var expr   = ( filter != '*' && filter != '' ) ? '?q='+query+' AND '+filter : '?q='+query;
+
+    window.open(origin+expr, '_blank');
 });
 
 $('.search-actions a.combine').on('click', function(e){
