@@ -73,6 +73,7 @@ if (isset($accessToken)) {
             $cookie = UserData::sendCookie($result["userTK"], true);
             setcookie("userData", $cookie, 0, '/', COOKIE_DOMAIN_SCOPE);
             setcookie("userTK", $result["userTK"], 0, '/', COOKIE_DOMAIN_SCOPE);
+            setcookie("userID", $result["sysUID"], 0, '/', COOKIE_DOMAIN_SCOPE);
         }
     }
 
