@@ -21,7 +21,7 @@
  * @return boolean
  */
 class Authentication {
-    public static function loginUser($userID,$userPass,$socialMedia){
+    public static function loginUser($userID,$userPass,$socialMedia=array()){
         $result = false;
 
         if(!empty($userID) && !empty($userPass)){

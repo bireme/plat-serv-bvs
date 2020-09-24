@@ -62,7 +62,7 @@ define("GOOGLE_ANALYTICS","");
 define("APP_GOOGLE_ANALYTICS","");
 
 /* Regular Expressions */
-define("REGEXP_LANGUAGE","/^(pt)|(es)|(en)$/");
+define("REGEXP_LANGUAGE","/^(pt|es|en)$/");
 define("REGEXP_SKIN","/^(default)|(myvhl)|(scielo)|(regional)$/");
 define("REGEXP_EMAIL","/^[a-z_][a-z0-9_\.]+@[a-z0-9]+(\.[a-z0-9_]+)+$/i");
 define("REGEXP_INTEGER","/^[0-9]+$/");

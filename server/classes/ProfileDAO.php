@@ -141,7 +141,7 @@ class ProfileDAO {
      * @param int $count limit number
      * @return array object Profile list
      */
-    public static function getProfileList($userID, $params, $from=0, $count=-1){
+    public static function getProfileList($userID, $params=array(), $from=0, $count=-1){
         global $_conf;
         $retValue = false;
         $sysUID = UserDAO::getSysUID($userID);

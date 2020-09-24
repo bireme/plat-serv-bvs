@@ -276,7 +276,7 @@ class SocialNetwork {
 
 class UserData {
 
-    public static function sendCookie($userTK,$return=false){
+    public static function sendCookie($userTK=null,$return=false){
         $userData = '';
 
         if ( isset($userTK) && !empty($userTK) ) {

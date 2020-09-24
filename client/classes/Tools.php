@@ -204,7 +204,7 @@ class CharTools {
 
 class UserData {
 
-    public static function sendCookie($userTK,$return=false){
+    public static function sendCookie($userTK=null,$return=false){
         $userData = '';
 
         if ( isset($userTK) && !empty($userTK) ) {
@@ -292,7 +292,7 @@ class Generic {
         return $data;
     }
 
-    public static function month_name($month_number=13, $short=FALSE, $lang) {
+    public static function month_name($month_number=13, $short=FALSE, $lang=null) {
         $month_name = '';
         $lang = ( $lang ) ? $lang : $_SESSION['lang'];
 
@@ -319,7 +319,7 @@ class Generic {
 
 class Events {
 
-    public static function get_events($query, $count, $lang, $assoc=FALSE) {
+    public static function get_events($query=null, $count=null, $lang=null, $assoc=FALSE) {
         $lang       = ( $lang ) ? $lang : $_SESSION['lang'];
         $count      = ( $count ) ? $count : WIDGETS_ITEMS_LIMIT;
         $start_date = 'start_date:[NOW TO *]';
@@ -335,7 +335,7 @@ class Events {
 
 class Multimedia {
 
-    public static function get_media($query, $count, $lang, $assoc=FALSE) {
+    public static function get_media($query=null, $count=null, $lang=null, $assoc=FALSE) {
         $lang     = ( $lang ) ? $lang : $_SESSION['lang'];
         $count    = ( $count ) ? $count : WIDGETS_ITEMS_LIMIT;
         $request  = FI_ADMIN_MULTIMEDIA . '&q=' . urlencode($query) . '&count=' . $count . '&lang=' . $lang;
@@ -378,7 +378,7 @@ class Multimedia {
 
 class OER {
 
-    public static function get_resources($query, $count, $lang, $assoc=FALSE) {
+    public static function get_resources($query=null, $count=null, $lang=null, $assoc=FALSE) {
         $lang     = ( $lang ) ? $lang : $_SESSION['lang'];
         $count    = ( $count ) ? $count : WIDGETS_ITEMS_LIMIT;
         $request  = FI_ADMIN_OER . '&q=' . urlencode($query) . '&count=' . $count . '&lang=' . $lang;

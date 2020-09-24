@@ -28,6 +28,13 @@ if ( !isset($_SESSION["skin"]) || empty($_SESSION["skin"]) ){
     $_SESSION["skin"] = DEFAULT_SKIN;
 }
 
+if ( !preg_match(REGEXP_SKIN, $_SESSION["skin"]) ){
+    $_SESSION["skin"] = DEFAULT_SKIN;
+}
+if ( !preg_match(REGEXP_LANGUAGE, $_SESSION["lang"]) ){
+    $_SESSION["lang"] = DEFAULT_LANG;
+}
+
 if ( isset($_REQUEST['data']) && !empty($_REQUEST['data']) )
     $_SESSION['data'] = json_decode(urldecode($_REQUEST['data']));
 ?>
