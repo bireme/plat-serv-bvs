@@ -7,6 +7,14 @@ if ( isset($_SESSION['userTK']) && !empty($_SESSION['userTK']) ) {
     $data = Authentication::getUserData($_SESSION["userTK"]);
     
     if ( !$data['agreement_date'] && 'logout' != $_REQUEST["action"] ) {
+        if ( $_REQUEST['origin'] ) {
+            $origin = base64_decode($_REQUEST['origin']);
+            if ( substr($origin, 0, strlen(EBLUEINFO_DOMAIN)) === EBLUEINFO_DOMAIN ) {
+                header('Location:'.$origin);
+                exit();
+            }
+        }
+
         $b64HttpHost = base64_encode(RELATIVE_PATH.'/controller/authentication');
         header('Location:'.SERVICES_PLATFORM_DOMAIN.'/pub/userData.php?userTK='.urlencode($_SESSION["userTK"]).'&c='.$b64HttpHost);
         exit();
