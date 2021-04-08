@@ -55,7 +55,7 @@ define("RELATED_DOCUMENTS_LIMIT","5"); /* related documents limit */
 define("SEARCH_RESULTS_LIMIT","10"); /* itens limit in Search Results */
 
 define("VHL_SEARCH_PORTAL_DOMAIN","https://pesquisa.bvsalud.org");
-define("BVS_COOKIE_DOMAIN","http://brasil.bvs.br");
+define("BVS_COOKIE_DOMAIN","https://brasil.bvs.br");
 define("MONGODB_SERVER","");
 
 define("GOOGLE_ANALYTICS","");
