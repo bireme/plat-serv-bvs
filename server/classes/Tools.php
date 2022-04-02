@@ -104,6 +104,7 @@ class Mailer {
         $objMailer->Password = EMAIL_PASSWORD;
         $objMailer->IsSMTP();
         $objMailer->SMTPAuth = true;
+        $objMailer->SMTPSecure = 'tls';
 
         $objMailer->IsHTML(true);
         $objMailer->ClearAddresses();
