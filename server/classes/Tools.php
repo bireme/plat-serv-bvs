@@ -103,9 +103,10 @@ class Mailer {
         $objMailer->Username = EMAIL_USERNAME;
         $objMailer->Password = EMAIL_PASSWORD;
         $objMailer->IsSMTP();
-        $objMailer->SMTPAuth = true;
-        $objMailer->SMTPSecure = 'tls';
-
+	$objMailer->SMTPAuth = true;
+	if ( EMAIL_SECURE && in_array(EMAIL_SECURE, array('ssl', 'tls')) ) {
+            $objMailer->SMTPSecure = EMAIL_SECURE;
+	}
         $objMailer->IsHTML(true);
         $objMailer->ClearAddresses();
         foreach ($to as $user){

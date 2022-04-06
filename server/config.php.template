@@ -112,6 +112,7 @@ define('LOG_FILE_MAIL',APP_BASEDIR.'/mail.log');
 define("EMAIL_HOST",'pombo.bireme.br');
 define("EMAIL_FROM",'appservplat@bireme.org');
 define("EBLUEINFO_EMAIL_FROM",'eblueinfo@bireme.org');
+define("EMAIL_SECURE",'');
 define("EMAIL_USERNAME",'');
 define("EMAIL_PASSWORD",'');
 define("EMAIL_EBLUEINFO_TEMPLATE",APP_BASEDIR.'/templates/mail/sendEBlueinfoEMail.#LANG#.tpl');
