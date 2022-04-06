@@ -104,6 +104,9 @@ class Mailer {
         $objMailer->Password = EMAIL_PASSWORD;
         $objMailer->IsSMTP();
 	$objMailer->SMTPAuth = true;
+	if ( EMAIL_PORT ) {
+            $objMailer->Port = EMAIL_PORT;
+	}
 	if ( EMAIL_SECURE && in_array(EMAIL_SECURE, array('ssl', 'tls')) ) {
             $objMailer->SMTPSecure = EMAIL_SECURE;
 	}
