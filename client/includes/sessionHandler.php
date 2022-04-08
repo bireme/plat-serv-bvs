@@ -35,6 +35,9 @@ if ( !preg_match(REGEXP_LANGUAGE, $_SESSION["lang"]) ){
     $_SESSION["lang"] = DEFAULT_LANG;
 }
 
-if ( isset($_REQUEST['data']) && !empty($_REQUEST['data']) )
+if ( isset($_REQUEST['data']) && !empty($_REQUEST['data']) ) {
     $_SESSION['data'] = json_decode(urldecode($_REQUEST['data']));
+}
+
+$_SESSION["skin"] = DEFAULT_SKIN;
 ?>

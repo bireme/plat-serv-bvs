@@ -52,7 +52,7 @@ switch($_REQUEST["task"]){
             case "myprofiledocuments":
                 $similarDocs = false;
                 $profile = $_REQUEST["profile"] ? $_REQUEST["profile"] : 0;
-                $result = MyProfiles::getProfile($_SESSION["userTK"], $profile);
+                $result = MyProfiles::getProfile($_SESSION["userTK"], $profile, false);
 
                 if ( $result ) {
                     $paginationData['pages'] = SimilarDocs::getTotalSimilarsDocsPages($_SESSION["userTK"],$result[0]["profileID"]);

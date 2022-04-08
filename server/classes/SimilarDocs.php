@@ -207,7 +207,7 @@ class SimilarDocs {
 
         if(!$skip){
             if($xml){
-                $similars = self::getSimilars($userID,$profileName);
+                $similars = self::getSimilars($userID,$profileName,null);
 
                 if ( $similars ) {
                     if ( 'none' == $similars )

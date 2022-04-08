@@ -87,7 +87,7 @@ switch($_REQUEST["task"]){
             $result = MyProfiles::updateProfile($_SESSION["userTK"],$_REQUEST["profile"],$xml);
             $response["status"] = true;
         }else{
-            $result = MyProfiles::getProfile($_SESSION["userTK"],$_REQUEST["profile"]);
+            $result = MyProfiles::getProfile($_SESSION["userTK"],$_REQUEST["profile"],false);
         }
         $response["values"] = $result[0];
     break;

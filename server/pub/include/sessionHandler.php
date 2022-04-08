@@ -27,4 +27,6 @@ if ( !isset($_SESSION["lang"]) || empty($_SESSION["lang"]) ){
 if ( !isset($_SESSION["skin"]) || empty($_SESSION["skin"]) ){
     $_SESSION["skin"] = DEFAULT_SKIN;
 }
+
+$_SESSION["skin"] = DEFAULT_SKIN;
 ?>

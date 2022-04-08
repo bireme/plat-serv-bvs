@@ -94,7 +94,7 @@ class Mailer {
     public static function sendMail($body,$altbody,$subject,$to,$fromMail=EMAIL_FROM,
         $fromName=EMAIL_FROMNAME){
         global $_conf;
-        
+
         $objMailer = new PHPMailer();
         $objMailer->CharSet = CHARSET;
         $objMailer->Host = EMAIL_HOST;
@@ -103,13 +103,13 @@ class Mailer {
         $objMailer->Username = EMAIL_USERNAME;
         $objMailer->Password = EMAIL_PASSWORD;
         $objMailer->IsSMTP();
-	$objMailer->SMTPAuth = true;
-	if ( EMAIL_PORT ) {
+        $objMailer->SMTPAuth = true;
+        if ( EMAIL_PORT ) {
             $objMailer->Port = EMAIL_PORT;
-	}
-	if ( EMAIL_SECURE && in_array(EMAIL_SECURE, array('ssl', 'tls')) ) {
+        }
+        if ( EMAIL_SECURE && in_array(EMAIL_SECURE, array('ssl', 'tls')) ) {
             $objMailer->SMTPSecure = EMAIL_SECURE;
-	}
+        }
         $objMailer->IsHTML(true);
         $objMailer->ClearAddresses();
         foreach ($to as $user){

@@ -92,7 +92,7 @@ class ProfileDAO {
 	public static function updateProfile($userID,$profileID,$profile){
             $retValue = false;
             $sysUID = UserDAO::getSysUID($userID);
-            $getProfile = self::getProfile( $userID, $profileID );
+            $getProfile = self::getProfile( $userID, $profileID, false );
 
             if ($profile->getProfileDefault() == 1){
                 $strsql = "UPDATE profiles set profileDefault=0
@@ -206,7 +206,7 @@ class ProfileDAO {
 
                     $updateProfile = self::updateProfile($userID,$profileID,$objProfile);
 
-                    $result = self::getProfile($userID,$profileID);
+                    $result = self::getProfile($userID,$profileID,false);
                 }
             }
 
@@ -266,7 +266,7 @@ class ProfileDAO {
     public static function removeProfile($userID,$profileID){
         $retValue = false;
         $sysUID = UserDAO::getSysUID($userID);
-        $profile = self::getProfile( $userID, $profileID );
+        $profile = self::getProfile( $userID, $profileID, false );
 
         $strsql = "DELETE FROM profiles
             WHERE profileID = ".$profileID." and sysUID = '".$sysUID."'";
