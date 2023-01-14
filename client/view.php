@@ -2,8 +2,10 @@
 // VIEW controller
 session_start();
 
-if (($_REQUEST["action"] == 'authentication' or $_REQUEST["action"] == 'requestauth') and (isset($_SESSION['userTK']) and !empty($_SESSION['userTK']))){
-    $_REQUEST["action"] = 'menu';
+if ( $_REQUEST["action"] == 'authentication' or $_REQUEST["action"] == 'requestauth' ) {
+    if ( isset($_SESSION['userTK']) and !empty($_SESSION['userTK']) ) {
+        $_REQUEST["action"] = 'menu';
+    }
 }
 
 switch($_REQUEST["action"]){

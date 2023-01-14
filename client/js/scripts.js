@@ -442,6 +442,108 @@ $('.btn2Botoes a.related-docs, .btn2Buttons a.related-docs').click(
     }
 );
 
+// Suggested Documents widget
+$( document ).ready(function(){
+    if ( $('#sd-widget').length ) {
+        path = window.location.pathname;
+        parts = path.split("/controller/");
+        href = parts[0]+"/controller/suggesteddocs/control/business/task/related";
+
+        sentence = getCookie('related');
+        if ( sentence ) {
+            obj = new Object();
+            obj.sentence = $.trim(unescape(sentence));
+
+            $.post( href, obj, function(data) {
+                if (isJSON(data)){
+                    response = $.parseJSON(data);
+                }else{
+                    response = data;
+                }
+
+                if (typeof response == 'object') {
+                    var html;
+                    var before = '<ul class="lista1">';
+                    var after = '</ul>';
+
+                    html = before;
+                    $.each(response, function(index, res) {
+                        html += '<li><a href="'+res.docURL+'" target="_blank">'+res.title.replace(/\\/g, '')+'</a></li>';
+                    });
+                    html += after;
+
+                    $('#sd-widget').find('.preloader-wrapper').hide();
+                    $('#sd-widget').append(html);
+                } else {
+                    $('#sd-widget').find('.preloader-wrapper').hide();
+                    $('#sd-widget').find('.sd-alert').show();
+                }
+            });
+        } else {
+            $('#sd-widget').find('.preloader-wrapper').hide();
+            $('#sd-widget').find('.sd-alert').show();
+        }
+    }
+});
+
+// Events widget
+$( document ).ready(function(){
+    if ( $('#events-widget').length ) {
+        path = window.location.pathname;
+        parts = path.split("/controller/");
+        href = parts[0]+"/controller/suggesteddocs/control/business/task/events";
+
+        $.post( href, function(data) {
+            $('#events-widget').find('.preloader-wrapper').hide();
+            $('#events-widget').append(data);
+        });
+    }
+});
+
+// Multimedia widget
+$( document ).ready(function(){
+    if ( $('#multimedia-widget').length ) {
+        path = window.location.pathname;
+        parts = path.split("/controller/");
+        href = parts[0]+"/controller/suggesteddocs/control/business/task/multimedia";
+
+        $.post( href, function(data) {
+            var html;
+            var before = '<div class="row">';
+            var after = '</div>';
+
+            html = before;
+            html += data;
+            html += after;
+
+            $('#multimedia-widget').find('.row').remove();
+            $('#multimedia-widget').append(html);
+        });
+    }
+});
+
+// OER widget
+$( document ).ready(function(){
+    if ( $('#oer-widget').length ) {
+        path = window.location.pathname;
+        parts = path.split("/controller/");
+        href = parts[0]+"/controller/suggesteddocs/control/business/task/resources";
+
+        $.post( href, function(data) {
+            var html;
+            var before = '<div class="row">';
+            var after = '</div>';
+
+            html = before;
+            html += data;
+            html += after;
+
+            $('#oer-widget').find('.row').remove();
+            $('#oer-widget').append(html);
+        });
+    }
+});
+
 /********** Bulk Actions Scripts **********/
 $( document ).on('change', '.bulkactions', function(e) {
     e.preventDefault();
@@ -470,19 +572,12 @@ $( document ).on('change', '.bulkactions', function(e) {
 });
 
 /********** VHL Search History Scripts **********/
-$(document).on('click', function (e) {
-    operatorCombine();
-    portalPopup();
-    searchPopover();
-    combinePopover();
-
-    $('[data-toggle="popover"],[data-original-title]').each(function () {
-        //the 'is' for buttons that trigger popups
-        //the 'has' for icons within a button that triggers a popup
-        if (!$(this).is(e.target) && $(this).has(e.target).length === 0 && $('.popover').has(e.target).length === 0) {                
-            (($(this).popover('hide').data('bs.popover')||{}).inState||{}).click = false  // fix for BS 3.3.6
-        }
-    });
+$('[data-toggle="popover"],[data-original-title]').each(function () {
+    //the 'is' for buttons that trigger popups
+    //the 'has' for icons within a button that triggers a popup
+    if (!$(this).is(e.target) && $(this).has(e.target).length === 0 && $('.popover').has(e.target).length === 0) {                
+        (($(this).popover('hide').data('bs.popover')||{}).inState||{}).click = false  // fix for BS 3.3.6
+    }
 });
 
 var operatorCombine = function () {

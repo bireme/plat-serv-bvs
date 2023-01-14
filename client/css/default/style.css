@@ -481,6 +481,14 @@ body.public-col footer {
 #nav .action {
     background: #eee;
 }
+#sd-widget .preloader-wrapper,
+#events-widget .preloader-wrapper {
+    margin: 2em auto;
+    display: block;
+}
+.sd-alert {
+    display: none;
+}
 
 /* SHARE ICONS */
 .facebookIcon {

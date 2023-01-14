@@ -23,25 +23,25 @@ require_once(dirname(__FILE__)."/../../server/pub/include/professionalAreaLibrar
 $params["widget"] = true;
 $params["count"]  = WIDGETS_ITEMS_LIMIT;
 
+// My Links widget
+//$links = MyLinks::getLinkList( $_SESSION["userTK"], $params );
+//$totalLinks = MyLinks::getTotalItens( $_SESSION["userTK"] );
+
+// Recent Activities widget
+//$params["sort"] = 'date';
+//$dataHistory = Tracking::getTraceList( $_SESSION["userTK"], $params );
+
+// Suggested Documents widget
+//$suggestedDocs = SimilarDocs::getRelatedDocs( $_SESSION["userTK"], $_COOKIE["related"] );
+
 // My Collections widget
 $collections = DocsCollection::listDocs( $_SESSION['userTK'], null, $params );
 $collections = Generic::unique_list_docs($collections, 'docID');
 $totalCollections = DocsCollection::getTotalDocs( $_SESSION["userTK"], null, true );
 
-// My Links widget
-$links = MyLinks::getLinkList( $_SESSION["userTK"], $params );
-$totalLinks = MyLinks::getTotalItens( $_SESSION["userTK"] );
-
 // Profile Documents widget
 $profiles = MyProfiles::getProfileList( $_SESSION["userTK"], $params );
 $totalProfiles = MyProfiles::getTotalItens( $_SESSION["userTK"] );
-
-// Recent Activities widget
-//$params["sort"] = 'date';
-$dataHistory = Tracking::getTraceList( $_SESSION["userTK"], $params );
-
-// Suggested Documents widget
-$suggestedDocs = SimilarDocs::getRelatedDocs( $_SESSION["userTK"], $_COOKIE["related"] );
 
 // Highlights widget
 $highlights = Slider::get_highlights();
@@ -53,9 +53,9 @@ $query_es = $professionalArea['es'][$data['professional_area']];
 $query_en = $professionalArea['en'][$data['professional_area']];
 $query = '(' . $query_pt . ' OR ' . $query_es . ' OR ' . $query_en . ')';
 $oer_query = 'ti:'.$query.' OR mh:'.$query;
-$events = Events::get_events($query);
-$multimedia = Multimedia::get_media($query);
-$resources = OER::get_resources($oer_query);
+//$events = Events::get_events($query);
+//$multimedia = Multimedia::get_media($query);
+//$resources = OER::get_resources($oer_query);
 
 // My Searches widget
 $obj = new MySearches($_SESSION["userTK"]);

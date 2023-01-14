@@ -20,13 +20,12 @@ if ( isset($_SESSION['userTK']) && !empty($_SESSION['userTK']) ) {
         exit();
     }
 } else {
-    switch ( $_REQUEST['action'] ) {
-        case 'authentication': break;
-        case 'servicesplatform': break;
-        case 'mydocuments': if ( $public ) break;
-        case 'suggesteddocs': if ( $public ) break;
-        default: $_REQUEST["action"] = 'logout'; break;
-    }
+    $fl = true; // force logout
+    if ( $_REQUEST["action"] == 'authentication' ) $fl = false;
+    if ( $_REQUEST["action"] == 'servicesplatform' ) $fl = false;
+    if ( $_REQUEST["action"] == 'mydocuments' and $public ) $fl = false;
+    if ( $_REQUEST["action"] == 'suggesteddocs' and $public ) $fl = false;
+    if ( $fl ) $_REQUEST["action"] = 'logout';
 }
 
 switch($_REQUEST["action"]){

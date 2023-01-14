@@ -101,44 +101,39 @@
                     </h5>
                     <div class="divider"></div><br />
                     <div class="row" id="interessar" <?php if ( isset($_COOKIE['hide_info']) && "on" == $_COOKIE['hide_info'] ) { echo 'style="display: none;"'; } ?>>
-                        <div class="col s12 l6 xl4 p1">
+                        <div id="sd-widget" class="col s12 l6 xl4 p1">
                             <h6><b><?php echo $trans->getTrans($_REQUEST["action"],'DOCUMENTS'); ?></b><a class="modal-trigger" href="#modal-suggestions"  title="Widget Info"><i class="fas fa-info-circle widget-info"></i></a></h6>
                             <div class="divider"></div>
-                            <ul class="lista1">
-                                <?php if ( $suggestedDocs ) : ?>
-                                    <?php foreach ( $suggestedDocs as $docs ) : ?>
-                                        <li><a href="<?php echo $docs['docURL'] ?>" target="_blank"><?php echo $docs['title'] ?></a></li>
-                                    <?php endforeach; ?>
-                                <?php else : ?>
-                                    <?php echo $trans->getTrans($_REQUEST["action"],'SUGGESTIONS_NOT_FOUND'); ?>
-                                <?php endif; ?>
-                            </ul>
+                            <div class="preloader-wrapper big active">
+                              <div class="spinner-layer spinner-blue-only">
+                                  <div class="circle-clipper left">
+                                    <div class="circle"></div>
+                                  </div><div class="gap-patch">
+                                    <div class="circle"></div>
+                                  </div><div class="circle-clipper right">
+                                    <div class="circle"></div>
+                                  </div>
+                              </div>
+                            </div>
+                            <div class="sd-alert"><br /><?php echo $trans->getTrans($_REQUEST["action"],'SUGGESTIONS_NOT_FOUND'); ?></div>
                         </div>
-                        <div class="col s12 l6 xl4 p1">
+                        <div id="events-widget" class="col s12 l6 xl4 p1">
                             <h6><b><?php echo $trans->getTrans($_REQUEST["action"],'EVENTS'); ?></b><a class="modal-trigger" href="#modal-events"  title="Widget Info"><i class="fas fa-info-circle widget-info"></i></a></h6>
-                            <div class="divider"></div><br />
-                            <?php if ( $events ) : ?>
-                                <?php foreach ( $events as $event ) : ?>
-                                    <?php $month = (int) substr($event->start_date, 5, 2); ?>
-                                    <?php // $link = ( $event->link ) ? $event->link[0] : $DIREVE[$_SESSION['lang']] . 'resource/?id=' . $event->django_id; ?>
-                                    <?php $link = $DIREVE[$_SESSION['lang']] . 'resource/?id=' . $event->django_id; ?>
-                                    <article class="event">
-                                        <a href="<?php echo $link; ?>" target="_blank">
-                                            <div class="eventDate">
-                                                <p class="eventMes"><?php echo Generic::month_name($month, TRUE); ?></p>
-                                                <p class="eventDia"><?php echo substr($event->start_date, 8, 2); ?></p>
-                                            </div>
-                                            <div class="eventText"><?php echo $event->title; ?></div>
-                                            <div class="clearfix"></div>
-                                        </a>
-                                    </article>
-                                <?php endforeach; ?>
-                            <?php else : ?>
-                                <?php echo $trans->getTrans($_REQUEST["action"],'EVENTS_NOT_FOUND'); ?>
-                            <?php endif; ?>
+                            <div class="divider"></div>
+                            <div class="preloader-wrapper big active">
+                              <div class="spinner-layer spinner-blue-only">
+                                  <div class="circle-clipper left">
+                                    <div class="circle"></div>
+                                  </div><div class="gap-patch">
+                                    <div class="circle"></div>
+                                  </div><div class="circle-clipper right">
+                                    <div class="circle"></div>
+                                  </div>
+                              </div>
+                            </div>
                         </div>
                         <div class="clearfix showMenor1200"></div>
-                        <div class="col s12 l12 xl4 p1">
+                        <div id="hl-widget" class="col s12 l12 xl4 p1">
                             <div class="bannerHome">
                                 <?php if ( $highlights ) : $count = 0; ?>
                                     <?php foreach ( $highlights as $slide ) : $count++; ?>
@@ -147,70 +142,24 @@
                                 <?php endif; ?>
                             </div>
                         </div>
-                        <div class="col s12"><br />
+                        <div id="multimedia-widget" class="col s12"><br />
                             <div class="divider"></div>
                             <h6><b><?php echo $trans->getTrans($_REQUEST["action"],'MULTIMEDIA'); ?></b></h6>
                             <div class="row">
-	                            <?php if ( $multimedia ) : ?>
-	                                <?php foreach ( $multimedia as $media ) : $thumb = Multimedia::get_thumbnail($media); ?>
-                                        <?php // $link = ( $media->link ) ? $media->link[0] : $MULTIMEDIA[$_SESSION['lang']] . 'resource/?id=' . $media->id; ?>
-                                        <?php $link = $MULTIMEDIA[$_SESSION['lang']] . 'resource/?id=' . $media->id; ?>
-			                            <div class="col s12 m4">
-			                                <a href="<?php echo $link; ?>" target="_blank">
-			                                    <p>
-			                                        <span class="left"><img src="<?php echo $thumb; ?>" alt="" style="padding: 0 20px 5px 0px"></span>
-			                                        <?php if ( strlen($media->title) > 50 ) : ?>
-			                                        	<b class="media-title"><?php echo mb_substr($media->title, 0, 50) . '...'; ?></b>
-			                                        <?php else : ?>
-			                                        	<b class="media-title"><?php echo $media->title; ?></b>
-			                                        <?php endif; ?>
-			                                    </p>
-			                                	<div class="clearfix"></div>
-			                                    <div class="divider"></div>
-			                                </a>
-			                            </div>
-			                        <?php endforeach; ?>
-		                            <div class="col s12 center-align" id="verMaisMidia" >
-		                                <a href="<?php echo $MULTIMEDIA[$_SESSION['lang']]; ?>?q=<?php echo urlencode($query); ?>" target="_blank"><?php echo $trans->getTrans($_REQUEST["action"],'SEE_MORE'); ?></a>
-		                            </div>
-		                        <?php else : ?>
-		                        	<div class="col s12">
-	                                	<?php echo $trans->getTrans($_REQUEST["action"],'MEDIA_NOT_FOUND'); ?>
-	                            	</div>
-	                            <?php endif; ?>
+                                <br />
+                                <div class="progress col s8 offset-s2">
+                                    <div class="indeterminate"></div>
+                                </div>
 	                        </div>
                         </div>
-                        <div class="col s12"><br />
+                        <div id="oer-widget" class="col s12"><br />
                             <div class="divider"></div>
                             <h6><b><?php echo $trans->getTrans($_REQUEST["action"],'OER'); ?></b></h6>
                             <div class="row">
-                                <?php if ( $resources ) : ?>
-                                    <?php foreach ( $resources as $oer ) : $thumb = OER::get_thumbnail($oer); ?>
-                                        <?php // $link = ( $oer->link ) ? $oer->link[0] : OER_DOMAIN.'/resource/'.$_SESSION['lang'].'/oer-'.$oer->django_id; ?>
-                                        <?php $link = OER_DOMAIN . '/resource/' . $_SESSION['lang'] . '/oer-' . $oer->django_id; ?>
-                                        <div class="col s12 m4">
-                                            <a href="<?php echo $link; ?>" target="_blank">
-                                                <p>
-                                                    <span class="left"><img src="<?php echo $thumb; ?>" alt="" style="padding: 0 20px 5px 0px"></span>
-                                                    <?php if ( strlen($oer->title) > 50 ) : ?>
-                                                        <b class="media-title"><?php echo mb_substr($oer->title, 0, 50) . '...'; ?></b>
-                                                    <?php else : ?>
-                                                        <b class="media-title"><?php echo $oer->title; ?></b>
-                                                    <?php endif; ?>
-                                                </p>
-                                                <div class="clearfix"></div>
-                                                <div class="divider"></div>
-                                            </a>
-                                        </div>
-                                    <?php endforeach; ?>
-                                    <div class="col s12 center-align" id="verMaisMidia" >
-                                        <a href="<?php echo OER_DOMAIN; ?>?q=<?php echo urlencode($oer_query); ?>&lang=<?php echo $_SESSION['lang']; ?>" target="_blank"><?php echo $trans->getTrans($_REQUEST["action"],'SEE_MORE'); ?></a>
-                                    </div>
-                                <?php else : ?>
-                                    <div class="col s12">
-                                        <?php echo $trans->getTrans($_REQUEST["action"],'OER_NOT_FOUND'); ?>
-                                    </div>
-                                <?php endif; ?>
+                                <br />
+                                <div class="progress col s8 offset-s2">
+                                    <div class="indeterminate"></div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -225,7 +174,7 @@
                         <div class="video-container">
                             <iframe width="560" height="315" src="https://www.youtube.com/embed/ZmxupTsVlGE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </div>
-                        <div class="center-align" id="verMaisMidia" >
+                        <div class="center-align" id="verMaisMidia">
                             <a href="<?php echo RELATIVE_PATH; ?>/controller/tutorial/control/business"><?php echo $trans->getTrans('menu','SEE_MORE'); ?></a>
                         </div>
                     </div>
