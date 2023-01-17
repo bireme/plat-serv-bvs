@@ -31,15 +31,15 @@ switch($_REQUEST["task"]){
 
         $result = SearchResults::getRSSList( $_SESSION["userTK"], $params );
         $response["values"] = $result;
-        $response["status"] = true;
+        $response["status"] = ( $result ) ? true : false;
 
         $result = SearchResults::getRSS($_SESSION["userTK"], $_REQUEST["rss"]);
         $responseSearch["values"] = $result;
-        $responseSearch["status"] = true;
+        $responseSearch["status"] = ( $result ) ? true : false;
 
         $items = SearchResults::parseRSS($_SESSION["userTK"], $_REQUEST["rss"]);
         $responseSearchItems["values"] = $items;
-        $responseSearchItems["status"] = true;
+        $responseSearchItems["status"] = ( $items ) ? true : false;
     break;
     case "add":
         $xml  = '<docs>';

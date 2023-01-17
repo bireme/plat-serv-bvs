@@ -68,22 +68,28 @@
                     <?php if ($responseSearch["values"] != false ) : ?>
                         <?php $registerSearch = $responseSearch["values"][0]; ?>
                         <section class="row">
-                            <?php foreach ( $responseSearchItems["values"] as $item ) : $count++; ?>
-                                <div id="<?php echo 'doc'.$count; ?>" class="col s12">
-                                    <div class="box1 hoverable">
-                                        <div class="record">
-                                            <a class="doctitle" href="<?php echo $item["link"]; ?>" target="_blank"><?php echo $item["title"]; ?></a><br />
-                                            <small class="boxAutor"><?php echo ( is_array($item["author"]) ) ? implode("; ", $item["author"]) : $item["author"]; ?></small><br /><br />
-                                        </div>
-                                        <div class="btn2Buttons">
-                                            <?php if ( strpos( $registerSearch['url'], VHL_SEARCH_PORTAL_DOMAIN ) !== false ) : ?>
-                                            <a href="#modal-ajax" class="btn3 btnSuccess modal-trigger modal-ajax add-collection" data-similar="<?php echo $item["guid"]; ?>" data-source="<?php echo RELATIVE_PATH; ?>/controller/searchresults/control/business/task/addcol/similar/doc<?php echo $count; ?>" onclick="__gaTracker('send','event','Search Results','Favorite Documents','<?php echo htmlspecialchars($item["title"]); ?>');"><?=$trans->getTrans($_REQUEST["action"],'ADD_COLLECTION')?></a>
-                                            <?php endif; ?>
-                                            <a href="#modal-related-docs" class="btn3 btnPrimary modal-trigger related-docs" onclick="__gaTracker('send','event','Search Results','Related Documents','<?php echo addslashes(htmlspecialchars($item["title"])); ?>');"><?php echo $trans->getTrans('suggesteddocs','RELATED_DOCS'); ?></a>
+                            <?php if ( $responseSearchItems["values"] != false ) : ?>
+                                <?php foreach ( $responseSearchItems["values"] as $item ) : $count++; ?>
+                                    <div id="<?php echo 'doc'.$count; ?>" class="col s12">
+                                        <div class="box1 hoverable">
+                                            <div class="record">
+                                                <a class="doctitle" href="<?php echo $item["link"]; ?>" target="_blank"><?php echo $item["title"]; ?></a><br />
+                                                <small class="boxAutor"><?php echo ( is_array($item["author"]) ) ? implode("; ", $item["author"]) : $item["author"]; ?></small><br /><br />
+                                            </div>
+                                            <div class="btn2Buttons">
+                                                <?php if ( strpos( $registerSearch['url'], VHL_SEARCH_PORTAL_DOMAIN ) !== false ) : ?>
+                                                <a href="#modal-ajax" class="btn3 btnSuccess modal-trigger modal-ajax add-collection" data-similar="<?php echo $item["guid"]; ?>" data-source="<?php echo RELATIVE_PATH; ?>/controller/searchresults/control/business/task/addcol/similar/doc<?php echo $count; ?>" onclick="__gaTracker('send','event','Search Results','Favorite Documents','<?php echo htmlspecialchars($item["title"]); ?>');"><?=$trans->getTrans($_REQUEST["action"],'ADD_COLLECTION')?></a>
+                                                <?php endif; ?>
+                                                <a href="#modal-related-docs" class="btn3 btnPrimary modal-trigger related-docs" onclick="__gaTracker('send','event','Search Results','Related Documents','<?php echo addslashes(htmlspecialchars($item["title"])); ?>');"><?php echo $trans->getTrans('suggesteddocs','RELATED_DOCS'); ?></a>
+                                            </div>
                                         </div>
                                     </div>
+                                <?php endforeach; ?>
+                            <?php else : ?>
+                                <div class="card-panel center-align">
+                                    <span class="blue-text text-darken-2"><?php echo $trans->getTrans($_REQUEST["action"],'RSS_NO_REGISTERS_FOUND'); ?></span>
                                 </div>
-                            <?php endforeach; ?>
+                            <?php endif; ?>
                         </section>
                     <?php else : ?>
                         <div class="card-panel center-align">
