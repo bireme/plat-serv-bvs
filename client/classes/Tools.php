@@ -262,7 +262,8 @@ class Generic {
                 // docURL
                 $docURL = array();
                 $site = end(explode('/', $v['srcID']));
-                $_site = end(explode('/', $_data[$v[$key]]['srcID']));
+                $site = ( strpos($v['srcID'], 'e-blueinfo') !== false ) ? 'e-blueinfo' : end(explode('/', $v['srcID'])) ;
+                $_site = ( strpos($_data[$v[$key]]['srcID'], 'e-blueinfo') !== false ) ? 'e-blueinfo' : end(explode('/', $_data[$v[$key]]['srcID'])) ;
 
                 if ( is_array($_data[$v[$key]]['docURL']) ) {
                     $docURL = $_data[$v[$key]]['docURL'];

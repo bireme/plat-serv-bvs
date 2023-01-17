@@ -67,9 +67,7 @@ switch($_REQUEST["task"]){
                 }
             }
 
-            if($shallBreak){
-                break;
-            }
+            if ( $shallBreak ) break;
         }
 
         unset($shallBreak);

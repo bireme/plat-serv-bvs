@@ -308,13 +308,14 @@ class ShelfDAO {
         $count = ( $params["count"] ) ? $params["count"] : DOCUMENTS_PER_PAGE;
         $from = $count * $params["page"];
         $objUserDirectory = $shelf->getDir();
-        
+
         if($objUserDirectory){
             $dirID = $objUserDirectory[0]->getDirID();
         }
 
         if (isset($dirID)){
             if ($dirID == 0){
+                $filterTb = '';
                 $filter = " and userShelf.userDirID=0";
             }else{
                 $filterTb = ", directories";
@@ -322,6 +323,7 @@ class ShelfDAO {
                     and userShelf.userDirID=".$dirID;
             }
         }else{
+            $filterTb = '';
             $filter = ( !$params["widget"] ) ? " and userShelf.userDirID=0" : "";
         }
 
@@ -341,7 +343,8 @@ class ShelfDAO {
             WHERE userShelf.sysUID = '".$sysUID."' and
                   userShelf.docID = documents.docID and
                   userShelf.visible = 1 ".$filter."
-            order by userShelf.".$sort;
+            GROUP BY userShelf.docID
+            ORDER BY userShelf.".$sort;
 /*
         $strsql = "SELECT * FROM userShelf, documents".$filterTb."
             WHERE userShelf.sysUID = '".$sysUID."' and
@@ -618,11 +621,16 @@ class ShelfDAO {
         
         if ( $sysUID ) {
             if(isset($dirID)){
-                $filter = " and userDirID=".$dirID;
+                $filter = " and userShelf.userDirID=".$dirID;
             }
 
-            $strsql = "SELECT count(*) as total FROM userShelf
-                WHERE sysUID ='".$sysUID."' AND visible = 1 ".$filter ;
+            $strsql = "SELECT count(total) as total FROM (
+                SELECT count(*) as total FROM userShelf, documents
+                WHERE userShelf.sysUID ='".$sysUID."' and
+                userShelf.docID = documents.docID and
+                userShelf.visible = 1".$filter."
+                GROUP BY userShelf.docID
+            ) as total";
 
             try{
                 $_db = new DBClass();
