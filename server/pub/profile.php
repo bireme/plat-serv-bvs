@@ -81,12 +81,12 @@
 								<div class="input-field col s12 m6">
 									<input id="orcid" name="orcid" type="text" class="bgInputs" autocomplete="off" value="<?php echo $usr->getOrcid(); ?>">
 									<label for="orcid"><?php echo FIELD_ORCID; ?></label>
-									<span class="helper-text" data-error="wrong" data-success="right"><a class="modal-trigger" href="#modal"><?php echo WHAT_IS_IT; ?></a></span>
+									<span class="helper-text"><a class="modal-trigger" href="#modal"><?php echo WHAT_IS_IT; ?></a></span>
 								</div>
 								<div class="input-field col s12 m6">
-									<input id="researcherID" name="researcherID" type="text" class=" bgInputs" autocomplete="off" value="<?php echo $usr->getResearcherID(); ?>">
+									<input id="researcherID" name="researcherID" type="text" class="bgInputs" autocomplete="off" value="<?php echo $usr->getResearcherID(); ?>">
 									<label for="researcherID"><?php echo FIELD_RESEARCHERID; ?></label>
-									<span class="helper-text" data-error="wrong" data-success="right"><a class="modal-trigger" href="#modal"><?php echo WHAT_IS_IT; ?></a></span>
+									<span class="helper-text"><a class="modal-trigger" href="#modal"><?php echo WHAT_IS_IT; ?></a></span>
 								</div>
 								<div class="input-field col s12 m6">
 									<select id="country" name="country" required="">
