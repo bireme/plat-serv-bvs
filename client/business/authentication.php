@@ -26,7 +26,6 @@ $iahx = ( $_REQUEST['iahx'] ) ? $_REQUEST['iahx'] : base64_encode('portal');
 $label = $trans->getTrans("mysearches", 'ORIGIN_SITE');
 
 $token = false;
-$send_cookie = false;
 
 if ( strpos(base64_decode($iahx), VHL_SEARCH_PORTAL_DOMAIN) !== false ) {
     $chunks = explode('/', base64_decode($iahx));
@@ -72,11 +71,9 @@ switch($_REQUEST["task"]){
                 $response["status"] = true;
                 $response["values"] = $result;
 
-                // send cookie to .bvs.br
-                $send_cookie = true;
-                $remember_me = ( $_REQUEST['remember_me'] || $token ) ? time() + (10 * 365 * 24 * 60 * 60) : 0;
                 // send cookie to .bvsalud.org
-                $cookie = UserData::sendCookie($result["userTK"], true);
+                $cookie = UserData::getData($result["userTK"]);
+                $remember_me = ( $_REQUEST['remember_me'] || $token ) ? time() + (10 * 365 * 24 * 60 * 60) : 0;
                 setcookie("userData", $cookie, $remember_me, '/', COOKIE_DOMAIN_SCOPE);
                 setcookie("userTK", $result["userTK"], $remember_me, '/', COOKIE_DOMAIN_SCOPE);
                 setcookie("userID", $result["sysUID"], $remember_me, '/', COOKIE_DOMAIN_SCOPE);
@@ -90,8 +87,6 @@ switch($_REQUEST["task"]){
                             $redirectCommand = $originURL."&spauth=true";
                         else
                             $redirectCommand = $originURL."?spauth=true";
-
-                        UserData::sendCookie($result["userTK"]); // send cookie to .bvs.br
 
                         echo '<script language="javascript">';
                         echo 'window.open("'.$redirectCommand.'","_parent")';

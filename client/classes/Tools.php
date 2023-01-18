@@ -204,8 +204,8 @@ class CharTools {
 
 class UserData {
 
-    public static function sendCookie($userTK=null,$return=false){
-        $userData = '';
+    public static function getData($userTK=null){
+        $userData = false;
 
         if ( isset($userTK) && !empty($userTK) ) {
             $source = ( $_SESSION['source'] ) ? $_SESSION['source'] : '';
@@ -216,7 +216,6 @@ class UserData {
                 $data = Token::unmakeUserTK($userTK);
 
             if ( $data ) {
-                unset($userData);
                 $userData = array();
                 $userData['userTK'] = $userTK;
                 $userData['firstName'] = $_SESSION["userFirstName"];
@@ -236,16 +235,7 @@ class UserData {
             }
         }
 
-        if ( $return ) return $userData;
-
-        $src = BVS_COOKIE_DOMAIN.'/cookies.php?userData='.$userData;
-
-        ?>
-        <script type="text/javascript">
-            var element = document.createElement("img");
-            element.setAttribute('src', "<?php echo $src; ?>");
-        </script>
-        <?php
+        return $userData;
     }
 
 }

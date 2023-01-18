@@ -122,8 +122,7 @@ class ToolsAuthentication {
             $gll = UserDAO::getLastLogin($userID);
             $sll = UserDAO::setLastLogin($userID);
 
-            if ( $gll )
-                $result["visited"] = true;
+            if ( $gll ) $result["visited"] = true;
         }
 
         return $result;

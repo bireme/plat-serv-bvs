@@ -23,7 +23,6 @@ $_SESSION = array();
 setcookie('userID','',time() -3600,'/',COOKIE_DOMAIN_SCOPE);
 setcookie('userTK','',time() -3600,'/',COOKIE_DOMAIN_SCOPE);
 setcookie('userData','',time() -3600,'/',COOKIE_DOMAIN_SCOPE);
-$send_cookie = 'logout'; // remove cookie from .bvs.br
 
 session_start();
 $_SESSION['lang'] = $tmplang;

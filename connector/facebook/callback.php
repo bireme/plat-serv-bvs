@@ -69,8 +69,8 @@ if (isset($accessToken)) {
             $_SESSION["iahx"] = base64_decode($iahx);
             //$response["status"] = true;
             //$response["values"] = $result;
-            UserData::sendCookie($result["userTK"]);
-            $cookie = UserData::sendCookie($result["userTK"], true);
+
+            $cookie = UserData::getData($result["userTK"]);
             setcookie("userData", $cookie, 0, '/', COOKIE_DOMAIN_SCOPE);
             setcookie("userTK", $result["userTK"], 0, '/', COOKIE_DOMAIN_SCOPE);
             setcookie("userID", $result["sysUID"], 0, '/', COOKIE_DOMAIN_SCOPE);

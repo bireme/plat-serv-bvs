@@ -87,21 +87,6 @@
         var PASSWORD_PAGE = "<?php echo $password_page; ?>";
     </script>
 
-    <?php
-        if ( $send_cookie ) {
-            if ( 'logout' === $send_cookie ) {
-                UserData::sendCookie(); // remove cookie from .bvs.br
-            } else {
-                UserData::sendCookie($_SESSION["userTK"]); // send cookie to .bvs.br
-                
-                echo '<script language="javascript">';
-                echo 'window.parent.location = window.parent.location.pathname;';
-                echo '</script>';
-                exit;
-            }
-        }
-    ?>
-
     <?php if ( ! empty(GOOGLE_ANALYTICS) || ! empty(APP_GOOGLE_ANALYTICS) ) : ?>
     <script type="text/javascript">
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

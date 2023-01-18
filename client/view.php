@@ -115,8 +115,6 @@ switch($_REQUEST["action"]){
             else
                 $redirectCommand = $origin."?splogout=true";
 
-            UserData::sendCookie(); // remove cookie from .bvs.br
-
             echo '<script language="javascript">';
             echo 'window.open("'.$redirectCommand.'","_parent")';
             echo '</script>';
