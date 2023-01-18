@@ -248,6 +248,7 @@ class CharTools {
             '"'    => '\"',
             "\x1a" => '\x1a'
         );
+
         return strtr($unescaped,$replacements);
     }
 }
@@ -389,19 +390,12 @@ class UserData {
 
         //path were our avatar image will be stored
         $avatar_path = $uploads_path.$filename;
-/*
+
         // Check if file already exists
         if (file_exists($avatar_path)) {
-            echo "Sorry, file already exists.";
-            return false;
+            unlink($avatar_path);
         }
 
-        // Check file size
-        if ($file["size"] > 500000) {
-            echo "Sorry, your file is too large.";
-            return false;
-        }
-*/
         //make sure the file type is image
         if (preg_match("!image!",$file['type']))
         {

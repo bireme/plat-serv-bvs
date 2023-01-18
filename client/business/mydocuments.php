@@ -50,9 +50,7 @@ switch($_REQUEST["task"]){
             $responseListDirs["status"] = true;
         }
 
-        $res = Generic::unique_list_docs($result, 'docID');
-
-        $response["values"] = $res;
+        $response["values"] = $result;
         $directoryName = $result[0]["name"];
         $responseListDirs["values"] = $resultListDirs;   
 
@@ -150,9 +148,7 @@ switch($_REQUEST["task"]){
             $responseListDirs["status"] = true;
         }
 
-        $res = Generic::unique_list_docs($result, 'docID');
-
-        $response["values"] = $res;
+        $response["values"] = $result;
         $directoryName = $result[0]["name"];
         $responseListDirs["values"] = $resultListDirs;
 

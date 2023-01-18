@@ -18,10 +18,14 @@
 		<a href="#"><img class="circle" src="<?php echo $_SESSION['fb_data']['picture']['data']['url']; ?>" alt="avatar"></a>
 		<?php elseif ( $_SESSION['google_data']['picture'] ) : ?>
 		<a href="#"><img class="circle" src="<?php echo $_SESSION['google_data']['picture']; ?>" alt="avatar"></a>
-		<?php elseif ( $_SESSION['avatar'] && !in_array($_SESSION['source'], array('google','facebook')) ) : ?>
-		<a href="#"><img class="circle" src="<?php echo RELATIVE_PATH; ?>/images/<?php echo $_SESSION["skin"]; ?>/uploads/<?php echo $_SESSION['avatar']; ?>" alt="avatar"></a>
+		<!-- <?php elseif ( $_SESSION['avatar'] && !in_array($_SESSION['source'], array('google','facebook')) ) : ?> -->
+		<!-- <a href="#"><img class="circle" src="<?php echo RELATIVE_PATH; ?>/images/<?php echo $_SESSION["skin"]; ?>/uploads/<?php echo $_SESSION['avatar']; ?>" alt="avatar"></a> -->
 		<?php else : ?>
-		<a href="#"><img class="circle" src="<?php echo RELATIVE_PATH; ?>/images/<?php echo $_SESSION["skin"]; ?>/user.svg" alt="avatar"></a>
+			<?php if ($_SESSION["gender"] == "M") : ?>
+				<a href="#"><img class="circle" src="<?php echo RELATIVE_PATH; ?>/images/<?php echo $_SESSION["skin"]; ?>/male.svg" alt="avatar"></a>
+			<?php else : ?>
+				<a href="#"><img class="circle" src="<?php echo RELATIVE_PATH; ?>/images/<?php echo $_SESSION["skin"]; ?>/female.svg" alt="avatar"></a>
+			<?php endif; ?>
 		<?php endif; ?>
 		<a href="#name"><span class="white-text name"><?php echo $_SESSION["userFirstName"] . ' ' . $_SESSION["userLastName"]; ?></span></a>
 		<a href="#email"><span class="white-text email"><?php echo $_SESSION["userID"]; ?></span></a>

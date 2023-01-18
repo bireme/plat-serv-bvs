@@ -148,6 +148,7 @@ if(!empty($_SESSION["userTK"])){
         $_SESSION["userMail"] = $result["userMail"];
         $_SESSION["source"] = $result["source"];
         $_SESSION["avatar"] = $result["avatar"];
+        $_SESSION["gender"] = $result["gender"];
     }
 
     if ( $_SESSION['data'] ) {

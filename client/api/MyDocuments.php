@@ -13,7 +13,6 @@ if ( $userID && !filter_var($userID, FILTER_VALIDATE_EMAIL) ) {
     $params["count"]  = -1;
 
     $docs = DocsCollection::listPublicDocs( base64_encode($userID), null, $params );
-    $docs = Generic::unique_list_docs($docs, 'docID');
 
     if ( count($docs) ) {
         if ( $source && 'e-blueinfo' == $source ) {

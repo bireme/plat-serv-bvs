@@ -58,14 +58,13 @@ $userKey = !empty($_REQUEST['key']) ? $_REQUEST['key'] : false;
 $ut = !empty($_REQUEST['ut']) ? $_REQUEST['ut'] : false;
 $theme = !empty($_REQUEST['theme']) ? $_REQUEST['theme'] : false;
 $msg = null; /* system messages */
-$birthday = false;
 
 $avatar = ( $_FILES['avatar']['name'] ) ? UserData::avatar_upload($userID, $_FILES['avatar']) : false;
-
 if ( $avatar ) {
     $_SESSION['avatar'] = $avatar;
 }
 
+$birthday = false;
 if ( !empty($_REQUEST['birthday']) ) {
     $birthday = str_replace('/', '-', $_REQUEST['birthday']);
     $birthday = date("Y-m-d", strtotime($birthday));

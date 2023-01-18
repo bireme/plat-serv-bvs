@@ -35,7 +35,8 @@
                     <input type="hidden" name="autoconn" value="" />
 
 					<div class="input-field col s12 center-align">
-						<img src="<?php echo RELATIVE_PATH; ?>/images/<?php echo $_SESSION["skin"]; ?>/user.svg" alt="Avatar User" class="circle" width="150">
+						<img src="<?php echo RELATIVE_PATH; ?>/images/<?php echo $_SESSION["skin"]; ?>/male.svg" alt="Avatar User" class="circle" width="150">
+						<img src="<?php echo RELATIVE_PATH; ?>/images/<?php echo $_SESSION["skin"]; ?>/female.svg" alt="Avatar User" class="circle" width="150">
 					</div>
 					<div class="input-field col s12 m6">
 						<input id="firstName" name="firstName" type="text" class="bgInputs" autocomplete="off" required="">
