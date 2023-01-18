@@ -20,12 +20,11 @@ if ( isset($_SESSION['userTK']) && !empty($_SESSION['userTK']) ) {
         exit();
     }
 } else {
-    $fl = true; // force logout
-    if ( $_REQUEST["action"] == 'authentication' ) $fl = false;
-    if ( $_REQUEST["action"] == 'servicesplatform' ) $fl = false;
-    if ( $_REQUEST["action"] == 'mydocuments' and $public ) $fl = false;
-    if ( $_REQUEST["action"] == 'suggesteddocs' and $public ) $fl = false;
-    if ( $fl ) $_REQUEST["action"] = 'logout';
+    // force logout
+    $action = ( in_array($_REQUEST["action"], 'mydocuments', 'suggesteddocs') and $public ) ? $_REQUEST["action"].'_public' : $_REQUEST["action"];
+    if ( !in_array($action, array('authentication', 'servicesplatform', 'mydocuments_public', 'suggesteddocs_public')) ) {
+        $_REQUEST["action"] = 'logout';
+    }
 }
 
 switch($_REQUEST["action"]){
