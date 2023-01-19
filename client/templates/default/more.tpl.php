@@ -18,7 +18,7 @@
 		<a href="#"><img class="circle" src="<?php echo $_SESSION['fb_data']['picture']['data']['url']; ?>" alt="avatar"></a>
 		<?php elseif ( $_SESSION['google_data']['picture'] ) : ?>
 		<a href="#"><img class="circle" src="<?php echo $_SESSION['google_data']['picture']; ?>" alt="avatar"></a>
-		<!-- <?php elseif ( $_SESSION['avatar'] && !in_array($_SESSION['source'], array('google','facebook')) ) : ?> -->
+		<?php // elseif ( $_SESSION['avatar'] && !in_array($_SESSION['source'], array('google','facebook')) ) : ?>
 		<!-- <a href="#"><img class="circle" src="<?php echo RELATIVE_PATH; ?>/images/<?php echo $_SESSION["skin"]; ?>/uploads/<?php echo $_SESSION['avatar']; ?>" alt="avatar"></a> -->
 		<?php else : ?>
 			<?php if ($_SESSION["gender"] == "M") : ?>
