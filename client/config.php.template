@@ -57,8 +57,8 @@ define("OER_DOMAIN","https://pesquisa.bvsalud.org/cvsp"); /* BIREME Accounts con
 define("GOOGLE_SCHOLAR","https://scholar.google.com");
 define("GOOGLE_SCHOLAR_WS",GOOGLE_SCHOLAR."/scholar?as_q=&as_epq=");
 
-define("GOOGLE_ANALYTICS","");
-define("APP_GOOGLE_ANALYTICS","");
+define("GOOGLE_ANALYTICS",array());
+define("APP_GOOGLE_ANALYTICS",array());
 
 /* Regular Expressions */
 define("REGEXP_LANGUAGE","/^(pt|es|en)$/");

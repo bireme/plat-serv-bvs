@@ -87,23 +87,32 @@
         var PASSWORD_PAGE = "<?php echo $password_page; ?>";
     </script>
 
-    <?php if ( ! empty(GOOGLE_ANALYTICS) || ! empty(APP_GOOGLE_ANALYTICS) ) : ?>
-    <script type="text/javascript">
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','//www.google-analytics.com/analytics.js','__gaTracker');
-
-        if (navigator.userAgent.indexOf('gonative') > -1) {
-            __gaTracker('create', '<?php echo APP_GOOGLE_ANALYTICS; ?>', 'auto');
-            __gaTracker('send', 'pageview');
-            __gaTracker('set', 'userId', '<?php echo $_SESSION["sysUID"]; ?>'); // Set the user ID using signed-in user_id.
-        } else {
-            __gaTracker('create', '<?php echo GOOGLE_ANALYTICS; ?>', 'auto');
-            __gaTracker('send', 'pageview');
-            __gaTracker('set', 'userId', '<?php echo $_SESSION["sysUID"]; ?>'); // Set the user ID using signed-in user_id.
-        }
-    </script>
+    <?php if ( strpos($_SERVER['HTTP_USER_AGENT'], 'gonative') !== false ) : ?>
+        <?php if ( !empty(APP_GOOGLE_ANALYTICS) ) : ?>
+            <?php foreach (APP_GOOGLE_ANALYTICS as $ga_code) : ?>
+                <!-- Global site tag (gtag.js) - Google Analytics -->
+                <script async src="https://www.googletagmanager.com/gtag/js?id=<?php echo $ga_code; ?>"></script>
+                <script>
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){dataLayer.push(arguments);}
+                    gtag('js', new Date());
+                    gtag('config', '<?php echo $ga_code; ?>');
+                </script>
+            <?php endforeach; ?>
+        <?php endif; ?>
+    <?php else : ?>
+        <?php if ( !empty(GOOGLE_ANALYTICS) ) : ?>
+            <?php foreach (GOOGLE_ANALYTICS as $ga_code) : ?>
+                <!-- Global site tag (gtag.js) - Google Analytics -->
+                <script async src="https://www.googletagmanager.com/gtag/js?id=<?php echo $ga_code; ?>"></script>
+                <script>
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){dataLayer.push(arguments);}
+                    gtag('js', new Date());
+                    gtag('config', '<?php echo $ga_code; ?>');
+                </script>
+            <?php endforeach; ?>
+        <?php endif; ?>
     <?php endif; ?>
 
     <?php $body_class   = ( !$_SESSION['userTK'] ) ? 'bodyLogin' : ''; ?>
