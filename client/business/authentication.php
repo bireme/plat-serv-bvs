@@ -139,10 +139,12 @@ if(!empty($origin) and empty($_SESSION["userTK"]) and $control != "home"){
 }
 
 /* Reload user data  */
-if(!empty($_SESSION["userTK"])){
+if ( isset($_SESSION['userTK']) && !empty($_SESSION['userTK']) ) {
     $result = Authentication::getUserData($_SESSION["userTK"]);
 
-    if ($result != false){
+    if ($result === false){
+        header('Location: '.RELATIVE_PATH.'/controller/logout/control/business');
+    } else {
         $_SESSION["userFirstName"] = $result["userFirstName"];
         $_SESSION["userLastName"] = $result["userLastName"];
         $_SESSION["userMail"] = $result["userMail"];

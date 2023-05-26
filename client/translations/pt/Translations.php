@@ -75,6 +75,7 @@ usuário para oferecer serviços personalizados e facilidades tais como:</p>
         self::$trans["authentication"]["HELPLOGINMESSAGE"] = '';
         self::$trans["authentication"]["KNOWMORE"] = 'saiba mais';
         self::$trans["authentication"]["ACCESS_DENIED"] = 'acesso negado';
+        self::$trans["authentication"]["INTERNAL_SERVER_ERROR"] = 'erro interno do servidor';
         self::$trans["authentication"]["OR"] = 'OU';
         self::$trans["authentication"]["LOGIN_WITH"] = 'entrar com';
         self::$trans["authentication"]["LOGIN_MESSAGE"] = 'FAÇA O LOGIN NA MinhaBVS';

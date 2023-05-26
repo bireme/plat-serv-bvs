@@ -74,6 +74,7 @@ class Translations {
         self::$trans["authentication"]["HELPLOGINMESSAGE"] = '';
         self::$trans["authentication"]["KNOWMORE"] = 'sepa más';
         self::$trans["authentication"]["ACCESS_DENIED"] = 'acceso denegado';
+        self::$trans["authentication"]["INTERNAL_SERVER_ERROR"] = 'error interno del servidor';
         self::$trans["authentication"]["OR"] = 'O';
         self::$trans["authentication"]["LOGIN_WITH"] = 'entrar con';
         self::$trans["authentication"]["LOGIN_MESSAGE"] = 'INICIAR SESIÓN EN MiBVS';

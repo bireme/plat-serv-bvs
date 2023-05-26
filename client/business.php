@@ -5,7 +5,12 @@ if ( isset($_SESSION['userTK']) && !empty($_SESSION['userTK']) ) {
     require_once(dirname(__FILE__)."/classes/Authentication.php");
 
     $data = Authentication::getUserData($_SESSION["userTK"]);
-    
+
+    if ($data === false){
+        $_REQUEST["action"] = 'logout';
+        $_REQUEST["error"]  = 'internal_server_error';
+    }
+
     if ( !$data['agreement_date'] && 'logout' != $_REQUEST["action"] ) {
         if ( $_REQUEST['origin'] ) {
             $origin = base64_decode($_REQUEST['origin']);

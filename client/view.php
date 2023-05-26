@@ -120,7 +120,10 @@ switch($_REQUEST["action"]){
             echo '</script>';
             exit;
         } else {
-            header("Location:".RELATIVE_PATH."/controller/".MAIN_PAGE);
+            if ( isset($_REQUEST['error']) && !empty($_REQUEST['error']) )
+                header("Location:".RELATIVE_PATH."/controller/".MAIN_PAGE."/?error=".$_REQUEST['error']);
+            else
+                header("Location:".RELATIVE_PATH."/controller/".MAIN_PAGE);
             exit();
         }
         break;

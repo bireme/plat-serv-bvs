@@ -45,6 +45,9 @@
                         <?php if (($_GET['error'] && $_GET['error'] == 'access_denied') || $_GET['error_code'] ) : ?>
                             <span class="helper-text red-text error-text"><?php echo $trans->getTrans($_REQUEST["action"],'ACCESS_DENIED'); ?></span>
                         <?php endif; ?>
+                        <?php if ($_GET['error'] && $_GET['error'] == 'internal_server_error') : ?>
+                            <span class="helper-text red-text error-text"><?php echo $trans->getTrans($_REQUEST["action"],'INTERNAL_SERVER_ERROR'); ?></span>
+                        <?php endif; ?>
                         <?php if ($response['values']['status'] === false) : ?>
                             <span class="helper-text red-text error-text"><?php echo $trans->getTrans($_REQUEST["action"],'INVALID_LOGIN'); ?></span>
                         <?php endif; ?>

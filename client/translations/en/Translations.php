@@ -74,6 +74,7 @@ class Translations {
         self::$trans["authentication"]["HELPLOGINMESSAGE"] = '';
         self::$trans["authentication"]["KNOWMORE"] = 'Learn more';
         self::$trans["authentication"]["ACCESS_DENIED"] = 'Access denied';
+        self::$trans["authentication"]["INTERNAL_SERVER_ERROR"] = 'internal server error';
         self::$trans["authentication"]["OR"] = 'OR';
         self::$trans["authentication"]["LOGIN_WITH"] = 'Sign in with';
         self::$trans["authentication"]["LOGIN_MESSAGE"] = 'SIGN IN TO MyVHL';
