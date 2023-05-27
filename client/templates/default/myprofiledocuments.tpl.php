@@ -22,8 +22,8 @@
     								<a class='dropdown-trigger btn2 btnSuccess' href='#' data-target='profile-actions'><i class="fas fa-angle-down"></i></a>
     								<!-- Dropdown Structure -->
     								<ul id='profile-actions' class='dropdown-content'>
-                                        <li><a class="modal-trigger modal-ajax" href="#modal-ajax" data-source="<?php echo RELATIVE_PATH; ?>/controller/myprofiledocuments/control/business/task/edit/profile/<?php echo $registerProfile["profileID"]; ?>" onclick="__gaTracker('send','event','Interest Topics','Edit Topic','<?php echo htmlspecialchars($registerProfile["profileName"]); ?>');"><i class="far fa-edit right m1"></i> <?php echo $trans->getTrans($_REQUEST["action"],'EDIT_PROFILE'); ?></a></li>
-                                        <li><a class="modal-trigger remove" href="#modal-remove-topic" data-source="<?php echo RELATIVE_PATH; ?>/controller/myprofiledocuments/control/business/task/delete/profile/<?php echo $registerProfile["profileID"]; ?>" onclick="__gaTracker('send','event','Interest Topics','Remove Topic','<?php echo htmlspecialchars($registerProfile["profileName"]); ?>');"><i class="fas fa-eraser right m1"></i> <?php echo $trans->getTrans($_REQUEST["action"],'REMOVE_PROFILE'); ?></a></li>
+                                        <li><a class="modal-trigger modal-ajax" href="#modal-ajax" data-source="<?php echo RELATIVE_PATH; ?>/controller/myprofiledocuments/control/business/task/edit/profile/<?php echo $registerProfile["profileID"]; ?>" onclick="gtag('send','event','Interest Topics','Edit Topic','<?php echo htmlspecialchars($registerProfile["profileName"]); ?>');"><i class="far fa-edit right m1"></i> <?php echo $trans->getTrans($_REQUEST["action"],'EDIT_PROFILE'); ?></a></li>
+                                        <li><a class="modal-trigger remove" href="#modal-remove-topic" data-source="<?php echo RELATIVE_PATH; ?>/controller/myprofiledocuments/control/business/task/delete/profile/<?php echo $registerProfile["profileID"]; ?>" onclick="gtag('send','event','Interest Topics','Remove Topic','<?php echo htmlspecialchars($registerProfile["profileName"]); ?>');"><i class="fas fa-eraser right m1"></i> <?php echo $trans->getTrans($_REQUEST["action"],'REMOVE_PROFILE'); ?></a></li>
     								</ul>
     							</div>
     						</div>
@@ -53,12 +53,12 @@
         						<article id="<?php echo 'doc'.$count; ?>" class="col s12 l6 xl4">
         							<div class="box2 hoverable">
                                         <div class="box2P record">
-                                            <a class="doctitle" href="<?php echo $similar["docURL"]; ?>" onclick="__gaTracker('send','event','Interest Topics','View Document','<?php echo addslashes(htmlspecialchars($similar["title"])); ?>');" target="_blank"><?php echo $similar["title"]; ?></a><br />
+                                            <a class="doctitle" href="<?php echo $similar["docURL"]; ?>" onclick="gtag('send','event','Interest Topics','View Document','<?php echo addslashes(htmlspecialchars($similar["title"])); ?>');" target="_blank"><?php echo $similar["title"]; ?></a><br />
             								<div class="boxAutor"><?php echo $similar["authors"]; ?></div>
                                         </div>
         								<div class="btn2Botoes">
-                                            <a href="#modal-ajax" class="btn3 btnSuccess modal-trigger modal-ajax add-collection" data-similar="<?php echo $similar["docID"]; ?>" data-source="<?php echo RELATIVE_PATH; ?>/controller/myprofiledocuments/control/business/task/addcol/similar/doc<?php echo $count; ?>" onclick="__gaTracker('send','event','Interest Topics','Favorite Documents','<?php echo htmlspecialchars($similar["title"]); ?>');"><?=$trans->getTrans($_REQUEST["action"],'ADD_COLLECTION')?></a>
-                                            <a href="#modal-related-docs" class="btn3 btnPrimary modal-trigger related-docs" onclick="__gaTracker('send','event','Interest Topics','Related Documents','<?php echo addslashes(htmlspecialchars($similar["title"])); ?>');"><?php echo $trans->getTrans('suggesteddocs','RELATED_DOCS'); ?></a>
+                                            <a href="#modal-ajax" class="btn3 btnSuccess modal-trigger modal-ajax add-collection" data-similar="<?php echo $similar["docID"]; ?>" data-source="<?php echo RELATIVE_PATH; ?>/controller/myprofiledocuments/control/business/task/addcol/similar/doc<?php echo $count; ?>" onclick="gtag('send','event','Interest Topics','Favorite Documents','<?php echo htmlspecialchars($similar["title"]); ?>');"><?=$trans->getTrans($_REQUEST["action"],'ADD_COLLECTION')?></a>
+                                            <a href="#modal-related-docs" class="btn3 btnPrimary modal-trigger related-docs" onclick="gtag('send','event','Interest Topics','Related Documents','<?php echo addslashes(htmlspecialchars($similar["title"])); ?>');"><?php echo $trans->getTrans('suggesteddocs','RELATED_DOCS'); ?></a>
         								</div>
         							</div>
         						</article>

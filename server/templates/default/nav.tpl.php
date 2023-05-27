@@ -37,7 +37,7 @@
 			<input id="q" name="q" type="text" class="pm1 inputHeader" autocomplete="off">
 		</div>
 		<div class="col s3 m4 l5" id="boxBtSearch">
-			<button id="btSearch" class="btn btnSuccess" onclick="__gaTracker('send','event','My VHL','VHL Search Bar',document.getElementById('q').value);"><i class="fas fa-search"></i></button>
+			<button id="btSearch" class="btn btnSuccess" onclick="gtag('send','event','My VHL','VHL Search Bar',document.getElementById('q').value);"><i class="fas fa-search"></i></button>
 		</div>
 	</form>
 </header>

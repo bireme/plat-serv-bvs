@@ -20,7 +20,7 @@
                     <input type="hidden" name="lang" value="<?=$_SESSION['lang']?>">
                 </div>
                 <div class="input-field col s2">
-                    <button class="btn waves-effect waves-light btnPrimary" type="submit" onclick="__gaTracker('send','event','My VHL','VHL Search Bar',document.getElementById('q').value);">
+                    <button class="btn waves-effect waves-light btnPrimary" type="submit" onclick="gtag('send','event','My VHL','VHL Search Bar',document.getElementById('q').value);">
                         <i class="material-icons">search</i>
                     </button>
                 </div>

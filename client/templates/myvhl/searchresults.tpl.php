@@ -57,8 +57,8 @@
                         <?php $registerSearch = $responseSearch["values"][0]; ?>
                         <div class="folder-data">
                             <h4><i class="fa fa-folder-o"></i> <?=$registerSearch["name"]?></h4>
-                            <a class="edit" href="javascript:;" onclick="__gaTracker('send','event','Search Results','Edit RSS','<?php echo htmlspecialchars($registerSearch["name"]); ?>'); window.open('<?=RELATIVE_PATH?>/controller/searchresults/control/business/task/edit/rss/<?=$registerSearch["id"]?>','','resizable=no,scrollbars=1,width=420,height=385')"><span class="label label-info"><?=$trans->getTrans($_REQUEST["action"],'EDIT_RSS')?></span></a>
-                            <a class="remove" href="<?=RELATIVE_PATH?>/controller/searchresults/control/business/task/delete/rss/<?=$registerSearch["id"]?>" onclick="__gaTracker('send','event','Search Results','Remove RSS','<?php echo htmlspecialchars($registerSearch["name"]); ?>');"><span class="label label-danger"><?=$trans->getTrans($_REQUEST["action"],'REMOVE_RSS')?></span></a>
+                            <a class="edit" href="javascript:;" onclick="gtag('send','event','Search Results','Edit RSS','<?php echo htmlspecialchars($registerSearch["name"]); ?>'); window.open('<?=RELATIVE_PATH?>/controller/searchresults/control/business/task/edit/rss/<?=$registerSearch["id"]?>','','resizable=no,scrollbars=1,width=420,height=385')"><span class="label label-info"><?=$trans->getTrans($_REQUEST["action"],'EDIT_RSS')?></span></a>
+                            <a class="remove" href="<?=RELATIVE_PATH?>/controller/searchresults/control/business/task/delete/rss/<?=$registerSearch["id"]?>" onclick="gtag('send','event','Search Results','Remove RSS','<?php echo htmlspecialchars($registerSearch["name"]); ?>');"><span class="label label-danger"><?=$trans->getTrans($_REQUEST["action"],'REMOVE_RSS')?></span></a>
                         </div>
                         <div id="step38" class="col-md-9 col-sm-9 col-xs-12">
                             <!-- start project list -->
@@ -78,9 +78,9 @@
                                     </div>
                                     <div class="doc-actions">
                                         <?php if ( strpos( $registerSearch['url'], VHL_SEARCH_PORTAL_DOMAIN ) !== false ) : ?>
-                                        <a class="label label-success add-collection" value="<?php echo $item["guid"]; ?>" onclick="__gaTracker('send','event','Search Results','Favorite Documents','<?php echo htmlspecialchars($item["title"]); ?>'); window.open('<?=RELATIVE_PATH?>/controller/searchresults/control/business/task/addcol/similar/doc<?=$count?>','','resizable=no,scrollbars=1,width=420,height=310')"><?=$trans->getTrans($_REQUEST["action"],'ADD_COLLECTION')?></a>
+                                        <a class="label label-success add-collection" value="<?php echo $item["guid"]; ?>" onclick="gtag('send','event','Search Results','Favorite Documents','<?php echo htmlspecialchars($item["title"]); ?>'); window.open('<?=RELATIVE_PATH?>/controller/searchresults/control/business/task/addcol/similar/doc<?=$count?>','','resizable=no,scrollbars=1,width=420,height=310')"><?=$trans->getTrans($_REQUEST["action"],'ADD_COLLECTION')?></a>
                                         <?php endif; ?>
-                                        <a class="label label-primary related-docs" href="javascript:;" onclick="__gaTracker('send','event','Search Results','Related Documents','<?php echo htmlspecialchars($item["title"]); ?>');"><?php echo $trans->getTrans('suggesteddocs','RELATED_DOCS'); ?></a>
+                                        <a class="label label-primary related-docs" href="javascript:;" onclick="gtag('send','event','Search Results','Related Documents','<?php echo htmlspecialchars($item["title"]); ?>');"><?php echo $trans->getTrans('suggesteddocs','RELATED_DOCS'); ?></a>
                                     </div>
                                     <div class="related_docs">
                                         <div class="related-loading"><?php echo $trans->getTrans('suggesteddocs','LOADING'); ?></div>

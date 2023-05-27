@@ -37,8 +37,8 @@
                                         <small><?php echo $register["description"]; ?></small>
                                     </div>
                                     <div class="btn2Botoes">
-                                        <a href="#modal-remove-link" class="btn3 btnDanger modal-trigger remove" data-source="<?php echo RELATIVE_PATH; ?>/controller/mylinks/control/business/task/delete/link/<?php echo $register["linkID"]; ?>" data-title="<?php echo $register["name"]; ?>" onclick="__gaTracker('send','event','Favorite Links','Remove Link','<?php echo $register["url"]; ?>');"><?php echo $trans->getTrans($_REQUEST["action"],'REMOVE_LINK'); ?></a>
-                                        <a href="#modal-ajax" class="btn3 btnWarning modal-trigger modal-ajax" data-source="<?php echo RELATIVE_PATH; ?>/controller/mylinks/control/business/task/edit/link/<?php echo $register["linkID"]; ?>" onclick="__gaTracker('send','event','Favorite Links','Edit Link','<?php echo $register["url"]; ?>');"><i class="far fa-edit right m1"></i><?php echo $trans->getTrans($_REQUEST["action"],'EDIT_LINK'); ?></a>
+                                        <a href="#modal-remove-link" class="btn3 btnDanger modal-trigger remove" data-source="<?php echo RELATIVE_PATH; ?>/controller/mylinks/control/business/task/delete/link/<?php echo $register["linkID"]; ?>" data-title="<?php echo $register["name"]; ?>" onclick="gtag('send','event','Favorite Links','Remove Link','<?php echo $register["url"]; ?>');"><?php echo $trans->getTrans($_REQUEST["action"],'REMOVE_LINK'); ?></a>
+                                        <a href="#modal-ajax" class="btn3 btnWarning modal-trigger modal-ajax" data-source="<?php echo RELATIVE_PATH; ?>/controller/mylinks/control/business/task/edit/link/<?php echo $register["linkID"]; ?>" onclick="gtag('send','event','Favorite Links','Edit Link','<?php echo $register["url"]; ?>');"><i class="far fa-edit right m1"></i><?php echo $trans->getTrans($_REQUEST["action"],'EDIT_LINK'); ?></a>
                                     </div>
                                 </div>
                             </article>
