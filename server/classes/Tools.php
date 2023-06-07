@@ -103,7 +103,7 @@ class Mailer {
         $objMailer->Username = EMAIL_USERNAME;
         $objMailer->Password = EMAIL_PASSWORD;
         $objMailer->IsSMTP();
-        $objMailer->SMTPAuth = true;
+	$objMailer->SMTPAuth = EMAIL_SMTP_AUTH;
         if ( EMAIL_PORT ) {
             $objMailer->Port = EMAIL_PORT;
         }
@@ -117,7 +117,10 @@ class Mailer {
         }
         $objMailer->Subject = mb_encode_mimeheader($subject, CHARSET);
         $objMailer->Body = $body;
-        $objMailer->AltBody = $altbody;
+	$objMailer->AltBody = $altbody;
+        if ( EMAIL_DEBUG ) {
+            $objMailer->SMTPDebug = 2;
+	}
 
         if(!$objMailer->Send()){
             $retValue = false;
