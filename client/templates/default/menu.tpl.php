@@ -25,7 +25,7 @@
                         <img class="activator" src="<?php echo RELATIVE_PATH; ?>/images/<?php echo $_SESSION["skin"]; ?>/favoritos-<?php echo $_SESSION["lang"]; ?>.jpg" alt="Título Documentos Favoritos">
                     </div>
                     <div class="card-action">
-                        <a href="<?php echo RELATIVE_PATH; ?>/controller/mydocuments/control/business" onclick="__gaTracker('send','event','Overview','Favorite Documents','See All');"><b><?php echo $trans->getTrans($_REQUEST["action"],'MORE'); ?> [+]</b></a>
+                        <a href="<?php echo RELATIVE_PATH; ?>/controller/mydocuments/control/business" onclick="gtag('send','event','Overview','Favorite Documents','See All');"><b><?php echo $trans->getTrans($_REQUEST["action"],'MORE'); ?> [+]</b></a>
                     </div>
                     <div class="card-reveal">
                         <span class="card-title grey-text text-darken-4"><?php echo $trans->getTrans('menu','SHELF_WIDGET'); ?><i class="material-icons right">close</i></span>
@@ -42,7 +42,7 @@
                                         $docURL = $col['docURL'];
                                     }
                                 ?>
-                                <p><a href="<?php echo $docURL; ?>" class="record" target="_blank" onclick="__gaTracker('send','event','Overview','Favorite Documents','<?php echo htmlspecialchars($col['title']); ?>');"><?php echo $col['title'] ?></a></p>
+                                <p><a href="<?php echo $docURL; ?>" class="record" target="_blank" onclick="gtag('send','event','Overview','Favorite Documents','<?php echo htmlspecialchars($col['title']); ?>');"><?php echo $col['title'] ?></a></p>
                             <?php endforeach; ?>
                         <?php endif; ?>
                     </div>
@@ -54,13 +54,13 @@
                         <img class="activator" src="<?php echo RELATIVE_PATH; ?>/images/<?php echo $_SESSION["skin"]; ?>/interesse-<?php echo $_SESSION["lang"]; ?>.jpg" alt="Título Temas de Interesses">
                     </div>
                     <div class="card-action">
-                        <a href="<?php echo RELATIVE_PATH; ?>/controller/myprofiledocuments/control/business" onclick="__gaTracker('send','event','Overview','Interest Topics','See All');"><b><?php echo $trans->getTrans($_REQUEST["action"],'MORE'); ?> [+]</b></a>
+                        <a href="<?php echo RELATIVE_PATH; ?>/controller/myprofiledocuments/control/business" onclick="gtag('send','event','Overview','Interest Topics','See All');"><b><?php echo $trans->getTrans($_REQUEST["action"],'MORE'); ?> [+]</b></a>
                     </div>
                     <div class="card-reveal">
                         <span class="card-title grey-text text-darken-4"><?php echo $trans->getTrans('menu','PROFILE_WIDGET'); ?><i class="material-icons right">close</i></span>
                         <?php if ( $profiles ) : ?>
                             <?php foreach ( $profiles as $profile ) : ?>
-                                <p><a href="<?php echo RELATIVE_PATH.'/controller/myprofiledocuments/control/business/profile/'.$profile["profileID"]; ?>" onclick="__gaTracker('send','event','Overview','Interest Topics','<?php echo htmlspecialchars($profile['profileName']); ?>');"><i class="fas fa-folder-open"></i> <?php echo $profile['profileName']; ?></a></p>
+                                <p><a href="<?php echo RELATIVE_PATH.'/controller/myprofiledocuments/control/business/profile/'.$profile["profileID"]; ?>" onclick="gtag('send','event','Overview','Interest Topics','<?php echo htmlspecialchars($profile['profileName']); ?>');"><i class="fas fa-folder-open"></i> <?php echo $profile['profileName']; ?></a></p>
                             <?php endforeach; ?>
                         <?php endif; ?>
                     </div>
@@ -72,7 +72,7 @@
                         <img class="activator" src="<?php echo RELATIVE_PATH; ?>/images/<?php echo $_SESSION["skin"]; ?>/historico-<?php echo $_SESSION["lang"]; ?>.jpg"  alt="Título Histórico de Buscas">
                     </div>
                     <div class="card-action">
-                        <a href="<?php echo RELATIVE_PATH; ?>/controller/mysearches/control/business" onclick="__gaTracker('send','event','Overview','VHL Search History','See All');"><b><?php echo $trans->getTrans($_REQUEST["action"],'MORE'); ?> [+]</b></a>
+                        <a href="<?php echo RELATIVE_PATH; ?>/controller/mysearches/control/business" onclick="gtag('send','event','Overview','VHL Search History','See All');"><b><?php echo $trans->getTrans($_REQUEST["action"],'MORE'); ?> [+]</b></a>
                     </div>
                     <div class="card-reveal">
                         <span class="card-title grey-text text-darken-4"><?php echo $trans->getTrans($_REQUEST["action"],'SEARCH_WIDGET'); ?><i class="material-icons right">close</i></span>
@@ -80,9 +80,9 @@
                             <?php foreach ( $searches as $search ) : $count++; ?>
                                 <p>
                                     <?php if ( 'portal' == $_SESSION['iahx'] ) : ?>
-                                        <a id="v<?php echo $count; ?>" class="portal" data-origin="portal" data-query="<?php echo $search['query']; ?>" data-filter="<?php echo $search['filter']; ?>" onclick="__gaTracker('send','event','Overview','VHL Search History','<?php echo htmlspecialchars($search['query']); ?>');"><i class="fas fa-search"></i> <?php echo CharTools::shortenedQueryString($search['query'], true); ?></a>
+                                        <a id="v<?php echo $count; ?>" class="portal" data-origin="portal" data-query="<?php echo $search['query']; ?>" data-filter="<?php echo $search['filter']; ?>" onclick="gtag('send','event','Overview','VHL Search History','<?php echo htmlspecialchars($search['query']); ?>');"><i class="fas fa-search"></i> <?php echo CharTools::shortenedQueryString($search['query'], true); ?></a>
                                     <?php else : ?>
-                                        <a id="v<?php echo $count; ?>" class="search" data-origin="<?php echo $_SESSION['iahx']; ?>" data-label="<?php echo $label; ?>" data-query="<?php echo $search['query']; ?>" data-filter="<?php echo $search['filter']; ?>" onclick="__gaTracker('send','event','Overview','VHL Search History','<?php echo htmlspecialchars($search['query']); ?>');"><i class="fas fa-search"></i> <?php echo CharTools::shortenedQueryString($search['query'], true); ?></a>
+                                        <a id="v<?php echo $count; ?>" class="search" data-origin="<?php echo $_SESSION['iahx']; ?>" data-label="<?php echo $label; ?>" data-query="<?php echo $search['query']; ?>" data-filter="<?php echo $search['filter']; ?>" onclick="gtag('send','event','Overview','VHL Search History','<?php echo htmlspecialchars($search['query']); ?>');"><i class="fas fa-search"></i> <?php echo CharTools::shortenedQueryString($search['query'], true); ?></a>
                                    <?php endif; ?>
                                 </p>
                             <?php endforeach; ?>

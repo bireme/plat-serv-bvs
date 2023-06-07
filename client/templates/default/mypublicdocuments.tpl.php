@@ -66,9 +66,9 @@
                                 <!-- Limitar duas linhas -->
                                 <div class="linkBreak record">
                                     <?php if ( is_array($register["docURL"]) ) : ?>
-                                        <a href="<?php echo $register["docURL"]["portal"]; ?>" class="doctitle" onclick="__gaTracker('send','event','Public Collection','View Document','<?php echo addslashes(htmlspecialchars($register["title"])); ?>');" target="_blank"><?php echo $register["title"]; ?></a><br />
+                                        <a href="<?php echo $register["docURL"]["portal"]; ?>" class="doctitle" onclick="gtag('send','event','Public Collection','View Document','<?php echo addslashes(htmlspecialchars($register["title"])); ?>');" target="_blank"><?php echo $register["title"]; ?></a><br />
                                     <?php else : ?>
-                                        <a href="<?php echo $register["docURL"]; ?>" class="doctitle" onclick="__gaTracker('send','event','Public Collection','View Document','<?php echo addslashes(htmlspecialchars($register["title"])); ?>');" target="_blank"><?php echo $register["title"]; ?></a><br />
+                                        <a href="<?php echo $register["docURL"]; ?>" class="doctitle" onclick="gtag('send','event','Public Collection','View Document','<?php echo addslashes(htmlspecialchars($register["title"])); ?>');" target="_blank"><?php echo $register["title"]; ?></a><br />
                                     <?php endif; ?>
 
                                     <?php if ( $register["authors"] ) : ?>
@@ -77,7 +77,7 @@
                                     <?php endif; ?>
                                 </div>
                                 <div class="btn2Botoes">
-                                    <a href="#modal-related-docs" class="btn3 btnPrimary modal-trigger related-docs public-related-docs" onclick="__gaTracker('send','event','Public Collection','Related Documents','<?php echo addslashes(htmlspecialchars($register["title"])); ?>');"><?php echo $trans->getTrans('suggesteddocs','RELATED_DOCS'); ?></a>
+                                    <a href="#modal-related-docs" class="btn3 btnPrimary modal-trigger related-docs public-related-docs" onclick="gtag('send','event','Public Collection','Related Documents','<?php echo addslashes(htmlspecialchars($register["title"])); ?>');"><?php echo $trans->getTrans('suggesteddocs','RELATED_DOCS'); ?></a>
                                 </div>
                             </div>
                         </article>

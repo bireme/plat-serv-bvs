@@ -43,15 +43,15 @@
                                       $gs_links = SimilarDocs::getGoogleScholarLinks($_SESSION['userTK'], $put_code, $google_scholar);
                                   ?>
                                   <?php if ( !$gs_links[0]['cited_url'] && !$gs_links[0]['related_url'] ) : ?>
-                                  <a class="label label-success google-scholar" href="<?php echo $google_scholar; ?>" target="_blank" onclick="__gaTracker('send','event','ORCID','Google Scholar','<?php echo htmlspecialchars($register["title"]); ?>');"><?=$trans->getTrans($_REQUEST["action"],'GOOGLE_SCHOLAR')?></a>
+                                  <a class="label label-success google-scholar" href="<?php echo $google_scholar; ?>" target="_blank" onclick="gtag('send','event','ORCID','Google Scholar','<?php echo htmlspecialchars($register["title"]); ?>');"><?=$trans->getTrans($_REQUEST["action"],'GOOGLE_SCHOLAR')?></a>
                                   <?php endif; ?>
                                   <?php if ( $gs_links[0]['cited_url'] ) : ?>
-                                  <a class="label label-primary gs-cited" href="<?php echo GOOGLE_SCHOLAR . $gs_links[0]['cited_url']; ?>" target="_blank" onclick="__gaTracker('send','event','ORCID','Google Scholar - Cited','<?php echo htmlspecialchars($register["title"]); ?>');"><?php echo $trans->getTrans($_REQUEST["action"],'GOOGLE_SCHOLAR_CITED'); ?></a>
+                                  <a class="label label-primary gs-cited" href="<?php echo GOOGLE_SCHOLAR . $gs_links[0]['cited_url']; ?>" target="_blank" onclick="gtag('send','event','ORCID','Google Scholar - Cited','<?php echo htmlspecialchars($register["title"]); ?>');"><?php echo $trans->getTrans($_REQUEST["action"],'GOOGLE_SCHOLAR_CITED'); ?></a>
                                   <?php endif; ?>
                                   <?php if ( $gs_links[0]['related_url'] ) : ?>
-                                  <a class="label label-primary gs-related" href="<?php echo GOOGLE_SCHOLAR . $gs_links[0]['related_url']; ?>" target="_blank" onclick="__gaTracker('send','event','ORCID','Google Scholar - Related','<?php echo htmlspecialchars($register["title"]); ?>');"><?php echo $trans->getTrans($_REQUEST["action"],'GOOGLE_SCHOLAR_RELATED'); ?></a>
+                                  <a class="label label-primary gs-related" href="<?php echo GOOGLE_SCHOLAR . $gs_links[0]['related_url']; ?>" target="_blank" onclick="gtag('send','event','ORCID','Google Scholar - Related','<?php echo htmlspecialchars($register["title"]); ?>');"><?php echo $trans->getTrans($_REQUEST["action"],'GOOGLE_SCHOLAR_RELATED'); ?></a>
                                   <?php endif; ?>
-                                  <a class="label label-primary related-docs" href="javascript:;" onclick="__gaTracker('send','event','ORCID','Related Documents','<?php echo htmlspecialchars($register["title"]); ?>');"><?php echo $trans->getTrans('suggesteddocs','RELATED_DOCS'); ?></a>
+                                  <a class="label label-primary related-docs" href="javascript:;" onclick="gtag('send','event','ORCID','Related Documents','<?php echo htmlspecialchars($register["title"]); ?>');"><?php echo $trans->getTrans('suggesteddocs','RELATED_DOCS'); ?></a>
                                 </div>
                                 <div class="related_docs">
                                   <div class="related-loading"><?php echo $trans->getTrans('suggesteddocs','LOADING'); ?></div>

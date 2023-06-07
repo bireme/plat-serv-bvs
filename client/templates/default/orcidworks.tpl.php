@@ -26,8 +26,8 @@
                                     <div class="btn2Botoes">
                                         <?php $google_scholar = GOOGLE_SCHOLAR_WS . urlencode($register["title"]); ?>
                                         <?php // $gs_links = SimilarDocs::getGoogleScholarLinks($_SESSION['userTK'], $put_code, $google_scholar); ?>
-                                        <a class="btn3 btnSuccess google-scholar" href="<?php echo $google_scholar; ?>" target="_blank" onclick="__gaTracker('send','event','ORCID','Google Scholar','<?php echo htmlspecialchars($register["title"]); ?>');"><?php echo $trans->getTrans($_REQUEST["action"],'GOOGLE_SCHOLAR'); ?></a>
-                                        <a href="#modal-related-docs" class="btn3 btnPrimary modal-trigger related-docs" onclick="__gaTracker('send','event','ORCID','Related Documents','<?php echo addslashes(htmlspecialchars($register["title"])); ?>');"><?php echo $trans->getTrans('suggesteddocs','RELATED_DOCS'); ?></a>
+                                        <a class="btn3 btnSuccess google-scholar" href="<?php echo $google_scholar; ?>" target="_blank" onclick="gtag('send','event','ORCID','Google Scholar','<?php echo htmlspecialchars($register["title"]); ?>');"><?php echo $trans->getTrans($_REQUEST["action"],'GOOGLE_SCHOLAR'); ?></a>
+                                        <a href="#modal-related-docs" class="btn3 btnPrimary modal-trigger related-docs" onclick="gtag('send','event','ORCID','Related Documents','<?php echo addslashes(htmlspecialchars($register["title"])); ?>');"><?php echo $trans->getTrans('suggesteddocs','RELATED_DOCS'); ?></a>
                                     </div>
                                 </div>
                             </article>
