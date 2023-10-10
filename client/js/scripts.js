@@ -472,15 +472,15 @@ $( document ).ready(function(){
                     });
                     html += after;
 
-                    $('#sd-widget').find('.preloader-wrapper').hide();
+                    $('#sd-widget').find('.preloader-container').remove();
                     $('#sd-widget').append(html);
                 } else {
-                    $('#sd-widget').find('.preloader-wrapper').hide();
+                    $('#sd-widget').find('.preloader-container').remove();
                     $('#sd-widget').find('.sd-alert').show();
                 }
             });
         } else {
-            $('#sd-widget').find('.preloader-wrapper').hide();
+            $('#sd-widget').find('.preloader-container').remove();
             $('#sd-widget').find('.sd-alert').show();
         }
     }
@@ -494,7 +494,7 @@ $( document ).ready(function(){
         href = parts[0]+"/controller/suggesteddocs/control/business/task/events";
 
         $.post( href, function(data) {
-            $('#events-widget').find('.preloader-wrapper').hide();
+            $('#events-widget').find('.preloader-container').remove();
             $('#events-widget').append(data);
         });
     }

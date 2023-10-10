@@ -49,6 +49,8 @@
     <link href="<?php echo RELATIVE_PATH; ?>/css/<?php echo $_SESSION["skin"]; ?>/style.css" type="text/css" rel="stylesheet" />
     <!-- Feedback Style -->
     <link href="<?php echo RELATIVE_PATH; ?>/css/<?php echo $_SESSION["skin"]; ?>/feedback.css" type="text/css" rel="stylesheet" />
+    <!-- Placeholder Style -->
+    <link href="<?php echo RELATIVE_PATH; ?>/css/<?php echo $_SESSION["skin"]; ?>/placeholder.css" type="text/css" rel="stylesheet" />
 
     <?php if ( strpos($_SERVER['HTTP_USER_AGENT'], 'gonative') !== false ) : ?>
     <!-- App Style -->

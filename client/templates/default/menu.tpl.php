@@ -104,15 +104,25 @@
                         <div id="sd-widget" class="col s12 l6 xl4 p1">
                             <h6><b><?php echo $trans->getTrans($_REQUEST["action"],'DOCUMENTS'); ?></b><a class="modal-trigger" href="#modal-suggestions"  title="Widget Info"><i class="fas fa-info-circle widget-info"></i></a></h6>
                             <div class="divider"></div>
-                            <div class="preloader-wrapper big active">
-                              <div class="spinner-layer spinner-blue-only">
-                                  <div class="circle-clipper left">
-                                    <div class="circle"></div>
-                                  </div><div class="gap-patch">
-                                    <div class="circle"></div>
-                                  </div><div class="circle-clipper right">
-                                    <div class="circle"></div>
-                                  </div>
+                            <div class="preloader-container">
+                              <div class="placeholder">
+                                <div class="line"></div>
+                                <div class="line"></div>
+                                <div class="line"></div>
+                                <div class="line"></div>
+                                <div class="line"></div>
+                                <div class="line"></div>
+                                <div class="line"></div>
+                                <div class="line"></div>
+                                <div class="line"></div>
+                                <div class="line"></div>
+                                <div class="line"></div>
+                                <div class="line"></div>
+                                <div class="line"></div>
+                                <div class="line"></div>
+                                <div class="line"></div>
+                                <div class="line"></div>
+                                <div class="line"></div>
                               </div>
                             </div>
                             <div class="sd-alert"><br /><?php echo $trans->getTrans($_REQUEST["action"],'SUGGESTIONS_NOT_FOUND'); ?></div>
@@ -120,15 +130,36 @@
                         <div id="events-widget" class="col s12 l6 xl4 p1">
                             <h6><b><?php echo $trans->getTrans($_REQUEST["action"],'EVENTS'); ?></b><a class="modal-trigger" href="#modal-events"  title="Widget Info"><i class="fas fa-info-circle widget-info"></i></a></h6>
                             <div class="divider"></div>
-                            <div class="preloader-wrapper big active">
-                              <div class="spinner-layer spinner-blue-only">
-                                  <div class="circle-clipper left">
-                                    <div class="circle"></div>
-                                  </div><div class="gap-patch">
-                                    <div class="circle"></div>
-                                  </div><div class="circle-clipper right">
-                                    <div class="circle"></div>
-                                  </div>
+                            <div class="preloader-container skeleton">
+                              <div class="placeholder">
+                                <div class="avatar"></div>
+                                <div class="line"></div>
+                                <div class="line"></div>
+                              </div>
+                              <div class="placeholder">
+                                <div class="avatar"></div>
+                                <div class="line"></div>
+                                <div class="line"></div>
+                              </div>
+                              <div class="placeholder">
+                                <div class="avatar"></div>
+                                <div class="line"></div>
+                                <div class="line"></div>
+                              </div>
+                              <div class="placeholder">
+                                <div class="avatar"></div>
+                                <div class="line"></div>
+                                <div class="line"></div>
+                              </div>
+                              <div class="placeholder">
+                                <div class="avatar"></div>
+                                <div class="line"></div>
+                                <div class="line"></div>
+                              </div>
+                              <div class="placeholder">
+                                <div class="avatar"></div>
+                                <div class="line"></div>
+                                <div class="line"></div>
                               </div>
                             </div>
                         </div>
@@ -147,8 +178,37 @@
                             <h6><b><?php echo $trans->getTrans($_REQUEST["action"],'MULTIMEDIA'); ?></b></h6>
                             <div class="row">
                                 <br />
-                                <div class="progress col s8 offset-s2">
-                                    <div class="indeterminate"></div>
+                                <div class="preloader-container preloader-cards skeleton">
+                                  <div class="placeholder">
+                                    <div class="avatar"></div>
+                                    <div class="line"></div>
+                                    <div class="line"></div>
+                                  </div>
+                                  <div class="placeholder">
+                                    <div class="avatar"></div>
+                                    <div class="line"></div>
+                                    <div class="line"></div>
+                                  </div>
+                                  <div class="placeholder">
+                                    <div class="avatar"></div>
+                                    <div class="line"></div>
+                                    <div class="line"></div>
+                                  </div>
+                                  <div class="placeholder">
+                                    <div class="avatar"></div>
+                                    <div class="line"></div>
+                                    <div class="line"></div>
+                                  </div>
+                                  <div class="placeholder">
+                                    <div class="avatar"></div>
+                                    <div class="line"></div>
+                                    <div class="line"></div>
+                                  </div>
+                                  <div class="placeholder">
+                                    <div class="avatar"></div>
+                                    <div class="line"></div>
+                                    <div class="line"></div>
+                                  </div>
                                 </div>
 	                        </div>
                         </div>
@@ -157,8 +217,37 @@
                             <h6><b><?php echo $trans->getTrans($_REQUEST["action"],'OER'); ?></b></h6>
                             <div class="row">
                                 <br />
-                                <div class="progress col s8 offset-s2">
-                                    <div class="indeterminate"></div>
+                                <div class="preloader-container preloader-cards skeleton">
+                                  <div class="placeholder">
+                                    <div class="avatar"></div>
+                                    <div class="line"></div>
+                                    <div class="line"></div>
+                                  </div>
+                                  <div class="placeholder">
+                                    <div class="avatar"></div>
+                                    <div class="line"></div>
+                                    <div class="line"></div>
+                                  </div>
+                                  <div class="placeholder">
+                                    <div class="avatar"></div>
+                                    <div class="line"></div>
+                                    <div class="line"></div>
+                                  </div>
+                                  <div class="placeholder">
+                                    <div class="avatar"></div>
+                                    <div class="line"></div>
+                                    <div class="line"></div>
+                                  </div>
+                                  <div class="placeholder">
+                                    <div class="avatar"></div>
+                                    <div class="line"></div>
+                                    <div class="line"></div>
+                                  </div>
+                                  <div class="placeholder">
+                                    <div class="avatar"></div>
+                                    <div class="line"></div>
+                                    <div class="line"></div>
+                                  </div>
                                 </div>
                             </div>
                         </div>
