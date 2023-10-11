@@ -105,7 +105,7 @@
                             <h6><b><?php echo $trans->getTrans($_REQUEST["action"],'DOCUMENTS'); ?></b><a class="modal-trigger" href="#modal-suggestions"  title="Widget Info"><i class="fas fa-info-circle widget-info"></i></a></h6>
                             <div class="divider"></div>
                             <div class="preloader-container">
-                              <div class="placeholder">
+                              <div class="placeholder list-group">
                                 <div class="line"></div>
                                 <div class="line"></div>
                                 <div class="line"></div>
