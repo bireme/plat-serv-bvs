@@ -73,17 +73,23 @@
                 <span class="loginOu"><?php echo $trans->getTrans($_REQUEST["action"],'OR'); ?></span>
             </div>
             <div class="row">
-                <div class="col s12 m6">
-                    <a href="/connector/google/<?php echo $build_query; ?>" class="btn waves-effect waves-light btn100 btnGoogle">GOOGLE</a>
-                </div>
-                <div class="col s12 m6">
-                    <a href="/connector/facebook/<?php echo $build_query; ?>" class="btn waves-effect waves-light btn100 btnFacebook">FACEBOOK</a>
-                </div>
+                <?php if ( DISABLE_GOOGLE_AUTH === false ) : ?>
+                    <div class="col s12 <?php echo ( DISABLE_FACEBOOK_AUTH ) ? 'm12' : 'm6'; ?>">
+                        <a href="/connector/google/<?php echo $build_query; ?>" class="btn waves-effect waves-light btn100 btnGoogle">GOOGLE</a>
+                    </div>
+                <?php endif; ?>
+                <?php if ( DISABLE_FACEBOOK_AUTH === false ) : ?>
+                    <div class="col s12 <?php echo ( DISABLE_GOOGLE_AUTH ) ? 'm12' : 'm6'; ?>">
+                        <a href="/connector/facebook/<?php echo $build_query; ?>" class="btn waves-effect waves-light btn100 btnFacebook">FACEBOOK</a>
+                    </div>
+                <?php endif; ?>
             </div>
             <div class="row">
-                <div class="col s12 ">
-                    <a href="<?php echo SERVICES_PLATFORM_DOMAIN.'/pub/userData.php?c='.$b64HttpHost; ?>" class="btn waves-effect waves-light btn100 btnRegistre" href="registrar.php"><?php echo $trans->getTrans($_REQUEST["action"],'REGISTRY'); ?></a>
-                </div>
+                <?php if ( DISABLE_REGISTER === false ) : ?>
+                    <div class="col s12">
+                        <a href="<?php echo SERVICES_PLATFORM_DOMAIN.'/pub/userData.php?c='.$b64HttpHost; ?>" class="btn waves-effect waves-light btn100 btnRegistre" href="registrar.php"><?php echo $trans->getTrans($_REQUEST["action"],'REGISTRY'); ?></a>
+                    </div>
+                <?php endif; ?>
             </div>
             <div class="col s12 center-align" id="store">
                 <a href="https://play.google.com/store/apps/details?id=org.bvsalud.platserv" target="_blank"><img src="<?php echo RELATIVE_PATH; ?>/images/<?php echo $_SESSION["skin"]; ?>/google-bt.png" alt="Download Google Play"></a>

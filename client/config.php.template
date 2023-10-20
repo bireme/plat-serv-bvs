@@ -60,6 +60,10 @@ define("GOOGLE_SCHOLAR_WS",GOOGLE_SCHOLAR."/scholar?as_q=&as_epq=");
 define("GOOGLE_ANALYTICS",array());
 define("APP_GOOGLE_ANALYTICS",array());
 
+define("DISABLE_REGISTER",false);
+define("DISABLE_GOOGLE_AUTH",false);
+define("DISABLE_FACEBOOK_AUTH",false);
+
 /* Regular Expressions */
 define("REGEXP_LANGUAGE","/^(pt|es|en)$/");
 define("REGEXP_SKIN","/^(default)|(myvhl)|(scielo)|(regional)$/");
