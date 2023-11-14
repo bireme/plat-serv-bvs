@@ -15,6 +15,11 @@
 require_once(dirname(__FILE__)."/../classes/Authentication.php");
 require_once(dirname(__FILE__)."/../classes/DocsCollection.php");
 
+// prevent XSS (cross-site scripting)
+$_REQUEST = array_map(function ($value) {
+    return htmlspecialchars($value, ENT_QUOTES, 'UTF-8');
+}, $_REQUEST);
+
 if ($_REQUEST["task"] === null){
     $_REQUEST["task"] = "authenticate";
 }

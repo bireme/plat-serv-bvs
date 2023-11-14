@@ -1,6 +1,11 @@
 <?php
 // BUSINESS controller
 
+// prevent XSS (cross-site scripting)
+$_REQUEST = array_map(function ($value) {
+    return htmlspecialchars($value, ENT_QUOTES, 'UTF-8');
+}, $_REQUEST);
+
 if ( isset($_SESSION['userTK']) && !empty($_SESSION['userTK']) ) {
     require_once(dirname(__FILE__)."/classes/Authentication.php");
 

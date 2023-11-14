@@ -3,6 +3,11 @@
 
 session_start();
 
+// prevent XSS (cross-site scripting)
+$_REQUEST = array_map(function ($value) {
+    return htmlspecialchars($value, ENT_QUOTES, 'UTF-8');
+}, $_REQUEST);
+
 if ( $_REQUEST["action"] == 'authentication' or $_REQUEST["action"] == 'requestauth' ) {
     if ( isset($_SESSION['userTK']) and !empty($_SESSION['userTK']) ) {
         $_REQUEST["action"] = 'menu';

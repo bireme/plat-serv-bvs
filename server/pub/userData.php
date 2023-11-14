@@ -4,6 +4,11 @@ ob_start("ob_gzhandler");
 
 session_start();
 
+// prevent XSS (cross-site scripting)
+$_REQUEST = array_map(function ($value) {
+    return htmlspecialchars($value, ENT_QUOTES, 'UTF-8');
+}, $_REQUEST);
+
 require_once(dirname(__FILE__)."/include/includes.php");
 require_once(dirname(__FILE__)."/include/degreeLibrary.php");
 require_once(dirname(__FILE__)."/include/professionalAreaLibrary.php");

@@ -8,6 +8,11 @@ require_once(dirname(__FILE__)."/../classes/MyLinks.php");
 require_once(dirname(__FILE__)."/../classes/DocsCollection.php");
 require_once(dirname(__FILE__)."/../classes/SearchResults.php");
 
+// prevent XSS (cross-site scripting)
+$_REQUEST = array_map(function ($value) {
+    return htmlspecialchars($value, ENT_QUOTES, 'UTF-8');
+}, $_REQUEST);
+
 if ($_REQUEST["task"] === null){
     $_REQUEST["task"] = "list";
 }
