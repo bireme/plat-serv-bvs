@@ -18,7 +18,7 @@ $newPassword = isset($_REQUEST['newPassword'])?$_REQUEST['newPassword']:false;
 $callerURL = !empty($_REQUEST['c'])?base64_decode($_REQUEST['c']):false;
 $source = $_SESSION['source'] ? $_SESSION['source'] : false;
 
-if ( empty($_SESSION['userTK']) || ( $source && 'ldap' != $source ) )
+if ( empty($_SESSION['userTK']) || ( $source && in_array($source, array('default', 'ldap')) ) )
     header("Location: ".RELATIVE_PATH."/controller/authentication");
 
 if ( !empty($_GET['userTK']) )

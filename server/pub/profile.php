@@ -44,7 +44,7 @@
 					<form id="cadastro" class="col s12" method="post" name="cadastro" enctype="multipart/form-data" novalidate>
 						<div class="row">
 		                    <input type="hidden" name="postback" value="1" />
-		                    <input type="hidden" name="source" value="<?php echo ($isUser) ? trim($usr->getSource()) : 'ldap'; ?>" />
+		                    <input type="hidden" name="source" value="<?php echo ($isUser) ? trim($usr->getSource()) : 'default'; ?>" />
 		                    <input type="hidden" name="autoconn" value="" />
 							<div class="input-field col s12 center-align">
 								<?php if ($usr->getGender() == "M") : ?>

@@ -50,6 +50,7 @@ class Translations {
         self::$trans["authentication"]["PASSWORD"] = 'Password';
         self::$trans["authentication"]["PRESS_HERE"] = 'click here';
         self::$trans["authentication"]["INVALID_LOGIN"] = 'password/user not valid';
+        self::$trans["authentication"]["NO_PASS"] = '<b>access denied</b><br />please generate a new password for your account';
         self::$trans["authentication"]["INVALID_LOGIN_MAIL"] = '
 <div>Authentication Failure</div>
 <ol>

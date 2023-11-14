@@ -26,8 +26,8 @@ class Authentication {
 
         if(!empty($userID) && !empty($userPass)){
             /* encrypt login params using a public key */
-            $cUserID = Crypt::encrypt(trim($userID));
-            $cUserPass = Crypt::encrypt(trim($userPass));
+            $cUserID = Security::encrypt(trim($userID));
+            $cUserPass = Security::encrypt(trim($userPass));
 
             try{
                 $objSoapClient = new SoapClient(null,
@@ -52,7 +52,7 @@ class Authentication {
     public static function createNewPassword($userID){
         $retValue = false;
         
-        $cUserID = Crypt::encrypt(trim($userID));
+        $cUserID = Security::encrypt(trim($userID));
         
         if(!empty($cUserID)){
             try{

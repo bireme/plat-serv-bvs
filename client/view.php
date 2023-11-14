@@ -1,5 +1,6 @@
 <?php
 // VIEW controller
+
 session_start();
 
 if ( $_REQUEST["action"] == 'authentication' or $_REQUEST["action"] == 'requestauth' ) {

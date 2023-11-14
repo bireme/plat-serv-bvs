@@ -13,11 +13,10 @@
  * Edit this file in UTF-8 - Test String "áéíóú"
  */
 $queryString = strpos($_SERVER['REQUEST_URI'],'controller');
-$queryString = substr($_SERVER['REQUEST_URI'],$queryString
-    ,strlen($_SERVER['REQUEST_URI']));
+$queryString = substr($_SERVER['REQUEST_URI'],$queryString,strlen($_SERVER['REQUEST_URI']));
 $queryString = explode("/",$queryString);
 
-for ($i=0 ; $i<count($queryString) ; $i++){
+for ($i=0; $i<count($queryString); $i++){
     if ($i === 0){
         $_REQUEST["action"]=$queryString[$i+1];
     }else{

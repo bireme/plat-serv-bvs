@@ -69,7 +69,7 @@
 
         // Password page link
         $password_page = "";
-        if ( empty($_SESSION["source"]) || 'ldap' == $_SESSION["source"] ) {
+        if ( empty($_SESSION["source"]) || ('default' == $_SESSION["source"] || 'ldap' == $_SESSION["source"]) ) {
             $password_page = SERVICES_PLATFORM_DOMAIN . "/pub/changePassword.php?userTK=" . urlencode($_SESSION["userTK"]) . "&c=" . $b64HttpHost;
         }
 

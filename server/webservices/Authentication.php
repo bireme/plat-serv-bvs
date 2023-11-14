@@ -41,13 +41,13 @@ $objSoapServer->handle();
  * @param string $userPass User password
  * @return boolean
  */
-function loginUser($userID,$userPass,$socialMedia){
+function loginUser($userID,$userPass,$socialMedia=array()){
 
     $retValue = false;
 
     /* decrypt login params */
-    $dUserID = Crypt::decrypt($userID, CRYPT_PUBKEY);
-    $dUserPass = Crypt::decrypt($userPass, CRYPT_PUBKEY);
+    $dUserID = Security::decrypt($userID);
+    $dUserPass = Security::decrypt($userPass);
 
     if(!empty($dUserID) && !empty($dUserPass)){
         $response = ToolsAuthentication::authenticateUser($dUserID ,$dUserPass, $socialMedia);
@@ -63,6 +63,7 @@ function loginUser($userID,$userPass,$socialMedia){
             $retValue['visited'] = $response["visited"];
             $retValue['userTK'] = Token::makeUserTK($objUser->getID(),$dUserPass,$response['source']);
             $retValue['sysUID'] = UserDAO::getSysUID($objUser->getID());
+            $retValue["status"] = true;
         }else{
             $retValue = array(); /* redeclare the variable */
             $retValue = $response;
@@ -81,7 +82,7 @@ function createNewPassword($userID){
 
     $retValue = false;
 
-    $dUserID = Crypt::decrypt($userID, CRYPT_PUBKEY);
+    $dUserID = Security::decrypt($userID);
 
     if(!empty($dUserID)){        
         $retValue = UserDAO::createNewPassword($dUserID);

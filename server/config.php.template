@@ -22,12 +22,14 @@ define("DB_HOST","localhost");
 define("DB_USERNAME","");
 define("DB_PASSWORD","");
 define("DB_DBNAME","servicesplatform");
+define("DB_PORT","3306");
 
 /* MYSQL BIREME Accounts database configuration */
 define("BIR_ACCOUNTS_DB_HOST","");
 define("BIR_ACCOUNTS_DB_USERNAME","");
 define("BIR_ACCOUNTS_DB_PASSWORD","");
 define("BIR_ACCOUNTS_DB_DBNAME","");
+define("BIR_ACCOUNTS_DB_PORT","3306");
 
 /* Site configuration */
 define("SITENAME","Minha BVS");
@@ -86,6 +88,8 @@ define("XSD_XMLTRIGRAMAS",APP_BASEDIR."/xsd/xmlTrigramas.xsd");
 define("CRYPT_KEY","bireme"); /* private */
 define('CRYPT_PUBKEY','biremepublicckey'); /* shared */
 define('CRYPT_SEPARATOR','');
+define('PRIVATE_KEY','');
+define('INDEX_KEY','');
 
 /* ORCID API */
 define("ORCID_API","https://pub.orcid.org/v2.0/");

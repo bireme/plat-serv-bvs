@@ -13,7 +13,7 @@
 		<a href='#' id="usuario" class='customize dropdown-trigger' data-target='perfil'><i class="material-icons">face</i> <?php echo $_SESSION["userFirstName"]; ?></a>
 		<ul id='perfil' class='dropdown-content' style="min-width: 200px !important;">
 			<li><a href="<?php echo SERVICES_PLATFORM_DOMAIN; ?>/pub/userData.php?userTK=<?php echo urlencode($_SESSION["userTK"]); ?>&c=<?php echo $b64HttpHost; ?>"><?php echo $trans->getTrans('menu','MY_DATA'); ?></a></li>
-			<?php if ( empty($_SESSION["source"]) || 'ldap' == $_SESSION["source"] ) : ?>
+			<?php if ( empty($_SESSION["source"]) || ('default' == $_SESSION["source"] || 'ldap' == $_SESSION["source"]) ) : ?>
 			<li><a href="<?php echo SERVICES_PLATFORM_DOMAIN; ?>/pub/changePassword.php?userTK=<?php echo urlencode($_SESSION["userTK"]); ?>&c=<?php echo $b64HttpHost; ?>"><?php echo $trans->getTrans('menu','CHANGE_PASSWORD'); ?></a></li>
 			<?php endif; ?>
 			<li><a href="<?php echo RELATIVE_PATH; ?>/controller/tutorial/control/business"><?php echo $trans->getTrans('menu','TUTORIALS'); ?></a></li>

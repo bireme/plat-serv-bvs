@@ -16,8 +16,8 @@
 require_once(dirname(__FILE__).'/../include/DAO.inc.php');
 require_once(dirname(__FILE__)."/User.php");
 require_once(dirname(__FILE__)."/ProfileDAO.php");
-require_once(dirname(__FILE__)."/LDAP.php");
-require_once(dirname(__FILE__)."/LDAPAuthenticator.php");
+// require_once(dirname(__FILE__)."/LDAP.php");
+// require_once(dirname(__FILE__)."/LDAPAuthenticator.php");
 require_once(dirname(__FILE__)."/ToolsAuthentication.php");
 require_once(dirname(__FILE__)."/Tools.php");
 
@@ -32,10 +32,8 @@ class UserDAO {
     public static function getAccountsUser($userID, $userPass){
         global $_conf;
         $retValue = false;
-        $strsql = "SELECT *
-                    FROM auth_user
-                    WHERE username = '".$userID."'
-                      OR email = '".$userID."'";
+
+        $strsql = "SELECT * FROM auth_user WHERE username = '".$userID."' OR email = '".$userID."'";
 
         try{
             $_db = new AccountsDBClass();
@@ -99,6 +97,7 @@ class UserDAO {
             $objUser->setFirstName($res[0]['userFirstName']);
             $objUser->setLastName($res[0]['userLastName']);
             $objUser->setEmail($res[0]['userEmail']);
+            $objUser->setPassword($res[0]['userPassword']);
             $objUser->setGender($res[0]['userGender']);
             $objUser->setAffiliation($res[0]['userAffiliation']);
             $objUser->setCountry($res[0]['userCountry']);
@@ -135,37 +134,9 @@ class UserDAO {
         $retValue = true;
         $canInsert = true;
 
-        $source = $objUser->getSource() ? $objUser->getSource() : '';
-
-        if ( $active && ( empty($source) || 'ldap' == $source || 'e-blueinfo' == $source ) ) {
-            /* add user to LDAP */
-            $attrs = array('cn' => $objUser->getID(),
-                           'userPassword' => (string)$objUser->getPassword(),
-                           'mail' => $objUser->getEmail(),
-                           'givenName' => $objUser->getFirstName()
-                           .' '.$objUser->getLastName());
-
-            $connConfig = ToolsAuthentication::configLDAPConnection($objUser->getID());
-
-            /* try to add the entry to LDAP */
-            try{
-                LDAP::add($connConfig, $attrs);
-            }catch(Exception $e){
-                if($e->getCode() != 500){ /* duplicated entry */
-                    $canInsert = false;
-                    $retValue = false;
-
-                    /* system log */
-                    $logger = &Log::singleton('file', LOG_FILE, __CLASS__, $_conf);
-                    $logger->log($e->getMessage(),PEAR_LOG_EMERG);
-                }
-            }
-        }
-
         /* if the user does not exist in SP database */
         if(!self::isUser($objUser->getID())){
             if($canInsert === true){
-
                 $strsql = "INSERT INTO users ( userID,
                                                  userFirstName,
                                                  userLastName,
@@ -223,7 +194,7 @@ class UserDAO {
                 if ( $result === false )
                     $retValue = false;
                 elseif ( !$active )
-                    $res = UserDAO::sendUserConfirm($objUser, 'user');
+                    $res = self::sendUserConfirm($objUser, 'user');
             }else{
                 $retValue = false;
             }
@@ -264,20 +235,18 @@ class UserDAO {
                             agreement_date ='".$objUser->getAgreementDate()."'";
 
             /*  check if the password will be updated */
-
             if($updUserID == false){
 
                 $strsql .= " WHERE userID ='".$objUser->getID()."'";
 
             }else{
 
-                $isInServPlat = UserDAO::isUser($updUserID);
+                $isInServPlat = self::isUser($updUserID);
                 if($isInServPlat && ($updUserID != $objUser->getEMail())){
                     throw new Exception('user already exists', 502);
                 }
 
                 $sysUID = self::getSysUID($objUser->getID());
-
                 if($sysUID){
                     $strsql .= ", userID = '" . $updUserID .
                         "' WHERE sysUID = " . $sysUID;
@@ -325,6 +294,35 @@ class UserDAO {
         if($res[0]['count(userID)'] >= 1){
             $retValue = true;
         }
+        return $retValue;
+    }
+
+    /**
+     * Check user credentials
+     *
+     * @param string $userID user ID
+     * @param string $userPass user password
+     * @return boolean
+     */
+    public static function validateUser($userID, $userPass){
+        global $_conf;
+        $retValue = false;
+        $hash = Security::encrypt($userPass);
+
+        $strsql = "SELECT * FROM users WHERE userID = '".trim($userID)."' AND userPassword = '".trim($hash)."'";
+
+        try{
+            $_db = new DBClass();
+            $res = $_db->databaseQuery($strsql);
+        }catch(DBClassException $e){
+            $logger = &Log::singleton('file', LOG_FILE, __CLASS__, $_conf);
+            $logger->log($e->getMessage(),PEAR_LOG_EMERG);
+        }
+
+        if($res[0]['userID']){
+            $retValue = true;
+        }
+
         return $retValue;
     }
 
@@ -512,19 +510,10 @@ class UserDAO {
     public static function addUserConfirm($email, $key, $date, $action, $type=''){
         global $_conf;
         $retValue = false;
-        $sysUID = false;
+        $sysUID = self::getSysUID($email);
 
-        if ( 'LDAP' == $type ) {
-            $sysUID = true;
-
-            $strsql = "INSERT INTO `userConfirm` (`key`,`email`,`creation_date`,`action`)
-                              VALUES ('$key','$email','$date','$action')";
-        } else {
-            $sysUID = self::getSysUID($email);
-
-            $strsql = "INSERT INTO `userConfirm` (`sysUID`,`key`,`email`,`creation_date`,`action`)
-                              VALUES ('$sysUID','$key','$email','$date','$action')";
-        }
+        $strsql = "INSERT INTO `userConfirm` (`sysUID`,`key`,`email`,`creation_date`,`action`)
+                          VALUES ('$sysUID','$key','$email','$date','$action')";
 
         if ( $sysUID ) {
             try{
@@ -535,7 +524,9 @@ class UserDAO {
                 $logger->log($e->getMessage(),PEAR_LOG_EMERG);
             }
 
-            if ( $result !== false ) $retValue = true;
+            if ( $result !== false ) {
+                $retValue = true;
+            }
         }
 
         return $retValue;
@@ -553,21 +544,9 @@ class UserDAO {
         global $_conf;
         $result = 0;
         $retValue = false;
-        $sysUID = false;
+        $sysUID = self::getSysUID($email);
 
-        if ( 'LDAP' == $type ) {
-            $sysUID = true;
-
-            $strsql = "DELETE FROM `userConfirm`
-                WHERE `email` = '".$email."'
-                AND `action` = '".$action."'";
-        } else {
-            $sysUID = self::getSysUID($email);
-
-            $strsql = "DELETE FROM `userConfirm`
-                WHERE `sysUID` = '".$sysUID."'
-                AND `action` = '".$action."'";
-        }
+        $strsql = "DELETE FROM `userConfirm` WHERE `sysUID` = '".$sysUID."' AND `action` = '".$action."'";
 
         if ( $sysUID ) {
             try{
@@ -578,7 +557,7 @@ class UserDAO {
                 $logger->log($e->getMessage(),PEAR_LOG_EMERG);
             }
 
-            $retValue = ($result !== 0) ? true : false;
+            $retValue = ( $result !== 0 ) ? true : false;
         }
 
         return $retValue;
@@ -596,12 +575,12 @@ class UserDAO {
         $email = $objUser->getEmail();
         $date = date('Y-m-d H:i:s');
                      
-        //create a random key
+        // create a random key
         $key = md5(uniqid(mt_rand(), true));
         $deleteConfirm = self::deleteUserConfirm($email,$action);
         $addConfirm = self::addUserConfirm($email,$key,$date,$action);
 
-        if($addConfirm !== false){
+        if( $addConfirm ) {
             $to = array($email);
             $tpl = str_replace('#LANG#', $_SESSION['lang'], EMAIL_CONFIRMATION_TEMPLATE);
             $home = $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . RELATIVE_PATH . '/controller/authentication';
@@ -632,48 +611,35 @@ class UserDAO {
     public static function sendNewPassConfirm($userEmail, $action){
         $retValue = false;
         $addConfirm = false;
-        $name = '';
         $email = $userEmail;
         $date = date('Y-m-d H:i:s');
 
-        /* Get the custom LDAP data, based on user's mail domain */
-        $userDomain = substr(stristr($email,'@'),1);
+        $isInServPlat = self::isUser($email);
+        if ( $isInServPlat && self::isActive($email) ) {
+            $key = md5(uniqid(mt_rand(), true));
+            $deleteConfirm = self::deleteUserConfirm($email,$action);
+            $addConfirm = self::addUserConfirm($email,$key,$date,$action);
+        }
 
-        if ( ($userDomain != 'bireme.org') && ($userDomain != 'scielo.org') ) {
-            $isInLDAP = LDAP::isUser($email);
-            $isInServPlat = self::isUser($email);
+        if ( $addConfirm ) {
+            $user = self::getUser($email);
+            $name = $user->getFirstName();
 
-            if ( $isInServPlat && self::isActive($email) ) {
-                $user = self::getUser($email);
-                $name = $user->getFirstName();
-                $key = md5(uniqid(mt_rand(), true));
-                $deleteConfirm = self::deleteUserConfirm($email,$action);
-                $addConfirm = self::addUserConfirm($email,$key,$date,$action);
-            } elseif ( $isInLDAP ) {
-                $key = md5(uniqid(mt_rand(), true));
-                $deleteConfirm = self::deleteUserConfirm($email,$action,'LDAP');
-                $addConfirm = self::addUserConfirm($email,$key,$date,$action,'LDAP');
-            }
+            $to = array($email);
+            $tpl = str_replace('#LANG#', $_SESSION['lang'], NEW_PASS_CONFIRMATION_TEMPLATE);
+            $home = $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . RELATIVE_PATH . '/controller/authentication';
+            $body = str_replace('#SITE#',
+                $_SERVER['HTTP_HOST'],
+                file_get_contents($tpl));
+            $body = str_replace('#USERNAME#', $name, $body);
+            $body = str_replace('#HOME#', base64_encode($home), $body);
+            $body = str_replace('#EMAIL#', $email, $body);
+            $body = str_replace('#KEY#', $key, $body);
+            $body = str_replace('#LANG#', $_SESSION['lang'], $body);
+            $text = explode('[DELIMITER]', $body);
+            $sendMail = Mailer::sendMail($text[0], $text[1], CONFIRM_NEW_PASS_SUBJECT.$name, $to);
 
-            if ( $addConfirm ) {
-                $to = array($email);
-                $tpl = str_replace('#LANG#', $_SESSION['lang'], NEW_PASS_CONFIRMATION_TEMPLATE);
-                $home = $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . RELATIVE_PATH . '/controller/authentication';
-                $body = str_replace('#SITE#',
-                    $_SERVER['HTTP_HOST'],
-                    file_get_contents($tpl));
-                $body = str_replace('#USERNAME#', $name, $body);
-                $body = str_replace('#HOME#', base64_encode($home), $body);
-                $body = str_replace('#EMAIL#', $email, $body);
-                $body = str_replace('#KEY#', $key, $body);
-                $body = str_replace('#LANG#', $_SESSION['lang'], $body);
-                $text = explode('[DELIMITER]', $body);
-                $sendMail = Mailer::sendMail($text[0], $text[1], CONFIRM_NEW_PASS_SUBJECT.$name, $to);
-
-                $retValue = true;
-            }
-        }else{
-            $retValue = 'DomainNotPermitted';
+            $retValue = true;
         }
 
         return $retValue;
@@ -782,39 +748,30 @@ class UserDAO {
         $retValue = false;
         $retStats = false;
 
-        /* Get the custom LDAP data, based on user's mail domain */
-        $userDomain = substr(stristr($userID,'@'),1);
+        /* check if the user exists in SP database */
+        $is_user = self::validateUser($userID, $oldPassword);
+        if( $is_user ){
+            /* generating password hash */
+            $hash = Security::encrypt($newPassword);
 
-        if ( ($userDomain != 'bireme.org') && ($userDomain != 'scielo.org') ) {
-            if(self::isUser($userID)){
+            $strsql = "UPDATE users SET userPassword = '".$hash."' WHERE userID = '".$userID."'";
 
-                if ( LDAPAuthenticator::authenticateUser($userID, $oldPassword) ) {
-
-                    $connConfig = ToolsAuthentication::configLDAPConnection($userID);
-
-                    $userAttributes['userPassword'] = $newPassword;
-                    $userAttributes['cn'] = $userID; /* mandatory */
-
-                    try{
-                        $retStats = LDAP::update($connConfig, $userAttributes);
-                    }catch(Exception $e){
-                        $logger = &Log::singleton('file', LOG_FILE, __CLASS__, $_conf);
-                        $logger->log($e->getMessage(),PEAR_LOG_EMERG);
-                        throw $e;
-                    }
-
-                    if ( $retStats !== false ) {
-                        $retValue = true;
-                        $newToken = Token::makeUserTK($userID,$newPassword,'ldap');
-                        $_SESSION['userTK'] = $newToken;
-                        setcookie("userTK", $_SESSION["userTK"], 0, '/', COOKIE_DOMAIN_SCOPE);
-                    }
-                } else {
-                    $retValue = 'invalidpass';
-                }
+            try{
+                $_db = new DBClass();
+                $res = $_db->databaseQuery($strsql);
+            }catch(DBClassException $e){
+                $logger = &Log::singleton('file', LOG_FILE, __CLASS__, $_conf);
+                $logger->log($e->getMessage(),PEAR_LOG_EMERG);
             }
-        }else{
-            $retValue = 'DomainNotPermitted';
+
+            if ( $retStats !== false ) {
+                $retValue = true;
+                $newToken = Token::makeUserTK($userID,$newPassword,'default');
+                $_SESSION['userTK'] = $newToken;
+                setcookie("userTK", $_SESSION["userTK"], 0, '/', COOKIE_DOMAIN_SCOPE);
+            }
+        } else {
+            $retValue = 'invalidpass';
         }
 
         return $retValue;
@@ -833,53 +790,41 @@ class UserDAO {
         $retValue = false;
         $retStats = false;
 
-        /* Get the custom LDAP data, based on user's mail domain */
-        $userDomain = substr(stristr($userID,'@'),1);
+        $isInServPlat = self::isUser($userID);
 
-        if ( ($userDomain != 'bireme.org') && ($userDomain != 'scielo.org') ) {
-            $isInLDAP = LDAP::isUser($userID);
-            $isInServPlat = self::isUser($userID);
+        if ( $isInServPlat ) {
+            $user = self::getUser($userID);
+            $name = $user->getFirstName();
 
-            if ( $isInServPlat || $isInLDAP ) {
-                if ( $isInServPlat ) {
-                    $user = self::getUser($userID);
-                    $name = $user->getFirstName();
-                }
+            /* generating a new password */
+            $password = substr(md5(mt_rand()),0,8);
+            $hash = Security::encrypt($password);
 
-                $connConfig = ToolsAuthentication::configLDAPConnection($userID);
+            $template = ( 'e-blueinfo' == $userSource ) ? EMAIL_EBLUEINFO_TEMPLATE : EMAIL_NEWPASSWORD_TEMPLATE;
+            $subject  = ( 'e-blueinfo' == $userSource ) ? EBLUEINFO_EMAIL_SUBJECT : NEW_PASSWORD_EMAIL_SUBJECT;
+            $fromMail = ( 'e-blueinfo' == $userSource ) ? EBLUEINFO_EMAIL_FROM : EMAIL_FROM;
+            $fromName = ( 'e-blueinfo' == $userSource ) ? EBLUEINFO_EMAIL_FROMNAME : EMAIL_FROMNAME;
 
-                /* generating a new password */
-                $userAttributes['userPassword'] = substr(md5(mt_rand()),0,8);
-                $userAttributes['cn'] = $userID; /* mandatory */
+            $strsql = "UPDATE users SET userPassword = '".$hash."' WHERE userID = '".$userID."'";
 
-                try{
-                    $retStats = LDAP::update($connConfig, $userAttributes);
-                }catch(Exception $e){
-                    $logger = &Log::singleton('file', LOG_FILE, __CLASS__, $_conf);
-                    $logger->log($e->getMessage(),PEAR_LOG_EMERG);
-                    throw $e;
-                }
-
-                $template = ( 'e-blueinfo' == $userSource ) ? EMAIL_EBLUEINFO_TEMPLATE : EMAIL_NEWPASSWORD_TEMPLATE;
-                $subject  = ( 'e-blueinfo' == $userSource ) ? EBLUEINFO_EMAIL_SUBJECT : NEW_PASSWORD_EMAIL_SUBJECT;
-                $fromMail = ( 'e-blueinfo' == $userSource ) ? EBLUEINFO_EMAIL_FROM : EMAIL_FROM;
-                $fromName = ( 'e-blueinfo' == $userSource ) ? EBLUEINFO_EMAIL_FROMNAME : EMAIL_FROMNAME;
-
-                if($retStats !== false){
-                    $to = array($userID);
-                    $tpl = str_replace('#LANG#', $_SESSION['lang'], $template);
-                    $body = str_replace('[PASSWORD]',
-                        $userAttributes['userPassword'],
-                        file_get_contents($tpl));
-                    $body = str_replace('[USER]', $userID, $body);
-                    $body = str_replace('[USERNAME]', $name, $body);
-                    $body = str_replace('[LANG]', $_SESSION['lang'], $body);
-                    $text = explode('[DELIMITER]', $body);
-                    $retValue = Mailer::sendMail($text[0], $text[1], $subject, $to, $fromMail, $fromName);
-                }
+            try{
+                $_db = new DBClass();
+                $retStats = $_db->databaseQuery($strsql);
+            }catch(DBClassException $e){
+                $logger = &Log::singleton('file', LOG_FILE, __CLASS__, $_conf);
+                $logger->log($e->getMessage(),PEAR_LOG_EMERG);
             }
-        }else{
-            $retValue = 'DomainNotPermitted';
+
+            if($retStats !== false){
+                $to = array($userID);
+                $tpl = str_replace('#LANG#', $_SESSION['lang'], $template);
+                $body = str_replace('[PASSWORD]', $password, file_get_contents($tpl));
+                $body = str_replace('[USER]', $userID, $body);
+                $body = str_replace('[USERNAME]', $name, $body);
+                $body = str_replace('[LANG]', $_SESSION['lang'], $body);
+                $text = explode('[DELIMITER]', $body);
+                $retValue = Mailer::sendMail($text[0], $text[1], $subject, $to, $fromMail, $fromName);
+            }
         }
 
         return $retValue;

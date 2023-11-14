@@ -31,13 +31,13 @@ class DBClass{
     private $_user = DB_USERNAME;
     private $_password = DB_PASSWORD;
     private $_db = DB_DBNAME;
+    private $_port = DB_PORT;
 
     /**
      * Create the connection with the database.
      */
-    public function DBClass(){
-        $this->_conn = mysqli_connect($this->_host, $this->_user
-            , $this->_password);
+    public function __construct(){
+        $this->_conn = mysqli_connect($this->_host, $this->_user, $this->_password, $this->_db, $this->_port);
         if(!$this->_conn){
             throw new DBClassException('Err:connect:'.mysqli_error($this->_conn));
         }

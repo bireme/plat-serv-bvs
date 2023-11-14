@@ -127,7 +127,7 @@
                     </a>
                     <ul class="dropdown-menu dropdown-usermenu pull-right" style="width: 100%;">
                       <li><a href="<?=SERVICES_PLATFORM_DOMAIN?>/pub/userData.php?userTK=<?=urlencode($_SESSION["userTK"])?>&c=<?=$b64HttpHost?>"><?=$trans->getTrans('menu','MY_DATA')?></a></li>
-                      <?php if ( empty($_SESSION["source"]) || 'ldap' == $_SESSION["source"] ) : ?>
+                      <?php if ( empty($_SESSION["source"]) || ( 'default' == $_SESSION["source"] || 'ldap' == $_SESSION["source"] ) ) : ?>
                       <li><a href="<?=SERVICES_PLATFORM_DOMAIN?>/pub/changePassword.php?userTK=<?=urlencode($_SESSION["userTK"])?>&c=<?=$b64HttpHost?>"><?=$trans->getTrans('menu','CHANGE_PASSWORD')?></a></li>
                       <?php endif; ?>
                       <?php if ( 'menu' == $_REQUEST["action"] ) : ?>

@@ -21,8 +21,8 @@
 
 require_once(dirname(__FILE__)."/../config.php");
 require_once(dirname(__FILE__)."/../config.ldap.php");
-require_once(dirname(__FILE__)."/LDAP.php");
-require_once(dirname(__FILE__)."/LDAPAuthenticator.php");
+// require_once(dirname(__FILE__)."/LDAP.php");
+// require_once(dirname(__FILE__)."/LDAPAuthenticator.php");
 require_once(dirname(__FILE__)."/User.php");
 require_once(dirname(__FILE__)."/UserDAO.php");
 require_once(dirname(__FILE__)."/Tools.php");
@@ -43,27 +43,30 @@ class ToolsAuthentication {
      * @param String $userPass
      * @return Boolean
      */
-    public static function authenticateUser($userID, $userPass, $socialMedia, $userDataConfirmation=null, $newUserID=null){
-        if ( SocialNetwork::validateObjUser( $socialMedia ) === true ) { /* check users from Social Medias */
+    public static function authenticateUser($userID, $userPass, $socialMedia=array(), $userDataConfirmation=null, $newUserID=null){
+        if ( $socialMedia && array_key_exists('social_media', $socialMedia) && in_array($socialMedia['social_media'], array('facebook', 'google')) ) {
 
+            /* check users from Social Medias */
             $result["source"] = $socialMedia['social_media'];
             $result["status"] = true;
             $result["visited"] = false;
             $result["userID"] = $userID;
 
             /* if the user does not exist in SP database */
-            if(!UserDAO::isUser($userID)){
+            $is_user = UserDAO::isUser($userID);
+            if( !$is_user ){
                 $name = array( 'facebook' => 'first_name', 'google' => 'given_name' );
                 $name = $name[$socialMedia['social_media']];
                 $surname = array( 'facebook' => 'last_name', 'google' => 'family_name' );
                 $surname = $surname[$socialMedia['social_media']];
+                $hash = ( $userPass ) ? Security::encrypt($userPass) : '';
 
                 $objUser = new User();
                 $objUser->setID($socialMedia['email']);
                 $objUser->setFirstName($socialMedia[$name]);
                 $objUser->setLastName($socialMedia[$surname]);
                 $objUser->setEmail($socialMedia['email']);
-                $objUser->setPassword($userPass);
+                $objUser->setPassword($hash);
                 $objUser->setSource($socialMedia['social_media']);
 
                 $retValue = UserDAO::addUser($objUser, 1);
@@ -72,19 +75,22 @@ class ToolsAuthentication {
                 $active = UserDAO::setActive($userID, 1);
             }
 
-        } elseif ( $user = UserDAO::getAccountsUser($userID, $userPass) ) { /* check users from BIREME Acccounts */
+        } elseif ( $user = UserDAO::getAccountsUser($userID, $userPass) ) {
 
+            /* check users from BIREME Acccounts */
             $result["source"] = "bireme_accounts";
             $result["status"] = true;
             $result["visited"] = false;
             $result["userID"] = $user->getID();
 
             /* if the user exists in BIREME Accounts, but does not exist in SP database */
-            if(!UserDAO::isUser($user->getID())){
+            $is_user = UserDAO::isUser($user->getID());
+            if( !$is_user ){
                 $name = $user->getFirstName();
 
-                if ( !isset($name) || empty($name) )
+                if ( !isset($name) || empty($name) ) {
                     $name = $user->getID();
+                }
 
                 $user->setFirstName($name);
 
@@ -92,27 +98,18 @@ class ToolsAuthentication {
                 $result["userDataStatus"] = false; /* need to complete user data */
             }
 
-        } elseif ( LDAPAuthenticator::authenticateUser($userID, $userPass) === true ) {
+        } elseif ( $user = UserDAO::validateUser($userID, $userPass) ) {
 
-            $result["source"] = "ldap";
+            $result["source"] = "default";
             $result["status"] = true;
             $result["visited"] = false;
             $result["userID"] = $userID;
 
-            /* if the user exists in ldap, but does not exist in SP database */
-            if(!UserDAO::isUser($userID)){
-                $objUser = new User();
-                $objUser->setID($userID);
-                $objUser->setEmail($userID);
-                $objUser->setFirstName($userID);
-                $objUser->setPassword($userPass);
-                $objUser->setSource('ldap');
-
-                $retValue = UserDAO::addUser($objUser, 1);
-                $result["userDataStatus"] = false; /* need to complete user data */
+        } else {
+            $user = UserDAO::getUser($userID);
+            if( $user && !$user->getPassword() ){
+                $result["error"] = "nopass";
             }
-        }else{
-            //user not exists
             $result["status"] = false;
         }
 
@@ -122,7 +119,9 @@ class ToolsAuthentication {
             $gll = UserDAO::getLastLogin($userID);
             $sll = UserDAO::setLastLogin($userID);
 
-            if ( $gll ) $result["visited"] = true;
+            if ( $gll ) {
+                $result["visited"] = true;
+            }
         }
 
         return $result;
@@ -186,50 +185,34 @@ class ToolsRegister {
         $retValue = false;
 
         $mailUserID = $objUserArg->getID();
-        $isInLDAP = LDAP::isUser($mailUserID);
         $isInServPlat = UserDAO::isUser($mailUserID);
         $is_active = UserDAO::isActive($mailUserID);
+        $objUserArg->setID($mailUserID);
 
-        if ( $isInLDAP && $isInServPlat ){
-            // User already exists in LDAP and SP, can be logged in.
-            $result["status"] = false;
-            $result["error"] = "userexists";
-        } else { /* add user */
-            $objUserArg->setID($mailUserID);
-
-            if ( $isInServPlat ) {
-                if ( $is_active ) {
-                    $retValue = UserDAO::addUser($objUserArg, 1);
-                    $res = UserDAO::createNewPassword($mailUserID);
-                } else {
-                    $retValue = UserDAO::updateUser($objUserArg);
-                    $res = UserDAO::sendUserConfirm($objUserArg, 'user');
-                }
-            } elseif ( $isInLDAP ) {
-                //$result["source"] = "ldap";
-                //$result["userID"] = $mailUserID;
+        if ( $isInServPlat ) {
+            if ( $is_active ) {
                 $result["status"] = false;
                 $result["error"] = "userexists";
             } else {
-                if ( 'e-blueinfo' == $objUserArg->getSource() ) {
-                    $retValue = UserDAO::addUser($objUserArg, 1);
-                    $isInServPlat = UserDAO::isUser($mailUserID);
-                    $is_active = UserDAO::isActive($mailUserID);
-                    $res = UserDAO::createNewPassword($mailUserID, $objUserArg->getSource());
-                } else {
-                    $retValue = UserDAO::addUser($objUserArg);
-                }
+                $retValue = UserDAO::updateUser($objUserArg);
+                $res = UserDAO::sendUserConfirm($objUserArg, 'user');
             }
-
-            if($retValue === true){
-                $result["userID"] = $mailUserID;
-                $result["status"] = true;
-
-                if ( $isInServPlat && $is_active )
-                    $result["error"] = "userconfirmed";
-            }else{
-                $result["status"] = false;
+        } else {
+            if ( 'e-blueinfo' == $objUserArg->getSource() ) {
+                $retValue = UserDAO::addUser($objUserArg, 1);
+                $isInServPlat = UserDAO::isUser($mailUserID);
+                $is_active = UserDAO::isActive($mailUserID);
+                $res = UserDAO::createNewPassword($mailUserID, $objUserArg->getSource());
+            } else {
+                $retValue = UserDAO::addUser($objUserArg);
             }
+        }
+
+        if($retValue !== false){
+            $result["userID"] = $mailUserID;
+            $result["status"] = true;
+        }else{
+            $result["status"] = false;
         }
 
         return $result;

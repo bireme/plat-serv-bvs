@@ -15,7 +15,7 @@
  */
 
 require_once(dirname(__FILE__).'/Tools.php');
-require_once(dirname(__FILE__)."/LDAPAuthenticator.php");
+// require_once(dirname(__FILE__)."/LDAPAuthenticator.php");
 require_once(dirname(__FILE__).'/../config.php');
 require_once(dirname(__FILE__)."/User.php");
 require_once(dirname(__FILE__)."/UserDAO.php");
@@ -67,14 +67,14 @@ class Verifier {
         $userParm = Token::unmakeUserTK($this->_data['userTK'], true);
 
         if ( 'bireme_accounts' == $userParm['userSource'] ) { /* check if user is from BIREME Acccounts */
-            if ( UserDAO::getAccountsUser($userParm['userID'], $userParm['userPass']) )
+            if ( $user = UserDAO::getAccountsUser($userParm['userID'], $userParm['userPass']) )
                 $result = true;
         } else {
             $userParm = Token::unmakeUserTK($this->_data['userTK']);
 
             if ( in_array( $userParm['userSource'], array('facebook', 'google') ) ) { /* check if user is from Social Medias */
                 $result = true;
-            } elseif ( LDAPAuthenticator::authenticateUser($userParm['userID'],$userParm['userPass']) ) {
+            } elseif ( $user = UserDAO::validateUser($userParm['userID'],$userParm['userPass']) ) {
                 $result = true;
             }
         }

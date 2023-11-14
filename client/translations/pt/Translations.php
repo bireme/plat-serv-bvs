@@ -52,6 +52,7 @@ usuário para oferecer serviços personalizados e facilidades tais como:</p>
         self::$trans["authentication"]["PASSWORD"] = 'Senha';
         self::$trans["authentication"]["PRESS_HERE"] = 'clique aqui';
         self::$trans["authentication"]["INVALID_LOGIN"] = 'usuário ou senha inválidos';
+        self::$trans["authentication"]["NO_PASS"] = '<b>acesso negado</b><br />favor gerar uma nova senha para a sua conta';
         self::$trans["authentication"]["INVALID_LOGIN_MAIL"] = '
 <div>Falha de autenticação</div>
 <ol>

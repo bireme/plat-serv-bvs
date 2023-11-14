@@ -31,13 +31,13 @@ class AccountsDBClass{
     private $_user = BIR_ACCOUNTS_DB_USERNAME;
     private $_password = BIR_ACCOUNTS_DB_PASSWORD;
     private $_db = BIR_ACCOUNTS_DB_DBNAME;
+    private $_port = BIR_ACCOUNTS_DB_PORT;
 
     /**
      * Create the connection with the database.
      */
     public function AccountsDBClass(){
-        $this->_conn = mysqli_connect($this->_host, $this->_user
-            , $this->_password);
+        $this->_conn = mysqli_connect($this->_host, $this->_user, $this->_password, $this->_db, $this->_port);
         if(!$this->_conn){
             throw new AccountsDBClassException('Err:connect:'.mysqli_error($this->_conn));
         }

@@ -150,12 +150,13 @@ class Paginator {
 class Token {
 
     public static function makeUserTK($userID,$userPass,$userSource){
-        return Crypt::encrypt($userID.CRYPT_SEPARATOR.$userPass.CRYPT_SEPARATOR.$userSource, CRYPT_PUBKEY);
+        $token = Security::encrypt($userID.CRYPT_SEPARATOR.$userPass.CRYPT_SEPARATOR.$userSource);
+        return $token;
     }
 
     public static function unmakeUserTK($userTK, $force=null){
         $retValue = false;
-        $tmp1 = explode(CRYPT_SEPARATOR,Crypt::decrypt($userTK, CRYPT_PUBKEY));
+        $tmp1 = explode(CRYPT_SEPARATOR, Security::decrypt($userTK));
         $valid_email = filter_var($tmp1[0], FILTER_VALIDATE_EMAIL);
 
         if($force === true){
@@ -427,6 +428,30 @@ class Slider {
         return $highlights;
     }
     
+}
+
+class Security {
+
+    public static function encrypt($data)
+    {
+        $key        = base64_decode(PRIVATE_KEY);
+        $nonce      = base64_decode(INDEX_KEY);
+        $ciphertext = sodium_crypto_secretbox($data, $nonce, $key);
+        $encoded    = base64_encode($nonce . $ciphertext);
+        
+        return $encoded;
+    }
+
+    public static function decrypt($data)
+    {
+        $key        = base64_decode(PRIVATE_KEY);
+        $decoded    = base64_decode($data);
+        $nonce      = mb_substr($decoded, 0, SODIUM_CRYPTO_SECRETBOX_NONCEBYTES, '8bit');
+        $ciphertext = mb_substr($decoded, SODIUM_CRYPTO_SECRETBOX_NONCEBYTES, null, '8bit');
+        $decoded    = sodium_crypto_secretbox_open($ciphertext, $nonce, $key);
+
+        return mb_convert_encoding($decoded, 'UTF-8', 'ISO-8859-1');
+    }
 }
 
 ?>

@@ -31,7 +31,7 @@
 		<a href="#email"><span class="white-text email"><?php echo $_SESSION["userID"]; ?></span></a>
 	</div></li>
 	<li><a href="<?php echo SERVICES_PLATFORM_DOMAIN; ?>/pub/userData.php?userTK=<?php echo urlencode($_SESSION["userTK"]); ?>&c=<?php echo $b64HttpHost; ?>"><?php echo $trans->getTrans('menu','MY_DATA'); ?></a></li>
-	<?php if ( empty($_SESSION["source"]) || 'ldap' == $_SESSION["source"] ) : ?>
+	<?php if ( empty($_SESSION["source"]) || ('default' == $_SESSION["source"] || 'ldap' == $_SESSION["source"]) ) : ?>
 	<li><a href="<?php echo SERVICES_PLATFORM_DOMAIN; ?>/pub/changePassword.php?userTK=<?php echo urlencode($_SESSION["userTK"]); ?>&c=<?php echo $b64HttpHost; ?>"><?php echo $trans->getTrans('menu','CHANGE_PASSWORD'); ?></a></li>
 	<?php endif; ?>
 	<li><a href="<?php echo RELATIVE_PATH; ?>/controller/tutorial/control/business"><?php echo $trans->getTrans('menu','TUTORIALS'); ?></a></li>
