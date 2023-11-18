@@ -57,7 +57,7 @@ $oer_query = 'ti:'.$query.' OR mh:'.$query;
 //$resources = OER::get_resources($oer_query);
 
 // My Searches widget
-$obj = new MySearches($_SESSION["userTK"]);
-$retParams = $obj->getParams();
-$searches = $obj->getSearchList($retParams['userID'], $params);
+// $obj = new MySearches($_SESSION["userTK"]);
+// $retParams = $obj->getParams();
+// $searches = $obj->getSearchList($retParams['userID'], $params);
 ?>

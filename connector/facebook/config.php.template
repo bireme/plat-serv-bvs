@@ -2,7 +2,11 @@
 
 session_start();
 
-include_once("src/facebook.php"); // include Facebook SDK
+include_once("vendor/autoload.php"); // include Facebook SDK
+
+use Facebook\Facebook;
+use Facebook\Exceptions\FacebookResponseException;
+use Facebook\Exceptions\FacebookSDKException;
 
 $appID = ''; // Facebook App ID
 $appSecret = ''; // Facebook App Secret
@@ -10,10 +14,10 @@ $redirectURL = ''; // return to home
 $homeURL = ''; // return url (url to script)
 $permissions = ['email', 'public_profile', 'user_friends']; // Optional permissions
 
-$fb = new Facebook\Facebook([
+$fb = new Facebook([
     'app_id' => $appID,
     'app_secret' => $appSecret,
-    'default_graph_version' => 'v3.1',
+    'default_graph_version' => 'v3.2',
 ]);
 
 $helper = $fb->getRedirectLoginHelper();

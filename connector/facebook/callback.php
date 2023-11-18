@@ -7,11 +7,11 @@ include_once($_SERVER['DOCUMENT_ROOT']."/client/classes/Authentication.php");
 
 try {
     $accessToken = $helper->getAccessToken();
-} catch(Facebook\Exceptions\FacebookResponseException $e) {
+} catch(FacebookResponseException $e) {
     // When Graph returns an error
     echo 'Graph returned an error: ' . $e->getMessage();
     exit;
-} catch(Facebook\Exceptions\FacebookSDKException $e) {
+} catch(FacebookSDKException $e) {
     // When validation fails or other local issues
     echo 'Facebook SDK returned an error: ' . $e->getMessage();
     exit;
@@ -25,7 +25,7 @@ if (isset($accessToken)) {
         // Exchanges a short-lived access token for a long-lived one
         try {
             $accessToken = $oAuth2Client->getLongLivedAccessToken($accessToken);
-        } catch (Facebook\Exceptions\FacebookSDKException $e) {
+        } catch (FacebookSDKException $e) {
             echo "<p>Error getting long-lived access token: " . $helper->getMessage() . "</p>\n\n";
             exit;
         }
@@ -39,11 +39,11 @@ if (isset($accessToken)) {
         $userNode = $response->getGraphUser();
         $userData = $response->getDecodedBody();
         $userData['social_media'] = 'facebook';
-    } catch(Facebook\Exceptions\FacebookResponseException $e) {
+    } catch(FacebookResponseException $e) {
         // When Graph returns an error
         echo 'Graph returned an error: ' . $e->getMessage();
         exit;
-    } catch(Facebook\Exceptions\FacebookSDKException $e) {
+    } catch(FacebookSDKException $e) {
         // When validation fails or other local issues
         echo 'Facebook SDK returned an error: ' . $e->getMessage();
         exit;
@@ -55,8 +55,7 @@ if (isset($accessToken)) {
         if (($result["status"] !== false) and ($result !== false)){
             $iahx = ( $_REQUEST['iahx'] ) ? $_REQUEST['iahx'] : base64_encode('portal');
 
-            // Logged in!
-            $_SESSION['fb_access_token'] = (string) $accessToken;
+            // $_SESSION['fb_access_token'] = (string) $accessToken;
             $_SESSION['fb_data'] = $userData; // Storing Facebook User Data in Session
             $_SESSION["sysUID"] = $result["sysUID"];
             $_SESSION["userTK"] = $result["userTK"];
@@ -67,8 +66,6 @@ if (isset($accessToken)) {
             $_SESSION["source"] = $result["source"];
             $_SESSION["visited"] = $result["visited"];
             $_SESSION["iahx"] = base64_decode($iahx);
-            //$response["status"] = true;
-            //$response["values"] = $result;
 
             $cookie = UserData::getData($result["userTK"]);
             setcookie("userData", $cookie, 0, '/', COOKIE_DOMAIN_SCOPE);
@@ -91,9 +88,7 @@ if (isset($accessToken)) {
     echo 'window.open("'.$homeURL.'","_parent")';
     echo '</script>';
     exit;
-}
-
-if (! isset($accessToken)) {
+} else {
     if ($helper->getError() || $helper->getErrorCode()) {
         if ( isset($_REQUEST['origin']) && !empty($_REQUEST['origin']) ) {
             $origin = 'origin/'.$_REQUEST['origin'].'/';
