@@ -437,7 +437,6 @@ class UserDAO {
                         WHERE `sysUID` = '".$sysUID."'
                         AND `key` = '".$userKey."'
                         AND `action` = '".$action."'";
-
             try{
                 $_db = new DBClass();
                 $result = $_db->databaseQuery($strsql);
@@ -453,7 +452,6 @@ class UserDAO {
                         WHERE u.sysUID = '".$sysUID."'
                         AND uc.sysUID = '".$sysUID."'
                         AND uc.action = '".$action."'";
-
                 try{
                     $_db = new DBClass();
                     $res = $_db->databaseQuery($strsql);
@@ -467,7 +465,6 @@ class UserDAO {
                         WHERE `email` = '".$userEmail."'
                         AND `key` = '".$userKey."'
                         AND `action` = '".$action."'";
-
             try{
                 $_db = new DBClass();
                 $result = $_db->databaseQuery($strsql);
@@ -481,7 +478,6 @@ class UserDAO {
                         SET confirmation_date = '".date('Y-m-d H:i:s')."'
                         WHERE email = '".$userEmail."'
                         AND action = '".$action."'";
-
                 try{
                     $_db = new DBClass();
                     $res = $_db->databaseQuery($strsql);
@@ -572,13 +568,17 @@ class UserDAO {
      */
     public static function sendUserConfirm($objUser, $action){
         $retValue = false;
+        $addConfirm = false;
         $email = $objUser->getEmail();
         $date = date('Y-m-d H:i:s');
-                     
-        // create a random key
-        $key = md5(uniqid(mt_rand(), true));
-        $deleteConfirm = self::deleteUserConfirm($email,$action);
-        $addConfirm = self::addUserConfirm($email,$key,$date,$action);
+
+        $isInServPlat = self::isUser($email);
+        if ( $isInServPlat ) {
+            // create a random key
+            $key = md5(uniqid(mt_rand(), true));
+            $deleteConfirm = self::deleteUserConfirm($email,$action);
+            $addConfirm = self::addUserConfirm($email,$key,$date,$action);
+        }
 
         if( $addConfirm ) {
             $to = array($email);
@@ -616,6 +616,7 @@ class UserDAO {
 
         $isInServPlat = self::isUser($email);
         if ( $isInServPlat && self::isActive($email) ) {
+            // create a random key
             $key = md5(uniqid(mt_rand(), true));
             $deleteConfirm = self::deleteUserConfirm($email,$action);
             $addConfirm = self::addUserConfirm($email,$key,$date,$action);
