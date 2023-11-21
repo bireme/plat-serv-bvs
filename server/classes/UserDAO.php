@@ -759,7 +759,7 @@ class UserDAO {
 
             try{
                 $_db = new DBClass();
-                $res = $_db->databaseQuery($strsql);
+                $retStats = $_db->databaseQuery($strsql);
             }catch(DBClassException $e){
                 $logger = &Log::singleton('file', LOG_FILE, __CLASS__, $_conf);
                 $logger->log($e->getMessage(),PEAR_LOG_EMERG);

@@ -17,6 +17,7 @@ $oldPassword = isset($_REQUEST['oldPassword'])?$_REQUEST['oldPassword']:false;
 $newPassword = isset($_REQUEST['newPassword'])?$_REQUEST['newPassword']:false;
 $callerURL = !empty($_REQUEST['c'])?base64_decode($_REQUEST['c']):false;
 $source = $_SESSION['source'] ? $_SESSION['source'] : false;
+$avatar = ( $_SESSION["gender"] == "M" ) ? 'male' : 'female';
 
 if ( empty($_SESSION['userTK']) || ( $source && !in_array($source, array('default', 'ldap')) ) ) {
     header("Location: ".RELATIVE_PATH."/controller/authentication");
@@ -34,14 +35,15 @@ if ( 'atualizar' == $acao && $oldPassword && $newPassword && $userID ) {
     if( $userID && filter_var($userID, FILTER_VALIDATE_EMAIL) ) {
         $retValue = UserDAO::changePassword($userID, $oldPassword, $newPassword);
  
-        if( $retValue === false )
+        if( $retValue === false ) {
             $sysMsg = NEWPASS_CHANGE_ERROR;
-        elseif( 'DomainNotPermitted' === $retValue )
+        } elseif( 'DomainNotPermitted' === $retValue ) {
             $sysMsg = NEWPASS_DOMAIN_NOT_PERMITTED;
-        elseif( 'invalidpass' === $retValue )
+        } elseif( 'invalidpass' === $retValue ) {
             $sysMsg = NEWPASS_INVALID_PASSWORD;
-        else
+        } else {
             $sysMsg = USER_PASSWORD_UPDATE;
+        }
     } else {
         $sysMsg = NEWPASS_CHANGE_ERROR;
     }
@@ -84,7 +86,7 @@ require_once(dirname(__FILE__)."/../templates/".DEFAULT_SKIN."/nav.tpl.php");
                         <input type="hidden" value="atualizar" name="acao" />
 						<div class="row">
 							<div class="input-field col s12 center-align">
-								<img src="<?php echo RELATIVE_PATH; ?>/images/<?php echo $_SESSION["skin"]; ?>/user.svg" class="circle" width="150" alt="Avatar User">
+								<img src="<?php echo RELATIVE_PATH; ?>/images/<?php echo $_SESSION["skin"]; ?>/<?php echo $avatar; ?>.svg" class="circle" width="150" alt="Avatar User">
 							</div>
 							<div class="input-field col s12">
 								<input id="oldPassword" name="oldPassword" type="password" class="bgInputs" autocomplete="off" required="">

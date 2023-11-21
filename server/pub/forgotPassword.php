@@ -33,12 +33,13 @@ switch($acao){
         if( filter_var($user, FILTER_VALIDATE_EMAIL) ) {
             $retValue = UserDAO::sendNewPassConfirm(trim($user), 'pass');
      
-            if( $retValue === false )
+            if( $retValue === false ) {
                 $sysMsg = NEWPASS_CREATE_ERROR;
-            elseif( 'DomainNotPermitted' === $retValue )
+            } elseif( 'DomainNotPermitted' === $retValue ) {
                 $sysMsg = NEWPASS_DOMAIN_NOT_PERMITTED;
-            else
+            } else {
                 $sysMsg = NEWPASS_SEND_CONFIRMATION;
+            }
         } else {
             $sysMsg = NEWPASS_CREATE_ERROR;
         }
@@ -50,12 +51,13 @@ switch($acao){
         if($result === true){
             $retValue = UserDAO::createNewPassword($email);
 
-            if( $retValue === false )
+            if( $retValue === false ) {
                 $sysMsg = NEWPASS_CREATE_ERROR;
-            elseif( 'DomainNotPermitted' === $retValue )
+            } elseif( 'DomainNotPermitted' === $retValue ) {
                 $sysMsg = NEWPASS_DOMAIN_NOT_PERMITTED;
-            else
+            } else {
                 $sysMsg = NEWPASS_PASSWORD_SENT;
+            }
         }
 
         break;
