@@ -47,11 +47,8 @@
 		                    <input type="hidden" name="source" value="<?php echo ($isUser) ? trim($usr->getSource()) : 'default'; ?>" />
 		                    <input type="hidden" name="autoconn" value="" />
 							<div class="input-field col s12 center-align">
-								<?php if ($usr->getGender() == "M") : ?>
-									<img src="<?php echo RELATIVE_PATH; ?>/images/<?php echo $_SESSION["skin"]; ?>/male.svg" alt="Avatar User" class="circle" width="150">
-								<?php else : ?>
-									<img src="<?php echo RELATIVE_PATH; ?>/images/<?php echo $_SESSION["skin"]; ?>/female.svg" alt="Avatar User" class="circle" width="150">
-								<?php endif; ?>
+								<?php $avatar = ( $usr->getGender() == "M" ) ? 'male' : 'female'; ?>
+								<img src="<?php echo RELATIVE_PATH; ?>/images/<?php echo $_SESSION["skin"]; ?>/<?php echo $avatar; ?>.svg" alt="Avatar User" class="circle" width="150">
 							</div>
 		                    <div class="form-group">
 								<div class="input-field col s12 m6">
